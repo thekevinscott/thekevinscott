@@ -11,6 +11,7 @@
     "gatsby-source-filesystem": "^1.5.11",
     "gatsby-source-medium": "^1.0.9",
     "gatsby-transformer-remark": "^1.7.26",
+    "gh-pages": "^1.1.0",
     "react-helmet": "^5.2.0",
     "remove": "^0.1.5"
   },
