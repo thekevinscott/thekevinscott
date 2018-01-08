@@ -18,7 +18,7 @@ export default function Template({
   const { markdownRemark: post } = data; // data.markdownRemark holds our post data
   return (
     <Post>
-      <Helmet title={`Your Blog Name - ${post.frontmatter.title}`} />
+      <Helmet title={`${post.frontmatter.title}`} />
       <h1>{post.frontmatter.title}</h1>
       <div
         className="blog-post-content"
