@@ -13,6 +13,22 @@ const StyledPost = styled.div `
   padding: 20px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
+
+  a:hover {
+    border-bottom: none;
+  }
+
+  img {
+    margin-bottom: 31px;
+  }
+
+  h2 {
+    font-size: 26px;
+    margin-left: -1.88px;
+    line-height: 1.04;
+    letter-spacing: -.015em;
+  }
 `;
 
 const Info = styled.div `
@@ -52,9 +68,9 @@ const Post = ({
       <ReadTime>6 minute read</ReadTime>
       */ }
     </Info>
-    <h1>
+    <h2>
       <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-    </h1>
+    </h2>
     <p>{post.excerpt}</p>
   </StyledPost>
 );

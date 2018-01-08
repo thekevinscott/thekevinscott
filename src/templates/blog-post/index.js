@@ -3,6 +3,13 @@ import styled from "styled-components";
 import Helmet from "react-helmet";
 
 const Post = styled.div `
+  h1 {
+    font-weight: 600;
+    font-size: 38px;
+    // margin-left: -2.63px;
+    line-height: 1.04;
+    letter-spacing: -.015em;
+  }
 `;
 
 export default function Template({

@@ -1,7 +1,7 @@
 ---
-path: "/hello-world"
+path: "/deep-learning-cryptocurrency-pc-4-ai"
 date: "2017-07-12T17:12:33.962Z"
-title: "My First Post"
+title: "Noob’s Guide to building a Deep Learning / Cryptocurrency PC (#4): Deep Learning"
 ---
 
-Oooooh-weeee, my first blog post!
+Here it comes

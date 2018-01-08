@@ -617,3 +617,6 @@ time {
     font-size: 100%;
   }
 }
+::selection {
+  background: #ffb7b7; /* WebKit/Blink Browsers */
+}
