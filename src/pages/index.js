@@ -91,12 +91,12 @@ const Header = styled.div `
 const BlogPosts = styled.div `
   padding-top: 40px;
   box-sizing: border-box;
-  max-width: 640px;
+  max-width: 700px;
 `;
 
 const Title = styled.h1 `
   font-weight: normal;
-  max-width: 640px;
+  max-width: 700px;
 `;
 
 const Container = styled.div `

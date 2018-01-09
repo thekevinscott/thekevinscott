@@ -32,12 +32,12 @@ const Title = styled.h1 `
   font-size: 38px;
   line-height: 1.04;
   letter-spacing: -.015em;
-  max-width: 640px;
+  max-width: 700px;
 `;
 
 const Content = styled.div `
   max-width: 100%;
-  width: 640px;
+  width: 700px;
 
   .gatsby-image-outer-wrapper {
     width: 100%;
@@ -76,22 +76,19 @@ const Template = ({
   data: {
     markdownRemark: post,
   },
-}) => {
-  console.log(post.frontmatter.image.childImageSharp.sizes);
-  return (
-    <Animated>
-      <Helmet title={`${post.frontmatter.title}`} />
-      <Title>{post.frontmatter.title}</Title>
-      <CoverImg
-        src={post.frontmatter.image.childImageSharp.sizes.src}
-      />
-      <Content
-        className="blog-post-content"
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
-    </Animated>
-  );
-}
+}) => (
+  <Animated>
+    <Helmet title={`${post.frontmatter.title}`} />
+    <Title>{post.frontmatter.title}</Title>
+    <CoverImg
+      src={post.frontmatter.image.childImageSharp.sizes.src}
+    />
+    <Content
+      className="blog-post-content"
+      dangerouslySetInnerHTML={{ __html: post.html }}
+    />
+  </Animated>
+);
 
 Template.propTypes = {
   data: PropTypes.shape({

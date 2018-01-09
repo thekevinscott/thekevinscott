@@ -12,6 +12,14 @@ const absoluteUrls = require('./remark-absolute-urls')
 const utils = require('./utils')
 const processContent = require('./processContent');
 
+const getSlug = (frontmatter, filePath) => {
+  if (frontmatter.path) {
+    return frontmatter.path.split("/").join("");
+  }
+
+  return utils.slugFromPath(filePath);
+};
+
 async function getFrontmatter(filePath) {
   let frontmatter
   function frontmatterToJs() {
@@ -55,13 +63,6 @@ const transformPostFromPath = async (filePath, transformerPlugin) => {
   try {
     const siteUrl = `https://${process.env.ROOT_URL}`
     const frontmatter = await getFrontmatter(filePath)
-    const getSlug = (frontmatter, filePath) => {
-      if (frontmatter.path) {
-        return `${siteUrl}/${frontmatter.path}`;
-      }
-
-      return utils.slugFromPath(filePath)
-    };
     const slug = getSlug(frontmatter, filePath);
     const postUrl = url.resolve(siteUrl, `/${slug}`)
 

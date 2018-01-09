@@ -20,9 +20,10 @@ body {
     Helvetica Neue,
     sans-serif;
   color: rgba(0, 0, 0, 0.8);
-  line-height: 1.5;
+  line-height: 1.58;
   padding: 0;
   display: flex;
+  font-size: 1.15rem;
 
   > div {
     flex: 1;
@@ -89,6 +90,10 @@ h6 {
     serif;
 }
 
+p {
+  margin: 5px 0 32px;
+}
+
 h1 {
   margin: 0px 0 20px 0;
   font-size: 2.25rem;
@@ -122,6 +127,18 @@ iframe {
   border: none;
 }
 
+ul {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  li, ol {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 ::selection {
   background: #ffb7b7; /* WebKit/Blink Browsers */
 }
@@ -138,14 +155,13 @@ iframe {
 }
 
 pre {
-  font-size: 1.2em;
+  font-size: 1.3em;
   background-color:rgba(0,0,0,.04);
   border-radius:3px;
   font-family:SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;
-  padding:0;
-  padding-top:.2em;
   overflow-x: scroll;
-  padding: 5px 10px 10px 10px;
+  margin: 40px 0;
+  padding: 20px;
   line-height: 1.0;
 
   code {
@@ -159,6 +175,15 @@ code {
   background-color:rgba(0,0,0,.04);
   padding: 2px 5px;
   font-size: 120%;
+  white-space: pre-wrap;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 140%;
+  line-height: 1.7;
+  margin: 60px 40px;
+  color: rgba(0, 0, 0, 0.7);
 }
 `
 export default styles;

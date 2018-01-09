@@ -8,7 +8,7 @@ tags: ["artificial intelligence", "deep learning", "machine learning", "PC", "py
 
 Among the buzzwords of this past year, two tower above the rest: deep learning and cryptocurrencies. It seems that everyone I know (in tech) wants to learn these things. And guess what — so do I! So much so that I'm building my own computer in order to facilitate that learning.
 
-What follows are my notes-to-self as I build a computer to learn about deep learning and cryptocurrency mining. In the previous installments we discussed assembling the hardware, installing the OS, and setting up a mining operation. In this installment I'll talk about how to set up a cryptocurrency miner and connect to a pool.
+What follows are my notes-to-self as I build a computer to learn about deep learning and cryptocurrency mining. In the previous installments we discussed assembling the hardware, installing the OS, and setting up a mining operation. In this installment I'll talk about installing machine learning software and making sure it's working.
 
 <iframe style="height:400px;width:100%;max-width:800px;margin:30px auto;" src="https://upscri.be/96fcab/?as_embed"></iframe>
 <hr />
