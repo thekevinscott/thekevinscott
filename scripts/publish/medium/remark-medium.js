@@ -17,7 +17,7 @@ const createReferenceToOriginalPost = postUrl => ({
       children: [
         {
           type: 'text',
-          value: process.env.URL,
+          value: process.env.ROOT_URL,
         },
       ],
     },

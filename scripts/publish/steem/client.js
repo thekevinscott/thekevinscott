@@ -2,7 +2,7 @@ require('dotenv').config()
 const steem = require('steem')
 const trim = require('lodash/trim')
 
-const accountName = `cmichel`
+const accountName = process.env.STEEM_ACCOUNT;
 const slugTransform = s => trim(s, '/').toLowerCase()
 
 const client = {
@@ -11,8 +11,6 @@ const client = {
       Array.isArray(frontmatter.steem) && frontmatter.steem.length > 0
         ? frontmatter.steem[0]
         : 'programming'
-    // https://steemit.com/steemdev/@jfollas/write-a-steemit-web-app-part-11-posting-content
-    // https://steemdb.com/programming/@cmichel/progress-report-november-2017/data
     const query = {
       parent_author: '',
       // main tag
