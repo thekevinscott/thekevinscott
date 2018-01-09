@@ -2,7 +2,6 @@ module.exports = {
   siteMetadata: {
     title: `thekevinscott`,
   },
-  pathPrefix: `/`,
   plugins: [
     `gatsby-plugin-sass`,
     'gatsby-plugin-catch-links',
