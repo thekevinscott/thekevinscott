@@ -13,6 +13,13 @@ module.exports = {
         name: 'pages',
       },
     },
+    // for some reason I need both of these and I don't know why
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [] // just in case those previously mentioned remark plugins sound cool :)
+      }
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
