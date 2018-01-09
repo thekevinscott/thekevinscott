@@ -14,6 +14,7 @@ body {
     Helvetica Neue,
     sans-serif;
   color: rgba(0, 0, 0, 0.8);
+  line-height: 1.5;
 }
 
 a {
@@ -31,12 +32,27 @@ a:hover {
   border-bottom-color: rgba(0, 0, 0, 0.4);
 }
 
-code,
-kbd,
-pre,
-samp {
+pre {
   font-family: monospace;
-  font-size: 1em;
+  font-size: 1.2em;
+  background-color:rgba(0,0,0,.04);
+  border-radius:3px;
+  font-family:SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;padding:0;padding-top:.2em;
+  overflow-x: scroll;
+  padding: 5px 10px 10px 10px;
+  line-height: 1.0;
+
+  code {
+    padding: 0;
+    background-color: transparent;
+    font-size: 100%;
+  }
+}
+
+code {
+  background-color:rgba(0,0,0,.04);
+  padding: 2px 5px;
+  font-size: 120%;
 }
 
 hr {
