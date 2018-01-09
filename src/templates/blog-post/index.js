@@ -44,6 +44,10 @@ const Content = styled.div `
     background: blue;
     height: 200px;
   }
+
+  h1 {
+    margin-top: 60px;
+  }
 `;
 
 const CoverImg = styled.img `
