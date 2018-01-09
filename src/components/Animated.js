@@ -5,6 +5,11 @@ import styled from "styled-components";
 const DELAY_TIME = 10;
 
 const Container = styled.div `
+  display: flex;
+  max-width: 100%;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
   transition-duration: 0.4s;
   transition-timing-function: ease-out;
 

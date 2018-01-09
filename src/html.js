@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 const favicon = "foo";
 import styleSheet from 'styled-components/lib/models/StyleSheet';
 // import favicon from "./favicon.png";
@@ -14,6 +15,12 @@ const getCss = () => {
 
   return null;
 };
+
+const Gatsby = styled.div `
+  flex: 1;
+  display: flex;
+  max-width: 100%;
+`;
 
 module.exports = ({
   htmlAttributes,
@@ -36,7 +43,7 @@ module.exports = ({
     </head>
     <body {...bodyAttributes}>
       {preBodyComponents}
-      <div
+      <Gatsby
         key={`body`}
         id="___gatsby"
         dangerouslySetInnerHTML={{ __html: body }}

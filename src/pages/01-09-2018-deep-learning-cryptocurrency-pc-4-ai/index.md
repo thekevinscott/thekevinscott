@@ -2,6 +2,7 @@
 path: "/deep-learning-cryptocurrency-pc-4-ai/"
 date: "2018-01-01T09:00:00.000Z"
 title: "Noob's Guide to building a Deep Learning / Cryptocurrency PC (#4): AI"
+image: "cover.png"
 tags: ["artificial intelligence", "deep learning", "machine learning", "PC", "pytorch", "tensorflow", "gpu"]
 ---
 

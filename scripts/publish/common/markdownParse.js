@@ -10,6 +10,7 @@ const visit = require('unist-util-visit')
 
 const absoluteUrls = require('./remark-absolute-urls')
 const utils = require('./utils')
+const processContent = require('./processContent');
 
 async function getFrontmatter(filePath) {
   let frontmatter
@@ -82,9 +83,15 @@ const transformPostFromPath = async (filePath, transformerPlugin) => {
         .use(stringify)
         .process(vfile.readSync(filePath), function(err, vfile) {
           if (err) return reject(err)
+          const content = processContent(String(vfile), {
+            frontmatter,
+            postUrl,
+            siteUrl,
+            slug,
+          });
           const returnValue = Object.assign(
             {
-              content: String(vfile),
+              content,
               frontmatter,
               postUrl,
               siteUrl,

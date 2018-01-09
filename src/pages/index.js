@@ -91,21 +91,21 @@ const Header = styled.div `
 const BlogPosts = styled.div `
   padding-top: 40px;
   box-sizing: border-box;
+  max-width: 640px;
 `;
 
 const Title = styled.h1 `
   font-weight: normal;
+  max-width: 640px;
+`;
+
+const Container = styled.div `
 `;
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
   return (
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 640,
-      }}
-    >
+    <Container>
       <Header>
         <Title>
           <Link
@@ -129,7 +129,7 @@ export default function Index({ data }) {
               />
             ))}
       </BlogPosts>
-    </div>
+    </Container>
   );
 }
 

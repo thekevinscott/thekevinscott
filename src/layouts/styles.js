@@ -1,5 +1,11 @@
 const styles = `
+html {
+  width: 100%;
+  height: 100%;
+}
 body {
+  width: 100%;
+  height: 100%;
   margin: 0;
   font-family:
     -apple-system,
@@ -15,7 +21,14 @@ body {
     sans-serif;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1.5;
-  padding: 0 10px;
+  padding: 0;
+  display: flex;
+
+  > div {
+    flex: 1;
+    display: flex;
+    max-width: 100%;
+  }
 }
 
 a {

@@ -10,7 +10,11 @@ import styles from './styles';
 injectGlobal`${styles}`;
 
 const Template = styled.div `
-  margin-top: 60px;
+  padding-top: 60px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
 `;
 
 const TemplateWrapper = ({ children }) => (
@@ -20,14 +24,7 @@ const TemplateWrapper = ({ children }) => (
       meta={[
       ]}
     />
-    <div
-      style={{
-        margin: '20px auto',
-        maxWidth: 640,
-      }}
-    >
-      {children()}
-    </div>
+    {children()}
   </Template>
 );
 
