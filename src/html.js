@@ -5,9 +5,8 @@ import styleSheet from 'styled-components/lib/models/StyleSheet';
 
 const getCss = () => {
   if (process.env.NODE_ENV === 'production') {
-    const styles = styleSheet.rules().map(rule => rule.cssText).join('\n');
     return (
-      <style dangerouslySetInnerHTML={{ __html: styles }} />
+      <style dangerouslySetInnerHTML={{ __html: styleSheet.getCSS() }} />
     );
   }
 

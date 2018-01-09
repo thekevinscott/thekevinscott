@@ -25,16 +25,12 @@
     "remark-frontmatter": "^1.2.0",
     "remove": "^0.1.5",
     "steem": "^0.6.7",
-    "styled-components": "^1.2.1",
+    "styled-components": "2.5.0-1",
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0",
     "to-vfile": "^2.1.2",
     "yargs": "^10.1.1"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
   "main": "n/a",
   "scripts": {
     "prebuild": "rm -rf docs && rm -rf public",
