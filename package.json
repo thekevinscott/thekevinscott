@@ -25,7 +25,10 @@
   "scripts": {
     "bd": "npm run build-and-deploy",
     "build-and-deploy": "npm run build && npm run deploy",
-    "build": "gatsby build --prefix-paths && mv public docs",
+    "prebuild": "rm -rf docs && rm -rf public",
+    "cname": "touch docs/CNAME && echo 'thekevinscott.com' >> docs/CNAME",
+    "build-gatsby": "gatsby build --prefix-paths && mv public docs",
+    "build": "npm run prebuild && npm run build-gatsby && npm run cname",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
