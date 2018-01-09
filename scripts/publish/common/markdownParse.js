@@ -55,7 +55,14 @@ const transformPostFromPath = async (filePath, transformerPlugin) => {
   try {
     const siteUrl = `https://${process.env.ROOT_URL}`
     const frontmatter = await getFrontmatter(filePath)
-    const slug = frontmatter.path || utils.slugFromPath(filePath)
+    const getSlug = (frontmatter, filePath) => {
+      if (frontmatter.path) {
+        return `${siteUrl}/${frontmatter.path}`;
+      }
+
+      return utils.slugFromPath(filePath)
+    };
+    const slug = getSlug(frontmatter, filePath);
     const postUrl = url.resolve(siteUrl, `/${slug}`)
 
     return new Promise((resolve, reject) => {
