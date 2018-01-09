@@ -4,34 +4,10 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
-import './index.css'
+import { injectGlobal } from 'styled-components';
+import styles from './styles';
 
-// const Header = () => (
-//   <div
-//     style={{
-//       color: 'black',
-//       marginBottom: '1.45rem',
-//     }}
-//   >
-//     <div
-//       style={{
-//         margin: '0 auto',
-//         maxWidth: 640,
-//       }}
-//     >
-//       <h1 style={{ margin: 0 }}>
-//         <Link
-//           to="/"
-//           style={{
-//             textDecoration: 'none',
-//           }}
-//         >
-//           Kevin Scott
-//         </Link>
-//       </h1>
-//     </div>
-//   </div>
-// )
+injectGlobal`${styles}`;
 
 const Template = styled.div `
   margin-top: 60px;

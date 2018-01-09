@@ -1,4 +1,4 @@
-html {
+const styles = `html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -492,3 +492,5 @@ pre tt::after {
   margin-bottom: 40px;
   border: none;
 }
+`
+export default styles;
