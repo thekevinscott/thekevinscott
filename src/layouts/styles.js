@@ -15,6 +15,7 @@ body {
     sans-serif;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1.5;
+  padding: 0 10px;
 }
 
 a {
@@ -30,29 +31,6 @@ a:active,
 a:hover {
   outline-width: 0;
   border-bottom-color: rgba(0, 0, 0, 0.4);
-}
-
-pre {
-  font-family: monospace;
-  font-size: 1.2em;
-  background-color:rgba(0,0,0,.04);
-  border-radius:3px;
-  font-family:SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;padding:0;padding-top:.2em;
-  overflow-x: scroll;
-  padding: 5px 10px 10px 10px;
-  line-height: 1.0;
-
-  code {
-    padding: 0;
-    background-color: transparent;
-    font-size: 100%;
-  }
-}
-
-code {
-  background-color:rgba(0,0,0,.04);
-  padding: 2px 5px;
-  font-size: 120%;
 }
 
 hr {
@@ -87,12 +65,15 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: normal;
+  font-weight: bold;
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
   color: inherit;
   line-height: 1.1;
+  font-family:
+    Open Sans,
+    serif;
 }
 
 h1 {
@@ -143,5 +124,28 @@ iframe {
   }
 }
 
+pre {
+  font-size: 1.2em;
+  background-color:rgba(0,0,0,.04);
+  border-radius:3px;
+  font-family:SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;
+  padding:0;
+  padding-top:.2em;
+  overflow-x: scroll;
+  padding: 5px 10px 10px 10px;
+  line-height: 1.0;
+
+  code {
+    padding: 0;
+    background-color: transparent;
+    font-size: 100%;
+  }
+}
+
+code {
+  background-color:rgba(0,0,0,.04);
+  padding: 2px 5px;
+  font-size: 120%;
+}
 `
 export default styles;

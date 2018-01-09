@@ -91,7 +91,11 @@ const Header = styled.div `
 const BlogPosts = styled.div `
   padding-top: 40px;
   box-sizing: border-box;
-`
+`;
+
+const Title = styled.h1 `
+  font-weight: normal;
+`;
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
@@ -103,9 +107,7 @@ export default function Index({ data }) {
       }}
     >
       <Header>
-        <h1
-          style={{ margin: 0 }}
-        >
+        <Title>
           <Link
             to="/"
             style={{
@@ -114,7 +116,7 @@ export default function Index({ data }) {
           >
             Kevin Scott
           </Link>
-        </h1>
+        </Title>
       </Header>
       <BlogPosts>
         {posts

@@ -3,6 +3,14 @@ module.exports = {
     title: `thekevinscott`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          'Open Sans',
+        ]
+      }
+    },
     `gatsby-plugin-sass`,
     'gatsby-plugin-catch-links',
     `gatsby-plugin-react-helmet`,
