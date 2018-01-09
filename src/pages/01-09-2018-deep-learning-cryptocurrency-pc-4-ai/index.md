@@ -1,7 +1,8 @@
 ---
 path: "/deep-learning-cryptocurrency-pc-4-ai/"
-date: "2017-07-12T17:12:33.962Z"
-title: "Noob's Guide to building a Deep Learning / Cryptocurrency PC (#4): Deep Learning"
+date: "2018-01-01T09:00:00.000Z"
+title: "Noob's Guide to building a Deep Learning / Cryptocurrency PC (#4): AI"
+tags: ["artificial intelligence", "deep learning", "machine learning", "PC", "pytorch", "tensorflow", "gpu"]
 ---
 
 Among the buzzwords of this past year, two tower above the rest: deep learning and cryptocurrencies. It seems that everyone I know (in tech) wants to learn these things. And guess what — so do I! So much so that I'm building my own computer in order to facilitate that learning.
