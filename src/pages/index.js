@@ -15,7 +15,7 @@ const StyledPost = styled.div `
   flex-direction: column;
   margin-bottom: 20px;
 
-  a:hover {
+  a {
     border-bottom: none;
   }
 
@@ -81,7 +81,7 @@ Post.propTypes = {
 
 const Header = styled.div `
   margin-bottom: 40px;
-  a:hover {
+  a {
     border-bottom: none;
   }
 `;

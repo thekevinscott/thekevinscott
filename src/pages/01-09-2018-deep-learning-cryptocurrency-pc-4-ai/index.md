@@ -13,44 +13,57 @@ What follows are my notes-to-self as I build a computer to learn about deep lear
 
 To recap, in case you're just getting started with this series: my goal in purchasing and building my own PC was to have hardware on hand to run machine learning algorithms on, and bring myself up to speed on the exciting advances happening in AI. With the mining operation up and running, it's time for some AI!
 
-The two packages I've heard the most about are TensorFlow and PyTorch. I'm going to walk through how to install both of these and walk through some basic training exercises. (If you want to just pick one, [Awni Hannun provides a great overview of the differences](https://awni.github.io/pytorch-tensorflow/)).
+The two packages we're going to install are [TensorFlow](https://www.tensorflow.org/) and [PyTorch](https://github.com/cdw/pytorch). I've heard lots of buzz about these two frameworks and there's tons of good resources for each. This article will walk through basic installation details on Ubuntu for both, plus instructions on setting up Jupyter notebooks. If you want to just pick one, [Awni Hannun provides a great overview of the differences](https://awni.github.io/pytorch-tensorflow/).
 
 
 
 
 # Docker
-**For both of these, install using Docker**. Docker provides a virtualization environment that lets you isolate packages and libraries (or in our case, download pre-configured environments).
+**For both TensorFlow and PyTorch, we're going to install using Docker**.
 
-The TensorFlow [docs offer four options for installing TensorFlow](https://www.tensorflow.org/install/install_linux). My first instinct was to install directly using native `pip`. I made the accident of installing CUDA 9, which Tensorflow doesn't support, and got lost in dependency hell trying to downgrade / uninstall / reinstall CUDA. A friend recommended I leave all that nonsense alone and just install Docker.
+Docker provides a virtualized environment that lets you isolate packages and libraries (or in our case, download pre-configured environments).
 
-So that's my recommendation: install docker and avoid dependency hell. Here's the steps:
+## Why Docker?
+
+The TensorFlow [docs offer four options for installing TensorFlow](https://www.tensorflow.org/install/install_linux). My first instinct was to install directly using native `pip`.
+
+I installed CUDA 9, the latest version, which as of this writing Tensorflow doesn't support, and got lost in dependency hell trying to downgrade / uninstall / reinstall CUDA. A friend recommended I leave all that nonsense alone and just install Docker.
+
+So that's my recommendation: **install docker and avoid dependency hell**. 
+
+## Step-by-step Docker installation instructions
 
 1) Install `docker`. [Instructions for installing Docker on Ubuntu are here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04).
 2) Make sure to follow the optional Step 2 instructions on adding yourself to the correct group so as to avoid needing `sudo`.
-3) Install `nvidia-docker`. By default, `docker` doesn't support leveraging the NVIDIA GPUs, so to take advantage of that hardware [you'll need to install `nvidia-docker`](https://github.com/NVIDIA/nvidia-docker#xenial-x86\_64).
+3) Install `nvidia-docker`. By default, `docker` doesn't support leveraging the NVIDIA GPUs effectively, so to take advantage of that hardware [you'll need to install `nvidia-docker`](https://github.com/NVIDIA/nvidia-docker#xenial-x86\_64).
 
 # TensorFlow
 
-TensorFlow is software for machine learning released by the Google Brain team in 2015. It provides a set of tools for specifying training instructions, and then translating those instructions into commands that can be run quickly in C code on the GPUs.
+[TensorFlow](https://www.tensorflow.org/) is software for machine learning released by the [Google Brain](https://research.google.com/teams/brain/) team in 2015. It provides a set of tools for specifying training instructions, and then translating those instructions into commands that can be run quickly and take advantage of GPUs.
 
-It's a powerful piece of software and since it's release it's gotten a ton of developer mindshare. Let's install it!
+It's a powerful piece of software and since it's release it's picked up a ton of developer mindshare.
 
 ## Installation
 
-Assuming you followed the Docker instructions above, you should have `nvidia-docker` available and working. The next step is to [install the correct Docker image](https://www.tensorflow.org/install/install\_linux#InstallingDocker
-). We want the latest GPU version, so run:
+Assuming you followed the Docker instructions above, you should have `nvidia-docker` available and working. The next step is to [install the correct Docker image](https://www.tensorflow.org/install/install_linux#gpu_support).
+
+We want the latest GPU version, so run:
 
 ```
 nvidia-docker run -it gcr.io/tensorflow/tensorflow:latest-gpu bash
 ```
 
-This command will download the Docker file (or rely on the cache, if it's already downloaded), start it up and drop you at a bash prompt. From there, you can [validate your installation](https://www.tensorflow.org/install/install_linux#ValidateYourInstallation). Start python:
+This command will find the Docker file (remotely or locally), spin it up and put you at a bash prompt. From there, you can [validate your installation](https://www.tensorflow.org/install/install_linux#ValidateYourInstallation).
+
+## Validating your installation
+
+Start `python`:
 
 ```
-> python
+python
 ```
 
-Paste this program, provided by the TensorFlow docs:
+Paste this program, [provided by the TensorFlow docs](https://www.tensorflow.org/install/install_linux#ValidateYourInstallation):
 
 ```
 # Python
@@ -60,25 +73,22 @@ sess = tf.Session()
 print(sess.run(hello))
 ```
 
-If you see "Hello, TensorFlow!" you've installed it correctly; congratulations!
+If you see "Hello, TensorFlow!" you'll know it's installed correctly.
 
 ## Jupyter
-So we've got TensorFlow installed and working, but writing python one line at a time is no way to program. A much better approach is to use a Jupyter notebook.
+So we've got TensorFlow installed and working, but inputting python commands one line at a time is a terrible way to program. A much better approach to get started is to use a Jupyter notebook.
 
-Jupyter notebooks are web interfaces to documents containing both code and evaluate the output of that code right on the page.
+[A Jupyter notebook](http://jupyter.org/) is a web interface for documents containing code the evaluations of that code, displayed side by side on the page.
 
 <img src="./jupyter-sample.png" />
 
-TensorFlow provides a mechanism for [working with Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html<Paste>)
-out of the box, and we can use these via the Docker image we just installed.
-
-You'll use a similar command to spin up the Docker image with a few tweaks (If the previous Docker image is still running, shut it down with `ctrl-c`):
+The TensorFlow Docker image [supports Jupyter notebooks out of the box](https://www.tensorflow.org/install/install_linux#gpu_support). You'll use a similar command to spin up the Docker image with a few tweaks (If the previous Docker image is still running, shut it down with `ctrl-c`):
 
 ```
 nvidia-docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow:latest-gpu
 ```
 
-What this command does is tell docker to expose port 8888 (in Docker) on port 8888 (of your local machine). Port 8888 is the Jupyter notebook's default port.
+What this command does is tell docker to expose port `8888` (in Docker) on port `8888` (of your local machine). (Port `8888` is the Jupyter notebook's default port, if you were wondering.)
 
 To make sure that things are working as expected, open up another terminal on your box and run:
 
@@ -86,38 +96,36 @@ To make sure that things are working as expected, open up another terminal on yo
 curl http://localhost:8888
 ```
 
-If your machine is like mine, you won't see any output from this `curl` command, but you *should* see a request come in on the terminal running Docker:
+If your machine is like mine, you won't see any output from this `curl` command, but you *should* see a request come in on the terminal running Docker, something like:
 
 ```
 [I 02:05:57.912 NotebookApp] 302 GET / (xxx.xx.x.x) 0.22ms
 ```
 
-You can access the Docker URL directly on your box. I use a laptop and prefer to access this box remotely, so to do that, you'll need to be on the same wifi network as the Machine Learning box and get it's IP.
+You can access the Docker URL directly on your box. I use a laptop and prefer to access the PC remotely, so to do that, you'll need to be on the same wifi network as your Machine Learning PC and get it's IP.
 
-On the machine learning box:
+On your Machine Learning PC, type:
 
 ```
 ifconfig
 ```
 
-Look for an IP address that starts with `192.168.x.x`. On your laptop, you'll take the URL offered by Docker and replace `localhost` with this IP.
-
-So, if the Machine Learning box's IP is 192.168.1.1, you would put something like the following in your URL:
+Look for an IP address that starts with `192.168.x.x`. On your laptop, you'll take the URL provided by Docker and replace `localhost` with this IP. So, if the Machine Learning box's IP is `192.168.1.1`, you would type in your browser something like:
 
 ```
 http://192.168.1.1:8888/?token=7f6b36f9d6b15272c76003b8c1cdfcdf306dc52ff310
 ```
 
-And you should see the Jupyter notebook in your browser:
+At this URL, you should see the Jupyter notebook:
 
 <img src="./jupyter-overview.png" />
 
-This will make it much easier to run through the TensorFlow tutorials.
+Having a Jupyter notebook handy will make it much easier to run through the TensorFlow tutorials.
 
 # Pytorch
 The other machine learning tool we're going to install is PyTorch.
 
-PyTorch was released in 2016 by Facebook's team. It's still pretty new and changing quickly, but it's already picked up a lot of steam in the community.
+[PyTorch](https://github.com/cdw/pytorch) was released in 2016 by [Facebook's team](https://twitter.com/fbOpenSource?ref_src=twsrc%5Etfw&ref_url=http%3A%2F%2Fpytorch.org%2F). It's still fairly new and changing quickly, but it's already picked up a lot of steam in the community.
 
 ## Installation
 
@@ -127,14 +135,12 @@ Let's install the appropriate pytorch docker image. Run:
 nvidia-docker run --rm -ti --ipc=host -p 8888:8888 pytorch/pytorch:latest
 ```
 
-This drops you right into a bash command line.
+This puts you right at a bash prompt.
 
-I like to learn via examples, and [luckily the Pytorch docs provide plenty of examples](http://pytorch.org/tutorials/beginner/pytorch_with_examples.html).
-
-You can run through the tutorials by starting python and copy pasting code, but a Jupyter notebook would be so much better. So let's get that working.
+I like learning via example, and [luckily the Pytorch docs provide plenty of examples to learn from](http://pytorch.org/tutorials/beginner/pytorch_with_examples.html). You can run through the tutorials by starting `python` and copy pasting code, but a Jupyter notebook is so much better. So let's get that working.
 
 ## Jupyter
-Jupyter doesn't come standard on the `pytorch` docker image, [but it's easy to install](http://jupyter.org/install.html):
+Jupyter doesn't come standard on the `pytorch` docker image, [but it's easy to install](http://jupyter.org/install.html). In your docker container (that you started above), type:
 
 ```
 python3 -m pip install --upgrade pip
@@ -142,7 +148,7 @@ python3 -m pip install jupyter
 jupyter notebook
 ```
 
-When running `jupyter notebook`, I got the following error:
+When I ran `jupyter notebook` for the first time, I got the following error:
 
 ```
 OSError: [Errno 99] Cannot assign requested address
@@ -154,15 +160,19 @@ To fix this, I had to provide an explicit IP and allow root ([hat tip to this co
 jupyter notebook --allow-root --ip=0.0.0.0
 ```
 
+### Validating the Jupyter notebook
+
 From another terminal, run curl:
 
 ```
 curl http://localhost:8888
 ```
 
-And make sure the docker image responds. If that works, try it in the browser at http://192.168.x.xx:8888.
+And make sure you see logs appear in Docker. If that works, try accessing in the browser at `http://192.168.x.xx:8888`.
 
-*IMPORTANT:* If you exit docker now, you'll lose those changes. You'll want to commit those changes ([outlined in this article](https://www.techrepublic.com/article/how-to-commit-changes-to-a-docker-image/)).
+### Saving the Jupyter notebook
+
+**IMPORTANT:** If you exit docker now, you'll lose the installation of Jupyter you just performed. You need to commit those changes as ([outlined in this article](https://www.techrepublic.com/article/how-to-commit-changes-to-a-docker-image/)) if you want to avoid installing every time you spin up the container.
 
 First, in another terminal, get the name of the container:
 
@@ -176,7 +186,7 @@ This should give you the most recently created container, which should be PyTorc
 docker commit <CONTAINER_NAME> pytorch
 ```
 
-Then, refer to our newly named container with:
+Refer to our newly named container with:
 
 ```
 nvidia-docker run --rm -ti --ipc=host -p 8888:8888 pytorch
@@ -194,9 +204,9 @@ If that works, great! Try running through one or two of the tutorials to make su
 
 # Next steps
 
-At this point, you should have both PyTorch and TensorFlow at your disposal.
+At this point, you should have both [PyTorch](https://github.com/cdw/pytorch) and [TensorFlow](https://www.tensorflow.org/) at your disposal.
 
-If you've made it this far, congratulations! You built a computer, installed an operating system, began mining cryptocurrencies, and set yourself up to dive into AI. You are a champion!
+If you've made it this far in the series, congratulations! You built a computer, installed an operating system, began mining cryptocurrencies, and set yourself up to begin training computers to do your bidding. You deserve a pat on the back!
 
 Where to go from here, you may ask? First, I'd encourage you to subscribe:
 
@@ -204,7 +214,7 @@ Where to go from here, you may ask? First, I'd encourage you to subscribe:
 
 I'm going to continue blogging my adventures learning this stuff, and I'd love to share it with you.
 
-If you want an immediate next step, I'd recommend [Andrew Ng's course](https://www.coursera.org/learn/machine-learning). It's a deep but thorough introduction to the field.
+If you want an immediate next step, I'd recommend [Andrew Ng's course](https://www.coursera.org/learn/machine-learning). It's a deep and thorough introduction to the field.
 
 Finally, I've been collecting various machine learning links and resources to work through once I have a base of knowledge. Some of these may come in handy for you! (I haven't gone through all of these so I can't vouch for them - feel free to recommend others in the comments).
 

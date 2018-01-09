@@ -1,10 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 
 const Post = styled.div `
+  transition-duration: 0.4s;
+  // left: ${props => props.visible ? '0px' : '100px'};
+  opacity: ${props => props.visible ? '1' : '0'};
+
   h1 {
-    font-weight: 600;
     font-size: 38px;
     // margin-left: -2.63px;
     line-height: 1.04;
@@ -12,20 +16,45 @@ const Post = styled.div `
   }
 `;
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query we'll write in a bit
-}) {
-  const { markdownRemark: post } = data; // data.markdownRemark holds our post data
-  return (
-    <Post>
-      <Helmet title={`${post.frontmatter.title}`} />
-      <h1>{post.frontmatter.title}</h1>
-      <div
-        className="blog-post-content"
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
-    </Post>
-  );
+export default class Template extends Component {
+  static propTypes = {
+    data: PropTypes.shape({
+      markdownRemark: PropTypes.object.isRequired,
+    }).isRequired,
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.state = { visible: false };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        visible: true,
+      });
+    });
+  }
+
+  render() {
+    const {
+      data: {
+        markdownRemark: post,
+      },
+    } = this.props;
+
+    return (
+      <Post visible={this.state.visible}>
+        <Helmet title={`${post.frontmatter.title}`} />
+        <h1>{post.frontmatter.title}</h1>
+        <div
+          className="blog-post-content"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+      </Post>
+    );
+  }
 }
 
 export const pageQuery = graphql`
