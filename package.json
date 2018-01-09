@@ -34,9 +34,10 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "prebuild": "rm -rf docs",
     "cname": "touch docs/CNAME && echo 'thekevinscott.com' >> docs/CNAME",
     "build-gatsby": "gatsby build --prefix-paths && mv public docs",
-    "build": "npm run build-gatsby && npm run cname",
+    "build": "npm run prebuild && npm run build-gatsby && npm run cname",
     "serve": "gatsby serve",
     "develop": "gatsby develop",
     "lint": "npm run lint:eslint -- .",
