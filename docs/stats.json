@@ -1,20 +1,16 @@
 {
   "assetsByChunkName": {
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-fc55b6c54b1a22456654.js",
-      "component---src-pages-index-js-fc55b6c54b1a22456654.js.map"
+      "component---src-pages-index-js-df91e92911179b9cd3d3.js",
+      "component---src-pages-index-js-df91e92911179b9cd3d3.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
       "path----557518bd178906f8d58a.js.map"
     ],
-    "component---cache-dev-404-page-js": [
-      "component---cache-dev-404-page-js-3d083a3801da42ce33cb.js",
-      "component---cache-dev-404-page-js-3d083a3801da42ce33cb.js.map"
-    ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-d9aa376169ca3665c096.js",
-      "component---src-layouts-index-js-d9aa376169ca3665c096.js.map"
+      "component---src-layouts-index-js-12ccf0b387e70b749392.js",
+      "component---src-layouts-index-js-12ccf0b387e70b749392.js.map"
     ],
     "path---index": [
       "path---index-f5eb959c571d1f83d767.js",
@@ -25,32 +21,30 @@
       "component---src-pages-404-js-4503918ea3a16cfcdb75.js.map"
     ],
     "commons": [
-      "commons-6f9e826ebe596f46b347.js",
-      "commons-6f9e826ebe596f46b347.js.map"
+      "commons-cfe08c15100186618874.js",
+      "commons-cfe08c15100186618874.js.map"
     ],
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-02df78d29d906d6b3490.js",
-      "app-02df78d29d906d6b3490.js.map"
+      "app-c914db966f987574efc5.js",
+      "build-js-styles.css",
+      "app-c914db966f987574efc5.js.map",
+      "build-js-styles.css.map"
     ],
     "path---deep-learning-cryptocurrency-pc-4-ai": [
       "path---deep-learning-cryptocurrency-pc-4-ai-3fa219428733c6ead179.js",
       "path---deep-learning-cryptocurrency-pc-4-ai-3fa219428733c6ead179.js.map"
-    ],
-    "path---dev-404-page": [
-      "path---dev-404-page-9d4a5b76278bc11865ba.js",
-      "path---dev-404-page-9d4a5b76278bc11865ba.js.map"
     ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",
       "path---404-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-templates-blog-post-index-js": [
-      "component---src-templates-blog-post-index-js-29ade2f4906c38f5a74b.js",
-      "component---src-templates-blog-post-index-js-29ade2f4906c38f5a74b.js.map"
+      "component---src-templates-blog-post-index-js-49f972c8263cf918b5d3.js",
+      "component---src-templates-blog-post-index-js-49f972c8263cf918b5d3.js.map"
     ]
   }
 }
