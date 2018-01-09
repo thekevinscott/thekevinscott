@@ -1,6 +1,6 @@
 import React from "react";
 const favicon = "foo";
-import styleSheet from 'styled-components/lib/models/StyleSheet';
+import styleSheet from "styled-components/lib/models/StyleSheet";
 // import favicon from "./favicon.png";
 
 const getCss = () => {

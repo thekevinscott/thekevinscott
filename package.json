@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "thekevinscott",
+  "description": "Essays & Writing",
+  "version": "0.0.1",
+  "author": "Kevin Scott",
   "dependencies": {
     "classnames": "^2.2.5",
     "dotenv": "^4.0.0",
@@ -25,7 +25,7 @@
     "remark-frontmatter": "^1.2.0",
     "remove": "^0.1.5",
     "steem": "^0.6.7",
-    "styled-components": "2.5.0-1",
+    "styled-components": "2.4.0",
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0",
     "to-vfile": "^2.1.2",
