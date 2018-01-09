@@ -13,7 +13,6 @@
     "gatsby-source-filesystem": "^1.5.11",
     "gatsby-source-medium": "^1.0.9",
     "gatsby-transformer-remark": "^1.7.26",
-    "gh-pages": "^1.1.0",
     "react-helmet": "^5.2.0",
     "remove": "^0.1.5",
     "styled-components": "^2.4.0"
@@ -29,8 +28,7 @@
     "build": "gatsby build --prefix-paths && mv public docs",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -d public"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "prettier": "^1.9.2"
