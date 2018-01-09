@@ -1,10 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
-// import Helmet from "react-helmet";
-
-// import '../css/index.css'; // add some style if you want!
+import Animated from "../components/Animated";
 
 const StyledPost = styled.div `
   box-shadow: 0 1px 4px rgba(0,0,0,.04);
@@ -13,7 +11,7 @@ const StyledPost = styled.div `
   padding: 20px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 
   a {
     border-bottom: none;
@@ -56,35 +54,44 @@ const ReadTime = styled.span `
 
 const Post = ({
   post,
+  index,
 }) => (
-  <StyledPost>
-    <Info>
-      <div>
-        <Link to={post.frontmatter.path}>
-          <time>{post.frontmatter.date}</time>
-        </Link>
-      </div>
-      { /*
-      <ReadTime>6 minute read</ReadTime>
-      */ }
-    </Info>
-    <h2>
-      <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-    </h2>
-    <p>{post.excerpt}</p>
-  </StyledPost>
+  <Animated index={index}>
+    <StyledPost>
+      <Info>
+        <div>
+          <Link to={post.frontmatter.path}>
+            <time>{post.frontmatter.date}</time>
+          </Link>
+        </div>
+        { /* <ReadTime>6 minute read</ReadTime> */ }
+      </Info>
+      <h2>
+        <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+      </h2>
+      <p>{post.excerpt}</p>
+    </StyledPost>
+  </Animated>
 );
 
 Post.propTypes = {
-  post: PropTypes.any.isRequired,
+  post: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    excerpt: PropTypes.string.isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 const Header = styled.div `
-  margin-bottom: 40px;
   a {
     border-bottom: none;
   }
 `;
+
+const BlogPosts = styled.div `
+  padding-top: 40px;
+  box-sizing: border-box;
+`
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
@@ -109,13 +116,17 @@ export default function Index({ data }) {
           </Link>
         </h1>
       </Header>
-      <div className="blog-posts">
+      <BlogPosts>
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
-          .map(({ node: post }) => (
-            <Post post={post} />
-          ))}
-      </div>
+            .map(({ node: post }, index) => (
+              <Post
+                key={post.id}
+                post={post}
+                index={index}
+              />
+            ))}
+      </BlogPosts>
     </div>
   );
 }

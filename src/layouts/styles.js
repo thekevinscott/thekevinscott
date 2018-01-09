@@ -80,7 +80,7 @@ h6 {
 }
 
 h1 {
-  margin: 60px 0 20px 0;
+  margin: 0px 0 20px 0;
   font-size: 2.25rem;
 }
 

@@ -1,12 +1,14 @@
 import React from "react";
 const favicon = "foo";
-import styleSheet from "styled-components/lib/models/StyleSheet";
+import styleSheet from 'styled-components/lib/models/StyleSheet';
 // import favicon from "./favicon.png";
 
 const getCss = () => {
   if (process.env.NODE_ENV === 'production') {
+    const styles = styleSheet.rules().map(rule => rule.cssText).join('\n');
     return (
-      <style dangerouslySetInnerHTML={{ __html: styleSheet.getCSS() }} />
+      <style dangerouslySetInnerHTML={{ __html: styles }} />
+
     );
   }
 
