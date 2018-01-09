@@ -1,0 +1,63 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["app"]
+      }
+    }
+  },
+  "globals": {
+  },
+  "rules": {
+    // enforce double quotes
+    "quotes": [2, "double"],
+
+    // allow the use of require(); we trust ourselves
+    // to use import where we can
+    "global-require": 0,
+
+    // This rules demands absolute imports be listed
+    // first. However, we make extensive use of aliased imports,
+    // so this doesn't apply to us so much.
+    "import/first": 0,
+
+    // support JSX in .js and .jsx files
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+
+    // Relax the stipulation on dependency imports, allowing
+    // dev, optional or peer dependencies to satisfy the rule
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": true,
+        "peerDependencies": true
+      }
+    ],
+
+    // react-router's Link object uses to
+    // as the href.
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md#rule-details
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "to" ],
+    }]
+  }
+}
+
