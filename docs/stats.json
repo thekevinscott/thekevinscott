@@ -1,20 +1,20 @@
 {
   "assetsByChunkName": {
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-3082447b29e22ad8f00a.js",
-      "component---src-pages-index-js-3082447b29e22ad8f00a.js.map"
+      "component---src-pages-index-js-eb4135200ecd4437497f.js",
+      "component---src-pages-index-js-eb4135200ecd4437497f.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
       "path----557518bd178906f8d58a.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-426740549b28ab2f6db1.js",
-      "component---src-layouts-index-js-426740549b28ab2f6db1.js.map"
+      "component---src-layouts-index-js-719f1d91d5291726f8a0.js",
+      "component---src-layouts-index-js-719f1d91d5291726f8a0.js.map"
     ],
     "path---index": [
-      "path---index-f5eb959c571d1f83d767.js",
-      "path---index-f5eb959c571d1f83d767.js.map"
+      "path---index-87b4e365d1baf7db1d99.js",
+      "path---index-87b4e365d1baf7db1d99.js.map"
     ],
     "component---src-pages-404-js": [
       "component---src-pages-404-js-4503918ea3a16cfcdb75.js",
@@ -33,16 +33,16 @@
       "app-65b4594e62c9bf392ea9.js.map"
     ],
     "path---deep-learning-cryptocurrency-pc-4-ai": [
-      "path---deep-learning-cryptocurrency-pc-4-ai-354000aa3194d8619a3c.js",
-      "path---deep-learning-cryptocurrency-pc-4-ai-354000aa3194d8619a3c.js.map"
+      "path---deep-learning-cryptocurrency-pc-4-ai-0fa8e81b743818ef7bb6.js",
+      "path---deep-learning-cryptocurrency-pc-4-ai-0fa8e81b743818ef7bb6.js.map"
     ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",
       "path---404-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-templates-blog-post-index-js": [
-      "component---src-templates-blog-post-index-js-3bc2ad8394a925c9c9fe.js",
-      "component---src-templates-blog-post-index-js-3bc2ad8394a925c9c9fe.js.map"
+      "component---src-templates-blog-post-index-js-8c7285e72673ce9159c6.js",
+      "component---src-templates-blog-post-index-js-8c7285e72673ce9159c6.js.map"
     ]
   }
 }
