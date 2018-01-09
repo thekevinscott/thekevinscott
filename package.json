@@ -34,8 +34,6 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "bd": "npm run build-and-deploy",
-    "build-and-deploy": "npm run build && npm run deploy",
     "prebuild": "rm -rf docs && rm -rf public",
     "cname": "touch docs/CNAME && echo 'thekevinscott.com' >> docs/CNAME",
     "build-gatsby": "gatsby build --prefix-paths && mv public docs",
