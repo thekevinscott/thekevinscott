@@ -1,0 +1,536 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="preload" href="/component---src-layouts-index-js-095d62f2272360f8a266.js" as="script"/><link rel="preload" href="/component---src-templates-blog-post-index-js-6788476ef1a83fcab02a.js" as="script"/><link rel="preload" href="/path---deep-learning-cryptocurrency-pc-3-mining-e99dd7404342b6e634a9.js" as="script"/><link rel="preload" href="/app-f233794d3077fc253b00.js" as="script"/><link rel="preload" href="/commons-cfe08c15100186618874.js" as="script"/><script id="webpack-manifest">/*<![CDATA[*/window.webpackManifest={"231608221292675":"app-f233794d3077fc253b00.js","277928288978242":"component---src-templates-blog-post-index-js-6788476ef1a83fcab02a.js","162898551421021":"component---src-pages-404-js-4503918ea3a16cfcdb75.js","35783957827783":"component---src-pages-index-js-8bf78d0e38a56e606f8d.js","60335399758886":"path----557518bd178906f8d58a.js","241488815727667":"path---deep-learning-cryptocurrency-pc-4-ai-21ae88f7a9218f4b765c.js","240385028603242":"path---deep-learning-cryptocurrency-pc-3-mining-e99dd7404342b6e634a9.js","91865546644228":"path---deep-learning-cryptocurrency-pc-2-os-b82612813883df1ad780.js","254022195166212":"path---404-a0e39f21c11f6a62c5ab.js","142629428675168":"path---index-ee8fddd63f9656369c46.js","178698757827068":"path---404-html-a0e39f21c11f6a62c5ab.js","114276838955818":"component---src-layouts-index-js-095d62f2272360f8a266.js"}/*]]>*/</script><link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/><title data-react-helmet="true">Noob&#x27;s Guide to building a Deep Learning / Cryptocurrency PC (#3): Mining</title><style type="text/css">
+    .anchor {
+      float: left;
+      padding-right: 4px;
+      margin-left: -20px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var offset = element.offsetTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><script>/*<![CDATA[*/!function(e,t,r){function n(){for(;d[0]&&"loaded"==d[0][f];)c=d.shift(),c[o]=!i.parentNode.insertBefore(c,i)}for(var s,a,c,d=[],i=e.scripts[0],o="onreadystatechange",f="readyState";s=r.shift();)a=e.createElement(t),"async"in i?(a.async=!1,e.head.appendChild(a)):i[f]?(d.push(a),a[o]=n):e.write("<"+t+' src="'+s+'" defer></'+t+">"),a.src=s}(document,"script",["/commons-cfe08c15100186618874.js","/app-f233794d3077fc253b00.js","/path---deep-learning-cryptocurrency-pc-3-mining-e99dd7404342b6e634a9.js","/component---src-templates-blog-post-index-js-6788476ef1a83fcab02a.js","/component---src-layouts-index-js-095d62f2272360f8a266.js"])/*]]>*/</script><style>
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.58;
+  padding: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 1.15rem;
+}
+body > div {
+  flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  line-height: 18px;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:active, a:hover {
+  outline-width: 0;
+  border-bottom-color: rgba(0, 0, 0, 0.4);
+}
+
+a.anchor {
+  border: none;
+}
+
+hr {
+  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  overflow: visible;
+  padding: 0;
+  border: none;
+  height: 1px;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 30px;
+  letter-spacing: 0.6em;
+  background: none;
+  margin: 45px auto;
+  width: 100%;
+}
+
+hr::before {
+  content: '...';
+  display: inline-block;
+  margin: 20px auto;
+  width: 100%;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.68);
+  position: relative;
+  top: -42px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  color: inherit;
+  line-height: 1.1;
+  font-family: Open Sans,
+    serif;
+}
+
+p {
+  margin: 5px 0 32px;
+}
+
+h1 {
+  margin: 0px 0 20px 0;
+  font-size: 2.25rem;
+}
+
+h2 {
+  margin: 40px 0 20px 0;
+  font-size: 1.62671rem;
+}
+
+h3 {
+  margin: 40px 0 20px 0;
+  font-size: 1.38316rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.85028rem;
+}
+
+h6 {
+  font-size: 0.78405rem;
+}
+
+iframe {
+  padding: 0;
+  margin: 0 0 40px 0;
+  border: none;
+}
+
+ul {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+ul li, ul ol {
+  margin-bottom: 20px;
+}
+
+ul li:last-child, ul ol:last-child {
+  margin-bottom: 0;
+}
+
+::selection {
+  background: #ffb7b7; /* WebKit/Blink Browsers */
+}
+
+.gatsby-resp-image-link {
+  margin-bottom: 40px;
+  border: none;
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+pre {
+  font-size: 1.3em;
+  background-color: rgba(0,0,0,.04);
+  border-radius: 3px;
+  font-family: SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;
+  overflow-x: scroll;
+  margin: 40px 0;
+  padding: 20px;
+  line-height: 1.0;
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+  font-size: 100%;
+}
+
+code {
+  background-color: rgba(0,0,0,.04);
+  padding: 2px 5px;
+  font-size: 120%;
+  white-space: pre-wrap;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 140%;
+  line-height: 1.7;
+  margin: 60px 40px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.jOuFVU { 
+  padding-top: 60px;
+  flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  max-width: 100%;
+ }
+.cpHyXr { 
+  display: -webkit-box; 
+  display: -moz-box; 
+  display: -ms-flexbox; 
+  display: -webkit-flex; 
+  display: flex;
+  max-width: 100%;
+  flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex-direction: column;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+
+  opacity: 0;
+  padding-top: 10px;
+ }
+.kuWQHT { 
+  font-size: 12px;
+  text-align: right;
+ }
+.hSvhGp h1 {
+    font-size: 38px;
+    line-height: 1.04;
+    letter-spacing: -.015em;
+    max-width: 700px;
+}
+.hSvhGp span {
+    float: right;
+    margin-top: -20px;
+}
+.lZVxs { 
+  max-width: 100%;
+  width: 700px;
+ }
+.lZVxs .gatsby-image-outer-wrapper { 
+  width: 100%; 
+  background: blue; 
+  height: 200px;
+}
+.lZVxs h1 { 
+  margin-top: 60px;
+}
+.bnVcjW { 
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+ }
+@media (max-width: 1600px) {
+  .bnVcjW { 
+    max-height: 500px;
+  }
+}
+@media (max-width: 1200px) {
+  .bnVcjW { 
+    max-height: 420px;
+  }
+}
+@media (max-width: 1000px) {
+  .bnVcjW { 
+    max-height: 360px;
+  }
+}
+@media (max-width: 860px) {
+  .bnVcjW { 
+    max-height: 280px;
+  }
+}
+@media (max-width: 760px) {
+  .bnVcjW { 
+    max-height: 200px;
+  }
+}
+
+
+
+
+
+
+.DBtnK { 
+  flex: 1; 
+  -ms-flex: 1; 
+  -webkit-flex: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  max-width: 100%;
+ }</style></head><body><div id="___gatsby" class="DBtnK"><div class="jOuFVU" data-reactroot="" data-reactid="1" data-react-checksum="-810051072"><!-- react-empty: 2 --><div class="cpHyXr" data-reactid="3"><!-- react-empty: 4 --><div class="hSvhGp" data-reactid="5"><span class="kuWQHT" data-reactid="6"><!-- react-text: 7 -->8<!-- /react-text --><!-- react-text: 8 --> min read<!-- /react-text --></span><h1 data-reactid="9">Noob&#x27;s Guide to building a Deep Learning / Cryptocurrency PC (#3): Mining</h1></div><img src="/static/cover-a527d56efc463b585d5200c005e2e7a1-58b12.jpg" class="bnVcjW" data-reactid="10"/><div class="blog-post-content lZVxs" data-reactid="11"><p>Among the buzzwords in the tech world of 2017, two tower above the rest: <strong>deep
+learning</strong> and <strong>cryptocurrencies</strong>. It seems that everyone I know (in tech)
+wants to learn these things. And guess what — so do I! So much so that I'm
+building my own computer in order to facilitate that learning.</p>
+<p>What follows are my notes-to-self as I build a computer to learn about deep
+learning and cryptocurrency mining. In the previous installments we discussed
+<a href="https://medium.com/@thekevinscott/noobs-guide-to-custom-computer-for-cryptocurrency-and-deep-learning-7caa255adfaf" target="_blank" rel="nofollow noopener noreferrer">assembling the
+hardware</a>
+and <a href="https://medium.com/@thekevinscott/noobs-guide-to-building-a-deep-learning-cryptocurrency-pc-2-the-os-39dd20bd9b21" target="_blank" rel="nofollow noopener noreferrer">installing the
+OS</a>.
+In this installment I'll talk about how to set up a cryptocurrency miner and
+connect to a pool.</p>
+<iframe style="height:400px;width:100%;max-width:800px;margin:30px auto;" src="https://upscri.be/96fcab/?as_embed"></iframe>
+<hr />
+<p>To recap, in case you're just getting started with this series: my goal in
+purchasing and building my own PC was to have hardware on hand to run machine
+learning algorithms on, and bring myself up to speed on the exciting advances
+happening in AI. But in between running training algorithms, my computer (and
+it's hungry hungry GPUs) will sit fallow. We can't have that!</p>
+<p>When I'm not running the computer over training data, I want to have it mining.
+Even if it's making only a a little profit, it's still better than nothing.</p>
+<h1 id="cryptocurrencies"><a href="#cryptocurrencies" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cryptocurrencies</h1>
+<p>Your first instinct when getting into mining might be to try and mine bitcoin.
+This would almost certainly be a mistake.</p>
+<p>Bitcoin today is mined primarly via <a href="https://www.buybitcoinworldwide.com/mining/hardware/" target="_blank" rel="nofollow noopener noreferrer">ASICS
+hardware</a>, equipment
+specialized for mining bitcoins and other cryptocurrencies (but mostly
+bitcoins). Unless your goal in life is to mine bitcoins — and I suppose there's
+nothing wrong with that — ASICS hardware is not a good investment. And without
+ASICS hardware, it's hard to compete with the other miners.</p>
+<p>There are cryptocurrencies especially <a href="https://www.coindesk.com/scrypt-miners-cryptocurrency-arms-race/" target="_blank" rel="nofollow noopener noreferrer">designed to prevent mining via
+specialized hardware, called scrypt
+coins</a>:</p>
+<blockquote>
+<p>One of the biggest differences between scrypt and SHA-256 is that the former
+relies heavily on computing resources aside from the processing unit itself,
+particularly memory. Conversely, SHA-256 doesn't. This makes it difficult for
+scrypt-based systems to scale up and use lots of computing power, because they
+would have to use a proportional amount of memory, and that is expensive. —
+<a href="https://www.coindesk.com/scrypt-miners-cryptocurrency-arms-race/" target="_blank" rel="nofollow noopener noreferrer">Danny Bradbury,
+Coindesk</a></p>
+</blockquote>
+<p>While more specialized hardware is beginning to come to market, you're probably
+safe picking one of these scrypt currencies to mine. Ethereum is a good choice,
+so that's what I'm going to start with.</p>
+<h1 id="the-tools"><a href="#the-tools" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The tools</h1>
+<p>To get started mining, you need
+<a href="https://github.com/ethereum/go-ethereum" target="_blank" rel="nofollow noopener noreferrer">ethereum</a>, a
+<a href="https://github.com/ethereum-mining/ethminer" target="_blank" rel="nofollow noopener noreferrer">miner</a>, and a <strong>wallet</strong> to send
+the mined coins to.</p>
+<p>First, enable the ethereum repository:</p>
+<pre><code>sudo add-apt-repository -y ppa:ethereum/ethereum
+sudo apt-get update
+</code></pre>
+<p>Then, install ethereum:</p>
+<pre><code>sudo apt-get install ethereum
+</code></pre>
+<p>Next, you need to install the miner, <code>ethminer</code>. (There are other miners as
+well, like qtMiner, cudaminer, eth-proxy). You can either install via <code>apt-get</code>
+or from source; because I'm a masochist I chose the latter.</p>
+<p>Head on over to the <a href="https://github.com/ethereum-mining/ethminer/releases" target="_blank" rel="nofollow noopener noreferrer">releases
+page</a> and download the
+most recent release:</p>
+<pre><code>wget 
+tar xvzf ethminer-0.12.0-Linux.tar.gz
+</code></pre>
+<p>And then try running <code>ethminer</code>. You should see something like:</p>
+
+  <a class="gatsby-resp-image-link" href="/static/ethminer-03f58a707a22b7b5a3e37172ccc022e2-0bc2f.png" style="display: block" target="_blank" rel="noopener">
+  
+  <span class="gatsby-resp-image-wrapper" style="position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 24.125000000000004%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsSAAALEgHS3X78AAAAqklEQVQY032QywrCMBBFK9gXtJoKXbhz6TOGvJrWNin1j9z4+960BVFQOITMDDP3zgS7o03ZENJmo/tCOyJtQuvoUoGY1uEZHxP7jBkzZnGQwV7MPIwoxRAxu5aelehy3r7L/3G6ItwmrEUbSK9Nxtt8HAEQLk8a+mAyMnrxFnxzJ2+FvGdqIMpBGS9RFuUPe794WrFVfcodFsbakMWISfZLOZlOMF/BK78ARMgsIzhd6EQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;">
+      <img class="gatsby-resp-image-image" style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;" alt="ethminer" title="" src="/static/ethminer-03f58a707a22b7b5a3e37172ccc022e2-17dec.png" srcset="/static/ethminer-03f58a707a22b7b5a3e37172ccc022e2-ae2e5.png 160w,
+/static/ethminer-03f58a707a22b7b5a3e37172ccc022e2-8227e.png 320w,
+/static/ethminer-03f58a707a22b7b5a3e37172ccc022e2-17dec.png 640w,
+/static/ethminer-03f58a707a22b7b5a3e37172ccc022e2-0bc2f.png 800w" sizes="(max-width: 640px) 100vw, 640px">
+    </span>
+  </span>
+  
+  </a>
+    
+<p>This is good! It's working, it just needs to be configured with options.</p>
+<p>Finally, the <strong>wallet</strong>. There's lots of wallets available, with Mist being the
+officially supported version. You don't actually need your wallet to be local;
+it can be hosted anywhere, including on an exchange like Coinbase.</p>
+<h1 id="pools"><a href="#pools" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pools</h1>
+<p>Mining cryptocurrencies is kind of like a bunch of people in a field of
+haystacks looking for needles. Every so often somebody gets lucky and finds one,
+shouts it out to the world, and makes a chunk of money, and then the process
+repeats.</p>
+<p>This is all well and good for that lucky finder, but — especially nowadays, when
+you're <a href="https://qz.com/1055126/photos-china-has-one-of-worlds-largest-bitcoin-mines/" target="_blank" rel="nofollow noopener noreferrer">competing against industrial-strength mining
+operations</a>
+— the chances of you solving a particular cryptographic puzzle first are slim to
+nil. If you're a small fry like me, you're better off joining a mining pool.</p>
+<p>A mining pool allows a group of miners' computers to join forces and work on
+earning cryptocurrency as a team. When a new coin is mined, the profits will be
+shared with the contributors based on the amount of computing power they put in.</p>
+<p><a href="https://www.buybitcoinworldwide.com/ethereum/mining-pools/" target="_blank" rel="nofollow noopener noreferrer">https://www.buybitcoinworldwide.com/ethereum/mining-pools/</a></p>
+<h2 id="ethermine"><a href="#ethermine" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ethermine</h2>
+<p>The first pool I joined was <a href="http://ethpool.org/" target="_blank" rel="nofollow noopener noreferrer">ethpool</a>, and I subsequently
+switched to <a href="https://ethermine.org/" target="_blank" rel="nofollow noopener noreferrer">ethermine</a> (which appears to be running the
+same code? it's unclear) as their payout scheme was more predictable.</p>
+<p>To start up mining, I ran:</p>
+<pre><code>./ethminer --farm-recheck 200 --cuda-parallel-hash 8 --cuda-grid-size 1024 --cuda-streams 16 --cuda-block-size 128 -G -S us1.ethermine.org:4444 -FS eu1.ethermine.org:4444 -O &#x3C;My_Ethereum_Address>.&#x3C;My_RigName>
+</code></pre>
+<p>Here's the definitions for each option:</p>
+<ul>
+<li><code>farm-recheck</code> — <em><n> Leave n ms between checks for changed work (default: 500).
+When using stratum, use a high value (i.e. 2000) to get more stable hashrate
+output</em></li>
+<li><code>cuda-parallel-hash</code> —** <em>**Define how many hashes to calculate in a kernel, can
+be scaled to achieve better performance. Default=4</em></li>
+<li><code>cuda-block-size</code> — <em>Set the CUDA block work size. Default is 128</em></li>
+<li><code>cuda-grid-size</code> — <em>Set the CUDA grid size. Default is 8192</em></li>
+<li><code>cuda-streams</code>— <em>Set the number of CUDA streams. Default is 2</em></li>
+</ul>
+<p>My understanding of <code>farm-recheck</code> is, it's an for <a href="https://forum.ethereum.org/discussion/5379/mining-parameters" target="_blank" rel="nofollow noopener noreferrer">option to set how often the
+program checks</a>
+for new work to work through. The lower you set it, the lower the chances of
+working on stale blocks, but set it too low and you might see instability in the
+hashing output.</p>
+<p><em>The other options I'm not 100% familiar with, and so I just went with the
+defaults. Feel free to leave a comment if you have a plain english explanation
+of them.</em></p>
+<p>Finally, you'll pick the servers to connect to — I chose <code>us1</code>and <code>eu1</code> — and
+finally put in your wallet address and a name to identify your mining computer.
+You may need to open up the ports <code>4444</code> on your machine to allow connections.</p>
+<p><em>If you're having trouble with ethminer, there's an active *<a href="https://gitter.im/ethereum-mining/ethminer" target="_blank" rel="nofollow noopener noreferrer">Gitter
+room</a></em> as well.*</p>
+<p>Once you start mining, you can go to your miner page and check out your stats.
+For instance, the <a href="https://ethermine.org/miners/45d961bddef7bd389d76b22907eb4856a4383aa6" target="_blank" rel="nofollow noopener noreferrer">dashboard view
+shows</a>:</p>
+
+  <a class="gatsby-resp-image-link" href="/static/miner-dashboard-1984622f0be254d2d246574d9ca88202-0bc2f.png" style="display: block" target="_blank" rel="noopener">
+  
+  <span class="gatsby-resp-image-wrapper" style="position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 181.99999999999997%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAkCAIAAAAGkY33AAAACXBIWXMAAAsSAAALEgHS3X78AAAD50lEQVRIx51Vy27bVhDl19gwRdKJE9mJ7Vji4/It8U2KIiVZb1dFmsiwGyeOky67KFAkDYoC3rRAN003bVdtvMmn9ZBUVFu1nTjA0cXh3DmcucO5I6q0Y1+KOyTUm1+QYMjx7lU+FH6KpOhENmVZIzKIQWRLJjWZEEmFEVCIYuR2jSh1mcCCrUx84m+9f7j+fo8ry9GGFm+a6argYb0tBVcF/C9yRdJtVQaYinNTUMdfWmffW+9eR+/epGevPPAktq0f/0h/+Yc/fs0fBsnpwP4hcUX7bc36PU4KvLWcA8Wi/Gb6ZH/89XSENSP7I8mKmqd/9X89U1+80Y5ao5+/av40rCrhNB3vt/emrfF+Ds9KqR2r0xgdpJMng+mLeHwY9Kcbaux1H/cePUepq07X6z02k8m6GsMNGO6/TCdHILzbo+7Kje1a+zxui4F/8ir99lRIHpaVaMtMN43klugvuJWVBvXRkl5X7f+bpGAg+oMde1cORxV7l4RD5M873cvFoteHE1t1Od5hqxlAuIIIDiuFLO+yYpDt5mBIA5yp2hSaQW9OKk6H0+sAYzdY02HsmDVd1qyXnDbt95h6WPI6nFYHWNNjTZ+pR4xoUaiE030k+ENWRASPkVsMaTJixMgpbQwZKWbFiNb7nBhUaxFfBxqC4fGGVyYehdxwAZSgJ1gxb8WibAi6LSq6qFmSVkN3g0tqTVQMTm2xpMkJPrCK2yJGs4IxlWzlSPOenmxm3yatqA7Iltm6b6Rrhg8LHvFdFwuGL8YpaUmKaaVDK+1sVbsluV2SWytaf0Uf0MourfXxCICvaD1a65WEMK+2P6CDw+XgaDk6Xg6fZQRonMwIjJn9KNsCgSV8uhw9X9GHFFtx0GifKS7Spv0DWJfC46Xw2VKuWWqczAgs+RszkouXgqcgOE4m5njvPrG3ZWtLtoGKEZh+6rpuzQ0NP6m4vhmkoulvYkupbyuZG3gZ3zkbV6ghSTJIySK5hvMBdYdEuDQcerPqznrzHLnGmE2Su3KUzS3eBbgc58nqRXKeQ5+lDf1nRp631wJoPtzQmmgs3LYb3OcC2/U2ehMrhsbciCFjJJMCD6wO9emD9pbgq4293/78u8DBN99Ra1KA9PBKtTFek0I0jOD2cCSMBxQSFowK7KIL4Zbten285UG9jZNTq7ynROOizzAYUEYQnBMvBYEdwxT/IbDjFYUb1q1aC8JMjJh4xnDNxR4IxHAt/NZnYu+C2PwgLiLPxWUlvhBZa87E0ieI4Z2Lw8XI0mVpXzzzTDxP+/LIV4jd4szzyBs3OvMHcXBd2ubFas/TnolJCDIXry5EztP+F+BLZ+Cptk9iAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;">
+      <img class="gatsby-resp-image-image" style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;" alt="miner dashboard" title="" src="/static/miner-dashboard-1984622f0be254d2d246574d9ca88202-17dec.png" srcset="/static/miner-dashboard-1984622f0be254d2d246574d9ca88202-ae2e5.png 160w,
+/static/miner-dashboard-1984622f0be254d2d246574d9ca88202-8227e.png 320w,
+/static/miner-dashboard-1984622f0be254d2d246574d9ca88202-17dec.png 640w,
+/static/miner-dashboard-1984622f0be254d2d246574d9ca88202-0bc2f.png 800w" sizes="(max-width: 640px) 100vw, 640px">
+    </span>
+  </span>
+  
+  </a>
+    
+<p>Which gives you a nice overview of your stats, and also a rough estimate of your payouts:</p>
+
+  <a class="gatsby-resp-image-link" href="/static/payouts-9845c07fd92d393c9f11900497d0bce8-0bc2f.png" style="display: block" target="_blank" rel="noopener">
+  
+  <span class="gatsby-resp-image-wrapper" style="position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 156.125%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAfCAIAAABoLHqZAAAACXBIWXMAAAsSAAALEgHS3X78AAADoElEQVQ4y51VWW/TQBDOP+kBLbGdOCVt07SFJL6vpHZjJ3bipCktuQqlIEGLBA8IISEhXngCIXgAXhAvlOMH8u2uW662HNJkNZ6Zb3Zm99tJSih5p4lU37q0tiFK9dMCUvgVpaqpGYZqWJquq6ZBdUfXvZrru56uWcSiGbamq6qJFcGyYiXgBT1ctqIdT3rRW33eW33SWinozXk1yJbcXNkVSy4UsUwkS4UpCTgn+3NKENnq3aB84Jf2vDIsOTnIlNfPltQZPf9RUkW7bYRDMxo67R2rNTKi4bzW/FswfqLkz6nNjETrlAJejjKVOvmUAkH6XrwgNYQjIxEGvqg0ckbMm5uI4I1Nzt7mtQ6vd2BhxkzF56wt3ugxCxGjJ5Tr9MAkX7R6nNMXlIiz+1x1CP1IBoLc5OyrRMcK15GXVyICXql2c2Y3XRulnUG6OoIDOgchoYPjRMSFz+qARNZGvNpmPddFs/vDbn8lvBLSntVGztr4TzBOe9mJC1Z7yY6XrHbhSIp2XDBb83ooyj4kr4X4RMAiVjvOqw0CxnmKlTopPhE/W6GrGgFPLonearaynkVk4q1jBUliNbgqrV+R/S08I63R15sDub4l+9slt+fEY1AIdiMcgLC/kgSJwWRkOl5RDy6PyZwc0KKIflzCTwyDA52cQH3wDLTROgnD5PAnLwOjepwEKCWoJIWgtpgbR0rAehdZYOStbaIoIViYAVUZw8gJmy2uNp7ZeCwoyNJFFnBwNryfdm+kvb3Z8B6oRta1a2l3N71+ixDRGSbvedHuTO+8nrz14dz2swv+HcDOX3k6tft26ub76dHLydsfp3bfTV1/A316/AqRkJn4YdJzwetP7H+ZOPg6cedw8vbhxP4nojPL/meyfle+EPv+55n4UTIM5ow43X7wT8JVxwkYPeNh/nITvNSE/cQxgINcNKIUjhrcvqgEZ0wMzBakzqtNNu1w88k9A1aNyQBacTpg2zKl97LiQl+pdopWG0GYTXZ7bLfGWGvdayDfErWTnQFDXPY3ArHysMqUnmqjD6oCyfKiBDoMHHDIAxMv1TbQCUYiUzDPWQqUg8qxG4pnpwNvQs+ytwkHcwOAN4jekBEReBuwYyukRhiDoXnYE/BqrbtgRCgjAWshQtEt4i6v9RCKIsEFvC28GcAQAz0BoyoyQEEVs0XB5FSBxCfqz2tNpKOPpyXSJ4Rt2BUmZRdp2UW6c56CMVswMfAvecZ/wDcT4AMrl67w8gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;">
+      <img class="gatsby-resp-image-image" style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;" alt="payouts" title="" src="/static/payouts-9845c07fd92d393c9f11900497d0bce8-17dec.png" srcset="/static/payouts-9845c07fd92d393c9f11900497d0bce8-ae2e5.png 160w,
+/static/payouts-9845c07fd92d393c9f11900497d0bce8-8227e.png 320w,
+/static/payouts-9845c07fd92d393c9f11900497d0bce8-17dec.png 640w,
+/static/payouts-9845c07fd92d393c9f11900497d0bce8-0bc2f.png 800w" sizes="(max-width: 640px) 100vw, 640px">
+    </span>
+  </span>
+  
+  </a>
+    
+<h2 id="tuning"><a href="#tuning" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tuning</h2>
+<p>Once you've got your rig mining, you may want to squeeze out every ounce of
+processing power. If so, here's a few links to point you in the right direction!</p>
+<h3 id="the-awesome-wiki-article-at-rethermining"><a href="#the-awesome-wiki-article-at-rethermining" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The awesome wiki article at <code>/r/EtherMining</code>:</h3>
+<p><a href="https://www.reddit.com/r/EtherMining/wiki/index" target="_blank" rel="nofollow noopener noreferrer">https://www.reddit.com/r/EtherMining/wiki/index</a></p>
+<h3 id="a-conversation-on-overclocking"><a href="#a-conversation-on-overclocking" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>A conversation on overclocking:</h3>
+<p><a href="https://bitcointalk.org/index.php?topic=1712831.0" target="_blank" rel="nofollow noopener noreferrer">https://bitcointalk.org/index.php?topic=1712831.0</a></p>
+<h3 id="a-few-articles-about-tweaking-miners"><a href="#a-few-articles-about-tweaking-miners" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>A few articles about tweaking miners:</h3>
+<p><a href="https://robekworld.com/hash-rate-improvement-with-nvidia-asus-1060-1070-gpu-for-ether-like-mining-gpu-tweak-ii-e3cde220812f" target="_blank" rel="nofollow noopener noreferrer">https://robekworld.com/hash-rate-improvement-with-nvidia-asus-1060-1070-gpu-for-ether-like-mining-gpu-tweak-ii-e3cde220812f</a></p>
+<p><a href="http://www.legitreviews.com/geforce-gtx-1070-ethereum-mining-small-tweaks-great-hashrate-low-power_195451" target="_blank" rel="nofollow noopener noreferrer">http://www.legitreviews.com/geforce-gtx-1070-ethereum-mining-small-tweaks-great-hashrate-low-power_195451</a></p>
+<p><a href="http://cryptomining-blog.com/7341-how-to-squeeze-some-extra-performance-mining-ethereum-on-nvidia/" target="_blank" rel="nofollow noopener noreferrer">http://cryptomining-blog.com/7341-how-to-squeeze-some-extra-performance-mining-ethereum-on-nvidia/</a></p>
+<h3 id="how-about-writing-your-own-miner"><a href="#how-about-writing-your-own-miner" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How about writing your own miner?</h3>
+<p><a href="https://www.reddit.com/r/ethereum/comments/7caqpb/a_tiny_miner_i_wrote_to_understand_how_mining/?sh=f25cfa84&#x26;st=J9W5B865&#x26;utm_content=title&#x26;utm_medium=post_embed&#x26;utm_name=ef770faa323446d0909650522f22e37a&#x26;utm_source=embedly&#x26;utm_term=7caqpb" target="_blank" rel="nofollow noopener noreferrer">https://www.reddit.com/r/ethereum/comments/7caqpb/a<em>tiny</em>miner<em>i</em>wrote<em>to</em>understand<em>how</em>mining/?sh=f25cfa84&#x26;st=J9W5B865&#x26;utm<em>content=title&#x26;utm</em>medium=post<em>embed&#x26;utm</em>name=ef770faa323446d0909650522f22e37a&#x26;utm<em>source=embedly&#x26;utm</em>term=7caqpb</a></p>
+<hr />
+<p>And that's what you need to get a mining rig set up! Piece of cake, right? The
+good news is once it's set up you can just sort of let it run without touching
+it. Just make sure nobody trips over the power cable.</p>
+<p>The final installment of this series will be about getting some basic AI
+learning algorithms running on the hardware. If you want to hear about those,
+drop your email below and I'll let you know when I publish it!</p>
+<iframe style="height:400px;width:100%;max-width:800px;margin:30px auto;" src="https://upscri.be/96fcab/?as_embed"></iframe></div></div></div></div></body></html>
