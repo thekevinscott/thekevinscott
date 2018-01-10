@@ -3,12 +3,14 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 import Animated from "../../components/Animated";
+import ReadTime from "../../components/ReadTime";
 import Img from "gatsby-image";
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
+      timeToRead
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path
@@ -28,11 +30,18 @@ export const pageQuery = graphql`
 `
 ;
 
-const Title = styled.h1 `
-  font-size: 38px;
-  line-height: 1.04;
-  letter-spacing: -.015em;
-  max-width: 700px;
+const Header = styled.div `
+  h1 {
+    font-size: 38px;
+    line-height: 1.04;
+    letter-spacing: -.015em;
+    max-width: 700px;
+  }
+
+  span {
+    float: right;
+    margin-top: -20px;
+  }
 `;
 
 const Content = styled.div `
@@ -79,7 +88,10 @@ const Template = ({
 }) => (
   <Animated>
     <Helmet title={`${post.frontmatter.title}`} />
-    <Title>{post.frontmatter.title}</Title>
+    <Header>
+      <ReadTime time={post.timeToRead} />
+      <h1>{post.frontmatter.title}</h1>
+    </Header>
     <CoverImg
       src={post.frontmatter.image.childImageSharp.sizes.src}
     />

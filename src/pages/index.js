@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import Animated from "../components/Animated";
+import ReadTime from "../components/ReadTime";
 
 const StyledPost = styled.div `
   box-shadow: 0 1px 4px rgba(0,0,0,.04);
@@ -47,15 +48,12 @@ const Info = styled.div `
   }
 `;
 
-const ReadTime = styled.span `
-  font-size: 12px;
-  text-align: right;
-`;
-
 const Post = ({
   post,
   index,
-}) => (
+}) => {
+  console.log(post);
+  return (
   <Animated index={index}>
     <StyledPost>
       <Info>
@@ -64,7 +62,7 @@ const Post = ({
             <time>{post.frontmatter.date}</time>
           </Link>
         </div>
-        { /* <ReadTime>6 minute read</ReadTime> */ }
+        <ReadTime time={post.timeToRead} />
       </Info>
       <h2>
         <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
@@ -73,6 +71,7 @@ const Post = ({
     </StyledPost>
   </Animated>
 );
+}
 
 Post.propTypes = {
   post: PropTypes.shape({
@@ -103,6 +102,7 @@ const Container = styled.div `
 `;
 
 export default function Index({ data }) {
+  console.log(data);
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <Container>
@@ -140,6 +140,7 @@ export const pageQuery = graphql`
         node {
           excerpt(pruneLength: 250)
           id
+          timeToRead
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")

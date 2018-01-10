@@ -39,12 +39,15 @@ a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   line-height: 18px;
   -webkit-text-decoration-skip: objects;
-}
 
-a:active,
-a:hover {
-  outline-width: 0;
-  border-bottom-color: rgba(0, 0, 0, 0.4);
+  &:active, &:hover {
+    outline-width: 0;
+    border-bottom-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &.anchor {
+    border: none;
+  }
 }
 
 hr {
