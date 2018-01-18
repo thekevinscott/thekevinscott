@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-const favicon = "foo";
 import styleSheet from 'styled-components/lib/models/StyleSheet';
-// import favicon from "./favicon.png";
+import favicon from "./favicon.png";
 
 const getCss = () => {
   if (process.env.NODE_ENV === 'production') {
@@ -32,6 +31,8 @@ module.exports = ({
 }) => (
   <html {...htmlAttributes}>
     <head>
+
+       <link rel="logo" href={favicon} />
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta

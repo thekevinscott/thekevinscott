@@ -92,9 +92,11 @@ const Template = ({
       <ReadTime time={post.timeToRead} />
       <h1>{post.frontmatter.title}</h1>
     </Header>
-    <CoverImg
-      src={post.frontmatter.image.childImageSharp.sizes.src}
-    />
+    { post.frontmatter.image && (
+      <CoverImg
+        src={post.frontmatter.image.childImageSharp.sizes.src}
+      />
+    )}
     <Content
       className="blog-post-content"
       dangerouslySetInnerHTML={{ __html: post.html }}
