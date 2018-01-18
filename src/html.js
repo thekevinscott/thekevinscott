@@ -31,8 +31,7 @@ module.exports = ({
 }) => (
   <html {...htmlAttributes}>
     <head>
-
-       <link rel="logo" href={favicon} />
+      <link rel="logo" href={favicon} />
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta

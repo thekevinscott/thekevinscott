@@ -1,3 +1,10 @@
+import {
+  PINK,
+  SERIF,
+  SANS_SERIF,
+  MONOSPACE,
+} from "./constants";
+
 const styles = `
 html {
   width: 100%;
@@ -7,18 +14,7 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
-    sans-serif;
+  font-family: ${SANS_SERIF};
   color: rgba(0, 0, 0, 0.8);
   line-height: 1.58;
   padding: 0;
@@ -48,6 +44,15 @@ a {
   &.anchor {
     border: none;
   }
+
+  &.gatsby-resp-image-link {
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+
 }
 
 hr {
@@ -63,17 +68,17 @@ hr {
   background: none;
   margin: 45px auto;
   width: 100%;
-}
 
-hr::before {
-  content: '...';
-  display: inline-block;
-  margin: 20px auto;
-  width: 100%;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.68);
-  position: relative;
-  top: -42px;
+    &:before {
+    content: '...';
+    display: inline-block;
+    margin: 20px auto;
+    width: 100%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.68);
+    position: relative;
+    top: -42px;
+  }
 }
 
 h1,
@@ -82,29 +87,30 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
+  font-weight: 700;
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
   color: inherit;
   line-height: 1.1;
-  font-family:
-    Open Sans,
-    serif;
+  font-family: ${SANS_SERIF};
 }
 
-p {
+p, ul, li {
   margin: 5px 0 32px;
+  font-family: ${SERIF};
+  line-height: 1.8;
+  letter-spacing: 0.4px;
 }
 
 h1 {
   margin: 0px 0 20px 0;
-  font-size: 2.25rem;
+  font-size: 1.9rem;
 }
 
 h2 {
-  margin: 40px 0 20px 0;
-  font-size: 1.62671rem;
+  margin: 40px 0 10px 0;
+  font-size: 1.4rem;
 }
 
 h3 {
@@ -143,7 +149,7 @@ ul {
 }
 
 ::selection {
-  background: #ffb7b7; /* WebKit/Blink Browsers */
+  background: ${PINK};
 }
 
 .gatsby-resp-image-link {
@@ -161,7 +167,7 @@ pre {
   font-size: 1.3em;
   background-color:rgba(0,0,0,.04);
   border-radius:3px;
-  font-family:SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;
+  font-family: ${MONOSPACE};
   overflow-x: scroll;
   margin: 40px 0;
   padding: 20px;
@@ -182,8 +188,11 @@ code {
 }
 
 blockquote {
+  p {
+    font-family: ${SANS_SERIF};
+  }
   font-style: italic;
-  font-size: 140%;
+  font-size: 135%;
   line-height: 1.7;
   margin: 60px 40px;
   color: rgba(0, 0, 0, 0.7);

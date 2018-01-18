@@ -9,6 +9,9 @@ module.exports = {
       options: {
         fonts: [
           'Open Sans',
+          'Adamina',
+          'Lato:400,500,600,700,800,900',
+          'Montserrat:300,400,500,600,700,800,900',
         ]
       }
     },
