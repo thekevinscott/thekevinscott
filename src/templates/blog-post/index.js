@@ -100,29 +100,33 @@ const Back = () => (
   <BackA href="/">&larr; Back</BackA>
 );
 
-const Template = ({
-  data: {
-    markdownRemark: post,
-  },
-}) => (
-  <Animated>
-    <Helmet title={`${post.frontmatter.title}`} />
-    <Header>
-      <Back />
-      <ReadTime time={post.timeToRead} />
-      <h1>{post.frontmatter.title}</h1>
-    </Header>
-    { post.frontmatter.image && (
-      <CoverImg
-        src={post.frontmatter.image.childImageSharp.sizes.src}
+const Template = (opts) => {
+  console.log("opts", opts);
+  const {
+    data: {
+      markdownRemark: post,
+    },
+  } = opts;
+  return (
+    <Animated>
+      <Helmet title={`${post.frontmatter.title}`} />
+      <Header>
+        <Back />
+        <ReadTime time={post.timeToRead} />
+        <h1>{post.frontmatter.title}</h1>
+      </Header>
+      { post.frontmatter.image && (
+        <CoverImg
+          src={post.frontmatter.image.childImageSharp.sizes.src}
+        />
+      )}
+      <Content
+        className="blog-post-content"
+        dangerouslySetInnerHTML={{ __html: post.html }}
       />
-    )}
-    <Content
-      className="blog-post-content"
-      dangerouslySetInnerHTML={{ __html: post.html }}
-    />
-  </Animated>
-);
+    </Animated>
+  );
+};
 
 Template.propTypes = {
   data: PropTypes.shape({
