@@ -49,6 +49,7 @@ const Header = styled.div `
 const Content = styled.div `
   max-width: 100%;
   width: 700px;
+  margin-bottom: 100px;
 
   .gatsby-image-outer-wrapper {
     width: 100%;
