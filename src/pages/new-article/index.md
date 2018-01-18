@@ -1,6 +1,6 @@
 ---
 path: "/shoulders-of-giants/"
-date: "2018-01-20T09:00:00.000Z"
+date: ""
 title: "Standing on the shoulders of giants"
 tags: ["artificial intelligence", "deep learning", "machine learning", "PC", "pytorch", "tensorflow", "gpu"]
 ---
@@ -17,9 +17,9 @@ Imagine a scenario where you're building a model to teach English speakers to sp
 
 Or imagine using an AI to help design an app. Instead of prototyping into code, start with a hand-drawn sketch as your base; then click around the sketch, nudging, encouraging and discouraging the computer: "No no, that button should open a new page", or "that link should create a new widget". And maybe you could use pre-trained models to help you where appropriate. Let's say you want a CRUD app; instead of training it from scratch, use a pre-built model off the shelf that knows how to create, delete, and update. Or take it a step further: let's say you want to build Uber for dogs. Grab the pre-built Uber module, and just train it to recognize dogs instead of humans. Viola, new app!
 
+> This is the cool thing about neural networks: you don’t have to tell them what to find. They decide what they want to find in order to solve your problem. &mdash; [Jeremy Howard](https://www.youtube.com/watch?v=6kwQEBMandw&feature=youtu.be&t=12m22s)
+
 Is this feasible? Is this soon? I have no idea. But this iterative learning approach blows my mind. It feels like programming from the future. Today we write instructions for computers to execute (a few levels abstracted from entering binary 0's and 1's), in a future language we could use increasingly abstract language to describe the parameters of what the computer should achieve, and then let the computer figure it out. And pre-trained models could be absolutely vital to that.
 
 
 
-
-Neural networks: you don’t need to tell them what to find. https://youtu.be/6kwQEBMandw?t=13m (a little before)

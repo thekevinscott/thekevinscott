@@ -32,10 +32,12 @@ export const pageQuery = graphql`
 
 const Header = styled.div `
   h1 {
+  transition-duration: 0.5s;
     font-size: 38px;
-    line-height: 1.04;
+    line-height: 1.24;
     letter-spacing: -.015em;
-    max-width: 700px;
+    margin: 40px 0 40px 0;
+    width: 700px;
   }
 
   span {
@@ -64,6 +66,7 @@ const CoverImg = styled.img `
   max-height: 600px;
   object-fit: cover;
   transition-duration: 0.5s;
+  margin: 0 0 40px 0;
   @media (max-width: 1600px) {
     max-height: 500px;
   }
@@ -81,6 +84,22 @@ const CoverImg = styled.img `
   }
 `;
 
+const BackA = styled.a `
+  font-size: 12px;
+  margin-top: -20px;
+  float: left;
+  border-bottom: 1px solid #CCC;
+  transition-duration: 0.2s;
+
+  &:hover {
+    border-bottom: 1px solid #333;
+  }
+`;
+
+const Back = () => (
+  <BackA href="/">&larr; Back</BackA>
+);
+
 const Template = ({
   data: {
     markdownRemark: post,
@@ -89,6 +108,7 @@ const Template = ({
   <Animated>
     <Helmet title={`${post.frontmatter.title}`} />
     <Header>
+      <Back />
       <ReadTime time={post.timeToRead} />
       <h1>{post.frontmatter.title}</h1>
     </Header>

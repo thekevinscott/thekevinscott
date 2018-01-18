@@ -52,25 +52,24 @@ const Post = ({
   post,
   index,
 }) => {
-  console.log(post);
   return (
-  <Animated index={index}>
-    <StyledPost>
-      <Info>
-        <div>
-          <Link to={post.frontmatter.path}>
-            <time>{post.frontmatter.date}</time>
-          </Link>
-        </div>
-        <ReadTime time={post.timeToRead} />
-      </Info>
-      <h2>
-        <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-      </h2>
-      <p>{post.excerpt}</p>
-    </StyledPost>
-  </Animated>
-);
+    <Animated index={index}>
+      <StyledPost>
+        <Info>
+          <div>
+            <Link to={post.frontmatter.path}>
+              <time>{post.frontmatter.date}</time>
+            </Link>
+          </div>
+          <ReadTime time={post.timeToRead} />
+        </Info>
+        <h2>
+          <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+        </h2>
+        <p>{post.excerpt}</p>
+      </StyledPost>
+    </Animated>
+  );
 }
 
 Post.propTypes = {
@@ -101,8 +100,15 @@ const Title = styled.h1 `
 const Container = styled.div `
 `;
 
+const isPublished = ({ frontmatter }) => frontmatter.date;
+const hasTitle = ({ frontmatter }) => frontmatter.title.length > 0;
+
+const getPosts = posts => posts
+  .map(({ node }) => node)
+  .filter(hasTitle)
+  .filter(isPublished);
+
 export default function Index({ data }) {
-  console.log(data);
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <Container>
@@ -119,15 +125,13 @@ export default function Index({ data }) {
         </Title>
       </Header>
       <BlogPosts>
-        {posts
-          .filter(post => post.node.frontmatter.title.length > 0)
-            .map(({ node: post }, index) => (
-              <Post
-                key={post.id}
-                post={post}
-                index={index}
-              />
-            ))}
+        {getPosts(posts).map((post, index) => (
+          <Post
+            key={post.id}
+            post={post}
+            index={index}
+          />
+        ))}
       </BlogPosts>
     </Container>
   );
