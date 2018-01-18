@@ -11,13 +11,11 @@ As part of my initial foray into learning AI, I've been working through the [fas
 
 It makes perfect sense that you'd build models like this; why train from scratch if someone has already done the training work beforehand?
 
-Imagine a scenario where you're building a model to teach English speakers to speak Spanish. Instead of training from scratch, you could leverage a pre-trained model that already recognizes human voices, and also recognizes English. You might then train it specifically on English accents, which are likely more different from native Spanish accents.
+Imagine a scenario where you're training a model for use in teaching native English speakers to speak Spanish. Instead of training your model from scratch, you could leverage a pre-trained model that already recognizes human voices. Maybe you also leverage a model that understands the English and Spanish languages. Your final model might be a thin layer on top of both of these pre-existing models, that specifically learns how to interpret English accents mangling Spanish words.
 
-I wonder, in particular, how applicable this approach will be to the future of design.
+In particular, I wonder how this will affect design.
 
-There's been some preliminary work: [Turning design mockups into code with deep learning](https://blog.floydhub.com/turning-design-mockups-into-code-with-deep-learning/).
-
-Imagine that, instead of prototyping into code, start with a hand-drawn sketch as your base; then click around the sketch, nudging, encouraging and discouraging the computer: "No no, that button should open a new page", or "that link should create a new widget". And maybe you could use pre-trained models to help you where appropriate. Let's say you want a CRUD app; instead of training it from scratch, use a pre-built model off the shelf that knows how to create, delete, and update. Or take it a step further: let's say you want to build Uber for dogs. Grab the pre-built Uber module, and just train it to recognize dogs instead of humans. Viola, new app!
+There's been some preliminary work around: [turning design mockups into code with deep learning](https://blog.floydhub.com/turning-design-mockups-into-code-with-deep-learning/). Imagine startiing with a hand-drawn sketch as your base. You click around the sketch, nudging, encouraging and discouraging the AI: "No no, that button should open a new page", or "that link should create a new widget". You could use pre-trained models to help you where appropriate. Building a [CRUD app](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete)? Grab a pre-built model off the shelf that knows how to create, delete, and update. How about if you're building Uber for dogs? Grab a pre-built Uber module, and train a new layer on top to recognize dogs instead of humans.
 
 > This is the cool thing about neural networks: you don’t have to tell them what to find. They decide what they want to find in order to solve your problem. &mdash; [Jeremy Howard](https://www.youtube.com/watch?v=6kwQEBMandw&feature=youtu.be&t=12m22s)
 
