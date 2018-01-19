@@ -44,7 +44,6 @@ const Header = styled.div `
     letter-spacing: -.015em;
     margin: 40px 0 40px 0;
     width: 700px;
-    font-weight: 900;
   }
 
   span {

@@ -1,5 +1,5 @@
 ---
-path: "/deep-learning-cryptocurrency-pc-4-ai/"
+path: "/deep-learning-cryptocurrency-pc-1-hardware/"
 date: "2017-09-25T09:00:00.000Z"
 title: "Noob's Guide to building a Deep Learning / Cryptocurrency PC (#1): The Hardware"
 image: "cover.jpeg"
