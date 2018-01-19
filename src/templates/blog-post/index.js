@@ -111,13 +111,13 @@ const Content = styled.div `
       border-bottom: 1px solid ${GREEN};
     }
 
-  &.gatsby-resp-image-link {
-    border: none;
-
-    &:hover {
+    &.gatsby-resp-image-link {
       border: none;
+
+      &:hover {
+        border: none;
+      }
     }
-  }
   }
 `;
 

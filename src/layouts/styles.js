@@ -106,6 +106,7 @@ p, ul, li {
 h1 {
   margin: 0px 0 20px 0;
   font-size: 1.9rem;
+  font-weight: 600;
 }
 
 h2 {
