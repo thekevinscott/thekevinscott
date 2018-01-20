@@ -18,15 +18,12 @@ const StyledPost = styled.div `
     border-bottom: none;
   }
 
-  img {
-    margin-bottom: 31px;
-  }
-
   h2 {
     font-size: 26px;
     margin-left: -1.88px;
     line-height: 1.04;
     letter-spacing: -.015em;
+    font-weight: 700;
   }
 `;
 
@@ -48,26 +45,46 @@ const Info = styled.div `
   }
 `;
 
+const PostContent = styled.div `
+  display: flex;
+  flex-direction: column;
+
+  img {
+    max-height: 200px;
+    margin: 20px 0;
+    object-fit: cover;
+  }
+
+  p {
+    font-size: 16px;
+  }
+`;
+
 const Post = ({
   post,
   index,
 }) => {
   return (
     <Animated index={index}>
-      <StyledPost>
-        <Info>
-          <div>
-            <Link to={post.frontmatter.path}>
-              <time>{post.frontmatter.date}</time>
-            </Link>
-          </div>
-          <ReadTime time={post.timeToRead} />
-        </Info>
-        <h2>
-          <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-        </h2>
-        <p>{post.excerpt}</p>
-      </StyledPost>
+      <Link to={post.frontmatter.path}>
+        <StyledPost>
+          <Info>
+            <div>
+              <Link to={post.frontmatter.path}>
+                <time>{post.frontmatter.date}</time>
+              </Link>
+            </div>
+            <ReadTime time={post.timeToRead} />
+          </Info>
+          <PostContent>
+            <h2>{post.frontmatter.title}</h2>
+            {post.frontmatter.image && (
+              <img src={post.frontmatter.image.childImageSharp.sizes.src} />
+            )}
+            <p>{post.excerpt}</p>
+          </PostContent>
+        </StyledPost>
+      </Link>
     </Animated>
   );
 }
@@ -81,9 +98,6 @@ Post.propTypes = {
 };
 
 const Header = styled.div `
-  a {
-    border-bottom: none;
-  }
 `;
 
 const BlogPosts = styled.div `
@@ -98,6 +112,9 @@ const Title = styled.h1 `
 `;
 
 const Container = styled.div `
+  a {
+    border-bottom: none;
+  }
 `;
 
 const isPublished = ({ frontmatter }) => frontmatter.date;
@@ -149,6 +166,15 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             path
+            image {
+              childImageSharp {
+                sizes(maxWidth: 2400) {
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+            }
           }
         }
       }
