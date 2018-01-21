@@ -3,7 +3,12 @@ module.exports = {
     title: `thekevinscott`,
   },
   plugins: [
-
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-112845439-1",
+      },
+    },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

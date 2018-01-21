@@ -73,7 +73,6 @@ const Post = ({
       date,
     },
   } = post;
-  console.log(post.frontmatter);
   return (
     <Animated index={index}>
       <Link to={post.frontmatter.path}>
