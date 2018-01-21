@@ -69,11 +69,7 @@ const Post = ({
       <Link to={post.frontmatter.path}>
         <StyledPost>
           <Info>
-            <div>
-              <Link to={post.frontmatter.path}>
-                <time>{post.frontmatter.date}</time>
-              </Link>
-            </div>
+            { /* <div>{post.frontmatter.date}</div> */ }
             <ReadTime time={post.timeToRead} />
           </Info>
           <PostContent>

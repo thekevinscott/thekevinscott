@@ -5,6 +5,8 @@ import Helmet from "react-helmet";
 import Animated from "../../components/Animated";
 import ReadTime from "../../components/ReadTime";
 import Img from "gatsby-image";
+import Back from "./Back";
+import CoverImg from "./CoverImg";
 import {
   PINK,
   GREEN,
@@ -119,44 +121,6 @@ const Content = styled.div `
     }
   }
 `;
-
-const CoverImg = styled.img `
-  min-width: 100%;
-  object-fit: cover;
-  transition-duration: 0.5s;
-  margin: 0 0 80px 0;
-  @media (max-width: 1600px) {
-    max-height: 500px;
-  }
-  @media (max-width: 1200px) {
-    max-height: 420px;
-  }
-  @media (max-width: 1000px) {
-    max-height: 360px;
-  }
-  @media (max-width: 860px) {
-    max-height: 280px;
-  }
-  @media (max-width: 760px) {
-    max-height: 200px;
-  }
-`;
-
-const BackA = styled.a `
-  font-size: 12px;
-  margin-top: -20px;
-  float: left;
-  border-bottom: 1px solid #CCC;
-  transition-duration: 0.2s;
-
-  &:hover {
-    border-bottom: 1px solid #333;
-  }
-`;
-
-const Back = () => (
-  <BackA href="/">&larr; Back</BackA>
-);
 
 const Template = (opts) => {
   const {
