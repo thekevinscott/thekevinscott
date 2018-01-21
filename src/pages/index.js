@@ -64,20 +64,30 @@ const Post = ({
   post,
   index,
 }) => {
+  const {
+    excerpt,
+    timeToRead,
+    frontmatter: {
+      title,
+      image,
+      date,
+    },
+  } = post;
+  console.log(post.frontmatter);
   return (
     <Animated index={index}>
       <Link to={post.frontmatter.path}>
         <StyledPost>
           <Info>
-            { /* <div>{post.frontmatter.date}</div> */ }
-            <ReadTime time={post.timeToRead} />
+            { date && (<div><time>{date}</time></div>)}
+            <ReadTime time={timeToRead} />
           </Info>
           <PostContent>
-            <h2>{post.frontmatter.title}</h2>
-            {post.frontmatter.image && (
-              <img src={post.frontmatter.image.childImageSharp.sizes.src} />
+            <h2>{title}</h2>
+            {image && (
+              <img src={image.childImageSharp.sizes.src} />
             )}
-            <p>{post.excerpt}</p>
+            <p>{excerpt}</p>
           </PostContent>
         </StyledPost>
       </Link>
