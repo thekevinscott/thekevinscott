@@ -69,7 +69,8 @@ class Post extends Component {
     try {
       return window && window.index !== true && index !== 0 ? true : false;
     } catch(err) { }
-    return true;
+
+    return index !== 0 ? true : false;
   }
 
   render() {
