@@ -64,39 +64,51 @@ const PostContent = styled.div `
   }
 `;
 
-const Post = ({
-  post,
-  index,
-}) => {
-  const {
-    excerpt,
-    timeToRead,
-    frontmatter: {
-      title,
-      image,
-      date,
-    },
-  } = post;
-  const animate = window && window.index !== true && index !== 0 ? true : false;
-  return (
-    <Animated index={index} animate={animate}>
-      <Link to={post.frontmatter.path}>
-        <StyledPost>
-          <Info>
-            { date && (<div><time>{format(date)}</time></div>)}
-            <ReadTime time={timeToRead} />
-          </Info>
-          <PostContent>
-            <h2>{title}</h2>
-            {image && (
-              <img src={image.childImageSharp.sizes.src} />
-            )}
-            <p>{excerpt}</p>
-          </PostContent>
-        </StyledPost>
-      </Link>
-    </Animated>
-  );
+class Post extends Component {
+  getAnimate = () => {
+    try {
+      return window && window.index !== true && index !== 0 ? true : false;
+    } catch(err) { }
+    return true;
+  }
+
+  render() {
+    const {
+      post,
+      index,
+    } = this.props;
+    const {
+      excerpt,
+      timeToRead,
+      frontmatter: {
+        title,
+        image,
+        date,
+      },
+    } = post;
+
+    const animate = this.getAnimate();
+
+    return (
+      <Animated index={index} animate={animate}>
+        <Link to={post.frontmatter.path}>
+          <StyledPost>
+            <Info>
+              { date && (<div><time>{format(date)}</time></div>)}
+              <ReadTime time={timeToRead} />
+            </Info>
+            <PostContent>
+              <h2>{title}</h2>
+              {image && (
+                <img src={image.childImageSharp.sizes.src} />
+              )}
+              <p>{excerpt}</p>
+            </PostContent>
+          </StyledPost>
+        </Link>
+      </Animated>
+    );
+  }
 }
 
 Post.propTypes = {
@@ -132,14 +144,31 @@ const isPublished = now => ({ frontmatter }) => {
 };
 const hasTitle = ({ frontmatter }) => frontmatter.title.length > 0;
 
-const getPosts = (posts, now = new Date()) => posts
+const getPosts = (posts = [], now = new Date()) => posts
   .map(({ node }) => node)
   .filter(hasTitle)
   .filter(isPublished(now));
 
 let timer;
 export default class Index extends Component {
+  propTypes = {
+    data: PropTypes.shape({
+      allMarkDownRemark: PropTypes.shape({
+        edges: PropTypes.any,
+      }),
+    }).isRequired,
+  }
+
+  defaultProps = {
+    data: {
+      allMarkDownRemark: {
+        edges: [],
+      },
+    },
+  }
+
   componentDidMount() {
+    const posts = this.getPosts();
     if (window && !timer) {
       timer = setTimeout(() => {
         window.index = true;
@@ -147,13 +176,31 @@ export default class Index extends Component {
     }
   }
 
+  getPosts = () => {
+    let posts = [];
+    try {
+      console.log(this.props.data);
+      const {
+        data: {
+          allMarkdownRemark: {
+            edges,
+          },
+        },
+      } = this.props;
+      posts = edges;
+    } catch(err) { }
+
+    if (!posts.length) {
+      setTimeout(() => {
+        this.forceUpdate();
+      });
+    }
+    return posts;
+  }
+
   render() {
-    const {
-      data: {
-        allMarkDownRemark,
-      },
-    } = this.props;
-    const { edges: posts } = allMarkdownRemark;
+    const posts = this.getPosts();
+    console.log(this.props, posts);
     return (
       <Container>
         <Header>
