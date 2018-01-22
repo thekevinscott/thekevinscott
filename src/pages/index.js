@@ -65,7 +65,7 @@ const PostContent = styled.div `
 `;
 
 class Post extends Component {
-  getAnimate = () => {
+  getAnimate = (index) => {
     try {
       return window && window.index !== true && index !== 0 ? true : false;
     } catch(err) { }
@@ -88,7 +88,7 @@ class Post extends Component {
       },
     } = post;
 
-    const animate = this.getAnimate();
+    const animate = this.getAnimate(index);
 
     return (
       <Animated index={index} animate={animate}>
