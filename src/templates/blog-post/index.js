@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+// import {
+//   compareAsc,
+//   format,
+// } from "date-fns";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
@@ -20,7 +24,7 @@ export const pageQuery = graphql`
       html
       timeToRead
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date
         path
         title
         image {

@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import {
+  format,
+  isAfter,
+} from "../utils/getDate";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
@@ -79,7 +83,7 @@ const Post = ({
       <Link to={post.frontmatter.path}>
         <StyledPost>
           <Info>
-            { date && (<div><time>{date}</time></div>)}
+            { date && (<div><time>{format(date)}</time></div>)}
             <ReadTime time={timeToRead} />
           </Info>
           <PostContent>
@@ -123,13 +127,15 @@ const Container = styled.div `
   }
 `;
 
-const isPublished = ({ frontmatter }) => frontmatter.date;
+const isPublished = now => ({ frontmatter }) => {
+  return frontmatter.date && isAfter(frontmatter.date, now);
+};
 const hasTitle = ({ frontmatter }) => frontmatter.title.length > 0;
 
-const getPosts = posts => posts
+const getPosts = (posts, now = new Date()) => posts
   .map(({ node }) => node)
   .filter(hasTitle)
-  .filter(isPublished);
+  .filter(isPublished(now));
 
 let timer;
 export default function Index({ data }) {
@@ -176,7 +182,7 @@ export const pageQuery = graphql`
           timeToRead
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date
             path
             image {
               childImageSharp {

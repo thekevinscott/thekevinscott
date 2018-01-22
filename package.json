@@ -5,6 +5,7 @@
   "author": "Kevin Scott",
   "dependencies": {
     "classnames": "^2.2.5",
+    "date-fns": "^1.29.0",
     "dotenv": "^4.0.0",
     "eslint": "^4.15.0",
     "eslint-config-airbnb": "^16.1.0",
