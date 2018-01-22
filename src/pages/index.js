@@ -73,8 +73,9 @@ const Post = ({
       date,
     },
   } = post;
+  const animate = window.index !== true && index !== 0 ? true : false;
   return (
-    <Animated index={index}>
+    <Animated index={index} animate={animate}>
       <Link to={post.frontmatter.path}>
         <StyledPost>
           <Info>
@@ -130,8 +131,14 @@ const getPosts = posts => posts
   .filter(hasTitle)
   .filter(isPublished);
 
+let timer;
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
+  if (!timer) {
+    timer = setTimeout(() => {
+      window.index = true;
+    }, 700 * posts.length);
+  }
   return (
     <Container>
       <Header>

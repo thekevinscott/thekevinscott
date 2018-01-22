@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const DELAY_TIME = 10;
+const DELAY_TIME = 200;
 
 const Container = styled.div `
   display: flex;
@@ -10,7 +10,7 @@ const Container = styled.div `
   flex: 1;
   flex-direction: column;
   align-items: center;
-  transition-duration: 0.4s;
+  transition-duration: 0.5s;
   transition-timing-function: ease-out;
 
   opacity: ${props => props.visible ? '1' : '0'};
@@ -21,13 +21,18 @@ class Animated extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { visible: false };
+    this.state = { visible: props.animate === true ? false : true };
   }
 
   componentDidMount() {
-    setTimeout(() => {
+    const timeout = this.props.index * DELAY_TIME;
+    this.timeout = setTimeout(() => {
       this.setState({ visible: true });
-    }, this.props.index * DELAY_TIME);
+    }, timeout);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timeout);
   }
 
   render() {
@@ -46,11 +51,13 @@ class Animated extends Component {
 Animated.defaultProps = {
   children: null,
   index: 0,
+  animate: true,
 };
 
 Animated.propTypes = {
   children: PropTypes.any,
   index: PropTypes.number,
+  animate: PropTypes.bool,
 };
 
 export default Animated;
