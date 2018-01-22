@@ -138,38 +138,50 @@ const getPosts = (posts, now = new Date()) => posts
   .filter(isPublished(now));
 
 let timer;
-export default function Index({ data }) {
-  const { edges: posts } = data.allMarkdownRemark;
-  if (window && !timer) {
-    timer = setTimeout(() => {
-      window.index = true;
-    }, 700 * posts.length);
+export default class Index extends Component {
+  componentDidMount() {
+    if (window && !timer) {
+      timer = setTimeout(() => {
+        window.index = true;
+      }, 700 * posts.length);
+    }
   }
-  return (
-    <Container>
-      <Header>
-        <Title>
-          <Link
-            to="/"
-            style={{
-              textDecoration: 'none',
-            }}
-          >
-            Kevin Scott
-          </Link>
-        </Title>
-      </Header>
-      <BlogPosts>
-        {getPosts(posts).map((post, index) => (
-          <Post
-            key={post.id}
-            post={post}
-            index={index}
-          />
-        ))}
-      </BlogPosts>
-    </Container>
-  );
+
+  render() {
+    const {
+      data: {
+        allMarkDownRemark: {
+          edges,
+        },
+      },
+    } = this.props;
+    const posts = edges;
+    return (
+      <Container>
+        <Header>
+          <Title>
+            <Link
+              to="/"
+              style={{
+                textDecoration: 'none',
+              }}
+            >
+              Kevin Scott
+            </Link>
+          </Title>
+        </Header>
+        <BlogPosts>
+          {getPosts(posts).map((post, index) => (
+            <Post
+              key={post.id}
+              post={post}
+              index={index}
+            />
+          ))}
+        </BlogPosts>
+      </Container>
+    );
+  }
 }
 
 export const pageQuery = graphql`
