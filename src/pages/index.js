@@ -77,7 +77,7 @@ const Post = ({
       date,
     },
   } = post;
-  const animate = window.index !== true && index !== 0 ? true : false;
+  const animate = window && window.index !== true && index !== 0 ? true : false;
   return (
     <Animated index={index} animate={animate}>
       <Link to={post.frontmatter.path}>
@@ -140,7 +140,7 @@ const getPosts = (posts, now = new Date()) => posts
 let timer;
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
-  if (!timer) {
+  if (window && !timer) {
     timer = setTimeout(() => {
       window.index = true;
     }, 700 * posts.length);
