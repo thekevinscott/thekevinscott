@@ -150,12 +150,10 @@ export default class Index extends Component {
   render() {
     const {
       data: {
-        allMarkDownRemark: {
-          edges,
-        },
+        allMarkDownRemark,
       },
     } = this.props;
-    const posts = edges;
+    const { edges: posts } = allMarkdownRemark;
     return (
       <Container>
         <Header>
