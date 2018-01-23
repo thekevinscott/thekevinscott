@@ -1,6 +1,9 @@
 export const PINK = "#ffb7b7";
 export const GREEN = "#1C9963";
 export const SERIF = `
+    PT Serif,
+    Source Serif Pro,
+    Noto Serif,
     Georgia,
     Adamina,
     serif;

@@ -1,11 +1,64 @@
 module.exports = {
   siteMetadata: {
-    title: `thekevinscott`,
+    title: `Kevin Scott`,
+    description: "Design & AI",
+    siteUrl: "https://thekevinscott.com",
   },
   plugins: [
+    /*
     {
-      resolve: `gatsby-plugin-feed`
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+        {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+              site_url: siteUrl
+            }
+          }
+        }
+      `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                });
+              });
+            },
+            query: `
+            {
+              allMarkdownRemark(
+                limit: 1000,
+                sort: { order: DESC, fields: [frontmatter___date] },
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
+                    fields { path }
+                    frontmatter {
+                      title
+                      date
+                    }
+                  }
+                }
+              }
+            }
+          `,
+            output: "/rss.xml",
+          },
+        ],
+      },
     },
+    */
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -16,6 +69,9 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
+          'PT Serif',
+          'Source Serif Pro',
+          'Noto Serif',
           'Open Sans',
           'Adamina',
           'Lato:400,500,600,700,800,900',

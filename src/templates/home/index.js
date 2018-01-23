@@ -65,7 +65,6 @@ export default class Index extends Component {
 
   render() {
     const posts = this.getPosts();
-    console.log(this.props, posts);
     return (
       <Container>
         <Header>

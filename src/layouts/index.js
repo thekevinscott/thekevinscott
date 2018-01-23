@@ -21,6 +21,7 @@ const TemplateWrapper = ({ children }) => (
   <Template>
     <Helmet
       title="Kevin Scott"
+      description="Design & AI",
       meta={[
       ]}
     />
