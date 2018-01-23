@@ -149,6 +149,7 @@ const Template = (opts) => {
         className="blog-post-content"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
+      <iframe style="height:400px;width:100%;max-width:800px;margin:30px auto;" src="https://upscri.be/8c3b09/?as_embed"></iframe>
     </Animated>
   );
 };
