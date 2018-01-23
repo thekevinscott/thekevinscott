@@ -44,7 +44,6 @@ export default class Index extends Component {
   getPosts = () => {
     let posts = [];
     try {
-      console.log(this.props.data);
       const {
         data: {
           allMarkdownRemark: {
