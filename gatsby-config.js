@@ -5,7 +5,6 @@ module.exports = {
     siteUrl: "https://thekevinscott.com",
   },
   plugins: [
-    /*
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -43,8 +42,8 @@ module.exports = {
                   node {
                     excerpt
                     html
-                    fields { path }
                     frontmatter {
+                      path
                       title
                       date
                     }
@@ -58,7 +57,6 @@ module.exports = {
         ],
       },
     },
-    */
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
