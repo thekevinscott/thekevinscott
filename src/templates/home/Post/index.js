@@ -46,7 +46,7 @@ export default class Post extends Component {
     const animate = this.getAnimate(index);
 
     return (
-      <Animated index={index} animate={animate}>
+      <Animated index={index} animate={false}>
         <Link to={post.frontmatter.path}>
           <StyledPost>
             <Info>
