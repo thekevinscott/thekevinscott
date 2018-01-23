@@ -1,6 +1,7 @@
 export const PINK = "#ffb7b7";
 export const GREEN = "#1C9963";
 export const SERIF = `
+    Georgia,
     Adamina,
     serif;
 `;

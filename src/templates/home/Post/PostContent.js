@@ -11,7 +11,7 @@ const PostContent = styled.div `
   }
 
   p {
-    font-size: 16px;
+    font-size: 1.2rem;
   }
 `;
 

@@ -16,10 +16,9 @@ body {
   margin: 0;
   font-family: ${SANS_SERIF};
   color: rgba(0, 0, 0, 0.8);
-  line-height: 1.58;
   padding: 0;
   display: flex;
-  font-size: 1.15rem;
+  font-size: 2rem;
 
   > div {
     flex: 1;
@@ -99,8 +98,11 @@ h6 {
 p, ul, li {
   margin: 5px 0 32px;
   font-family: ${SERIF};
-  line-height: 1.8;
-  letter-spacing: 0.4px;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.7;
 }
 
 h1 {
@@ -189,13 +191,20 @@ code {
 
 blockquote {
   p {
-    font-family: ${SANS_SERIF};
+    // font-family: ${SANS_SERIF};
+    font-style: italic;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin: 60px 40px;
+    color: rgba(0, 0, 0, 0.7);
   }
-  font-style: italic;
-  font-size: 135%;
-  line-height: 1.7;
-  margin: 60px 40px;
-  color: rgba(0, 0, 0, 0.7);
+}
+
+iframe {
+  height: 400px;
+  width: 100%;
+  max-width: 800px;
+  margin: 30px auto;
 }
 `
 export default styles;
