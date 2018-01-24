@@ -67,13 +67,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          'PT Serif',
           'Source Serif Pro',
-          'Noto Serif',
-          'Open Sans',
-          'Adamina',
           'Lato:400,500,600,700,800,900',
-          'Montserrat:300,400,500,600,700,800,900',
         ]
       }
     },

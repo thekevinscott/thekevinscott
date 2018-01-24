@@ -10,6 +10,8 @@ import ReadTime from "../../../components/ReadTime";
 import Info from "./Info";
 import PostContent from "./PostContent";
 import StyledPost from "./StyledPost";
+import Title from "./Title";
+import ReadMore from "./ReadMore";
 
 export default class Post extends Component {
   static propTypes = {
@@ -54,11 +56,18 @@ export default class Post extends Component {
               <ReadTime time={timeToRead} />
             </Info>
             <PostContent>
-              <h2>{title}</h2>
-              {image && (
-                <img src={image.childImageSharp.sizes.src} />
+              {image ? (
+                <Title image>
+                  <h2>{title}</h2>
+                  <img src={image.childImageSharp.sizes.src} />
+                </Title>
+              ) : (
+                <Title>
+                  <h2>{title}</h2>
+                </Title>
               )}
               <p>{excerpt}</p>
+              <ReadMore>Read More</ReadMore>
             </PostContent>
           </StyledPost>
         </Link>

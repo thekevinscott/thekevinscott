@@ -3,15 +3,18 @@ import styled from "styled-components";
 const PostContent = styled.div `
   display: flex;
   flex-direction: column;
+  position: relative;
 
-  img {
-    max-height: 200px;
-    margin: 20px 0;
-    object-fit: cover;
+  h2 {
+    margin: 30px 0 0 0;
+    z-index: 2;
+    padding: 10px;
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 2.0rem;
+    margin-bottom: 0;
+    padding: 0 20px;
   }
 `;
 

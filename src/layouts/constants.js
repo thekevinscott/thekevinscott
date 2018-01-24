@@ -1,14 +1,13 @@
 export const PINK = "#ffb7b7";
 export const GREEN = "#1C9963";
 export const SERIF = `
-    PT Serif,
     Source Serif Pro,
-    Noto Serif,
     Georgia,
-    Adamina,
     serif;
 `;
-export const SANS_SERIF = `-apple-system,
+export const SANS_SERIF = `
+    Europa,
+    -apple-system,
     Lato,
     BlinkMacSystemFont,
     Segoe UI,

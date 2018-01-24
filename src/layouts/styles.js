@@ -9,6 +9,7 @@ const styles = `
 html {
   width: 100%;
   height: 100%;
+  font-size: 62.5%;
 }
 body {
   width: 100%;
@@ -86,6 +87,7 @@ h3,
 h4,
 h5,
 h6 {
+  letter-spacing: -.015em;
   font-weight: 700;
   margin: 0;
   padding: 0;
@@ -101,13 +103,13 @@ p, ul, li {
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 2.25rem;
   line-height: 1.7;
 }
 
 h1 {
   margin: 0px 0 20px 0;
-  font-size: 1.9rem;
+  font-size: 2.5rem;
 }
 
 h2 {

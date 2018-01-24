@@ -9,6 +9,7 @@ import Title from "./Title";
 import Header from "./Header";
 import Container from "./Container";
 import BlogPosts from "./BlogPosts";
+import WebFont from 'webfontloader';
 import {
   getPosts,
 } from "./selectors";
@@ -33,6 +34,11 @@ export default class Index extends Component {
   }
 
   componentDidMount() {
+    WebFont.load({
+      typekit: {
+        id: "zip7tcb",
+      }
+    });
     const posts = this.getPosts();
     if (window && !timer) {
       timer = setTimeout(() => {

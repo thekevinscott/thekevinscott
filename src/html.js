@@ -31,7 +31,7 @@ module.exports = ({
 }) => (
   <html {...htmlAttributes}>
     <head>
-      <link rel="logo" href={favicon} />
+      <link rel="shortcut icon" href={favicon} type="image/png" />
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta

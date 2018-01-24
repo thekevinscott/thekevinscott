@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import WebFont from 'webfontloader';
 // import {
 //   compareAsc,
 //   format,
@@ -38,38 +39,49 @@ export const pageQuery = graphql`
 `
 ;
 
-const Template = (opts) => {
-  const {
-    data: {
-      markdownRemark: post,
-    },
-  } = opts;
-  return (
-    <Animated>
-      <Helmet title={`${post.frontmatter.title}`} />
-      <Header>
-        <Back />
-        <ReadTime time={post.timeToRead} />
-        <h1>{post.frontmatter.title}</h1>
-      </Header>
-      { post.frontmatter.image && (
-        <CoverImg
-          src={post.frontmatter.image.childImageSharp.sizes.src}
-        />
-      )}
-      <Content
-        className="blog-post-content"
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
-      <iframe src="https://upscri.be/8c3b09/?as_embed" />
-    </Animated>
-  );
-};
+class Template extends Component {
+  static propTypes = {
+    data: PropTypes.shape({
+      markdownRemark: PropTypes.object.isRequired,
+    }).isRequired,
+  };
 
-Template.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.object.isRequired,
-  }).isRequired,
-};
+  componentDidMount() {
+    WebFont.load({
+      typekit: {
+        id: "zip7tcb",
+      }
+    });
+  }
+
+  render() {
+    const {
+      data: {
+        markdownRemark: post,
+      },
+    } = this.props;
+
+    return (
+      <Animated>
+        <Helmet title={`${post.frontmatter.title}`} />
+        <Header>
+          <Back />
+          <ReadTime time={post.timeToRead} />
+          <h1>{post.frontmatter.title}</h1>
+        </Header>
+        { post.frontmatter.image && (
+          <CoverImg
+            src={post.frontmatter.image.childImageSharp.sizes.src}
+          />
+        )}
+        <Content
+          className="blog-post-content"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+        <iframe src="https://upscri.be/8c3b09/?as_embed" />
+      </Animated>
+    );
+  }
+}
 
 export default Template;

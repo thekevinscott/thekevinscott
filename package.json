@@ -37,6 +37,7 @@
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0",
     "to-vfile": "^2.1.2",
+    "webfontloader": "^1.6.28",
     "yargs": "^10.1.1"
   },
   "main": "n/a",
