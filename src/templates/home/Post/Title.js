@@ -9,6 +9,7 @@ const StyledTitle = styled.div `
 
   img {
     max-width: 100%;
+    min-height: 200px;
     z-index: 1;
     max-height: 200px;
     object-fit: cover;
@@ -22,19 +23,21 @@ const StyledTitle = styled.div `
 
     h2 {
       box-sizing: border-box;
-      transition-duration: 0.8s;
+      transition-duration: 0.6s;
+      opacity: 0;
       position: absolute;
       width: 100%;
       margin-top: 20px;
       bottom: 5px;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.0);
     }
   ` : null}
 
   ${props => props.loaded && `
     h2 {
+      opacity: 1;
       bottom: 20px;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.85);
     }
   `}
 `;
