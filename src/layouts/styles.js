@@ -103,7 +103,7 @@ p, ul, li {
 }
 
 p {
-  font-size: 2.25rem;
+  font-size: 2.05rem;
   line-height: 1.7;
 }
 

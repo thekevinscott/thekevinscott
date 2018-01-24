@@ -24,12 +24,12 @@ const StyledTitle = styled.div `
     h2 {
       box-sizing: border-box;
       transition-duration: 0.6s;
-      opacity: 0;
+      opacity: 0.2;
       position: absolute;
       width: 100%;
       margin-top: 20px;
-      bottom: 5px;
-      background: rgba(255, 255, 255, 0.0);
+      bottom: 10px;
+      background: rgba(255, 255, 255, 0.2);
     }
   ` : null}
 
