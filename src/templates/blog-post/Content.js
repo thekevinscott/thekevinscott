@@ -47,19 +47,20 @@ const Content = styled.div `
 
   h1 {
     margin-top: 60px;
+    font-size: 3.4rem;
   }
 
-  blockquote {
-    a {
-      color: inherit;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    }
+  h2 {
+    font-size: 2.6rem;
+    margin-top: 30px;
+  }
+
+  h3, h4, h5, h6 {
+    font-size: 2rem;
   }
 
   a {
     transition-duration: 0.15s;
-    border-bottom: 1px solid transparent;
-    color: ${GREEN};
 
     &:hover {
       border-bottom: 1px solid ${GREEN};

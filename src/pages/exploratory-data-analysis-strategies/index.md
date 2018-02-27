@@ -6,53 +6,79 @@ image: "cover.png"
 tags: ["kaggle", "eda", "deep learning", "machine learning", "data science", "statistics"]
 ---
 
-1. Intro
-  1. I am learning AI. I am working through a couple Kaggle competitions to stretch my wings.
-  2. Toxic competition is cool. Great EDA kernel.
-2. What is EDA
-  1. Exploratory Data Analysis. When you have a dataset, it can help to do a bit of exploratory analysis first.
-  2. Great overviews exist.
-  3. This is a run down to popular EDAs on Kaggle, and what they have in common.
-
-# How I selected the EDAs
-
-The fast.ai course lays out four types of ML problems: image classification, structured data, NLP, and recommendation engines. I'm going to combine recommendations and structured data since they can be kind of the same thing.
-
-NLP datasets have some overlap with structured datasets, in that the NLP data often contains structured data. Because text has specific things I'm going to consider them separately.
-
-I went through Kaggle and sorted by number of teams, a rough heuristic for popularity; I then pulled the top 4 for structured data, images, and NLP.
 
 
+Kaggle is a website for doing data science competitions. / It's a good idea to understand the data you're working with before trying to jump in and build a deep learning model.
 
-*Try to find 3 examples of EDA per competition*. Try to find 2 competitions per category.
-Overview:
-Structured: Titanic, and some crazy Car one I don't understand.
+
+Usually the process is something like:
+
+1) initial data analysis
+2) data clean up, hypotheses
+3) building the model
+4) submissions, rinse repeat
+
+That first step - the data analysis, or EDA - is what I want to look at today.
+
+*While running through a Kaggle competition I felt the EDA (Exploratory Data Analysis) was super helpful. I wanted to get a sense for what different types of EDAs looked like across domains.*
+
+I want to see if there's any similarities or differences between the various approaches people take to data analysis.
+
+> Data Scientists spend [the] vast majority of their time by data preparation, not model optimization. - [Lorinc](https://www.kaggle.com/lorinc/feature-extraction-from-images)
+
+I looked specifically at EDA as well as feature engineering. The difference between the two is blurry so I included both. I stopped before getting into models or any sort of actual machine / deep learning.
+
+[What is feature engineering?](https://www.quora.com/Does-deep-learning-reduce-the-importance-of-feature-engineering)
+
+----
+
+
+# Methodology
+
+I chose three target domains from which to choose competitions to examine:
+
+* Structured data
+* NLP (natural language)
+* Images
+
+I chose these because Fast.ai covers these three domains along with recommendations which I think is similar enough to structured data problems.
+
+(NLP datasets have some overlap with structured datasets, in that the NLP data often contains structured data. Because text has specific things I'm going to consider them separately.)
+
+I did notice there's a lot of structured data competitions with a lot of team entries, which is interested because Jeremy discusses there not being a lot of scientific literature on those types of problems.
+
+*I vaguely modeled these off of fast.ai. There's definitely others that could be done (I'm very interested in audio). (The fast.ai course lays out four types of ML problems: image classification, structured data, NLP, and recommendation engines. I'm going to combine recommendations and structured data since they can be kind of the same thing.)*
+
+---
+
+For each of these domains, I chose two competitions, based roughly on how many teams had submitted for it (and whether it was closed or not). Then, I did a search for EDA-tagged kernels within the competition, and chose three that were highly rated, well commented or just well-written.
+
+I ended up picking the following competitions:
+
+Structured: Titanic, and House Prices
 NLP: Toxic, and Spooky.
 Images: Leaves and Lung cancer
 
+# Findings
+
+For structured data, EDAs seem to follow similar formats. For instnace, all the Titanic EDas are almost identical in their analyses. Houses prices less so, but still follow the same general thrust - looking for correlations between different variables.
+
+NLP EDAs share some similarities, but there's also a bit more variability in the approach. In particulr, with feature negineering.
+
+Finally, images are all over the map. Really creative approaches to data analysis.
 
 
-# Structured Data
 
-For structured data, I went with [Titanic](https://www.kaggle.com/c/titanic), [Seguro](https://www.kaggle.com/c/porto-seguro-safe-driver-prediction/data<Paste>), and [Santander](https://www.kaggle.com/c/santander-customer-satisfaction/data).
+## Structured Data Competitions
+
+Structured data problems tend to come with one or more `csv` files containing training and test data. The spreadsheets could contain categorical variables (e.g., colors like "green", "red", and "blue"), continuous variables (e.g., Ages like "4", "15", and "67") and ordinal variables (e.g., educational level, like "elementary", "high school", "college", etc.) Often they have all three. There is a target column that you are effectively trying to solve for (that will be missing in the test data), and so much of the EDA tends to focus on discovering potential correlations between the target variable and the rest of the data.
+
+The competitions I chose to analyze were the [Titanic](https://www.kaggle.com/c/titanic) competition and the [House Prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data) competition. Titanic is a popular beginners' competition with a rolling leaderboard; Lots of folks on Kaggle tend to start with Titanic. House Prices is a bit more complicated and boasts numerous categorical, ordinal and continuous features, some of which are relevant and other which are not.
 
 ## Titanic
 [There's tons of EDAs](https://www.kaggle.com/c/titanic/kernels?sortBy=relevance&group=everyone&search=eda&page=1&pageSize=20&competitionId=3136). And because this is rolling, I think over time these disappear. Is that true?
 
 
-#### Other options:
-
-https://www.kaggle.com/astandrik/journey-from-statistics-eda-to-prediction
-https://www.kaggle.com/stephaniestallworth/titanic-eda-classification-end-to-end
-https://www.kaggle.com/kueipo/super-guide-eda-of-titanic-updated-tree-digraph
-https://www.kaggle.com/neviadomski/titanic-data-exploration-starter
-https://www.kaggle.com/headsortails/pytanic
-https://www.kaggle.com/omarelgabry/a-journey-through-titanic
-
-I picked a number at random that were highly rated / had a number of comments. I did not look at final score.
-
-
-[What is feature engineering?](https://www.quora.com/Does-deep-learning-reduce-the-importance-of-feature-engineering)
 
 
 
@@ -179,7 +205,30 @@ Feature engineering begins to diverge a bit more. Age binning can differ, as can
 
 Also, imputation differs. First recommends looking at existing data to predict imputation values. 3rd checks the disruption using a kde plot which seems really smart.
 
+
+
+
+#### Other options:
+
+https://www.kaggle.com/astandrik/journey-from-statistics-eda-to-prediction
+https://www.kaggle.com/stephaniestallworth/titanic-eda-classification-end-to-end
+https://www.kaggle.com/kueipo/super-guide-eda-of-titanic-updated-tree-digraph
+https://www.kaggle.com/neviadomski/titanic-data-exploration-starter
+https://www.kaggle.com/headsortails/pytanic
+https://www.kaggle.com/omarelgabry/a-journey-through-titanic
+
+I picked a number at random that were highly rated / had a number of comments. I did not look at final score.
+
+
+
+
 # House Prices
+
+House Prices is a dataset that is blah bblah.
+
+https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data
+
+
 
 # https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python
 
@@ -282,106 +331,19 @@ https://www.kaggle.com/notaapple/detailed-exploratory-data-analysis-using-r
 https://www.kaggle.com/tannercarbonati/detailed-data-analysis-ensemble-modeling
 
 
-# Seguro
-Next up - Seguro!
-
-So the interesting thing here is these columns are totally anonymised.
-
-
-"Features that belong to similar groupings are tagged as such in the feature names (e.g., ind, reg, car, calc).
-Feature names include the postfix bin to indicate binary features and cat to indicate categorical features.
-Features without these designations are either continuous or ordinal.
-Values of -1 indicate that the feature was missing from the observation.
-The target columns signifies whether or not a claim was filed for that policy holder."
-
-
-# https://www.kaggle.com/headsortails/steering-wheel-of-fortune-porto-seguro-eda
-
-Uses summary and glimpse tools to look at the data. Gets min, 1st quartile, median, mean, max, for each category. Identifies number of missing values.
-
-Then he spends some time graphing:
-
-"We start our exploration with overview distribution plots for the various features. In order to make this visualisation more comprehensive, we will create layouts for the specific groups of features. For the sake of readability we divide each group into multiple parts.
-
-These plots will be one of the pillars of our analysis. They might not be particularly exciting in themselves, but whenever we find an interesting effect in one of the variables we can come back here and examine their distribution. It’s always an advantage to start with a clear view of the parameter space."
-
-I don't fully understand this part. But his conclusion is interesting: Many more non-filed claims than claims, which means the problem is imbalanced.
-
-He then goes through and charts whether an individual parameter lines up, and also plots a confidence interval. This is very extensive.
-
-He does a correlation matrix plot to see if any features are related. He draws interesting finding: "Most features appear to be primarily correlated with others in their group. We can see this by studying the upper right region near where the diagonal would be and comparing it to the lower left area of the plot.
-
-There is no obvious correlation with the target feature in the left-most column. This could be caused by the sparsity of the target == 1 values."
-
-He does an alluvial diagram! HOly moly what the fuck is this thing! I have no idea what the hell I'm looking at.
-
-This is some advanced stats shit. He examines one-to-one relations for all pairings.
-
-He throws up some interactive bullshit what the fuck my man.
-
-He does overlapping curves.
-
-Based on what he saw in the previous section, he says:
-
-"The previous section has revealed a notable amount of variation in the continuous feature ps_car_14 from interactions with correlated categorical features. This was something that we did not see based on the distribution of ps_car_14 alone. Therefore, it is reasonable to ask whether other features might interact in a similar way. That analysis is the subject of this section."
-
-So the previous data analysis elucidated something that he did not see originally, that led him to ask whether other data might demonstrate the same correlations.
- 
-# Feature engineering
-
-Looks at number of NAs per ID. He draws some real interesting conclusions here, and says: "The differences between 0-4 and 6-8 NAs suggests that we might have two distinct populations here which reflect differences in the policy holder’s characteristics. It will be well worth coming back to these distinctions during the course of our further analysis."
-
-I'm pretty lost on this shit.
-
-# https://www.kaggle.com/bertcarremans/data-preparation-exploration
-
-Head and tail. It confirms how the data was talked about. Looks at shape. Checks duplicate rows in training set. Then checks shape of test data. Notes that the missing variable in test is the target variable.
-
-So this guy talks about metadata, storing meta information about the variables in the data frame. That allows him to do something cool like meta[(meta.level == 'nominal') & (meta.keep)].index
-
-Then he's able to look at variables by metadata, which is kinda cool. This also lets him describe the dataframe on non-categorical variables, which is cool. Looks at ranges, missing values.
-
-He then describes ordinal variables. He then describes binary variables and notices that it is strongly imbalanced, just like the other guy said.
-
-Talks about data cleaning, like checking for missing values, and then checking cardinality of categorical variables.
-
-Now the dude graphs a bunch of stuff. Talks about how missing values should be kept as a separate category value.
-
-He builds a heatmap, and finds strong correlations between a few variables. Bunch of nice plots here.
-
-He calls pd.get_dummies - wtf does this do.
-
-Ok now I'm totally lost again with this motherfucker.
-
-
-Other Options:
-
-https://www.kaggle.com/shaz13/beginner-friendly-eda-porto-s-safe-driver
-
-https://www.kaggle.com/anuragmaravi/eda-porto-seguro-s-safe-driver-prediction
-
-https://www.kaggle.com/peatle/eda-investigating-trends
-
-https://www.kaggle.com/kueipo/simple-safe-driver-prediction-eda
-
-https://www.kaggle.com/neviadomski/data-exploration-porto-seguro-s-safe-driver
-
-https://www.kaggle.com/captcalculator/a-very-extensive-porto-exploratory-analysis
-
-https://www.kaggle.com/asindico/porto-seguro-the-essential-kickstarter
-
-https://www.kaggle.com/sudhirnl7/simple-logistic-model-porto
-
-
 
 
 
 
 ## NLP
 
+NLP problem tend ot be characterizd by blah blah.
+
 For the NLP ones, I chose [Toxic](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge), [Spooky Author](https://www.kaggle.com/c/spooky-author-identification).
 
 # Toxic
+
+Warning: some of these comments are nasty to read.
 
 # https://www.kaggle.com/jagangupta/stop-the-s-toxic-comments-eda
 
@@ -539,7 +501,7 @@ Throws out an alluvian plot.
 
 
 
-
+Other kernels:
 
 https://www.kaggle.com/bsivavenu/lsa-model-on-spooky-author-data
 
@@ -556,44 +518,113 @@ https://www.kaggle.com/kanav0183/spooky-halloween-eda-lb-0-6
 
 For images, I went with [lung cancer](https://www.kaggle.com/c/data-science-bowl-2017/), and [leaves](https://www.kaggle.com/c/leaf-classification/).
 
-We'll pick one that is domain specific: lung cancer. And we'll pick one that is more general images, a multi label classification problem of dog breeds.
+Lung cancer is very domain specific and features additional structured data. Leaves do not.
+
+
+# Leaves
+
+"The dataset consists approximately 1,584 images of leaf specimens (16 samples each of 99 species) which have been converted to binary black leaves against white backgrounds. Three sets of features are also provided per image: a shape contiguous descriptor, an interior texture histogram, and a ﬁne-scale margin histogram. For each feature, a 64-attribute vector is given per leaf sample."
+
+# https://www.kaggle.com/lorinc/feature-extraction-from-images
+
+The author finds the center of each image. The author then finds the edges of the leaf. The author then converts hte image into polar coordinates. Author realizes they must first transform the image to 0,0. Author will use the contour, not the image of the leaf (save space). Author is successful post transformation, migrating the image into polar coordinates.
+
+Author comes up with an idea: split each sample into half and treat as two samples?
+
+Author looks for CENSURE feature detection, Harris corner detection. Then looks for local minima maxima on the polar ocordinate image.
+
+Author talks about mathemtical morpholoy from scipy.
+
+Author then realizes there's noise around the edge of the imge. Shows the original image - there is noise all right. Author figures out a way to remove the noise. Ends the kernel with a lovely image of a leafe and a distance map.
+
+# https://www.kaggle.com/selfishgene/visualizing-pca-with-leaf-dataset
+
+Author starts by showing a bunch of different leaves.
+
+Author shows variance directions of the images.
+
+Looks at image reconstrutions - I don't understand this part.
+
+Dives into model vriation around the mean image. He explains:
+
+"The upper most row contains the data distributions of each eigenvector (i.e. the histogram along that "direction")
+The second row contains what we already saw in a previous plot, what we called the variance directions.
+The forth row contains the median image of leafs. notice that this row is identical for all eigenvectors
+The third row holds the 2nd percentile images of each eigenvector. it's easier to think of this as the median image minus the eigenvector image multiplied by some constant. i.e the image we see is the forth row image, minus the second row image, when the second row image is multiplied by a constant. The constant is chosen to show the varying degree of influence of this specific eigenvector on the "average" image, so we can visualize what type of variation this particular eigenvector tends to
+capture. 2nd percentile will subtract a relatively large absolute value from the median image, showing us what images look like when this coefficient is highly negative. 98th percentile would be just the opposite, showing us what images look like when this coefficient is at the upper end of the range. 50th percentile would give us a "middle of the road" effect of this coefficient."
+
+Then dives into some eigenvectors. Looks for images that correspond to hte vectors.
+
+The author then plots a scatter plot fo the what the fuck.
+
+# https://www.kaggle.com/josealberto/fast-image-exploration
+
+This author looks at the training data; views what the various species are. Sees that there are 10 images per species.
+
+then creates a gif of each image and sees they look similar to each other.
+
+Other kernels:
+
+https://www.kaggle.com/selfishgene/visualizing-k-means-with-leaf-dataset
+
+https://www.kaggle.com/bhuvaneshwaran/leaf-classification
 
 
 # Lung Cancer
 
 # https://www.kaggle.com/gzuidhof/full-preprocessing-tutorial
 
+"Working with these files can be a challenge, especially given their heterogeneous nature. Some preprocessing is required before they are ready for consumption by your CNN."
+
+"Loading the DICOM files, and adding missing metadata
+Converting the pixel values to Hounsfield Units (HU), and what tissue these unit values correspond to
+Resampling to an isomorphic resolution to remove variance in scanner resolution.
+3D plotting, visualization is very useful to see what we are doing.
+Lung segmentation
+Normalization that makes sense.
+Zero centering the scans."
+
+The author talks about messing with DICOM data which comes in a specific format. The author looks at an image. Using the image and the histogram allows the author to interpret the medical picture.
+
+One issue with these medical image is that the space between pixels can differ. The author recommends resampling to a certain resolution. Because of rounding, this is a difficult process. The author then 3d plots the images to get a nice view of the CT scan.
+
+The author wants to reduce the problem space, and will do this by segmenting the lungs. He does this by removing the air. The author works up to a plot showcasing the air within the lungs which is very cool.
+
+The author normalizes the data by throwing away values outside of the bounds.
+
+The author finalizes by centering the data so the mean value is 0.
 
 
 # https://www.kaggle.com/anokas/exploratory-data-analysis-4
 
+The author starts by looking at the number of scans per patient, total number of csans, and a histogram of dicom files per patient. Also looks at file size. Then looks at csv - whether a given patient has cancer or not.
+
+The author checks to see if there's a correlation between ID and cancer (for instance, if the dataset authors messed up). The author finds no correlation, meaning the dataset is well sorted.
+
+Author pulls a dicom image and then reads information about i.
+
+Author then looks at an image. Author plots a whole bunch of images. Author plots all slices for a particular patient. Author builds a gif of the images and ends on that.
+
+
+# https://www.kaggle.com/apapiu/exploratory-analysis-visualization
+
+Author lists some images for a patient, and looks at shape of imge.
+
+Author builds a sweep of a torso. Looks at a patient from various angles.
+
+Author decides to try edge detection. First looks at distribution of pixel values. Does a histogram - sees a distribution that is bimodal with lots of missing values.
+
+Does an edge detection with a Sobel filter, then cranks up the threshold to show it better.
+
 # https://www.kaggle.com/amorsili/fast-exploratory-data-analysis-in-r
 
-https://www.kaggle.com/apapiu/exploratory-analysis-visualization
+Author looks at the csvs.
+
+Author looks at images, looks at a paritcular patient image. Looks at a set of patient images.
+
+Author does some image manipualtion.
+
+
+Other kernels:
 
 https://www.kaggle.com/mumech/loading-and-processing-the-sample-images
-
-# Leaves
-
-# https://www.kaggle.com/lorinc/feature-extraction-from-images
-
-# https://www.kaggle.com/selfishgene/visualizing-pca-with-leaf-dataset
-
-# https://www.kaggle.com/josealberto/fast-image-exploration
-
-https://www.kaggle.com/selfishgene/visualizing-k-means-with-leaf-dataset
-
-https://www.kaggle.com/bhuvaneshwaran/leaf-classification
-
-# Dog Breeds
-
-https://www.kaggle.com/jeru666/dog-eat-dog-world-eda-useful-scripts
-
-https://www.kaggle.com/dansbecker/exercise-convolutions-for-computer-vision
-
-https://www.kaggle.com/pvlima/use-pretrained-pytorch-models
-
-https://www.kaggle.com/kaggleslayer/simple-convolutional-n-network-with-tensorflow
-
-https://www.kaggle.com/johngull/breed-distribution
-

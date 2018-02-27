@@ -192,13 +192,22 @@ code {
 }
 
 blockquote {
+  font-family: ${SANS_SERIF};
+  font-size: 2.6rem;
+  margin: 50px;
+
   p {
-    // font-family: ${SANS_SERIF};
+    font-family: inherit;
+    font-size: inherit;
     font-style: italic;
-    font-size: 1.6rem;
     line-height: 1.8;
-    margin: 60px 40px;
+    margin: 0;
     color: rgba(0, 0, 0, 0.7);
+  }
+
+  a {
+    color: inherit;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   }
 }
 
