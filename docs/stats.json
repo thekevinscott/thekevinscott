@@ -16,17 +16,21 @@
       "path---deep-learning-cryptocurrency-pc-2-os-9786bfeadce1eae079c8.js",
       "path---deep-learning-cryptocurrency-pc-2-os-9786bfeadce1eae079c8.js.map"
     ],
+    "path---exploratory-data-analysis-strategies": [
+      "path---exploratory-data-analysis-strategies-3f56105febe27ef839bf.js",
+      "path---exploratory-data-analysis-strategies-3f56105febe27ef839bf.js.map"
+    ],
     "path---shoulders-of-giants": [
       "path---shoulders-of-giants-83aa03a6e98eb8ae1804.js",
       "path---shoulders-of-giants-83aa03a6e98eb8ae1804.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-a93106fbd2335d972770.js",
-      "component---src-layouts-index-js-a93106fbd2335d972770.js.map"
+      "component---src-layouts-index-js-03c1d4ff1b7ef67b32a7.js",
+      "component---src-layouts-index-js-03c1d4ff1b7ef67b32a7.js.map"
     ],
     "path---index": [
-      "path---index-21f7b237917808054420.js",
-      "path---index-21f7b237917808054420.js.map"
+      "path---index-30d0fc56fffd111dda17.js",
+      "path---index-30d0fc56fffd111dda17.js.map"
     ],
     "path---background-images-in-react-native": [
       "path---background-images-in-react-native-9db430e90cd3031b06f6.js",
@@ -45,8 +49,8 @@
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
     "app": [
-      "app-0e5a9b88b81464145248.js",
-      "app-0e5a9b88b81464145248.js.map"
+      "app-7dd9541ffd30b462fd1c.js",
+      "app-7dd9541ffd30b462fd1c.js.map"
     ],
     "path---deep-learning-cryptocurrency-pc-3-mining": [
       "path---deep-learning-cryptocurrency-pc-3-mining-cdede1a590686adb3ab4.js",
@@ -69,8 +73,8 @@
       "path---404-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-templates-blog-post-index-js": [
-      "component---src-templates-blog-post-index-js-2e9dd79c40d136fd8044.js",
-      "component---src-templates-blog-post-index-js-2e9dd79c40d136fd8044.js.map"
+      "component---src-templates-blog-post-index-js-bb8d131c74e85226540b.js",
+      "component---src-templates-blog-post-index-js-bb8d131c74e85226540b.js.map"
     ]
   }
 }
