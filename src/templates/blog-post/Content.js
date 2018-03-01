@@ -12,6 +12,13 @@ const Content = styled.div `
   width: 700px;
   margin-bottom: 100px;
 
+  .caption {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: -30px;
+    margin-bottom: 50px;
+  }
+
   span {
     &.figcaption, &.figcaption_hack {
       text-align: center;
@@ -22,6 +29,31 @@ const Content = styled.div `
       margin-bottom: 40px;
       opacity: 0.9;
     }
+  }
+
+  aside {
+    &:before {
+      content: "🤔";
+      display: block;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    line-height: 1.5;
+    font-size: 1.6rem;
+    margin: 20px 0 20px 40px;
+    text-align: justify;
+    hyphens: auto;
+    width: 250px;
+    margin-right: -125px;
+    float: right;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.020);
+    padding: 20px;
+    font-family: ${SERIF};
   }
 
   .dropcap {

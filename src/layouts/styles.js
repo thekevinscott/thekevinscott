@@ -191,6 +191,7 @@ code {
   white-space: pre-wrap;
 }
 
+/*
 blockquote {
   font-family: ${SANS_SERIF};
   font-size: 2.6rem;
@@ -208,6 +209,44 @@ blockquote {
   a {
     color: inherit;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+}
+*/
+
+blockquote {
+  font-family: ${SANS_SERIF};
+  font-size: 2.0rem;
+  border-left: 4px solid rgba(0, 0, 0, 0.25);
+  padding: 10px 20px;
+  margin: 50px 0;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.6;
+
+  p {
+    line-height: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  ul, li {
+    line-height: inherit;
+    color: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-family: inherit;
+  }
+
+  ul {
+    margin-bottom: 0;
   }
 }
 
