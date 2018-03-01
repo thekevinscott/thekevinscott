@@ -213,25 +213,24 @@ Feature engineering begins to diverge a bit more. Age binning can differ, as can
 Also, imputation differs. First recommends looking at existing data to predict imputation values. 3rd checks the disruption using a kde plot which seems really smart.
 
 # House Prices
+![House Prices](house_price.jpg)
+<div class="caption">by <a href="https://www.flickr.com/photos/120360673@N04/13855784355/in/photolist-n7ovXH-gjrMhS-eDwNQx-fFyccW-eDCzpL-fQDNaP-cA4RYd-cA4MtL-cA4HuL-fKnTsf-cA4LzU-ssvhf2-fKnAV9-daEeEz-gtpvp8-cA4R5o-cA4XQ7-cA4NSA-g2hXow-cA4SQw-eDBSFb-9eW1ng-g2j9Z5-cA4xwN-fFyJkx-9EzH9a-UD524Z-gttD2c-v9HAST-R7GoBF-v9KGVk-irUqRZ-koMrNT-fKv1e1-cA4UCE-ggDSAS-cA4C4A-gi21pE-cA4wdd-qmiDzR-rSUbew-gnDV6V-gjucTQ-fK7FS6-fK7bD6-duD885-fKbUqP-ggrui7-DUB1dh-dsvoVH">American Advisors Group</a></div>
 
-<img src="./house.jpg" />
+<aside>
+The EDAs I chose for analysis were <a href="https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python">Comprehensive Data Exploration with Python</a> by <a href="https://www.kaggle.com/pmarcelino">Pedro Marcelino</a>, <a href="https://www.kaggle.com/xchmiao/detailed-data-exploration-in-python">Detailed Data Exploration in Python</a> by <a href="https://www.kaggle.com/xchmiao">Angela</a>, and <a href="https://www.kaggle.com/caicell/fun-python-eda-step-by-step">Fun Python EDA Step by Step</a> by <a href="https://www.kaggle.com/caicell">Sang-eon Park</a>.
 
-https://www.flickr.com/photos/120360673@N04/13855784355/in/photolist-n7ovXH-gjrMhS-eDwNQx-fFyccW-eDCzpL-fQDNaP-cA4RYd-cA4MtL-cA4HuL-fKnTsf-cA4LzU-ssvhf2-fKnAV9-daEeEz-gtpvp8-cA4R5o-cA4XQ7-cA4NSA-g2hXow-cA4SQw-eDBSFb-9eW1ng-g2j9Z5-cA4xwN-fFyJkx-9EzH9a-UD524Z-gttD2c-v9HAST-R7GoBF-v9KGVk-irUqRZ-koMrNT-fKv1e1-cA4UCE-ggDSAS-cA4C4A-gi21pE-cA4wdd-qmiDzR-rSUbew-gnDV6V-gjucTQ-fK7FS6-fK7bD6-duD885-fKbUqP-ggrui7-DUB1dh-dsvoVH
+Other kernels I found include <a href="https://www.kaggle.com/skirmer/fun-with-real-estate-data">Fun With Real Estate Data</a> by <a href="https://www.kaggle.com/skirmer">Stephanie Kirmer</a>, <a href="https://www.kaggle.com/dgawlik/house-prices-eda">House Prices EDA</a> by <a href="https://www.kaggle.com/dgawlik">Dominik Gawlik</a>, <a href="https://www.kaggle.com/shaoyingzhang/data-exploration-and-prediction-of-house-price">Data Exploration and Prediction of House Price</a> by <a href="https://www.kaggle.com/shaoyingzhang">Shaoyinger</a>, <a href="https://www.kaggle.com/yassineghouzam/eda-introduction-to-ensemble-regression">EDA Introduction to Ensemble Regression</a> by <a href="https://www.kaggle.com/yassineghouzam">Yassine Ghouzam</a>, <a href="https://www.kaggle.com/notaapple/detailed-exploratory-data-analysis-using-r">Detailed Exploratory Data Analysis using R</a> by <a href="https://www.kaggle.com/notaapple">notaapple</a>, and <a href="https://www.kaggle.com/tannercarbonati/detailed-data-analysis-ensemble-modeling">Detailed Data Analysis Ensemble Modeling</a> by <a href="https://www.kaggle.com/tannercarbonati">Tanner Carbonati</a>.
+</aside>
 
-Next up, I looked at the [House Prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) competition. House Prices features many more variables, including categorical, ordinal and continuous features, some of which are relevant and other which are not.
+Next up, I looked at the [House Prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) competition. This competition boasts many more variables, including categorical, ordinal and continuous features.
 
 > With 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa, this competition challenges you to predict the final price of each home.
 
-So it's similar in kind to Titanic but considerably more complicated. Let's see how our contestants do.
-
-I chose the following EDAs: [pmarcelino](https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python), [xchmiao](https://www.kaggle.com/xchmiao/detailed-data-exploration-in-python), and [caicell](https://www.kaggle.com/caicell/fun-python-eda-step-by-step).
-
-Other Kernels I didn't examine: [skirmer](https://www.kaggle.com/skirmer/fun-with-real-estate-data), [dgawlik](https://www.kaggle.com/dgawlik/house-prices-eda), [shaoyingzhang](https://www.kaggle.com/shaoyingzhang/data-exploration-and-prediction-of-house-price), [yassineghouzam](https://www.kaggle.com/yassineghouzam/eda-introduction-to-ensemble-regression)
-[notaapple](https://www.kaggle.com/notaapple/detailed-exploratory-data-analysis-using-r), and [tannercarbonati](https://www.kaggle.com/tannercarbonati/detailed-data-analysis-ensemble-modeling).
+So it's similar in kind to Titanic but considerably more complicated. Let's see how our kernel authors do.
 
 ## Intro and Visualizations
 
-xchmiao and pmarcelino spend some time investigating the initial data like we saw in Titanic. She plots the sale price in a histogram and does a heatmap of the features. pmarcelino plots the SalePrice and concludes that it:
+Angela and Pedro spend some time upfront investigating the initial data like we saw in Titanic. Angela plots the sale price in a histogram and does a heatmap of the features, while Pedro plots the sale price and makes the following conclusions:
 
 > Deviate from the normal distribution.
 > Have appreciable positive skewness.
@@ -290,11 +289,17 @@ pmarcelino then spends the rest of his notebook normalizing data, which in turn 
 
 # Natural Language competitions
 
-Natural Language, or NLP, competitions, offer up full English sentences for analysis. While the data types are similar to the structured data competitions - text - the tools available for analyzing natural language tend to more specialized, resulting in potentially different methods for analysis.
+Natural Language, or NLP, competitions, include full English sentences for analysis. While the data types are similar to the structured data competitions - text - the tools available for analyzing natural language tend to more specialized, resulting in potentially different methods for analysis.
 
 I chose the [Toxic competition](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge) and the [Spooky Author competition](https://www.kaggle.com/c/spooky-author-identification) for analysis.
 
 # Toxic
+
+<aside>
+The EDAs I chose for analysis were <a href="https://www.kaggle.com/jagangupta/stop-the-s-toxic-comments-eda">Stop the S@#$ - Toxic Comments EDA</a> by <a href="https://www.kaggle.com/jagangupta">Jagan</a>, <a href="https://www.kaggle.com/rhodiumbeng/classifying-multi-label-comments-0-9741-lb">Classifying Multi-label Comments</a> by <a href="https://www.kaggle.com/rhodiumbeng">Rhodium Beng</a>, and <a href="https://www.kaggle.com/fcostartistican/don-t-mess-with-my-mothjer">Don't Mess With My Mothjer</a> by <a href="https://www.kaggle.com/fcostartistican">Francisco Mendez</a>
+
+Other kernels I found include <a href="https://www.kaggle.com/ambarish/toxic-comments-eda-and-xgb-modelling">Toxic Comments EDA and XGB Modelling</a> by <a href="https://www.kaggle.com/ambarish">Bukun</a>, <a href="https://www.kaggle.com/clinma/eda-toxic-comment-classification-challenge">EDA Toxic Comment Classification Challenge</a> by <a href="https://www.kaggle.com/clinma">Matthieu Clin</a>, and <a href="https://www.kaggle.com/mamamot/finding-most-toxic-words">Finding Most Toxic Words</a> by <a href="https://www.kaggle.com/mamamot">Noisefield</a>.
+</aside>
 
 ![Toxic](toxic.png)
 <div class="caption">by <a href="https://www.flickr.com/photos/navaneethkn/7975953800/in/photolist-d9NRbQ-dEZp2L-dQinfV-8ZqMDd-GyaoHJ-oGKC67-5Kj4pp-8YybhA-8Yva5t-7Xh81B-oEZ6w8-4G19MZ-cm3zDf-3c7z32-GXuYz-oyayD-96qUSC-6UYVbr-bjWoro-duyWt-7jD4Nc-6KNazu-op1rhC-DY1c6F-bYNV7U-byHgQ3-cmFxgG-cm3zEC-8m74XJ-oZEcpA-9Kd3gM-7t1H1q-m9ZbHK-9r7F3j-r3kU-8ZPcAU-8RLfw5-TsHmuW-98S9zG-8Mzx2B-c6ZoZ9-7Bpck-8bnj49-4AJUnS-vag3VE-7Bp97-jeiiRG-bHbYQa-dJQMhT-N7SSSy">navaneethkn</a></div>
@@ -303,106 +308,50 @@ _Warning: some of these comments might burn your eyeballs._
 
 > Discussing things you care about can be difficult. The threat of abuse and harassment online means that many people stop expressing themselves and give up on seeking different opinions. ... In this competition, you’re challenged to build a multi-headed model that’s capable of detecting different types of of toxicity like threats, obscenity, insults, and identity-based hate better than Perspective’s current models. You’ll be using a dataset of comments from Wikipedia’s talk page edits.
 
-I chose to analyze EDAs from [jagangupta](https://www.kaggle.com/jagangupta/stop-the-s-toxic-comments-eda), [](https://www.kaggle.com/rhodiumbeng/classifying-multi-label-comments-0-9741-lb), and [fcostartistican](https://www.kaggle.com/fcostartistican/don-t-mess-with-my-mothjer). Other EDAs I didn't analyze include [ambarish](https://www.kaggle.com/ambarish/toxic-comments-eda-and-xgb-modelling), [clinma](https://www.kaggle.com/clinma/eda-toxic-comment-classification-challenge), and [mamamot](https://www.kaggle.com/mamamot/finding-most-toxic-words).
+In both competitions, numerous kernel authors use something called TF-IDF:
+
+> TF stands for term frequency; essentially how often a word appears in the text. This is what we measured above. A list of stop-words can be used to filter out frequent words that likely have no impact on the question we want to answer (e.g. “and” or “the”). However, using stop words might not always be an elegant approach. IDF to the rescue. IDF means inverse document frequency. Here, we give more emphasis to words that are rare within a collection of documents (which in our case means the entire text data.) Both measures can be combined into TF-IDF, a heuristic index telling us how frequent a word is in a certain context (here: a certain author) within the context of a larger document (here: all authors). You can understand it as a normalisation of the relativ text frequency by the overall document frequency. This will lead to words standing out that are characteristic for a specific author, which is pretty much what we want to achieve in order build a prediction model. - Heads or Tails
 
 ## Digging in
 
-Rhodium starts by describing the dataset. He finds no msising values and concludes that there must be many clean comments, based on the distribution. Looks at the total rows per category.
+All three authors begin by describing the dataset and pulling a few comments at random. While there's no missing values, there is a lot of noise in the comments, but its unclear whether this noise will be useful in the final data analysis.
 
-jagan describes and looks at the dataset, and looks for missing values along with the distribution across categories:
+![Jagan plots the distribution of images per toxic category](jagan_category_distribution.png)
+<div class="caption">Jagan plots the distribution of images per toxic category</div>
 
-![fcostartistican plots the distribution of images per toxic category](fcostartistican_category_distribution.png)
+> The toxicity is not evenly spread out across classes. Hence we might face class imbalance problems &mdash; Jagan
 
-He writes:
+Francisco is more aggressive in his kernel, immediately throwing away words "lacking meaning" (words like "and" or "the"). Using a biplot, he plots out in which category a particular word is most likely to fit.
 
-> The toxicity is not evenly spread out across classes. Hence we might face class imbalance problems
+> From the biplot most of the words are organized as expected, with some exceptions, fat is associated to identity hate, which is surprissing because is the only non-race word on the bottom of the chart, there are some generic offensive words in the middle of the chart, meaning that they can be used for any awful purposes, other ones as die are exclusively associated to threat which make total sense some others as a$$ (sorry I feel uncomfortable writing it as it appear on the data) is associated with threat, on the middle left of the chart there are some unrecognizable words, which are shown using the code &mdash; Francisco Mendez
 
-He also notes that, based on the distribution of the data, some comments can be multi label. He also graphs how many words have multiple labels.
+Francisco then asks whether there's a correlation between typos and toxicity.
 
-fcostartistican is the first notebook I've seen in R (the rest have been done in Python).
+> Apparently there is, and surprisingly, mother when is misspelled is never related to hate or threat, but when it is properly spelled there are some hate and threat comments that have the word mother in it ... Is it that people tend to write more carefully when they are threating somebody or when they hate it?
 
-fco starts his notebook off by throwing any words "lacking meaning" (words like "and" or "the"). He then groups the words to find their average score per category. He uses a biplot to find out in which way each word is offensive. (I won't reproduce the chart here but it's pretty cool - you can see the original here). He concludes:
-
-> From the biplot most of the words are organized as expected, with some exceptions, fat is associated to identity hate, which is surprissing because is the only non-race word on the bottom of the chart, there are some generic offensive words in the middle of the chart, meaning that they can be used for any awful purposes, other ones as die are exclusively associated to threat which make total sense some others as a$$ (sorry I feel uncomfortable writing it as it appear on the data) is associated with threat, on the middle left of the chart there are some unrecognizable words, which are shown using the code
-
-fco then digs into the question of whether there's a correlation between typos and toxicity. There is!
-
-> Is there actually a difference? Apparently there is, and surprisingly, mother when is misspelled is never related to hate or threat, but when it is properly spelled there are some hate and threat comments that have the word mother in it ... Is it that people tend to write more carefully when they are threating somebody or when they hate it?
-
-As he digs further, he finds that in many cases, toxic comments would be made up of the same phrase, copy and pasted multiple times. He reran his analysis and rendered a new biplot and discovered a new set of correlations between words and categories. Again not linking but you can find it.
+As Francisco digs further, he finds that in many cases, toxic comments would contain copy-pasted phrases, over and over again. After rerunning his analysis after removing duplicate words, he discovered a new set of correlations.
 
 > Here there are some new words the ones that can be highlited are gay used mainly on threat comments and hate. Some general mild words as mother, hell, piece, stupid, idiot and shut are used for any toxic general purpose, meantime any derivative of the f-word is used in toxic and obscene comments. Also from the biplot is possible to realize that toxic and insult are similar and the least aggressive ones, while hate and threat are the most serious ones.
 
 ## Visualizations
 
-Rhodium does a histogram of character length. Does a heatmap between the categories and discovers that some labels are highly correlated: if a comment is judged to be an insult, there's a 74% chance it's also obscene. Good to know!
+All three authors utilize visualizations of the data to great effect. Given the subject matter I won't embed the images but you can find them on each author's kernel.
 
-jagan also does a heatmap, and then a crosstab. He observes:
+Rhodium builds a histogram of character length as well as a heatmap between categories, discovering some labels which are highly correlated. For instance, an insult is 74% likely to also be obscene.
+
+Jagan plots some word clouds, a heatmap, and a crosstab, observing:
 
 > A Severe toxic comment is always toxic
 > Other classes seem to be a subset of toxic barring a few exceptions
 
-jagan puts together some word clouds.
-
 ## Feature engineering / clean up
 
-Rhodium lowercases his text, manually turns contractions into things, manually cleans punctuation,
+In NLP, there's a few practices all the kernel authors tend to follow. Rhodium lowercases his text, manually turns contractions into things, and manually cleans punctuation.
 
-Rhodium vectorizes the text as well. Not sure what this means.
+![Jagan discussing feature engineering](jagan_discussing_feature_engineering.png)
+<div class="caption">Jagan discussing feature engineering</div>
 
-jagan has a few ideas:
-
-" Feature engineering:
-I've broadly classified my feature engineering ideas into the following three groups
-
-Direct features:
-Features which are a directly due to words/content.We would be exploring the following techniques
-
-Word frequency features
-Count features
-Bigrams
-Trigrams
-Vector distance mapping of words (Eg: Word2Vec)
-Sentiment scores
-Indirect features:
-Some more experimental features.
-
-count of sentences
-count of words
-count of unique words
-count of letters
-count of punctuations
-count of uppercase words/letters
-count of stop words
-Avg length of each word
-Leaky features:
-From the example, we know that the comments contain identifier information (eg: IP, username,etc.). We can create features out of them but, it will certainly lead to overfitting to this specific Wikipedia use-case.
-
-toxic IP scores
-toxic users"
-
-Plots various features against toxicity to look for correlations. He discovers that spammers are more toxic! Thanks.
-
-Interesting count based features:
-
-Direct features:
-1)Count based features(for unigrams):
-Lets create some features based on frequency distribution of the words. Initially lets consider taking words one at a time (ie) Unigrams
-
-Python's SKlearn provides 3 ways of creating count features.All three of them first create a vocabulary(dictionary) of words and then create a sparse matrix of word counts for the words in the sentence that are present in the dictionary. A brief description of them:
-
-CountVectorizer
-Creates a matrix with frequency counts of each word in the text corpus
-TF-IDF Vectorizer
-TF - Term Frequency -- Count of the words(Terms) in the text corpus (same of Count Vect)
-IDF - Inverse Document Frequency -- Penalizes words that are too frequent. We can think of this as regularization
-HashingVectorizer
-Creates a hashmap(word to number mapping based on hashing technique) instead of a dictionary for vocabulary
-This enables it to be more scalable and faster for larger text coprus
-Can be parallelized across multiple threads
-Using TF-IDF here. Note: Using the concatenated dataframe "merge" which contains both text from train and test dataset to ensure that the vocabulary that we create does not missout on the words that are unique to testset.
-
-jagan plots top words per class using TF_IDF. What is TF_IDF? He then does the same with bigrams.
+Jagan plots various of his features against toxicity looking for correlations. Among other things he discovers that spammers tend to be more toxic. For single words and pairs of words, Jagan and Rhodium both plot the top words TF-IDF.
 
 # Spooky Author
 
@@ -454,9 +403,7 @@ Bukun, meanwhile, plots his top 10 words overall and by author, finding a differ
 
 Heads or Tails does this as well, additionally looking at top words by author, after tokenization and stemming.
 
-Bukun and Heads or Tails both then use something called TF-IDF to to find the most "important" words for a particular author:
-
-> TF stands for term frequency; essentially how often a word appears in the text. This is what we measured above. A list of stop-words can be used to filter out frequent words that likely have no impact on the question we want to answer (e.g. “and” or “the”). However, using stop words might not always be an elegant approach. IDF to the rescue. IDF means inverse document frequency. Here, we give more emphasis to words that are rare within a collection of documents (which in our case means the entire text data.) Both measures can be combined into TF-IDF, a heuristic index telling us how frequent a word is in a certain context (here: a certain author) within the context of a larger document (here: all authors). You can understand it as a normalisation of the relativ text frequency by the overall document frequency. This will lead to words standing out that are characteristic for a specific author, which is pretty much what we want to achieve in order build a prediction model. - Heads or Tails
+Bukun and Heads or Tails both then use TF-IDF to to find the most "important" words for a particular author.
 
 ![Heads or Tails plots the most significant words by author in a bit of a different chart](headsortails_tfidf.png)
 <div class="caption">Heads or Tails plots the most significant words by author in a bit of a different chart</div>

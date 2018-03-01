@@ -54,6 +54,21 @@ const Content = styled.div `
     background: rgba(0, 0, 0, 0.020);
     padding: 20px;
     font-family: ${SERIF};
+
+    a {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      margin: 20px 0 0 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
   }
 
   .dropcap {
