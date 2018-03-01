@@ -406,115 +406,93 @@ jagan plots top words per class using TF_IDF. What is TF_IDF? He then does the s
 
 # Spooky Author
 
-[Spooky Author](https://www.kaggle.com/c/spooky-author-identification).
+<aside>
+The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spooky-nlp-and-topic-modelling-tutorial">Spooky NLP and Topic Modelling Tutorial</a> by <a href="https://www.kaggle.com/arthurtok">Anisotropic</a>, <a href="https://www.kaggle.com/ambarish/tutorial-detailed-spooky-fun-eda-and-modelling">Tutorial Detailed Spooky Fun EDA and Modelling</a> by <a href="https://www.kaggle.com/ambarish">Bukun</a>, and <a href="https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features">Treemap House of Horror Spooky EDA LDA Features</a> by <a href="https://www.kaggle.com/headsortails">Heads or Tails</a>.
 
-<img src="./spooky.png" />
+Other kernels I found include <a href="https://www.kaggle.com/bsivavenu/lsa-model-on-spooky-author-data">LSA Model on Spooky Author Data</a> by <a href="https://www.kaggle.com/bsivavenu">bshivaani</a>, <a href="https://www.kaggle.com/anuragmaravi/eda-spooky-author-identification">EDA Spooky Author Identification</a> by <a href="https://www.kaggle.com/anuragmaravi">Anurag Maravi</a>, <a href="https://www.kaggle.com/sandpiturtle/eda-fe-nb-xgb">EDA FE NB XGB</a> by <a href="https://www.kaggle.com/sandpiturtle">Nikita Pokidyshev</a>, <a href="https://www.kaggle.com/lemur78/classification-4-models-and-simple-eda">Classification 4 Models and Simple Ed</a> by <a href="https://www.kaggle.com/lemur78">lemur</a>, and <a href="https://www.kaggle.com/kanav0183/spooky-halloween-eda-lb-0-6">Spooky Halloween EDA LB</a> by <a href="https://www.kaggle.com/kanav0183">kanavanand</a>.
+</aside>
 
-What's cool about this dataset is there's very little unstructured data accompanying it, unlike the previous one. All there is is a snippet of text, an id, and one of three authors - Edgar Allan Poe, HP Lovecraft, or Mary Wollstonecraft Shelley.
+[Spooky Author Identification](https://www.kaggle.com/c/spooky-author-identification).
 
-I chose EDAs by [arthurtok](https://www.kaggle.com/arthurtok/spooky-nlp-and-topic-modelling-tutorial), [ambarish](https://www.kaggle.com/ambarish/tutorial-detailed-spooky-fun-eda-and-modelling), and [headsortails](https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features). Other good looking EDAs include [bsivavenu](https://www.kaggle.com/bsivavenu/lsa-model-on-spooky-author-data), [anuragmaravi](https://www.kaggle.com/anuragmaravi/eda-spooky-author-identification), [sandpiturtle](https://www.kaggle.com/sandpiturtle/eda-fe-nb-xgb), [lemur78](https://www.kaggle.com/lemur78/classification-4-models-and-simple-eda), and [kanav0183](https://www.kaggle.com/kanav0183/spooky-halloween-eda-lb-0-6).
+![A very scary image](halloween.png)
+<div class="caption">by <a href="https://www.flickr.com/photos/gaelvaroquaux/29632530995/in/photolist-M9wt5P-97P7tg-4vzLRF-61r11U-Zt2GHV-cY8aNJ-cY7ZgL-UXxYV9-b4qibP-4tm3wK-7haukg-2JiX6D-cVsp9-cY7XLU-4eeRFT-8PsYcb-cY7X8j-5jUhKv-jVRzRb-97Sb5A-7aBbJH-dZNRw2-smkRf-gxqQt3-aqqb74-gxs9eF-62dAE-FnZJs-62dXh-ZWp8CL-DpiJqc-WuwzSK-FnXvG-Ef1yLk-7omXUv-r5iPPD-pDGN7f-61hnvE-FnZKU-FnXv1-n28gM8-quLHEs-iAsBz-WBEwee-5z3uaW-pEQPCo-efPVZU-YbEZgy-dVfyAo-nHKteU">Gael Varoquaux</a></div>
+
+The Spooky Author Identification Competition provided snippets of text from three horror-themed authors - Edgar Allan Poe, HP Lovecraft, or Mary Wollstonecraft Shelley - and asked participants to build a model capable of predicting which writer authored a particular bit of text.
+
+What's interesting about this dataset is its simplicity; there's very little unstructured data accompanying the text, other than author. As a result, all the EDAs focused solely on different approaches to parsing and analyzing language.
 
 ## Digging In
 
-arthur kicks things off by saying:
+Each author begins by examining the dataset, picking out a few rows, and plotting the number of stories per author. Bukun also looks at word lengths per author, while Anisotropic plots a bar graph of overall word counts:
 
-> Topic modelling is the process in which we try uncover abstract themes or "topics" based on the underlying documents and words in a corpus of text. I will introduce two standard topic modelling techniques here with the first technique known as Latent Dirichlet Allocation (LDA) and the second Non-negative Matrix Factorization (NMF)
+![Anisotropic plots a graph of overall word frequency](arthurtok_word_freq.png)
 
-arthur, and ambarish look at a couple rows, looks at the shape, looks at the number of stories per author.
+> Notice anything odd about the words that appear in this word frequency plot? Do these words actually tell us much about the themes and concepts that Mary Shelley wants to portray to the reader in her stories? These words are all so commonly occuring words which you could find just anywhere else. Not just in spooky stories and novels by our three authors but also in newspapers, kid book, religious texts - really almost every other english text. Therefore we must find some way to preprocess our dataset first to strip out all these commonly occurring words which do not bring much to the table. - Anisotropic
 
-ambarish goes a bit farther and looks at words lengths per author.
+Heads or Tails also checks to see if there are missing values (there are none).
 
-arthur plots a bar graph of word counts. He writes:
+Each author builds word clouds showing a most frequent words largest.
 
-> Notice anything odd about the words that appear in this word frequency plot? Do these words actually tell us much about the themes and concepts that Mary Shelley wants to portray to the reader in her stories? These words are all so commonly occuring words which you could find just anywhere else. Not just in spooky stories and novels by our three authors but also in newspapers, kid book, religious texts - really almost every other english text. Therefore we must find some way to preprocess our dataset first to strip out all these commonly occurring words which do not bring much to the table.
+![Heads or Tails builds a word cloud of the 50 most common words](headsortails_wordcloud.png)
+<div class="caption">Heads or Tails builds a word cloud of the 50 most common words</div>
 
-headsortails also examines the data, with a particular eye to missing values (he finds none).
+Heads or Tails also plots overall sentences, sentence, and word length per author, and discovers subtle but present differences between the authors.
 
-# Visualization
+## Word and Sentence Analysis
 
-arthur builds word clouds for each author. so does ambarish. so does headsortails.
+Anisotropic and Bukun discuss tokenization, and removing stop word:
 
-headsortails plots overall sentences, sentence, and word length per author. He discovers subtle but present differences between the authors.
+> The work at this stage attempts to reduce as many different variations of similar words into a single term ( different branches all reduced to single word stem). Therefore if we have "running", "runs" and "run", you would really want these three distinct words to collapse into just the word "run". (However of course you lose granularity of the past, present or future tense). &mdash; Anisotropic
 
-# Deeper
+After the tokenization, stop word removal and lemmatization, Anisotropic rebuilds the graph of top 50 words:
 
-arthur talks about tokenization. He also removes all stop words (the filler words from above).
+![Anisotropic replots top 50 words after stop word removal](arthurtok_word_freq2.png)
 
-arthur then talks about stemming and lemmatization:
+Bukun, meanwhile, plots his top 10 words overall and by author, finding a different set (with the exception of "time"):
 
-> The work at this stage attempts to reduce as many different variations of similar words into a single term ( different branches all reduced to single word stem). Therefore if we have "running", "runs" and "run", you would really want these three distinct words to collapse into just the word "run". (However of course you lose granularity of the past, present or future tense).
+![Bukun's top ten words](bukun_top_ten_words.png)
 
-ambarish does all of this tokenization and stop word removal as well.
+Heads or Tails does this as well, additionally looking at top words by author, after tokenization and stemming.
 
-Finally, after all of this arthur reruns his graph of the top 50 words. Behold! They're all different. Very nice.
+Bukun and Heads or Tails both then use something called TF-IDF to to find the most "important" words for a particular author:
 
-ambarish, meanwhile, plots the top 10 words after his removal and they are different (with the exception of time). Why? Not sure. He also looks at 10 top words by author (similar to a word cloud).
+> TF stands for term frequency; essentially how often a word appears in the text. This is what we measured above. A list of stop-words can be used to filter out frequent words that likely have no impact on the question we want to answer (e.g. “and” or “the”). However, using stop words might not always be an elegant approach. IDF to the rescue. IDF means inverse document frequency. Here, we give more emphasis to words that are rare within a collection of documents (which in our case means the entire text data.) Both measures can be combined into TF-IDF, a heuristic index telling us how frequent a word is in a certain context (here: a certain author) within the context of a larger document (here: all authors). You can understand it as a normalisation of the relativ text frequency by the overall document frequency. This will lead to words standing out that are characteristic for a specific author, which is pretty much what we want to achieve in order build a prediction model. - Heads or Tails
 
-ambarish goes deeper and wants to find the most "important" words by a particular author:
+![Heads or Tails plots the most significant words by author in a bit of a different chart](headsortails_tfidf.png)
+<div class="caption">Heads or Tails plots the most significant words by author in a bit of a different chart</div>
 
-> TF-IDF computes a weight which represents the importance of a term inside a document.
-> It does this by comparing the frequency of usage inside an individual document as opposed to the entire data set (a collection of documents). The importance increases proportionally to the number of times a word appears in the individual document itself–this is called Term Frequency. However, if multiple documents contain the same word many times then you run into a problem. That’s why TF-IDF also offsets this value by the frequency of the term in the entire document set, a value called Inverse Document Frequency.
+Bukun also looks at top bigrams and trigrams, which are two and three word collections. Heads or Tails also does a TF-IDF on the bigrams and trigrams and plots the word relationships.
+also does a word relationship using the bigrams. does that per author. also does all that for trigrams.
 
-headsortails does this as well, with an inline chart. headsortails builds a chart laying out a word and positioning it whether it's one author or another.
+![Heads or Tails plots the word relationships for bigrams](headsortails_wordrelationship.png)
+<div class="caption">Heads or Tails plots the word relationships for bigrams</div>
 
-headsortails also stems.
+Bukun and Heads or Tails then perform a sentiment analysis. Both look at overall negativity per author.
 
-headsortails also uses TF-IDF.
+Bukun uses something called "NRC Sentiment lexicon" to examine the amount of "Fear", "Surprise", and "Joy" in each snippet of text, and visualizes the sentiment of various authors using word clouds, tables, bar charts.
 
-> TF stands for term frequency; essentially how often a word appears in the text. This is what we measured above. A list of stop-words can be used to filter out frequent words that likely have no impact on the question we want to answer (e.g. “and” or “the”). However, using stop words might not always be an elegant approach. IDF to the rescue.
-> IDF means inverse document frequency. Here, we give more emphasis to words that are rare within a collection of documents (which in our case means the entire text data.)
-> Both measures can be combined into TF-IDF, a heuristic index telling us how frequent a word is in a certain context (here: a certain author) within the context of a larger document (here: all authors). You can understand it as a normalisation of the relativ text frequency by the overall document frequency. This will lead to words standing out that are characteristic for a specific author, which is pretty much what we want to achieve in order build a prediction model.
-
-Plots the most significant words by author in a bit of a different chart, embed this.
-
-ambarish then plots the most important words overall, and then by author.
-
-ambarish also looks at top bigrams and trigrams (two words and three word collections, respectively).
-
-headsortails also does TF-IDF for bigrams. also does a word relationship using the bigrams. does that per author. also does all that for trigrams.
-
-ambarish then looks at the relationship between words (show a chart). Which word is most likely to follow another word?
-
-ambarish then performs a sentiment analysis. Looks at positive and negative words per author. He then uses "NRC Sentiment lexicon" to examine "Fear", "Surprise", and "Joy", and visualizes the sentiment of various authors using word clouds, tables, bar charts.
-
-headsortails also performs a sentiment analysis.
-
-headsortails builds a negativity index.
-
-ambarish looks at the gender pronoun breakdown between authors.
+![Bukun plots a word cloud for words matching Joy](bukun_wordcloud_joy.png)
+<div class="caption">Bukun plots a word cloud for words matching Joy</div>
 
 # Feature engineering
 
-ambarish suggests a number of possible features to add:
+Bukun suggests a number of possible features to add, including number of commas, semicolons, colons, blanks, words with capitals or beginning with capitals, and graphs each one. There do appear to be some correlations for some authors against some of these features.
 
-* Number of commas
-* Number of semicolons
-* Number of colons
-* Number of blanks
-* Number of others
-* Number of words beginning with Capitals
-* Number of words with Capitals
-
-And then graphs them. There do appear to be some correlations for some authors against some of these features.
-
-headsortails notes that:
+Heads or Tails notes that:
 
 > We have already noticed that our three authors can be identified by the names of their most prominent characters; with Mary Shelley writing about “Raymond” or Lovecraft about “Herbert West”. But what about names in general? Are some authors more likely to use names under certain circumstances? After sentence or character length this is one of our first feature-engineering ideas on our quest for knowledge
 
-He uses the `babynames` package which has popular names per a given year to add a feature ot the data.
+From this insight, Heads or Tails relies on the `babynames` package, featuring a list of most popular names per a given year, to add an additional feature to the data.
 
-headsortails looks at sentence topics, and finds a correlation.
+Bukun and Heads or Tails both look at the gender pronoun breakdown between authors, and Heads or Tails also looks at sentence topics, starting word per author, and last word per author, number of unique words, fraction of distinct words per sentence, dialogue markers and alliteration (which is a cool idea!)
 
-headsortails also looks at starting word per author, and last word.
+![heads or tails plots various measurements of alliteration by author](headsortails_alliteration.png)
+<div class="headsortails_alliteration.png">heads or tails plots various measurements of alliteration by author</div>
 
-headsortails looks at gender pronouns.
+Heads or Tails ends his kernel with an alluvian plot showcasing feature interaction:
 
-headsorttails looks at number of unique words, fraction of distinct words per sentence.
-
-headsortails looks at dialogue markers and at alliteration (which is a cool idea!)
-
-Finally headsortails ends his kernel with an alluvian plot:
-https://www.kaggleusercontent.com/kf/1952039/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Dpk-7-chD_1mZKokCVJdeQ.nPJdmWR8ZHwX9-TfJ01da-By6LEGMcIVnKU5P4nn4ibBR7SvPZ42GOE3YzzOmIbc3F4WDOdzly1ZyUjfjXXs8oVJx8FQicZwmjTdyMEavD1GqIWZPv1CB0Nmh3s9voYhU84y2SMFCidoyalr0ISFYdcBQV-7bgz9DiD1l9_QrKM.q5D4Ain0LLjAlgtpuxPq6Q/__results___files/figure-html/unnamed-chunk-74-1.png
+![Heads or Tails' alluvian plot showcasing feature interaction](headsortails_alluvian.png)
+<div class="caption">Heads or Tails' alluvian plot showcasing feature interaction</div>
 
 # Images
 
