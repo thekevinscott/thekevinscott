@@ -1,7 +1,7 @@
 ---
 path: "/exploratory-data-analysis-strategies/"
-date: "2018-02-25T09:00:00.000Z"
-title: "Common strategies for exploratory data analysis on Kaggle"
+date: "2018-03-25T09:00:00.000Z"
+title: "Analyzing Exploratory Data Analyses from Kaggle"
 image: "cover.png"
 tags: ["kaggle", "eda", "deep learning", "machine learning", "data science", "statistics"]
 ---
@@ -237,7 +237,7 @@ xchmiao and pmarcelino spend some time investigating the initial data like we sa
 > Have appreciable positive skewness.
 > Show peakedness.
 
-<img src="./pmarcelino_salpeirce.png" /> He also gets skewness and kurtosis, I guess there are important things to know.
+<img src="./pmarcelino_saleprice.png" /> He also gets skewness and kurtosis, I guess there are important things to know.
 
 pmarcelino tries to use his noggin to smartly analyze what kinds of features exist. He uses a fairly subjective analysis to decide which variables are important, and looks at the correlations between these subjective choices and the sale price. Later on in his kernel, he uses a heatmap to jump right in. Then he zooms in and looks at the variables with the highest correlation.
 
@@ -296,11 +296,10 @@ I chose the [Toxic competition](https://www.kaggle.com/c/jigsaw-toxic-comment-cl
 
 # Toxic
 
+![Toxic](toxic.png)
+<div class="caption">by <a href="https://www.flickr.com/photos/navaneethkn/7975953800/in/photolist-d9NRbQ-dEZp2L-dQinfV-8ZqMDd-GyaoHJ-oGKC67-5Kj4pp-8YybhA-8Yva5t-7Xh81B-oEZ6w8-4G19MZ-cm3zDf-3c7z32-GXuYz-oyayD-96qUSC-6UYVbr-bjWoro-duyWt-7jD4Nc-6KNazu-op1rhC-DY1c6F-bYNV7U-byHgQ3-cmFxgG-cm3zEC-8m74XJ-oZEcpA-9Kd3gM-7t1H1q-m9ZbHK-9r7F3j-r3kU-8ZPcAU-8RLfw5-TsHmuW-98S9zG-8Mzx2B-c6ZoZ9-7Bpck-8bnj49-4AJUnS-vag3VE-7Bp97-jeiiRG-bHbYQa-dJQMhT-N7SSSy">navaneethkn</a></div>
+
 _Warning: some of these comments might burn your eyeballs._
-
-https://www.flickr.com/photos/navaneethkn/7975953800/in/photolist-d9NRbQ-dEZp2L-dQinfV-8ZqMDd-GyaoHJ-oGKC67-5Kj4pp-8YybhA-8Yva5t-7Xh81B-oEZ6w8-4G19MZ-cm3zDf-3c7z32-GXuYz-oyayD-96qUSC-6UYVbr-bjWoro-duyWt-7jD4Nc-6KNazu-op1rhC-DY1c6F-bYNV7U-byHgQ3-cmFxgG-cm3zEC-8m74XJ-oZEcpA-9Kd3gM-7t1H1q-m9ZbHK-9r7F3j-r3kU-8ZPcAU-8RLfw5-TsHmuW-98S9zG-8Mzx2B-c6ZoZ9-7Bpck-8bnj49-4AJUnS-vag3VE-7Bp97-jeiiRG-bHbYQa-dJQMhT-N7SSSy
-
-https://www.flickr.com/photos/lattefarsan/13315639515/in/photolist-mhE8HD-9dR1mc-9d6i1y-9dTNXW-9d61Yf-9d2PhF-9d6bmb-9d5fc5-9d2JeX-9d695Q-9d64T3-9d38nB-9d5ypC-9d27C6-9d5h5o-9d5YNC-9d5ua5-9d5wcY-9dTDcA-9dQGpt-9d69Mo-9d5vws-9dTB9W-9dTGEU-9d293n-9dTJwL-9d2Far-98yoQP-9dQYhz-98BXfE-98zXX3-9d2A7e-98BLxA-98B6XY-98yRqg-pdsNkE-98Buh3-pbuyn1-pdti4S-pdfx8P-pdfDRt-9d5fus-9d2fne-pdeApa-9d2zvF-98BTaW-98y7Q8-pdv4RP-oW1GY1-jThuEM
 
 > Discussing things you care about can be difficult. The threat of abuse and harassment online means that many people stop expressing themselves and give up on seeking different opinions. ... In this competition, you’re challenged to build a multi-headed model that’s capable of detecting different types of of toxicity like threats, obscenity, insults, and identity-based hate better than Perspective’s current models. You’ll be using a dataset of comments from Wikipedia’s talk page edits.
 
@@ -312,7 +311,7 @@ Rhodium starts by describing the dataset. He finds no msising values and conclud
 
 jagan describes and looks at the dataset, and looks for missing values along with the distribution across categories:
 
-fco_category_distrbituion
+![fcostartistican plots the distribution of images per toxic category](fcostartistican_category_distribution.png)
 
 He writes:
 
@@ -524,172 +523,133 @@ So far, the competitions have been purely text-based (language, strings or numbe
 Lung cancer is very domain specific and features additional structured data. Leaves do not.
 
 # Leaves
+<aside>
+The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/feature-extraction-from-images">Feature Extraction From Images</a> by <a href="https://www.kaggle.com/lorinc">lorinc</a>, <a href="https://www.kaggle.com/selfishgene/visualizing-pca-with-leaf-dataset">Visualizing PCA with Leaf Dataset</a> by <a href="https://www.kaggle.com/selfishgene">selfishgene</a>, and <a href="https://www.kaggle.com/josealberto/fast-image-exploration">Fast Image Exploration</a> by <a href="https://www.kaggle.com/josealberto">Jose Alberto</a>.
 
-> The dataset consists approximately 1,584 images of leaf specimens (16 samples each of 99 species) which have been converted to binary black leaves against white backgrounds. Three sets of features are also provided per image: a shape contiguous descriptor, an interior texture histogram, and a ﬁne-scale margin histogram. For each feature, a 64-attribute vector is given per leaf sample.
+Other kernels I liked were <a href="https://www.kaggle.com/selfishgene/visualizing-k-means-with-leaf-dataset">Visualizing K Means with Leaf Dataset</a>, also by <a href="https://www.kaggle.com/selfishgene">selfishgene</a>, and <a href="https://www.kaggle.com/bhuvaneshwaran/leaf-classification">Leaf Classification</a> by <a href="https://www.kaggle.com/bhuvaneshwaran">Bhuvaneshwaran K</a>.
+</aside>
 
-I looked at EDAs from [lorinc](https://www.kaggle.com/lorinc/feature-extraction-from-images), [selfishgene](https://www.kaggle.com/selfishgene/visualizing-pca-with-leaf-dataset), and [josealberto](https://www.kaggle.com/josealberto/fast-image-exploration). Other kernels I liked were [selfishgene (again)](https://www.kaggle.com/selfishgene/visualizing-k-means-with-leaf-dataset), and [bhuvaneshwaran](https://www.kaggle.com/bhuvaneshwaran/leaf-classification)
+> The dataset consists approximately 1,584 images of leaf specimens (16 samples each of 99 species) which have been converted to binary black leaves against white backgrounds. Three sets of features are also provided per image: a shape contiguous descriptor, an interior texture histogram, and a ﬁne-scale margin histogram.
 
 # Digging In
 
-selfishgene starts by looking at the images we're working with:
+A good first step is to look at the images of the leaves, which two of the EDAs do.
 
-[selfish_overview.png]
+![selfishgene examines the leaf specimens](selfish_overview.png)
+<div class="caption">selfishgene examines the leaf specimens</div>
 
-josealberto also does this.
+Jose plots the various species, and notes that there are 10 images per species. He also looks at the similarity of leaves, within a category, to each other:
 
-jose also looks at what the various species, and notes that there are 10 images per species.
+![josealberto creates a gif of all the leaves from a category](jose_leaf_morphing.gif)
+<div class="caption">Jose compares leaves within a category</div>
 
-# Visualization
-
-josealberto creates a gif for each category and sees that leaves tend to look similar to each other:
-
-[jose_leaves_morphing.gif]
-
-lorinc attempts to find the center of each image, along with performing edge detection on the leaf.
-
-lorinc converts the image into polar coordinates, in order to more effectively measure the center of the leaf:
+Meanwhile, lorinc jumps straight into analysis, locating the center of each leaf and applying edge detection. lorinc also converts the outline of the leaf into polar coordinates, in order to more effectively measure the center of the leaf:
 
 > Later we might want to switch to another measure of centrality, based on how efficient this center is, when we generate a time-series from the shape, using the distance between the edge and the center. One way to do that is just measure the (Euclidean) distance between the center and the edge... but there is a better way - we project the Cartesian coordinates into Polar coordinates.
 
-selfish chooses to look at the variance direction of the images:
+selfishgene chooses to look at the variance direction of the images, writing "Each image can be though of as a different "direction" in the high dimensional image space":
 
-> Each image can be though of as a different "direction" in the high dimensional image space
+![selfishgene looks at the variance of a leaf image](selfish_variance.png)
+<div class="caption">selfishgene looks at the variance of a leaf image</div>
 
-[selfish_variance.png]
+selfishgene also spends some time looking into image reconstruction, model variations around the mean image, and eigen vectors; he explains:
 
-selfish then looks into image reconstruction, which I do not understand.
+> "The upper most row contains the data distributions of each eigenvector (i.e. the histogram along that "direction") The second row contains what we already saw in a previous plot, what we called the variance directions. The forth row contains the median image of leafs. notice that this row is identical for all eigenvectors The third row holds the 2nd percentile images of each eigenvector. it's easier to think of this as the median image minus the eigenvector image multiplied by some constant.
 
-selfish looks at model variation around the mean image. He explains:
-
-> "The upper most row contains the data distributions of each eigenvector (i.e. the histogram along that "direction") The second row contains what we already saw in a previous plot, what we called the variance directions. The forth row contains the median image of leafs. notice that this row is identical for all eigenvectors The third row holds the 2nd percentile images of each eigenvector. it's easier to think of this as the median image minus the eigenvector image multiplied by some constant. i.e the image we see is the forth row image, minus the second row image, when the second row image is multiplied by a constant. The constant is chosen to show the varying degree of influence of this specific eigenvector on the "average" image, so we can visualize what type of variation this particular eigenvector tends to capture. 2nd percentile will subtract a relatively large absolute value from the median image, showing us what images look like when this coefficient is highly negative. 98th percentile would be just the opposite, showing us what images look like when this coefficient is at the upper end of the range. 50th percentile would give us a "middle of the road" effect of this coefficient."
-
-selfish then spends some time diving into eigenvectors.
-
-Then dives into some eigenvectors. Looks for images that correspond to hte vectors.
+![selfishgene looks at model variations](selfish_model_variation.png)
+<div class="caption">selfishgene looks at model variations</div>
 
 # Feature detection
 
-lorinc, at one point, suggests splitting each sample in half and treating them as two samples.
-
-lorinc uses local maxima and minima on the time series (the leaf graphed in polar coordinates) and concludes that the results are pretty good:
-
-[lorinc_minima_maxima.png]
+lorinc suggests splitting each sample in half and treating them as two samples (though he doesn't pursue this approach). lorinc then finds local maxima and minima from the time series (the leaf graphed in polar coordinates) and notes that the results seem promising:
 
 > Ok, I surprised myself. This worked out pretty well. I think, I can build an extremely efficient feature from this. But this method is NOT robust yet.
+> * It is not finding the tips, but the points with the greatest distance from center. (look at leaf#19)
+> * It will miserably fail on a more complex, or unfortunately rotated leaf. (look at leaf#78)
 
-* It is not finding the tips, but the points with the greatest distance from center. (look at leaf#19)
-* It will miserably fail on a more complex, or unfortunately rotated leaf. (look at leaf#78)
+![lorinc measures the minima and maxima of a leaf plotted in polar coordinates](lorinc_minima_maxima.png)
+<div class="caption">lorinc measures the minima and maxima of a leaf plotted in polar coordinates</div>
 
-From there, lorinc talks about mathematical morphology, before realizing there's noise around the edge of each image.
+From there, lorinc talks about mathematical morphology, before discovering the presence of noise around each leaf. He spends some time figuring out how to remove noise from the image and concludes with a lovely image showing a distance map superimposed on the leaf:
 
-lorinc figures out how to remove noise from the image and concludes with a lovely image showing a distance map:
-
-[lorinc_distance.png]
+![lerinc measures the distance from the center of a leaf](lorinc_distance.png)
+<div class="caption">lerinc measures the distance from the center of a leaf</div>
 
 # Lung Cancer
+<aside>
+The EDAs I chose for analysis were <a href="https://www.kaggle.com/gzuidhof/full-preprocessing-tutorial">Full Preprocessing Tutorial</a> by <a href="https://www.kaggle.com/gzuidhof">Guido Zuidhof</a>, <a href="https://www.kaggle.com/anokas/exploratory-data-analysis-4">Exploratory Data Analysis</a> by <a href="https://www.kaggle.com/anokas">Mikel Bober-Irizar</a>, and <a href="https://www.kaggle.com/apapiu/exploratory-analysis-visualization">Exploratory Analysis Visualization</a> by <a href="https://www.kaggle.com/apapiu">Alexandru Papiu</a>.
+<br /><br />
+Other EDAs worth highlighting: <a href="https://www.kaggle.com/amorsili/fast-exploratory-data-analysis-in-r">Fast exploratory data analysis in R</a> by amorsili and <a href="https://www.kaggle.com/mumech/loading-and-processing-the-sample-images">Loading and Processing the Sample Images</a> by mumech.
+</aside>
 
-The final competition I examined was the lung cancer one.
+The final image competition I looked at was the [2017 Data Science Bowl](https://www.kaggle.com/c/data-science-bowl-2017/), which asked participants to examine a list of images and predict whether the patients had cancer or not. While this competition did feature structured data (meta information embedded in the images themselves), some of this data was anonymized and all the authors focused on image-analysis only.
 
-The EDAs I chose were [gzuidhof](https://www.kaggle.com/gzuidhof/full-preprocessing-tutorial), [anokas](https://www.kaggle.com/anokas/exploratory-data-analysis-4), and [apapiu](https://www.kaggle.com/apapiu/exploratory-analysis-visualization). Other EDAs include [amorsili](https://www.kaggle.com/amorsili/fast-exploratory-data-analysis-in-r) and [mumech](https://www.kaggle.com/mumech/loading-and-processing-the-sample-images).
+![DICOM meta info](dicom_info.png)
+<div class="caption">anokas examines the metadata for a single image. You can see that patient date has been rendered anonymous (1/1/1900)</div>
 
-# Digging In
+# Analysis
 
-anokas starts by looking at the number of scans per patient, total number of scans, and a histogram of DICOM files per patient.
+> Working with these files can be a challenge, especially given their heterogeneous nature. Some preprocessing is required before they are ready for consumption by your CNN. - Guido Zuidhof
 
-apapie looks at the image shape.
+Of the three kernel authors, Guido is the only one to discuss his background working with medical images, and it shows in his domain-specific analysis of the dataset:
 
-gzui says:
+> Dicom is the de-facto file standard in medical imaging. ... These files contain a lot of metadata (such as the pixel size, so how long one pixel is in every dimension in the real world). This pixel size/coarseness of the scan differs from scan to scan (e.g. the distance between slices may differ), which can hurt performance of CNN approaches. We can deal with this by isomorphic resampling
 
-> Working with these files can be a challenge, especially given their heterogeneous nature. Some preprocessing is required before they are ready for consumption by your CNN.
+The other two authors start their EDAs with more general explorations of the dataset and images themselves.
 
-gzui has some medical background, so he's able to give more context to what we're seeing:
+apapie begins by examining the shape of the images, while anokas starts by looking at the number of scans per patient, total number of scans, and a histogram of DICOM files per patient, along with a quick sanity check to see if there's any relationship between row ID and whether a patient has cancer (none is found, implying the dataset is well sorted).
 
-> Dicom is the de-facto file standard in medical imaging. This is my first time working with it, but it seems to be fairly straight-forward. These files contain a lot of metadata (such as the pixel size, so how long one pixel is in every dimension in the real world). This pixel size/coarseness of the scan differs from scan to scan (e.g. the distance between slices may differ), which can hurt performance of CNN approaches. We can deal with this by isomorphic resampling, which we will do later. Below is code to load a scan, which consists of multiple slices, which we simply save in a Python list. Every folder in the dataset is one scan (so one patient). One metadata field is missing, the pixel size in the Z direction, which is the slice thickness. Fortunately we can infer this, and we add this to the metadata.
+Since some data has been anonymized, factors in the metadata that could have otherwise had predictive value (like age of the patient) are removed, which has the upshot of making the competition more image-focused.
 
-gzui notes the HU units, and how that denotes the difference between air and tissue:
+Alexandru takes a distribution of pixels and plots them:
 
-[gzui_hu_units.png]
-
-anokas does a quick sanity check to see if there's any relationship between row ID and whether a patient has cancer. He finds no relationship, implying that the dataset is well sorted.
-
-anokas takes a single DICOM image and looks through the metadata:
-
-```
-(0008, 0005) Specific Character Set              CS: 'ISO_IR 100'
-(0008, 0016) SOP Class UID                       UI: CT Image Storage
-(0008, 0018) SOP Instance UID                    UI: 1.2.840.113654.2.55.160978843216949953815246551971491067836
-(0008, 0060) Modality                            CS: 'CT'
-(0008, 103e) Series Description                  LO: 'Axial'
-(0010, 0010) Patient's Name                      PN: '0a38e7597ca26f9374f8ea2770ba870d'
-(0010, 0020) Patient ID                          LO: '0a38e7597ca26f9374f8ea2770ba870d'
-(0010, 0030) Patient's Birth Date                DA: '19000101'
-(0018, 0060) KVP                                 DS: ''
-(0020, 000d) Study Instance UID                  UI: 2.25.13148394979245937484165594540025668927189308811493143066650
-(0020, 000e) Series Instance UID                 UI: 2.25.53298563728906335585833752405238884704498238267638676785109
-(0020, 0011) Series Number                       IS: '2'
-(0020, 0012) Acquisition Number                  IS: '1'
-(0020, 0013) Instance Number                     IS: '26'
-(0020, 0020) Patient Orientation                 CS: ''
-(0020, 0032) Image Position (Patient)            DS: ['-172.500000', '-176.100006', '-34.540001']
-(0020, 0037) Image Orientation (Patient)         DS: ['1.000000', '0.000000', '0.000000', '0.000000', '1.000000', '0.000000']
-(0020, 0052) Frame of Reference UID              UI: 2.25.11642995668189613829999863683865722098177327703743652111991
-(0020, 1040) Position Reference Indicator        LO: 'SN'
-(0020, 1041) Slice Location                      DS: '-34.540001'
-(0028, 0002) Samples per Pixel                   US: 1
-(0028, 0004) Photometric Interpretation          CS: 'MONOCHROME2'
-(0028, 0010) Rows                                US: 512
-(0028, 0011) Columns                             US: 512
-(0028, 0030) Pixel Spacing                       DS: ['0.625000', '0.625000']
-(0028, 0100) Bits Allocated                      US: 16
-(0028, 0101) Bits Stored                         US: 16
-(0028, 0102) High Bit                            US: 15
-(0028, 0103) Pixel Representation                US: 1
-(0028, 0120) Pixel Padding Value                 US: 63536
-(0028, 1050) Window Center                       DS: '40'
-(0028, 1051) Window Width                        DS: '350'
-(0028, 1052) Rescale Intercept                   DS: '-1024'
-(0028, 1053) Rescale Slope                       DS: '1'
-(7fe0, 0010) Pixel Data                          OW: Array of 524288 bytes
-```
-
-He notes that in some cases it appears the data has been anonymized. Certain factors that could otherwise have predictive value (like age) have been removed.
-
-anokas then looks at a single image, and plots multiple images:
-
-[anokas_images.png]
-
-anokas ends his kernel with a gif of moving through a set of patient images:
-
-[anokas_anim.gif]
-
-anapie also does a static sweep, from all three angles. Here's the X-axis:
-
-[anapie_x_sweep.png]
-
-anapie takes a distribution of pixels and plots them:
-
-[anapie_pixel_graph.png]
+![anapie plots a distribution of pixels](anapie_pixel_graph.png)
 
 > Interesting - the distribution seems to be roughly bimodal with a bunch of pixels set at - 2000 - probably for missing values.
 
-anapie tries to do edge detection on the image. By increasing the threshold he wins up with something workable:
+Guido sheds some more light in his EDA on why this is, namely being due to what HU units represent (air, tissue and bone):
 
-[anapie_edges.png]
+![gzuidhof examines HU units distribution](gzuidhof_hu_units.png)
 
-He concludes that:
+## Images
+
+Each author continues by examining the images themselves:
+
+![anokas looks across a number of patient images](anokas_images.png)
+<div class="caption">anokas looks at a set of patient images side by side</div>
+
+![anapie performs a sweep across the X angle](anapie_x_sweep.png)
+<div class="caption">Alexandru looks at images from the X angle</div>
+
+
+![anokas sweeps across a set of patient images](anokas_sweep.gif)
+<div class="caption">anokas builds a gif that moves through a set of patient images</div>
+
+Alexandru spent some time exploring whether edge detection could enhance the images.
+
+![anapie performs edge detection across a variety of DICOM images](anapie_edges.png)
+<div class="caption">After increasing the threshold, Alexandru was able to render some visually striking images</div>
+
+Alexandru concludes that:
 
 > Interesting results, however the issue here is that the filter will also detect the blood vessels in the lung. So some sort of 3-D surface detection that differentiates between spheres and tubes would be more suitable for this situation.
 
-gzui talks about resampling:
+Meanwhile, Guido discusses resampling, focusing on the fundemental nature of the DICOM image:
 
 > A scan may have a pixel spacing of [2.5, 0.5, 0.5], which means that the distance between slices is 2.5 millimeters. For a different scan this may be [1.5, 0.725, 0.725], this can be problematic for automatic analysis (e.g. using ConvNets)! A common method of dealing with this is resampling the full dataset to a certain isotropic resolution. If we choose to resample everything to 1mm1mm1mm pixels we can use 3D convnets without worrying about learning zoom/slice thickness invariance.
 
-gzui then 3d plots the scan:
+Later in his EDA, Guido is able to do a 3D plot of the inner cavity by combining multiple DICOM images:
 
-[gzui_3d.png]
+![3D Segment](gzuidhof_3d.png)
+<div class="caption">3D plot</div>
 
-gzui then talks about segmenting just the lungs (removing the surrounding air) in an effort to save space. Here's hte updated 3d image:
+And another version, after removing the surrounding air to reduce memory:
 
-[gzui_no_air_3d.png]: 
+![3D Segment minus air](gzuidhof_no_air_3d.png)
+<div class="caption">3D plot without air</div>
 
-gzui ends his kernel by zero centering the data so that the mean value is 0.
+# Conclusions
+
+In the lung cancer competition, Guido, given his familiarity with medical image formats, was able to leverage that to draw significantly more nuanced conclusions. That being said, the other two authors' lack of familiarity did not prevent them from drawing equally interesting insights. But there was much more variability between all three.
+
+Based on this analysis, it seems that structured data problems tend to lead to exploratory data analyses that are more similar, and image problems that are less similar (with NLP somewhere in between). As well, the more domain-specific problems tend to be a bit more varied in their analyses (lung cancer).
