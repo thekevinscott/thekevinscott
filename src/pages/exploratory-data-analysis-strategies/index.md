@@ -51,6 +51,9 @@ Structured: Titanic, and House Prices
 NLP: Toxic, and Spooky.
 Images: Leaves and Lung cancer
 
+
+Final scores did not factor in. (since some of these EDAs didn't even have models or submissions).
+
 # Findings
 
 For structured data, EDAs seem to follow similar formats. For instnace, all the Titanic EDas are almost identical in their analyses. Houses prices less so, but still follow the same general thrust - looking for correlations between different variables.
@@ -71,100 +74,95 @@ The training spreadsheet has a target column that you're effectively trying to s
 
 The competitions I chose to analyze were the [Titanic](https://www.kaggle.com/c/titanic) competition and the [House Prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data) competition.
 
-## [Titanic](https://www.kaggle.com/c/titanic)
+Discuss imputation.
+
+Discuss binning.
+
+# [Titanic](https://www.kaggle.com/c/titanic)
+<aside>
+The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to-prediction-dietanic">EDA to Prediction Dietanic</a> by <a href="https://www.kaggle.com/ash316">I, Coder</a>, <a href="https://www.kaggle.com/dejavu23/titanic-survival-for-beginners-eda-to-ml">Titanic Survival for Beginners EDA to ML</a> by <a href="https://www.kaggle.com/dejavu23">deja vu</a>, and <a href="https://www.kaggle.com/jkokatjuhha/in-depth-visualisations-simple-methods">In Depth Visualisations Simple Methods</a> by <a href="https://www.kaggle.com/jkokatjuhha">Jekaterina Kokatjuhha</a>.
+
+Other kernels I found include <a href="https://www.kaggle.com/astandrik/journey-from-statistics-eda-to-prediction">Journey from Statistics EDA to Prediction</a> by <a href="https://www.kaggle.com/astandrik">Astandri K</a>, <a href="https://www.kaggle.com/stephaniestallworth/titanic-eda-classification-end-to-end">Titanic EDA classification End to End</a> by <a href="https://www.kaggle.com/stephaniestallworth">Stephanie Stallworth</a>, <a href="https://www.kaggle.com/kueipo/super-guide-eda-of-titanic-updated-tree-digraph">Super Guide EDA of Titanic Updated Tree Digraph</a> by <a href="https://www.kaggle.com/kueipo">Kueipo</a>, <a href="https://www.kaggle.com/neviadomski/titanic-data-exploration-starter">Titanic Data Exploration Starter</a> by <a href="https://www.kaggle.com/neviadomski">Sergei Neviadomski</a>, <a href="https://www.kaggle.com/headsortails/pytanic">Pytanic</a> by <a href="https://www.kaggle.com/headsortails/">Heads or Tails</a>, and <a href="https://www.kaggle.com/omarelgabry/a-journey-through-titanic">A Journey Through Titanic</a> by <a href="https://www.kaggle.com/omarelgabry">Omar El Gabry</a>.
+</aside>
 
 Titanic is a popular beginners' competition with a rolling leaderboard. Lots of folks on Kaggle tend to start with Titanic.
 
-<img src="./titanic.jpg" alt="Titanic" />
+![Titanic](./titanic.jpg)
 
-<small>[viaggioroutard](https://www.flickr.com/photos/viaggioroutard/32746842734/in/photolist-RTJ8sN-7reGoc-7rdfgb-7reqrP-7rhfiJ-b4aUUF-bv64XJ-91NeZE-q2mfUz-eFvcpv-VMircS-pzVRNe-dF1MGZ-WCozhj-95TEWr-gkyMjV-75JPMM-7r8VAM-7r8K54-7ricVq-7rcJaC-7r8WZP-7rcUuc-7rgRJC-7rgFnC-oktnFk-7rdZK1-7rhNjL-adsXVC-7rcKPj-4YLEGK-7rhHQs-7r8TaB-7r8SoZ-e5wPAJ-8xv5oh-bvPFMY-7r8V3n-4YTM15-axQxWs-d1iAyQ-918Vc6-2gmvHf-8RCNJR-4YLEBM-b4aUXr-usDiD-c8Yp5o-22nLofY-okatX)</small>
+<div class="caption">by <a href="https://www.flickr.com/photos/viaggioroutard/32746842734/in/photolist-RTJ8sN-7reGoc-7rdfgb-7reqrP-7rhfiJ-b4aUUF-bv64XJ-91NeZE-q2mfUz-eFvcpv-VMircS-pzVRNe-dF1MGZ-WCozhj-95TEWr-gkyMjV-75JPMM-7r8VAM-7r8K54-7ricVq-7rcJaC-7r8WZP-7rcUuc-7rgRJC-7rgFnC-oktnFk-7rdZK1-7rhNjL-adsXVC-7rcKPj-4YLEGK-7rhHQs-7r8TaB-7r8SoZ-e5wPAJ-8xv5oh-bvPFMY-7r8V3n-4YTM15-axQxWs-d1iAyQ-918Vc6-2gmvHf-8RCNJR-4YLEBM-b4aUXr-usDiD-c8Yp5o-22nLofY-okatX">Viaggio Routard</a></div>
 
-From the competition:
+> The sinking of the RMS Titanic is one of the most infamous shipwrecks in history. On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. This sensational tragedy shocked the international community and led to better safety regulations for ships ... we ask you to complete the analysis of what sorts of people were likely to survive. In particular, we ask you to apply the tools of machine learning to predict which passengers survived the tragedy.
 
-> The sinking of the RMS Titanic is one of the most infamous shipwrecks in history. On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. This sensational tragedy shocked the international community and led to better safety regulations for ships.<br /><br /> One of the reasons that the shipwreck led to such loss of life was that there were not enough lifeboats for the passengers and crew. Although there was some element of luck involved in surviving the sinking, some groups of people were more likely to survive than others, such as women, children, and the upper-class.<br /><br />In this challenge, we ask you to complete the analysis of what sorts of people were likely to survive. In particular, we ask you to apply the tools of machine learning to predict which passengers survived the tragedy.
+There's [a ton of Exploratory Data Analyses out there](https://www.kaggle.com/c/titanic/kernels?sortBy=relevance&group=everyone&search=eda&page=1&pageSize=20&competitionId=3136), presumably since it's the first competition most folks cycles through. I picked a number at random that were highly rated or featured a large number of comments.
 
-Perhaps because it's the intro challenge, [there's tons of EDAs](https://www.kaggle.com/c/titanic/kernels?sortBy=relevance&group=everyone&search=eda&page=1&pageSize=20&competitionId=3136). And because this is rolling, I think over time these disappear. Is that true?
 
-I picked a number at random that were highly rated / had a number of comments. I did not look at final score.
-
-I looked at three EDA kernals: [ash316](https://www.kaggle.com/ash316/eda-to-prediction-dietanic), [dejavu23](https://www.kaggle.com/dejavu23/titanic-survival-for-beginners-eda-to-ml), and [jkokatjuhha](https://www.kaggle.com/jkokatjuhha/in-depth-visualisations-simple-methods).
-
-Some other good EDAs I didn't have a chance to analyze belong to [astandrik](https://www.kaggle.com/astandrik/journey-from-statistics-eda-to-prediction), [stephaniestallworth](https://www.kaggle.com/stephaniestallworth/titanic-eda-classification-end-to-end), [kueipo](https://www.kaggle.com/kueipo/super-guide-eda-of-titanic-updated-tree-digraph), [neviadomski](https://www.kaggle.com/neviadomski/titanic-data-exploration-starter), [headsortails](https://www.kaggle.com/headsortails/pytanic), and [omarelgabry](https://www.kaggle.com/omarelgabry/a-journey-through-titanic).
 
 ## Intros
 
-All three EDAs start by looking at raw metrics from the test file, including examining a couple of sample rows and getting some descriptive information like types of columns and means and medians.
+All three EDAs begin by examining raw metrics, including viewing a few sample rows and printing descriptive information about the CSV file like types of the columns and means and medians.
 
-Handling null or missing values is a crucial step in data preparation. ash handles this right at the start, while the other two look at missing values in feature engineering.
+![I, Coder describes the dataset](ash316_describe.png)
+<div class="caption">I, Coder describes the dataset</div>
 
-ash argues against assigning a random number to fill in missing ages:
+Handling null or missing values is a crucial step in data preparation. I, Coder handles this right upfront, while the other two kernel authors tackle their missing values during their feature engineering stages.
 
-> As we had seen earlier, the Age feature has 177 null values. To replace these NaN values, we can assign them the mean age of the dataset.
->
-> But the problem is, there were many people with many different ages. We just cant assign a 4 year kid with the mean age that is 29 years. Is there any way to find out what age-band does the passenger lie??
->
-> Bingo!!!!, we can check the Name feature. Looking upon the feature, we can see that the names have a salutation like Mr or Mrs. Thus we can assign the mean values of Mr and Mrs to the respective groups." - ash
+I, Coder argues against assigning a random number to fill in missing ages:
 
-```## Assigning the NaN Values with the Ceil values of the mean ages
-data.loc[(data.Age.isnull())&(data.Initial=='Mr'),'Age']=33
-data.loc[(data.Age.isnull())&(data.Initial=='Mrs'),'Age']=36
-data.loc[(data.Age.isnull())&(data.Initial=='Master'),'Age']=5
-data.loc[(data.Age.isnull())&(data.Initial=='Miss'),'Age']=22
-data.loc[(data.Age.isnull())&(data.Initial=='Other'),'Age']=46
-```
+> As we had seen earlier, the Age feature has 177 null values. To replace these NaN values, we can assign them the mean age of the dataset. But the problem is, there were many people with many different ages. We just cant assign a 4 year kid with the mean age that is 29 years. Is there any way to find out what age-band does the passenger lie?? Bingo!!!!, we can check the Name feature. Looking upon the feature, we can see that the names have a salutation like Mr or Mrs. Thus we can assign the mean values of Mr and Mrs to the respective groups.
 
-So ash interleaves feature engineering as part of the pure data analysis.
+![I, Coder imputing ages](ash316_age_imputation.png)
+<div class="caption">I, Coder imputing ages</div>
+
+I, Coder interleaves feature engineering as part of the pure data analysis, whereas for the other two authors it is a discrete step.
 
 ## Visualizations
 
-All three EDAs rely heavily on visualizations to get a bird's eye view of the data and potential correlations.
+All three kernel authors rely heavily on charts and visualizations to get a bird's eye view of the data and see potential correlations. Charts used include `factorplot`s, `crosstab`s, bar and pie charts, violin plots, and more.
 
-The charts used include `factorplot`s, `crosstab`s, bar and pie charts, violin plots, and more.
+![deja vu plots survival by gender](dejavu_survival_by_gender.png)
+<div class="caption">deja vu plots survival by gender</div>
 
-All three visualize with some nice charts about how many total survivors there were.
+Each author alludes to the phrase "women and children first", and the age and gender of the passengers features heavily in their initial data analyses. All three also examine income background, as indicated by the price of the ticket (`Pclass`).
 
-Each author seems to take the phrase "women and children first" to heart; gender and age of the passengers features heavily in their initial conclusions. All three authors also examine income background, as indicated by the price of the ticket (`Pclass`).
+> The number of men on the ship is lot more than the number of women. Still the number of women saved is almost twice the number of males saved. The survival rates for a women on the ship is around 75% while that for men in around 18-19%. - I, Coder
 
-> The number of men on the ship is lot more than the number of women. Still the number of women saved is almost twice the number of males saved. The survival rates for a women on the ship is around 75% while that for men in around 18-19%. - ash
-
-jkok charts survival against each of the different variables and draws some high level conclusions:
+Jekaterina charts survival against each of the different variables and draws some high level conclusions:
 
 > * Sex: Survival chances of women are higher.
 > * Pclass: Having a first class ticket is beneficial for the survival.
 > * SibSp and Parch: middle size families had higher survival rate than the people who travelled alone or big families. The reasoning might be that alone people would want to sacrifice themselves to help others. Regarding the big families I would explain that it is hard to manage the whole family and therefore people would search for the family members insetad of getting on the boat.
 > * Embarked C has a higher survival rate. It would be interesting to see if, for instance, the majority of Pclass 1 went on board in embarked C.
 
-jkok also does a lot with KDE - Kernel density estimation - which I was not familiar with. https://en.wikipedia.org/wiki/Kernel_density_estimation
+Jekaterina also does a lot with KDE - Kernel density estimation - which I was not familiar with. https://en.wikipedia.org/wiki/Kernel_density_estimation
 
-ash316 later draws his own conclusions:
+I, Coder later draws his own conclusions:
 
-> Sex: The chance of survival for women is high as compared to men.
-> Pclass:There is a visible trend that being a 1st class passenger gives you better chances of survival. The survival rate for Pclass3 is very low. For women, the chance of survival from Pclass1 is almost 1 and is high too for those from Pclass2. Money Wins!!!.
-> Age: Children less than 5-10 years do have a high chance of survival. Passengers between age group 15 to 35 died a lot.
-> Embarked: This is a very interesting feature. The chances of survival at C looks to be better than even though the majority of Pclass1 passengers got up at S. Passengers at Q were all from Pclass3.
+> Sex: The chance of survival for women is high as compared to men.<br /><br />
+> Pclass:There is a visible trend that being a 1st class passenger gives you better chances of survival. The survival rate for Pclass3 is very low. For women, the chance of survival from Pclass1 is almost 1 and is high too for those from Pclass2. Money Wins!!!.<br /><br />
+> Age: Children less than 5-10 years do have a high chance of survival. Passengers between age group 15 to 35 died a lot.<br /><br />
+> Embarked: This is a very interesting feature. The chances of survival at C looks to be better than even though the majority of Pclass1 passengers got up at S. Passengers at Q were all from Pclass3.<br /><br />
 > Parch+SibSp: Having 1-2 siblings,spouse on board or 1-3 Parents shows a greater chance of probablity rather than being alone or having a large family travelling with you.
 
-dejavu crosstabs 4 variables, and submits models with accuracy at each step which is a nice touch.
+Deja Vu crosstabs 4 variables, and also submits models to get an accuracy number at each step of the process; a nice bit of feedback to get a sense of the effects of the data on the final score.
 
-jkok throws up a stacked chart - She draws a stacked chart which is kinda cool, showing pclass and embarked. Get a sense of what kind of passenger each port is.
+![Jekaterina builds a stacked chart illustrating Pclass and Embarked](jkok_stacked.png)
+<div class="caption">Jekaterina builds a stacked chart illustrating Pclass and Embarked</div>
 
----- feature engineering ----
-
-Up front, jkok engineers a feature to pull out cabin letter.
-https://www.kaggleusercontent.com/kf/1797224/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..T2scx-QLtjKUqKBpw1UXKg.wOa9wN-GVL2_4CckgLCHEB-YYnuYkhbzhmAWoSVM5toUe7FD0l7NUDvliEfg3_fGmGMtVmD7v-LtfwNtdJBX6as02EP_my0uxBwuKiwgIbubrmg-7CkcgSC9VP-X7Wz5aOJ9OvK_hbmn6rJQSeWcxw.Q5qCz4zo6YPJOEC0pGgtmw/__results___files/__results___43_2.png
+## feature engineering
 
 There's perhaps only so many ways you can slice and dice this data. There's more variability when it comes to feature engineering.
 
-dejavu chooses to bin age to 8 buckets. bins the fare to 12 bins.
+![At the beginning of her EDA, Jekaterina engineers a feature to pull out cabin letter.](jkok_cabin_feature.png)
+<div class="caption">At the beginning of her EDA, Jekaterina engineers a feature to pull out cabin letter.</div>
 
-ash chooses to build a `SibSip` - whether an individual is alone or with family (either spouse or siblings):
+Deja Vu chooses to bin age to 8 buckets, and bins the fare to 12 bins.
+
+Meanwhile, I, Coder chooses to build a `SibSip` - whether an individual is alone or with family (either spouse or siblings):
 
 > The barplot and factorplot shows that if a passenger is alone onboard with no siblings, he have 34.5% survival rate. The graph roughly decreases if the number of siblings increase. This makes sense. That is, if I have a family on board, I will try to save them instead of saving myself first. Surprisingly the survival for families with 5-8 members is 0%. The reason may be Pclass??
 > The reason is Pclass. The crosstab shows that Person with SibSp>3 were all in Pclass3. It is imminent that all the large families in Pclass3(>3) died."
 
-ash looks at fare and min, max, and average. bins into 4 bins for fares.
-
-ash bins age into 5 bins. ash also creates features "family_size" and "alone". Finally, he drops a number of irrelevant features:
+I, Coder looks at min, max, and average for fares, and chooses to bin fares into 4 buckets, and ages into 5, as well as creating features `family_size` and `alone`. I, Coder drops a number of irrelevant features:
 
 > Name--> We don't need name feature as it cannot be converted into any categorical value.
 > Age--> We have the Age_band feature, so no need of this.
@@ -174,43 +172,28 @@ ash bins age into 5 bins. ash also creates features "family_size" and "alone". F
 > Fare_Range--> We have the fare_cat feature.
 > PassengerId--> Cannot be categorised."
 
-jkok suggests a feature for "child" or "adult".
+Jekaterina suggests a feature for `child` or `adult`, and chooses to handle missing values in the feature engineering portion of her kernel:
 
-jkok handles null values in the feature engineering part of her notebook.
-Embarked: fill embarked with a major class
-Pclass: because there is only one missing value in Fare we will fill it with a median of the corresponding Pclass
-Age: There are several imputing techniques, we will use the random number from the range mean +- std
+> * Embarked: fill embarked with a major class
+> * Pclass: because there is only one missing value in Fare we will fill it with a median of the corresponding Pclass
+> * Age: There are several imputing techniques, we will use the random number from the range mean +- std
 
-```
-ages = np.concatenate((test['Age'].dropna(), train['Age'].dropna()), axis=0)
-std_ages = ages.std()
-mean_ages = ages.mean()
-train_nas = np.isnan(train["Age"])
-test_nas = np.isnan(test["Age"])
-np.random.seed(122)
-impute_age_train  = np.random.randint(mean_ages - std_ages, mean_ages + std_ages, size = train_nas.sum())
-impute_age_test  = np.random.randint(mean_ages - std_ages, mean_ages + std_ages, size = test_nas.sum())
-train["Age"][train_nas] = impute_age_train
-test["Age"][test_nas] = impute_age_test
-ages_imputed = np.concatenate((test["Age"],train["Age"]), axis = 0)
-```
+She concludes her kernel by ensuring the new imputed data did not disrupt the mean:
 
-Check if we disrupted the distribution somehow.
-https://www.kaggleusercontent.com/kf/1797224/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..T2scx-QLtjKUqKBpw1UXKg.wOa9wN-GVL2_4CckgLCHEB-YYnuYkhbzhmAWoSVM5toUe7FD0l7NUDvliEfg3_fGmGMtVmD7v-LtfwNtdJBX6as02EP_my0uxBwuKiwgIbubrmg-7CkcgSC9VP-X7Wz5aOJ9OvK_hbmn6rJQSeWcxw.Q5qCz4zo6YPJOEC0pGgtmw/__results___files/__results___59_0.png
+![Jekaterina checking if the imputation disrupted the mean](jkok_disrupting_the_mean.png)
+<div class="caption">Jekaterina checking if the imputation disrupted the mean</div>
 
 ## Takeaways
 
-Everyone looks at the head, and describes the data frame. 2nd guy draws some conclusions from it. 2nd guy also looks at the test head.
+All three kernel authors spend time up front examining the data and describing the overall shape.
 
-First guy looks at the total null values. 3rd does that at the end.
+I, Coder looks at the total null values, whereas Jekaterina does that near the end.
 
-Everyone starts with looking at the breakdown of survivors, and then the breakdown of survivors by gender. Cross tabs, factor plots, and violin plots are all popular. Look for correlations among the data.
+Everyone starts with looking at the breakdown of survivors, and then the breakdown of survivors by gender. Cross tabs, factor plots, and violin plots are all popular graphs. Jekaterina has some really nice graphs.
 
-3rd has some prettier graphs.
+Feature engineering begins to diverge a bit more. Age binning can differ, as can title and fare binning. Only Jekaterina chooses to engineer the `child` / `adult` feature.
 
-Feature engineering begins to diverge a bit more. Age binning can differ, as can title and fare binning. Only 3rd does child / adult.
-
-Also, imputation differs. First recommends looking at existing data to predict imputation values. 3rd checks the disruption using a kde plot which seems really smart.
+Also, imputation differs. I, Coder recommends looking at existing data to predict imputation values, whereas Jekaterina checks the disruption using a kde plot which seems really smart.
 
 # House Prices
 ![House Prices](house_price.jpg)
@@ -230,40 +213,36 @@ So it's similar in kind to Titanic but considerably more complicated. Let's see 
 
 ## Intro and Visualizations
 
-Angela and Pedro spend some time upfront investigating the initial data like we saw in Titanic. Angela plots the sale price in a histogram and does a heatmap of the features, while Pedro plots the sale price and makes the following conclusions:
+![Pedro plots the sale price](./pmarcelino_saleprice.png)
+<div class="caption">Pedro plots the sale price</div>
 
-> Deviate from the normal distribution.
-> Have appreciable positive skewness.
-> Show peakedness.
+Angela and Pedro spend some time upfront investigating the initial data like we saw in Titanic. Angela plots the sale price in a histogram and builds a heatmap of the features, while Pedro plots the sale price and draws the following conclusions about the sale price:
 
-<img src="./pmarcelino_saleprice.png" /> He also gets skewness and kurtosis, I guess there are important things to know.
+> * Deviate from the normal distribution.
+> * Have appreciable positive skewness.
+> * Show peakedness.
 
-pmarcelino tries to use his noggin to smartly analyze what kinds of features exist. He uses a fairly subjective analysis to decide which variables are important, and looks at the correlations between these subjective choices and the sale price. Later on in his kernel, he uses a heatmap to jump right in. Then he zooms in and looks at the variables with the highest correlation.
+Pedro then puts himself in the shoes of a buyer and speculates which features would matter to him; he then examines the correlations between his picks and the sale price. Later in his EDA, he builds a heatmap to glean a more objective view of feature relationships before zooming in on a couple promising candidates.
 
-caicell graphs various columns against hte sale price. It's not clear to me how he chooses which variables to look at. Seems like he's just using his noggin - bathroom? basement? etc. outside exist or not? season?
+![Plotting features against sale price](pmarcelino_features.png)
+<div class="caption">Plotting features against sale price</div>
 
-xchmiao lists numerical features descending by their correlation with `SalePrice`, which is cool because it makes sense ot me how you'd use this to quickly pull out interesting features. But she notes that some of those features are highly correlated with each other.
+By contrast, Angela starts with a more objective approach, listing numerical features by their correlation with `SalePrice`. She also plots features against the sale price, looking for patterns in the data.
 
-xchmiao scatter plots a few columns and looks at categorical features relying on a number of different charts and graphs. Basically, she's plotting a ton of features against the sale price in different ways.
+Sang-eon starts his kernel with a bang, by aggressively culling missing values and outliers (with the exception of `LotFrontage` which he imputes using linear regression). Only then does he begin plotting various features against the sale price. (Its not immediately clear how chooses which particular features to examine.)
 
-## Missing data
+Pedro waits until looking for correlations among the data to examine the problem of missing data. He asks:
 
-caicell jumps right in by looking at missing values and outliers. He's pretty aggressive about culling missing values, with the exception of `LotFrontage` which he imputes with linear regression.
-
-pmarcelino waits until after he looks for correlations to tackle missing data. He asks two good rhetorical questions:
-
-> How prevalent is the missing data?
-> Is missing data random or does it have a pattern?
-
+> * How prevalent is the missing data?
+> * Is missing data random or does it have a pattern?
+>
 > The answer to these questions is important for practical reasons because missing data can imply a reduction of the sample size. This can prevent us from proceeding with the analysis. Moreover, from a substantive perspective, we need to ensure that the missing data process is not biased and hidding an inconvenient truth.
 
-To address these, pmarcelino plots total and percent of missing cells, and chooses to delete columns where 15% or more cells contain missing data. Again, the author lies on somewhat subjective, somewhat objective logic to justify removing the cells:
+To address these, Pedro plots the totals and percents of missing cells, and chooses to delete columns where 15% or more cells contain missing data. Again, he relies on subjective opinion to determine which features to remove:
 
-> The point is: will we miss this data? I don't think so. None of these variables seem to be very important, since most of them are not aspects in which we think about when buying a house (maybe that's the reason why data is missing?). Moreover, looking closer at the variables, we could say that variables like 'PoolQC', 'MiscFeature' and 'FireplaceQu' are strong candidates for outliers, so we'll be happy to delete them.
+> ...will we miss this data? I don't think so. None of these variables seem to be very important, since most of them are not aspects in which we think about when buying a house (maybe that's the reason why data is missing?). Moreover, looking closer at the variables, we could say that variables like 'PoolQC', 'MiscFeature' and 'FireplaceQu' are strong candidates for outliers, so we'll be happy to delete them.
 
-In summary, pmarcelino either removes columns with missing data, removes rows (where there's only one missing variables). He does not impute any variables.
-
-pmarcelino establishes a heuristic for tackling outliers:
+Pedro's approach to the missing data is to either remove columns (features) entirely if they feature a large number of missing values, or remove rows where there are only a few missing. He does not impute any variables. He also establishes a heuristic for tackling outliers:
 
 > The primary concern here is to establish a threshold that defines an observation as an outlier. To do so, we'll standardize the data. In this context, data standardization means converting data values to have mean of 0 and a standard deviation of 1.
 
@@ -271,21 +250,14 @@ He concludes that there's nothing to worry from a stastical standpoint, but afte
 
 ## Data transformations / feature engineering
 
-caicell then does data transformation in a way that I do not understand. He also looks at the skewness and kurtosis of the data, and does a Wilxoc-rank Sum test which I don't know. Finally, he ends with a very pretty 3d plot.
+None of the three kernel authors does too much in the way of feature engineering, possibly because there's so many features already present in the dataset.
 
-pmarcelino says:
+Sang-eon performs a data transformation that frankly I do not understand. He looks at the skewness and kurtosis of the data, and does something called a Wilxoc-rank Sum test. He concludes his kernel with a very nice looking plot:
 
-> According to Hair et al. (2013), four assumptions should be tested:
->
-> Normality - When we talk about normality what we mean is that the data should look like a normal distribution. This is important because several statistic tests rely on this (e.g. t-statistics). In this exercise we'll just check univariate normality for 'SalePrice' (which is a limited approach). Remember that univariate normality doesn't ensure multivariate normality (which is what we would like to have), but it helps. Another detail to take into account is that in big samples (>200 observations) normality is not such an issue. However, if we solve normality, we avoid a lot of other problems (e.g. heteroscedacity) so that's the main reason why we are doing this analysis.
->
-> Homoscedasticity - I just hope I wrote it right. Homoscedasticity refers to the 'assumption that dependent variable(s) exhibit equal levels of variance across the range of predictor variable(s)' (Hair et al., 2013). Homoscedasticity is desirable because we want the error term to be the same across all values of the independent variables.
->
-> Linearity- The most common way to assess linearity is to examine scatter plots and search for linear patterns. If patterns are not linear, it would be worthwhile to explore data transformations. However, we'll not get into this because most of the scatter plots we've seen appear to have linear relationships.
->
-> Absence of correlated errors - Correlated errors, like the definition suggests, happen when one error is correlated to another. For instance, if one positive error makes a negative error systematically, it means that there's a relationship between these variables. This occurs often in time series, where some patterns are time related. We'll also not get into this. However, if you detect something, try to add a variable that can explain the effect you're getting. That's the most common solution for correlated errors.
+![Sang-eon with a 3d plot of features](caicell_3d_plot.png)
+<div class="caption">Sang-eon with a 3d plot of features</div>
 
-pmarcelino then spends the rest of his notebook normalizing data, which in turn tends to resolve the other 3 things.
+Meanwhile, Pedro discusses Normality, Homoscedasticity, Linearity, and Absence of correlated errors; he normalizes the data and discovers that the other three are resolved as well. Success!
 
 # Natural Language competitions
 

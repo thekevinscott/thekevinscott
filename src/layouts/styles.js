@@ -191,29 +191,8 @@ code {
   white-space: pre-wrap;
 }
 
-/*
 blockquote {
-  font-family: ${SANS_SERIF};
-  font-size: 2.6rem;
-  margin: 50px;
-
-  p {
-    font-family: inherit;
-    font-size: inherit;
-    font-style: italic;
-    line-height: 1.8;
-    margin: 0;
-    color: rgba(0, 0, 0, 0.7);
-  }
-
-  a {
-    color: inherit;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  }
-}
-*/
-
-blockquote {
+  text-align: left;
   font-family: ${SANS_SERIF};
   font-size: 2.0rem;
   border-left: 4px solid rgba(0, 0, 0, 0.25);
@@ -246,9 +225,44 @@ blockquote {
   }
 
   ul {
-    margin-bottom: 0;
+    margin: 20px 0;
+    padding: 0 0 0 25px;
+
+    li {
+      margin-top: 0;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
+/*
+blockquote {
+  font-family: ${SANS_SERIF};
+  font-size: 2.6rem;
+  margin: 50px;
+
+  p {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: italic;
+    line-height: 1.8;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  a {
+    color: inherit;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+}
+*/
+
 
 iframe {
   height: 400px;
