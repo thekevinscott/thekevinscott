@@ -23,7 +23,10 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              const now = new Date();
+              return allMarkdownRemark.edges.filter(edge => {
+                return now - (new Date(edge.node.frontmatter.date)) > 0;
+              }).map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,

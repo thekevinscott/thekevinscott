@@ -15,6 +15,8 @@ Usually the process is something like:
 3. building the model
 4. submissions, rinse repeat
 
+Nice article on various visualization strategies: https://www.google.com/url?q=https%3A%2F%2Ftowardsdatascience.com%2F5-quick-and-easy-data-visualizations-in-python-with-code-a2284bae952f%3Fsource%3Demail-anon_305aa40180c1--publication.newsletter&sa=D&sntz=1&usg=AFQjCNGphwYg9988cbX03Ms1WTLGAXmYcg
+
 That first step - the data analysis, or EDA - is what I want to look at today.
 
 _While running through a Kaggle competition I felt the EDA (Exploratory Data Analysis) was super helpful. I wanted to get a sense for what different types of EDAs looked like across domains._
