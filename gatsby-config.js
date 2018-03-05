@@ -70,7 +70,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          'Source Serif Pro',
+          'Source Serif Pro:400,700',
           'Lato:400,500,600,700,800,900',
         ]
       }

@@ -17,6 +17,7 @@ body {
   margin: 0;
   font-family: ${SANS_SERIF};
   color: rgba(0, 0, 0, 0.8);
+  font-weight: 400;
   padding: 0;
   display: flex;
   font-size: 2rem;
@@ -81,6 +82,10 @@ hr {
   }
 }
 
+strong {
+  font-weight: 700;
+}
+
 h1,
 h2,
 h3,
@@ -91,6 +96,7 @@ h6 {
   font-weight: 700;
   margin: 0;
   padding: 0;
+  font-weight: 600;
   text-rendering: optimizeLegibility;
   color: inherit;
   line-height: 1.1;
@@ -192,6 +198,7 @@ code {
 }
 
 blockquote {
+  display: block;
   text-align: left;
   font-family: ${SANS_SERIF};
   font-size: 2.0rem;

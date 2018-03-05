@@ -7,16 +7,57 @@ import {
 
 import styled from "styled-components";
 
+const LETTER_SPACING = 20;
+
 const Content = styled.div `
   max-width: 100%;
   width: 700px;
   margin-bottom: 100px;
+
+  h1.center {
+    text-align: center;
+    display: block;
+    margin: 100px auto 80px auto;
+    clear: both;
+
+    &:after {
+      display: block;
+      content: '...';
+      letter-spacing: ${LETTER_SPACING}px;
+      padding-left: ${LETTER_SPACING/2}px;
+      margin: 0px auto;
+      width: 100%;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.68);
+      position: relative;
+    }
+  }
 
   .caption {
     text-align: center;
     font-size: 1.2rem;
     margin-top: -30px;
     margin-bottom: 50px;
+  }
+
+  .left, .right {
+    img {
+      max-width: 100%;
+    }
+
+    .caption {
+      margin-bottom: 0px;
+    }
+  }
+
+  .left {
+    float: left;
+    margin: 0px 20px 20px 0;
+  }
+
+  .right {
+    float: right;
+    margin: 0px 0 20px 20px;
   }
 
   span {
@@ -32,13 +73,20 @@ const Content = styled.div `
   }
 
   aside {
+  /*
     &:before {
       content: "🤔";
       display: block;
+      text-align: center;
+    }
+    */
+
+    h1, h2, h3 {
+      text-align: left;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       padding-bottom: 15px;
-      margin-bottom: 15px;
-      text-align: center;
+      padding: 0 0 15px 0;
+      margin: 0 0 15px 0;
     }
 
     line-height: 1.5;

@@ -14,6 +14,7 @@ import Back from "./Back";
 import CoverImg from "./CoverImg";
 import Content from "./Content";
 import Header from "./Header";
+import Caption from "./CoverImg/Caption";
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
@@ -24,6 +25,7 @@ export const pageQuery = graphql`
         date
         path
         title
+        image_credit
         image {
           childImageSharp {
             sizes(maxWidth: 2400) {
@@ -73,6 +75,9 @@ class Template extends Component {
           <CoverImg
             src={post.frontmatter.image.childImageSharp.sizes.src}
           />
+        )}
+        { post.frontmatter.image_credit && (
+          <Caption caption={post.frontmatter.image_credit} />
         )}
         <Content
           className="blog-post-content"

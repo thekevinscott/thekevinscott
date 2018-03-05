@@ -13,6 +13,7 @@ export const pageQuery = graphql`
             title
             date
             path
+            image_credit
             image {
               childImageSharp {
                 sizes(maxWidth: 2400) {
