@@ -411,7 +411,7 @@ A good first step is to look at the images of the leaves, which is how two of th
 
 Jose plots the various species, and notes that there are 10 images per species. He also looks at the similarity of leaves, within a category, to each other:
 
-![josealberto creates a gif of all the leaves from a category](images/jose_leaf_morphing.gif)
+<img alt="josealberto creates a gif of all the leaves from a category" src="https://i.imgur.com/D6o476h.gifv" />
 <div class="caption">Jose compares leaves within a category</div>
 
 Meanwhile, lorinc jumps straight into analysis, locating the center of each leaf and applying edge detection. lorinc also converts the outline of the leaf into polar coordinates, in order to more effectively measure the center of the leaf:
@@ -489,8 +489,7 @@ Each author continues by examining the images themselves:
 ![anapie performs a sweep across the X angle](images/anapie_x_sweep.png)
 <div class="caption">Alexandru looks at images from the X angle</div>
 
-
-![anokas sweeps across a set of patient images](images/anokas_sweep.gif)
+<img alt="anokas sweeps across a set of patient images" src="https://i.imgur.com/Ua03N9H.gifv" />
 <div class="caption">anokas builds a gif that moves through a set of patient images</div>
 
 Alexandru spent some time exploring whether edge detection could enhance the images.
