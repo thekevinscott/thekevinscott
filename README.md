@@ -5,9 +5,12 @@ By Kevin Scott
 All posts should live within src. Use the convention date-title.
 
 # Deploying
+
+
 ```
-yarn bd
+yarn build
+gac "Add latest build"
+git push origin master
 ```
 
-This runs the npm script `build-and-deploy`, which in turns runs `build` and then `deploy`.
-
+This will build the repo, add the build directory, and push to Github.
