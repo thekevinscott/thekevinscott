@@ -6,10 +6,10 @@ export const SERIF = `
     serif;
 `;
 export const SANS_SERIF = `
-    Europa,
     -apple-system,
-    Lato,
     BlinkMacSystemFont,
+    Lato,
+    Europa,
     Segoe UI,
     Roboto,
     Oxygen,

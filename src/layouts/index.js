@@ -9,25 +9,7 @@ import styles from './styles';
 
 injectGlobal`${styles}`;
 
-const Template = styled.div `
-  padding-top: 60px;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  max-width: 100%;
-`;
-
-const TemplateWrapper = ({ children }) => (
-  <Template>
-    <Helmet
-      title="Kevin Scott"
-      description="Design & AI"
-      meta={[
-      ]}
-    />
-    {children()}
-  </Template>
-);
+const TemplateWrapper = ({ children }) => children();
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,

@@ -8,13 +8,13 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 import Animated from "../../components/Animated";
-import ReadTime from "../../components/ReadTime";
 import Img from "gatsby-image";
-import Back from "./Back";
 import CoverImg from "./CoverImg";
 import Content from "./Content";
 import Header from "./Header";
 import Caption from "./CoverImg/Caption";
+import Signup from "./Signup";
+import Actions from "./Actions";
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
@@ -65,25 +65,29 @@ class Template extends Component {
 
     return (
       <Animated>
-        <Helmet title={`${post.frontmatter.title}`} />
+        <Helmet
+          title={`${post.frontmatter.title}` || "Kevin Scott"}
+          description="Design & AI"
+        />
         <Header>
-          <Back />
-          <ReadTime time={post.timeToRead} />
-          <h1>{post.frontmatter.title}</h1>
+          { post.frontmatter.image && (
+            <CoverImg
+              src={post.frontmatter.image.childImageSharp.sizes.src}
+            />
+          )}
+          <div className="title">
+            <h1>{post.frontmatter.title}</h1>
+            { post.frontmatter.image_credit && (
+              <Caption caption={post.frontmatter.image_credit} />
+            )}
+          </div>
         </Header>
-        { post.frontmatter.image && (
-          <CoverImg
-            src={post.frontmatter.image.childImageSharp.sizes.src}
-          />
-        )}
-        { post.frontmatter.image_credit && (
-          <Caption caption={post.frontmatter.image_credit} />
-        )}
+        <Actions time={post.timeToRead} />
         <Content
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        <iframe src="https://upscri.be/8c3b09/?as_embed" />
+        <Signup />
       </Animated>
     );
   }

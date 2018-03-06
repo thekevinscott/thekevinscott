@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const BackA = styled.a `
-  font-size: 12px;
-  margin-top: -20px;
-  float: left;
-  border-bottom: 1px solid #CCC;
-  transition-duration: 0.2s;
+  font-size: 1.2rem;
+  // margin-top: -20px;
+  // float: left;
+  // border-bottom: 1px solid #CCC;
+  // transition-duration: 0.2s;
 
-  &:hover {
-    border-bottom: 1px solid #333;
-  }
+  // &:hover {
+    // border-bottom: 1px solid #333;
+  // }
 `;
 
 const Back = () => (

@@ -19,8 +19,6 @@ body {
   color: rgba(0, 0, 0, 0.8);
   font-weight: 400;
   padding: 0;
-  display: flex;
-  font-size: 2rem;
 
   > div {
     flex: 1;
@@ -105,11 +103,17 @@ h6 {
 
 p, ul, li {
   margin: 5px 0 32px;
-  font-family: ${SERIF};
+  font-family: ${SANS_SERIF};
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+
+li {
+  margin-bottom: 20px;
 }
 
 p {
-  font-size: 2.05rem;
+  // font-size: 2.05rem;
   line-height: 1.7;
 }
 
@@ -150,7 +154,7 @@ ul {
   margin-top: 20px;
   margin-bottom: 40px;
   li, ol {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     &:last-child {
       margin-bottom: 0;
@@ -167,19 +171,13 @@ ul {
   border: none;
 }
 
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 100%;
-  }
-}
-
 pre {
-  font-size: 1.3em;
+  font-size: 1.6em;
   background-color:rgba(0,0,0,.04);
   border-radius:3px;
   font-family: ${MONOSPACE};
   overflow-x: scroll;
-  margin: 40px 0;
+  margin: 0 0 20px 0;
   padding: 20px;
   line-height: 1.0;
 
@@ -204,7 +202,7 @@ blockquote {
   font-size: 2.0rem;
   border-left: 4px solid rgba(0, 0, 0, 0.25);
   padding: 10px 20px;
-  margin: 50px 0;
+  margin: 10px 0 40px 0;
   font-style: italic;
   color: rgba(0, 0, 0, 0.7);
   line-height: 1.6;
