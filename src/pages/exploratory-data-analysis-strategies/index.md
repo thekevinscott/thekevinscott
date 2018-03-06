@@ -1,55 +1,40 @@
 ---
 path: "/exploratory-data-analysis-strategies/"
 date: "2018-03-25T09:00:00.000Z"
-title: "Analyzing Exploratory Data Analyses from Kaggle"
+title: "Patterns in Exploratory Data Analyses"
 image: "images/cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Samuel Zeller</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>"
-tags: ["kaggle", "eda", "deep learning", "machine learning", "data science", "statistics"]
+tags: ["kaggle", "eda", "deep learning", "exploratory data analysis", "machine learning", "data science", "statistics"]
 ---
 
-If you've worked with much data science, you've probably come across [Kaggle](https://kaggle.com), a website for data science competitions. As a relative newcomer to the field, I've been working my way through a number of notebooks that people post in public. Many follow similar patterns of organization:
+[Some anecdote to kick things off] Your boss comes to you with a terabyte of pictures of dog butts and says "I want you to build me a machine learning model that will recognize only the finest dog butts in this set." Where do you begin?
 
-1. Exploratory Data Analysis
-2. Data Cleaning / Feature Engineering
-3. The Model
-4. Submissions and Conclusions
+If you're like a lot of people on [Kaggle](https://kaggle.com), the first thing you do is understand what data you're working with. That's the part I'm curious about understanding.
 
-The first step, **Exploratory Data Analysis**, yields a birds-eye view of the data and is used to tease out patterns or suggest further possible approaches. These analyses, (or EDAs) mix interactive code snippets alongside prose, and make use of a number of statistical tools to help decipher the data.
+**Are there patterns or best practices around how people understand datasets?** If there are, understanding those will help give guidance to our hypothetical problem above.
 
-![Example of an EDA](images/example_eda.png)
+<div class="right" style="width: 270px;">
+<img alt="Example of an EDA" src="images/example_eda.png" />
 <div class="caption"><a href="https://www.kaggle.com/tentotheminus9/r-eda/notebook">Example of an EDA</a></div>
+</div>
 
-I was curious to see if there were patterns across the strategies people used in their exploratory data analyses. So I decided to find out.
-
-
-## Patterns across EDAs
-
-The notebooks I saw were all written with either a beginner or advanced audience in mind. More popular competitions, or ones aimed at a more general audience, tended to have EDAs that were exhaustive in their analyses. In these EDAs, I also saw a trend of interweaving supplementary prose or the use of narrative devices alongside the analysis, as tools to help beginners better understand the techniques.
-
-By comparison, notebooks aimed at domain experts tended to do away with superfluous framings, and many also skipped over rudimentary data analyses, instead diving straight into domain-specific techniques. In the final competition I looked at ([Lung Cancer](https://www.kaggle.com/c/data-science-bowl-2017)), many techniques and conclusions were so over my head as to be almost indecipherable. (I did my best though!)
-
-Within Structured Data competitions, EDAs tended to follow similar ground. For instance, EDAs in the [Titanic competition](https://www.kaggle.com/c/titanic) were almost identical in their selections of columns and in what order. However, they showed more diversity in their feature engineering choices, along with the visualizations used.
-
-Natural language datasets share similarities in how the authors process and manipulate the text, but there's more variability in the features the authors choose to engineer, as well as the conclusions drawn.
-
-Finally, image competitions showed the most diversity in terms of analysis and feature engineering. These competitions demonstrated some really creative approaches, though the competitions I looked at also tended to be aimed at the most advanced audiences. It makes sense that as datasets become more specialized or esoteric, the amount of introductory analysis and explanation decreases, while the amount of deep or specialized analysis increases, and indeed this is what I found.
-
-In the rest of this article I'll walk through each of the competitions and examine how each author approached the data.
-
-<hr />
+To find out, I chose a number of **Exploratory Data Analyses** (or EDAs) that were made publicly available on Kaggle. These analyses mix interactive code snippets alongside prose, and can help offer a birds-eye view of the data or tease out patterns in the data.
 
 > Data Scientists spend [the] vast majority of their time by [doing] data preparation, not model optimization. - [Lorinc](https://www.kaggle.com/lorinc/feature-extraction-from-images)
 
-<aside><h3>Criteria</h3>For each category I chose two competitions where the submission date had passed, and sorted (roughly) by how many teams had submitted.<br /><br />For each competition I searched for EDA tags, and chose three kernels that were highly rated or well commented. Final scores did not factor in (some EDAs didn't even submit a score).</aside>
+Something else I looked at was [feature engineering](https://www.quora.com/Does-deep-learning-reduce-the-importance-of-feature-engineering), the technique of taking existing data and transforming it in such a way as to impart additional meaning; for example, taking a timestamp and pulling out a "day of week" column, which might come in handy for predicting sales in a store.)
 
-I looked at EDAs along with feature engineering, since the line between the two is blurry. (Feature engineering means taking existing data and transforming it in such a way to impart additional meaning; for example, taking dates and extracting a "day of week" variable. [A longer explanation is here](https://www.quora.com/Does-deep-learning-reduce-the-importance-of-feature-engineering).)
+I wanted to look at a variety of EDAs but also in a variety of domains, and I chose to look at the following three:
 
-I chose two competitions from each of the following domains:
+* [Structured data competitions](#structured-data)
+* [NLP (natural language) competitions](#nlp)
+* [Image competitions](#images)
 
-* Structured data competitions
-* NLP (natural language) competitions
-* Image competitions
+If you're impatient you can [jump ahead to the conclusions below](#conclusions).
 
+<aside class="center"><h3>Criteria</h3>For each category I chose two competitions where the submission date had passed, and sorted (roughly) by how many teams had submitted.<br /><br />For each competition I searched for EDA tags, and chose three kernels that were highly rated or well commented. Final scores did not factor in (some EDAs didn't even submit a score).</aside>
+
+<a name="structured-data" />
 <h1 class="center">Structured Data Competitions</h1>
 
 A structured data problem is characterized by spreadsheets containing training and test data. The spreadsheets may contain categorical variables (colors, like "green", "red", and "blue"), continuous variables (ages, like "4", "15", and "67") and ordinal variables (educational level, like "elementary", "high school", "college").
@@ -234,6 +219,7 @@ There's a wide range of strategies for determining how to approach the data, wit
 
 There's more of a focus on statistical methods and integrity overall than in the Titanic competition, possibly because there's so many more features to handle; it's possible that negative statistical effects might have a larger overall effect than in the previous competition.
 
+<a name="nlp" />
 <h1 class="center">Natural Language Competitions</h1>
 
 Natural Language, or NLP, competitions, have datasets that contain words or sentences. While the core data type is the same as in structured data competitions - text - the tools available for analyzing natural language tend to be specialized, resulting in different strategies for analysis.
@@ -390,6 +376,7 @@ In both competitions, kernel authors used [TF-IDF](https://www.kaggle.com/headso
 
 When it came to features, authors engineered a variety of new features including average words per sentence, punctuation choices, and whether words were duplicated. 
 
+<a name="images" />
 <h1 class="center">Images</h1>
 
 So far, the competitions we've looked at have been purely text-based (either language, strings or numbers). The last two competitions I examined ([lung cancer](https://www.kaggle.com/c/data-science-bowl-2017/) and [leaf classification](https://www.kaggle.com/c/leaf-classification/)) were both more domain specific. As a result, the analyses tended to assume an advanced audience, and authors skipped over rudimentary analysis and in favor of exploring different techniques for image analysis.
@@ -519,8 +506,22 @@ And another version, after removing the surrounding air to reduce memory:
 
 This competition featured the most differences between kernels of any I saw. Guido, given his familiarity with medical image formats, was able to leverage that background to draw significantly more nuanced conclusions. That said, the other two authors' lack of medical familiarity did not prevent them from drawing equally fascinating conclusions.
 
-# Overall Conclusions
+<a name="conclusions" />
 
-Examining EDAs was a fascinating exercise, both for learning what strategies were common across EDAs as well as with what the culture of Kaggle feels like (it depends on who your audience is). What's also interesting is that you can produce an extremely useful EDA without necessarily producing an accurate predictive model. Can one come up with an accurate model without being able to perform a rudimentary data analysis? I assume not, but I don't know.
+# Conclusions
 
-I will continue to journal my learnings in this space; if you're interested, sign up for my mailing list! I promise I only send you the most highly polished turds on the market.
+What did I find?
+
+For **Structured Data** competitions, EDAs tended to tread similar ground. For instance, EDAs in the [Titanic competition](https://www.kaggle.com/c/titanic) were almost identical in their selections of columns, and in what order to study them. However, they showed more diversity in their choices of features to engineer along with the visualizations they used to examine the data.
+
+**Natural Language** datasets share similarities across EDAs in how the authors process and manipulate the text, but there's more variability in the features the authors choose to engineer, as well as differing conclusions drawn from those analyses.
+
+Finally, **Image** competitions showed the most diversity in terms of analysis and feature engineering.
+
+The image competitions I saw were mostly aimed at advanced audiences, and were in fairly domain-specific areas, which may have resulted in the more advanced diversity; it makes sense that as datasets become more specialized or esoteric, the amount of introductory analysis and explanation decreases, while the amount of deep or specialized analysis increases, and indeed this is what I found.
+
+On a more Kaggle-specific level, the notebooks I saw were all written with either a beginner or advanced audience in mind. More popular competitions, or ones aimed at a more general audience, tended to have EDAs that were exhaustive in their analyses. In these EDAs, I also saw a trend of interweaving supplementary prose or the use of narrative devices alongside the analysis, as tools to help beginners better understand the techniques. By comparison, notebooks aimed at domain experts tended to do away with superfluous framings, and many also skipped over rudimentary data analyses, instead diving straight into domain-specific techniques.
+
+Finally, many EDAs were extremely useful and in-depth, without actually implementing a model or making predictions. Can one come up with an accurate model without being able to perform a rudimentary data analysis? I assume not, but I don't know.
+
+I will continue to journal my learnings in this space; if you're interested, sign up for my mailing list!

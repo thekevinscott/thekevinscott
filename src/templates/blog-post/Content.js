@@ -73,13 +73,6 @@ const Content = styled.div `
   }
 
   aside {
-  /*
-    &:before {
-      content: "🤔";
-      display: block;
-      text-align: center;
-    }
-    */
 
     h1, h2, h3 {
       text-align: left;
@@ -102,6 +95,18 @@ const Content = styled.div `
     background: rgba(0, 0, 0, 0.020);
     padding: 20px;
     font-family: ${SERIF};
+
+    &.center {
+      margin: 0 auto;
+      float: none;
+      width: 60%;
+    }
+
+    &.left {
+      float: left;
+      margin-right: 0;
+      margin-left: -125px;
+    }
 
     a {
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
