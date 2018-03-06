@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><link rel="shortcut icon" href="/static/favicon.ed16f7b0.png" type="image/png"/><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="preload" href="/component---src-layouts-index-js-a5881cef5d67d4cfaa00.js" as="script"/><link rel="preload" href="/component---src-templates-blog-post-index-js-9b3a1928b4a30a251e56.js" as="script"/><link rel="preload" href="/path---exploratory-data-analysis-strategies-6b5afbd8fab79972c1f6.js" as="script"/><link rel="preload" href="/app-7dd9541ffd30b462fd1c.js" as="script"/><link rel="preload" href="/commons-f1ef510847f79fa0a799.js" as="script"/><script id="webpack-manifest">/*<![CDATA[*/window.webpackManifest={"231608221292675":"app-7dd9541ffd30b462fd1c.js","277928288978242":"component---src-templates-blog-post-index-js-9b3a1928b4a30a251e56.js","162898551421021":"component---src-pages-404-js-4503918ea3a16cfcdb75.js","35783957827783":"component---src-pages-index-js-cdc0656c267c9349e098.js","60335399758886":"path----557518bd178906f8d58a.js","98227729292918":"path---exploratory-data-analysis-strategies-6b5afbd8fab79972c1f6.js","98502568430079":"path---shoulders-of-giants-d46b4940a3efc043eb41.js","241488815727667":"path---deep-learning-cryptocurrency-pc-4-ai-d2a4eb07d6e5cf9045ae.js","240385028603242":"path---deep-learning-cryptocurrency-pc-3-mining-80e27316666b82122802.js","91865546644228":"path---deep-learning-cryptocurrency-pc-2-os-d48f3d2331ee602ac9de.js","63140056250670":"path---arrays-in-react-16-6a44a2f3c8f17a501a66.js","252862943042359":"path---deep-learning-cryptocurrency-pc-1-hardware-1c2cddee86a65d9b6a0b.js","148662180999793":"path---background-images-in-react-native-0752b1f7c4c0e91573c9.js","245175683610111":"path---tabbing-through-input-fields-230cea6b91f636e53460.js","254022195166212":"path---404-a0e39f21c11f6a62c5ab.js","142629428675168":"path---index-0bb715bc3939d605777b.js","178698757827068":"path---404-html-a0e39f21c11f6a62c5ab.js","114276838955818":"component---src-layouts-index-js-a5881cef5d67d4cfaa00.js"}/*]]>*/</script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700|Lato:400,500,600,700,800,900" rel="stylesheet"/><title data-react-helmet="true">Patterns in Exploratory Data Analyses</title><style type="text/css">
+<!DOCTYPE html><html><head><link rel="shortcut icon" href="/static/favicon.ed16f7b0.png" type="image/png"/><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="preload" href="/component---src-layouts-index-js-a5881cef5d67d4cfaa00.js" as="script"/><link rel="preload" href="/component---src-templates-blog-post-index-js-5eb58970bd64f0c43a9e.js" as="script"/><link rel="preload" href="/path---exploratory-data-analysis-strategies-9f0079c0c48f2b68e029.js" as="script"/><link rel="preload" href="/app-7dd9541ffd30b462fd1c.js" as="script"/><link rel="preload" href="/commons-f1ef510847f79fa0a799.js" as="script"/><script id="webpack-manifest">/*<![CDATA[*/window.webpackManifest={"231608221292675":"app-7dd9541ffd30b462fd1c.js","277928288978242":"component---src-templates-blog-post-index-js-5eb58970bd64f0c43a9e.js","162898551421021":"component---src-pages-404-js-4503918ea3a16cfcdb75.js","35783957827783":"component---src-pages-index-js-cdc0656c267c9349e098.js","60335399758886":"path----557518bd178906f8d58a.js","98227729292918":"path---exploratory-data-analysis-strategies-9f0079c0c48f2b68e029.js","98502568430079":"path---shoulders-of-giants-d46b4940a3efc043eb41.js","241488815727667":"path---deep-learning-cryptocurrency-pc-4-ai-d2a4eb07d6e5cf9045ae.js","240385028603242":"path---deep-learning-cryptocurrency-pc-3-mining-80e27316666b82122802.js","91865546644228":"path---deep-learning-cryptocurrency-pc-2-os-d48f3d2331ee602ac9de.js","63140056250670":"path---arrays-in-react-16-6a44a2f3c8f17a501a66.js","252862943042359":"path---deep-learning-cryptocurrency-pc-1-hardware-1c2cddee86a65d9b6a0b.js","148662180999793":"path---background-images-in-react-native-0752b1f7c4c0e91573c9.js","245175683610111":"path---tabbing-through-input-fields-230cea6b91f636e53460.js","254022195166212":"path---404-a0e39f21c11f6a62c5ab.js","142629428675168":"path---index-0bb715bc3939d605777b.js","178698757827068":"path---404-html-a0e39f21c11f6a62c5ab.js","114276838955818":"component---src-layouts-index-js-a5881cef5d67d4cfaa00.js"}/*]]>*/</script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700|Lato:400,500,600,700,800,900" rel="stylesheet"/><title data-react-helmet="true">Patterns in Exploratory Data Analyses</title><style type="text/css">
     .anchor {
       float: left;
       padding-right: 4px;
@@ -34,7 +34,7 @@
         }
       }
     })
-  </script><script>/*<![CDATA[*/!function(e,t,r){function n(){for(;d[0]&&"loaded"==d[0][f];)c=d.shift(),c[o]=!i.parentNode.insertBefore(c,i)}for(var s,a,c,d=[],i=e.scripts[0],o="onreadystatechange",f="readyState";s=r.shift();)a=e.createElement(t),"async"in i?(a.async=!1,e.head.appendChild(a)):i[f]?(d.push(a),a[o]=n):e.write("<"+t+' src="'+s+'" defer></'+t+">"),a.src=s}(document,"script",["/commons-f1ef510847f79fa0a799.js","/app-7dd9541ffd30b462fd1c.js","/path---exploratory-data-analysis-strategies-6b5afbd8fab79972c1f6.js","/component---src-templates-blog-post-index-js-9b3a1928b4a30a251e56.js","/component---src-layouts-index-js-a5881cef5d67d4cfaa00.js"])/*]]>*/</script><style>
+  </script><script>/*<![CDATA[*/!function(e,t,r){function n(){for(;d[0]&&"loaded"==d[0][f];)c=d.shift(),c[o]=!i.parentNode.insertBefore(c,i)}for(var s,a,c,d=[],i=e.scripts[0],o="onreadystatechange",f="readyState";s=r.shift();)a=e.createElement(t),"async"in i?(a.async=!1,e.head.appendChild(a)):i[f]?(d.push(a),a[o]=n):e.write("<"+t+' src="'+s+'" defer></'+t+">"),a.src=s}(document,"script",["/commons-f1ef510847f79fa0a799.js","/app-7dd9541ffd30b462fd1c.js","/path---exploratory-data-analysis-strategies-9f0079c0c48f2b68e029.js","/component---src-templates-blog-post-index-js-5eb58970bd64f0c43a9e.js","/component---src-layouts-index-js-a5881cef5d67d4cfaa00.js"])/*]]>*/</script><style>
 html {
   width: 100%;
   height: 100%;
@@ -464,12 +464,12 @@ iframe {
     max-height: 200px;
   }
 }
-.iGJhFB { 
+.cRgzkx { 
   max-width: 100%;
   width: 700px;
   margin-bottom: 100px;
  }
-.iGJhFB .name { 
+.cRgzkx .name { 
   border-radius: 3px; 
   font-family: Europa,
     -apple-system,
@@ -486,46 +486,55 @@ iframe {
     sans-serif
 ; 
   border: 1px solid rgba(0, 0, 0, 0.1); 
-  padding: 3px 5px;
+  padding: 0px 5px; 
+  display: inline-block; 
+  line-height: 28px;
 }
-.iGJhFB h1.center { 
+.cRgzkx blockquote .name, .cRgzkx em .name, .cRgzkx .caption .name { 
+  border: none; 
+  background: none; 
+  padding: 0;
+}
+.cRgzkx h1.center { 
   text-align: center; 
   display: block; 
   margin: 100px auto 80px auto; 
-  clear: both;
+  clear: both; 
+  /*
+    &:after {
+      display: block;
+      content: '...';
+      letter-spacing: 20px;
+      padding-left: 10px;
+      margin: 0px auto;
+      width: 100%;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.68);
+      position: relative;
+    }
+    */
 }
-.iGJhFB h1.center:after { 
-  display: block; 
-  content: '...'; 
-  letter-spacing: 20px; 
-  padding-left: 10px; 
-  margin: 0px auto; 
-  width: 100%; 
-  text-align: center; 
-  color: rgba(0, 0, 0, 0.68); 
-  position: relative;
-}
-.iGJhFB .caption { 
+.cRgzkx .caption { 
   text-align: center; 
   font-size: 1.2rem; 
   margin-top: -30px; 
   margin-bottom: 50px;
 }
-.iGJhFB .left img, .iGJhFB .right img { 
+.cRgzkx .left img, .cRgzkx .right img { 
   max-width: 100%;
 }
-.iGJhFB .left .caption, .iGJhFB .right .caption { 
+.cRgzkx .left .caption, .cRgzkx .right .caption { 
   margin-bottom: 0px;
 }
-.iGJhFB .left { 
+.cRgzkx .left { 
   float: left; 
   margin: 0px 20px 20px 0;
 }
-.iGJhFB .right { 
+.cRgzkx .right { 
   float: right; 
   margin: 0px 0 20px 20px;
 }
-.iGJhFB span.figcaption, .iGJhFB span.figcaption_hack { 
+.cRgzkx span.figcaption, .cRgzkx span.figcaption_hack { 
   text-align: center; 
   font-size: 14px; 
   font-family: Europa,
@@ -547,7 +556,7 @@ iframe {
   margin-bottom: 40px; 
   opacity: 0.9;
 }
-.iGJhFB aside { 
+.cRgzkx aside { 
   line-height: 1.5; 
   font-size: 1.6rem; 
   margin: 20px 0 20px 40px; 
@@ -567,36 +576,37 @@ iframe {
     Georgia,
     serif;
 }
-.iGJhFB aside h1, .iGJhFB aside h2, .iGJhFB aside h3 { 
+.cRgzkx aside h1, .cRgzkx aside h2, .cRgzkx aside h3 { 
   text-align: left; 
   border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
   padding-bottom: 15px; 
   padding: 0 0 15px 0; 
   margin: 0 0 15px 0;
 }
-.iGJhFB aside.center { 
-  margin: 0 auto; 
+.cRgzkx aside.center { 
+  margin: 20px auto 40px auto; 
+  line-height: 2.8rem; 
   float: none; 
   width: 60%;
 }
-.iGJhFB aside.left { 
+.cRgzkx aside.left { 
   float: left; 
-  margin-right: 0; 
+  margin-right: 20px; 
   margin-left: -125px;
 }
-.iGJhFB aside a { 
+.cRgzkx aside a { 
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.iGJhFB aside p { 
+.cRgzkx aside p { 
   font-family: inherit; 
   font-size: inherit; 
   line-height: inherit; 
   margin: 20px 0 0 0;
 }
-.iGJhFB aside p:first-child { 
+.cRgzkx aside p:first-child { 
   margin-top: 0;
 }
-.iGJhFB .dropcap { 
+.cRgzkx .dropcap { 
   font-family: Europa,
     -apple-system,
     Lato,
@@ -623,33 +633,33 @@ iframe {
   line-height: .83; 
   margin-bottom: -.08em;
 }
-.iGJhFB .gatsby-image-outer-wrapper { 
+.cRgzkx .gatsby-image-outer-wrapper { 
   width: 100%; 
   background: blue; 
   height: 200px;
 }
-.iGJhFB h1 { 
+.cRgzkx h1 { 
   margin-top: 60px; 
   font-size: 3.4rem;
 }
-.iGJhFB h2 { 
+.cRgzkx h2 { 
   font-size: 2.6rem; 
   margin-top: 30px;
 }
-.iGJhFB h3, .iGJhFB h4, .iGJhFB h5, .iGJhFB h6 { 
+.cRgzkx h3, .cRgzkx h4, .cRgzkx h5, .cRgzkx h6 { 
   font-size: 2rem;
 }
-.iGJhFB a { 
+.cRgzkx a { 
   transition-duration: 0.15s; 
   -webkit-transition-duration: 0.15s;
 }
-.iGJhFB a:hover { 
+.cRgzkx a:hover { 
   border-bottom: 1px solid #1C9963;
 }
-.iGJhFB a.gatsby-resp-image-link { 
+.cRgzkx a.gatsby-resp-image-link { 
   border: none;
 }
-.iGJhFB a.gatsby-resp-image-link:hover { 
+.cRgzkx a.gatsby-resp-image-link:hover { 
   border: none;
 }
 .gzatWh h1 {
@@ -681,9 +691,9 @@ iframe {
 
 
 
-</style></head><body><div id="___gatsby" class="DBtnK"><div class="jOuFVU" data-reactroot="" data-reactid="1" data-react-checksum="-611431013"><!-- react-empty: 2 --><div class="chmhbI" data-reactid="3"><!-- react-empty: 4 --><div class="gzatWh" data-reactid="5"><a href="/" class="cpGHIP" data-reactid="6">← Back</a><span class="kuWQHT" data-reactid="7"><!-- react-text: 8 -->34<!-- /react-text --><!-- react-text: 9 --> min read<!-- /react-text --></span><h1 data-reactid="10">Patterns in Exploratory Data Analyses</h1></div><img src="/static/cover-751d767462cc582d1f099408bc458962-64523.jpg" class="dcgggt" data-reactid="11"/><div class="cwTtjF" data-reactid="12">Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Samuel Zeller</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></div><article class="blog-post-content iGJhFB" data-reactid="13"><p>[Some anecdote to kick things off] Your boss comes to you with a terabyte of pictures of dog butts and says "I want you to build me a machine learning model that will recognize only the finest dog butts in this set." Where do you begin?</p>
+</style></head><body><div id="___gatsby" class="DBtnK"><div class="jOuFVU" data-reactroot="" data-reactid="1" data-react-checksum="-1206102068"><!-- react-empty: 2 --><div class="chmhbI" data-reactid="3"><!-- react-empty: 4 --><div class="gzatWh" data-reactid="5"><a href="/" class="cpGHIP" data-reactid="6">← Back</a><span class="kuWQHT" data-reactid="7"><!-- react-text: 8 -->34<!-- /react-text --><!-- react-text: 9 --> min read<!-- /react-text --></span><h1 data-reactid="10">Patterns in Exploratory Data Analyses</h1></div><img src="/static/cover-751d767462cc582d1f099408bc458962-64523.jpg" class="dcgggt" data-reactid="11"/><div class="cwTtjF" data-reactid="12">Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Samuel Zeller</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></div><article class="blog-post-content cRgzkx" data-reactid="13"><p>[Some anecdote to kick things off] Your boss comes to you with a terabyte of pictures of dog butts and says "I want you to build me a machine learning model that will recognize only the finest dog butts in this set." Where do you begin?</p>
 <p>If you're like a lot of people on <a href="https://kaggle.com" target="_blank" rel="nofollow noopener noreferrer">Kaggle</a>, the first thing you do is understand what data you're working with. That's the part I'm curious about understanding.</p>
-<p><strong>Are there patterns or best practices around how people understand datasets?</strong> If there are, understanding those will help give guidance to our hypothetical problem above.</p>
+<p>When exploring a new dataset, <strong>are there patterns or best practices around how people understand the data?</strong> If there are, understanding those will help give guidance to our hypothetical problem above.</p>
 <div class="right" style="width: 270px;">
 
   <a class="gatsby-resp-image-link" href="/static/example_eda-583d6a43821c57fa9095b4fdab57608c-ae4fa.png" style="display: block" target="_blank" rel="noopener">
@@ -704,25 +714,27 @@ iframe {
 <blockquote>
 <p>Data Scientists spend [the] vast majority of their time by [doing] data preparation, not model optimization. - <a href="https://www.kaggle.com/lorinc/feature-extraction-from-images" target="_blank" rel="nofollow noopener noreferrer"><span class="name">lorinc</span></a></p>
 </blockquote>
-<p>Something else I looked at was <a href="https://www.quora.com/Does-deep-learning-reduce-the-importance-of-feature-engineering" target="_blank" rel="nofollow noopener noreferrer">feature engineering</a>, the technique of taking existing data and transforming it in such a way as to impart additional meaning; for example, taking a timestamp and pulling out a "day of week" column, which might come in handy for predicting sales in a store.)</p>
-<p>I wanted to look at a variety of EDAs but also in a variety of domains, and I chose to look at the following three:</p>
+<p>I simultaneously looked at <a href="https://www.quora.com/Does-deep-learning-reduce-the-importance-of-feature-engineering" target="_blank" rel="nofollow noopener noreferrer">feature engineering</a>, taking existing data and transforming it in such a way as to impart additional meaning (for example, taking a timestamp and pulling out a <code>DAY_OF_WEEK</code> column, which might come in handy for predicting sales in a store).</p>
+<p>I wanted to look at a variety of EDAs, across a variety of domains. I chose the following three domains:</p>
 <ul>
-<li><a href="#structured-data">Structured data competitions</a></li>
-<li><a href="#nlp">NLP (natural language) competitions</a></li>
-<li><a href="#images">Image competitions</a></li>
+<li><a href="#structured-data">Structured Data</a></li>
+<li><a href="#nlp">NLP (Natural Language)</a></li>
+<li><a href="#images">Image</a></li>
 </ul>
-<p>If you're impatient you can <a href="#conclusions">jump ahead to the conclusions below</a>.</p>
+<p>Feel free to <a href="#conclusions">jump ahead to the conclusions below</a>, or continue on to dive into the datasets.</p>
+<hr />
 <aside class="center"><h3>Criteria</h3>For each category I chose two competitions where the submission date had passed, and sorted (roughly) by how many teams had submitted.<br /><br />For each competition I searched for EDA tags, and chose three kernels that were highly rated or well commented. Final scores did not factor in (some EDAs didn't even submit a score).</aside>
+<hr />
 <p><a name="structured-data"></a></p>
-<h1 class="center">Structured Data Competitions</h1>
-<p>A structured data problem is characterized by spreadsheets containing training and test data. The spreadsheets may contain categorical variables (colors, like "green", "red", and "blue"), continuous variables (ages, like "4", "15", and "67") and ordinal variables (educational level, like "elementary", "high school", "college").</p>
+<h1 class="center">Structured Data</h1>
+<p>A structured data problem is characterized by spreadsheets containing training and test data. The spreadsheets may contain categorical variables (colors, like <code>green</code>, <code>red</code>, and <code>blue</code>), continuous variables (ages, like <code>4</code>, <code>15</code>, and <code>67</code>) and ordinal variables (educational level, like <code>elementary</code>, <code>high school</code>, <code>college</code>).</p>
 <aside>
 <h3>Terms</h3>
 <p><strong>Imputation</strong> &mdash; Filling in missing values in the data</p>
 <p><strong>Binning</strong> &mdash; Combining continuous data into buckets, a form of feature engineering</p>
 </aside>
 <p>The training spreadsheet has a target column that you're trying to solve for, which will be missing in the test data. As a result, the majority of the EDAs I examined focused on teasing out potential correlations between the target variable and the other columns.</p>
-<p>I think that in this particular domain, because you're mostly looking for correlations between different variables, there's only so many ways you can slice and dice the data (without incorporating foreign data sources). Fo  visualizing data you have more options, but even so, <a href="https://towardsdatascience.com/5-quick-and-easy-data-visualizations-in-python-with-code-a2284bae952f" target="_blank" rel="nofollow noopener noreferrer">some techniques seem better suited for a task at hand than others</a>, so a lot of notebooks tend to look similar.</p>
+<p>In this particular domain, because you're mostly looking for correlations between different variables, I think there's only so many ways you can slice and dice the data (without incorporating foreign data sources). For  visualizations, you have more options, but even so, <a href="https://towardsdatascience.com/5-quick-and-easy-data-visualizations-in-python-with-code-a2284bae952f" target="_blank" rel="nofollow noopener noreferrer">some techniques seem better suited for a task at hand than others</a>, resulting in a lot of similar-looking notebooks.</p>
 <p>Where you can really let your imagination run wild is feature engineering. Each of the authors I looked at had a different approach to their feature engineering, whether it was choosing how to bin a feature or combining categorical features into new ones.</p>
 <p>Let's take a deeper look at two competitions, the <a href="https://www.kaggle.com/c/titanic" target="_blank" rel="nofollow noopener noreferrer">Titanic competition</a> followed by the <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques" target="_blank" rel="nofollow noopener noreferrer">House Prices competition</a>.</p>
 <h2 id="titanic"><a href="#titanic" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.kaggle.com/c/titanic" target="_blank" rel="nofollow noopener noreferrer">Titanic</a></h2>
@@ -743,9 +755,9 @@ iframe {
 <div class="caption">by <a href="https://www.flickr.com/photos/viaggioroutard/32746842734/in/photolist-RTJ8sN-7reGoc-7rdfgb-7reqrP-7rhfiJ-b4aUUF-bv64XJ-91NeZE-q2mfUz-eFvcpv-VMircS-pzVRNe-dF1MGZ-WCozhj-95TEWr-gkyMjV-75JPMM-7r8VAM-7r8K54-7ricVq-7rcJaC-7r8WZP-7rcUuc-7rgRJC-7rgFnC-oktnFk-7rdZK1-7rhNjL-adsXVC-7rcKPj-4YLEGK-7rhHQs-7r8TaB-7r8SoZ-e5wPAJ-8xv5oh-bvPFMY-7r8V3n-4YTM15-axQxWs-d1iAyQ-918Vc6-2gmvHf-8RCNJR-4YLEBM-b4aUXr-usDiD-c8Yp5o-22nLofY-okatX">Viaggio Routard</a></div>
 </div>
 <p>The Titanic competition is a popular beginners' competition, and lots of folks on Kaggle cycle through it. As a result the EDAs tend to be well written and thoroughly documented, and were amongst the clearest EDAs I saw. The dataset includes a training spreadsheet with a column <code>Survived</code> indicating whether a passenger survived or not, along with other supplementary data like their age, gender, ticket fare price, and more.</p>
-<p><small><em>
+<aside>
 The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to-prediction-dietanic">EDA to Prediction Dietanic</a> by <span class="name">I, Coder</span>, <a href="https://www.kaggle.com/dejavu23/titanic-survival-for-beginners-eda-to-ml">Titanic Survival for Beginners EDA to ML</a> by <span class="name">deja vu</span>, and <a href="https://www.kaggle.com/jkokatjuhha/in-depth-visualisations-simple-methods">In Depth Visualisations Simple Methods</a> by <span class="name">Jekaterina Kokatjuhha</span>.
-</em></small></p>
+</aside>
 <p>All three of the EDAs start with raw metrics, viewing a few sample rows and printing descriptive information about the CSV file like types of the columns and means and medians.</p>
 <p>
   <a
@@ -977,7 +989,7 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
 <p>Everyone starts with looking at the breakdown of survivors, and then the breakdown of survivors by gender. Cross tabs, factor plots, and violin plots are all popular graphs. <span class="name">Jekaterina</span> also plots some really fascinating graphs.</p>
 <p>The authors diverge a bit more when it comes to feature engineering. The authors differ on when to engineer new features, with some treating it as a discrete step and others tackling it during their initial analysis of the data. Choices around binning differ, with age, title and fare all receiving different number of buckets, and only <span class="name">Jekaterina</span> engineering a discrete <code>child</code> / <code>adult</code> feature.</p>
 <p>Approaches to imputation differ as well. <span class="name">I, Coder</span> recommends looking at existing data to predict imputation values, whereas <span class="name">Jekaterina</span> ensures her imputed data did not impact the mean.</p>
-<p>So overall, some clear similarities with how to think about and approach the data, with the main diveragences around visualizations and feature engineering.</p>
+<p>There's some clear similarities in how the authors think about and approach the data, with the main divergences concerning visualizations and feature engineering.</p>
 <h1 id="house-prices"><a href="#house-prices" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>House Prices</h1>
 <div class="left" style="width: 400px;">
 
@@ -1003,8 +1015,8 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
 <blockquote>
 <p>With 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa, this competition challenges you to predict the final price of each home.</p>
 </blockquote>
-<p>So while similar in kind to Titanic, it's considerably more complicated.</p>
-<p><small><em>The EDAs I chose for analysis were <a href="https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python">Comprehensive Data Exploration with Python</a> by Pedro Marcelino, <a href="https://www.kaggle.com/xchmiao/detailed-data-exploration-in-python">Detailed Data Exploration in Python</a> by Angela, and <a href="https://www.kaggle.com/caicell/fun-python-eda-step-by-step">Fun Python EDA Step by Step</a> by Sang-eon Park.</em></small></p>
+<p>While similar in kind to Titanic, it's considerably more complicated.</p>
+<aside class="center">The EDAs I chose for analysis were <a href="https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python">Comprehensive Data Exploration with Python</a> by Pedro Marcelino, <a href="https://www.kaggle.com/xchmiao/detailed-data-exploration-in-python">Detailed Data Exploration in Python</a> by Angela, and <a href="https://www.kaggle.com/caicell/fun-python-eda-step-by-step">Fun Python EDA Step by Step</a> by Sang-eon Park.</aside>
 <div class="right" style="width: 300px;">
 
   <a class="gatsby-resp-image-link" href="/static/pmarcelino_saleprice-735c123c7c023eca3391feb49a9fd2df-182ad.png" style="display: block" target="_blank" rel="noopener">
@@ -1127,7 +1139,7 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
 <p>There's a wide range of strategies for determining how to approach the data, with some authors adopting a subjective strategy and others jumping straight to more objective measurements. There's also no clear consensus on when and how to cull missing values or outliers.</p>
 <p>There's more of a focus on statistical methods and integrity overall than in the Titanic competition, possibly because there's so many more features to handle; it's possible that negative statistical effects might have a larger overall effect than in the previous competition.</p>
 <p><a name="nlp"></a></p>
-<h1 class="center">Natural Language Competitions</h1>
+<h1 class="center">Natural Language</h1>
 <p>Natural Language, or NLP, competitions, have datasets that contain words or sentences. While the core data type is the same as in structured data competitions - text - the tools available for analyzing natural language tend to be specialized, resulting in different strategies for analysis.</p>
 <p>In its original form, natural language is not easily decipherable by machine learning models. To consume it requires an intermediary transformation step into 1s and 0s. One such popular technique is called <a href="https://en.wikipedia.org/wiki/Bag-of-words_model" target="_blank" rel="nofollow noopener noreferrer">Bag of Words</a>, whereby a sentence is effectively transformed into a collection of booleans indicating whether a particular word is present or not.</p>
 <p>Because of this, the first step of most notebooks tends to be transforming the text into something machine readable, and that step usually looks the same across notebooks. Once that's done, authors diverge considerably in their approaches and employ a variety of different visualizations and techniques for feature engineering.</p>
@@ -1154,9 +1166,9 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
 <div class="caption">by <a href="https://www.flickr.com/photos/navaneethkn/7975953800/in/photolist-d9NRbQ-dEZp2L-dQinfV-8ZqMDd-GyaoHJ-oGKC67-5Kj4pp-8YybhA-8Yva5t-7Xh81B-oEZ6w8-4G19MZ-cm3zDf-3c7z32-GXuYz-oyayD-96qUSC-6UYVbr-bjWoro-duyWt-7jD4Nc-6KNazu-op1rhC-DY1c6F-bYNV7U-byHgQ3-cmFxgG-cm3zEC-8m74XJ-oZEcpA-9Kd3gM-7t1H1q-m9ZbHK-9r7F3j-r3kU-8ZPcAU-8RLfw5-TsHmuW-98S9zG-8Mzx2B-c6ZoZ9-7Bpck-8bnj49-4AJUnS-vag3VE-7Bp97-jeiiRG-bHbYQa-dJQMhT-N7SSSy">navaneethkn</a></div>
 </div>
 <p>The first NLP competition I looked at was the <a href="https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge%3CPaste%3E" target="_blank" rel="nofollow noopener noreferrer">Toxic Comment Classifcation Competition</a>, which included a dataset featuring a large number of comments from Wikipedia talk page edits that been scored on a toxicity scale.</p>
-<p><small><em>
+<aside class="center">
 The EDAs I chose for analysis were <a href="https://www.kaggle.com/jagangupta/stop-the-s-toxic-comments-eda">Stop the S@#$ - Toxic Comments EDA</a> by <span class="name">Jagan</span>, <a href="https://www.kaggle.com/rhodiumbeng/classifying-multi-label-comments-0-9741-lb">Classifying Multi-label Comments</a> by <span class="name">Rhodium Beng</span>, and <a href="https://www.kaggle.com/fcostartistican/don-t-mess-with-my-mothjer">Don't Mess With My Mothjer</a> by <span class="name">Francisco Mendez</span>.
-</em></small></p>
+</aside>
 <p>All three authors begin by describing the dataset and pulling a few comments at random. While there's no missing values, there is a lot of noise in the comments, but its unclear whether this noise will be useful in the final data analysis.</p>
 <p>
   <a
@@ -1280,9 +1292,9 @@ Other classes seem to be a subset of toxic barring a few exceptions</p>
 <div class="caption">by <a href="https://www.flickr.com/photos/gaelvaroquaux/29632530995/in/photolist-M9wt5P-97P7tg-4vzLRF-61r11U-Zt2GHV-cY8aNJ-cY7ZgL-UXxYV9-b4qibP-4tm3wK-7haukg-2JiX6D-cVsp9-cY7XLU-4eeRFT-8PsYcb-cY7X8j-5jUhKv-jVRzRb-97Sb5A-7aBbJH-dZNRw2-smkRf-gxqQt3-aqqb74-gxs9eF-62dAE-FnZJs-62dXh-ZWp8CL-DpiJqc-WuwzSK-FnXvG-Ef1yLk-7omXUv-r5iPPD-pDGN7f-61hnvE-FnZKU-FnXv1-n28gM8-quLHEs-iAsBz-WBEwee-5z3uaW-pEQPCo-efPVZU-YbEZgy-dVfyAo-nHKteU">Gael Varoquaux</a></div></div>
 <p>The <a href="https://www.kaggle.com/c/spooky-author-identification" target="_blank" rel="nofollow noopener noreferrer">Spooky Author Identification</a> provided snippets of text from three horror-themed authors - Edgar Allan Poe, HP Lovecraft, or Mary Wollstonecraft Shelley - and asked participants to build a model capable of predicting which writer authored a particular bit of text.</p>
 <p>What's interesting about this dataset is its simplicity; there's very little unstructured data accompanying the text, other than author. As a result, all the EDAs focused solely on different approaches to parsing and analyzing language.</p>
-<p><small><em>
+<aside>
 The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spooky-nlp-and-topic-modelling-tutorial">Spooky NLP and Topic Modelling Tutorial</a> by <span class="name">Anisotropic</span>, <a href="https://www.kaggle.com/ambarish/tutorial-detailed-spooky-fun-eda-and-modelling">Tutorial Detailed Spooky Fun EDA and Modelling</a> by <span class="name">Bukun</span><a href="https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features">Treemap House of Horror Spooky EDA LDA Features</a> by <span class="name">Heads or Tails</span>.
-</em></small></p>
+</aside>
 <p>Each author begins by examining the dataset, picking out a few rows, and plotting the number of stories per author. <span class="name">Bukun</span> also looks at word lengths per author, while <span class="name">Anisotropic</span> plots a bar graph of overall word counts:</p>
 <p>
   <a
@@ -1646,9 +1658,9 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spo
 <p>I saw a great variety in terms of the visualization techniques used, along with features that were engineered. In particular, some authors in the lung cancer competition drew upon existing medical knowledge in order to engineer extremely domain-specific features. I can't speak to how effective those features were, but I can say that the visualizations they produced were stunning.</p>
 <h1 id="leaf-classification"><a href="#leaf-classification" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.kaggle.com/c/leaf-classification/" target="_blank" rel="nofollow noopener noreferrer">Leaf Classification</a></h1>
 <p>The Leaf Classification competition included 1,584 masked images of leaves, organized by species. Participants were instructured to build a build a model capable of classifying new images into one of the categories.</p>
-<p><small><em>
+<aside>
 The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/feature-extraction-from-images">Feature Extraction From Images</a> by <span class="name">lorinc</span>, <a href="https://www.kaggle.com/selfishgene/visualizing-pca-with-leaf-dataset">Visualizing PCA with Leaf Dataset</a> by <span class="name">selfishgene</span>, and <a href="https://www.kaggle.com/josealberto/fast-image-exploration">Fast Image Exploration</a> by <span class="name">Jose Alberto</span>.
-</em></small></p>
+</aside>
 <p>A good first step is to look at the images of the leaves, which is how two of the EDAs start.</p>
 <p>
   <a
@@ -1868,9 +1880,9 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/featur
 <div class="caption">anokas examines the metadata for a single image. You can see that patient date has been rendered anonymous (1/1/1900)</div>
 </div>
 <p>The final image competition I looked at was the <a href="https://www.kaggle.com/c/data-science-bowl-2017/" target="_blank" rel="nofollow noopener noreferrer">2017 Data Science Bowl</a>, which asked participants to examine a list of images and predict whether the patients had cancer or not. While this competition did feature structured data (meta information embedded in the images themselves), some of this data was anonymized, meaning that features that could have otherwise had predictive value (like the age of the patient) were removed. This meant that all the kernels focusing exclusively on image analysis.</p>
-<p><small><em>
+<aside>
 The EDAs I chose for analysis were <a href="https://www.kaggle.com/gzuidhof/full-preprocessing-tutorial">Full Preprocessing Tutorial</a> by <span class="name">Guido Zuidhof</span>, <a href="https://www.kaggle.com/anokas/exploratory-data-analysis-4">Exploratory Data Analysis</a> by <span class="name">Mikel Bober-Irizar</span>, and <a href="https://www.kaggle.com/apapiu/exploratory-analysis-visualization">Exploratory Analysis Visualization</a> by <span class="name">Alexandru Papiu</span>.
-</em></small></p>
+</aside>
 <p>Of the three kernel authors, <span class="name">Guido</span> is the only one to discuss his background working with medical images, and it shows in his domain-specific analysis of the dataset:</p>
 <blockquote>
 <p>Dicom is the de-facto file standard in medical imaging. ... These files contain a lot of metadata (such as the pixel size, so how long one pixel is in every dimension in the real world). This pixel size/coarseness of the scan differs from scan to scan (e.g. the distance between slices may differ), which can hurt performance of CNN approaches. We can deal with this by isomorphic resampling</p>
