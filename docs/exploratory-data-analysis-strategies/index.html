@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><link rel="shortcut icon" href="/static/favicon.ed16f7b0.png" type="image/png"/><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="preload" href="/component---src-layouts-index-js-a5881cef5d67d4cfaa00.js" as="script"/><link rel="preload" href="/component---src-templates-blog-post-index-js-8a39de050e94594c2215.js" as="script"/><link rel="preload" href="/path---exploratory-data-analysis-strategies-d05e9ae2677e9e91b96d.js" as="script"/><link rel="preload" href="/app-7dd9541ffd30b462fd1c.js" as="script"/><link rel="preload" href="/commons-f1ef510847f79fa0a799.js" as="script"/><script id="webpack-manifest">/*<![CDATA[*/window.webpackManifest={"231608221292675":"app-7dd9541ffd30b462fd1c.js","277928288978242":"component---src-templates-blog-post-index-js-8a39de050e94594c2215.js","162898551421021":"component---src-pages-404-js-4503918ea3a16cfcdb75.js","35783957827783":"component---src-pages-index-js-cdc0656c267c9349e098.js","60335399758886":"path----557518bd178906f8d58a.js","98227729292918":"path---exploratory-data-analysis-strategies-d05e9ae2677e9e91b96d.js","98502568430079":"path---shoulders-of-giants-d46b4940a3efc043eb41.js","241488815727667":"path---deep-learning-cryptocurrency-pc-4-ai-d2a4eb07d6e5cf9045ae.js","240385028603242":"path---deep-learning-cryptocurrency-pc-3-mining-80e27316666b82122802.js","91865546644228":"path---deep-learning-cryptocurrency-pc-2-os-d48f3d2331ee602ac9de.js","63140056250670":"path---arrays-in-react-16-6a44a2f3c8f17a501a66.js","252862943042359":"path---deep-learning-cryptocurrency-pc-1-hardware-1c2cddee86a65d9b6a0b.js","148662180999793":"path---background-images-in-react-native-0752b1f7c4c0e91573c9.js","245175683610111":"path---tabbing-through-input-fields-230cea6b91f636e53460.js","254022195166212":"path---404-a0e39f21c11f6a62c5ab.js","142629428675168":"path---index-0bb715bc3939d605777b.js","178698757827068":"path---404-html-a0e39f21c11f6a62c5ab.js","114276838955818":"component---src-layouts-index-js-a5881cef5d67d4cfaa00.js"}/*]]>*/</script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700|Lato:400,500,600,700,800,900" rel="stylesheet"/><title data-react-helmet="true">Patterns in Exploratory Data Analyses</title><style type="text/css">
+<!DOCTYPE html><html><head><link rel="shortcut icon" href="/static/favicon.ed16f7b0.png" type="image/png"/><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="preload" href="/component---src-layouts-index-js-c77426f2e0c4e84576bd.js" as="script"/><link rel="preload" href="/component---src-templates-blog-post-index-js-4cb727ec33bcb4159c3f.js" as="script"/><link rel="preload" href="/path---exploratory-data-analysis-strategies-53a15f4d1723b6e0b1dd.js" as="script"/><link rel="preload" href="/app-7dd9541ffd30b462fd1c.js" as="script"/><link rel="preload" href="/commons-f1ef510847f79fa0a799.js" as="script"/><script id="webpack-manifest">/*<![CDATA[*/window.webpackManifest={"231608221292675":"app-7dd9541ffd30b462fd1c.js","277928288978242":"component---src-templates-blog-post-index-js-4cb727ec33bcb4159c3f.js","162898551421021":"component---src-pages-404-js-4503918ea3a16cfcdb75.js","35783957827783":"component---src-pages-index-js-5bdbf68a3fdcc7c4b457.js","60335399758886":"path----557518bd178906f8d58a.js","98227729292918":"path---exploratory-data-analysis-strategies-53a15f4d1723b6e0b1dd.js","98502568430079":"path---shoulders-of-giants-d46b4940a3efc043eb41.js","241488815727667":"path---deep-learning-cryptocurrency-pc-4-ai-d2a4eb07d6e5cf9045ae.js","240385028603242":"path---deep-learning-cryptocurrency-pc-3-mining-80e27316666b82122802.js","91865546644228":"path---deep-learning-cryptocurrency-pc-2-os-d48f3d2331ee602ac9de.js","63140056250670":"path---arrays-in-react-16-6a44a2f3c8f17a501a66.js","252862943042359":"path---deep-learning-cryptocurrency-pc-1-hardware-1c2cddee86a65d9b6a0b.js","148662180999793":"path---background-images-in-react-native-0752b1f7c4c0e91573c9.js","245175683610111":"path---tabbing-through-input-fields-230cea6b91f636e53460.js","254022195166212":"path---404-a0e39f21c11f6a62c5ab.js","142629428675168":"path---index-1a7e0d517aa7a4563224.js","178698757827068":"path---404-html-a0e39f21c11f6a62c5ab.js","114276838955818":"component---src-layouts-index-js-c77426f2e0c4e84576bd.js"}/*]]>*/</script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700|Lato:400,500,600,700,800,900" rel="stylesheet"/><title data-react-helmet="true">Patterns in Exploratory Data Analyses</title><style type="text/css">
     .anchor {
       float: left;
       padding-right: 4px;
@@ -34,7 +34,7 @@
         }
       }
     })
-  </script><script>/*<![CDATA[*/!function(e,t,r){function n(){for(;d[0]&&"loaded"==d[0][f];)c=d.shift(),c[o]=!i.parentNode.insertBefore(c,i)}for(var s,a,c,d=[],i=e.scripts[0],o="onreadystatechange",f="readyState";s=r.shift();)a=e.createElement(t),"async"in i?(a.async=!1,e.head.appendChild(a)):i[f]?(d.push(a),a[o]=n):e.write("<"+t+' src="'+s+'" defer></'+t+">"),a.src=s}(document,"script",["/commons-f1ef510847f79fa0a799.js","/app-7dd9541ffd30b462fd1c.js","/path---exploratory-data-analysis-strategies-d05e9ae2677e9e91b96d.js","/component---src-templates-blog-post-index-js-8a39de050e94594c2215.js","/component---src-layouts-index-js-a5881cef5d67d4cfaa00.js"])/*]]>*/</script><style>
+  </script><script>/*<![CDATA[*/!function(e,t,r){function n(){for(;d[0]&&"loaded"==d[0][f];)c=d.shift(),c[o]=!i.parentNode.insertBefore(c,i)}for(var s,a,c,d=[],i=e.scripts[0],o="onreadystatechange",f="readyState";s=r.shift();)a=e.createElement(t),"async"in i?(a.async=!1,e.head.appendChild(a)):i[f]?(d.push(a),a[o]=n):e.write("<"+t+' src="'+s+'" defer></'+t+">"),a.src=s}(document,"script",["/commons-f1ef510847f79fa0a799.js","/app-7dd9541ffd30b462fd1c.js","/path---exploratory-data-analysis-strategies-53a15f4d1723b6e0b1dd.js","/component---src-templates-blog-post-index-js-4cb727ec33bcb4159c3f.js","/component---src-layouts-index-js-c77426f2e0c4e84576bd.js"])/*]]>*/</script><style>
 html {
   width: 100%;
   height: 100%;
@@ -44,10 +44,10 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-  font-family: Europa,
-    -apple-system,
-    Lato,
+  font-family: -apple-system,
     BlinkMacSystemFont,
+    Lato,
+    Europa,
     Segoe UI,
     Roboto,
     Oxygen,
@@ -61,12 +61,6 @@ body {
   color: rgba(0, 0, 0, 0.8);
   font-weight: 400;
   padding: 0;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  font-size: 2rem;
 }
 body > div {
   flex: 1;
@@ -152,10 +146,10 @@ h6 {
   text-rendering: optimizeLegibility;
   color: inherit;
   line-height: 1.1;
-  font-family: Europa,
-    -apple-system,
-    Lato,
+  font-family: -apple-system,
     BlinkMacSystemFont,
+    Lato,
+    Europa,
     Segoe UI,
     Roboto,
     Oxygen,
@@ -170,14 +164,30 @@ h6 {
 
 p, ul, li {
   margin: 5px 0 32px;
-  font-family: Source Serif Pro,
-    Georgia,
-    serif;
+  font-family: -apple-system,
+    BlinkMacSystemFont,
+    Lato,
+    Europa,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif
 ;
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+
+li {
+  margin-bottom: 20px;
 }
 
 p {
-  font-size: 2.05rem;
+  //: 2.05rem;
   line-height: 1.7;
 }
 
@@ -220,7 +230,7 @@ ul {
 }
 
 ul li, ul ol {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 ul li:last-child, ul ol:last-child {
@@ -236,19 +246,13 @@ ul li:last-child, ul ol:last-child {
   border: none;
 }
 
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 100%;
-  }
-}
-
 pre {
-  font-size: 1.3em;
+  font-size: 1.6em;
   background-color: rgba(0,0,0,.04);
   border-radius: 3px;
   font-family: SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;
   overflow-x: scroll;
-  margin: 40px 0;
+  margin: 0 0 20px 0;
   padding: 20px;
   line-height: 1.0;
 }
@@ -269,10 +273,10 @@ code {
 blockquote {
   display: block;
   text-align: left;
-  font-family: Europa,
-    -apple-system,
-    Lato,
+  font-family: -apple-system,
     BlinkMacSystemFont,
+    Lato,
+    Europa,
     Segoe UI,
     Roboto,
     Oxygen,
@@ -286,7 +290,7 @@ blockquote {
   font-size: 2.0rem;
   border-left: 4px solid rgba(0, 0, 0, 0.25);
   padding: 10px 20px;
-  margin: 50px 0;
+  margin: 10px 0 40px 0;
   font-style: italic;
   color: rgba(0, 0, 0, 0.7);
   line-height: 1.6;
@@ -333,10 +337,10 @@ blockquote ul:last-child {
 /*
 blockquote {
   font-family: 
-    Europa,
     -apple-system,
-    Lato,
     BlinkMacSystemFont,
+    Lato,
+    Europa,
     Segoe UI,
     Roboto,
     Oxygen,
@@ -374,22 +378,6 @@ iframe {
   margin: 30px auto;
 }
 
-.jOuFVU { 
-  padding-top: 60px;
-  flex: 1;
-  -ms-flex: 1;
-  -webkit-flex: 1;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  justify-content: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  max-width: 100%;
- }
 .chmhbI { 
   display: -webkit-box; 
   display: -moz-box; 
@@ -417,64 +405,108 @@ iframe {
   opacity: 0;
   padding-top: 10px;
  }
-.kuWQHT { 
-  font-size: 12px;
-  text-align: right;
- }
-.cpGHIP { 
-  font-size: 12px;
-  margin-top: -20px;
-  float: left;
-  border-bottom: 1px solid #CCC;
-  transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
- }
-.cpGHIP:hover { 
-  border-bottom: 1px solid #333;
-}
-.dcgggt { 
-  min-width: 100%;
+.hdsPY { 
+  width: 100%;
   object-fit: cover;
   transition-duration: 0.5s;
   -webkit-transition-duration: 0.5s;
-  margin: 0 0 80px 0;
+  margin: 0;
  }
-@media (max-width: 1600px) {
-  .dcgggt { 
-    max-height: 500px;
-  }
+.jeETjh { 
+  max-width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+
+  display: grid;
+  justify-items: stretch;
+
+  grid-column-gap: 20px;
+
+  -ms-grid-column-gap: 20px;
+
+  grid-template-columns: [page-start] repeat(3, 60px) [text-start] repeat(9, 60px) [text-end] repeat(3, 60px) [page-end];
+
+  -ms-grid-template-columns: [page-start] repeat(3, 60px) [text-start] repeat(9, 60px) [text-end] repeat(3, 60px) [page-end];
+ }
+.jeETjh img { 
+  max-width: 100%;
 }
 @media (max-width: 1200px) {
-  .dcgggt { 
-    max-height: 420px;
+  .jeETjh { 
+    grid-template-columns: [page-start] repeat(2, 60px) [text-start] repeat(9, 60px) [text-end] repeat(2, 60px) [page-end]; 
+    -ms-grid-template-columns: [page-start] repeat(2, 60px) [text-start] repeat(9, 60px) [text-end] repeat(2, 60px) [page-end];
   }
 }
-@media (max-width: 1000px) {
-  .dcgggt { 
-    max-height: 360px;
+@media (max-width: 1100px) {
+  .jeETjh { 
+    grid-template-columns: [text-start] 1fr [text-end]; 
+    -ms-grid-template-columns: [text-start] 1fr [text-end]; 
+    padding: 0 20px;
   }
+}
+.jeETjh > * { 
+  grid-column: text; 
+  -ms-grid-column: text;
+}
+.jeETjh figcaption, .jeETjh aside { 
+  grid-column-end: span 3; 
+  -ms-grid-column-end: span 3; 
+  color: rgba(0, 0, 0, 0.4); 
+  grid-column-start: text-end; 
+  -ms-grid-column-start: text-end; 
+  grid-column-end: page-end; 
+  -ms-grid-column-end: page-end;
+}
+.jeETjh figcaption .caption, .jeETjh aside .caption { 
+  text-align: left; 
+  margin: 0 0 5px 0;
+}
+.jeETjh figcaption .caption a, .jeETjh aside .caption a { 
+  border: none;
+}
+@media (max-width: 1100px) {
+  .jeETjh figcaption, .jeETjh aside { 
+    grid-column: text; 
+    -ms-grid-column: text; 
+    margin: 20px 0 40px 0;
+  }
+  .jeETjh figcaption .caption, .jeETjh aside .caption { 
+    text-align: center;
+  }
+}
+.jeETjh figcaption.left, .jeETjh aside.left { 
+  grid-column-start: page-start; 
+  -ms-grid-column-start: page-start; 
+  grid-column-end: text-start; 
+  -ms-grid-column-end: text-start;
 }
 @media (max-width: 860px) {
-  .dcgggt { 
-    max-height: 280px;
+  .jeETjh figcaption.left, .jeETjh aside.left { 
+    grid-column: text; 
+    -ms-grid-column: text;
   }
 }
-@media (max-width: 760px) {
-  .dcgggt { 
-    max-height: 200px;
-  }
+.jeETjh aside { 
+  color: rgba(0, 0, 0, 0.6); 
+  font-size: 1.4rem; 
+  line-height: 1.7;
 }
-.hQsENC { 
-  max-width: 100%;
-  width: 700px;
-  margin-bottom: 100px;
- }
-.hQsENC .name { 
+.jeETjh aside p { 
+  font-size: inherit; 
+  line-height: inherit;
+}
+.jeETjh aside strong { 
+  color: rgba(0, 0, 0, 0.5);
+}
+.jeETjh aside h1, .jeETjh aside h2, .jeETjh aside h3, .jeETjh aside h4, .jeETjh aside h5, .jeETjh aside h6 { 
+  color: rgba(0, 0, 0, 0.4);
+}
+.jeETjh .name { 
   border-radius: 3px; 
-  font-family: Europa,
-    -apple-system,
-    Lato,
+  font-family: -apple-system,
     BlinkMacSystemFont,
+    Lato,
+    Europa,
     Segoe UI,
     Roboto,
     Oxygen,
@@ -490,118 +522,62 @@ iframe {
   display: inline-block; 
   line-height: 28px;
 }
-.hQsENC .banner { 
-  display: -webkit-box; 
-  display: -moz-box; 
-  display: -ms-flexbox; 
-  display: -webkit-flex; 
-  display: flex; 
-  flex-direction: column; 
-  -webkit-box-direction: normal; 
-  -webkit-box-orient: vertical; 
-  -ms-flex-direction: column; 
-  -webkit-flex-direction: column; 
-  justify-content: flex-end; 
-  -webkit-box-pack: end; 
-  -ms-flex-pack: end; 
-  -webkit-justify-content: flex-end; 
-  margin-top: 120px; 
-  margin-bottom: 60px; 
-  padding-bottom: 40px; 
-  min-height: 400px; 
-  overflow: hidden;
-}
-.hQsENC .banner .bg { 
-  left: 0; 
-  min-height: 400px; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-size: 100%; 
-  width: 100%; 
-  z-index: 1; 
-  position: absolute; 
-  left: 0;
-}
-.hQsENC .banner .text { 
-  width: 100%; 
-  z-index: 1; 
-  position: absolute; 
-  left: 0; 
-  padding: 20px 0; 
-  margin-top: -20px; 
-  background: rgba(255, 255, 255, 0.8);
-}
-.hQsENC .banner .text > * { 
-  width: 700px; 
-  margin: 0 auto; 
-  display: block;
-}
-.hQsENC .banner h1 { 
-  margin: 0; 
-  padding: 0; 
-  text-decoration: none;
-}
-.hQsENC .banner h1 a { 
-  border: none;
-}
-.hQsENC .banner .caption { 
-  text-align: left; 
-  padding: 0;
-}
-.hQsENC .banner .caption:before { 
-  content: "Image by ";
-}
-.hQsENC blockquote .name, .hQsENC em .name, .hQsENC .caption .name { 
+.jeETjh blockquote .name, .jeETjh em .name, .jeETjh .caption .name, .jeETjh aside .name { 
   border: none; 
   background: none; 
   padding: 0;
 }
-.hQsENC h1.center { 
-  text-align: center; 
-  display: block; 
-  margin: 100px auto 80px auto; 
-  clear: both; 
-  /*
-    &:after {
-      display: block;
-      content: '...';
-      letter-spacing: 20px;
-      padding-left: 10px;
-      margin: 0px auto;
-      width: 100%;
-      text-align: center;
-      color: rgba(0, 0, 0, 0.68);
-      position: relative;
-    }
-    */
+.jeETjh h1 { 
+  padding: 0;
 }
-.hQsENC .caption { 
+.jeETjh h1 .anchor { 
+  margin-left: -16px; 
+  border: none;
+}
+.jeETjh h1 .anchor:hover { 
+  border: none;
+}
+.jeETjh h1 a { 
+  display: block; 
+  line-height: 40px; 
+  padding-bottom: 10px; 
+  margin-bottom: 30px; 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.jeETjh h1 a:hover { 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.jeETjh h1.center { 
+  text-align: center; 
+  text-align: left; 
+  display: block; 
+  margin: 40px 0 40px 0; 
+  font-size: 4.5rem; 
+  clear: both; 
+  padding-bottom: 20px; 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.jeETjh h1.center span { 
+  background: white; 
+  display: inline-block;
+}
+.jeETjh .caption { 
   text-align: center; 
   font-size: 1.2rem; 
   margin-top: -30px; 
   margin-bottom: 50px;
 }
-.hQsENC .left img, .hQsENC .right img { 
-  max-width: 100%;
-}
-.hQsENC .left .caption, .hQsENC .right .caption { 
-  margin-bottom: 0px;
-}
-.hQsENC .left { 
-  float: left; 
-  margin: 0px 20px 20px 0;
-}
-.hQsENC .right { 
+.jeETjh .right { 
   float: right; 
   margin: 0px 0 20px 20px;
 }
-.hQsENC span.figcaption, .hQsENC span.figcaption_hack { 
+.jeETjh span.figcaption, .jeETjh span.figcaption_hack { 
   text-align: center; 
   font-size: 14px; 
-  font-family: Europa,
-    -apple-system,
-    Lato,
+  font-family: -apple-system,
     BlinkMacSystemFont,
+    Lato,
+    Europa,
     Segoe UI,
     Roboto,
     Oxygen,
@@ -616,62 +592,68 @@ iframe {
   margin-top: -30px; 
   margin-bottom: 40px; 
   opacity: 0.9;
-}
-.hQsENC aside { 
-  line-height: 1.5; 
-  font-size: 1.6rem; 
-  margin: 20px 0 20px 40px; 
-  text-align: justify; 
-  hyphens: auto; 
-  -ms-hyphens: auto; 
-  -moz-hyphens: auto; 
-  -webkit-hyphens: auto; 
-  width: 250px; 
-  margin-right: -125px; 
-  float: right; 
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); 
-  border-radius: 5px; 
-  background: rgba(0, 0, 0, 0.020); 
-  padding: 20px; 
-  font-family: Source Serif Pro,
+} 
+/*
+  aside {
+
+    h1, h2, h3 {
+      text-align: left;
+      padding: 0;
+      margin: 0 0 15px 0;
+    }
+
+    line-height: 1.5;
+    font-size: 1.6rem;
+    margin: 20px 0 20px 40px;
+    text-align: justify;
+    hyphens: auto;
+    width: 250px;
+    margin-right: -125px;
+    float: right;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.020);
+    padding: 20px;
+
+    Source Serif Pro,
     Georgia,
     serif;
-}
-.hQsENC aside h1, .hQsENC aside h2, .hQsENC aside h3 { 
-  text-align: left; 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
-  padding-bottom: 15px; 
-  padding: 0 0 15px 0; 
-  margin: 0 0 15px 0;
-}
-.hQsENC aside.center { 
-  margin: 20px auto 40px auto; 
-  line-height: 2.8rem; 
-  float: none; 
-  width: 60%;
-}
-.hQsENC aside.left { 
-  float: left; 
-  margin-right: 20px; 
-  margin-left: -125px;
-}
-.hQsENC aside a { 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-.hQsENC aside p { 
-  font-family: inherit; 
-  font-size: inherit; 
-  line-height: inherit; 
-  margin: 20px 0 0 0;
-}
-.hQsENC aside p:first-child { 
-  margin-top: 0;
-}
-.hQsENC .dropcap { 
-  font-family: Europa,
-    -apple-system,
-    Lato,
+;
+
+    &.center {
+      margin: 20px auto 40px auto;
+      line-height: 2.8rem;
+      float: none;
+      width: 60%;
+    }
+
+    &.left {
+      float: left;
+      margin-right: 20px;
+      margin-left: -125px;
+    }
+
+    a {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      margin: 20px 0 0 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  */
+.jeETjh .dropcap { 
+  font-family: -apple-system,
     BlinkMacSystemFont,
+    Lato,
+    Europa,
     Segoe UI,
     Roboto,
     Oxygen,
@@ -694,55 +676,232 @@ iframe {
   line-height: .83; 
   margin-bottom: -.08em;
 }
-.hQsENC .gatsby-image-outer-wrapper { 
+.jeETjh .gatsby-image-outer-wrapper { 
   width: 100%; 
   background: blue; 
   height: 200px;
 }
-.hQsENC h1 { 
-  margin-top: 60px; 
+.jeETjh h1 { 
+  margin-top: 80px; 
   font-size: 3.4rem;
 }
-.hQsENC h2 { 
+.jeETjh h2 { 
   font-size: 2.6rem; 
   margin-top: 30px;
 }
-.hQsENC h3, .hQsENC h4, .hQsENC h5, .hQsENC h6 { 
+.jeETjh h3, .jeETjh h4, .jeETjh h5, .jeETjh h6 { 
   font-size: 2rem;
 }
-.hQsENC a { 
+.jeETjh a { 
   transition-duration: 0.15s; 
   -webkit-transition-duration: 0.15s;
 }
-.hQsENC a:hover { 
+.jeETjh a:hover { 
   border-bottom: 1px solid #1C9963;
 }
-.hQsENC a.gatsby-resp-image-link { 
+.jeETjh a.gatsby-resp-image-link { 
   border: none;
 }
-.hQsENC a.gatsby-resp-image-link:hover { 
+.jeETjh a.gatsby-resp-image-link:hover { 
   border: none;
 }
-.gzatWh h1 {
-    transition-duration: 0.5s;
-    -webkit-transition-duration: 0.5s;
-    font-size: 32px;
-    line-height: 1.24;
-    letter-spacing: -.015em;
-    margin: 40px 0 40px 0;
-    width: 700px;
-    font-size: 4.2rem;
-}
-.gzatWh span {
-    float: right;
-    margin-top: -20px;
-}
-.cwTtjF { 
-  text-align: center;
-  font-size: 1.2rem;
-  margin-top: -70px;
-  margin-bottom: 70px;
+.kCouko { 
+  position: relative;
+  margin: 0 0 80px 0;
+  overflow: hidden;
+  width: 100%;
  }
+@media (max-width: 1600px) {
+  .kCouko { 
+    max-height: 400px;
+  }
+}
+@media (max-width: 1200px) {
+  .kCouko { 
+    max-height: 340px;
+  }
+}
+@media (max-width: 1000px) {
+  .kCouko { 
+    max-height: 300px;
+  }
+}
+@media (max-width: 860px) {
+  .kCouko { 
+    max-height: 240px;
+  }
+}
+@media (max-width: 760px) {
+  .kCouko { 
+    max-height: 160px;
+  }
+}
+.kCouko h1 { 
+  transition-duration: 0.5s; 
+  -webkit-transition-duration: 0.5s; 
+  font-size: 32px; 
+  line-height: 1.24; 
+  letter-spacing: -.015em; 
+  margin: 40px 0 0px 0; 
+  width: 700px; 
+  font-size: 4.2rem; 
+  padding: 20px;
+}
+.kCouko span { 
+  float: right; 
+  margin-top: -20px;
+}
+.kCouko .title { 
+  position: absolute; 
+  width: 100%; 
+  box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  left: 0; 
+  background: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0) 100%); 
+  background: -moz-linear-gradient(0deg, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0) 100%); 
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0) 100%); 
+  bottom: 0; 
+  display: -webkit-box; 
+  display: -moz-box; 
+  display: -ms-flexbox; 
+  display: -webkit-flex; 
+  display: flex; 
+  align-items: flex-end; 
+  -webkit-box-align: end; 
+  -ms-flex-align: end; 
+  -webkit-align-items: flex-end; 
+  padding: 120px 40px 20px 40px;
+}
+@media (max-width: 860px) {
+  .kCouko .title { 
+    display: block;
+  }
+}
+.kCouko .title h1 { 
+  flex: 1; 
+  -ms-flex: 1; 
+  -webkit-flex: 1; 
+  margin: 0; 
+  font-size: 4.6rem; 
+  padding: 0;
+}
+@media (max-width: 1000px) {
+  .kCouko .title h1 { 
+    font-size: 3.6rem;
+  }
+}
+@media (max-width: 860px) {
+  .kCouko .title h1 { 
+    font-size: 3rem; 
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 660px) {
+  .kCouko .title h1 { 
+    font-size: 2.8rem;
+  }
+}
+.jhOLRU { 
+  font-size: 1.2rem;
+ }
+.dKgUge form {
+    width: 700px;
+    max-width: 100%;
+    margin-bottom: 100px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.dKgUge h3 {
+    color: #f9a82f;
+    font-size: 23px;
+    display: block;
+    margin: 0 20px 0 0 ;
+    padding: 0 0 15px 0 ;
+    line-height: 1.4 ;
+    font-weight: bold ;
+    text-align: left ;
+    clear: none ;
+}
+.dKgUge input {
+    padding: 10px;
+    font-size: 1.6rem;
+    margin: 20px 0;
+    padding: 10px 12px;
+    height: auto;
+    color: #4F5362;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-image: none;
+    min-width: 0;
+    min-height: 0;
+}
+.dKgUge input[type=submit] {
+    color: white;
+    background-color: #f9a82f;
+    font-size: 15px;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    border: none;
+    padding: 15px;
+    margin: 0;
+}
+.dKgUge:before {
+    display: block;
+    content: ". . .";
+    letter-spacing: 10px;
+    color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    margin-bottom: 60px;
+}
+.ebnllQ { 
+  font-size: 1.2rem;
+
+
+
+
+
+
+
+ }
+.kuWQHT { 
+  font-size: 12px;
+  text-align: right;
+ }
+.ibYKaC { 
+  display: -webkit-box; 
+  display: -moz-box; 
+  display: -ms-flexbox; 
+  display: -webkit-flex; 
+  display: flex;
+  z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0 40px;
+  margin-top: -90px;
+  margin-bottom: 90px;
+ }
+.ibYKaC > * { 
+  display: block; 
+  flex: 1; 
+  -ms-flex: 1; 
+  -webkit-flex: 1;
+}
+.ibYKaC a { 
+  border: none;
+}
 
 
 
@@ -752,10 +911,11 @@ iframe {
 
 
 
-</style></head><body><div id="___gatsby" class="DBtnK"><div class="jOuFVU" data-reactroot="" data-reactid="1" data-react-checksum="-1830893374"><!-- react-empty: 2 --><div class="chmhbI" data-reactid="3"><!-- react-empty: 4 --><div class="gzatWh" data-reactid="5"><a href="/" class="cpGHIP" data-reactid="6">← Back</a><span class="kuWQHT" data-reactid="7"><!-- react-text: 8 -->34<!-- /react-text --><!-- react-text: 9 --> min read<!-- /react-text --></span><h1 data-reactid="10">Patterns in Exploratory Data Analyses</h1></div><img src="/static/cover-751d767462cc582d1f099408bc458962-64523.jpg" class="dcgggt" data-reactid="11"/><div class="cwTtjF" data-reactid="12">Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Samuel Zeller</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></div><article class="blog-post-content hQsENC" data-reactid="13"><p>[Some anecdote to kick things off] Your boss comes to you with a terabyte of pictures of dog butts and says "I want you to build me a machine learning model that will recognize only the finest dog butts in this set." Where do you begin?</p>
-<p>If you're like a lot of people on <a href="https://kaggle.com" target="_blank" rel="nofollow noopener noreferrer">Kaggle</a>, the first thing you do is understand what data you're working with. That's the part I'm curious about understanding.</p>
-<p>When exploring a new dataset, <strong>are there patterns or best practices around how people understand the data?</strong> If there are, understanding those will help give guidance to our hypothetical problem above.</p>
-<div class="right" style="width: 270px;">
+</style></head><body><div id="___gatsby" class="DBtnK"><div class="chmhbI" data-reactroot="" data-reactid="1" data-react-checksum="-839183086"><!-- react-empty: 2 --><header class="kCouko" data-reactid="3"><img src="/static/cover-751d767462cc582d1f099408bc458962-64523.jpg" class="hdsPY" data-reactid="4"/><div class="title" data-reactid="5"><h1 data-reactid="6">Patterns in Exploratory Data Analyses</h1><div class="jhOLRU" data-reactid="7">Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Samuel Zeller</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></div></div></header><div class="ibYKaC" data-reactid="8"><a href="/" class="ebnllQ" data-reactid="9">← Back</a><span class="kuWQHT" data-reactid="10"><!-- react-text: 11 -->34<!-- /react-text --><!-- react-text: 12 --> min read<!-- /react-text --></span></div><article class="blog-post-content jeETjh" data-reactid="13"><p>Your boss comes to you with a terabyte of pictures of dog butts and says "I want you to build me a machine learning model that will recognize only the finest dog butts in this set." Where do you begin?</p>
+<p>If you're like a lot of people on <a href="https://kaggle.com" target="_blank" rel="nofollow noopener noreferrer">Kaggle</a>, the first thing you do is understand what data you're working with. That is what we are going to dive deeply into through this post.</p>
+<p>When exploring a new dataset, <strong>are there patterns or best practices around how people understand the data?</strong> If there are, understanding those best patterns will serve as a helpful guide.</p>
+<figcaption>
+<div class="caption"><a href="https://www.kaggle.com/tentotheminus9/r-eda/notebook">Example of an EDA</a></div>
 
   <a class="gatsby-resp-image-link" href="/static/example_eda-583d6a43821c57fa9095b4fdab57608c-ae4fa.png" style="display: block" target="_blank" rel="noopener">
   
@@ -769,8 +929,7 @@ iframe {
   
   </a>
     
-<div class="caption"><a href="https://www.kaggle.com/tentotheminus9/r-eda/notebook">Example of an EDA</a></div>
-</div>
+</figcaption>
 <p>To find out, I chose a number of <strong>Exploratory Data Analyses</strong> (or EDAs) that were made publicly available on Kaggle. These analyses mix interactive code snippets alongside prose, and can help offer a birds-eye view of the data or tease out patterns in the data.</p>
 <blockquote>
 <p>Data Scientists spend [the] vast majority of their time by [doing] data preparation, not model optimization. - <a href="https://www.kaggle.com/lorinc/feature-extraction-from-images" target="_blank" rel="nofollow noopener noreferrer"><span class="name">lorinc</span></a></p>
@@ -783,11 +942,9 @@ iframe {
 <li><a href="#images">Image</a></li>
 </ul>
 <p>Feel free to <a href="#conclusions">jump ahead to the conclusions below</a>, or continue on to dive into the datasets.</p>
-<hr />
 <aside class="center"><h3>Criteria</h3>For each category I chose two competitions where the submission date had passed, and sorted (roughly) by how many teams had submitted.<br /><br />For each competition I searched for EDA tags, and chose three kernels that were highly rated or well commented. Final scores did not factor in (some EDAs didn't even submit a score).</aside>
-<hr />
 <p><a name="structured-data"></a></p>
-<h1 class="center">Structured Data</h1>
+<h1 class="center"><span>Structured Data</span></h1>
 <p>A structured data problem is characterized by spreadsheets containing training and test data. The spreadsheets may contain categorical variables (colors, like <code>green</code>, <code>red</code>, and <code>blue</code>), continuous variables (ages, like <code>4</code>, <code>15</code>, and <code>67</code>) and ordinal variables (educational level, like <code>elementary</code>, <code>high school</code>, <code>college</code>).</p>
 <aside>
 <h3>Terms</h3>
@@ -798,13 +955,20 @@ iframe {
 <p>In this particular domain, because you're mostly looking for correlations between different variables, I think there's only so many ways you can slice and dice the data (without incorporating foreign data sources). For  visualizations, you have more options, but even so, <a href="https://towardsdatascience.com/5-quick-and-easy-data-visualizations-in-python-with-code-a2284bae952f" target="_blank" rel="nofollow noopener noreferrer">some techniques seem better suited for a task at hand than others</a>, resulting in a lot of similar-looking notebooks.</p>
 <p>Where you can really let your imagination run wild is feature engineering. Each of the authors I looked at had a different approach to their feature engineering, whether it was choosing how to bin a feature or combining categorical features into new ones.</p>
 <p>Let's take a deeper look at two competitions, the <a href="https://www.kaggle.com/c/titanic" target="_blank" rel="nofollow noopener noreferrer">Titanic competition</a> followed by the <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques" target="_blank" rel="nofollow noopener noreferrer">House Prices competition</a>.</p>
-<div class="banner">
-  <div class="bg" style="background-image: url(https://i.imgur.com/RncjRjL.jpg)"></div>
-  <div class="text">
-  <h1><a href="https://www.kaggle.com/c/titanic">Titanic</a></h1>
-  <div class="caption"><a href="https://www.flickr.com/photos/viaggioroutard/32746842734/in/photolist-RTJ8sN-7reGoc-7rdfgb-7reqrP-7rhfiJ-b4aUUF-bv64XJ-91NeZE-q2mfUz-eFvcpv-VMircS-pzVRNe-dF1MGZ-WCozhj-95TEWr-gkyMjV-75JPMM-7r8VAM-7r8K54-7ricVq-7rcJaC-7r8WZP-7rcUuc-7rgRJC-7rgFnC-oktnFk-7rdZK1-7rhNjL-adsXVC-7rcKPj-4YLEGK-7rhHQs-7r8TaB-7r8SoZ-e5wPAJ-8xv5oh-bvPFMY-7r8V3n-4YTM15-axQxWs-d1iAyQ-918Vc6-2gmvHf-8RCNJR-4YLEBM-b4aUXr-usDiD-c8Yp5o-22nLofY-okatX">Viaggio Routard</a></div>
-  </div>
-</div>
+<h1 id="titanic"><a href="#titanic" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.kaggle.com/c/titanic" target="_blank" rel="nofollow noopener noreferrer">Titanic</a></h1>
+<figcaption class="left">
+  <a class="gatsby-resp-image-link" href="/static/titanic-c05a010e3e5abe3a6338fd019287d9c6-08fa6.jpg" style="display: block" target="_blank" rel="noopener">
+  
+  <span class="gatsby-resp-image-wrapper" style="position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMEBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAXRrpNgzA//EABoQAAMBAAMAAAAAAAAAAAAAAAECAxEAEjH/2gAIAQEAAQUCs+E0pZ+ad6gOnn//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAaEAACAgMAAAAAAAAAAAAAAAABEQAQEjFR/9oACAEBAAY/AmtQN48Fmv/EABoQAQADAQEBAAAAAAAAAAAAAAEAESFxMVH/2gAIAQEAAT8hWor8dgSKGVwAl58gLDCaXZ//2gAMAwEAAgADAAAAEGMP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAHBABAAIDAQEBAAAAAAAAAAAAAQARITFRcWGB/9oACAEBAAE/EA6zCwvq/Ks/Y8YGxSz7OCwMYhgYnNsO3UE+aDkTaXDDyf/Z&apos;); background-size: cover; display: block;">
+      <img class="gatsby-resp-image-image" style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;" alt="Titanic" title="" src="/static/titanic-c05a010e3e5abe3a6338fd019287d9c6-08fa6.jpg" srcset="/static/titanic-c05a010e3e5abe3a6338fd019287d9c6-f2c3a.jpg 160w,
+/static/titanic-c05a010e3e5abe3a6338fd019287d9c6-3ed17.jpg 320w,
+/static/titanic-c05a010e3e5abe3a6338fd019287d9c6-08fa6.jpg 640w" sizes="(max-width: 640px) 100vw, 640px">
+    </span>
+  </span>
+  
+  </a>
+     <div class="caption">by <a href="https://www.flickr.com/photos/viaggioroutard/32746842734/in/photolist-RTJ8sN-7reGoc-7rdfgb-7reqrP-7rhfiJ-b4aUUF-bv64XJ-91NeZE-q2mfUz-eFvcpv-VMircS-pzVRNe-dF1MGZ-WCozhj-95TEWr-gkyMjV-75JPMM-7r8VAM-7r8K54-7ricVq-7rcJaC-7r8WZP-7rcUuc-7rgRJC-7rgFnC-oktnFk-7rdZK1-7rhNjL-adsXVC-7rcKPj-4YLEGK-7rhHQs-7r8TaB-7r8SoZ-e5wPAJ-8xv5oh-bvPFMY-7r8V3n-4YTM15-axQxWs-d1iAyQ-918Vc6-2gmvHf-8RCNJR-4YLEBM-b4aUXr-usDiD-c8Yp5o-22nLofY-okatX">Viaggio Routard</a></div></figcaption>
 <p>The Titanic competition is a popular beginners' competition, and lots of folks on Kaggle cycle through it. As a result the EDAs tend to be well written and thoroughly documented, and were amongst the clearest EDAs I saw. The dataset includes a training spreadsheet with a column <code>Survived</code> indicating whether a passenger survived or not, along with other supplementary data like their age, gender, ticket fare price, and more.</p>
 <aside>
 The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to-prediction-dietanic">EDA to Prediction Dietanic</a> by <span class="name">I, Coder</span>, <a href="https://www.kaggle.com/dejavu23/titanic-survival-for-beginners-eda-to-ml">Titanic Survival for Beginners EDA to ML</a> by <span class="name">deja vu</span>, and <a href="https://www.kaggle.com/jkokatjuhha/in-depth-visualisations-simple-methods">In Depth Visualisations Simple Methods</a> by <span class="name">Jekaterina Kokatjuhha</span>.
@@ -1041,8 +1205,8 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
 <p>The authors diverge a bit more when it comes to feature engineering. The authors differ on when to engineer new features, with some treating it as a discrete step and others tackling it during their initial analysis of the data. Choices around binning differ, with age, title and fare all receiving different number of buckets, and only <span class="name">Jekaterina</span> engineering a discrete <code>child</code> / <code>adult</code> feature.</p>
 <p>Approaches to imputation differ as well. <span class="name">I, Coder</span> recommends looking at existing data to predict imputation values, whereas <span class="name">Jekaterina</span> ensures her imputed data did not impact the mean.</p>
 <p>There's some clear similarities in how the authors think about and approach the data, with the main divergences concerning visualizations and feature engineering.</p>
-<h1 class="banner"><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">House Prices</a></h1>
-<div class="left" style="width: 400px;">
+<h1 id="house-prices"><a href="#house-prices" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques" target="_blank" rel="nofollow noopener noreferrer">House Prices</a></h1>
+<figcaption class="left">
 
   <a class="gatsby-resp-image-link" href="/static/house_price-93bfce121a1a6843535bda087a4f1cc6-d3671.jpg" style="display: block" target="_blank" rel="noopener">
   
@@ -1060,15 +1224,15 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
   
   </a>
     
-<div class="caption">by <a href="https://www.flickr.com/photos/120360673@N04/13855784355/in/photolist-n7ovXH-gjrMhS-eDwNQx-fFyccW-eDCzpL-fQDNaP-cA4RYd-cA4MtL-cA4HuL-fKnTsf-cA4LzU-ssvhf2-fKnAV9-daEeEz-gtpvp8-cA4R5o-cA4XQ7-cA4NSA-g2hXow-cA4SQw-eDBSFb-9eW1ng-g2j9Z5-cA4xwN-fFyJkx-9EzH9a-UD524Z-gttD2c-v9HAST-R7GoBF-v9KGVk-irUqRZ-koMrNT-fKv1e1-cA4UCE-ggDSAS-cA4C4A-gi21pE-cA4wdd-qmiDzR-rSUbew-gnDV6V-gjucTQ-fK7FS6-fK7bD6-duD885-fKbUqP-ggrui7-DUB1dh-dsvoVH">American Advisors Group</a></div></div>
+<div class="caption">by <a href="https://www.flickr.com/photos/120360673@N04/13855784355/in/photolist-n7ovXH-gjrMhS-eDwNQx-fFyccW-eDCzpL-fQDNaP-cA4RYd-cA4MtL-cA4HuL-fKnTsf-cA4LzU-ssvhf2-fKnAV9-daEeEz-gtpvp8-cA4R5o-cA4XQ7-cA4NSA-g2hXow-cA4SQw-eDBSFb-9eW1ng-g2j9Z5-cA4xwN-fFyJkx-9EzH9a-UD524Z-gttD2c-v9HAST-R7GoBF-v9KGVk-irUqRZ-koMrNT-fKv1e1-cA4UCE-ggDSAS-cA4C4A-gi21pE-cA4wdd-qmiDzR-rSUbew-gnDV6V-gjucTQ-fK7FS6-fK7bD6-duD885-fKbUqP-ggrui7-DUB1dh-dsvoVH">American Advisors Group</a></div>
+</figcaption>
 <p><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques" target="_blank" rel="nofollow noopener noreferrer">House Prices</a> is another structured data competition. This one boasts many more variables than the Titanic competition, and includes categorical, ordinal and continuous features.</p>
-<br />
+<aside>The EDAs I chose for analysis were <a href="https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python">Comprehensive Data Exploration with Python</a> by Pedro Marcelino, <a href="https://www.kaggle.com/xchmiao/detailed-data-exploration-in-python">Detailed Data Exploration in Python</a> by Angela, and <a href="https://www.kaggle.com/caicell/fun-python-eda-step-by-step">Fun Python EDA Step by Step</a> by Sang-eon Park.</aside>
+<p>While similar in kind to Titanic, it's considerably more complicated.</p>
 <blockquote>
 <p>With 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa, this competition challenges you to predict the final price of each home.</p>
 </blockquote>
-<p>While similar in kind to Titanic, it's considerably more complicated.</p>
-<aside class="center">The EDAs I chose for analysis were <a href="https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python">Comprehensive Data Exploration with Python</a> by Pedro Marcelino, <a href="https://www.kaggle.com/xchmiao/detailed-data-exploration-in-python">Detailed Data Exploration in Python</a> by Angela, and <a href="https://www.kaggle.com/caicell/fun-python-eda-step-by-step">Fun Python EDA Step by Step</a> by Sang-eon Park.</aside>
-<div class="right" style="width: 300px;">
+<figcaption>
 
   <a class="gatsby-resp-image-link" href="/static/pmarcelino_saleprice-735c123c7c023eca3391feb49a9fd2df-182ad.png" style="display: block" target="_blank" rel="noopener">
   
@@ -1083,7 +1247,7 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
   </a>
     
 <div class="caption"><span class="name">Pedro</span> plots the sale price</div>
-</div>
+</figcaption>
 <p><span class="name">Angela</span> and <span class="name">Pedro</span> spend some time upfront investigating the initial data like we saw in Titanic. <span class="name">Angela</span> plots the sale price in a histogram and builds a heatmap of the features, while <span class="name">Pedro</span> plots the sale price and draws the following conclusions about the sale price:</p>
 <blockquote>
 <ul>
@@ -1190,13 +1354,13 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
 <p>There's a wide range of strategies for determining how to approach the data, with some authors adopting a subjective strategy and others jumping straight to more objective measurements. There's also no clear consensus on when and how to cull missing values or outliers.</p>
 <p>There's more of a focus on statistical methods and integrity overall than in the Titanic competition, possibly because there's so many more features to handle; it's possible that negative statistical effects might have a larger overall effect than in the previous competition.</p>
 <p><a name="nlp"></a></p>
-<h1 class="center">Natural Language</h1>
+<h1 class="center"><span>Natural Language</span></h1>
 <p>Natural Language, or NLP, competitions, have datasets that contain words or sentences. While the core data type is the same as in structured data competitions - text - the tools available for analyzing natural language tend to be specialized, resulting in different strategies for analysis.</p>
 <p>In its original form, natural language is not easily decipherable by machine learning models. To consume it requires an intermediary transformation step into 1s and 0s. One such popular technique is called <a href="https://en.wikipedia.org/wiki/Bag-of-words_model" target="_blank" rel="nofollow noopener noreferrer">Bag of Words</a>, whereby a sentence is effectively transformed into a collection of booleans indicating whether a particular word is present or not.</p>
 <p>Because of this, the first step of most notebooks tends to be transforming the text into something machine readable, and that step usually looks the same across notebooks. Once that's done, authors diverge considerably in their approaches and employ a variety of different visualizations and techniques for feature engineering.</p>
-<h1 class="banner">[Toxic Comment Classification](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)</h1>
+<h1 id="toxic-comment-classification"><a href="#toxic-comment-classification" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge" target="_blank" rel="nofollow noopener noreferrer">Toxic Comment Classification</a></h1>
 <p><em>Warning: some of these comments might burn your eyeballs.</em></p>
-<div class="right" style="width: 400px">
+<figcaption class="left">
 
   <a class="gatsby-resp-image-link" href="/static/toxic-167eac9b78764014a3918f85721adc78-8231f.png" style="display: block" target="_blank" rel="noopener">
   
@@ -1215,7 +1379,7 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
   </a>
     
 <div class="caption">by <a href="https://www.flickr.com/photos/navaneethkn/7975953800/in/photolist-d9NRbQ-dEZp2L-dQinfV-8ZqMDd-GyaoHJ-oGKC67-5Kj4pp-8YybhA-8Yva5t-7Xh81B-oEZ6w8-4G19MZ-cm3zDf-3c7z32-GXuYz-oyayD-96qUSC-6UYVbr-bjWoro-duyWt-7jD4Nc-6KNazu-op1rhC-DY1c6F-bYNV7U-byHgQ3-cmFxgG-cm3zEC-8m74XJ-oZEcpA-9Kd3gM-7t1H1q-m9ZbHK-9r7F3j-r3kU-8ZPcAU-8RLfw5-TsHmuW-98S9zG-8Mzx2B-c6ZoZ9-7Bpck-8bnj49-4AJUnS-vag3VE-7Bp97-jeiiRG-bHbYQa-dJQMhT-N7SSSy">navaneethkn</a></div>
-</div>
+</figcaption>
 <p>The first NLP competition I looked at was the <a href="https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge%3CPaste%3E" target="_blank" rel="nofollow noopener noreferrer">Toxic Comment Classifcation Competition</a>, which included a dataset featuring a large number of comments from Wikipedia talk page edits that been scored on a toxicity scale.</p>
 <aside class="center">
 The EDAs I chose for analysis were <a href="https://www.kaggle.com/jagangupta/stop-the-s-toxic-comments-eda">Stop the S@#$ - Toxic Comments EDA</a> by <span class="name">Jagan</span>, <a href="https://www.kaggle.com/rhodiumbeng/classifying-multi-label-comments-0-9741-lb">Classifying Multi-label Comments</a> by <span class="name">Rhodium Beng</span>, and <a href="https://www.kaggle.com/fcostartistican/don-t-mess-with-my-mothjer">Don't Mess With My Mothjer</a> by <span class="name">Francisco Mendez</span>.
@@ -1321,8 +1485,8 @@ Other classes seem to be a subset of toxic barring a few exceptions</p>
 </blockquote>
 <h2 id="takeaways-2"><a href="#takeaways-2" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Takeaways</h2>
 <p>There seem to be a few best practices all the authors follow, including things like lower casing text, handling contractions, and cleaning up punctuation were all areas the authors looked at. However, some authors also considered that these could be potential features and not just noise (for instance, Francesco discovering a correlation between typos and toxicity).</p>
-<h1 class="banner">[Spooky Author Identification](https://www.kaggle.com/c/spooky-author-identification).</h1>
-<div class="left" style="width: 350px">
+<h1 id="spooky-author-identification"><a href="#spooky-author-identification" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.kaggle.com/c/spooky-author-identification" target="_blank" rel="nofollow noopener noreferrer">Spooky Author Identification</a></h1>
+<figcaption class="left">
 
   <a class="gatsby-resp-image-link" href="/static/halloween-612616b4a978f1a437985f1e13b46e42-5abf6.png" style="display: block" target="_blank" rel="noopener">
   
@@ -1340,12 +1504,11 @@ Other classes seem to be a subset of toxic barring a few exceptions</p>
   
   </a>
     
-<div class="caption">by <a href="https://www.flickr.com/photos/gaelvaroquaux/29632530995/in/photolist-M9wt5P-97P7tg-4vzLRF-61r11U-Zt2GHV-cY8aNJ-cY7ZgL-UXxYV9-b4qibP-4tm3wK-7haukg-2JiX6D-cVsp9-cY7XLU-4eeRFT-8PsYcb-cY7X8j-5jUhKv-jVRzRb-97Sb5A-7aBbJH-dZNRw2-smkRf-gxqQt3-aqqb74-gxs9eF-62dAE-FnZJs-62dXh-ZWp8CL-DpiJqc-WuwzSK-FnXvG-Ef1yLk-7omXUv-r5iPPD-pDGN7f-61hnvE-FnZKU-FnXv1-n28gM8-quLHEs-iAsBz-WBEwee-5z3uaW-pEQPCo-efPVZU-YbEZgy-dVfyAo-nHKteU">Gael Varoquaux</a></div></div>
+<div class="caption">by <a href="https://www.flickr.com/photos/gaelvaroquaux/29632530995/in/photolist-M9wt5P-97P7tg-4vzLRF-61r11U-Zt2GHV-cY8aNJ-cY7ZgL-UXxYV9-b4qibP-4tm3wK-7haukg-2JiX6D-cVsp9-cY7XLU-4eeRFT-8PsYcb-cY7X8j-5jUhKv-jVRzRb-97Sb5A-7aBbJH-dZNRw2-smkRf-gxqQt3-aqqb74-gxs9eF-62dAE-FnZJs-62dXh-ZWp8CL-DpiJqc-WuwzSK-FnXvG-Ef1yLk-7omXUv-r5iPPD-pDGN7f-61hnvE-FnZKU-FnXv1-n28gM8-quLHEs-iAsBz-WBEwee-5z3uaW-pEQPCo-efPVZU-YbEZgy-dVfyAo-nHKteU">Gael Varoquaux</a>
+</div></figcaption>
 <p>The <a href="https://www.kaggle.com/c/spooky-author-identification" target="_blank" rel="nofollow noopener noreferrer">Spooky Author Identification</a> provided snippets of text from three horror-themed authors - Edgar Allan Poe, HP Lovecraft, or Mary Wollstonecraft Shelley - and asked participants to build a model capable of predicting which writer authored a particular bit of text.</p>
+<aside>The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spooky-nlp-and-topic-modelling-tutorial">Spooky NLP and Topic Modelling Tutorial</a> by <span class="name">Anisotropic</span>, <a href="https://www.kaggle.com/ambarish/tutorial-detailed-spooky-fun-eda-and-modelling">Tutorial Detailed Spooky Fun EDA and Modelling</a> by <span class="name">Bukun</span><a href="https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features">Treemap House of Horror Spooky EDA LDA Features</a> by <span class="name">Heads or Tails</span>.</aside>
 <p>What's interesting about this dataset is its simplicity; there's very little unstructured data accompanying the text, other than author. As a result, all the EDAs focused solely on different approaches to parsing and analyzing language.</p>
-<aside>
-The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spooky-nlp-and-topic-modelling-tutorial">Spooky NLP and Topic Modelling Tutorial</a> by <span class="name">Anisotropic</span>, <a href="https://www.kaggle.com/ambarish/tutorial-detailed-spooky-fun-eda-and-modelling">Tutorial Detailed Spooky Fun EDA and Modelling</a> by <span class="name">Bukun</span><a href="https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features">Treemap House of Horror Spooky EDA LDA Features</a> by <span class="name">Heads or Tails</span>.
-</aside>
 <p>Each author begins by examining the dataset, picking out a few rows, and plotting the number of stories per author. <span class="name">Bukun</span> also looks at word lengths per author, while <span class="name">Anisotropic</span> plots a bar graph of overall word counts:</p>
 <p>
   <a
@@ -1704,13 +1867,13 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spo
 <p>In both competitions, kernel authors used <a href="https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features" target="_blank" rel="nofollow noopener noreferrer">TF-IDF</a>.</p>
 <p>When it came to features, authors engineered a variety of new features including average words per sentence, punctuation choices, and whether words were duplicated. </p>
 <p><a name="images"></a></p>
-<h1 class="center">Images</h1>
-<p>So far, the competitions we've looked at have been purely text-based (either language, strings or numbers). The last two competitions I examined (<a href="https://www.kaggle.com/c/data-science-bowl-2017/" target="_blank" rel="nofollow noopener noreferrer">lung cancer</a> and <a href="https://www.kaggle.com/c/leaf-classification/" target="_blank" rel="nofollow noopener noreferrer">leaf classification</a>) were both more domain specific. As a result, the analyses tended to assume an advanced audience, and authors skipped over rudimentary analysis and in favor of exploring different techniques for image analysis.</p>
+<h1 class="center"><span>Images</span></h1>
+<p>So far, the competitions have been purely text-based (either language, strings or numbers). The last two competitions I examined (<a href="https://www.kaggle.com/c/data-science-bowl-2017/" target="_blank" rel="nofollow noopener noreferrer">lung cancer</a> and <a href="https://www.kaggle.com/c/leaf-classification/" target="_blank" rel="nofollow noopener noreferrer">leaf classification</a>) were both more domain specific. As a result, the analyses tended to assume an advanced audience, and authors skipped over rudimentary analysis and in favor of exploring different techniques for image analysis.</p>
 <p>I saw a great variety in terms of the visualization techniques used, along with features that were engineered. In particular, some authors in the lung cancer competition drew upon existing medical knowledge in order to engineer extremely domain-specific features. I can't speak to how effective those features were, but I can say that the visualizations they produced were stunning.</p>
-<h1 class="banner">[Leaf Classification](https://www.kaggle.com/c/leaf-classification/)</h1>
+<h1 id="leaf-classification"><a href="#leaf-classification" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.kaggle.com/c/leaf-classification/" target="_blank" rel="nofollow noopener noreferrer">Leaf Classification</a></h1>
 <p>The Leaf Classification competition included 1,584 masked images of leaves, organized by species. Participants were instructured to build a build a model capable of classifying new images into one of the categories.</p>
-<aside>
-The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/feature-extraction-from-images">Feature Extraction From Images</a> by <span class="name">lorinc</span>, <a href="https://www.kaggle.com/selfishgene/visualizing-pca-with-leaf-dataset">Visualizing PCA with Leaf Dataset</a> by <span class="name">selfishgene</span>, and <a href="https://www.kaggle.com/josealberto/fast-image-exploration">Fast Image Exploration</a> by <span class="name">Jose Alberto</span>.
+<aside class="center">
+The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/feature-extraction-from-images">Feature Extraction From Images</a> by <span class="name">lorinc</span>, <a href="https://www.kaggle.com/selfishgene/visualizing-pca-with-leaf-dataset">Visualizing PCA with Leaf Dataset</a> by <span class="name">selfishgene</span>, and <a href="https://www.kaggle.com/josealberto/fast-image-exploration">Fast Image Exploration</a> by <span class="name">Jose Alberto.</span>
 </aside>
 <p>A good first step is to look at the images of the leaves, which is how two of the EDAs start.</p>
 <p>
@@ -1912,8 +2075,8 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/featur
   </a>
     </p>
 <div class="caption">lerinc measures the distance from the center of a leaf</div>
-<h1 class="banner">[Lung Cancer](https://www.kaggle.com/c/data-science-bowl-2017/)</h1>
-<div class="right" style="width: 400px;">
+<h1 id="lung-cancer"><a href="#lung-cancer" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.kaggle.com/c/data-science-bowl-2017/" target="_blank" rel="nofollow noopener noreferrer">Lung Cancer</a></h1>
+<figcaption class="left">
 
   <a class="gatsby-resp-image-link" href="/static/dicom_info-ef06e4ea97527d4f49daa51d444b2714-2f853.png" style="display: block" target="_blank" rel="noopener">
   
@@ -1929,9 +2092,9 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/featur
   </a>
     
 <div class="caption">anokas examines the metadata for a single image. You can see that patient date has been rendered anonymous (1/1/1900)</div>
-</div>
+</figcaption>
 <p>The final image competition I looked at was the <a href="https://www.kaggle.com/c/data-science-bowl-2017/" target="_blank" rel="nofollow noopener noreferrer">2017 Data Science Bowl</a>, which asked participants to examine a list of images and predict whether the patients had cancer or not. While this competition did feature structured data (meta information embedded in the images themselves), some of this data was anonymized, meaning that features that could have otherwise had predictive value (like the age of the patient) were removed. This meant that all the kernels focusing exclusively on image analysis.</p>
-<aside>
+<aside class="center">
 The EDAs I chose for analysis were <a href="https://www.kaggle.com/gzuidhof/full-preprocessing-tutorial">Full Preprocessing Tutorial</a> by <span class="name">Guido Zuidhof</span>, <a href="https://www.kaggle.com/anokas/exploratory-data-analysis-4">Exploratory Data Analysis</a> by <span class="name">Mikel Bober-Irizar</span>, and <a href="https://www.kaggle.com/apapiu/exploratory-analysis-visualization">Exploratory Analysis Visualization</a> by <span class="name">Alexandru Papiu</span>.
 </aside>
 <p>Of the three kernel authors, <span class="name">Guido</span> is the only one to discuss his background working with medical images, and it shows in his domain-specific analysis of the dataset:</p>
@@ -2207,15 +2370,16 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/gzuidhof/full
 <h2 id="takeaways-4"><a href="#takeaways-4" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Takeaways</h2>
 <p>This competition featured the most differences between kernels of any I saw. <span class="name">Guido</span>, given his familiarity with medical image formats, was able to leverage that background to draw significantly more nuanced conclusions. That said, the other two authors' lack of medical familiarity did not prevent them from drawing equally fascinating conclusions.</p>
 <p><a name="conclusions"></a></p>
-<h1 id="conclusions"><a href="#conclusions" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conclusions</h1>
+<h1 class="center"><span>Conclusions</span></h1>
 <p>What did I find?</p>
 <p>For <strong>Structured Data</strong> competitions, EDAs tended to tread similar ground. For instance, EDAs in the <a href="https://www.kaggle.com/c/titanic" target="_blank" rel="nofollow noopener noreferrer">Titanic competition</a> were almost identical in their selections of columns, and in what order to study them. However, they showed more diversity in their choices of features to engineer along with the visualizations they used to examine the data.</p>
 <p><strong>Natural Language</strong> datasets share similarities across EDAs in how the authors process and manipulate the text, but there's more variability in the features the authors choose to engineer, as well as differing conclusions drawn from those analyses.</p>
 <p>Finally, <strong>Image</strong> competitions showed the most diversity in terms of analysis and feature engineering.</p>
 <p>The image competitions I saw were mostly aimed at advanced audiences, and were in fairly domain-specific areas, which may have resulted in the more advanced diversity; it makes sense that as datasets become more specialized or esoteric, the amount of introductory analysis and explanation decreases, while the amount of deep or specialized analysis increases, and indeed this is what I found.</p>
-<p>On a more Kaggle-specific level, the notebooks I saw were all written with either a beginner or advanced audience in mind. More popular competitions, or ones aimed at a more general audience, tended to have EDAs that were exhaustive in their analyses. In these EDAs, I also saw a trend of interweaving supplementary prose or the use of narrative devices alongside the analysis, as tools to help beginners better understand the techniques. By comparison, notebooks aimed at domain experts tended to do away with superfluous framings, and many also skipped over rudimentary data analyses, instead diving straight into domain-specific techniques.</p>
-<p>Finally, many EDAs were extremely useful and in-depth, without actually implementing a model or making predictions. Can one come up with an accurate model without being able to perform a rudimentary data analysis? I assume not, but I don't know.</p>
-<p>I will continue to journal my learnings in this space; if you're interested, sign up for my mailing list!</p></article><iframe src="https://upscri.be/8c3b09/?as_embed" data-reactid="14"></iframe></div></div></div><script>
+<p>There was a lot of variability in the timing and amount of feature engineering across domains, as well. Some authors chose to dive right into feature engineering as they were beginning their analyses, while others kept it as a discrete step, for after the analyses were complete.</p>
+<p>The notebooks I saw were all written with either a beginner or advanced audience in mind. More popular competitions, or ones aimed at a more general audience, tended to have EDAs that were exhaustive in their analyses. In these EDAs, I also saw a trend of interweaving supplementary prose or the use of narrative devices alongside the analysis, as tools to help beginners better understand the techniques. By comparison, notebooks aimed at domain experts tended to do away with superfluous framings, and many also skipped over rudimentary data analyses, instead diving straight into domain-specific techniques.</p>
+<p>Many EDAs were extremely useful and in-depth without actually implementing a model or making predictions.</p>
+<p>I will continue to journal my learnings in this space. If you're interested in staying in touch, sign up for my mailing list!</p></article><div class="dKgUge" data-reactid="14"><form action="https://www.getdrip.com/forms/242548946/submissions" method="post" data-drip-embedded-form="242548946" data-reactid="15"><h3 data-drip-attribute="headline" data-reactid="16">Deep Learning Curriculum</h3><div data-drip-attribute="description" data-reactid="17">I&#x27;m spending 2018 teaching myself Deep Learning and AI and blogging my journey. I&#x27;ll send you articles I write and techniques I learn. Happy coding!</div><div data-reactid="18"><input type="email" id="drip-email" name="fields[email]" placeholder="Email Address" data-reactid="19"/></div><div data-reactid="20"><input type="submit" value="Sign Up" data-drip-attribute="sign-up-button" data-reactid="21"/></div></form></div></div></div><script>
   
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

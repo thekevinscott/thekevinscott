@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-cdc0656c267c9349e098.js",
-      "component---src-pages-index-js-cdc0656c267c9349e098.js.map"
+      "component---src-pages-index-js-5bdbf68a3fdcc7c4b457.js",
+      "component---src-pages-index-js-5bdbf68a3fdcc7c4b457.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
@@ -17,20 +17,20 @@
       "path---deep-learning-cryptocurrency-pc-2-os-d48f3d2331ee602ac9de.js.map"
     ],
     "path---exploratory-data-analysis-strategies": [
-      "path---exploratory-data-analysis-strategies-d05e9ae2677e9e91b96d.js",
-      "path---exploratory-data-analysis-strategies-d05e9ae2677e9e91b96d.js.map"
+      "path---exploratory-data-analysis-strategies-53a15f4d1723b6e0b1dd.js",
+      "path---exploratory-data-analysis-strategies-53a15f4d1723b6e0b1dd.js.map"
     ],
     "path---shoulders-of-giants": [
       "path---shoulders-of-giants-d46b4940a3efc043eb41.js",
       "path---shoulders-of-giants-d46b4940a3efc043eb41.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-a5881cef5d67d4cfaa00.js",
-      "component---src-layouts-index-js-a5881cef5d67d4cfaa00.js.map"
+      "component---src-layouts-index-js-c77426f2e0c4e84576bd.js",
+      "component---src-layouts-index-js-c77426f2e0c4e84576bd.js.map"
     ],
     "path---index": [
-      "path---index-0bb715bc3939d605777b.js",
-      "path---index-0bb715bc3939d605777b.js.map"
+      "path---index-1a7e0d517aa7a4563224.js",
+      "path---index-1a7e0d517aa7a4563224.js.map"
     ],
     "path---background-images-in-react-native": [
       "path---background-images-in-react-native-0752b1f7c4c0e91573c9.js",
@@ -73,8 +73,8 @@
       "path---404-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-templates-blog-post-index-js": [
-      "component---src-templates-blog-post-index-js-8a39de050e94594c2215.js",
-      "component---src-templates-blog-post-index-js-8a39de050e94594c2215.js.map"
+      "component---src-templates-blog-post-index-js-4cb727ec33bcb4159c3f.js",
+      "component---src-templates-blog-post-index-js-4cb727ec33bcb4159c3f.js.map"
     ]
   }
 }
