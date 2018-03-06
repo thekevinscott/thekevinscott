@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><link rel="shortcut icon" href="/static/favicon.ed16f7b0.png" type="image/png"/><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="preload" href="/component---src-layouts-index-js-a5881cef5d67d4cfaa00.js" as="script"/><link rel="preload" href="/component---src-templates-blog-post-index-js-8c19a0304b07e334eb25.js" as="script"/><link rel="preload" href="/path---exploratory-data-analysis-strategies-707c07aeacdbbedcf0a0.js" as="script"/><link rel="preload" href="/app-7dd9541ffd30b462fd1c.js" as="script"/><link rel="preload" href="/commons-f1ef510847f79fa0a799.js" as="script"/><script id="webpack-manifest">/*<![CDATA[*/window.webpackManifest={"231608221292675":"app-7dd9541ffd30b462fd1c.js","277928288978242":"component---src-templates-blog-post-index-js-8c19a0304b07e334eb25.js","162898551421021":"component---src-pages-404-js-4503918ea3a16cfcdb75.js","35783957827783":"component---src-pages-index-js-cdc0656c267c9349e098.js","60335399758886":"path----557518bd178906f8d58a.js","98227729292918":"path---exploratory-data-analysis-strategies-707c07aeacdbbedcf0a0.js","98502568430079":"path---shoulders-of-giants-d46b4940a3efc043eb41.js","241488815727667":"path---deep-learning-cryptocurrency-pc-4-ai-d2a4eb07d6e5cf9045ae.js","240385028603242":"path---deep-learning-cryptocurrency-pc-3-mining-80e27316666b82122802.js","91865546644228":"path---deep-learning-cryptocurrency-pc-2-os-d48f3d2331ee602ac9de.js","63140056250670":"path---arrays-in-react-16-6a44a2f3c8f17a501a66.js","252862943042359":"path---deep-learning-cryptocurrency-pc-1-hardware-1c2cddee86a65d9b6a0b.js","148662180999793":"path---background-images-in-react-native-0752b1f7c4c0e91573c9.js","245175683610111":"path---tabbing-through-input-fields-230cea6b91f636e53460.js","254022195166212":"path---404-a0e39f21c11f6a62c5ab.js","142629428675168":"path---index-0bb715bc3939d605777b.js","178698757827068":"path---404-html-a0e39f21c11f6a62c5ab.js","114276838955818":"component---src-layouts-index-js-a5881cef5d67d4cfaa00.js"}/*]]>*/</script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700|Lato:400,500,600,700,800,900" rel="stylesheet"/><title data-react-helmet="true">Patterns in Exploratory Data Analyses</title><style type="text/css">
+<!DOCTYPE html><html><head><link rel="shortcut icon" href="/static/favicon.ed16f7b0.png" type="image/png"/><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="preload" href="/component---src-layouts-index-js-a5881cef5d67d4cfaa00.js" as="script"/><link rel="preload" href="/component---src-templates-blog-post-index-js-9b3a1928b4a30a251e56.js" as="script"/><link rel="preload" href="/path---exploratory-data-analysis-strategies-6b5afbd8fab79972c1f6.js" as="script"/><link rel="preload" href="/app-7dd9541ffd30b462fd1c.js" as="script"/><link rel="preload" href="/commons-f1ef510847f79fa0a799.js" as="script"/><script id="webpack-manifest">/*<![CDATA[*/window.webpackManifest={"231608221292675":"app-7dd9541ffd30b462fd1c.js","277928288978242":"component---src-templates-blog-post-index-js-9b3a1928b4a30a251e56.js","162898551421021":"component---src-pages-404-js-4503918ea3a16cfcdb75.js","35783957827783":"component---src-pages-index-js-cdc0656c267c9349e098.js","60335399758886":"path----557518bd178906f8d58a.js","98227729292918":"path---exploratory-data-analysis-strategies-6b5afbd8fab79972c1f6.js","98502568430079":"path---shoulders-of-giants-d46b4940a3efc043eb41.js","241488815727667":"path---deep-learning-cryptocurrency-pc-4-ai-d2a4eb07d6e5cf9045ae.js","240385028603242":"path---deep-learning-cryptocurrency-pc-3-mining-80e27316666b82122802.js","91865546644228":"path---deep-learning-cryptocurrency-pc-2-os-d48f3d2331ee602ac9de.js","63140056250670":"path---arrays-in-react-16-6a44a2f3c8f17a501a66.js","252862943042359":"path---deep-learning-cryptocurrency-pc-1-hardware-1c2cddee86a65d9b6a0b.js","148662180999793":"path---background-images-in-react-native-0752b1f7c4c0e91573c9.js","245175683610111":"path---tabbing-through-input-fields-230cea6b91f636e53460.js","254022195166212":"path---404-a0e39f21c11f6a62c5ab.js","142629428675168":"path---index-0bb715bc3939d605777b.js","178698757827068":"path---404-html-a0e39f21c11f6a62c5ab.js","114276838955818":"component---src-layouts-index-js-a5881cef5d67d4cfaa00.js"}/*]]>*/</script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700|Lato:400,500,600,700,800,900" rel="stylesheet"/><title data-react-helmet="true">Patterns in Exploratory Data Analyses</title><style type="text/css">
     .anchor {
       float: left;
       padding-right: 4px;
@@ -34,7 +34,7 @@
         }
       }
     })
-  </script><script>/*<![CDATA[*/!function(e,t,r){function n(){for(;d[0]&&"loaded"==d[0][f];)c=d.shift(),c[o]=!i.parentNode.insertBefore(c,i)}for(var s,a,c,d=[],i=e.scripts[0],o="onreadystatechange",f="readyState";s=r.shift();)a=e.createElement(t),"async"in i?(a.async=!1,e.head.appendChild(a)):i[f]?(d.push(a),a[o]=n):e.write("<"+t+' src="'+s+'" defer></'+t+">"),a.src=s}(document,"script",["/commons-f1ef510847f79fa0a799.js","/app-7dd9541ffd30b462fd1c.js","/path---exploratory-data-analysis-strategies-707c07aeacdbbedcf0a0.js","/component---src-templates-blog-post-index-js-8c19a0304b07e334eb25.js","/component---src-layouts-index-js-a5881cef5d67d4cfaa00.js"])/*]]>*/</script><style>
+  </script><script>/*<![CDATA[*/!function(e,t,r){function n(){for(;d[0]&&"loaded"==d[0][f];)c=d.shift(),c[o]=!i.parentNode.insertBefore(c,i)}for(var s,a,c,d=[],i=e.scripts[0],o="onreadystatechange",f="readyState";s=r.shift();)a=e.createElement(t),"async"in i?(a.async=!1,e.head.appendChild(a)):i[f]?(d.push(a),a[o]=n):e.write("<"+t+' src="'+s+'" defer></'+t+">"),a.src=s}(document,"script",["/commons-f1ef510847f79fa0a799.js","/app-7dd9541ffd30b462fd1c.js","/path---exploratory-data-analysis-strategies-6b5afbd8fab79972c1f6.js","/component---src-templates-blog-post-index-js-9b3a1928b4a30a251e56.js","/component---src-layouts-index-js-a5881cef5d67d4cfaa00.js"])/*]]>*/</script><style>
 html {
   width: 100%;
   height: 100%;
@@ -464,18 +464,37 @@ iframe {
     max-height: 200px;
   }
 }
-.gXLjEm { 
+.iGJhFB { 
   max-width: 100%;
   width: 700px;
   margin-bottom: 100px;
  }
-.gXLjEm h1.center { 
+.iGJhFB .name { 
+  border-radius: 3px; 
+  font-family: Europa,
+    -apple-system,
+    Lato,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif
+; 
+  border: 1px solid rgba(0, 0, 0, 0.1); 
+  padding: 3px 5px;
+}
+.iGJhFB h1.center { 
   text-align: center; 
   display: block; 
   margin: 100px auto 80px auto; 
   clear: both;
 }
-.gXLjEm h1.center:after { 
+.iGJhFB h1.center:after { 
   display: block; 
   content: '...'; 
   letter-spacing: 20px; 
@@ -486,27 +505,27 @@ iframe {
   color: rgba(0, 0, 0, 0.68); 
   position: relative;
 }
-.gXLjEm .caption { 
+.iGJhFB .caption { 
   text-align: center; 
   font-size: 1.2rem; 
   margin-top: -30px; 
   margin-bottom: 50px;
 }
-.gXLjEm .left img, .gXLjEm .right img { 
+.iGJhFB .left img, .iGJhFB .right img { 
   max-width: 100%;
 }
-.gXLjEm .left .caption, .gXLjEm .right .caption { 
+.iGJhFB .left .caption, .iGJhFB .right .caption { 
   margin-bottom: 0px;
 }
-.gXLjEm .left { 
+.iGJhFB .left { 
   float: left; 
   margin: 0px 20px 20px 0;
 }
-.gXLjEm .right { 
+.iGJhFB .right { 
   float: right; 
   margin: 0px 0 20px 20px;
 }
-.gXLjEm span.figcaption, .gXLjEm span.figcaption_hack { 
+.iGJhFB span.figcaption, .iGJhFB span.figcaption_hack { 
   text-align: center; 
   font-size: 14px; 
   font-family: Europa,
@@ -528,7 +547,7 @@ iframe {
   margin-bottom: 40px; 
   opacity: 0.9;
 }
-.gXLjEm aside { 
+.iGJhFB aside { 
   line-height: 1.5; 
   font-size: 1.6rem; 
   margin: 20px 0 20px 40px; 
@@ -548,36 +567,36 @@ iframe {
     Georgia,
     serif;
 }
-.gXLjEm aside h1, .gXLjEm aside h2, .gXLjEm aside h3 { 
+.iGJhFB aside h1, .iGJhFB aside h2, .iGJhFB aside h3 { 
   text-align: left; 
   border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
   padding-bottom: 15px; 
   padding: 0 0 15px 0; 
   margin: 0 0 15px 0;
 }
-.gXLjEm aside.center { 
+.iGJhFB aside.center { 
   margin: 0 auto; 
   float: none; 
   width: 60%;
 }
-.gXLjEm aside.left { 
+.iGJhFB aside.left { 
   float: left; 
   margin-right: 0; 
   margin-left: -125px;
 }
-.gXLjEm aside a { 
+.iGJhFB aside a { 
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.gXLjEm aside p { 
+.iGJhFB aside p { 
   font-family: inherit; 
   font-size: inherit; 
   line-height: inherit; 
   margin: 20px 0 0 0;
 }
-.gXLjEm aside p:first-child { 
+.iGJhFB aside p:first-child { 
   margin-top: 0;
 }
-.gXLjEm .dropcap { 
+.iGJhFB .dropcap { 
   font-family: Europa,
     -apple-system,
     Lato,
@@ -604,33 +623,33 @@ iframe {
   line-height: .83; 
   margin-bottom: -.08em;
 }
-.gXLjEm .gatsby-image-outer-wrapper { 
+.iGJhFB .gatsby-image-outer-wrapper { 
   width: 100%; 
   background: blue; 
   height: 200px;
 }
-.gXLjEm h1 { 
+.iGJhFB h1 { 
   margin-top: 60px; 
   font-size: 3.4rem;
 }
-.gXLjEm h2 { 
+.iGJhFB h2 { 
   font-size: 2.6rem; 
   margin-top: 30px;
 }
-.gXLjEm h3, .gXLjEm h4, .gXLjEm h5, .gXLjEm h6 { 
+.iGJhFB h3, .iGJhFB h4, .iGJhFB h5, .iGJhFB h6 { 
   font-size: 2rem;
 }
-.gXLjEm a { 
+.iGJhFB a { 
   transition-duration: 0.15s; 
   -webkit-transition-duration: 0.15s;
 }
-.gXLjEm a:hover { 
+.iGJhFB a:hover { 
   border-bottom: 1px solid #1C9963;
 }
-.gXLjEm a.gatsby-resp-image-link { 
+.iGJhFB a.gatsby-resp-image-link { 
   border: none;
 }
-.gXLjEm a.gatsby-resp-image-link:hover { 
+.iGJhFB a.gatsby-resp-image-link:hover { 
   border: none;
 }
 .gzatWh h1 {
@@ -662,7 +681,7 @@ iframe {
 
 
 
-</style></head><body><div id="___gatsby" class="DBtnK"><div class="jOuFVU" data-reactroot="" data-reactid="1" data-react-checksum="-2040712873"><!-- react-empty: 2 --><div class="chmhbI" data-reactid="3"><!-- react-empty: 4 --><div class="gzatWh" data-reactid="5"><a href="/" class="cpGHIP" data-reactid="6">← Back</a><span class="kuWQHT" data-reactid="7"><!-- react-text: 8 -->34<!-- /react-text --><!-- react-text: 9 --> min read<!-- /react-text --></span><h1 data-reactid="10">Patterns in Exploratory Data Analyses</h1></div><img src="/static/cover-751d767462cc582d1f099408bc458962-64523.jpg" class="dcgggt" data-reactid="11"/><div class="cwTtjF" data-reactid="12">Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Samuel Zeller</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></div><div class="blog-post-content gXLjEm" data-reactid="13"><p>[Some anecdote to kick things off] Your boss comes to you with a terabyte of pictures of dog butts and says "I want you to build me a machine learning model that will recognize only the finest dog butts in this set." Where do you begin?</p>
+</style></head><body><div id="___gatsby" class="DBtnK"><div class="jOuFVU" data-reactroot="" data-reactid="1" data-react-checksum="-611431013"><!-- react-empty: 2 --><div class="chmhbI" data-reactid="3"><!-- react-empty: 4 --><div class="gzatWh" data-reactid="5"><a href="/" class="cpGHIP" data-reactid="6">← Back</a><span class="kuWQHT" data-reactid="7"><!-- react-text: 8 -->34<!-- /react-text --><!-- react-text: 9 --> min read<!-- /react-text --></span><h1 data-reactid="10">Patterns in Exploratory Data Analyses</h1></div><img src="/static/cover-751d767462cc582d1f099408bc458962-64523.jpg" class="dcgggt" data-reactid="11"/><div class="cwTtjF" data-reactid="12">Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Samuel Zeller</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></div><article class="blog-post-content iGJhFB" data-reactid="13"><p>[Some anecdote to kick things off] Your boss comes to you with a terabyte of pictures of dog butts and says "I want you to build me a machine learning model that will recognize only the finest dog butts in this set." Where do you begin?</p>
 <p>If you're like a lot of people on <a href="https://kaggle.com" target="_blank" rel="nofollow noopener noreferrer">Kaggle</a>, the first thing you do is understand what data you're working with. That's the part I'm curious about understanding.</p>
 <p><strong>Are there patterns or best practices around how people understand datasets?</strong> If there are, understanding those will help give guidance to our hypothetical problem above.</p>
 <div class="right" style="width: 270px;">
@@ -683,7 +702,7 @@ iframe {
 </div>
 <p>To find out, I chose a number of <strong>Exploratory Data Analyses</strong> (or EDAs) that were made publicly available on Kaggle. These analyses mix interactive code snippets alongside prose, and can help offer a birds-eye view of the data or tease out patterns in the data.</p>
 <blockquote>
-<p>Data Scientists spend [the] vast majority of their time by [doing] data preparation, not model optimization. - <a href="https://www.kaggle.com/lorinc/feature-extraction-from-images" target="_blank" rel="nofollow noopener noreferrer">Lorinc</a></p>
+<p>Data Scientists spend [the] vast majority of their time by [doing] data preparation, not model optimization. - <a href="https://www.kaggle.com/lorinc/feature-extraction-from-images" target="_blank" rel="nofollow noopener noreferrer"><span class="name">lorinc</span></a></p>
 </blockquote>
 <p>Something else I looked at was <a href="https://www.quora.com/Does-deep-learning-reduce-the-importance-of-feature-engineering" target="_blank" rel="nofollow noopener noreferrer">feature engineering</a>, the technique of taking existing data and transforming it in such a way as to impart additional meaning; for example, taking a timestamp and pulling out a "day of week" column, which might come in handy for predicting sales in a store.)</p>
 <p>I wanted to look at a variety of EDAs but also in a variety of domains, and I chose to look at the following three:</p>
@@ -694,15 +713,15 @@ iframe {
 </ul>
 <p>If you're impatient you can <a href="#conclusions">jump ahead to the conclusions below</a>.</p>
 <aside class="center"><h3>Criteria</h3>For each category I chose two competitions where the submission date had passed, and sorted (roughly) by how many teams had submitted.<br /><br />For each competition I searched for EDA tags, and chose three kernels that were highly rated or well commented. Final scores did not factor in (some EDAs didn't even submit a score).</aside>
-<a name="structured-data" />
+<p><a name="structured-data"></a></p>
 <h1 class="center">Structured Data Competitions</h1>
 <p>A structured data problem is characterized by spreadsheets containing training and test data. The spreadsheets may contain categorical variables (colors, like "green", "red", and "blue"), continuous variables (ages, like "4", "15", and "67") and ordinal variables (educational level, like "elementary", "high school", "college").</p>
-<p>The training spreadsheet has a target column that you're trying to solve for, which will be missing in the test data. As a result, the majority of the EDAs I examined focused on teasing out potential correlations between the target variable and the other columns.</p>
 <aside>
 <h3>Terms</h3>
 <p><strong>Imputation</strong> &mdash; Filling in missing values in the data</p>
 <p><strong>Binning</strong> &mdash; Combining continuous data into buckets, a form of feature engineering</p>
 </aside>
+<p>The training spreadsheet has a target column that you're trying to solve for, which will be missing in the test data. As a result, the majority of the EDAs I examined focused on teasing out potential correlations between the target variable and the other columns.</p>
 <p>I think that in this particular domain, because you're mostly looking for correlations between different variables, there's only so many ways you can slice and dice the data (without incorporating foreign data sources). Fo  visualizing data you have more options, but even so, <a href="https://towardsdatascience.com/5-quick-and-easy-data-visualizations-in-python-with-code-a2284bae952f" target="_blank" rel="nofollow noopener noreferrer">some techniques seem better suited for a task at hand than others</a>, so a lot of notebooks tend to look similar.</p>
 <p>Where you can really let your imagination run wild is feature engineering. Each of the authors I looked at had a different approach to their feature engineering, whether it was choosing how to bin a feature or combining categorical features into new ones.</p>
 <p>Let's take a deeper look at two competitions, the <a href="https://www.kaggle.com/c/titanic" target="_blank" rel="nofollow noopener noreferrer">Titanic competition</a> followed by the <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques" target="_blank" rel="nofollow noopener noreferrer">House Prices competition</a>.</p>
@@ -725,7 +744,7 @@ iframe {
 </div>
 <p>The Titanic competition is a popular beginners' competition, and lots of folks on Kaggle cycle through it. As a result the EDAs tend to be well written and thoroughly documented, and were amongst the clearest EDAs I saw. The dataset includes a training spreadsheet with a column <code>Survived</code> indicating whether a passenger survived or not, along with other supplementary data like their age, gender, ticket fare price, and more.</p>
 <p><small><em>
-The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to-prediction-dietanic">EDA to Prediction Dietanic</a> by I, Coder, <a href="https://www.kaggle.com/dejavu23/titanic-survival-for-beginners-eda-to-ml">Titanic Survival for Beginners EDA to ML</a> by deja vu, and <a href="https://www.kaggle.com/jkokatjuhha/in-depth-visualisations-simple-methods">In Depth Visualisations Simple Methods</a> by Jekaterina Kokatjuhha.
+The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to-prediction-dietanic">EDA to Prediction Dietanic</a> by <span class="name">I, Coder</span>, <a href="https://www.kaggle.com/dejavu23/titanic-survival-for-beginners-eda-to-ml">Titanic Survival for Beginners EDA to ML</a> by <span class="name">deja vu</span>, and <a href="https://www.kaggle.com/jkokatjuhha/in-depth-visualisations-simple-methods">In Depth Visualisations Simple Methods</a> by <span class="name">Jekaterina Kokatjuhha</span>.
 </em></small></p>
 <p>All three of the EDAs start with raw metrics, viewing a few sample rows and printing descriptive information about the CSV file like types of the columns and means and medians.</p>
 <p>
@@ -762,9 +781,9 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
   
   </a>
     </p>
-<div class="caption">I, Coder describes the dataset</div>
+<div class="caption"><span class="name">I, Coder</span> describes the dataset</div>
 <p>Handling null or missing values is a crucial step in data preparation. One EDA handles this right upfront, while the other two tackle missing values during the feature engineering stages.</p>
-<p>I, Coder argues against assigning a random number to fill in missing ages:</p>
+<p><span class="name">I, Coder</span> argues against assigning a random number to fill in missing ages:</p>
 <blockquote>
 <p>As we had seen earlier, the Age feature has 177 null values. To replace these NaN values, we can assign them the mean age of the dataset. But the problem is, there were many people with many different ages. We just cant assign a 4 year kid with the mean age that is 29 years. Is there any way to find out what age-band does the passenger lie?? Bingo!!!!, we can check the Name feature. Looking upon the feature, we can see that the names have a salutation like Mr or Mrs. Thus we can assign the mean values of Mr and Mrs to the respective groups.</p>
 </blockquote>
@@ -802,8 +821,8 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
   
   </a>
     </p>
-<div class="caption">I, Coder imputing ages</div>
-<p>Whereas I, Coder combines feature engineering as part of the pure data analysis, the other two authors consider it as a discrete step.</p>
+<div class="caption"><span class="name">I, Coder</span> imputing ages</div>
+<p>Whereas <span class="name">I, Coder</span> combines feature engineering as part of the pure data analysis, the other two authors consider it as a discrete step.</p>
 <p>All three kernel authors rely heavily on charts and visualizations to get a high level understanding of the data and find potential correlations. Charts used include factorplots, crosstabs, bar and pie charts, violin plots, and more.</p>
 <p>
   <a
@@ -838,12 +857,12 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
   
   </a>
     </p>
-<div class="caption">deja vu plots survival by gender</div>
+<div class="caption"><span class="name">deja vu</span> plots survival by gender</div>
 <p>You're probably familiar with the line "women and children first" in regards to the Titanic disaster, and for each author, age and gender feature heavily in their initial data analyses. Income background (as indicated by the price of the ticket) also comes in for some detailed inspection.</p>
 <blockquote>
-<p>The number of men on the ship is lot more than the number of women. Still the number of women saved is almost twice the number of males saved. The survival rates for a women on the ship is around 75% while that for men in around 18-19%. - I, Coder</p>
+<p>The number of men on the ship is lot more than the number of women. Still the number of women saved is almost twice the number of males saved. The survival rates for a women on the ship is around 75% while that for men in around 18-19%. - <span class="name">I, Coder</span></p>
 </blockquote>
-<p>Both Jekaterina and I, Coder draw conclusions based on visual inspection of the charts and data, with Jekaterina writing:</p>
+<p>Both <span class="name">Jekaterina</span> and <span class="name">I, Coder</span> draw conclusions based on visual inspection of the charts and data, with <span class="name">Jekaterina</span> writing:</p>
 <blockquote>
 <ul>
 <li>Sex: Survival chances of women are higher.</li>
@@ -884,8 +903,8 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
   </span>
   
   </a>
-    <div class="caption">Jekaterina builds a stacked chart illustrating Pclass and Embarked</div></p>
-<p>Deja Vu's EDA records an accuracy number at each step of his analysis, providing a nice bit of feedback as to how important each feature is to the final prediction.</p>
+    <div class="caption"><span class="name">Jekaterina</span> builds a stacked chart illustrating Pclass and Embarked</div></p>
+<p><span class="name">Deja Vu</span>'s EDA records an accuracy number at each step of his analysis, providing a nice bit of feedback as to how important each feature is to the final prediction.</p>
 <h2 id="feature-engineering"><a href="#feature-engineering" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature Engineering</h2>
 <div class="left" style="width: 170px; margin-top: 10px;">
   <a class="gatsby-resp-image-link" href="/static/jkok_cabin_feature-a44a25d80bb66c2443c995e71cca89d0-60fc7.png" style="display: block" target="_blank" rel="noopener">
@@ -897,9 +916,9 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
   </span>
   
   </a>
-    <div class="caption">Jekaterina pulls out cabin letter.</div></div>
+    <div class="caption"><span class="name">Jekaterina</span> pulls out cabin letter.</div></div>
 <p>When it comes to feature engineering, there's more variability amongst the three kernel authors.</p>
-<p>Each author chooses different numbers of buckets for continuous variables like age and fare. Meanwhile, each approaches family relationships differently, with I, Coder building a <code>SibSip</code> - whether an individual is alone or with family (either spouse or siblings) - along with <code>family_size</code> and <code>alone</code>, while Jekaterina pulls out a cabin bin and suggests a feature for <code>child</code> or <code>adult</code>. I, Coder in particular is aggressive in his culling of irrelevant columns:</p>
+<p>Each author chooses different numbers of buckets for continuous variables like age and fare. Meanwhile, each approaches family relationships differently, with <span class="name">I, Coder</span> building a <code>SibSip</code> - whether an individual is alone or with family (either spouse or siblings) - along with <code>family_size</code> and <code>alone</code>, while <span class="name">Jekaterina</span> pulls out a cabin bin and suggests a feature for <code>child</code> or <code>adult</code>. <span class="name">I, Coder</span> in particular is aggressive in his culling of irrelevant columns:</p>
 <blockquote>
 <p>Name--> We don't need name feature as it cannot be converted into any categorical value.</p>
 <p>Age--> We have the Age_band feature, so no need of this.</p>
@@ -909,7 +928,7 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
 <p>Fare<em>Range--> We have the fare</em>cat feature.</p>
 <p>PassengerId--> Cannot be categorised.</p>
 </blockquote>
-<p>For the imputation step, Jekaterina writes:</p>
+<p>For the imputation step, <span class="name">Jekaterina</span> writes:</p>
 <blockquote>
 <ul>
 <li>Embarked: fill embarked with a major class</li>
@@ -951,13 +970,13 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
   
   </a>
     </p>
-<div class="caption">Jekaterina checking if the imputation disrupted the mean</div>
+<div class="caption"><span class="name">Jekaterina</span> checking if the imputation disrupted the mean</div>
 <h2 id="takeaways"><a href="#takeaways" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Takeaways</h2>
 <p>All three kernel authors spend time up front examining the data and describing the overall shape.</p>
-<p>I, Coder looks at the total null values, whereas Jekaterina does that near the end.</p>
-<p>Everyone starts with looking at the breakdown of survivors, and then the breakdown of survivors by gender. Cross tabs, factor plots, and violin plots are all popular graphs. Jekaterina also plots some really fascinating graphs.</p>
-<p>The authors diverge a bit more when it comes to feature engineering. The authors differ on when to engineer new features, with some treating it as a discrete step and others tackling it during their initial analysis of the data. Choices around binning differ, with age, title and fare all receiving different number of buckets, and only Jekaterina engineering a discrete <code>child</code> / <code>adult</code> feature.</p>
-<p>Approaches to imputation differ as well. I, Coder recommends looking at existing data to predict imputation values, whereas Jekaterina ensures her imputed data did not impact the mean.</p>
+<p><span class="name">I, Coder</span> looks at the total null values, whereas <span class="name">Jekaterina</span> does that near the end.</p>
+<p>Everyone starts with looking at the breakdown of survivors, and then the breakdown of survivors by gender. Cross tabs, factor plots, and violin plots are all popular graphs. <span class="name">Jekaterina</span> also plots some really fascinating graphs.</p>
+<p>The authors diverge a bit more when it comes to feature engineering. The authors differ on when to engineer new features, with some treating it as a discrete step and others tackling it during their initial analysis of the data. Choices around binning differ, with age, title and fare all receiving different number of buckets, and only <span class="name">Jekaterina</span> engineering a discrete <code>child</code> / <code>adult</code> feature.</p>
+<p>Approaches to imputation differ as well. <span class="name">I, Coder</span> recommends looking at existing data to predict imputation values, whereas <span class="name">Jekaterina</span> ensures her imputed data did not impact the mean.</p>
 <p>So overall, some clear similarities with how to think about and approach the data, with the main diveragences around visualizations and feature engineering.</p>
 <h1 id="house-prices"><a href="#house-prices" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>House Prices</h1>
 <div class="left" style="width: 400px;">
@@ -1000,9 +1019,9 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
   
   </a>
     
-<div class="caption">Pedro plots the sale price</div>
+<div class="caption"><span class="name">Pedro</span> plots the sale price</div>
 </div>
-<p>Angela and Pedro spend some time upfront investigating the initial data like we saw in Titanic. Angela plots the sale price in a histogram and builds a heatmap of the features, while Pedro plots the sale price and draws the following conclusions about the sale price:</p>
+<p><span class="name">Angela</span> and <span class="name">Pedro</span> spend some time upfront investigating the initial data like we saw in Titanic. <span class="name">Angela</span> plots the sale price in a histogram and builds a heatmap of the features, while <span class="name">Pedro</span> plots the sale price and draws the following conclusions about the sale price:</p>
 <blockquote>
 <ul>
 <li>Deviate from the normal distribution.</li>
@@ -1010,7 +1029,7 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
 <li>Show peakedness.</li>
 </ul>
 </blockquote>
-<p>Pedro then puts himself in the shoes of a buyer and speculates which features would matter to him, examining the correlations between his picks and the sale price. Later he builds a heatmap to glean a more objective view of feature relationships before zooming in on a couple promising candidates.</p>
+<p><span class="name">Pedro</span> then puts himself in the shoes of a buyer and speculates which features would matter to him, examining the correlations between his picks and the sale price. Later he builds a heatmap to glean a more objective view of feature relationships before zooming in on a couple promising candidates.</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -1047,9 +1066,9 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
   </a>
     </p>
 <div class="caption">Plotting features against sale price</div>
-<p>By contrast, Angela starts with a more objective approach, listing numerical features by their correlation with <code>SalePrice</code>. She also plots features against the sale price, looking for patterns in the data.</p>
-<p>Sang-eon starts his kernel with a bang, aggressively culling missing values and outliers (with the exception of <code>LotFrontage</code> which he imputes using linear regression). Only then does he begin plotting various features against the sale price.</p>
-<p>Pedro waits until looking for correlations among the data to examine the problem of missing data. He asks:</p>
+<p>By contrast, <span class="name">Angela</span> starts with a more objective approach, listing numerical features by their correlation with <code>SalePrice</code>. She also plots features against the sale price, looking for patterns in the data.</p>
+<p><span class="name">Sang-eon</span> starts his kernel with a bang, aggressively culling missing values and outliers (with the exception of <code>LotFrontage</code> which he imputes using linear regression). Only then does he begin plotting various features against the sale price.</p>
+<p><span class="name">Pedro</span> waits until looking for correlations among the data to examine the problem of missing data. He asks:</p>
 <blockquote>
 <ul>
 <li>How prevalent is the missing data?</li>
@@ -1057,17 +1076,17 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
 </ul>
 <p>The answer to these questions is important for practical reasons because missing data can imply a reduction of the sample size. This can prevent us from proceeding with the analysis. Moreover, from a substantive perspective, we need to ensure that the missing data process is not biased and hidding an inconvenient truth.</p>
 </blockquote>
-<p>To address these, Pedro plots the totals and percents of missing cells, and chooses to delete columns where 15% or more cells contain missing data. He again relies on subjective choices to determine which features to remove:</p>
+<p>To address these, <span class="name">Pedro</span> plots the totals and percents of missing cells, and chooses to delete columns where 15% or more cells contain missing data. He again relies on subjective choices to determine which features to remove:</p>
 <blockquote>
 <p>...will we miss this data? I don't think so. None of these variables seem to be very important, since most of them are not aspects in which we think about when buying a house (maybe that's the reason why data is missing?). Moreover, looking closer at the variables, we could say that variables like 'PoolQC', 'MiscFeature' and 'FireplaceQu' are strong candidates for outliers, so we'll be happy to delete them.</p>
 </blockquote>
-<p>Pedro's approach to the missing data is to either remove columns (features) entirely if they feature a large number of missing values, or remove rows where there are only a few missing. He does not impute any variables. He also establishes a heuristic for tackling outliers:</p>
+<p><span class="name">Pedro</span>'s approach to the missing data is to either remove columns (features) entirely if they feature a large number of missing values, or remove rows where there are only a few missing. He does not impute any variables. He also establishes a heuristic for tackling outliers:</p>
 <blockquote>
 <p>The primary concern here is to establish a threshold that defines an observation as an outlier. To do so, we'll standardize the data. In this context, data standardization means converting data values to have mean of 0 and a standard deviation of 1.</p>
 </blockquote>
 <p>He concludes that there's nothing to worry from a stastical standpoint, but after returning to visual inspections of the data, deletes a few single data points he finds questionable.</p>
 <h2 id="feature-engineering-1"><a href="#feature-engineering-1" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature Engineering</h2>
-<p>Sang-eon examines the skewness and kurtosis of the data, and performs a Wilxoc-rank Sum test. He concludes his kernel with a very nice looking plot:</p>
+<p><span class="name">Sang-eon</span> examines the skewness and kurtosis of the data, and performs a Wilxoc-rank Sum test. He concludes his kernel with a very nice looking plot:</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -1101,13 +1120,13 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
   
   </a>
     </p>
-<div class="caption">Sang-eon with a 3d plot of features</div>
-<p>Meanwhile, Pedro discusses Normality, Homoscedasticity, Linearity, and Absence of correlated errors; he normalizes the data and discovers that the other three are resolved as well. Success!</p>
+<div class="caption"><span class="name">Sang-eon</span> with a 3d plot of features</div>
+<p>Meanwhile, <span class="name">Pedro</span> discusses Normality, Homoscedasticity, Linearity, and Absence of correlated errors; he normalizes the data and discovers that the other three are resolved as well. Success!</p>
 <h2 id="takeaways-1"><a href="#takeaways-1" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Takeaways</h2>
 <p>None of the three kernel authors does much feature engineering, possibly because there's so many features already present in the dataset.</p>
 <p>There's a wide range of strategies for determining how to approach the data, with some authors adopting a subjective strategy and others jumping straight to more objective measurements. There's also no clear consensus on when and how to cull missing values or outliers.</p>
 <p>There's more of a focus on statistical methods and integrity overall than in the Titanic competition, possibly because there's so many more features to handle; it's possible that negative statistical effects might have a larger overall effect than in the previous competition.</p>
-<a name="nlp" />
+<p><a name="nlp"></a></p>
 <h1 class="center">Natural Language Competitions</h1>
 <p>Natural Language, or NLP, competitions, have datasets that contain words or sentences. While the core data type is the same as in structured data competitions - text - the tools available for analyzing natural language tend to be specialized, resulting in different strategies for analysis.</p>
 <p>In its original form, natural language is not easily decipherable by machine learning models. To consume it requires an intermediary transformation step into 1s and 0s. One such popular technique is called <a href="https://en.wikipedia.org/wiki/Bag-of-words_model" target="_blank" rel="nofollow noopener noreferrer">Bag of Words</a>, whereby a sentence is effectively transformed into a collection of booleans indicating whether a particular word is present or not.</p>
@@ -1136,7 +1155,7 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to
 </div>
 <p>The first NLP competition I looked at was the <a href="https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge%3CPaste%3E" target="_blank" rel="nofollow noopener noreferrer">Toxic Comment Classifcation Competition</a>, which included a dataset featuring a large number of comments from Wikipedia talk page edits that been scored on a toxicity scale.</p>
 <p><small><em>
-The EDAs I chose for analysis were <a href="https://www.kaggle.com/jagangupta/stop-the-s-toxic-comments-eda">Stop the S@#$ - Toxic Comments EDA</a> by Jagan, <a href="https://www.kaggle.com/rhodiumbeng/classifying-multi-label-comments-0-9741-lb">Classifying Multi-label Comments</a> by Rhodium Beng, and <a href="https://www.kaggle.com/fcostartistican/don-t-mess-with-my-mothjer">Don't Mess With My Mothjer</a> by Francisco Mendez.
+The EDAs I chose for analysis were <a href="https://www.kaggle.com/jagangupta/stop-the-s-toxic-comments-eda">Stop the S@#$ - Toxic Comments EDA</a> by <span class="name">Jagan</span>, <a href="https://www.kaggle.com/rhodiumbeng/classifying-multi-label-comments-0-9741-lb">Classifying Multi-label Comments</a> by <span class="name">Rhodium Beng</span>, and <a href="https://www.kaggle.com/fcostartistican/don-t-mess-with-my-mothjer">Don't Mess With My Mothjer</a> by <span class="name">Francisco Mendez</span>.
 </em></small></p>
 <p>All three authors begin by describing the dataset and pulling a few comments at random. While there's no missing values, there is a lot of noise in the comments, but its unclear whether this noise will be useful in the final data analysis.</p>
 <p>
@@ -1172,32 +1191,32 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/jagangupta/st
   
   </a>
     </p>
-<div class="caption">Jagan plots the distribution of images per toxic category</div>
+<div class="caption"><span class="name">Jagan</span> plots the distribution of images per toxic category</div>
 <blockquote>
-<p>The toxicity is not evenly spread out across classes. Hence we might face class imbalance problems — Jagan</p>
+<p>The toxicity is not evenly spread out across classes. Hence we might face class imbalance problems — <span class="name">Jagan</span></p>
 </blockquote>
-<p>Francisco immediately throws away words "lacking meaning" (e.g., "and" or "the"). Using a biplot, he plots out in which category a particular word is most likely to fit.</p>
+<p><span class="name">Francisco</span> immediately throws away words "lacking meaning" (e.g., "and" or "the"). Using a biplot, he plots out in which category a particular word is most likely to fit.</p>
 <blockquote>
-<p>From the biplot most of the words are organized as expected, with some exceptions, fat is associated to identity hate, which is surprissing because is the only non-race word on the bottom of the chart, there are some generic offensive words in the middle of the chart, meaning that they can be used for any awful purposes, other ones as die are exclusively associated to threat which make total sense some others as a$$ (sorry I feel uncomfortable writing it as it appear on the data) is associated with threat, on the middle left of the chart there are some unrecognizable words, which are shown using the code — Francisco Mendez</p>
+<p>From the biplot most of the words are organized as expected, with some exceptions, fat is associated to identity hate, which is surprissing because is the only non-race word on the bottom of the chart, there are some generic offensive words in the middle of the chart, meaning that they can be used for any awful purposes, other ones as die are exclusively associated to threat which make total sense some others as a$$ (sorry I feel uncomfortable writing it as it appear on the data) is associated with threat, on the middle left of the chart there are some unrecognizable words, which are shown using the code — <span class="name">Francisco Mendez</span></p>
 </blockquote>
-<p>Francisco then asks whether there's a correlation between typos and toxicity.</p>
+<p><span class="name">Francisco</span> then asks whether there's a correlation between typos and toxicity.</p>
 <blockquote>
 <p>Apparently there is, and surprisingly, mother when is misspelled is never related to hate or threat, but when it is properly spelled there are some hate and threat comments that have the word mother in it ... Is it that people tend to write more carefully when they are threating somebody or when they hate it?</p>
 </blockquote>
-<p>As Francisco digs further, he finds that in many cases, toxic comments would contain copy-pasted phrases, over and over again. After rerunning his analysis after removing duplicate words, he discoveres a new set of correlations.</p>
+<p>As <span class="name">Francisco</span> digs further, he finds that in many cases, toxic comments would contain copy-pasted phrases, over and over again. After rerunning his analysis after removing duplicate words, he discoveres a new set of correlations.</p>
 <blockquote>
 <p>Here there are some new words the ones that can be highlited are gay used mainly on threat comments and hate. Some general mild words as mother, hell, piece, stupid, idiot and shut are used for any toxic general purpose, meantime any derivative of the f-word is used in toxic and obscene comments. Also from the biplot is possible to realize that toxic and insult are similar and the least aggressive ones, while hate and threat are the most serious ones.</p>
 </blockquote>
 <p>All three authors utilize visualizations of the data to great effect. (Given the subject matter I won't embed the images but you can find them on each author's kernel.)</p>
-<p>Rhodium builds a histogram of character length as well as a heatmap between categories, finding that some labels are highly correlated; for instance, an insult is 74% likely to also be obscene.</p>
-<p>Jagan plots some word clouds, a heatmap, and a crosstab, observing:</p>
+<p><span class="name">Rhodium</span> builds a histogram of character length as well as a heatmap between categories, finding that some labels are highly correlated; for instance, an insult is 74% likely to also be obscene.</p>
+<p><span class="name">Jagan</span> plots some word clouds, a heatmap, and a crosstab, observing:</p>
 <blockquote>
 <p>A Severe toxic comment is always toxic<br />
 Other classes seem to be a subset of toxic barring a few exceptions</p>
 </blockquote>
 <h2 id="feature-engineering-2"><a href="#feature-engineering-2" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature Engineering</h2>
-<p>Rhodium lowercases his text, manually turns contractions into things, and manually cleans punctuation.</p>
-<p>Jagan plots various of his features against toxicity looking for correlations. Among other things he discovers that spammers tend to be more toxic.</p>
+<p><span class="name">Rhodium</span> lowercases his text, manually turns contractions into things, and manually cleans punctuation.</p>
+<p><span class="name">Jagan</span> plots various of his features against toxicity looking for correlations. Among other things he discovers that spammers tend to be more toxic.</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -1232,8 +1251,8 @@ Other classes seem to be a subset of toxic barring a few exceptions</p>
   
   </a>
     </p>
-<div class="caption">Jagan discussing feature engineering</div>
-<p>For single words and pairs of words, Jagan and Rhodium both plot the top words TF-IDF:</p>
+<div class="caption"><span class="name">Jagan</span> discussing feature engineering</div>
+<p>For single words and pairs of words, <span class="name">Jagan</span> and <span class="name">Rhodium</span> both plot the top words TF-IDF:</p>
 <blockquote>
 <p>TF stands for term frequency; essentially how often a word appears in the text ... You can understand it as a normalisation of the relativ text frequency by the overall document frequency. This will lead to words standing out that are characteristic for a specific author, which is pretty much what we want to achieve in order build a prediction model. — <a href="https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features">Heads or Tails</a></p>
 </blockquote>
@@ -1262,9 +1281,9 @@ Other classes seem to be a subset of toxic barring a few exceptions</p>
 <p>The <a href="https://www.kaggle.com/c/spooky-author-identification" target="_blank" rel="nofollow noopener noreferrer">Spooky Author Identification</a> provided snippets of text from three horror-themed authors - Edgar Allan Poe, HP Lovecraft, or Mary Wollstonecraft Shelley - and asked participants to build a model capable of predicting which writer authored a particular bit of text.</p>
 <p>What's interesting about this dataset is its simplicity; there's very little unstructured data accompanying the text, other than author. As a result, all the EDAs focused solely on different approaches to parsing and analyzing language.</p>
 <p><small><em>
-The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spooky-nlp-and-topic-modelling-tutorial">Spooky NLP and Topic Modelling Tutorial</a> by Anisotropic, <a href="https://www.kaggle.com/ambarish/tutorial-detailed-spooky-fun-eda-and-modelling">Tutorial Detailed Spooky Fun EDA and Modelling</a> by Bukun<a href="https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features">Treemap House of Horror Spooky EDA LDA Features</a> by Heads or Tails.
+The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spooky-nlp-and-topic-modelling-tutorial">Spooky NLP and Topic Modelling Tutorial</a> by <span class="name">Anisotropic</span>, <a href="https://www.kaggle.com/ambarish/tutorial-detailed-spooky-fun-eda-and-modelling">Tutorial Detailed Spooky Fun EDA and Modelling</a> by <span class="name">Bukun</span><a href="https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features">Treemap House of Horror Spooky EDA LDA Features</a> by <span class="name">Heads or Tails</span>.
 </em></small></p>
-<p>Each author begins by examining the dataset, picking out a few rows, and plotting the number of stories per author. Bukun also looks at word lengths per author, while Anisotropic plots a bar graph of overall word counts:</p>
+<p>Each author begins by examining the dataset, picking out a few rows, and plotting the number of stories per author. <span class="name">Bukun</span> also looks at word lengths per author, while <span class="name">Anisotropic</span> plots a bar graph of overall word counts:</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -1300,7 +1319,7 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spo
   </a>
     </p>
 <blockquote>
-<p>Notice anything odd about the words that appear in this word frequency plot? Do these words actually tell us much about the themes and concepts that Mary Shelley wants to portray to the reader in her stories? These words are all so commonly occuring words which you could find just anywhere else. Not just in spooky stories and novels by our three authors but also in newspapers, kid book, religious texts - really almost every other english text. Therefore we must find some way to preprocess our dataset first to strip out all these commonly occurring words which do not bring much to the table. - Anisotropic</p>
+<p>Notice anything odd about the words that appear in this word frequency plot? Do these words actually tell us much about the themes and concepts that Mary Shelley wants to portray to the reader in her stories? These words are all so commonly occuring words which you could find just anywhere else. Not just in spooky stories and novels by our three authors but also in newspapers, kid book, religious texts - really almost every other english text. Therefore we must find some way to preprocess our dataset first to strip out all these commonly occurring words which do not bring much to the table. - <span class="name">Anisotropic</span></p>
 </blockquote>
 <p>Each author builds word clouds showing the most frequent words largest:</p>
 <p>
@@ -1339,13 +1358,13 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spo
   
   </a>
     </p>
-<div class="caption">Heads or Tails builds a word cloud of the 50 most common words</div>
-<p>Heads or Tails also plots overall sentences, sentence, and word length per author, and discovers subtle but measurable differences between the authors.</p>
-<p>Anisotropic and Bukun discuss tokenization, and removing stop words:</p>
+<div class="caption"><span class="name">Heads or Tails</span> builds a word cloud of the 50 most common words</div>
+<p><span class="name">Heads or Tails</span> also plots overall sentences, sentence, and word length per author, and discovers subtle but measurable differences between the authors.</p>
+<p><span class="name">Anisotropic</span> and <span class="name">Bukun</span> discuss tokenization, and removing stop words:</p>
 <blockquote>
-<p>The work at this stage attempts to reduce as many different variations of similar words into a single term ( different branches all reduced to single word stem). Therefore if we have "running", "runs" and "run", you would really want these three distinct words to collapse into just the word "run". (However of course you lose granularity of the past, present or future tense). — Anisotropic</p>
+<p>The work at this stage attempts to reduce as many different variations of similar words into a single term ( different branches all reduced to single word stem). Therefore if we have "running", "runs" and "run", you would really want these three distinct words to collapse into just the word "run". (However of course you lose granularity of the past, present or future tense). — <span class="name">Anisotropic</span></p>
 </blockquote>
-<p>After the tokenization, stop word removal and lemmatization, Anisotropic rebuilds the graph of top 50 words:</p>
+<p>After the tokenization, stop word removal and lemmatization, <span class="name">Anisotropic</span> rebuilds the graph of top 50 words:</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -1380,7 +1399,7 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spo
   
   </a>
     </p>
-<p>Bukun, meanwhile, plots his top 10 words overall and by author, finding a different set:</p>
+<p><span class="name">Bukun</span>, meanwhile, plots his top 10 words overall and by author, finding a different set:</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -1417,8 +1436,8 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spo
   
   </a>
     </p>
-<p>Heads or Tails does this as well, additionally looking at top words by author, after tokenization and stemming.</p>
-<p>Bukun and Heads or Tails both then use TF-IDF to to find the most "important" words for a particular author.</p>
+<p><span class="name">Heads or Tails</span> does this as well, additionally looking at top words by author, after tokenization and stemming.</p>
+<p><span class="name">Bukun</span> and <span class="name">Heads or Tails</span> both then use TF-IDF to to find the most "important" words for a particular author.</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -1455,8 +1474,8 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spo
   
   </a>
     </p>
-<div class="caption">Heads or Tails plots the most significant words by author in a bit of a different chart</div>
-<p>Bukun looks at top bigrams and trigrams (collections of two and three words, respectively).</p>
+<div class="caption"><span class="name">Heads or Tails</span> plots the most significant words by author in a bit of a different chart</div>
+<p><span class="name">Bukun</span> looks at top bigrams and trigrams (collections of two and three words, respectively).</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -1493,9 +1512,9 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spo
   
   </a>
     </p>
-<div class="caption">Heads or Tails plots the word relationships for bigrams</div>
-<p>Both Bukun and Heads or Tails perform a sentiment analysis, and look at overall negativity per author.</p>
-<p>Bukun uses something called "NRC Sentiment lexicon" to examine the amount of "Fear", "Surprise", and "Joy" in each snippet of text, and visualizes the sentiment of various authors using word clouds, tables, bar charts.</p>
+<div class="caption"><span class="name">Heads or Tails</span> plots the word relationships for bigrams</div>
+<p>Both <span class="name">Bukun</span> and <span class="name">Heads or Tails</span> perform a sentiment analysis, and look at overall negativity per author.</p>
+<p><span class="name">Bukun</span> uses something called "NRC Sentiment lexicon" to examine the amount of "Fear", "Surprise", and "Joy" in each snippet of text, and visualizes the sentiment of various authors using word clouds, tables, bar charts.</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -1532,15 +1551,15 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spo
   
   </a>
     </p>
-<div class="caption">Bukun plots a word cloud for words matching Joy</div>
+<div class="caption"><span class="name">Bukun</span> plots a word cloud for words matching Joy</div>
 <h1 id="feature-engineering-3"><a href="#feature-engineering-3" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature engineering</h1>
-<p>Bukun suggests a number of possible features to add, including number of commas, semicolons, colons, blanks, words with capitals or beginning with capitals, and graphs each one. There do appear to be some correlations for some authors against some of these features.</p>
-<p>Heads or Tails notes that:</p>
+<p><span class="name">Bukun</span> suggests a number of possible features to add, including number of commas, semicolons, colons, blanks, words with capitals or beginning with capitals, and graphs each one. There do appear to be some correlations for some authors against some of these features.</p>
+<p><span class="name">Heads or Tails</span> notes that:</p>
 <blockquote>
 <p>We have already noticed that our three authors can be identified by the names of their most prominent characters; with Mary Shelley writing about “Raymond” or Lovecraft about “Herbert West”. But what about names in general? Are some authors more likely to use names under certain circumstances? After sentence or character length this is one of our first feature-engineering ideas on our quest for knowledge</p>
 </blockquote>
-<p>From this insight, Heads or Tails relies on the <code>babynames</code> package, featuring a list of most popular names per a given year, to add an additional feature to the data.</p>
-<p>Bukun and Heads or Tails both look at the gender pronoun breakdown between authors, and Heads or Tails also looks at sentence topics, starting word per author, and last word per author, number of unique words, fraction of distinct words per sentence, dialogue markers and alliteration (which is a cool idea!)</p>
+<p>From this insight, <span class="name">Heads or Tails</span> relies on the <code>babynames</code> package, featuring a list of most popular names per a given year, to add an additional feature to the data.</p>
+<p><span class="name">Bukun</span> and <span class="name">Heads or Tails</span> both look at the gender pronoun breakdown between authors, and <span class="name">Heads or Tails</span> also looks at sentence topics, starting word per author, and last word per author, number of unique words, fraction of distinct words per sentence, dialogue markers and alliteration (which is a cool idea!)</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -1578,7 +1597,7 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spo
   </a>
     </p>
 <div class="caption">heads or tails plots various measurements of alliteration by author</div>
-<p>Heads or Tails ends his kernel with an alluvian plot showcasing feature interaction:</p>
+<p><span class="name">Heads or Tails</span> ends his kernel with an alluvian plot showcasing feature interaction:</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -1615,20 +1634,20 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spo
   
   </a>
     </p>
-<div class="caption">Heads or Tails' alluvian plot showcasing feature interaction</div>
+<div class="caption"><span class="name">Heads or Tails</span>' alluvian plot showcasing feature interaction</div>
 <h2 id="takeaways-3"><a href="#takeaways-3" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Takeaways</h2>
 <p>This is a fascinating competition to study since the text snippets are longer and there's no structured data to rely on.</p>
 <p>Kernels tended to leverage NLP best practices, like lowercasing words, stemming, and tokenization. Kernels also tended to use more advanced techniques than were seen in the Toxic kernels, like sentiment analysis and bi- and trigram analysis.</p>
 <p>In both competitions, kernel authors used <a href="https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features" target="_blank" rel="nofollow noopener noreferrer">TF-IDF</a>.</p>
 <p>When it came to features, authors engineered a variety of new features including average words per sentence, punctuation choices, and whether words were duplicated. </p>
-<a name="images" />
+<p><a name="images"></a></p>
 <h1 class="center">Images</h1>
 <p>So far, the competitions we've looked at have been purely text-based (either language, strings or numbers). The last two competitions I examined (<a href="https://www.kaggle.com/c/data-science-bowl-2017/" target="_blank" rel="nofollow noopener noreferrer">lung cancer</a> and <a href="https://www.kaggle.com/c/leaf-classification/" target="_blank" rel="nofollow noopener noreferrer">leaf classification</a>) were both more domain specific. As a result, the analyses tended to assume an advanced audience, and authors skipped over rudimentary analysis and in favor of exploring different techniques for image analysis.</p>
 <p>I saw a great variety in terms of the visualization techniques used, along with features that were engineered. In particular, some authors in the lung cancer competition drew upon existing medical knowledge in order to engineer extremely domain-specific features. I can't speak to how effective those features were, but I can say that the visualizations they produced were stunning.</p>
 <h1 id="leaf-classification"><a href="#leaf-classification" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.kaggle.com/c/leaf-classification/" target="_blank" rel="nofollow noopener noreferrer">Leaf Classification</a></h1>
 <p>The Leaf Classification competition included 1,584 masked images of leaves, organized by species. Participants were instructured to build a build a model capable of classifying new images into one of the categories.</p>
 <p><small><em>
-The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/feature-extraction-from-images">Feature Extraction From Images</a> by lorinc, <a href="https://www.kaggle.com/selfishgene/visualizing-pca-with-leaf-dataset">Visualizing PCA with Leaf Dataset</a> by selfishgene, and <a href="https://www.kaggle.com/josealberto/fast-image-exploration">Fast Image Exploration</a> by Jose Alberto.
+The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/feature-extraction-from-images">Feature Extraction From Images</a> by <span class="name">lorinc</span>, <a href="https://www.kaggle.com/selfishgene/visualizing-pca-with-leaf-dataset">Visualizing PCA with Leaf Dataset</a> by <span class="name">selfishgene</span>, and <a href="https://www.kaggle.com/josealberto/fast-image-exploration">Fast Image Exploration</a> by <span class="name">Jose Alberto</span>.
 </em></small></p>
 <p>A good first step is to look at the images of the leaves, which is how two of the EDAs start.</p>
 <p>
@@ -1665,15 +1684,15 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/featur
   
   </a>
     </p>
-<div class="caption">selfishgene examines the leaf specimens</div>
-<p>Jose plots the various species, and notes that there are 10 images per species. He also looks at the similarity of leaves, within a category, to each other:</p>
+<div class="caption"><span class="name">selfishgene</span> examines the leaf specimens</div>
+<p><span class="name">Jose</span> plots the various species, and notes that there are 10 images per species. He also looks at the similarity of leaves, within a category, to each other:</p>
 <img alt="josealberto creates a gif of all the leaves from a category" src="https://i.imgur.com/D6o476h.gifv" />
-<div class="caption">Jose compares leaves within a category</div>
-<p>Meanwhile, lorinc jumps straight into analysis, locating the center of each leaf and applying edge detection. lorinc also converts the outline of the leaf into polar coordinates, in order to more effectively measure the center of the leaf:</p>
+<div class="caption"><span class="name">Jose</span> compares leaves within a category</div>
+<p>Meanwhile, <span class="name">lorinc</span> jumps straight into analysis, locating the center of each leaf and applying edge detection. <span class="name">lorinc</span> also converts the outline of the leaf into polar coordinates, in order to more effectively measure the center of the leaf:</p>
 <blockquote>
 <p>Later we might want to switch to another measure of centrality, based on how efficient this center is, when we generate a time-series from the shape, using the distance between the edge and the center. One way to do that is just measure the (Euclidean) distance between the center and the edge... but there is a better way - we project the Cartesian coordinates into Polar coordinates.</p>
 </blockquote>
-<p>selfishgene chooses to look at the variance direction of the images, writing:</p>
+<p><span class="name">selfishgene</span> chooses to look at the variance direction of the images, writing:</p>
 <blockquote>
 <p>Each image can be though of as a different "direction" in the high dimensional image space</p>
 </blockquote>
@@ -1711,8 +1730,8 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/featur
   
   </a>
     </p>
-<div class="caption">selfishgene looks at the variance of a leaf image</div>
-<p>selfishgene also spends some time looking into image reconstruction, model variations around the mean image, and eigen vectors; he explains:</p>
+<div class="caption"><span class="name">selfishgene</span> looks at the variance of a leaf image</div>
+<p><span class="name">selfishgene</span> also spends some time looking into image reconstruction, model variations around the mean image, and eigen vectors; he explains:</p>
 <blockquote>
 <p>"The upper most row contains the data distributions of each eigenvector (i.e. the histogram along that "direction") The second row contains what we already saw in a previous plot, what we called the variance directions. The forth row contains the median image of leafs. notice that this row is identical for all eigenvectors The third row holds the 2nd percentile images of each eigenvector. it's easier to think of this as the median image minus the eigenvector image multiplied by some constant.</p>
 </blockquote>
@@ -1750,9 +1769,9 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/featur
   
   </a>
     </p>
-<div class="caption">selfishgene looks at model variations</div>
+<div class="caption"><span class="name">selfishgene</span> looks at model variations</div>
 <h1 id="feature-detection"><a href="#feature-detection" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature detection</h1>
-<p>lorinc suggests splitting each sample in half and treating them as two samples (though he doesn't pursue this approach). lorinc finds local maxima and minima from the time series (e.g., the leaf graphed in polar coordinates) and notes:</p>
+<p><span class="name">lorinc</span> suggests splitting each sample in half and treating them as two samples (though he doesn't pursue this approach). <span class="name">lorinc</span> finds local maxima and minima from the time series (e.g., the leaf graphed in polar coordinates) and notes:</p>
 <blockquote>
 <p>Ok, I surprised myself. This worked out pretty well. I think, I can build an extremely efficient feature from this. But this method is NOT robust yet.</p>
 <ul>
@@ -1794,8 +1813,8 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/featur
   
   </a>
     </p>
-<div class="caption">lorinc measures the minima and maxima of a leaf plotted in polar coordinates</div>
-<p>From there, lorinc talks about mathematical morphology, before discovering the presence of noise around each leaf. He spends some time figuring out how to remove noise from the image and concludes with a lovely image showing a distance map superimposed on the leaf:</p>
+<div class="caption"><span class="name">lorinc</span> measures the minima and maxima of a leaf plotted in polar coordinates</div>
+<p>From there, <span class="name">lorinc</span> talks about mathematical morphology, before discovering the presence of noise around each leaf. He spends some time figuring out how to remove noise from the image and concludes with a lovely image showing a distance map superimposed on the leaf:</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -1850,15 +1869,15 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/featur
 </div>
 <p>The final image competition I looked at was the <a href="https://www.kaggle.com/c/data-science-bowl-2017/" target="_blank" rel="nofollow noopener noreferrer">2017 Data Science Bowl</a>, which asked participants to examine a list of images and predict whether the patients had cancer or not. While this competition did feature structured data (meta information embedded in the images themselves), some of this data was anonymized, meaning that features that could have otherwise had predictive value (like the age of the patient) were removed. This meant that all the kernels focusing exclusively on image analysis.</p>
 <p><small><em>
-The EDAs I chose for analysis were <a href="https://www.kaggle.com/gzuidhof/full-preprocessing-tutorial">Full Preprocessing Tutorial</a> by Guido Zuidhof, <a href="https://www.kaggle.com/anokas/exploratory-data-analysis-4">Exploratory Data Analysis</a> by Mikel Bober-Irizar, and <a href="https://www.kaggle.com/apapiu/exploratory-analysis-visualization">Exploratory Analysis Visualization</a> by Alexandru Papiu.
+The EDAs I chose for analysis were <a href="https://www.kaggle.com/gzuidhof/full-preprocessing-tutorial">Full Preprocessing Tutorial</a> by <span class="name">Guido Zuidhof</span>, <a href="https://www.kaggle.com/anokas/exploratory-data-analysis-4">Exploratory Data Analysis</a> by <span class="name">Mikel Bober-Irizar</span>, and <a href="https://www.kaggle.com/apapiu/exploratory-analysis-visualization">Exploratory Analysis Visualization</a> by <span class="name">Alexandru Papiu</span>.
 </em></small></p>
-<p>Of the three kernel authors, Guido is the only one to discuss his background working with medical images, and it shows in his domain-specific analysis of the dataset:</p>
+<p>Of the three kernel authors, <span class="name">Guido</span> is the only one to discuss his background working with medical images, and it shows in his domain-specific analysis of the dataset:</p>
 <blockquote>
 <p>Dicom is the de-facto file standard in medical imaging. ... These files contain a lot of metadata (such as the pixel size, so how long one pixel is in every dimension in the real world). This pixel size/coarseness of the scan differs from scan to scan (e.g. the distance between slices may differ), which can hurt performance of CNN approaches. We can deal with this by isomorphic resampling</p>
 </blockquote>
 <p>The other two authors start their EDAs with more general explorations of the dataset and images themselves.</p>
 <p>apapie begins by examining the shape of the images, while anokas starts by looking at the number of scans per patient, total number of scans, and a histogram of DICOM files per patient, along with a quick sanity check to see if there's any relationship between row ID and whether a patient has cancer (none is found, implying that the dataset is well sorted).</p>
-<p>Alexandru takes a distribution of pixels and plots them:</p>
+<p><span class="name">Alexandru</span> takes a distribution of pixels and plots them:</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -1897,7 +1916,7 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/gzuidhof/full
 <blockquote>
 <p>Interesting - the distribution seems to be roughly bimodal with a bunch of pixels set at - 2000 - probably for missing values.</p>
 </blockquote>
-<p>Guido sheds some more light in his EDA on why this is, namely being due to what HU units represent (air, tissue and bone):</p>
+<p><span class="name">Guido</span> sheds some more light in his EDA on why this is, namely being due to what HU units represent (air, tissue and bone):</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -2003,10 +2022,10 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/gzuidhof/full
   
   </a>
     </p>
-<div class="caption">Alexandru looks at images from the X angle</div>
+<div class="caption"><span class="name">Alexandru</span> looks at images from the X angle</div>
 <img alt="anokas sweeps across a set of patient images" src="https://i.imgur.com/Ua03N9H.gifv" />
 <div class="caption">anokas builds a gif that moves through a set of patient images</div>
-<p>Alexandru spent some time exploring whether edge detection could enhance the images.</p>
+<p><span class="name">Alexandru</span> spent some time exploring whether edge detection could enhance the images.</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -2043,16 +2062,16 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/gzuidhof/full
   
   </a>
     </p>
-<div class="caption">After increasing the threshold, Alexandru was able to render some visually striking images</div>
-<p>Alexandru concludes that:</p>
+<div class="caption">After increasing the threshold, <span class="name">Alexandru</span> was able to render some visually striking images</div>
+<p><span class="name">Alexandru</span> concludes that:</p>
 <blockquote>
 <p>Interesting results, however the issue here is that the filter will also detect the blood vessels in the lung. So some sort of 3-D surface detection that differentiates between spheres and tubes would be more suitable for this situation.</p>
 </blockquote>
-<p>Meanwhile, Guido discusses resampling, focusing on the fundemental nature of the DICOM image:</p>
+<p>Meanwhile, <span class="name">Guido</span> discusses resampling, focusing on the fundemental nature of the DICOM image:</p>
 <blockquote>
 <p>A scan may have a pixel spacing of [2.5, 0.5, 0.5], which means that the distance between slices is 2.5 millimeters. For a different scan this may be [1.5, 0.725, 0.725], this can be problematic for automatic analysis (e.g. using ConvNets)! A common method of dealing with this is resampling the full dataset to a certain isotropic resolution. If we choose to resample everything to 1mm1mm1mm pixels we can use 3D convnets without worrying about learning zoom/slice thickness invariance.</p>
 </blockquote>
-<p>Later in his EDA, Guido is able to do a 3D plot of the inner cavity by combining multiple DICOM images:</p>
+<p>Later in his EDA, <span class="name">Guido</span> is able to do a 3D plot of the inner cavity by combining multiple DICOM images:</p>
 <p>
   <a
     class="gatsby-resp-image-link"
@@ -2123,8 +2142,8 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/gzuidhof/full
     </p>
 <div class="caption">3D plot without air</div>
 <h2 id="takeaways-4"><a href="#takeaways-4" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Takeaways</h2>
-<p>This competition featured the most differences between kernels of any I saw. Guido, given his familiarity with medical image formats, was able to leverage that background to draw significantly more nuanced conclusions. That said, the other two authors' lack of medical familiarity did not prevent them from drawing equally fascinating conclusions.</p>
-<a name="conclusions" />
+<p>This competition featured the most differences between kernels of any I saw. <span class="name">Guido</span>, given his familiarity with medical image formats, was able to leverage that background to draw significantly more nuanced conclusions. That said, the other two authors' lack of medical familiarity did not prevent them from drawing equally fascinating conclusions.</p>
+<p><a name="conclusions"></a></p>
 <h1 id="conclusions"><a href="#conclusions" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conclusions</h1>
 <p>What did I find?</p>
 <p>For <strong>Structured Data</strong> competitions, EDAs tended to tread similar ground. For instance, EDAs in the <a href="https://www.kaggle.com/c/titanic" target="_blank" rel="nofollow noopener noreferrer">Titanic competition</a> were almost identical in their selections of columns, and in what order to study them. However, they showed more diversity in their choices of features to engineer along with the visualizations they used to examine the data.</p>
@@ -2133,7 +2152,7 @@ The EDAs I chose for analysis were <a href="https://www.kaggle.com/gzuidhof/full
 <p>The image competitions I saw were mostly aimed at advanced audiences, and were in fairly domain-specific areas, which may have resulted in the more advanced diversity; it makes sense that as datasets become more specialized or esoteric, the amount of introductory analysis and explanation decreases, while the amount of deep or specialized analysis increases, and indeed this is what I found.</p>
 <p>On a more Kaggle-specific level, the notebooks I saw were all written with either a beginner or advanced audience in mind. More popular competitions, or ones aimed at a more general audience, tended to have EDAs that were exhaustive in their analyses. In these EDAs, I also saw a trend of interweaving supplementary prose or the use of narrative devices alongside the analysis, as tools to help beginners better understand the techniques. By comparison, notebooks aimed at domain experts tended to do away with superfluous framings, and many also skipped over rudimentary data analyses, instead diving straight into domain-specific techniques.</p>
 <p>Finally, many EDAs were extremely useful and in-depth, without actually implementing a model or making predictions. Can one come up with an accurate model without being able to perform a rudimentary data analysis? I assume not, but I don't know.</p>
-<p>I will continue to journal my learnings in this space; if you're interested, sign up for my mailing list!</p></div><iframe src="https://upscri.be/8c3b09/?as_embed" data-reactid="14"></iframe></div></div></div><script>
+<p>I will continue to journal my learnings in this space; if you're interested, sign up for my mailing list!</p></article><iframe src="https://upscri.be/8c3b09/?as_embed" data-reactid="14"></iframe></div></div></div><script>
   
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
