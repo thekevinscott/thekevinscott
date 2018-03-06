@@ -24,6 +24,64 @@ const Content = styled.article `
     line-height: 28px;
   }
 
+  .banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 120px;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    min-height: 400px;
+    overflow: hidden;
+
+    .bg {
+      left: 0;
+      min-height: 400px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 100%;
+      z-index: 1;
+      position: absolute;
+      left: 0;
+    }
+
+    .text {
+      width: 100%;
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      padding: 20px 0;
+      margin-top: -20px;
+      background: rgba(255, 255, 255, 0.8);
+
+      > * {
+        width: 700px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+
+    h1 {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+
+      a {
+        border: none;
+      }
+    }
+
+    .caption {
+      text-align: left;
+      padding: 0;
+
+      &:before {
+        content: "Image by ";
+      }
+    }
+  }
+
   blockquote, em, .caption {
     .name {
       border: none;

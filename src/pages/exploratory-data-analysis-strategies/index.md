@@ -57,11 +57,12 @@ Where you can really let your imagination run wild is feature engineering. Each 
 
 Let's take a deeper look at two competitions, the [Titanic competition](https://www.kaggle.com/c/titanic) followed by the [House Prices competition](https://www.kaggle.com/c/house-prices-advanced-regression-techniques).
 
-## [Titanic](https://www.kaggle.com/c/titanic)
-
-<div class="right" style="width: 400px;">
-<img alt="Titanic" src="images/titanic.jpg" />
-<div class="caption">by <a href="https://www.flickr.com/photos/viaggioroutard/32746842734/in/photolist-RTJ8sN-7reGoc-7rdfgb-7reqrP-7rhfiJ-b4aUUF-bv64XJ-91NeZE-q2mfUz-eFvcpv-VMircS-pzVRNe-dF1MGZ-WCozhj-95TEWr-gkyMjV-75JPMM-7r8VAM-7r8K54-7ricVq-7rcJaC-7r8WZP-7rcUuc-7rgRJC-7rgFnC-oktnFk-7rdZK1-7rhNjL-adsXVC-7rcKPj-4YLEGK-7rhHQs-7r8TaB-7r8SoZ-e5wPAJ-8xv5oh-bvPFMY-7r8V3n-4YTM15-axQxWs-d1iAyQ-918Vc6-2gmvHf-8RCNJR-4YLEBM-b4aUXr-usDiD-c8Yp5o-22nLofY-okatX">Viaggio Routard</a></div>
+<div class="banner">
+  <div class="bg" style="background-image: url(https://i.imgur.com/RncjRjL.jpg)"></div>
+  <div class="text">
+  <h1><a href="https://www.kaggle.com/c/titanic">Titanic</a></h1>
+  <div class="caption"><a href="https://www.flickr.com/photos/viaggioroutard/32746842734/in/photolist-RTJ8sN-7reGoc-7rdfgb-7reqrP-7rhfiJ-b4aUUF-bv64XJ-91NeZE-q2mfUz-eFvcpv-VMircS-pzVRNe-dF1MGZ-WCozhj-95TEWr-gkyMjV-75JPMM-7r8VAM-7r8K54-7ricVq-7rcJaC-7r8WZP-7rcUuc-7rgRJC-7rgFnC-oktnFk-7rdZK1-7rhNjL-adsXVC-7rcKPj-4YLEGK-7rhHQs-7r8TaB-7r8SoZ-e5wPAJ-8xv5oh-bvPFMY-7r8V3n-4YTM15-axQxWs-d1iAyQ-918Vc6-2gmvHf-8RCNJR-4YLEBM-b4aUXr-usDiD-c8Yp5o-22nLofY-okatX">Viaggio Routard</a></div>
+  </div>
 </div>
 
 The Titanic competition is a popular beginners' competition, and lots of folks on Kaggle cycle through it. As a result the EDAs tend to be well written and thoroughly documented, and were amongst the clearest EDAs I saw. The dataset includes a training spreadsheet with a column `Survived` indicating whether a passenger survived or not, along with other supplementary data like their age, gender, ticket fare price, and more.
@@ -153,7 +154,7 @@ Approaches to imputation differ as well. <span class="name">I, Coder</span> reco
 
 There's some clear similarities in how the authors think about and approach the data, with the main divergences concerning visualizations and feature engineering.
 
-# House Prices
+<h1 class="banner"><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">House Prices</a></h1>
 
 <div class="left" style="width: 400px;">
 <img alt="House Prices" src="images/house_price.jpg" />
@@ -232,7 +233,7 @@ In its original form, natural language is not easily decipherable by machine lea
 
 Because of this, the first step of most notebooks tends to be transforming the text into something machine readable, and that step usually looks the same across notebooks. Once that's done, authors diverge considerably in their approaches and employ a variety of different visualizations and techniques for feature engineering.
 
-# [Toxic Comment Classification](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
+<h1 class="banner">[Toxic Comment Classification](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)</h1>
 
 _Warning: some of these comments might burn your eyeballs._
 
@@ -292,7 +293,7 @@ For single words and pairs of words, <span class="name">Jagan</span> and <span c
 
 There seem to be a few best practices all the authors follow, including things like lower casing text, handling contractions, and cleaning up punctuation were all areas the authors looked at. However, some authors also considered that these could be potential features and not just noise (for instance, Francesco discovering a correlation between typos and toxicity).
 
-# [Spooky Author Identification](https://www.kaggle.com/c/spooky-author-identification).
+<h1 class="banner">[Spooky Author Identification](https://www.kaggle.com/c/spooky-author-identification).</h1>
 
 <div class="left" style="width: 350px">
 <img alt="A very scary image" src="images/halloween.png" />
@@ -350,7 +351,7 @@ Both <span class="name">Bukun</span> and <span class="name">Heads or Tails</span
 ![Bukun plots a word cloud for words matching Joy](images/bukun_wordcloud_joy.png)
 <div class="caption"><span class="name">Bukun</span> plots a word cloud for words matching Joy</div>
 
-# Feature engineering
+## Feature engineering
 
 <span class="name">Bukun</span> suggests a number of possible features to add, including number of commas, semicolons, colons, blanks, words with capitals or beginning with capitals, and graphs each one. There do appear to be some correlations for some authors against some of these features.
 
@@ -387,7 +388,7 @@ So far, the competitions we've looked at have been purely text-based (either lan
 
 I saw a great variety in terms of the visualization techniques used, along with features that were engineered. In particular, some authors in the lung cancer competition drew upon existing medical knowledge in order to engineer extremely domain-specific features. I can't speak to how effective those features were, but I can say that the visualizations they produced were stunning.
 
-# [Leaf Classification](https://www.kaggle.com/c/leaf-classification/)
+<h1 class="banner">[Leaf Classification](https://www.kaggle.com/c/leaf-classification/)</h1>
 
 The Leaf Classification competition included 1,584 masked images of leaves, organized by species. Participants were instructured to build a build a model capable of classifying new images into one of the categories.
 
@@ -423,7 +424,7 @@ Meanwhile, <span class="name">lorinc</span> jumps straight into analysis, locati
 ![selfishgene looks at model variations](images/selfish_model_variation.png)
 <div class="caption"><span class="name">selfishgene</span> looks at model variations</div>
 
-# Feature detection
+## Feature detection
 
 <span class="name">lorinc</span> suggests splitting each sample in half and treating them as two samples (though he doesn't pursue this approach). <span class="name">lorinc</span> finds local maxima and minima from the time series (e.g., the leaf graphed in polar coordinates) and notes:
 
@@ -439,7 +440,7 @@ From there, <span class="name">lorinc</span> talks about mathematical morphology
 ![lerinc measures the distance from the center of a leaf](images/lorinc_distance.png)
 <div class="caption">lerinc measures the distance from the center of a leaf</div>
 
-# [Lung Cancer](https://www.kaggle.com/c/data-science-bowl-2017/)
+<h1 class="banner">[Lung Cancer](https://www.kaggle.com/c/data-science-bowl-2017/)</h1>
 
 <div class="right" style="width: 400px;">
 <img alt="DICOM meta info" src="images/dicom_info.png" />
