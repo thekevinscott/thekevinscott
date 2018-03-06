@@ -19,7 +19,17 @@ const Content = styled.article `
     border-radius: 3px;
     font-family: ${SANS_SERIF};
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 3px 5px;
+    padding: 0px 5px;
+    display: inline-block;
+    line-height: 28px;
+  }
+
+  blockquote, em, .caption {
+    .name {
+      border: none;
+      background: none;
+      padding: 0;
+    }
   }
 
   h1.center {
@@ -28,6 +38,7 @@ const Content = styled.article `
     margin: 100px auto 80px auto;
     clear: both;
 
+/*
     &:after {
       display: block;
       content: '...';
@@ -39,6 +50,7 @@ const Content = styled.article `
       color: rgba(0, 0, 0, 0.68);
       position: relative;
     }
+    */
   }
 
   .caption {
@@ -105,14 +117,15 @@ const Content = styled.article `
     font-family: ${SERIF};
 
     &.center {
-      margin: 0 auto;
+      margin: 20px auto 40px auto;
+      line-height: 2.8rem;
       float: none;
       width: 60%;
     }
 
     &.left {
       float: left;
-      margin-right: 0;
+      margin-right: 20px;
       margin-left: -125px;
     }
 
