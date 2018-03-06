@@ -9,10 +9,18 @@ import styled from "styled-components";
 
 const LETTER_SPACING = 20;
 
-const Content = styled.div `
+const Content = styled.article `
   max-width: 100%;
   width: 700px;
   margin-bottom: 100px;
+
+  .name {
+    // background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    font-family: ${SANS_SERIF};
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 3px 5px;
+  }
 
   h1.center {
     text-align: center;
