@@ -1,7 +1,7 @@
 ---
-path: "/patterns-in-exploratory-data-analyses"
+path: "/exploratory-data-analyses-patterns"
 date: "2018-03-25T09:00:00.000Z"
-title: "Exploratory Data Analyses Patterns"
+title: "Patterns I've Seen in Exploratory Data Analyses"
 image: "images/cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Samuel Zeller</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>"
 tags: ["kaggle", "eda", "deep learning", "exploratory data analysis", "machine learning", "data science", "statistics"]
