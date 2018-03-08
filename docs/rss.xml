@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Kevin Scott]]></title><description><![CDATA[Design & AI]]></description><link>https://thekevinscott.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 08 Mar 2018 03:10:24 GMT</lastBuildDate><item><title><![CDATA[Standing on the shoulders of giants]]></title><description><![CDATA[Before I started learning about AI, I thought that training a neural network meant training from scratch. Want to train a network to…]]></description><link>https://thekevinscott.com/shoulders-of-giants/</link><guid isPermaLink="false">https://thekevinscott.com/shoulders-of-giants/</guid><pubDate>Tue, 23 Jan 2018 17:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Before I started learning about AI, I thought that training a neural network meant training from scratch. Want to train a network to recognize dogs? Feed it 10,000 dogs and watch it go. Want to recognize images of malignant tumors in a CT scan? Collect a bunch of medical images and train away. I didn&apos;t realize you could take the models trained on one set of images and apply them to another, entirely unrelated set. Turns out this is exactly what you can do!&lt;/p&gt;
+&lt;p&gt;I&apos;ve been working through the &lt;a href=&quot;http://fast.ai&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;fast.ai&lt;/a&gt; courses, and one of the very first assignments begins by leveraging a pre-trained model (specifically &lt;a href=&quot;https://www.kaggle.com/keras/vgg16&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;VGG16&lt;/a&gt;, trained to identify 1000 categories of images based on the &lt;a href=&quot;http://www.image-net.org&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;corpus of data from ImageNet&lt;/a&gt;). You consume the outputs of the VGG16 model, and use that to inform your custom model to predict whether something is a cat or a dog. So you&apos;re basically taking the predictions from an existing model, and layering another layer of predictions on top of that.&lt;/p&gt;
+&lt;p&gt;It makes perfect sense that you&apos;d build models like this; why train from scratch if someone has already done the training work beforehand? At its lower levels, &lt;a href=&quot;https://youtu.be/6kwQEBMandw?t=9m25s&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;VGG16 is already capable of recognizing patterns like lines, circles, gradients&lt;/a&gt;, as well as hundreds of other features. These patterns appear in all images, and so retraining from scratch is redundant.&lt;/p&gt;
+&lt;p&gt;I could see adapting this for speech recognition. Imagine you&apos;re training a model to teach native English speakers to speak Spanish. Instead of training your model from scratch, you could leverage a pre-trained model that already recognizes human voices. Maybe you also leverage a model that understands English and Spanish. Your final model might be a thin layer on top of both of these pre-existing models, that specifically learns how to interpret English accents mangling Spanish words.&lt;/p&gt;
+&lt;p&gt;I wonder how this will affect design.&lt;/p&gt;
+&lt;p&gt;There&apos;s been some work around &lt;a href=&quot;https://blog.floydhub.com/turning-design-mockups-into-code-with-deep-learning/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;turning design mockups into code with deep learning&lt;/a&gt;. Imagine starting with a hand-drawn sketch as your base. You click around the sketch, nudging, encouraging and discouraging the AI: &quot;No no, that button should open a new page&quot;, or &quot;that link should create a new widget&quot;. You could use pre-trained models to help you where appropriate. Building a &lt;a href=&quot;https://en.wikipedia.org/wiki/Create,_read,_update_and_delete&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;CRUD app&lt;/a&gt;? Grab a pre-built model off the shelf that knows how to create, delete, and update. How about Uber for dogs? Grab a pre-built Uber model, and train a new layer on top to recognize dogs instead of humans.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is the cool thing about neural networks: you don’t have to tell them what to find. They decide what they want to find in order to solve your problem. — &lt;a href=&quot;https://www.youtube.com/watch?v=6kwQEBMandw&amp;#x26;feature=youtu.be&amp;#x26;t=12m22s&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Jeremy Howard&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This layered approach to making neural nets smarter - by building on the shoulders of other, pre-trained nets - it blows my mind. It feels like programming from the future. In a future language we could use increasingly abstract language to describe the parameters of what the computer should achieve, and then let the computer figure it out, similar to how nowadays we write instructions that are then interpreted into 0&apos;s and 1&apos;s.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Noob's Guide to building a Deep Learning / Cryptocurrency PC (#4): AI]]></title><description><![CDATA[Among the buzzwords of this past year, two tower above the rest: deep learning and cryptocurrencies. It seems that everyone I know (in tech…]]></description><link>https://thekevinscott.com/deep-learning-cryptocurrency-pc-4-ai/</link><guid isPermaLink="false">https://thekevinscott.com/deep-learning-cryptocurrency-pc-4-ai/</guid><pubDate>Mon, 01 Jan 2018 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Among the buzzwords of this past year, two tower above the rest: deep learning and cryptocurrencies. It seems that everyone I know (in tech) wants to learn these things. And guess what — so do I! So much so that I&apos;m building my own computer in order to facilitate that learning.&lt;/p&gt;
+&lt;p&gt;What follows are my notes-to-self as I build a computer to learn about deep learning and cryptocurrency mining. In the previous installments we discussed assembling the hardware, installing the OS, and setting up a mining operation. In this installment I&apos;ll talk about installing machine learning software and making sure it&apos;s working.&lt;/p&gt;
+&lt;iframe style=&quot;height:400px;width:100%;max-width:800px;margin:30px auto;&quot; src=&quot;https://upscri.be/96fcab/?as_embed&quot;&gt;&lt;/iframe&gt;
+&lt;hr /&gt;
+&lt;p&gt;To recap, in case you&apos;re just getting started with this series: my goal in purchasing and building my own PC was to have hardware on hand to run machine learning algorithms on, and bring myself up to speed on the exciting advances happening in AI. With the mining operation up and running, it&apos;s time for some AI!&lt;/p&gt;
+&lt;p&gt;The two packages we&apos;re going to install are &lt;a href=&quot;https://www.tensorflow.org/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;TensorFlow&lt;/a&gt; and &lt;a href=&quot;https://github.com/cdw/pytorch&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;PyTorch&lt;/a&gt;. I&apos;ve heard lots of buzz about these two frameworks and there&apos;s tons of good resources for each. This article will walk through basic installation details on Ubuntu for both, plus instructions on setting up Jupyter notebooks. If you want to just pick one, &lt;a href=&quot;https://awni.github.io/pytorch-tensorflow/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Awni Hannun provides a great overview of the differences&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&quot;docker&quot;&gt;&lt;a href=&quot;#docker&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Docker&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;For both TensorFlow and PyTorch, we&apos;re going to install using Docker&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Docker provides a virtualized environment that lets you isolate packages and libraries (or in our case, download pre-configured environments).&lt;/p&gt;
+&lt;h2 id=&quot;why-docker&quot;&gt;&lt;a href=&quot;#why-docker&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Why Docker?&lt;/h2&gt;
+&lt;p&gt;The TensorFlow &lt;a href=&quot;https://www.tensorflow.org/install/install_linux&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;docs offer four options for installing TensorFlow&lt;/a&gt;. My first instinct was to install directly using native &lt;code&gt;pip&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I installed CUDA 9, the latest version, which as of this writing Tensorflow doesn&apos;t support, and got lost in dependency hell trying to downgrade / uninstall / reinstall CUDA. A friend recommended I leave all that nonsense alone and just install Docker.&lt;/p&gt;
+&lt;p&gt;So that&apos;s my recommendation: &lt;strong&gt;install docker and avoid dependency hell&lt;/strong&gt;. &lt;/p&gt;
+&lt;h2 id=&quot;step-by-step-docker-installation-instructions&quot;&gt;&lt;a href=&quot;#step-by-step-docker-installation-instructions&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Step-by-step Docker installation instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &lt;code&gt;docker&lt;/code&gt;. &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Instructions for installing Docker on Ubuntu are here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure to follow the optional Step 2 instructions on adding yourself to the correct group so as to avoid needing &lt;code&gt;sudo&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Install &lt;code&gt;nvidia-docker&lt;/code&gt;. By default, &lt;code&gt;docker&lt;/code&gt; doesn&apos;t support leveraging the NVIDIA GPUs effectively, so to take advantage of that hardware &lt;a href=&quot;https://github.com/NVIDIA/nvidia-docker#xenial-x86_64&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;you&apos;ll need to install &lt;code&gt;nvidia-docker&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;tensorflow&quot;&gt;&lt;a href=&quot;#tensorflow&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;TensorFlow&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.tensorflow.org/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;TensorFlow&lt;/a&gt; is software for machine learning released by the &lt;a href=&quot;https://research.google.com/teams/brain/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Google Brain&lt;/a&gt; team in 2015. It provides a set of tools for specifying training instructions, and then translating those instructions into commands that can be run quickly and take advantage of GPUs.&lt;/p&gt;
+&lt;p&gt;It&apos;s a powerful piece of software and since it&apos;s release it&apos;s picked up a ton of developer mindshare.&lt;/p&gt;
+&lt;h2 id=&quot;installation&quot;&gt;&lt;a href=&quot;#installation&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Installation&lt;/h2&gt;
+&lt;p&gt;Assuming you followed the Docker instructions above, you should have &lt;code&gt;nvidia-docker&lt;/code&gt; available and working. The next step is to &lt;a href=&quot;https://www.tensorflow.org/install/install_linux#gpu_support&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;install the correct Docker image&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We want the latest GPU version, so run:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nvidia-docker run -it gcr.io/tensorflow/tensorflow:latest-gpu bash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This command will find the Docker file (remotely or locally), spin it up and put you at a bash prompt. From there, you can &lt;a href=&quot;https://www.tensorflow.org/install/install_linux#ValidateYourInstallation&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;validate your installation&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;validating-your-installation&quot;&gt;&lt;a href=&quot;#validating-your-installation&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Validating your installation&lt;/h2&gt;
+&lt;p&gt;Start &lt;code&gt;python&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Paste this program, &lt;a href=&quot;https://www.tensorflow.org/install/install_linux#ValidateYourInstallation&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;provided by the TensorFlow docs&lt;/a&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Python
+import tensorflow as tf
+hello = tf.constant(&apos;Hello, TensorFlow!&apos;)
+sess = tf.Session()
+print(sess.run(hello))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you see &quot;Hello, TensorFlow!&quot; you&apos;ll know it&apos;s installed correctly.&lt;/p&gt;
+&lt;h2 id=&quot;jupyter&quot;&gt;&lt;a href=&quot;#jupyter&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Jupyter&lt;/h2&gt;
+&lt;p&gt;So we&apos;ve got TensorFlow installed and working, but inputting python commands one line at a time is a terrible way to program. A much better approach to get started is to use a Jupyter notebook.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jupyter.org/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;A Jupyter notebook&lt;/a&gt; is a web interface for documents containing code the evaluations of that code, displayed side by side on the page.&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/jupyter-sample-4f3cb5bf6172304d6ffa8f8ce4009593-2957c.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 59.6401028277635%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAABO0lEQVQoz51Ti46CMBDk/38REwRjFKh9UV4KzjFr2uQuHjE2mWyhdHZndskGb6GUgvcebduiaRrZG2Nwv9+xLMsuHo8H5nkWhBCQ8XLXddBawzknYALGYRgEvPQfmHQcR4kkzbh5Pp+oqgplWeJ8PuN0OskzwaysZF3XVBX3vPMX5BJCrlgpZbM6SrbWynvGvu+lWiaYpgnvViKc5gXKKdxuN7S2hTJKLCAZ5XwKJkwVFnWBoihQVuXLw7D5GTx8578jpMTj8Yg8z3E4HHBtrzDOwHn3HaG2GtZpjJuP9Iw+7XX3HVKXueL8xebQfGZlJNgUvo/n8VueMfL8V1Ma08AaJw3xm3f0kBK6sJH3IQ3vHqgqEV70BXVdCyEJSNSP/UdEEVSUJHNcus07grMoc2he88fM8W/YA7/7AXovoWjiF5baAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;jupyter sample&quot; title=&quot;&quot; src=&quot;/static/jupyter-sample-4f3cb5bf6172304d6ffa8f8ce4009593-17dec.png&quot; srcset=&quot;/static/jupyter-sample-4f3cb5bf6172304d6ffa8f8ce4009593-ae2e5.png 160w,
+/static/jupyter-sample-4f3cb5bf6172304d6ffa8f8ce4009593-8227e.png 320w,
+/static/jupyter-sample-4f3cb5bf6172304d6ffa8f8ce4009593-17dec.png 640w,
+/static/jupyter-sample-4f3cb5bf6172304d6ffa8f8ce4009593-88536.png 960w,
+/static/jupyter-sample-4f3cb5bf6172304d6ffa8f8ce4009593-2957c.png 1167w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;p&gt;The TensorFlow Docker image &lt;a href=&quot;https://www.tensorflow.org/install/install_linux#gpu_support&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;supports Jupyter notebooks out of the box&lt;/a&gt;. You&apos;ll use a similar command to spin up the Docker image with a few tweaks (If the previous Docker image is still running, shut it down with &lt;code&gt;ctrl-c&lt;/code&gt;):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nvidia-docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow:latest-gpu
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What this command does is tell docker to expose port &lt;code&gt;8888&lt;/code&gt; (in Docker) on port &lt;code&gt;8888&lt;/code&gt; (of your local machine). (Port &lt;code&gt;8888&lt;/code&gt; is the Jupyter notebook&apos;s default port, if you were wondering.)&lt;/p&gt;
+&lt;p&gt;To make sure that things are working as expected, open up another terminal on your box and run:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl http://localhost:8888
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If your machine is like mine, you won&apos;t see any output from this &lt;code&gt;curl&lt;/code&gt; command, but you &lt;em&gt;should&lt;/em&gt; see a request come in on the terminal running Docker, something like:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[I 02:05:57.912 NotebookApp] 302 GET / (xxx.xx.x.x) 0.22ms
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can access the Docker URL directly on your box. I use a laptop and prefer to access the PC remotely, so to do that, you&apos;ll need to be on the same wifi network as your Machine Learning PC and get it&apos;s IP.&lt;/p&gt;
+&lt;p&gt;On your Machine Learning PC, type:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ifconfig
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Look for an IP address that starts with &lt;code&gt;192.168.x.x&lt;/code&gt;. On your laptop, you&apos;ll take the URL provided by Docker and replace &lt;code&gt;localhost&lt;/code&gt; with this IP. So, if the Machine Learning box&apos;s IP is &lt;code&gt;192.168.1.1&lt;/code&gt;, you would type in your browser something like:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://192.168.1.1:8888/?token=7f6b36f9d6b15272c76003b8c1cdfcdf306dc52ff310
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;At this URL, you should see the Jupyter notebook:&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/jupyter-overview-864633103aa5f3d908269ca2a788469a-c7069.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 29.783549783549784%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAAAgElEQVQY06XQSw7DIAwEUN//piBSjM0nfKchUg+QdPE2XoxmTGcSeO+x1vpbzhnEzOCgYFF8WDDGeBVWSrlRjBGHDxCRm6pi357YCzfnHKi1BnMEOCngVF/PTSnBWguqtcJ6RT4bYmnX5Ik5n9tNjTGg3jtirujX794E/exi+11fltbWpRztUscAAAAASUVORK5CYII=&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;jupyter overview&quot; title=&quot;&quot; src=&quot;/static/jupyter-overview-864633103aa5f3d908269ca2a788469a-17dec.png&quot; srcset=&quot;/static/jupyter-overview-864633103aa5f3d908269ca2a788469a-ae2e5.png 160w,
+/static/jupyter-overview-864633103aa5f3d908269ca2a788469a-8227e.png 320w,
+/static/jupyter-overview-864633103aa5f3d908269ca2a788469a-17dec.png 640w,
+/static/jupyter-overview-864633103aa5f3d908269ca2a788469a-88536.png 960w,
+/static/jupyter-overview-864633103aa5f3d908269ca2a788469a-c7069.png 1155w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;p&gt;Having a Jupyter notebook handy will make it much easier to run through the TensorFlow tutorials.&lt;/p&gt;
+&lt;h1 id=&quot;pytorch&quot;&gt;&lt;a href=&quot;#pytorch&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Pytorch&lt;/h1&gt;
+&lt;p&gt;The other machine learning tool we&apos;re going to install is PyTorch.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/cdw/pytorch&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;PyTorch&lt;/a&gt; was released in 2016 by &lt;a href=&quot;https://twitter.com/fbOpenSource?ref_src=twsrc%5Etfw&amp;#x26;ref_url=http%3A%2F%2Fpytorch.org%2F&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Facebook&apos;s team&lt;/a&gt;. It&apos;s still fairly new and changing quickly, but it&apos;s already picked up a lot of steam in the community.&lt;/p&gt;
+&lt;h2 id=&quot;installation-1&quot;&gt;&lt;a href=&quot;#installation-1&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Installation&lt;/h2&gt;
+&lt;p&gt;Let&apos;s install the appropriate pytorch docker image. Run:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nvidia-docker run --rm -ti --ipc=host -p 8888:8888 pytorch/pytorch:latest
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This puts you right at a bash prompt.&lt;/p&gt;
+&lt;p&gt;I like learning via example, and &lt;a href=&quot;http://pytorch.org/tutorials/beginner/pytorch_with_examples.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;luckily the Pytorch docs provide plenty of examples to learn from&lt;/a&gt;. You can run through the tutorials by starting &lt;code&gt;python&lt;/code&gt; and copy pasting code, but a Jupyter notebook is so much better. So let&apos;s get that working.&lt;/p&gt;
+&lt;h2 id=&quot;jupyter-1&quot;&gt;&lt;a href=&quot;#jupyter-1&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Jupyter&lt;/h2&gt;
+&lt;p&gt;Jupyter doesn&apos;t come standard on the &lt;code&gt;pytorch&lt;/code&gt; docker image, &lt;a href=&quot;http://jupyter.org/install.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;but it&apos;s easy to install&lt;/a&gt;. In your docker container (that you started above), type:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python3 -m pip install --upgrade pip
+python3 -m pip install jupyter
+jupyter notebook
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When I ran &lt;code&gt;jupyter notebook&lt;/code&gt; for the first time, I got the following error:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;OSError: [Errno 99] Cannot assign requested address
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To fix this, I had to provide an explicit IP and allow root (&lt;a href=&quot;https://github.com/ipython/ipython/issues/6193#issuecomment-350613300&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;hat tip to this comment&lt;/a&gt;):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jupyter notebook --allow-root --ip=0.0.0.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;validating-the-jupyter-notebook&quot;&gt;&lt;a href=&quot;#validating-the-jupyter-notebook&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Validating the Jupyter notebook&lt;/h3&gt;
+&lt;p&gt;From another terminal, run curl:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl http://localhost:8888
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And make sure you see logs appear in Docker. If that works, try accessing in the browser at &lt;code&gt;http://192.168.x.xx:8888&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;saving-the-jupyter-notebook&quot;&gt;&lt;a href=&quot;#saving-the-jupyter-notebook&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Saving the Jupyter notebook&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANT:&lt;/strong&gt; If you exit docker now, you&apos;ll lose the installation of Jupyter you just performed. You need to commit those changes as (&lt;a href=&quot;https://www.techrepublic.com/article/how-to-commit-changes-to-a-docker-image/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;outlined in this article&lt;/a&gt;) if you want to avoid installing every time you spin up the container.&lt;/p&gt;
+&lt;p&gt;First, in another terminal, get the name of the container:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker ps -l
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This should give you the most recently created container, which should be PyTorch. Then, commit with:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker commit &amp;#x3C;CONTAINER_NAME&gt; pytorch
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Refer to our newly named container with:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nvidia-docker run --rm -ti --ipc=host -p 8888:8888 pytorch
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And start up your notebook:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jupyter notebook --allow-root --ip=0.0.0.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If that works, great! Try running through one or two of the tutorials to make sure everything&apos;s working.&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/pytorch-output-08924445659039f725b35f65f1e1cfe6-e3b9c.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 111.63194444444444%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAAAsSAAALEgHS3X78AAABpUlEQVQ4y62VCXOCMBCF+f9/sOMB5Ui4IdwIoq+7sVo7tVSomXmDKPl4mz002lIhTVPkea6vSimUZXlTVVWYpmlWwzAgyQL9vFEUhd50hTE4jmP9Y9d1aJpGb5gTP9f3vZbRdT1t6lHVNTKCFwRnSNu2i8Vggy3z8lKJIIoQZQlKgrNyclkT/N7BnA6HwxcwoDAlAUUYws9iiDRElGfacUXQxcCQQLbjwHFdSN9HrnIdxjOgh0BBkJ1lYWeasD0PCSVpCewnMJQwxTvc2IOqSn2GnKjVQC4fkxxaJA67pLNrn0zGQyADZBRCBoHOtlKFrsvVQEUd40gBEfhIqLiDKKbvLqFzphWJPzczifoG5E7Z7/c6ZL5uNhtIKf/hkMLzhEBIzuIkRr0wITfg9Ybr0LJtvJEzzxXYbrf6JUvEM8Fg6vl8hiB3JtUgFzPfr9HxeLwAeblUKnx+/Ja16xswoHLxqEPY4UuA7JCzy2fxEuD1DF8CPJ1OiKg7fBoQz4z83zSOIwymDuMEmfl6JnI3LB1bDws7ufujYt1GOw0Intjtp/4CfgBjnqd781YQWAAAAABJRU5ErkJggg==&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;pytorch output&quot; title=&quot;&quot; src=&quot;/static/pytorch-output-08924445659039f725b35f65f1e1cfe6-17dec.png&quot; srcset=&quot;/static/pytorch-output-08924445659039f725b35f65f1e1cfe6-ae2e5.png 160w,
+/static/pytorch-output-08924445659039f725b35f65f1e1cfe6-8227e.png 320w,
+/static/pytorch-output-08924445659039f725b35f65f1e1cfe6-17dec.png 640w,
+/static/pytorch-output-08924445659039f725b35f65f1e1cfe6-88536.png 960w,
+/static/pytorch-output-08924445659039f725b35f65f1e1cfe6-e3b9c.png 1152w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;h1 id=&quot;next-steps&quot;&gt;&lt;a href=&quot;#next-steps&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Next steps&lt;/h1&gt;
+&lt;p&gt;At this point, you should have both &lt;a href=&quot;https://github.com/cdw/pytorch&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;PyTorch&lt;/a&gt; and &lt;a href=&quot;https://www.tensorflow.org/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;TensorFlow&lt;/a&gt; at your disposal.&lt;/p&gt;
+&lt;p&gt;If you&apos;ve made it this far in the series, congratulations! You built a computer, installed an operating system, began mining cryptocurrencies, and set yourself up to begin training computers to do your bidding. You deserve a pat on the back!&lt;/p&gt;
+&lt;p&gt;Where to go from here, you may ask? First, I&apos;d encourage you to subscribe:&lt;/p&gt;
+&lt;iframe style=&quot;height:400px;width:100%;max-width:800px;margin:30px auto;&quot; src=&quot;https://upscri.be/96fcab/?as_embed&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;I&apos;m going to continue blogging my adventures learning this stuff, and I&apos;d love to share it with you.&lt;/p&gt;
+&lt;p&gt;If you want an immediate next step, I&apos;d recommend &lt;a href=&quot;https://www.coursera.org/learn/machine-learning&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Andrew Ng&apos;s course&lt;/a&gt;. It&apos;s a deep and thorough introduction to the field.&lt;/p&gt;
+&lt;p&gt;Finally, I&apos;ve been collecting various machine learning links and resources to work through once I have a base of knowledge. Some of these may come in handy for you! (I haven&apos;t gone through all of these so I can&apos;t vouch for them - feel free to recommend others in the comments).&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/MachineLearning/comments/7nrzhn/d%5C_results%5C_from%5C_best%5C_of%5C_machine%5C_learning%5C_2017/?st=JBZ1N05J&amp;#x26;sh=aa234160&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.reddit.com/r/MachineLearning/comments/7nrzhn/d_results_from_best_of_machine_learning_2017/?st=JBZ1N05J&amp;#x26;sh=aa234160&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.wildml.com/2017/12/ai-and-deep-learning-in-2017-a-year-in-review/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;http://www.wildml.com/2017/12/ai-and-deep-learning-in-2017-a-year-in-review/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://explosion.ai/blog/prodigy-annotation-tool-active-learning&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://explosion.ai/blog/prodigy-annotation-tool-active-learning&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.kaggle.com/2017/09/11/how-can-i-find-a-dataset-on-kaggle/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;http://blog.kaggle.com/2017/09/11/how-can-i-find-a-dataset-on-kaggle/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/learnmachinelearning/comments/6zvszj/another_keras_tutorial_for_neural_network/?st=J7JRX00A&amp;#x26;sh=90a37148&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.reddit.com/r/learnmachinelearning/comments/6zvszj/another&lt;em&gt;keras&lt;/em&gt;tutorial&lt;em&gt;for&lt;/em&gt;neural_network/?st=J7JRX00A&amp;#x26;sh=90a37148&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/MachineLearning/comments/70c5zd/n_google_launches_tensorboard_api_to_enhance/?st=J7MJ4JWJ&amp;#x26;sh=2ece7122&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.reddit.com/r/MachineLearning/comments/70c5zd/n&lt;em&gt;google&lt;/em&gt;launches&lt;em&gt;tensorboard&lt;/em&gt;api&lt;em&gt;to&lt;/em&gt;enhance/?st=J7MJ4JWJ&amp;#x26;sh=2ece7122&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.wired.com/story/when-websites-design-themselves/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.wired.com/story/when-websites-design-themselves/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://chatbotsmagazine.com/contextual-chat-bots-with-tensorflow-4391749d0077&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://chatbotsmagazine.com/contextual-chat-bots-with-tensorflow-4391749d0077&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/machine-learning-for-humans/supervised-learning-740383a2feab&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://medium.com/machine-learning-for-humans/supervised-learning-740383a2feab&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/intuitionmachine/the-brute-force-method-of-deep-learning-innovation-58b497323ae5&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://medium.com/intuitionmachine/the-brute-force-method-of-deep-learning-innovation-58b497323ae5&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://hackernoon.com/how-i-started-with-learning-ai-in-the-last-2-months-251d19b23597?source=userActivityShare-f31f03e60056-1506529741&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://hackernoon.com/how-i-started-with-learning-ai-in-the-last-2-months-251d19b23597?source=userActivityShare-f31f03e60056-1506529741&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rhdeck/bostonai/blob/master/README.md&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://github.com/rhdeck/bostonai/blob/master/README.md&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://nicodjimenez.github.io/2017/10/08/tensorflow.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;http://nicodjimenez.github.io/2017/10/08/tensorflow.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/hackernews/comments/7dlltw/a_cookbook_for_machine_learning_vol_1/?st=JA5IEFE8&amp;#x26;sh=b5513326&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.reddit.com/r/hackernews/comments/7dlltw/a&lt;em&gt;cookbook&lt;/em&gt;for&lt;em&gt;machine&lt;/em&gt;learning&lt;em&gt;vol&lt;/em&gt;1/?st=JA5IEFE8&amp;#x26;sh=b5513326&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/learnmachinelearning/comments/7dcog4/neural_networks_for_beginners_popular_types_and/?st=JA2YU96R&amp;#x26;sh=fc6787ce&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.reddit.com/r/learnmachinelearning/comments/7dcog4/neural&lt;em&gt;networks&lt;/em&gt;for&lt;em&gt;beginners&lt;/em&gt;popular&lt;em&gt;types&lt;/em&gt;and/?st=JA2YU96R&amp;#x26;sh=fc6787ce&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/learnmachinelearning/comments/7centc/learning_machine_learning_01_machine_learning/?st=J9WVF138&amp;#x26;sh=9b166f71&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.reddit.com/r/learnmachinelearning/comments/7centc/learning&lt;em&gt;machine&lt;/em&gt;learning&lt;em&gt;01&lt;/em&gt;machine_learning/?st=J9WVF138&amp;#x26;sh=9b166f71&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/learnmachinelearning/comments/7c8ogk/simple_deep_learning_model_for_stock_price/?st=J9W5R9AZ&amp;#x26;sh=22315e0b&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.reddit.com/r/learnmachinelearning/comments/7c8ogk/simple&lt;em&gt;deep&lt;/em&gt;learning&lt;em&gt;model&lt;/em&gt;for&lt;em&gt;stock&lt;/em&gt;price/?st=J9W5R9AZ&amp;#x26;sh=22315e0b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.kaggle.com/2017/11/27/introduction-to-neural-networks/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;http://blog.kaggle.com/2017/11/27/introduction-to-neural-networks/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/learnmachinelearning/comments/7g5zx9/predicting_cryptocurrency_prices_with_deep/?st=JAK71BXS&amp;#x26;sh=a283370f&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.reddit.com/r/learnmachinelearning/comments/7g5zx9/predicting&lt;em&gt;cryptocurrency&lt;/em&gt;prices&lt;em&gt;with&lt;/em&gt;deep/?st=JAK71BXS&amp;#x26;sh=a283370f&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/learnmachinelearning/comments/7he36r/what_is_nlp_get_started/?st=JARMLMP7&amp;#x26;sh=2886d0a9&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.reddit.com/r/learnmachinelearning/comments/7he36r/what&lt;em&gt;is&lt;/em&gt;nlp&lt;em&gt;get&lt;/em&gt;started/?st=JARMLMP7&amp;#x26;sh=2886d0a9&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/learnmachinelearning/comments/7h7grz/essential_guide_to_keep_up_with_aimlcv/?st=JARCN2DT&amp;#x26;sh=fe113479&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.reddit.com/r/learnmachinelearning/comments/7h7grz/essential&lt;em&gt;guide&lt;/em&gt;to&lt;em&gt;keep&lt;/em&gt;up&lt;em&gt;with&lt;/em&gt;aimlcv/?st=JARCN2DT&amp;#x26;sh=fe113479&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.kaggle.com/2017/12/06/introduction-to-neural-networks-2/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;http://blog.kaggle.com/2017/12/06/introduction-to-neural-networks-2/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.google.com/presentation/d/1kSuQyW5DTnkVaZEjGYCkfOxvzCqGEFzWBy4e9Uedd9k/preview?imm_mid=0f9b7e&amp;#x26;cmp=em-data-na-na-newsltr_20171213&amp;#x26;slide=id.g183f28bdc3_0_90&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://docs.google.com/presentation/d/1kSuQyW5DTnkVaZEjGYCkfOxvzCqGEFzWBy4e9Uedd9k/preview?imm&lt;em&gt;mid=0f9b7e&amp;#x26;cmp=em-data-na-na-newsltr&lt;/em&gt;20171213&amp;#x26;slide=id.g183f28bdc3&lt;em&gt;0&lt;/em&gt;90&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Noob's Guide to building a Deep Learning / Cryptocurrency PC (#3): Mining]]></title><description><![CDATA[Among the buzzwords in the tech world of 2017, two tower above the rest:  deep
+learning  and  cryptocurrencies . It seems that everyone I…]]></description><link>https://thekevinscott.com/deep-learning-cryptocurrency-pc-3-mining/</link><guid isPermaLink="false">https://thekevinscott.com/deep-learning-cryptocurrency-pc-3-mining/</guid><pubDate>Sun, 10 Dec 2017 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Among the buzzwords in the tech world of 2017, two tower above the rest: &lt;strong&gt;deep
+learning&lt;/strong&gt; and &lt;strong&gt;cryptocurrencies&lt;/strong&gt;. It seems that everyone I know (in tech)
+wants to learn these things. And guess what — so do I! So much so that I&apos;m
+building my own computer in order to facilitate that learning.&lt;/p&gt;
+&lt;p&gt;What follows are my notes-to-self as I build a computer to learn about deep
+learning and cryptocurrency mining. In the previous installments we discussed
+&lt;a href=&quot;https://medium.com/@thekevinscott/noobs-guide-to-custom-computer-for-cryptocurrency-and-deep-learning-7caa255adfaf&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;assembling the
+hardware&lt;/a&gt;
+and &lt;a href=&quot;https://medium.com/@thekevinscott/noobs-guide-to-building-a-deep-learning-cryptocurrency-pc-2-the-os-39dd20bd9b21&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;installing the
+OS&lt;/a&gt;.
+In this installment I&apos;ll talk about how to set up a cryptocurrency miner and
+connect to a pool.&lt;/p&gt;
+&lt;iframe style=&quot;height:400px;width:100%;max-width:800px;margin:30px auto;&quot; src=&quot;https://upscri.be/96fcab/?as_embed&quot;&gt;&lt;/iframe&gt;
+&lt;hr /&gt;
+&lt;p&gt;To recap, in case you&apos;re just getting started with this series: my goal in
+purchasing and building my own PC was to have hardware on hand to run machine
+learning algorithms on, and bring myself up to speed on the exciting advances
+happening in AI. But in between running training algorithms, my computer (and
+it&apos;s hungry hungry GPUs) will sit fallow. We can&apos;t have that!&lt;/p&gt;
+&lt;p&gt;When I&apos;m not running the computer over training data, I want to have it mining.
+Even if it&apos;s making only a a little profit, it&apos;s still better than nothing.&lt;/p&gt;
+&lt;h1 id=&quot;cryptocurrencies&quot;&gt;&lt;a href=&quot;#cryptocurrencies&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cryptocurrencies&lt;/h1&gt;
+&lt;p&gt;Your first instinct when getting into mining might be to try and mine bitcoin.
+This would almost certainly be a mistake.&lt;/p&gt;
+&lt;p&gt;Bitcoin today is mined primarly via &lt;a href=&quot;https://www.buybitcoinworldwide.com/mining/hardware/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;ASICS
+hardware&lt;/a&gt;, equipment
+specialized for mining bitcoins and other cryptocurrencies (but mostly
+bitcoins). Unless your goal in life is to mine bitcoins — and I suppose there&apos;s
+nothing wrong with that — ASICS hardware is not a good investment. And without
+ASICS hardware, it&apos;s hard to compete with the other miners.&lt;/p&gt;
+&lt;p&gt;There are cryptocurrencies especially &lt;a href=&quot;https://www.coindesk.com/scrypt-miners-cryptocurrency-arms-race/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;designed to prevent mining via
+specialized hardware, called scrypt
+coins&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;One of the biggest differences between scrypt and SHA-256 is that the former
+relies heavily on computing resources aside from the processing unit itself,
+particularly memory. Conversely, SHA-256 doesn&apos;t. This makes it difficult for
+scrypt-based systems to scale up and use lots of computing power, because they
+would have to use a proportional amount of memory, and that is expensive. —
+&lt;a href=&quot;https://www.coindesk.com/scrypt-miners-cryptocurrency-arms-race/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Danny Bradbury,
+Coindesk&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;While more specialized hardware is beginning to come to market, you&apos;re probably
+safe picking one of these scrypt currencies to mine. Ethereum is a good choice,
+so that&apos;s what I&apos;m going to start with.&lt;/p&gt;
+&lt;h1 id=&quot;the-tools&quot;&gt;&lt;a href=&quot;#the-tools&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;The tools&lt;/h1&gt;
+&lt;p&gt;To get started mining, you need
+&lt;a href=&quot;https://github.com/ethereum/go-ethereum&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;ethereum&lt;/a&gt;, a
+&lt;a href=&quot;https://github.com/ethereum-mining/ethminer&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;miner&lt;/a&gt;, and a &lt;strong&gt;wallet&lt;/strong&gt; to send
+the mined coins to.&lt;/p&gt;
+&lt;p&gt;First, enable the ethereum repository:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo add-apt-repository -y ppa:ethereum/ethereum
+sudo apt-get update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, install ethereum:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install ethereum
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, you need to install the miner, &lt;code&gt;ethminer&lt;/code&gt;. (There are other miners as
+well, like qtMiner, cudaminer, eth-proxy). You can either install via &lt;code&gt;apt-get&lt;/code&gt;
+or from source; because I&apos;m a masochist I chose the latter.&lt;/p&gt;
+&lt;p&gt;Head on over to the &lt;a href=&quot;https://github.com/ethereum-mining/ethminer/releases&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;releases
+page&lt;/a&gt; and download the
+most recent release:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget 
+tar xvzf ethminer-0.12.0-Linux.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And then try running &lt;code&gt;ethminer&lt;/code&gt;. You should see something like:&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/ethminer-03f58a707a22b7b5a3e37172ccc022e2-0bc2f.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 24.125000000000004%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsSAAALEgHS3X78AAAAqklEQVQY032QywrCMBBFK9gXtJoKXbhz6TOGvJrWNin1j9z4+960BVFQOITMDDP3zgS7o03ZENJmo/tCOyJtQuvoUoGY1uEZHxP7jBkzZnGQwV7MPIwoxRAxu5aelehy3r7L/3G6ItwmrEUbSK9Nxtt8HAEQLk8a+mAyMnrxFnxzJ2+FvGdqIMpBGS9RFuUPe794WrFVfcodFsbakMWISfZLOZlOMF/BK78ARMgsIzhd6EQAAAAASUVORK5CYII=&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;ethminer&quot; title=&quot;&quot; src=&quot;/static/ethminer-03f58a707a22b7b5a3e37172ccc022e2-17dec.png&quot; srcset=&quot;/static/ethminer-03f58a707a22b7b5a3e37172ccc022e2-ae2e5.png 160w,
+/static/ethminer-03f58a707a22b7b5a3e37172ccc022e2-8227e.png 320w,
+/static/ethminer-03f58a707a22b7b5a3e37172ccc022e2-17dec.png 640w,
+/static/ethminer-03f58a707a22b7b5a3e37172ccc022e2-0bc2f.png 800w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;p&gt;This is good! It&apos;s working, it just needs to be configured with options.&lt;/p&gt;
+&lt;p&gt;Finally, the &lt;strong&gt;wallet&lt;/strong&gt;. There&apos;s lots of wallets available, with Mist being the
+officially supported version. You don&apos;t actually need your wallet to be local;
+it can be hosted anywhere, including on an exchange like Coinbase.&lt;/p&gt;
+&lt;h1 id=&quot;pools&quot;&gt;&lt;a href=&quot;#pools&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Pools&lt;/h1&gt;
+&lt;p&gt;Mining cryptocurrencies is kind of like a bunch of people in a field of
+haystacks looking for needles. Every so often somebody gets lucky and finds one,
+shouts it out to the world, and makes a chunk of money, and then the process
+repeats.&lt;/p&gt;
+&lt;p&gt;This is all well and good for that lucky finder, but — especially nowadays, when
+you&apos;re &lt;a href=&quot;https://qz.com/1055126/photos-china-has-one-of-worlds-largest-bitcoin-mines/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;competing against industrial-strength mining
+operations&lt;/a&gt;
+— the chances of you solving a particular cryptographic puzzle first are slim to
+nil. If you&apos;re a small fry like me, you&apos;re better off joining a mining pool.&lt;/p&gt;
+&lt;p&gt;A mining pool allows a group of miners&apos; computers to join forces and work on
+earning cryptocurrency as a team. When a new coin is mined, the profits will be
+shared with the contributors based on the amount of computing power they put in.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.buybitcoinworldwide.com/ethereum/mining-pools/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.buybitcoinworldwide.com/ethereum/mining-pools/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ethermine&quot;&gt;&lt;a href=&quot;#ethermine&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;ethermine&lt;/h2&gt;
+&lt;p&gt;The first pool I joined was &lt;a href=&quot;http://ethpool.org/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;ethpool&lt;/a&gt;, and I subsequently
+switched to &lt;a href=&quot;https://ethermine.org/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;ethermine&lt;/a&gt; (which appears to be running the
+same code? it&apos;s unclear) as their payout scheme was more predictable.&lt;/p&gt;
+&lt;p&gt;To start up mining, I ran:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;./ethminer --farm-recheck 200 --cuda-parallel-hash 8 --cuda-grid-size 1024 --cuda-streams 16 --cuda-block-size 128 -G -S us1.ethermine.org:4444 -FS eu1.ethermine.org:4444 -O &amp;#x3C;My_Ethereum_Address&gt;.&amp;#x3C;My_RigName&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here&apos;s the definitions for each option:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;farm-recheck&lt;/code&gt; — &lt;em&gt;&lt;n&gt; Leave n ms between checks for changed work (default: 500).
+When using stratum, use a high value (i.e. 2000) to get more stable hashrate
+output&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cuda-parallel-hash&lt;/code&gt; —** &lt;em&gt;**Define how many hashes to calculate in a kernel, can
+be scaled to achieve better performance. Default=4&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cuda-block-size&lt;/code&gt; — &lt;em&gt;Set the CUDA block work size. Default is 128&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cuda-grid-size&lt;/code&gt; — &lt;em&gt;Set the CUDA grid size. Default is 8192&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cuda-streams&lt;/code&gt;— &lt;em&gt;Set the number of CUDA streams. Default is 2&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My understanding of &lt;code&gt;farm-recheck&lt;/code&gt; is, it&apos;s an for &lt;a href=&quot;https://forum.ethereum.org/discussion/5379/mining-parameters&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;option to set how often the
+program checks&lt;/a&gt;
+for new work to work through. The lower you set it, the lower the chances of
+working on stale blocks, but set it too low and you might see instability in the
+hashing output.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The other options I&apos;m not 100% familiar with, and so I just went with the
+defaults. Feel free to leave a comment if you have a plain english explanation
+of them.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Finally, you&apos;ll pick the servers to connect to — I chose &lt;code&gt;us1&lt;/code&gt;and &lt;code&gt;eu1&lt;/code&gt; — and
+finally put in your wallet address and a name to identify your mining computer.
+You may need to open up the ports &lt;code&gt;4444&lt;/code&gt; on your machine to allow connections.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If you&apos;re having trouble with ethminer, there&apos;s an active *&lt;a href=&quot;https://gitter.im/ethereum-mining/ethminer&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Gitter
+room&lt;/a&gt;&lt;/em&gt; as well.*&lt;/p&gt;
+&lt;p&gt;Once you start mining, you can go to your miner page and check out your stats.
+For instance, the &lt;a href=&quot;https://ethermine.org/miners/45d961bddef7bd389d76b22907eb4856a4383aa6&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;dashboard view
+shows&lt;/a&gt;:&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/miner-dashboard-1984622f0be254d2d246574d9ca88202-0bc2f.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 181.99999999999997%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAkCAIAAAAGkY33AAAACXBIWXMAAAsSAAALEgHS3X78AAAD50lEQVRIx51Vy27bVhDl19gwRdKJE9mJ7Vji4/It8U2KIiVZb1dFmsiwGyeOky67KFAkDYoC3rRAN003bVdtvMmn9ZBUVFu1nTjA0cXh3DmcucO5I6q0Y1+KOyTUm1+QYMjx7lU+FH6KpOhENmVZIzKIQWRLJjWZEEmFEVCIYuR2jSh1mcCCrUx84m+9f7j+fo8ry9GGFm+a6argYb0tBVcF/C9yRdJtVQaYinNTUMdfWmffW+9eR+/epGevPPAktq0f/0h/+Yc/fs0fBsnpwP4hcUX7bc36PU4KvLWcA8Wi/Gb6ZH/89XSENSP7I8mKmqd/9X89U1+80Y5ao5+/av40rCrhNB3vt/emrfF+Ds9KqR2r0xgdpJMng+mLeHwY9Kcbaux1H/cePUepq07X6z02k8m6GsMNGO6/TCdHILzbo+7Kje1a+zxui4F/8ir99lRIHpaVaMtMN43klugvuJWVBvXRkl5X7f+bpGAg+oMde1cORxV7l4RD5M873cvFoteHE1t1Od5hqxlAuIIIDiuFLO+yYpDt5mBIA5yp2hSaQW9OKk6H0+sAYzdY02HsmDVd1qyXnDbt95h6WPI6nFYHWNNjTZ+pR4xoUaiE030k+ENWRASPkVsMaTJixMgpbQwZKWbFiNb7nBhUaxFfBxqC4fGGVyYehdxwAZSgJ1gxb8WibAi6LSq6qFmSVkN3g0tqTVQMTm2xpMkJPrCK2yJGs4IxlWzlSPOenmxm3yatqA7Iltm6b6Rrhg8LHvFdFwuGL8YpaUmKaaVDK+1sVbsluV2SWytaf0Uf0MourfXxCICvaD1a65WEMK+2P6CDw+XgaDk6Xg6fZQRonMwIjJn9KNsCgSV8uhw9X9GHFFtx0GifKS7Spv0DWJfC46Xw2VKuWWqczAgs+RszkouXgqcgOE4m5njvPrG3ZWtLtoGKEZh+6rpuzQ0NP6m4vhmkoulvYkupbyuZG3gZ3zkbV6ghSTJIySK5hvMBdYdEuDQcerPqznrzHLnGmE2Su3KUzS3eBbgc58nqRXKeQ5+lDf1nRp631wJoPtzQmmgs3LYb3OcC2/U2ehMrhsbciCFjJJMCD6wO9emD9pbgq4293/78u8DBN99Ra1KA9PBKtTFek0I0jOD2cCSMBxQSFowK7KIL4Zbten285UG9jZNTq7ynROOizzAYUEYQnBMvBYEdwxT/IbDjFYUb1q1aC8JMjJh4xnDNxR4IxHAt/NZnYu+C2PwgLiLPxWUlvhBZa87E0ieI4Z2Lw8XI0mVpXzzzTDxP+/LIV4jd4szzyBs3OvMHcXBd2ubFas/TnolJCDIXry5EztP+F+BLZ+Cptk9iAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;miner dashboard&quot; title=&quot;&quot; src=&quot;/static/miner-dashboard-1984622f0be254d2d246574d9ca88202-17dec.png&quot; srcset=&quot;/static/miner-dashboard-1984622f0be254d2d246574d9ca88202-ae2e5.png 160w,
+/static/miner-dashboard-1984622f0be254d2d246574d9ca88202-8227e.png 320w,
+/static/miner-dashboard-1984622f0be254d2d246574d9ca88202-17dec.png 640w,
+/static/miner-dashboard-1984622f0be254d2d246574d9ca88202-0bc2f.png 800w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;p&gt;Which gives you a nice overview of your stats, and also a rough estimate of your payouts:&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/payouts-9845c07fd92d393c9f11900497d0bce8-0bc2f.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 156.125%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAfCAIAAABoLHqZAAAACXBIWXMAAAsSAAALEgHS3X78AAADoElEQVQ4y51VWW/TQBDOP+kBLbGdOCVt07SFJL6vpHZjJ3bipCktuQqlIEGLBA8IISEhXngCIXgAXhAvlOMH8u2uW662HNJkNZ6Zb3Zm99tJSih5p4lU37q0tiFK9dMCUvgVpaqpGYZqWJquq6ZBdUfXvZrru56uWcSiGbamq6qJFcGyYiXgBT1ctqIdT3rRW33eW33SWinozXk1yJbcXNkVSy4UsUwkS4UpCTgn+3NKENnq3aB84Jf2vDIsOTnIlNfPltQZPf9RUkW7bYRDMxo67R2rNTKi4bzW/FswfqLkz6nNjETrlAJejjKVOvmUAkH6XrwgNYQjIxEGvqg0ckbMm5uI4I1Nzt7mtQ6vd2BhxkzF56wt3ugxCxGjJ5Tr9MAkX7R6nNMXlIiz+1x1CP1IBoLc5OyrRMcK15GXVyICXql2c2Y3XRulnUG6OoIDOgchoYPjRMSFz+qARNZGvNpmPddFs/vDbn8lvBLSntVGztr4TzBOe9mJC1Z7yY6XrHbhSIp2XDBb83ooyj4kr4X4RMAiVjvOqw0CxnmKlTopPhE/W6GrGgFPLonearaynkVk4q1jBUliNbgqrV+R/S08I63R15sDub4l+9slt+fEY1AIdiMcgLC/kgSJwWRkOl5RDy6PyZwc0KKIflzCTwyDA52cQH3wDLTROgnD5PAnLwOjepwEKCWoJIWgtpgbR0rAehdZYOStbaIoIViYAVUZw8gJmy2uNp7ZeCwoyNJFFnBwNryfdm+kvb3Z8B6oRta1a2l3N71+ixDRGSbvedHuTO+8nrz14dz2swv+HcDOX3k6tft26ub76dHLydsfp3bfTV1/A316/AqRkJn4YdJzwetP7H+ZOPg6cedw8vbhxP4nojPL/meyfle+EPv+55n4UTIM5ow43X7wT8JVxwkYPeNh/nITvNSE/cQxgINcNKIUjhrcvqgEZ0wMzBakzqtNNu1w88k9A1aNyQBacTpg2zKl97LiQl+pdopWG0GYTXZ7bLfGWGvdayDfErWTnQFDXPY3ArHysMqUnmqjD6oCyfKiBDoMHHDIAxMv1TbQCUYiUzDPWQqUg8qxG4pnpwNvQs+ytwkHcwOAN4jekBEReBuwYyukRhiDoXnYE/BqrbtgRCgjAWshQtEt4i6v9RCKIsEFvC28GcAQAz0BoyoyQEEVs0XB5FSBxCfqz2tNpKOPpyXSJ4Rt2BUmZRdp2UW6c56CMVswMfAvecZ/wDcT4AMrl67w8gAAAABJRU5ErkJggg==&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;payouts&quot; title=&quot;&quot; src=&quot;/static/payouts-9845c07fd92d393c9f11900497d0bce8-17dec.png&quot; srcset=&quot;/static/payouts-9845c07fd92d393c9f11900497d0bce8-ae2e5.png 160w,
+/static/payouts-9845c07fd92d393c9f11900497d0bce8-8227e.png 320w,
+/static/payouts-9845c07fd92d393c9f11900497d0bce8-17dec.png 640w,
+/static/payouts-9845c07fd92d393c9f11900497d0bce8-0bc2f.png 800w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;h2 id=&quot;tuning&quot;&gt;&lt;a href=&quot;#tuning&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tuning&lt;/h2&gt;
+&lt;p&gt;Once you&apos;ve got your rig mining, you may want to squeeze out every ounce of
+processing power. If so, here&apos;s a few links to point you in the right direction!&lt;/p&gt;
+&lt;h3 id=&quot;the-awesome-wiki-article-at-rethermining&quot;&gt;&lt;a href=&quot;#the-awesome-wiki-article-at-rethermining&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;The awesome wiki article at &lt;code&gt;/r/EtherMining&lt;/code&gt;:&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/EtherMining/wiki/index&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.reddit.com/r/EtherMining/wiki/index&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;a-conversation-on-overclocking&quot;&gt;&lt;a href=&quot;#a-conversation-on-overclocking&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;A conversation on overclocking:&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://bitcointalk.org/index.php?topic=1712831.0&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://bitcointalk.org/index.php?topic=1712831.0&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;a-few-articles-about-tweaking-miners&quot;&gt;&lt;a href=&quot;#a-few-articles-about-tweaking-miners&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;A few articles about tweaking miners:&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://robekworld.com/hash-rate-improvement-with-nvidia-asus-1060-1070-gpu-for-ether-like-mining-gpu-tweak-ii-e3cde220812f&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://robekworld.com/hash-rate-improvement-with-nvidia-asus-1060-1070-gpu-for-ether-like-mining-gpu-tweak-ii-e3cde220812f&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.legitreviews.com/geforce-gtx-1070-ethereum-mining-small-tweaks-great-hashrate-low-power_195451&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;http://www.legitreviews.com/geforce-gtx-1070-ethereum-mining-small-tweaks-great-hashrate-low-power_195451&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cryptomining-blog.com/7341-how-to-squeeze-some-extra-performance-mining-ethereum-on-nvidia/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;http://cryptomining-blog.com/7341-how-to-squeeze-some-extra-performance-mining-ethereum-on-nvidia/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;how-about-writing-your-own-miner&quot;&gt;&lt;a href=&quot;#how-about-writing-your-own-miner&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;How about writing your own miner?&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/ethereum/comments/7caqpb/a_tiny_miner_i_wrote_to_understand_how_mining/?sh=f25cfa84&amp;#x26;st=J9W5B865&amp;#x26;utm_content=title&amp;#x26;utm_medium=post_embed&amp;#x26;utm_name=ef770faa323446d0909650522f22e37a&amp;#x26;utm_source=embedly&amp;#x26;utm_term=7caqpb&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.reddit.com/r/ethereum/comments/7caqpb/a&lt;em&gt;tiny&lt;/em&gt;miner&lt;em&gt;i&lt;/em&gt;wrote&lt;em&gt;to&lt;/em&gt;understand&lt;em&gt;how&lt;/em&gt;mining/?sh=f25cfa84&amp;#x26;st=J9W5B865&amp;#x26;utm&lt;em&gt;content=title&amp;#x26;utm&lt;/em&gt;medium=post&lt;em&gt;embed&amp;#x26;utm&lt;/em&gt;name=ef770faa323446d0909650522f22e37a&amp;#x26;utm&lt;em&gt;source=embedly&amp;#x26;utm&lt;/em&gt;term=7caqpb&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;And that&apos;s what you need to get a mining rig set up! Piece of cake, right? The
+good news is once it&apos;s set up you can just sort of let it run without touching
+it. Just make sure nobody trips over the power cable.&lt;/p&gt;
+&lt;p&gt;The final installment of this series will be about getting some basic AI
+learning algorithms running on the hardware. If you want to hear about those,
+drop your email below and I&apos;ll let you know when I publish it!&lt;/p&gt;
+&lt;iframe style=&quot;height:400px;width:100%;max-width:800px;margin:30px auto;&quot; src=&quot;https://upscri.be/96fcab/?as_embed&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[Noob's Guide to building a Deep Learning / Cryptocurrency PC (#2): The OS]]></title><description><![CDATA[Among the buzzwords in the tech world of 2017, two tower above the rest:  deep
+learning  and  cryptocurrencies . It seems that everyone I…]]></description><link>https://thekevinscott.com/deep-learning-cryptocurrency-pc-2-os/</link><guid isPermaLink="false">https://thekevinscott.com/deep-learning-cryptocurrency-pc-2-os/</guid><pubDate>Fri, 06 Oct 2017 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Among the buzzwords in the tech world of 2017, two tower above the rest: &lt;strong&gt;deep
+learning&lt;/strong&gt; and &lt;strong&gt;cryptocurrencies&lt;/strong&gt;. It seems that everyone I know (in tech)
+wants to learn these things. And guess what — so do I! So much so that I&apos;m
+building my own computer in order to facilitate that learning.&lt;/p&gt;
+&lt;p&gt;What follows are my notes-to-self as I build a computer to learn about deep
+learning and cryptocurrency mining. &lt;a href=&quot;https://medium.com/@thekevinscott/noobs-guide-to-custom-computer-for-cryptocurrency-and-deep-learning-7caa255adfaf&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;In the previous installment we discussed
+assembling the hardware.
+&lt;/a&gt;In
+this installment I&apos;ll talk about choosing and installing the OS, configuring it
+and making sure the hardware is working, and some basic OS security.&lt;/p&gt;
+&lt;iframe style=&quot;height:400px;width:100%;max-width:800px;margin:30px auto;&quot; src=&quot;https://upscri.be/96fcab/?as_embed&quot;&gt;&lt;/iframe&gt;
+&lt;hr /&gt;
+&lt;h1 id=&quot;the-operating-system&quot;&gt;&lt;a href=&quot;#the-operating-system&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;The operating system&lt;/h1&gt;
+&lt;p&gt;Last time we left off immediately after assembling our computer. Our computer
+came without an operating system, so the next step is to choose and install one.&lt;/p&gt;
+&lt;p&gt;I chose Ubuntu Desktop. Lots of the tutorials I see for deep learning are
+written for Ubuntu, and I&apos;m comfortable with Linux. Windows also seems to have
+plenty of support but I&apos;m not nearly as familiar with the MS ecosystem.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.quora.com/What-are-the-most-popular-linux-distros-for-deep-learning-research&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;I don&apos;t think
+it&lt;/a&gt;
+&lt;a href=&quot;https://bitcointalk.org/index.php?topic=166986.0&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;matters a ton which OS you
+choose&lt;/a&gt;; &lt;a href=&quot;https://forums.servethehome.com/index.php?threads/best-os-and-software-for-machine-learning-and-deep-learning.15890/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;most of what you&apos;ll
+be using it for is
+platform-agnostic&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The big thing to keep an eye out for is CUDA support. &lt;a href=&quot;http://nvidia.custhelp.com/app/answers/detail/a_id/2135/~/which-operating-systems-are-supported-by-cuda?&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Luckily, most of the
+operating systems (Windows, Linux and
+Mac)&lt;/a&gt;
+are supported. So don&apos;t go choosing some crazy new-fangled OS nobody&apos;s heard of!&lt;/p&gt;
+&lt;p&gt;So, the conclusion: Pick a Linux distro, Ubuntu unless you&apos;re familiar with
+Linux and comfortable with the command line, or pick Windows and go find
+yourself &lt;a href=&quot;https://www.lifewire.com/cryptocoin-mining-for-beginners-2483064&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;another
+tutorial&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;installing&quot;&gt;&lt;a href=&quot;#installing&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Installing&lt;/h2&gt;
+&lt;p&gt;Once you&apos;ve chosen your OS, the first step is to burn an image of the distro to
+a USB stick. &lt;a href=&quot;https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows#0&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Ubuntu provides a very straightforward
+tutorial&lt;/a&gt;.
+Once you&apos;ve got that, you&apos;ll restart your computer and reboot from USB.
+Instructions on doing this differ depending on the motherboard so read your
+manual; for me, I had to restart holding down F10.&lt;/p&gt;
+&lt;p&gt;You then will run through the OS installation, of which plenty of guides exist
+on the internet.&lt;/p&gt;
+&lt;p&gt;Now at some point, this being a computer you assembled from scratch, it&apos;s likely
+you&apos;ll run into problems. For me, I had a hell of a time getting my display to
+come on and stay on. I&apos;m still not 100% sure why. Assuming your hardware differs
+from mine, your problems are likely to be unique to you. Don&apos;t panic. Google is
+your friend, and it&apos;s likely that any problem you run into, others have run into
+too.&lt;/p&gt;
+&lt;p&gt;The problems I struggled with:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I had a hell of a time getting the display to work. Turning &lt;code&gt;acpi=off&lt;/code&gt; in the
+grub bootloader, &lt;a href=&quot;https://askubuntu.com/questions/861743/installation-of-ubuntu-16-04-from-a-usb-drive-freezes&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;as described
+here&lt;/a&gt;,
+helped me (&lt;a href=&quot;https://www.howtogeek.com/196655/how-to-configure-the-grub2-boot-loaders-settings/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;here&apos;s how to persist settings in the grub
+bootloader&lt;/a&gt;).
+The computer may struggle to figure out which graphics card (the built-in one,
+or one of the GPUs) to use for the monitor as well. &lt;a href=&quot;https://ubuntuforums.org/showthread.php?t=1613132&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Here&apos;s some more info on
+&lt;/a&gt;&lt;code&gt;acpi&lt;/code&gt;&lt;a href=&quot;https://ubuntuforums.org/showthread.php?t=1613132&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;My ethernet didn&apos;t work out of the box. &lt;a href=&quot;http://www.ubuntugeek.com/ubuntu-networking-configuration-using-command-line.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;This guide does a good
+rundown&lt;/a&gt;
+of Ubuntu internet issues, and &lt;a href=&quot;https://ubuntuforums.org/showthread.php?t=25557&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;this guide by
+dataw0lf&lt;/a&gt; was a godsend.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.linuxandubuntu.com/home/how-to-install-latest-nvidia-drivers-in-linux&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;How to install nvidia
+drivers&lt;/a&gt;
+once you have internet.&lt;/li&gt;
+&lt;li&gt;Wait, did I install a 32-bit or 64-bit distro? &lt;a href=&quot;https://unix.stackexchange.com/questions/12453/how-to-determine-linux-kernel-architecture&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Here&apos;s how to
+tell.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Just keep at it, and don&apos;t hesitate to ask the community if you&apos;re wrestling
+with a particularly thorny issue. They&apos;re plenty friendly, so long as you&apos;ve
+done your homework beforehand!&lt;/p&gt;
+&lt;h1 id=&quot;system-diagnosis&quot;&gt;&lt;a href=&quot;#system-diagnosis&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;System Diagnosis&lt;/h1&gt;
+&lt;p&gt;Now we&apos;re booting into Linux and we&apos;ve got the basics installed. As my next
+step, I want to check that the hardware is all running correctly and there&apos;s
+nothing out of the ordinary. To check that, I learned about a few good tools on
+Linux. You may have to install a few of these, if something is missing try
+installing it with:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo apt-get install xxxxx&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;system-wide-commands&quot;&gt;&lt;a href=&quot;#system-wide-commands&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;System-wide commands&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;lshw&lt;/code&gt; is used to &lt;strong&gt;list hardware&lt;/strong&gt;. This will dump out a ton of information in
+your system.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;inxi&lt;/code&gt; is another good one. Here&apos;s my &lt;code&gt;inxi -Fx&lt;/code&gt; output:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;inxi -Fx&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Let&apos;s step through component by component and run a sanity check to make sure
+everything is working.&lt;/p&gt;
+&lt;h2 id=&quot;cpu&quot;&gt;&lt;a href=&quot;#cpu&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CPU&lt;/h2&gt;
+&lt;p&gt;There&apos;s a few commands you can use to get more information on your CPU:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cat /proc/cpuinfo&lt;/code&gt;prints out information on your CPU. &lt;a href=&quot;https://unix.stackexchange.com/questions/146051/number-of-processors-in-proc-cpuinfo&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Here&apos;s a good Stack
+Overflow
+thread&lt;/a&gt;
+going into more detail on what this output means.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;cat /proc/cpuinfo&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;lshw&lt;/code&gt; will list out all hardware, and the CPU section has some relevant
+information:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;lshw&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;lscpu&lt;/code&gt; will give you some more CPU-specific information, including MHz and
+cache information:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;lscpu&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;These commands are great if you&apos;re familiar with the ins and outs of hardware,
+but I barely have a clue what I&apos;m looking at. I just want to know if the CPU is
+working or not.&lt;/p&gt;
+&lt;p&gt;For that, &lt;code&gt;top&lt;/code&gt; and &lt;code&gt;htop&lt;/code&gt; will do the trick.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;top&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*zlUXYjZbjuJFbzFwRIxDIQ.png&quot;&gt;
+&lt;span class=&quot;figcaption_hack&quot;&gt;Output from &lt;code&gt;top&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;And to get more graphical, use &lt;code&gt;htop&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;Output from htop&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.deonsworld.co.za/2012/12/20/understanding-and-using-htop-monitor-system-resources/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;This
+article&lt;/a&gt;
+does a pretty deep dive into &lt;code&gt;htop&lt;/code&gt;. To ensure I&apos;m getting 100% throughput on
+each of the cores, this article at
+&lt;a href=&quot;https://peteris.rocks/blog/htop/#load-average&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;peteris.rocks&lt;/a&gt; does a good job
+explaining how:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you run &lt;code&gt;cat /dev/urandom &gt; /dev/null&lt;/code&gt; which repeatedly generates random
+bytes and writes them to a special file that is never read from, you will see
+that there are now two running process.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Running this gets me to 100.0% on all cores. I&apos;m not 100% sure this is a valid
+test of the CPU but it seems good enough for me.&lt;/p&gt;
+&lt;h2 id=&quot;hard-drive&quot;&gt;&lt;a href=&quot;#hard-drive&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Hard Drive&lt;/h2&gt;
+&lt;p&gt;Running &lt;code&gt;lsblk&lt;/code&gt; prints information about hard drive partitions and other storage
+devices. Running that gives me:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*7TFaMOHq7OohkB0X-ZW7WQ.png&quot;&gt;
+&lt;span class=&quot;figcaption_hack&quot;&gt;lsblk&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Which is roughly the size I expect. &lt;code&gt;df&lt;/code&gt; is another one that gives you
+information about hard drive space:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;df&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ram&quot;&gt;&lt;a href=&quot;#ram&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;RAM&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;free -m&lt;/code&gt; will check the amount of RAM:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*zlk3wpJnoECxLDDh01e_-A.png&quot;&gt;
+&lt;span class=&quot;figcaption_hack&quot;&gt;free -m&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;That doesn&apos;t look so good — I expected 16 GBs! Let&apos;s check &lt;code&gt;lshw&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;lshw&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This tells me I installed one of the RAM chips wrong. Time to break out the
+screwdriver again.&lt;/p&gt;
+&lt;h2 id=&quot;gpus&quot;&gt;&lt;a href=&quot;#gpus&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;GPUs&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;lspci&lt;/code&gt; will give you information on PCI buses and devices in your system,
+including your GPUs:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;lspci&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Another command you can use is &lt;code&gt;nvidia-smi&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;nvidia-smi&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This gives you information like fan usage, temperature, memory-usage, and more
+goodies.&lt;/p&gt;
+&lt;h2 id=&quot;cooling&quot;&gt;&lt;a href=&quot;#cooling&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cooling&lt;/h2&gt;
+&lt;p&gt;Check CPU temperature with &lt;code&gt;sensors&lt;/code&gt; :&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;sensors&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Between this and &lt;code&gt;nvidia-smi&lt;/code&gt; above you should be able to get a good idea of
+whether your cooling supply is adequate or not.&lt;/p&gt;
+&lt;h2 id=&quot;power&quot;&gt;&lt;a href=&quot;#power&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Power&lt;/h2&gt;
+&lt;p&gt;Is the system getting enough power? Short of &lt;a href=&quot;https://askubuntu.com/questions/421955/software-to-find-desktop-power-usage&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;measuring the power between the
+computer and the
+electrical&lt;/a&gt;,
+I don&apos;t think there&apos;s a 100% software solution to find this out.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;powertop&lt;/code&gt; is a utility that measures consumption. It seems like it&apos;s mostly
+useful for laptops, but &lt;a href=&quot;http://fsckin.com/2007/10/21/intel-powertop-not-just-for-laptops/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;there&apos;s some good info for desktops as Wayne points out
+here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ultimately, making sure you have adequate power needs is something you should do
+before assembling your system, either by checking
+&lt;a href=&quot;https://pcpartpicker.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;pcpartpicker.com&lt;/a&gt; when choosing your parts or
+&lt;a href=&quot;http://www.buildcomputers.net/power-consumption-of-pc-components.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;checking something like this
+link&lt;/a&gt;
+(thanks Sean!). And if you can afford it leave yourself plenty of breathing room
+in the watts department.&lt;/p&gt;
+&lt;h1 id=&quot;security&quot;&gt;&lt;a href=&quot;#security&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Security&lt;/h1&gt;
+&lt;p&gt;Having satisfied my worrywart side that everything is running smoothly, the next
+step is to make sure we&apos;ve configured our system following standard Linux
+security procedures.&lt;/p&gt;
+&lt;p&gt;I&apos;m going to be using this machine to practice deep learning (not too worried
+about someone hacking this) and for mining cryptocurrencies (more concerned
+about something hacking this!)&lt;/p&gt;
+&lt;p&gt;A good place to start is the &lt;a href=&quot;https://wiki.ubuntu.com/BasicSecurity&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Basic Security guide hosted on Ubuntu
+Wiki&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;I assume you&apos;re familiar with the general Linux security procedures — strong
+passwords, limited root access, that sort of thing. If not, spend some time
+c&lt;a href=&quot;https://ubuntuforums.org/showthread.php?t=510812&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;atching up on that&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&quot;automatic-security-updates&quot;&gt;&lt;a href=&quot;#automatic-security-updates&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Automatic Security Updates&lt;/h4&gt;
+&lt;p&gt;I&apos;m lazy as sin and if there&apos;s one thing I hate it&apos;s manual security updates.
+Luckily Ubuntu provides an automatic update mechanism:&lt;/p&gt;
+&lt;p&gt;I followed the “unattended-upgrades” package and it was a straightforward
+process.&lt;/p&gt;
+&lt;p&gt;This will likely cause issues if I&apos;m running deep learning simulations
+overnight, but I can tackle that issue in the future. For now I&apos;m erring on the
+side of caution.&lt;/p&gt;
+&lt;h2 id=&quot;firewall&quot;&gt;&lt;a href=&quot;#firewall&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Firewall&lt;/h2&gt;
+&lt;p&gt;A firewall will allow you control over which ports are accessible publicly.
+Generally you want the most restrictive policy you can stomach.&lt;/p&gt;
+&lt;p&gt;Here&apos;s the &lt;a href=&quot;https://wiki.ubuntu.com/BasicSecurity/Firewall&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Ubuntu wiki for
+firewalls&lt;/a&gt; (&lt;em&gt;if you&apos;re noticing a trend, it&apos;s that the Ubuntu wiki has some pretty darn good information!&lt;/em&gt;):&lt;/p&gt;
+&lt;p&gt;I&apos;m going to use &lt;code&gt;ufw&lt;/code&gt; because I&apos;m on the terminal. I went with the
+recommendations the guide laid out — DHCP, web and mail access — but left out the torrent ports since I don&apos;t need them.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://ubuntuforums.org/showthread.php?t=510812&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;This is an absolutely massive security
+guide&lt;/a&gt; by bodhi.zazen. It&apos;s well worth a read and implementation.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;If you want to hear about how I tackled the crypto mining and deep learning setups, drop your email below and I&apos;ll let you know when I publish those
+sections.&lt;/p&gt;
+&lt;iframe style=&quot;height:400px;width:100%;max-width:800px;margin:30px auto;&quot; src=&quot;https://upscri.be/96fcab/?as_embed&quot;&gt;&lt;/iframe&gt;
+&lt;hr /&gt;</content:encoded></item><item><title><![CDATA[Arrays in React 16 and the necessity of keys]]></title><description><![CDATA[Over the weekend at  React Boston   I saw a great
+talk  by  Ben
+Ilegbodu  where he discussed changes in the
+ upcoming Fiber release 
+for…]]></description><link>https://thekevinscott.com/arrays-in-react-16/</link><guid isPermaLink="false">https://thekevinscott.com/arrays-in-react-16/</guid><pubDate>Tue, 26 Sep 2017 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Over the weekend at &lt;a href=&quot;http://www.reactboston.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;React Boston&lt;/a&gt; &lt;a href=&quot;http://www.benmvp.com/slides/2017/reactboston/fiber.html#/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;I saw a great
+talk&lt;/a&gt; by &lt;a href=&quot;https://medium.com/@benmvp&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Ben
+Ilegbodu&lt;/a&gt; where he discussed changes in the
+&lt;a href=&quot;https://github.com/acdlite/react-fiber-architecture&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;upcoming Fiber release&lt;/a&gt;
+for React 16.&lt;/p&gt;
+&lt;p&gt;A common complaint in React 15 and below has been the inability to directly
+return an array of elements. React traditionally has required render functions
+to return a single top-level parent element. This means that when returning
+lists, you&apos;d have to enclose the list in a container element:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Valid React 15
+const Page = () =&gt; (
+  &amp;#x3C;div&gt;
+    &amp;#x3C;a href=&quot;#one&quot;&gt;One&amp;#x3C;/a&gt;
+    &amp;#x3C;a href=&quot;#two&quot;&gt;Two&amp;#x3C;/a&gt;
+  &amp;#x3C;/div&gt;
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This often leads to extraneous markup with &lt;code&gt;div&lt;/code&gt;s that pollute the HTML. In
+React 16, you can return arrays of elements:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Valid React 16, invalid React 15
+const Page = () =&gt; ([
+  &amp;#x3C;a key=&quot;one&quot; href=&quot;#one&quot;&gt;One&amp;#x3C;/a&gt;
+  &amp;#x3C;a key=&quot;two&quot; href=&quot;#two&quot;&gt;Two&amp;#x3C;/a&gt;
+]);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You&apos;ll notice each element has a unique &lt;code&gt;key&lt;/code&gt;. From the React docs:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Keys help React identify which items have changed, are added, or are removed.
+Keys should be given to the elements inside the array to give the elements a
+stable identity — &lt;a href=&quot;https://facebook.github.io/react/docs/lists-and-keys.html#keys&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Lists and
+Keys&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In practice, unique keys might look something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// where href is guaranteed to be unique
+const Header = ({ links }) =&gt; (
+  &amp;#x3C;div&gt;
+    {links.map(link =&gt; (
+      &amp;#x3C;a key={link.href} href={link.href}&gt;{link.label}&amp;#x3C;/a&gt;
+    ))}
+  &amp;#x3C;/div&gt;
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Returning unique &lt;code&gt;key&lt;/code&gt;s from the render method helps React identify what needs
+to be re-rendered. But it also adds some verbosity to the code that feels
+redundant; for instance, we don&apos;t need to add keys when returning top-level
+elements.&lt;/p&gt;
+&lt;p&gt;In his talk, &lt;a href=&quot;https://medium.com/@benmvp&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Ben&lt;/a&gt; highlighted a library,
+&lt;a href=&quot;https://github.com/gajus/react-aux&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;react-aux&lt;/a&gt;, that addresses this verbosity
+problem and removes the need to provide explicit keys:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const Root = () =&gt; {
+  return &amp;#x3C;Aux&gt;
+    &amp;#x3C;p&gt;Hello, World!&amp;#x3C;/p&gt;
+    &amp;#x3C;p&gt;I am a demo for react-aux.&amp;#x3C;/p&gt;
+  &amp;#x3C;/Aux&gt;;
+};
+
+// which is equivalent to the following:
+const Root = () =&gt; {
+  const Aux = (props) =&gt; props.children;
+
+  return &amp;#x3C;Aux&gt;
+    &amp;#x3C;p&gt;Hello, World!&amp;#x3C;/p&gt;
+    &amp;#x3C;p&gt;I am a demo for react-aux.&amp;#x3C;/p&gt;
+  &amp;#x3C;/Aux&gt;;
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@gajus&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Gajus Kuizinas&lt;/a&gt;&apos;s package leverages the fact that
+you can omit unique keys for a list of elements by directly returning &lt;code&gt;children&lt;/code&gt;
+from a container div.&lt;/p&gt;
+&lt;p&gt;But that makes me question: **Why is it valid to return children without keys,
+but invalid to return a top level array without keys? **I suspect the answer has
+something to do with providing a top-level node for the children to live under.
+But why do nested siblings in a regular &lt;code&gt;render&lt;/code&gt; function not require keys as
+well?&lt;/p&gt;
+&lt;p&gt;If you know the answer, please leave a comment! I&apos;m hoping to dig more into
+React 16 and see if I can answer this myself.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Edit (9/29/2017):&lt;/em&gt; Looks like the team is thinking about addressing this in the
+future:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In the future, we&apos;ll likely add a special fragment syntax to JSX that doesn&apos;t
+require keys. — &lt;a href=&quot;https://reactjs.org/blog/2017/09/26/react-v16.0.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Andrew
+Clark&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So there you have it!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Noob's Guide to building a Deep Learning / Cryptocurrency PC (#1): The Hardware]]></title><description><![CDATA[A mong the buzzwords in the tech world of 2017, two tower above the rest:  deep
+learning  and  cryptocurrencies . It seems that everyone…]]></description><link>https://thekevinscott.com/deep-learning-cryptocurrency-pc-1-hardware/</link><guid isPermaLink="false">https://thekevinscott.com/deep-learning-cryptocurrency-pc-1-hardware/</guid><pubDate>Mon, 25 Sep 2017 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&quot;dropcap&quot;&gt;A&lt;/span&gt;mong the buzzwords in the tech world of 2017, two tower above the rest: &lt;strong&gt;deep
+learning&lt;/strong&gt; and &lt;strong&gt;cryptocurrencies&lt;/strong&gt;. It seems that everyone wants to learn more
+about these things. And guess what — so do I! So much so that I&apos;m building my
+own computer in order to facilitate that learning.&lt;/p&gt;
+&lt;p&gt;What follows are my notes-to-self as I build a computer to learn about deep
+learning and cryptocurrency mining. In this installment we&apos;ll just discuss
+building the hardware. If you&apos;d like to hear about configuring the OS, getting
+started with crypto mining, or getting started with deep learning algorithms,
+drop me your email below and I&apos;ll keep you in the loop.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Some quick definitions, for those unfamiliar:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A &lt;strong&gt;cryptocurrency&lt;/strong&gt; … is a &lt;a href=&quot;https://en.wikipedia.org/wiki/Digital_asset&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;digital
+asset&lt;/a&gt; designed to work as a
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Medium_of_exchange&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;medium of exchange&lt;/a&gt; using
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Cryptography&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;cryptography&lt;/a&gt; to secure the
+transactions and to control the creation of additional units of the currency. —
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Cryptocurrency&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Machine learning&lt;/strong&gt; is the subfield of &lt;a href=&quot;https://en.wikipedia.org/wiki/Computer_science&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;computer
+science&lt;/a&gt; that, according to
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Arthur_Samuel&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Arthur Samuel&lt;/a&gt;, gives “computers
+the ability to learn without being explicitly programmed.” — also
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Machine_learning&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Deep learning&lt;/strong&gt; … is part of a broader family of &lt;a href=&quot;https://en.wikipedia.org/wiki/Machine_learning&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;machine
+learning&lt;/a&gt; methods based on
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Learning_representation&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;learning data
+representations&lt;/a&gt;, as
+opposed to task-specific algorithms. —
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Deep_learning&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span class=&quot;dropcap&quot;&gt;W&lt;/span&gt;hy build a PC to learn this stuff? It&apos;s important to note that you don&apos;t have
+to. Your laptop is capable of running the same software, but the performance
+you‘ll get out of a dedicated GPU is miles beyond what your laptop&apos;s CPU can
+deliver. You&apos;ll spend more money replacing your worn-out laptop than you&apos;ll make
+mining cryptocurrencies, and anything beyond basic deep learning training will
+take forever.&lt;/p&gt;
+&lt;h2 id=&quot;gpus&quot;&gt;&lt;a href=&quot;#gpus&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;GPUs&lt;/h2&gt;
+&lt;p&gt;GPUs are specialized chips for processing data in parallel. Originally developed
+to power intensive graphics (like in video games), more recently their
+architecture has been discovered to be a perfect fit for the short, repetitive
+and parallelizable tasks at the heart of both machine learning and
+cryptocurrency mining.&lt;/p&gt;
+&lt;h2 id=&quot;the-cloud&quot;&gt;&lt;a href=&quot;#the-cloud&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;The cloud&lt;/h2&gt;
+&lt;p&gt;You can rent GPUs in the cloud, for instance, &lt;a href=&quot;https://aws.amazon.com/about-aws/whats-new/2016/09/introducing-amazon-ec2-p2-instances-the-largest-gpu-powered-virtual-machine-in-the-cloud/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;with
+AWS&lt;/a&gt;.
+Unfortunately they&apos;re expensive and it&apos;s a much better deal to run things
+locally. (This will probably change in the future).&lt;/p&gt;
+&lt;p&gt;So it makes economic and temporal sense to run these things locally.&lt;/p&gt;
+&lt;h1 id=&quot;hardware&quot;&gt;&lt;a href=&quot;#hardware&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Hardware&lt;/h1&gt;
+&lt;p&gt;I haven&apos;t built a computer from scratch in over 20 years. I bought a Mac in 2004
+and haven&apos;t looked back since. I was lucky enough to have a good friend with
+some experience who was able to guide me in the right direction.&lt;/p&gt;
+&lt;h2 id=&quot;picking-a-gpu&quot;&gt;&lt;a href=&quot;#picking-a-gpu&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Picking a GPU&lt;/h2&gt;
+&lt;p&gt;The most important question: Which GPU to purchase?&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://timdettmers.com/2017/04/09/which-gpu-for-deep-learning/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Tim Dettmers has a fantastic in-depth
+article&lt;/a&gt;
+comparing a number of GPUs out on the market. Go read his article if you want a
+truly exhaustive look at the costs and benefits of available GPUs.&lt;/p&gt;
+&lt;p&gt;He writes:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;NVIDIA&apos;s standard libraries made it very easy to establish the first deep
+learning libraries in CUDA, while there were no such powerful standard libraries
+for AMD&apos;s OpenCL. Right now, there are just no good deep learning libraries for
+AMD cards — so NVIDIA it is.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I&apos;d heard this sentiment from others. It seems that if you want to do machine
+learning, you&apos;re best off going with NVIDIA.&lt;/p&gt;
+&lt;p&gt;I ended up picking a pair of GTX 970s, which was primarily a budget decision
+(this is a hobby, after all). There&apos;s lots available on eBay.&lt;/p&gt;
+&lt;h2 id=&quot;the-rest-of-the-parts&quot;&gt;&lt;a href=&quot;#the-rest-of-the-parts&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;The rest of the parts&lt;/h2&gt;
+&lt;p&gt;A number of folks have written about their experiences building deep
+learning-capable machines, and they were invaluable for helping me figure out
+what parts to buy:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/towards-data-science/building-your-own-deep-learning-box-47b918aea1eb&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://medium.com/towards-data-science/building-your-own-deep-learning-box-47b918aea1eb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@acrosson/building-a-deep-learning-box-d17d97e2905c&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://medium.com/@acrosson/building-a-deep-learning-box-d17d97e2905c&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.oreilly.com/learning/build-a-super-fast-deep-learning-machine-for-under-1000&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.oreilly.com/learning/build-a-super-fast-deep-learning-machine-for-under-1000&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As these articles point you, make sure to enter your components into
+&lt;a href=&quot;https://pcpartpicker.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;pcpartpicker.com&lt;/a&gt; before purchasing, to ensure
+components work together. I failed to do this, and as you&apos;ll read below, this
+necessitated a trip back to the Amazon store a second time.&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/parts-84499e950f250d856a8fde2c3d7e1770-9f082.jpeg&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQBA//EABQBAQAAAAAAAAAAAAAAAAAAAAP/2gAMAwEAAhADEAAAAXGuUFpYJP/EABoQAAIDAQEAAAAAAAAAAAAAAAECAxEiABL/2gAIAQEAAQUCM1czOxU5z5dSFEYr/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAh/9oACAEDAQE/AUbb/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAEh/9oACAECAQE/AZWP/8QAGBABAQEBAQAAAAAAAAAAAAAAAQARIWH/2gAIAQEABj8CtNCL3IVuLl//xAAZEAADAQEBAAAAAAAAAAAAAAAAAREhQVH/2gAIAQEAAT8hixbLR3uOUbo65o00pOIXh3gkuRlT/9oADAMBAAIAAwAAABCc/wD/xAAYEQEBAAMAAAAAAAAAAAAAAAABABEhMf/aAAgBAwEBPxBjljTl/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQARMf/aAAgBAgEBPxAwwZd9v//EABwQAQEAAgMBAQAAAAAAAAAAAAERACExQVFxgf/aAAgBAQABPxBJ6mxx8v5kcIEAgzfL7mwc1Pb3hMzYlh9mJRUhBhJ7KuVM4N+7z//Z&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;parts&quot; title=&quot;&quot; src=&quot;/static/parts-84499e950f250d856a8fde2c3d7e1770-08fa6.jpeg&quot; srcset=&quot;/static/parts-84499e950f250d856a8fde2c3d7e1770-f2c3a.jpeg 160w,
+/static/parts-84499e950f250d856a8fde2c3d7e1770-3ed17.jpeg 320w,
+/static/parts-84499e950f250d856a8fde2c3d7e1770-08fa6.jpeg 640w,
+/static/parts-84499e950f250d856a8fde2c3d7e1770-c5f03.jpeg 960w,
+/static/parts-84499e950f250d856a8fde2c3d7e1770-9f082.jpeg 1000w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;span class=&quot;figcaption_hack&quot;&gt;The parts!&lt;/span&gt;
+&lt;h1 id=&quot;shopping-list&quot;&gt;&lt;a href=&quot;#shopping-list&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Shopping List&lt;/h1&gt;
+&lt;p&gt;Here&apos;s what I bought (&lt;em&gt;affiliate links&lt;/em&gt;):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Motherboard: &lt;a href=&quot;https://www.amazon.com/gp/product/B012N6ESTC/ref=as_li_tl?ie=UTF8&amp;#x26;camp=1789&amp;#x26;creative=9325&amp;#x26;creativeASIN=B012N6ESTC&amp;#x26;linkCode=as2&amp;#x26;tag=theoryincorpo-20&amp;#x26;linkId=d41ae2f81f2541aef2deccbb45e833bf&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Gigabyte
+GA-Z170X&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CPU: &lt;a href=&quot;https://www.amazon.com/gp/product/B012M8M7TY/ref=as_li_tl?ie=UTF8&amp;#x26;camp=1789&amp;#x26;creative=9325&amp;#x26;creativeASIN=B012M8M7TY&amp;#x26;linkCode=as2&amp;#x26;tag=theoryincorpo-20&amp;#x26;linkId=9f1372b58ef093b59173144815d494fd&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Intel Core i5 6600K 3.50
+GHz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RAM: &lt;a href=&quot;https://www.amazon.com/gp/product/B01HKF450S/ref=as_li_tl?ie=UTF8&amp;#x26;camp=1789&amp;#x26;creative=9325&amp;#x26;creativeASIN=B01HKF450S&amp;#x26;linkCode=as2&amp;#x26;tag=theoryincorpo-20&amp;#x26;linkId=68496b76cc73a6eaaee01e222fee703e&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Corsair Vengeance
+16GB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;PSU: &lt;a href=&quot;https://www.amazon.com/gp/product/B00K85X2A2/ref=as_li_tl?ie=UTF8&amp;#x26;camp=1789&amp;#x26;creative=9325&amp;#x26;creativeASIN=B00K85X2A2&amp;#x26;linkCode=as2&amp;#x26;tag=theoryincorpo-20&amp;#x26;linkId=32845692521e8b74f6bda127b2e82917&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;EVGA SuperNova
+750W&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Hard Drive: &lt;a href=&quot;https://www.amazon.com/gp/product/B01LXS4TY6/ref=as_li_tl?ie=UTF8&amp;#x26;camp=1789&amp;#x26;creative=9325&amp;#x26;creativeASIN=B01LXS4TY6&amp;#x26;linkCode=as2&amp;#x26;tag=theoryincorpo-20&amp;#x26;linkId=ada0a1fc170f85869054605fbab24684&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Samsung 960
+1TB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CPU Cooler: &lt;a href=&quot;https://www.amazon.com/gp/product/B005O65JXI/ref=as_li_tl?ie=UTF8&amp;#x26;camp=1789&amp;#x26;creative=9325&amp;#x26;creativeASIN=B005O65JXI&amp;#x26;linkCode=as2&amp;#x26;tag=theoryincorpo-20&amp;#x26;linkId=c0c8d938f6267fdd4e2f3047319003ae&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Cooler Master
+Hyper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Case (first attempt): &lt;a href=&quot;https://www.amazon.com/gp/product/B0716715R1/ref=as_li_tl?ie=UTF8&amp;#x26;camp=1789&amp;#x26;creative=9325&amp;#x26;creativeASIN=B0716715R1&amp;#x26;linkCode=as2&amp;#x26;tag=theoryincorpo-20&amp;#x26;linkId=5f5509b9f3f463d9abf46d3666410bfb&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;AeroCool
+Aero300&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Case (second attempt): &lt;a href=&quot;https://www.amazon.com/gp/product/B01M3Y5FJ2/ref=as_li_tl?ie=UTF8&amp;#x26;camp=1789&amp;#x26;creative=9325&amp;#x26;creativeASIN=B01M3Y5FJ2&amp;#x26;linkCode=as2&amp;#x26;tag=theoryincorpo-20&amp;#x26;linkId=7d67eab5133134d5ed151de4dbd5f984&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Corsair Carbide Series
+270R&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Wifi adapter: this &lt;a href=&quot;https://www.amazon.com/gp/product/B003MTTJOY/ref=as_li_tl?ie=UTF8&amp;#x26;camp=1789&amp;#x26;creative=9325&amp;#x26;creativeASIN=B003MTTJOY&amp;#x26;linkCode=as2&amp;#x26;tag=theoryincorpo-20&amp;#x26;linkId=2755d7e0d0a7f51bd3798ac05f5cdfa5&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;exceptionally tiny wifi USB
+adapter&lt;/a&gt;
+came in handy (and continues to) as I struggle with ethernet issues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;psu&quot;&gt;&lt;a href=&quot;#psu&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;PSU&lt;/h2&gt;
+&lt;p&gt;The PSU is the power supply that runs the whole rig.&lt;/p&gt;
+&lt;p&gt;There&apos;s three types of PSUs: modular, non-modular and semi-modular. Modular PSUs
+have cables you can disconnect, whereas non-modulars have cables that are
+attached. Semi-modular PSUs usually have the CPU and motherboard cables attached
+and the rest pluggable.&lt;/p&gt;
+&lt;p&gt;I bought a modular 750W PSU. In my limited experience of one, modular PSUs need
+some additional clearance behind them to accommodate their cables. The original
+case I bought, AeroCool, lacked enough space behind the PSU to fit the cables,
+necessitating a second trip to the Amazon store. A visit to &lt;a href=&quot;https://pcpartpicker.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;pcpartpicker.com&lt;/a&gt; would have alerted me beforehand. Lesson learned!&lt;/p&gt;
+&lt;p&gt;To determine what kind of wattage you need, add up all your parts&apos; wattage
+needs. Pay particular attention to the GPUs&apos; needs, and give yourself some extra
+breathing room. I&apos;m not sure what happens if you run out of wattage but I would
+guess it sucks.&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/psu-aa05b72d13584717dd005ed564a61d89-74a50.jpeg&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAMBAgQF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/aAAwDAQACEAMQAAAB5FnyFsEhf//EABkQAAMBAQEAAAAAAAAAAAAAAAECAxEAEv/aAAgBAQABBQLyOEyFSeqJnaQdVQma/wD/xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAwEBPwGH/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQIBAT8Bp//EABkQAAMBAQEAAAAAAAAAAAAAAAABERICIf/aAAgBAQAGPwLw1VBNdIhU6jNP/8QAHBABAAIBBQAAAAAAAAAAAAAAAQARMRAhQVFh/9oACAEBAAE/IVs0PYgyVZg1lSMqN+45sPGnn//aAAwDAQACAAMAAAAQHO//xAAXEQEBAQEAAAAAAAAAAAAAAAARAAEx/9oACAEDAQE/EF0sS//EABcRAQADAAAAAAAAAAAAAAAAAAARIVH/2gAIAQIBAT8QxKn/xAAcEAEBAAICAwAAAAAAAAAAAAABEQAhUXExQZH/2gAIAQEAAT8QnqBliDgJYVT2xHIso8dYkDttJ4wNKBbj39w+nzoz/9k=&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;psu&quot; title=&quot;&quot; src=&quot;/static/psu-aa05b72d13584717dd005ed564a61d89-08fa6.jpeg&quot; srcset=&quot;/static/psu-aa05b72d13584717dd005ed564a61d89-f2c3a.jpeg 160w,
+/static/psu-aa05b72d13584717dd005ed564a61d89-3ed17.jpeg 320w,
+/static/psu-aa05b72d13584717dd005ed564a61d89-08fa6.jpeg 640w,
+/static/psu-aa05b72d13584717dd005ed564a61d89-74a50.jpeg 800w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;p&gt;First step out of the box is to make sure the PSU turns on and power is being
+delivered. And in my case, all systems were go!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=2h_NYl4DRF4&amp;#x26;index=1&amp;#x26;list=PLxvB6AORmso4SILfs3sj8vYCohM-RnwcD&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Here&apos;s a great video I watched about installing a
+PSU&lt;/a&gt;,
+and if you happen to buy an EVGA PSU, here&apos;s &lt;a href=&quot;https://www.youtube.com/watch?v=rucfmsGjPow&amp;#x26;list=PLxvB6AORmso4SILfs3sj8vYCohM-RnwcD&amp;#x26;index=2&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;EVGA&apos;s specific
+tutorial&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;motherboard--cpu&quot;&gt;&lt;a href=&quot;#motherboard--cpu&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Motherboard &amp;#x26; CPU&lt;/h2&gt;
+&lt;p&gt;For machine and deep learning applications, the CPU is less important than the
+GPUs, who do most of the heavy lifting. You need a CPU that&apos;ll accommodate the
+GPUs, and &lt;a href=&quot;https://www.quora.com/Which-hardware-components-CPU-RAM-GC-etc-are-needed-for-a-machine-learning-deep-learning-home-PC-computer-to-run-fast&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;it should have as many cores as the
+GPUs&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For the motherboard, go with one that supports PCIe 3.0. If you&apos;re planning to
+go up to 4 GPUs make sure your motherboard supports that (you&apos;ll also probably
+want a stronger PSU and some serious cooling — I elected to use only 2 GPUs).&lt;/p&gt;
+&lt;p&gt;Here&apos;s a photo of the motherboard:&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/motherboard-3efc575c4d190bff83986460e4fda2a2-74a50.jpeg&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAMBAgQF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhADEAAAAefGhI1GBf/EABoQAAICAwAAAAAAAAAAAAAAAAECABITISL/2gAIAQEAAQUCYchdkFY1CS1Zkn//xAAVEQEBAAAAAAAAAAAAAAAAAAAAIf/aAAgBAwEBPwFH/8QAFREBAQAAAAAAAAAAAAAAAAAAACH/2gAIAQIBAT8BV//EABsQAAEEAwAAAAAAAAAAAAAAAAABAhEhMTJB/9oACAEBAAY/Am2ZUgqVNTp//8QAGxAAAwEAAwEAAAAAAAAAAAAAAAERIWGBkbH/2gAIAQEAAT8hQ6aauI5rcg/pfBk5gknMENfVLy12f//aAAwDAQACAAMAAAAQMP8A/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERIf/aAAgBAwEBPxC3WQf/xAAXEQADAQAAAAAAAAAAAAAAAAAAAREh/9oACAECAQE/EJMEx//EABwQAQEAAgIDAAAAAAAAAAAAAAERADEhUXHB0f/aAAgBAQABPxCsSCNN7VzegQUjb9mV7KUtcZwUnoFANuTaV0tY9eecZCkJSfWf/9k=&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;motherboard&quot; title=&quot;&quot; src=&quot;/static/motherboard-3efc575c4d190bff83986460e4fda2a2-08fa6.jpeg&quot; srcset=&quot;/static/motherboard-3efc575c4d190bff83986460e4fda2a2-f2c3a.jpeg 160w,
+/static/motherboard-3efc575c4d190bff83986460e4fda2a2-3ed17.jpeg 320w,
+/static/motherboard-3efc575c4d190bff83986460e4fda2a2-08fa6.jpeg 640w,
+/static/motherboard-3efc575c4d190bff83986460e4fda2a2-74a50.jpeg 800w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;span class=&quot;figcaption_hack&quot;&gt;Ain&amp;apos;t it a beaut?&lt;/span&gt;
+&lt;p&gt;The first step is to install the CPU. &lt;a href=&quot;https://www.youtube.com/watch?v=1w6UZNeGgXU&amp;#x26;index=3&amp;#x26;list=PLxvB6AORmso4SILfs3sj8vYCohM-RnwcD&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;I followed this video on installing a
+CPU.&lt;/a&gt;
+I was surprised by how easy it is; the thing just clicks into place!&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/cpu-e69dee241a4ed8b32d152114ef64743b-74a50.jpeg&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMEAf/EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/aAAwDAQACEAMQAAABiRdNlWYT/8QAGBAAAwEBAAAAAAAAAAAAAAAAAQIRACL/2gAIAQEAAQUCZIkxMJ6WAarv/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGxAAAQQDAAAAAAAAAAAAAAAAAQACETEQIWH/2gAIAQEABj8CZA2RlnArVSv/xAAbEAADAQADAQAAAAAAAAAAAAAAAREhQVGRof/aAAgBAQABPyFDFfUa4guBp2YDajdruDQ/of/aAAwDAQACAAMAAAAQBM//xAAWEQEBAQAAAAAAAAAAAAAAAAAAAYH/2gAIAQMBAT8QrX//xAAVEQEBAAAAAAAAAAAAAAAAAAAAgf/aAAgBAgEBPxBH/8QAHhABAAICAQUAAAAAAAAAAAAAAQARITFxQVFhgfD/2gAIAQEAAT8QBTZYFVxGsXgpzFDqgK3qpvm1hs8/doFaNjM9RmV0yx0J/9k=&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;cpu&quot; title=&quot;&quot; src=&quot;/static/cpu-e69dee241a4ed8b32d152114ef64743b-08fa6.jpeg&quot; srcset=&quot;/static/cpu-e69dee241a4ed8b32d152114ef64743b-f2c3a.jpeg 160w,
+/static/cpu-e69dee241a4ed8b32d152114ef64743b-3ed17.jpeg 320w,
+/static/cpu-e69dee241a4ed8b32d152114ef64743b-08fa6.jpeg 640w,
+/static/cpu-e69dee241a4ed8b32d152114ef64743b-74a50.jpeg 800w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;span class=&quot;figcaption_hack&quot;&gt;This time, with more CPU!&lt;/span&gt;
+&lt;p&gt;&lt;em&gt;Side note:&lt;/em&gt; The eagle-eyed reader may observe me assembling this on a carpet.
+Don&apos;t be me. Carpets cause static electricity and &lt;strong&gt;static electricity is bad
+for electronics&lt;/strong&gt;. Soon after this photo was taken I quickly realized the error
+of my ways and migrated to a non-carpeted floor and became obsessive about
+touching metal objects for the remainder of the build out.&lt;/p&gt;
+&lt;h2 id=&quot;thermal-paste&quot;&gt;&lt;a href=&quot;#thermal-paste&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Thermal Paste&lt;/h2&gt;
+&lt;p&gt;Not having done this in over 20 years, this was a completely new thing to me.&lt;/p&gt;
+&lt;p&gt;CPUs require a paste be applied in order to dispel heat. Here&apos;s a video on
+applying &lt;a href=&quot;https://www.youtube.com/watch?v=-hNgFNH7zhQ&amp;#x26;list=PLxvB6AORmso4SILfs3sj8vYCohM-RnwcD&amp;#x26;index=5&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;thermal
+paste&lt;/a&gt;.
+The narrator&apos;s pasting technique is 🔥.&lt;/p&gt;
+&lt;h2 id=&quot;cpu-cooler&quot;&gt;&lt;a href=&quot;#cpu-cooler&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CPU Cooler&lt;/h2&gt;
+&lt;p&gt;The CPU Cooler sits on top of the CPU and sucks the heat out to be dispelled via
+a fan. It looks super cool, and it was fun to install too! &lt;a href=&quot;https://www.youtube.com/watch?v=XLlrqzwxJig&amp;#x26;index=4&amp;#x26;list=PLxvB6AORmso4SILfs3sj8vYCohM-RnwcD&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Here&apos;s the video I
+followed to install
+it&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And here it is, looking so snazzy:&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/cooler-5d0a7e8c4282e0706c12c6041d276a08-9f082.jpeg&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFAv/EABYBAQEBAAAAAAAAAAAAAAAAAAMAAf/aAAwDAQACEAMQAAAB0LrgtgnFv//EABsQAAICAwEAAAAAAAAAAAAAAAECERIAAwQy/9oACAEBAAEFArqEXoBFpzb5CQEeo//EABcRAAMBAAAAAAAAAAAAAAAAAAABEQL/2gAIAQMBAT8B03Sn/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAECEv/aAAgBAgEBPwGZTRk//8QAGxAAAwACAwAAAAAAAAAAAAAAAAERAiEQEjH/2gAIAQEABj8CqeuKdcdHpGqf/8QAGhAAAwEBAQEAAAAAAAAAAAAAAAEhEUFRcf/aAAgBAQABPyHhj1LRk1z5SaTGmTMhA1vZCyK9P//aAAwDAQACAAMAAAAQdx//xAAXEQEBAQEAAAAAAAAAAAAAAAABABEh/9oACAEDAQE/EBYIedL/xAAXEQEBAQEAAAAAAAAAAAAAAAABABEh/9oACAECAQE/ENAyd43/xAAfEAEBAAIABwEAAAAAAAAAAAABEQAhMUFRYXGBkbH/2gAIAQEAAT8QDTaTgHqmL6JdOseK/uBUgUXCGCOWV6AUQdk3v5mxLSLEvvrfuf/Z&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;cooler&quot; title=&quot;&quot; src=&quot;/static/cooler-5d0a7e8c4282e0706c12c6041d276a08-08fa6.jpeg&quot; srcset=&quot;/static/cooler-5d0a7e8c4282e0706c12c6041d276a08-f2c3a.jpeg 160w,
+/static/cooler-5d0a7e8c4282e0706c12c6041d276a08-3ed17.jpeg 320w,
+/static/cooler-5d0a7e8c4282e0706c12c6041d276a08-08fa6.jpeg 640w,
+/static/cooler-5d0a7e8c4282e0706c12c6041d276a08-c5f03.jpeg 960w,
+/static/cooler-5d0a7e8c4282e0706c12c6041d276a08-9f082.jpeg 1000w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;span class=&quot;figcaption_hack&quot;&gt;So cool, Cooler Master Hyper&lt;/span&gt;
+&lt;h2 id=&quot;ram&quot;&gt;&lt;a href=&quot;#ram&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;RAM&lt;/h2&gt;
+&lt;p&gt;Ram is a cinch to install. Here&apos;s a &lt;a href=&quot;https://www.youtube.com/watch?v=O5WMyYrEq1Y&amp;#x26;list=PLxvB6AORmso4SILfs3sj8vYCohM-RnwcD&amp;#x26;index=7&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;video that&apos;ll show you
+how&lt;/a&gt;.&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/ram-5bfcc759675226bd077fa682032a3392-34d12.jpeg&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 133.41677096370464%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAMBAgQF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhADEAAAAcKGoKwE6o3uLhkif//EAB0QAAEEAgMAAAAAAAAAAAAAAAEAAhIyITEDERP/2gAIAQEAAQUCDQRLIiuRdJutnyzVMsWiL7f/xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAeEAACAgEFAQAAAAAAAAAAAAAAARARIRIxMkJhkf/aAAgBAQAGPwJ26Zkyexxs0tG3wqFjtUf/xAAeEAACAgICAwAAAAAAAAAAAAAAAREhMXEQgUFRYf/aAAgBAQABPyGIVNqWOQUZTsVUk9hukezZA3DNuqo80Gvozdl1wQeGPQyn/9oADAMBAAIAAwAAABA/wkP/xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAwEBPxAh/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEREP/aAAgBAgEBPxBMpc//xAAfEAEAAgMAAgMBAAAAAAAAAAABABEhMUFhkXGxwfD/2gAIAQEAAT8Q1bKbB57lHsVyXquTx/JTrBsNj4vsOOM9BiCgIa/ioQCUCEZeX53H1LsfuVkMl05TNiHeEW1jaLcNXuGhn//Z&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;ram&quot; title=&quot;&quot; src=&quot;/static/ram-5bfcc759675226bd077fa682032a3392-08fa6.jpeg&quot; srcset=&quot;/static/ram-5bfcc759675226bd077fa682032a3392-f2c3a.jpeg 160w,
+/static/ram-5bfcc759675226bd077fa682032a3392-3ed17.jpeg 320w,
+/static/ram-5bfcc759675226bd077fa682032a3392-08fa6.jpeg 640w,
+/static/ram-5bfcc759675226bd077fa682032a3392-34d12.jpeg 799w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;h2 id=&quot;hard-drive&quot;&gt;&lt;a href=&quot;#hard-drive&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Hard Drive&lt;/h2&gt;
+&lt;p&gt;I bought an M.2 hard drive, which my limited experience indicates is the easiest
+hard drive to install (&lt;em&gt;note: I did not attempt to install other types of hard
+drives&lt;/em&gt;). &lt;a href=&quot;https://www.youtube.com/watch?v=XmvNQvFxKcs&amp;#x26;index=10&amp;#x26;list=PLxvB6AORmso4SILfs3sj8vYCohM-RnwcD&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Here&apos;s a video demonstrating how to install
+it&lt;/a&gt;.
+It basically snaps right onto the motherboard and you&apos;re done.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Side note:&lt;/em&gt; I actually installed the GPUs before installing the hard drive, and
+had to remove those GPUs to get it in as the M.2 sits underneath them (at least,
+on this particular motherboard). So if you have an M.2, do this step before the
+GPUs.&lt;/p&gt;
+&lt;h2 id=&quot;gpus-1&quot;&gt;&lt;a href=&quot;#gpus-1&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;GPUs&lt;/h2&gt;
+&lt;p&gt;Finally, here come the racehorses!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Yinrkn4TvnU&amp;#x26;list=PLxvB6AORmso4SILfs3sj8vYCohM-RnwcD&amp;#x26;index=8&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Here&apos;s a video on installing
+GPUs&lt;/a&gt;.
+It&apos;s pretty straightforward: you line the chips up with the PCI-e connectors,
+pop one of the tabs, and push (softly — you don&apos;t want to force it) until the
+tab clicks back into place.&lt;/p&gt;
+&lt;p&gt;Here&apos;s a before shot of the empty PCI slots:&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/empty-pci-d91b28c709154c3ead991f8111186a4f-34d12.jpeg&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 133.41677096370464%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEBQH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABw+lcWGaKuxDBICf/xAAcEAACAQUBAAAAAAAAAAAAAAABAgMAERIhMRD/2gAIAQEAAQUC8ilSKMVGHykuXXq2xK7Is69Y7//EABYRAAMAAAAAAAAAAAAAAAAAAAAQEf/aAAgBAwEBPwEr/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAGxAAAgIDAQAAAAAAAAAAAAAAARACIQAiMVH/2gAIAQEABj8CQjOFha9GX1H1U//EABoQAQADAQEBAAAAAAAAAAAAAAEAESExQYH/2gAIAQEAAT8hgLLg13QlB35OI9qjVkGMFkg9VuR/EI6VE02IPZ//2gAMAwEAAgADAAAAEAjDD//EABYRAQEBAAAAAAAAAAAAAAAAABEAEP/aAAgBAwEBPxCUGf/EABkRAQACAwAAAAAAAAAAAAAAAAEAECFRYf/aAAgBAgEBPxB5A3HNf//EACIQAQEAAQMCBwAAAAAAAAAAAAERACExQVGREGGBobHR8f/aAAgBAQABPxAdcTAFuwFykdUgZXrjYhs7qb+lwVkrejj92xZaSCm9fvw8vFEDdpC/MO+FZDPPAiCcY4K1w6Oh9s//2Q==&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;empty pci&quot; title=&quot;&quot; src=&quot;/static/empty-pci-d91b28c709154c3ead991f8111186a4f-08fa6.jpeg&quot; srcset=&quot;/static/empty-pci-d91b28c709154c3ead991f8111186a4f-f2c3a.jpeg 160w,
+/static/empty-pci-d91b28c709154c3ead991f8111186a4f-3ed17.jpeg 320w,
+/static/empty-pci-d91b28c709154c3ead991f8111186a4f-08fa6.jpeg 640w,
+/static/empty-pci-d91b28c709154c3ead991f8111186a4f-34d12.jpeg 799w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;p&gt;And with the GPUs installed:&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/gpu-a59db2372e0aabdf3529a85f7dffb48d-34d12.jpeg&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 133.41677096370464%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIEAwX/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAAB58e2Y6FAk6WrFOQlz//EABwQAAICAgMAAAAAAAAAAAAAAAECAAMQEhEhQv/aAAgBAQABBQKsBmir0jGtprvLBw4iuoHu1QMf/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BiT//xAAVEQEBAAAAAAAAAAAAAAAAAAABEP/aAAgBAgEBPwGDP//EABwQAAICAgMAAAAAAAAAAAAAAAAhARARgTFBcf/aAAgBAQAGPwKVTQvK5hImu9GzOK//xAAcEAEAAwADAQEAAAAAAAAAAAABABEhMVFxEEH/2gAIAQEAAT8hJ64T9gNkeovaXyuBuMcLYAJ3oW7nOBwT7ojrvpLoUb+f/9oADAMBAAIAAwAAABAzyML/xAAYEQADAQEAAAAAAAAAAAAAAAAAATEQEf/aAAgBAwEBPxBzKM4f/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAExEBH/2gAIAQIBAT8QVyCZ0//EAB0QAQACAgMBAQAAAAAAAAAAAAEAESFRMUFh4XH/2gAIAQEAAT8QRyloB79jfCWtzwFLNnk4FFAX38hrpNbjWJM2mAPPWOl4ACh7ioqlelztQqZT8YReSHnWIQV2DGoT/9k=&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;gpu&quot; title=&quot;&quot; src=&quot;/static/gpu-a59db2372e0aabdf3529a85f7dffb48d-08fa6.jpeg&quot; srcset=&quot;/static/gpu-a59db2372e0aabdf3529a85f7dffb48d-f2c3a.jpeg 160w,
+/static/gpu-a59db2372e0aabdf3529a85f7dffb48d-3ed17.jpeg 320w,
+/static/gpu-a59db2372e0aabdf3529a85f7dffb48d-08fa6.jpeg 640w,
+/static/gpu-a59db2372e0aabdf3529a85f7dffb48d-34d12.jpeg 799w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;h2 id=&quot;putting-it-in-the-case&quot;&gt;&lt;a href=&quot;#putting-it-in-the-case&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Putting it in the case&lt;/h2&gt;
+&lt;p&gt;The last step is to get the motherboard into the case and seal it up.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=iTkGuioG5RU&amp;#x26;list=PLxvB6AORmso4SILfs3sj8vYCohM-RnwcD&amp;#x26;index=9&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Here&apos;s a video walking through how to install into a
+case.&lt;/a&gt;
+I suspect every case is different and you&apos;re better off searching for your
+particular build, but c&apos;est la vie. You&apos;ll have to connect the case&apos;s cables to
+the motherboard&apos;s, and for that you will need to refer to the respective manuals
+for instructions.&lt;/p&gt;
+&lt;hr&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/frankenstein-2ae844d6e1f9f9d34da71025629232c4-7346c.jpeg&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 428px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 53.271028037383175%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMFAv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAcrptIhaD//EABoQAAIDAQEAAAAAAAAAAAAAAAECABITAxH/2gAIAQEAAQUCXLmXpcp7M0aZISEVZ//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABwQAAEEAwEAAAAAAAAAAAAAAAIAAREhEBJhMf/aAAgBAQAGPwKSF546gAKu4sU76+qqX//EABsQAQADAQADAAAAAAAAAAAAAAEAESExQVFh/9oACAEBAAE/IcW/HQlNxfaHV3r2thsJ6xUBeGAUafGf/9oADAMBAAIAAwAAABATD//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EAB0QAQEAAwACAwAAAAAAAAAAAAERACExQWFRcaH/2gAIAQEAAT8QAFSuhJLPW/eC6h2Yath8fedLhRwfJTHaEQ71d4pISldiR/MdPRsTuf/Z&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;frankenstein&quot; title=&quot;&quot; src=&quot;/static/frankenstein-2ae844d6e1f9f9d34da71025629232c4-7346c.jpeg&quot; srcset=&quot;/static/frankenstein-2ae844d6e1f9f9d34da71025629232c4-5e5a8.jpeg 160w,
+/static/frankenstein-2ae844d6e1f9f9d34da71025629232c4-292d6.jpeg 320w,
+/static/frankenstein-2ae844d6e1f9f9d34da71025629232c4-7346c.jpeg 428w&quot; sizes=&quot;(max-width: 428px) 100vw, 428px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;p&gt;With everything assembled, all that was left was to hit the power button on the
+PSU. I felt a little like Dr. Frankenstein hovering over his monster. Would the
+beast wake up?&lt;/p&gt;
+&lt;p&gt;I flipped the PSU. The machine did not turn on. I spent five minutes freaking
+out thinking I had fried some circuitry or installed something wrong.&lt;/p&gt;
+&lt;p&gt;I then realized the case also has an on switch. So I turned that on.&lt;/p&gt;
+&lt;p&gt;And the beast awoke!&lt;/p&gt;
+
+  &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/final-2bf3b4286c52cd83ea5f9d9e4793333f-74a50.jpeg&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+  
+  &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; ; max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAEEAgP/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAH/2gAMAwEAAhADEAAAAU4aAupoy//EABoQAAMAAwEAAAAAAAAAAAAAAAACFAEEEhP/2gAIAQEAAQUCtcsYsY8GF1X5lXJ//8QAFhEBAQEAAAAAAAAAAAAAAAAAABEB/9oACAEDAQE/AYmv/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAESA//aAAgBAgEBPwFSVmf/xAAcEAACAQUBAAAAAAAAAAAAAAAAAQIQERIhMUH/2gAIAQEABj8Cu4xOHlMpGmz/xAAZEAADAQEBAAAAAAAAAAAAAAAAAREhYXH/2gAIAQEAAT8hkqHhJvBwDrMrGHhOMS1F/9oADAMBAAIAAwAAABBjP//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAEDAQE/EFT/AP/EABcRAQADAAAAAAAAAAAAAAAAAAABYaH/2gAIAQIBAT8QkUY//8QAHBAAAgEFAQAAAAAAAAAAAAAAAREAITFBUWHx/9oACAEBAAE/ELiQkJgaLvZaHqtp5seuAKBwrYD0zmBCE7U//9k=&amp;apos;); background-size: cover; display: block;&quot;&gt;
+      &lt;img class=&quot;gatsby-resp-image-image&quot; style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot; alt=&quot;final&quot; title=&quot;&quot; src=&quot;/static/final-2bf3b4286c52cd83ea5f9d9e4793333f-08fa6.jpeg&quot; srcset=&quot;/static/final-2bf3b4286c52cd83ea5f9d9e4793333f-f2c3a.jpeg 160w,
+/static/final-2bf3b4286c52cd83ea5f9d9e4793333f-3ed17.jpeg 320w,
+/static/final-2bf3b4286c52cd83ea5f9d9e4793333f-08fa6.jpeg 640w,
+/static/final-2bf3b4286c52cd83ea5f9d9e4793333f-74a50.jpeg 800w&quot; sizes=&quot;(max-width: 640px) 100vw, 640px&quot;&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+&lt;p&gt;At this point I had a functioning machine, and it was into the land of software
+(and a nice cold beer). I&apos;ll save that for next time.&lt;/p&gt;
+&lt;p&gt;If you want to hear about my travails configuring the BIOS, installing Linux,
+and actually tackling the crypto mining and deep learning setups, drop your
+email below and I&apos;ll let you know when I publish those.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Background Images in React Native]]></title><description><![CDATA[A  common
+question 
+amongst React Native developers is how to put a background image on a view. On the web, it’s a piece of cake: In React…]]></description><link>https://thekevinscott.com/background-images-in-react-native/</link><guid isPermaLink="false">https://thekevinscott.com/background-images-in-react-native/</guid><pubDate>Tue, 09 May 2017 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*lQUxDjLJOjiqJbd2Q_4xTA.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;A &lt;a href=&quot;http://stackoverflow.com/questions/29322973/whats-the-best-way-to-add-a-full-screen-background-image-in-react-native&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;common
+question&lt;/a&gt;
+amongst React Native developers is how to put a background image on a view.&lt;/p&gt;
+&lt;p&gt;On the web, it’s a piece of cake:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#x3C;div style={{ backgroundImage: &apos;url(/my-image.
+)&apos; }}&gt;...&amp;#x3C;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In React Native, there’s no &lt;code&gt;background-image&lt;/code&gt; tag; instead, the &lt;code&gt;&amp;#x3C;Image&gt;&lt;/code&gt;
+component does the heavy lifting.&lt;/p&gt;
+&lt;h3 id=&quot;layouts&quot;&gt;&lt;a href=&quot;#layouts&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Layouts&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://s15.postimg.org/tw2qkvmcb/400px.png&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;OUR SAMPLE IMAGE&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;There’s &lt;a href=&quot;https://facebook.github.io/react-native/docs/image.html#resizemode&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;5
+layouts&lt;/a&gt; to
+be aware of that an image can take.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;center&lt;/code&gt; - Centers the image, without resizing it.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;repeat&lt;/code&gt; - Repeats the image, without resizing it.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stretch&lt;/code&gt; - Stretches the image to fit its bounds, without preserving the
+image’s aspect ratio.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;contain&lt;/code&gt; - Resizes the image to fit its bounds, while also preserving its
+aspect ratio.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cover&lt;/code&gt; - Resizes the image so its shorter side fits its bounds, while also
+preserving its aspect ratio. In practice, this means that the longer side while
+overlap the borders of its bounds.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here’s examples of each in practice:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;center&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;contain&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;cover&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;repeat&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;stretch&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;referencing-images&quot;&gt;&lt;a href=&quot;#referencing-images&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Referencing images&lt;/h3&gt;
+&lt;p&gt;If you haven’t used &lt;code&gt;&amp;#x3C;Image /&gt;&lt;/code&gt; before, a quick note on assets. There’s two ways
+of serving images, over the network and locally. Using local images will be
+faster but result in a larger app binary, and can’t be updated on the fly.&lt;/p&gt;
+&lt;p&gt;If you’re using remote images, keep in mind two things:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Use &lt;code&gt;https&lt;/code&gt; links instead of &lt;code&gt;http&lt;/code&gt;. &lt;a href=&quot;https://developer.apple.com/news/?id=12212016b&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Apple will block
+non-&lt;/a&gt;&lt;code&gt;https&lt;/code&gt;&lt;a href=&quot;https://developer.apple.com/news/?id=12212016b&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;
+links&lt;/a&gt;, and in my experience
+this error will happen silently.&lt;/li&gt;
+&lt;li&gt;For larger images, explore the caching policies &lt;a href=&quot;https://facebook.github.io/react-native/docs/images.html#cache-control-ios-only&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;detailed
+here&lt;/a&gt;
+to reduce network requests for your users.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If instead you decide to serve images locally, keep in mind images are served
+relative from your app root folder. I usually put my local images into an assets
+folder with other media, so from &lt;code&gt;index.ios.js&lt;/code&gt; I can call them with:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;require(&apos;./assets/my-image.png&apos;)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Finally, if you add a new image to your app and come across an error like this:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;Error Message&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;It probably means you need to restart your packager, so it can pick up the
+imported image.&lt;/p&gt;
+&lt;h3 id=&quot;examples&quot;&gt;&lt;a href=&quot;#examples&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Examples&lt;/h3&gt;
+&lt;p&gt;Let’s show an example where we fetch an image from a public URL and position it
+absolutely:&lt;/p&gt;
+&lt;p&gt;Easy as that! The key is the use of &lt;code&gt;flex: 1&lt;/code&gt;, which will cause the &lt;code&gt;&amp;#x3C;Image /&gt;&lt;/code&gt;component to fill its container. You can read &lt;a href=&quot;https://facebook.github.io/react-native/docs/flexbox.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;more about Flexbox
+here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can play around with &lt;code&gt;resizeMode&lt;/code&gt; to see the different layout options.&lt;/p&gt;
+&lt;h3 id=&quot;with-text&quot;&gt;&lt;a href=&quot;#with-text&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;With Text&lt;/h3&gt;
+&lt;p&gt;Usually a background image sits behind something else. There’s two ways to
+achieve that: using the &lt;code&gt;&amp;#x3C;Image /&gt;&lt;/code&gt; as the view layer itself, or wrapping it in
+another &lt;code&gt;&amp;#x3C;View /&gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here’s an example using the &lt;code&gt;&amp;#x3C;Image /&gt;&lt;/code&gt; as the wrapper component:&lt;/p&gt;
+&lt;p&gt;And here’s an example wrapping the &lt;code&gt;&amp;#x3C;Image /&gt;&lt;/code&gt; in a container &lt;code&gt;&amp;#x3C;View /&gt;&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;I slightly prefer the latter approach, as I think it’s more flexible if you need
+to make further adjustments or include other elements, but either approach
+works.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/tag/react-native?source=post&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;React Native&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/tag/javascript?source=post&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/tag/image?source=post&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Image&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/tag/flexbox?source=post&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Flexbox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By clapping more or less, you can signal to us which stories really stand out.&lt;/p&gt;
+&lt;h3 id=&quot;kevin-scott&quot;&gt;&lt;a href=&quot;#kevin-scott&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;a href=&quot;https://medium.com/@thekevinscott&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Kevin Scott&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;React &amp;#x26; React Native // Chatbot Evangelist // Machine Learning //
+Cryptocurrencies // Desingineer 🤖&lt;/p&gt;
+&lt;h3 id=&quot;react-native-cafe&quot;&gt;&lt;a href=&quot;#react-native-cafe&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;a href=&quot;https://medium.com/reactnative?source=footer_card&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;React Native Cafe&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Articles about React Native&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Tabbing Through Input Fields]]></title><description><![CDATA[
+ Photo by  Galymzhan Abdugalimov On the web, it’s common to tab through forms, an intuitive and  UX-friendly
+pattern . You get this out of…]]></description><link>https://thekevinscott.com/tabbing-through-input-fields/</link><guid isPermaLink="false">https://thekevinscott.com/tabbing-through-input-fields/</guid><pubDate>Fri, 05 May 2017 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*RUuUJLHaYhyCDJKHvWjGfw.jpeg&quot;&gt;
+&lt;span class=&quot;figcaption_hack&quot;&gt;Photo by &lt;a href=&quot;https://unsplash.com/photos/ICW6QYOcdlg&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Galymzhan Abdugalimov&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*lQUxDjLJOjiqJbd2Q_4xTA.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;On the web, it’s common to tab through forms, an intuitive and &lt;a href=&quot;https://www.nngroup.com/articles/web-form-design/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;UX-friendly
+pattern&lt;/a&gt;. You get this out of
+the box with web forms, but when building apps with React Native, you need to
+implement this functionality yourself. Fortunately, it’s a cinch to set up.&lt;/p&gt;
+&lt;h3 id=&quot;native-form-ux-vs-web-form-ux&quot;&gt;&lt;a href=&quot;#native-form-ux-vs-web-form-ux&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Native Form UX vs. Web Form UX&lt;/h3&gt;
+&lt;p&gt;First, let’s understand what native UX we’re trying to emulate on React Native.&lt;/p&gt;
+&lt;p&gt;Here’s a video of navigation through the native iOS contacts app:&lt;/p&gt;
+&lt;p&gt;And here’s a video of navigation through a Web form:&lt;/p&gt;
+&lt;p&gt;In summary, the iOS web browser gives us next and previous buttons, but for a
+native iOS app, these aren’t present, and &lt;a href=&quot;https://github.com/facebook/react-native/issues/641#issuecomment-94522058&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;React Native doesn’t support them
+natively,
+either&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I believe the reason for this discrepancy is that, natively, the “return” key
+performs double duty, tabbing through the form and submitting once the form is
+complete. On the web, the “return” key will submit the form by default,
+necessitating the next/previous buttons.&lt;/p&gt;
+&lt;p&gt;We’ll focus on emulating the native functionality, relying on the “return” key
+to tab through the form and submit it when complete.&lt;/p&gt;
+&lt;h3 id=&quot;keyboards-and-textinput-on-react-native&quot;&gt;&lt;a href=&quot;#keyboards-and-textinput-on-react-native&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Keyboards and TextInput on React Native&lt;/h3&gt;
+&lt;p&gt;We’ll be using &lt;code&gt;TextInput&lt;/code&gt; and &lt;code&gt;View&lt;/code&gt; from the &lt;code&gt;react-native&lt;/code&gt; library, like so:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import {
+  TextInput,
+  View,
+} from &apos;react-native&apos;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Each &lt;code&gt;TextInput&lt;/code&gt; &lt;a href=&quot;https://facebook.github.io/react-native/docs/textinput.html#keyboardtype&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;defines its own keyboard that appears when
+focused&lt;/a&gt;.
+This allows a particular input field to specify &lt;code&gt;numeric&lt;/code&gt;, &lt;code&gt;numpad&lt;/code&gt;, or a number
+of different options.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;TextInput&lt;/code&gt;s are also responsible for determining which input to send focus to
+next, and &lt;a href=&quot;https://facebook.github.io/react-native/docs/textinput.html#onsubmitediting&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;they provide a handy prop for implementing
+this&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;capturing-the-field-reference&quot;&gt;&lt;a href=&quot;#capturing-the-field-reference&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Capturing the field reference&lt;/h3&gt;
+&lt;p&gt;The first thing we’ll need is to capture the &lt;code&gt;ref&lt;/code&gt; of a particular input field.&lt;/p&gt;
+&lt;p&gt;If you’re not familiar, &lt;a href=&quot;https://facebook.github.io/react/docs/refs-and-the-dom.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;a
+&lt;/a&gt;&lt;code&gt;ref&lt;/code&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/refs-and-the-dom.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt; is a
+reference to the React
+component&lt;/a&gt;. It’s
+best practice to specify a callback function and capture the referenced
+component from the arguments.&lt;/p&gt;
+&lt;p&gt;In our example, we’re storing each &lt;code&gt;TextInput&lt;/code&gt;‘s ref on an internal &lt;code&gt;inputs&lt;/code&gt;
+object we’ll define in the constructor. &lt;strong&gt;We specify a custom index we’ll use
+later to focus on the input.&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#x3C;TextInput
+
+  ref={ input =&gt; {
+
+    this.inputs[&apos;one&apos;] = input;
+
+  }}
+
+  ...
+
+/&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Since the ref is defined in the &lt;code&gt;render&lt;/code&gt; function, don’t store the reference
+with &lt;code&gt;setState&lt;/code&gt;; &lt;a href=&quot;https://github.com/facebook/react/issues/5591&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;doing so will cause an infinite
+loop&lt;/a&gt; andmany tears will be shed.&lt;/p&gt;
+&lt;h3 id=&quot;triggering-focus&quot;&gt;&lt;a href=&quot;#triggering-focus&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Triggering focus&lt;/h3&gt;
+&lt;p&gt;Next, we need to focus on the next element. We do that by hooking into the
+&lt;code&gt;onSubmitEditing&lt;/code&gt; prop and supplying it with a custom focus function on the
+component.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;onSubmitEditing={() =&gt; {
+
+  // specify the key of the ref, as done in the previous section.
+
+  this.focusNextField(&apos;next-field&apos;);
+
+}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, we set up the field. If we zoom out to the component level:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class App extends React.Component {
+
+  constructor(props) {
+
+    super(props);
+
+    this.focusNextField = this.focusNextField.bind(this);
+
+    // to store our input refs
+
+    this.inputs = {};
+
+  }
+
+  focusNextField(key) {
+
+    this.inputs[key].focus();
+
+  }
+
+  ...
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Two things to point out:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://egorsmirnov.me/2015/08/16/react-and-es6-part3.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;We need to bind the focus
+function&lt;/a&gt; to the
+class so we have an accurate reference to &lt;code&gt;this&lt;/code&gt;. This is generally done in the
+constructor.&lt;/li&gt;
+&lt;li&gt;The focus action accepts a key indicating which input to focus on. That key
+matches what we use in the &lt;code&gt;ref&lt;/code&gt; callback above.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;avoiding-the-disappearing-keyboard&quot;&gt;&lt;a href=&quot;#avoiding-the-disappearing-keyboard&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Avoiding the disappearing keyboard&lt;/h3&gt;
+&lt;p&gt;Sometimes as we’re tabbing between fields, the keyboard will disappear and
+reappear. We can avoid this by using a prop on &lt;code&gt;TextInput&lt;/code&gt; called
+&lt;code&gt;blurOnSubmit&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#x3C;TextInput
+
+  blurOnSubmit={ false }
+
+  ...
+
+/&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This property forces the keyboard to remain visible. Since we’re immediately
+tabbing to our next field, this behavior works nicely for us.&lt;/p&gt;
+&lt;h3 id=&quot;return-key&quot;&gt;&lt;a href=&quot;#return-key&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Return key&lt;/h3&gt;
+&lt;p&gt;Updating &lt;a href=&quot;https://facebook.github.io/react-native/docs/textinput.html#returnkeytype&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;the return
+key&lt;/a&gt;
+to match the correct action isn’t strictly necessary (and natively iOS doesn’t
+change its appearance) but I think updating to the relevant return key type is a
+nice touch:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#x3C;TextInput
+
+  returnKeyType={ &quot;next&quot; }
+
+  ...
+
+/&gt;
+
+&amp;#x3C;TextInput
+
+  returnKeyType={ &quot;done&quot; }
+
+  ...
+
+/&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This indicates how to show a &lt;code&gt;done&lt;/code&gt; return key on the final input, and a
+&lt;code&gt;next&lt;/code&gt;return key on the rest of em.&lt;/p&gt;
+&lt;h3 id=&quot;putting-it-all-together&quot;&gt;&lt;a href=&quot;#putting-it-all-together&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Putting it all together&lt;/h3&gt;
+&lt;p&gt;The final gist is here:&lt;/p&gt;
+&lt;p&gt;You can see it in action on iOS and Android:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;iOS&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;figcaption_hack&quot;&gt;Android&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/tag/javascript?source=post&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/tag/react?source=post&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;React&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/tag/react-native?source=post&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;React Native&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/tag/keyboard?source=post&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Keyboard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/tag/es6?source=post&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;ES6&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By clapping more or less, you can signal to us which stories really stand out.&lt;/p&gt;
+&lt;h3 id=&quot;kevin-scott&quot;&gt;&lt;a href=&quot;#kevin-scott&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;a href=&quot;https://medium.com/@thekevinscott&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Kevin Scott&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;React &amp;#x26; React Native // Chatbot Evangelist // Machine Learning //
+Cryptocurrencies // Desingineer 🤖&lt;/p&gt;
+&lt;h3 id=&quot;react-native-cafe&quot;&gt;&lt;a href=&quot;#react-native-cafe&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;a href=&quot;https://medium.com/reactnative?source=footer_card&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;React Native Cafe&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Articles about React Native&lt;/p&gt;</content:encoded></item></channel></rss>

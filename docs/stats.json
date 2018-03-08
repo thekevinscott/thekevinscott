@@ -1,0 +1,80 @@
+{
+  "assetsByChunkName": {
+    "component---src-pages-index-js": [
+      "component---src-pages-index-js-8e11fa8741469e5d380b.js",
+      "component---src-pages-index-js-8e11fa8741469e5d380b.js.map"
+    ],
+    "path---": [
+      "path----557518bd178906f8d58a.js",
+      "path----557518bd178906f8d58a.js.map"
+    ],
+    "path---arrays-in-react-16": [
+      "path---arrays-in-react-16-6a44a2f3c8f17a501a66.js",
+      "path---arrays-in-react-16-6a44a2f3c8f17a501a66.js.map"
+    ],
+    "path---deep-learning-cryptocurrency-pc-2-os": [
+      "path---deep-learning-cryptocurrency-pc-2-os-d48f3d2331ee602ac9de.js",
+      "path---deep-learning-cryptocurrency-pc-2-os-d48f3d2331ee602ac9de.js.map"
+    ],
+    "path---shoulders-of-giants": [
+      "path---shoulders-of-giants-d46b4940a3efc043eb41.js",
+      "path---shoulders-of-giants-d46b4940a3efc043eb41.js.map"
+    ],
+    "component---src-layouts-index-js": [
+      "component---src-layouts-index-js-c77426f2e0c4e84576bd.js",
+      "component---src-layouts-index-js-c77426f2e0c4e84576bd.js.map"
+    ],
+    "path---exploratory-data-analyses-patterns": [
+      "path---exploratory-data-analyses-patterns-4468726c410db1a76641.js",
+      "path---exploratory-data-analyses-patterns-4468726c410db1a76641.js.map"
+    ],
+    "path---index": [
+      "path---index-39a8bee9f6f463e30519.js",
+      "path---index-39a8bee9f6f463e30519.js.map"
+    ],
+    "path---background-images-in-react-native": [
+      "path---background-images-in-react-native-0752b1f7c4c0e91573c9.js",
+      "path---background-images-in-react-native-0752b1f7c4c0e91573c9.js.map"
+    ],
+    "component---src-pages-404-js": [
+      "component---src-pages-404-js-4503918ea3a16cfcdb75.js",
+      "component---src-pages-404-js-4503918ea3a16cfcdb75.js.map"
+    ],
+    "commons": [
+      "commons-f1ef510847f79fa0a799.js",
+      "commons-f1ef510847f79fa0a799.js.map"
+    ],
+    "path---404-html": [
+      "path---404-html-a0e39f21c11f6a62c5ab.js",
+      "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "app": [
+      "app-6f02117e3f11560601cb.js",
+      "app-6f02117e3f11560601cb.js.map"
+    ],
+    "path---deep-learning-cryptocurrency-pc-3-mining": [
+      "path---deep-learning-cryptocurrency-pc-3-mining-80e27316666b82122802.js",
+      "path---deep-learning-cryptocurrency-pc-3-mining-80e27316666b82122802.js.map"
+    ],
+    "path---deep-learning-cryptocurrency-pc-4-ai": [
+      "path---deep-learning-cryptocurrency-pc-4-ai-d2a4eb07d6e5cf9045ae.js",
+      "path---deep-learning-cryptocurrency-pc-4-ai-d2a4eb07d6e5cf9045ae.js.map"
+    ],
+    "path---tabbing-through-input-fields": [
+      "path---tabbing-through-input-fields-230cea6b91f636e53460.js",
+      "path---tabbing-through-input-fields-230cea6b91f636e53460.js.map"
+    ],
+    "path---deep-learning-cryptocurrency-pc-1-hardware": [
+      "path---deep-learning-cryptocurrency-pc-1-hardware-1c2cddee86a65d9b6a0b.js",
+      "path---deep-learning-cryptocurrency-pc-1-hardware-1c2cddee86a65d9b6a0b.js.map"
+    ],
+    "path---404": [
+      "path---404-a0e39f21c11f6a62c5ab.js",
+      "path---404-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "component---src-templates-blog-post-index-js": [
+      "component---src-templates-blog-post-index-js-103b8779a1f626d9412f.js",
+      "component---src-templates-blog-post-index-js-103b8779a1f626d9412f.js.map"
+    ]
+  }
+}
