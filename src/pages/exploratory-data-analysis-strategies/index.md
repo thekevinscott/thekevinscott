@@ -1,27 +1,25 @@
 ---
 path: "/exploratory-data-analyses-patterns"
 date: "2018-03-25T09:00:00.000Z"
-title: "Patterns I've Seen in Exploratory Data Analyses"
+title: "Strategies for Understanding Data in Machine Learning"
 image: "images/cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Samuel Zeller</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>"
 tags: ["kaggle", "eda", "deep learning", "exploratory data analysis", "machine learning", "data science", "statistics"]
 ---
 
-Your boss comes to you with a terabyte of pictures of dog butts and says "I want you to build me a machine learning model that will recognize only the finest dog butts in this set." Where do you begin?
+Before I started teaching myself machine learning a few months ago, I hadn't thought much about how to understand big data. I would have assumed data came in an organized package with a nice bow on top, or for particularly messy datasets, that there would be a clear set of steps to follow. After all, machine learning practioners need to do this every time they see new data, right?
 
-If you're like a lot of people on [Kaggle](https://kaggle.com), the first thing you do is understand what data you're working with. That is what we are going to dive deeply into through this post.
+Turns out that a key step to building an accurate and performant model starts with a thorough understanding of the data you're working with. Looking through others' code, I've been struck by the amount of variation in how people seek to understand, visualize, and analyze the same datasets. When faced with any new discipline, I do what any good coder does: copy! I decided to read through a bunch of data analyses in an attempt to find the similarities and differences, and see if I can **distill a set of best practices around strategies for understanding datasets**.
 
 <figcaption style="grid-row: 2 / 8;" ><div class="caption"><a href="https://www.kaggle.com/tentotheminus9/r-eda/notebook">An example EDA in the wild</a></div><img alt="Example of an EDA" src="images/example_eda.png" /></figcaption>
 
-When exploring a new dataset, **are there patterns or best practices around how people understand the data?** If there are, understanding those best patterns will serve as a helpful guide.
-
-To find out, I chose a number of **Exploratory Data Analyses** (or EDAs) that were made publicly available on Kaggle. These analyses mix interactive code snippets alongside prose, and can help offer a birds-eye view of the data or tease out patterns in the data.
-
 > Data Scientists spend [the] vast majority of their time by [doing] data preparation, not model optimization. - [<span class="name">lorinc</span>](https://www.kaggle.com/lorinc/feature-extraction-from-images)
+
+In this article, I choose a number of [**Exploratory Data Analyses** (or EDAs)](https://www.kaggle.com/general/12796) that were made publicly available on [Kaggle](https://www.kaggle.com/), a website for data science. These analyses mix interactive code snippets alongside prose, and can help offer a birds-eye view of the data or tease out patterns in the data.
 
 I simultaneously looked at [feature engineering](https://www.quora.com/Does-deep-learning-reduce-the-importance-of-feature-engineering), taking existing data and transforming it in such a way as to impart additional meaning (for example, taking a timestamp and pulling out a `DAY_OF_WEEK` column, which might come in handy for predicting sales in a store).
 
-I wanted to look at a variety of EDAs, across a variety of domains. I chose the following three domains:
+I wanted to look at a variety of different kinds of datasets, so I chose:
 
 * [Structured Data](#structured-data)
 * [NLP (Natural Language)](#nlp)
