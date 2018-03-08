@@ -9,9 +9,14 @@ const Credit = styled.div `
   margin: 10px;
   position: absolute;
   color: black;
-  bottom: 30px;
   z-index: 1;
   right: 0;
+  @media (min-width: 1200px) {
+    bottom: 30px;
+  }
+  @media (max-width: 1200px) {
+    top: 0;
+  }
 `;
 
 export default ({ caption }) => (

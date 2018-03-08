@@ -15,7 +15,6 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-  font-family: ${SANS_SERIF};
   color: rgba(0, 0, 0, 0.8);
   font-weight: 400;
   padding: 0;
@@ -104,8 +103,13 @@ h6 {
 p, ul, li {
   margin: 5px 0 32px;
   font-family: ${SANS_SERIF};
+  // font-family: ${SERIF};
   font-size: 1.8rem;
   line-height: 3rem;
+}
+
+figcaption, aside {
+  font-family: ${SANS_SERIF};
 }
 
 li {

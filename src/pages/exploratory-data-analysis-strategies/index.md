@@ -1,23 +1,25 @@
 ---
-path: "/exploratory-data-analyses-patterns"
-date: "2018-03-25T09:00:00.000Z"
-title: "Strategies for Understanding Data in Machine Learning"
+path: "/common-patterns-for-analyzing-data/"
+date: "2018-03-12T07:00:00.000Z"
+title: "Common Patterns for Analyzing Data"
 image: "images/cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Samuel Zeller</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>"
 tags: ["kaggle", "eda", "deep learning", "exploratory data analysis", "machine learning", "data science", "statistics"]
 ---
 
-Before I started teaching myself machine learning a few months ago, I hadn't thought much about how to understand data. I'd assumed data came in a nice organized package with a bow on top, or at least a clear set of steps to follow to gain understanding. After all, machine learning practitioners need to do this every time they encounter new data, right?
+Data is often messy, and a key step to building an accurate model is a thorough understanding of the data you're working with.
 
-Turns out that data is often messy, and a key step to building an accurate model is a thorough understanding of the data you're working with. Looking through others' code, I've been struck by the amount of variation in how people understand, visualize, and analyze identical datasets. I decided to read a few different data analyses in an attempt to find similarities and differences, and see if I can **distill a set of best practices around strategies for understanding datasets**.
+Before I started teaching myself machine learning a few months ago, I hadn't thought much about how to understand data. I'd assumed data came in a nice organized package with a bow on top, or at least a clear set of steps to follow.
 
-<figcaption style="grid-row: 2 / 8;" ><div class="caption"><a href="https://www.kaggle.com/tentotheminus9/r-eda/notebook">An example EDA in the wild</a></div><img alt="Example of an EDA" src="images/example_eda.png" /></figcaption>
+Looking through others' code, I've been struck by the amount of variation in how people understand, visualize, and analyze identical datasets. I decided to read through several different data analyses in an attempt to find similarities and differences, and see if I can **distill a set of best practices or strategies for understanding datasets to best leverage them for analysis**.
+
+<figcaption style="grid-row-start: 2;" ><div class="caption"><a href="https://www.kaggle.com/tentotheminus9/r-eda/notebook">An example EDA in the wild</a></div><img alt="Example of an EDA" src="images/example_eda.png" /></figcaption>
 
 > Data Scientists spend [the] vast majority of their time by [doing] data preparation, not model optimization. - [<span class="name">lorinc</span>](https://www.kaggle.com/lorinc/feature-extraction-from-images)
 
-In this article, I choose a number of [**Exploratory Data Analyses** (or EDAs)](https://www.kaggle.com/general/12796) that were made publicly available on [Kaggle](https://www.kaggle.com/), a website for data science. These analyses mix interactive code snippets alongside prose, and can help offer a birds-eye view of the data or tease out patterns in the data.
+In this article, I chose a number of [**Exploratory Data Analyses** (or EDAs)](https://www.kaggle.com/general/12796) that were made publicly available on [Kaggle](https://www.kaggle.com/), a website for data science. These analyses mix interactive code snippets alongside prose, and can help offer a birds-eye view of the data or tease out patterns in the data.
 
-I simultaneously looked at [feature engineering](https://www.quora.com/Does-deep-learning-reduce-the-importance-of-feature-engineering), taking existing data and transforming it in such a way as to impart additional meaning (for example, taking a timestamp and pulling out a `DAY_OF_WEEK` column, which might come in handy for predicting sales in a store).
+I simultaneously looked at [feature engineering](https://www.quora.com/Does-deep-learning-reduce-the-importance-of-feature-engineering), a technique for taking existing data and transforming it in such a way as to impart additional meaning (for example, taking a timestamp and pulling out a `DAY_OF_WEEK` column, which might come in handy for predicting sales in a store).
 
 I wanted to look at a variety of different kinds of datasets, so I chose:
 
@@ -25,16 +27,16 @@ I wanted to look at a variety of different kinds of datasets, so I chose:
 * [NLP (Natural Language)](#nlp)
 * [Image](#images)
 
-Feel free to [jump ahead to the conclusions below](#conclusions), or continue on to dive into the datasets.
+Feel free to [jump ahead to the conclusions below](#conclusions), or read on to dive into the datasets.
 
-<aside style="grid-row: 7 / 11" class="center"><h3>Criteria</h3>For each category I chose two competitions where the submission date had passed, and sorted (roughly) by how many teams had submitted.<br /><br />For each competition I searched for EDA tags, and chose three kernels that were highly rated or well commented. Final scores did not factor in (some EDAs didn't even submit a score).</aside>
+<aside style="grid-row-start: 6;" class="center"><h3>Criteria</h3>For each category I chose two competitions where the submission date had passed, and sorted (roughly) by how many teams had submitted.<br /><br />For each competition I searched for EDA tags, and chose three kernels that were highly rated or well commented. Final scores did not factor in (some EDAs didn't even submit a score).</aside>
 
 <a name="structured-data"></a>
-<h1 class="center"><span>Structured Data</span></h1>
+# Structured Data
 
-A structured data problem is characterized by spreadsheets containing training and test data. The spreadsheets may contain categorical variables (colors, like `green`, `red`, and `blue`), continuous variables (ages, like `4`, `15`, and `67`) and ordinal variables (educational level, like `elementary`, `high school`, `college`).
+A structured data dataset is characterized by spreadsheets containing training and test data. The spreadsheets may contain categorical variables (colors, like `green`, `red`, and `blue`), continuous variables (ages, like `4`, `15`, and `67`) and ordinal variables (educational level, like `elementary`, `high school`, `college`).
 
-<aside style="grid-row: 12 / 18" class="center">
+<aside style="grid-row-start: 13;" class="center">
 <h3>Terms</h3>
 <p><strong>Imputation</strong> &mdash; Filling in missing values in the data</p>
 <p><strong>Binning</strong> &mdash; Combining continuous data into buckets, a form of feature engineering</p>
@@ -42,20 +44,20 @@ A structured data problem is characterized by spreadsheets containing training a
 
 The training spreadsheet has a target column that you're trying to solve for, which will be missing in the test data. As a result, the majority of the EDAs I examined focused on teasing out potential correlations between the target variable and the other columns.
 
-In this particular domain, because you're mostly looking for correlations between different variables, I think there's only so many ways you can slice and dice the data (without incorporating foreign data sources). For  visualizations, you have more options, but even so, [some techniques seem better suited for a task at hand than others](https://towardsdatascience.com/5-quick-and-easy-data-visualizations-in-python-with-code-a2284bae952f), resulting in a lot of similar-looking notebooks.
+In this particular domain, because you're mostly looking for correlations between different variables, I think there's only so many ways you can slice and dice the data (without incorporating foreign data sources). For  visualizations, you have more options, but even so, [some techniques seem better suited for a task at hand than others](https://towardsdatascience.com/5-quick-and-easy-data-visualizations-in-python-with-code-a2284bae952f), resulting in a lot of similar notebooks.
 
 Where you can really let your imagination run wild is feature engineering. Each of the authors I looked at had a different approach to their feature engineering, whether it was choosing how to bin a feature or combining categorical features into new ones.
 
 Let's take a deeper look at two competitions, the [Titanic competition](https://www.kaggle.com/c/titanic) followed by the [House Prices competition](https://www.kaggle.com/c/house-prices-advanced-regression-techniques).
 
-# [Titanic](https://www.kaggle.com/c/titanic)
+## [Titanic](https://www.kaggle.com/c/titanic)
 
-<figcaption class="left"><img alt="Titanic" src="images/titanic.jpg" /> <div class="caption">by <a href="https://www.flickr.com/photos/viaggioroutard/32746842734/in/photolist-RTJ8sN-7reGoc-7rdfgb-7reqrP-7rhfiJ-b4aUUF-bv64XJ-91NeZE-q2mfUz-eFvcpv-VMircS-pzVRNe-dF1MGZ-WCozhj-95TEWr-gkyMjV-75JPMM-7r8VAM-7r8K54-7ricVq-7rcJaC-7r8WZP-7rcUuc-7rgRJC-7rgFnC-oktnFk-7rdZK1-7rhNjL-adsXVC-7rcKPj-4YLEGK-7rhHQs-7r8TaB-7r8SoZ-e5wPAJ-8xv5oh-bvPFMY-7r8V3n-4YTM15-axQxWs-d1iAyQ-918Vc6-2gmvHf-8RCNJR-4YLEBM-b4aUXr-usDiD-c8Yp5o-22nLofY-okatX">Viaggio Routard</a></div></figcaption>
+<figcaption class="left" style="grid-row-start: 18;"><img alt="Titanic" src="images/titanic.jpg" /> <div class="caption">by <a href="https://www.flickr.com/photos/viaggioroutard/32746842734/in/photolist-RTJ8sN-7reGoc-7rdfgb-7reqrP-7rhfiJ-b4aUUF-bv64XJ-91NeZE-q2mfUz-eFvcpv-VMircS-pzVRNe-dF1MGZ-WCozhj-95TEWr-gkyMjV-75JPMM-7r8VAM-7r8K54-7ricVq-7rcJaC-7r8WZP-7rcUuc-7rgRJC-7rgFnC-oktnFk-7rdZK1-7rhNjL-adsXVC-7rcKPj-4YLEGK-7rhHQs-7r8TaB-7r8SoZ-e5wPAJ-8xv5oh-bvPFMY-7r8V3n-4YTM15-axQxWs-d1iAyQ-918Vc6-2gmvHf-8RCNJR-4YLEBM-b4aUXr-usDiD-c8Yp5o-22nLofY-okatX">Viaggio Routard</a></div></figcaption>
 
-The Titanic competition is a popular beginners' competition, and lots of folks on Kaggle cycle through it. As a result the EDAs tend to be well written and thoroughly documented, and were amongst the clearest EDAs I saw. The dataset includes a training spreadsheet with a column `Survived` indicating whether a passenger survived or not, along with other supplementary data like their age, gender, ticket fare price, and more.
+The Titanic competition is a popular beginners' competition, and lots of folks on Kaggle cycle through it. As a result the EDAs tend to be well written and thoroughly documented, and were amongst the clearest I saw. The dataset includes a training spreadsheet with a column `Survived` indicating whether a passenger survived or not, along with other supplementary data like their age, gender, ticket fare price, and more.
 
 
-<aside>
+<aside style="grid-row-start: 18;">
 The EDAs I chose for analysis were <a href="https://www.kaggle.com/ash316/eda-to-prediction-dietanic">EDA to Prediction Dietanic</a> by <span class="name">I, Coder</span>, <a href="https://www.kaggle.com/dejavu23/titanic-survival-for-beginners-eda-to-ml">Titanic Survival for Beginners EDA to ML</a> by <span class="name">deja vu</span>, and <a href="https://www.kaggle.com/jkokatjuhha/in-depth-visualisations-simple-methods">In Depth Visualisations Simple Methods</a> by <span class="name">Jekaterina Kokatjuhha</span>.
 </aside>
 
@@ -95,9 +97,9 @@ Both <span class="name">Jekaterina</span> and <span class="name">I, Coder</span>
 
 <span class="name">Deja Vu</span>'s EDA records an accuracy number at each step of his analysis, providing a nice bit of feedback as to how important each feature is to the final prediction.
 
-## Feature Engineering
+### Feature Engineering
 
-<figcaption class="left">
+<figcaption class="left" style="grid-row-start: 41;">
 <div class="left"><img alt="At the beginning of her EDA, Jekaterina engineers a feature to pull out cabin letter." src="images/jkok_cabin_feature.png" /><div class="caption"><span class="name">Jekaterina</span> pulls out cabin letter.</div>
 </figcaption>
 
@@ -130,7 +132,7 @@ She concludes her kernel by ensuring the new imputed data did not disrupt the me
 ![Jekaterina checking if the imputation disrupted the mean](images/jkok_disrupting_the_mean.png)
 <div class="caption"><span class="name">Jekaterina</span> checking if the imputation disrupted the mean</div>
 
-## Takeaways
+### Takeaways
 
 All three kernel authors spend time up front examining the data and describing the overall shape.
 
@@ -144,22 +146,22 @@ Approaches to imputation differ as well. <span class="name">I, Coder</span> reco
 
 There's some clear similarities in how the authors think about and approach the data, with the main divergences concerning visualizations and feature engineering.
 
-# [House Prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
+## [House Prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
 
-<figcaption class="left">
+<figcaption class="left" style="grid-row-start: 56;">
 <img alt="House Prices" src="images/house_price.jpg" />
 <div class="caption">by <a href="https://www.flickr.com/photos/120360673@N04/13855784355/in/photolist-n7ovXH-gjrMhS-eDwNQx-fFyccW-eDCzpL-fQDNaP-cA4RYd-cA4MtL-cA4HuL-fKnTsf-cA4LzU-ssvhf2-fKnAV9-daEeEz-gtpvp8-cA4R5o-cA4XQ7-cA4NSA-g2hXow-cA4SQw-eDBSFb-9eW1ng-g2j9Z5-cA4xwN-fFyJkx-9EzH9a-UD524Z-gttD2c-v9HAST-R7GoBF-v9KGVk-irUqRZ-koMrNT-fKv1e1-cA4UCE-ggDSAS-cA4C4A-gi21pE-cA4wdd-qmiDzR-rSUbew-gnDV6V-gjucTQ-fK7FS6-fK7bD6-duD885-fKbUqP-ggrui7-DUB1dh-dsvoVH">American Advisors Group</a></div>
 </figcaption>
 
 [House Prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) is another structured data competition. This one boasts many more variables than the Titanic competition, and includes categorical, ordinal and continuous features.
 
-<aside>The EDAs I chose for analysis were <a href="https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python">Comprehensive Data Exploration with Python</a> by Pedro Marcelino, <a href="https://www.kaggle.com/xchmiao/detailed-data-exploration-in-python">Detailed Data Exploration in Python</a> by Angela, and <a href="https://www.kaggle.com/caicell/fun-python-eda-step-by-step">Fun Python EDA Step by Step</a> by Sang-eon Park.</aside>
+<aside style="grid-row-start: 56;">The EDAs I chose for analysis were <a href="https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python">Comprehensive Data Exploration with Python</a> by Pedro Marcelino, <a href="https://www.kaggle.com/xchmiao/detailed-data-exploration-in-python">Detailed Data Exploration in Python</a> by Angela, and <a href="https://www.kaggle.com/caicell/fun-python-eda-step-by-step">Fun Python EDA Step by Step</a> by Sang-eon Park.</aside>
 
 While similar in kind to Titanic, it's considerably more complicated.
 
 > With 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa, this competition challenges you to predict the final price of each home.
 
-<figcaption>
+<figcaption style="grid-row-start: 59;" class="left">
 <img src="images/pmarcelino_saleprice.png" alt="Pedro plots the sale price" />
 <div class="caption"><span class="name">Pedro</span> plots the sale price</div>
 </figcaption>
@@ -196,7 +198,7 @@ To address these, <span class="name">Pedro</span> plots the totals and percents 
 
 He concludes that there's nothing to worry from a stastical standpoint, but after returning to visual inspections of the data, deletes a few single data points he finds questionable.
 
-## Feature Engineering
+### Feature Engineering
 
 <span class="name">Sang-eon</span> examines the skewness and kurtosis of the data, and performs a Wilxoc-rank Sum test. He concludes his kernel with a very nice looking plot:
 
@@ -205,7 +207,7 @@ He concludes that there's nothing to worry from a stastical standpoint, but afte
 
 Meanwhile, <span class="name">Pedro</span> discusses Normality, Homoscedasticity, Linearity, and Absence of correlated errors; he normalizes the data and discovers that the other three are resolved as well. Success!
 
-## Takeaways
+### Takeaways
 
 None of the three kernel authors does much feature engineering, possibly because there's so many features already present in the dataset.
 
@@ -214,26 +216,26 @@ There's a wide range of strategies for determining how to approach the data, wit
 There's more of a focus on statistical methods and integrity overall than in the Titanic competition, possibly because there's so many more features to handle; it's possible that negative statistical effects might have a larger overall effect than in the previous competition.
 
 <a name="nlp"></a>
-<h1 class="center"><span>Natural Language</span></h1>
+# Natural Language
 
-Natural Language, or NLP, competitions, have datasets that contain words or sentences. While the core data type is the same as in structured data competitions - text - the tools available for analyzing natural language tend to be specialized, resulting in different strategies for analysis.
+Natural Language, or NLP, datasets contain words or sentences. While the core data type is the same as in structured data competitions - text - the tools available for analyzing natural language are specialized, resulting in different strategies for analysis.
 
-In its text form, natural language is not easily decipherable by machine learning models. To get it into an appropriate format for a neural net requires intermediary steps. One popular technique is the [Bag of Words](https://en.wikipedia.org/wiki/Bag-of-words_model), whereby a sentence is effectively transformed into a collection of 0s or 1s indicating whether a particular word is present or not.
+In its original form, language is not easily decipherable by machine learning models. To get it into an appropriate format for a neural net requires transformation steps. One popular technique is the [Bag of Words](https://en.wikipedia.org/wiki/Bag-of-words_model), whereby a sentence is effectively transformed into a collection of 0s or 1s indicating whether a particular word is present or not.
 
-Because of this need for transformation, the first step of most notebooks tends to be transforming the text into something machine readable, and that step usually looks the same across notebooks. Once that's done, authors diverge considerably in their approaches and employ a variety of different visualizations and techniques for feature engineering.
+Because of this need to transform the data, the first steps of most notebooks tend to be transforming the text into something machine readable, and that step usually looks the same across notebooks. Once that's done, authors diverge considerably in their approaches and employ a variety of different visualizations and techniques for feature engineering.
 
-# [Toxic Comment Classification](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
+## [Toxic Comment Classification](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
 
 _Warning: some of these comments might burn your eyeballs._
 
-<figcaption class="left">
+<figcaption class="left" style="grid-row-start: 88;">
 <img alt="Toxic" src="images/toxic.png" />
 <div class="caption">by <a href="https://www.flickr.com/photos/navaneethkn/7975953800/in/photolist-d9NRbQ-dEZp2L-dQinfV-8ZqMDd-GyaoHJ-oGKC67-5Kj4pp-8YybhA-8Yva5t-7Xh81B-oEZ6w8-4G19MZ-cm3zDf-3c7z32-GXuYz-oyayD-96qUSC-6UYVbr-bjWoro-duyWt-7jD4Nc-6KNazu-op1rhC-DY1c6F-bYNV7U-byHgQ3-cmFxgG-cm3zEC-8m74XJ-oZEcpA-9Kd3gM-7t1H1q-m9ZbHK-9r7F3j-r3kU-8ZPcAU-8RLfw5-TsHmuW-98S9zG-8Mzx2B-c6ZoZ9-7Bpck-8bnj49-4AJUnS-vag3VE-7Bp97-jeiiRG-bHbYQa-dJQMhT-N7SSSy">navaneethkn</a></div>
 </figcaption>
 
-The first NLP competition I looked at was the [Toxic Comment Classifcation Competition](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge<Paste>), which included a dataset featuring a large number of comments from Wikipedia talk page edits that been scored on a toxicity scale.
+The first NLP competition I looked at was the [Toxic Comment Classifcation Competition](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge<Paste>), which included a dataset featuring a large number of comments from Wikipedia talk page edits that been scored on a toxicity scale, indicating whether they were an insult, obscene, toxic, and more. The challenge was to predict a given comment's toxicity labels.
 
-<aside class="center">
+<aside class="center" style="grid-row-start: 88;">
 The EDAs I chose for analysis were <a href="https://www.kaggle.com/jagangupta/stop-the-s-toxic-comments-eda">Stop the S@#$ - Toxic Comments EDA</a> by <span class="name">Jagan</span>, <a href="https://www.kaggle.com/rhodiumbeng/classifying-multi-label-comments-0-9741-lb">Classifying Multi-label Comments</a> by <span class="name">Rhodium Beng</span>, and <a href="https://www.kaggle.com/fcostartistican/don-t-mess-with-my-mothjer">Don't Mess With My Mothjer</a> by <span class="name">Francisco Mendez</span>.
 </aside>
 
@@ -265,7 +267,7 @@ All three authors utilize visualizations of the data to great effect. (Given the
 > A Severe toxic comment is always toxic<br />
 > Other classes seem to be a subset of toxic barring a few exceptions
 
-## Feature Engineering
+### Feature Engineering
 
 <span class="name">Rhodium</span> lowercases his text, manually turns contractions into things, and manually cleans punctuation.
 
@@ -278,20 +280,20 @@ For single words and pairs of words, <span class="name">Jagan</span> and <span c
 
 > TF stands for term frequency; essentially how often a word appears in the text ... You can understand it as a normalisation of the relativ text frequency by the overall document frequency. This will lead to words standing out that are characteristic for a specific author, which is pretty much what we want to achieve in order build a prediction model. &mdash; <a href="https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features">Heads or Tails</a>
 
-## Takeaways
+### Takeaways
 
 There seem to be a few best practices all the authors follow, including things like lower casing text, handling contractions, and cleaning up punctuation were all areas the authors looked at. However, some authors also considered that these could be potential features and not just noise (for instance, Francesco discovering a correlation between typos and toxicity).
 
-# [Spooky Author Identification](https://www.kaggle.com/c/spooky-author-identification)
+## [Spooky Author Identification](https://www.kaggle.com/c/spooky-author-identification)
 
-<figcaption class="left">
+<figcaption class="left" style="grid-row-start: 114;">
 <img alt="A very scary image" src="images/halloween.png" />
 <div class="caption">by <a href="https://www.flickr.com/photos/gaelvaroquaux/29632530995/in/photolist-M9wt5P-97P7tg-4vzLRF-61r11U-Zt2GHV-cY8aNJ-cY7ZgL-UXxYV9-b4qibP-4tm3wK-7haukg-2JiX6D-cVsp9-cY7XLU-4eeRFT-8PsYcb-cY7X8j-5jUhKv-jVRzRb-97Sb5A-7aBbJH-dZNRw2-smkRf-gxqQt3-aqqb74-gxs9eF-62dAE-FnZJs-62dXh-ZWp8CL-DpiJqc-WuwzSK-FnXvG-Ef1yLk-7omXUv-r5iPPD-pDGN7f-61hnvE-FnZKU-FnXv1-n28gM8-quLHEs-iAsBz-WBEwee-5z3uaW-pEQPCo-efPVZU-YbEZgy-dVfyAo-nHKteU">Gael Varoquaux</a>
 </figcaption>
 
 The [Spooky Author Identification](https://www.kaggle.com/c/spooky-author-identification) provided snippets of text from three horror-themed authors - Edgar Allan Poe, HP Lovecraft, or Mary Wollstonecraft Shelley - and asked participants to build a model capable of predicting which writer authored a particular bit of text.
 
-<aside>The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spooky-nlp-and-topic-modelling-tutorial">Spooky NLP and Topic Modelling Tutorial</a> by <span class="name">Anisotropic</span>, <a href="https://www.kaggle.com/ambarish/tutorial-detailed-spooky-fun-eda-and-modelling">Tutorial Detailed Spooky Fun EDA and Modelling</a> by <span class="name">Bukun</span>, and <a href="https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features">Treemap House of Horror Spooky EDA LDA Features</a> by <span class="name">Heads or Tails</span>.</aside>
+<aside style="grid-row-start: 114;">The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spooky-nlp-and-topic-modelling-tutorial">Spooky NLP and Topic Modelling Tutorial</a> by <span class="name">Anisotropic</span>, <a href="https://www.kaggle.com/ambarish/tutorial-detailed-spooky-fun-eda-and-modelling">Tutorial Detailed Spooky Fun EDA and Modelling</a> by <span class="name">Bukun</span>, and <a href="https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features">Treemap House of Horror Spooky EDA LDA Features</a> by <span class="name">Heads or Tails</span>.</aside>
 
 What's interesting about this dataset is its simplicity; there's very little unstructured data accompanying the text, other than author. As a result, all the EDAs focused solely on different approaches to parsing and analyzing language.
 
@@ -339,7 +341,7 @@ Both <span class="name">Bukun</span> and <span class="name">Heads or Tails</span
 ![Bukun plots a word cloud for words matching Joy](images/bukun_wordcloud_joy.png)
 <div class="caption"><span class="name">Bukun</span> plots a word cloud for words matching Joy</div>
 
-## Feature engineering
+### Feature engineering
 
 <span class="name">Bukun</span> suggests a number of possible features to add, including number of commas, semicolons, colons, blanks, words with capitals or beginning with capitals, and graphs each one. There do appear to be some correlations for some authors against some of these features.
 
@@ -359,7 +361,7 @@ From this insight, <span class="name">Heads or Tails</span> relies on the `babyn
 ![Heads or Tails' alluvial plot showcasing feature interaction](images/headsortails_alluvian.png)
 <div class="caption"><span class="name">Heads or Tails</span>' alluvial plot showcasing feature interaction</div>
 
-## Takeaways
+### Takeaways
 
 This is a fascinating competition to study since the text snippets are longer and there's no structured data to rely on.
 
@@ -370,17 +372,19 @@ In both competitions, kernel authors used [TF-IDF](https://www.kaggle.com/headso
 When it came to features, authors engineered a variety of new features including average words per sentence, punctuation choices, and whether words were duplicated. 
 
 <a name="images"></a>
-<h1 class="center"><span>Images</span></h1>
+# Images
 
-So far, the competitions have been purely text-based (either language, strings or numbers). The last two competitions I examined ([lung cancer](https://www.kaggle.com/c/data-science-bowl-2017/) and [leaf classification](https://www.kaggle.com/c/leaf-classification/)) were both far more domain specific. As a result, the analyses tended to assume an advanced audience, and authors skipped over rudimentary analysis in favor of exploring different techniques for image analysis.
+So far, the datasets have all been purely text-based (either language, strings or numbers). The last two datasets I chose to look at were image-based.
+
+The two competitions I examined ([lung cancer](https://www.kaggle.com/c/data-science-bowl-2017/) and [leaf classification](https://www.kaggle.com/c/leaf-classification/)) were both far more domain-specific than the other ones I looked at. As a result, the analyses tended to assume an advanced audience, and authors skipped over rudimentary analysis in favor of exploring different techniques for image analysis.
 
 I saw a great variety in terms of the visualization techniques used, along with features that were engineered. In particular, some authors in the lung cancer competition drew upon existing medical knowledge in order to engineer extremely domain-specific features. I can't speak to how effective those features were, but I can say that the visualizations they produced were stunning.
 
-# [Leaf Classification](https://www.kaggle.com/c/leaf-classification/)
+## [Leaf Classification](https://www.kaggle.com/c/leaf-classification/)
 
 The Leaf Classification competition includes 1,584 masked images of leaves, organized by species. Participants were instructured to build a model capable of classifying new images into one of the categories.
 
-<aside class="center">
+<aside class="center" style="grid-row-start: 161;">
 The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/feature-extraction-from-images">Feature Extraction From Images</a> by <span class="name">lorinc</span>, <a href="https://www.kaggle.com/selfishgene/visualizing-pca-with-leaf-dataset">Visualizing PCA with Leaf Dataset</a> by <span class="name">selfishgene</span>, and <a href="https://www.kaggle.com/josealberto/fast-image-exploration">Fast Image Exploration</a> by <span class="name">Jose Alberto.</span>
 </aside>
 
@@ -412,7 +416,7 @@ Meanwhile, <span class="name">lorinc</span> jumps straight into analysis, locati
 ![selfishgene looks at model variations](images/selfish_model_variation.png)
 <div class="caption"><span class="name">selfishgene</span> looks at model variations</div>
 
-## Feature detection
+### Feature detection
 
 <span class="name">lorinc</span> suggests splitting each sample in half and treating them as two samples (though he doesn't pursue this approach). <span class="name">lorinc</span> finds local maxima and minima from the time series (e.g., the leaf graphed in polar coordinates) and notes:
 
@@ -428,16 +432,16 @@ From there, <span class="name">lorinc</span> talks about mathematical morphology
 ![lerinc measures the distance from the center of a leaf](images/lorinc_distance.png)
 <div class="caption">lerinc measures the distance from the center of a leaf</div>
 
-# [Lung Cancer](https://www.kaggle.com/c/data-science-bowl-2017/)
+## [Lung Cancer](https://www.kaggle.com/c/data-science-bowl-2017/)
 
-<figcaption class="left">
+<figcaption class="left" style="grid-row-start: 191;">
 <img alt="DICOM meta info" src="images/dicom_info.png" />
 <div class="caption">anokas examines the metadata for a single image. You can see that patient date has been rendered anonymous (1/1/1900)</div>
 </figcaption>
 
 The final image competition I looked at was the [2017 Data Science Bowl](https://www.kaggle.com/c/data-science-bowl-2017/), which asked participants to examine a list of images and predict whether the patients had cancer or not. While this competition did feature structured data (meta information embedded in the images themselves), some of this data was anonymized, meaning that features that could have otherwise had predictive value (like the age of the patient) were removed. This meant that all the kernels focusing exclusively on image analysis.
 
-<aside class="center">
+<aside class="center" style="grid-row-start: 187;">
 The EDAs I chose for analysis were <a href="https://www.kaggle.com/gzuidhof/full-preprocessing-tutorial">Full Preprocessing Tutorial</a> by <span class="name">Guido Zuidhof</span>, <a href="https://www.kaggle.com/anokas/exploratory-data-analysis-4">Exploratory Data Analysis</a> by <span class="name">Mikel Bober-Irizar</span>, and <a href="https://www.kaggle.com/apapiu/exploratory-analysis-visualization">Exploratory Analysis Visualization</a> by <span class="name">Alexandru Papiu</span>.
 </aside>
 
@@ -459,7 +463,7 @@ apapie begins by examining the shape of the images, while anokas starts by looki
 
 ![gzuidhof examines HU units distribution](images/gzuidhof_hu_units.png)
 
-## Images
+### Images
 
 Each author continues by examining the images themselves:
 
@@ -495,28 +499,28 @@ And another version, after removing the surrounding air to reduce memory:
 ![3D Segment minus air](images/gzuidhof_no_air_3d.png)
 <div class="caption">3D plot without air</div>
 
-## Takeaways
+### Takeaways
 
 This competition featured the most differences between kernels of any I saw. <span class="name">Guido</span>, given his familiarity with medical image formats, was able to leverage that background to draw significantly more nuanced conclusions. That said, the other two authors' lack of medical familiarity did not prevent them from drawing equally fascinating conclusions.
 
 <a name="conclusions"></a>
 
-<h1 class="center"><span>Conclusions</span></h1>
+# Conclusions
 
-It turns out some domains have very strong similarities in how people approach datasets, while in others there's no clear patterns.
+It turns out that there are some strong patterns that guide approachs to different types of data.
 
-For **Structured Data** competitions, data analyses tend to look for correlations between the target variable and other columns, and spend significant amounts of time visualizing correlations or ranking correlations. For smaller datasets there's only so many columns you can examine this way; for instance, analyses in the [Titanic competition](https://www.kaggle.com/c/titanic) were almost identical in both which columns they look at, and in what order they studied them. However, different coders used very different visualization methods, and it seems like there's more divergence when it comes to picking which features to engineer.
+For **Structured Data** competitions, data analyses tend to look for correlations between the target variable and other columns, and spend significant amounts of time visualizing correlations or ranking correlations. For smaller datasets there's only so many columns you can examine; analyses in the [Titanic competition](https://www.kaggle.com/c/titanic) tended to be identical both in which columns to examine and in what order. However, different coders used very different visualization methods, and it seems like there's more creativity in choosing which features to engineer.
 
 **Natural Language** datasets share similarities across EDAs in how the authors process and manipulate the text, but there's more variability in the features the authors choose to engineer, as well as differing conclusions drawn from those analyses.
 
-Finally, **Image** competitions showed the most diversity in terms of analysis and feature engineering.
+Finally, **Image** competitions showed the most diversity in terms of analysis and feature engineering. The image competitions I saw were mostly aimed at advanced audiences, and were in fairly domain-specific areas, which may have resulted in the more advanced diversity.
 
-The image competitions I saw were mostly aimed at advanced audiences, and were in fairly domain-specific areas, which may have resulted in the more advanced diversity; it makes sense that as datasets become more specialized or esoteric, the amount of introductory analysis and explanation decreases, while the amount of deep or specialized analysis increases, and indeed this is what I found.
+It makes sense that as datasets become more specialized or esoteric, the amount of introductory analysis and explanation decreases, while the amount of deep or specialized analysis increases, and indeed this is what I found. While there are clear trends across different types of data, domain knowledge plays an important role. In the lung cancer, and to a lesser extent, the leaf competition, bringing domain knowledge to bear brought out deeper analyses. Anecdotally, I've seen this in my own studies; Jeremy Howard, in his [fast.ai](https://fast.ai) course, discusses the Rossman dataset, and how the most successful models integrated third party datasets like temperature, store locations, and more, to make more accurate sales predictions.
 
-There was a lot of variability in the timing and amount of feature engineering across domains, as well. Some authors chose to dive right into feature engineering as they were beginning their analyses, while others kept it as a discrete step, for after the analyses were complete.
+There was no consistent process for when authors tackled feature engineering, with some choosing to dive right in as they were beginning their analyses, and others kept it as a discrete step until after their initial analyses were complete.
 
-The notebooks I saw were all written with either a beginner or advanced audience in mind. More popular competitions, or ones aimed at a more general audience, tended to have EDAs that were exhaustive in their analyses. In these EDAs, I also saw a trend of interweaving supplementary prose or the use of narrative devices alongside the analysis, as tools to help beginners better understand the techniques. By comparison, notebooks aimed at domain experts tended to do away with superfluous framings, and many also skipped over rudimentary data analyses, instead diving straight into domain-specific techniques.
+Finally, every notebook I saw was written with a clear audience in mind (beginner or advanced) and this had a clear effect on its contents. More popular competitions, or ones aimed at a more general audience, had EDAs that were exhaustive in their analyses. In these EDAs, I also saw a trend of interweaving supplementary prose or the use of narrative devices alongside the analysis, as tools to help beginners better understand the techniques. By comparison, notebooks aimed at domain experts tended to do away with superfluous framings, and many also skipped over rudimentary data analyses, instead diving straight into domain-specific techniques.
 
-Many EDAs were extremely useful and in-depth without actually implementing a model or making predictions.
+<hr />
 
-I will continue to journal my learnings in this space. If you're interested in staying in touch, sign up for my mailing list!
+*Special thanks to [Michelle Lew](http://michellelew.com/), [Ari Zilnik](http://ari.zilnik.com/), [Sean Matthews](), and [Bethany Basile](http://visiongrowth.org) for reviewing drafts of this article.*

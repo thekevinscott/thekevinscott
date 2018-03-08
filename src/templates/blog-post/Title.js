@@ -18,10 +18,11 @@ const Title = styled.div `
   grid-template-columns: 1fr [page-start] repeat(3, 60px) [text-start] repeat(10, 60px) [text-end] repeat(3, 60px) [page-end] 1fr;
   @media (max-width: 1200px) {
     grid-template-columns: [page-start] repeat(2, 60px) [text-start] repeat(9, 60px) [text-end] repeat(2, 60px) [page-end];
+    padding-top: 25%;
   }
   @media (max-width: 1100px) {
     grid-template-columns: [text-start] 1fr [text-end];
-    padding: 0 20px;
+    padding: 10% 20px 0 20px;
   }
 
   @media (max-width: 860px) {
@@ -59,7 +60,6 @@ export default ({
   time,
 }) => (
   <Title>
-    <Back />
     <h1>{title}</h1>
     {/*
     <ReadTime time={Math.floor(time * 0.6)} />
