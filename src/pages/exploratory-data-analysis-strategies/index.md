@@ -7,9 +7,9 @@ image_credit: "Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_sou
 tags: ["kaggle", "eda", "deep learning", "exploratory data analysis", "machine learning", "data science", "statistics"]
 ---
 
-Before I started teaching myself machine learning a few months ago, I hadn't thought much about how to understand big data. I would have assumed data came in an organized package with a nice bow on top, or for particularly messy datasets, that there would be a clear set of steps to follow. After all, machine learning practioners need to do this every time they see new data, right?
+Before I started teaching myself machine learning a few months ago, I hadn't thought much about how to understand data. I'd assumed data came in a nice organized package with a bow on top, or at least a clear set of steps to follow to gain understanding. After all, machine learning practitioners need to do this every time they encounter new data, right?
 
-Turns out that a key step to building an accurate and performant model starts with a thorough understanding of the data you're working with. Looking through others' code, I've been struck by the amount of variation in how people seek to understand, visualize, and analyze the same datasets. When faced with any new discipline, I do what any good coder does: copy! I decided to read through a bunch of data analyses in an attempt to find the similarities and differences, and see if I can **distill a set of best practices around strategies for understanding datasets**.
+Turns out that data is often messy, and a key step to building an accurate model is a thorough understanding of the data you're working with. Looking through others' code, I've been struck by the amount of variation in how people understand, visualize, and analyze identical datasets. I decided to read a few different data analyses in an attempt to find similarities and differences, and see if I can **distill a set of best practices around strategies for understanding datasets**.
 
 <figcaption style="grid-row: 2 / 8;" ><div class="caption"><a href="https://www.kaggle.com/tentotheminus9/r-eda/notebook">An example EDA in the wild</a></div><img alt="Example of an EDA" src="images/example_eda.png" /></figcaption>
 
@@ -391,7 +391,7 @@ A good first step is to look at the images of the leaves, which is how two of th
 
 <span class="name">Jose</span> plots the various species, and notes that there are 10 images per species. He also looks at the similarity of leaves, within a category, to each other:
 
-<img alt="josealberto creates a gif of all the leaves from a category" src="https://i.imgur.com/D6o476h.gifv" />
+<img alt="josealberto creates a gif of all the leaves from a category" src="images/jose_leaf_morphing.gif" />
 <div class="caption"><span class="name">Jose</span> compares leaves within a category</div>
 
 Meanwhile, <span class="name">lorinc</span> jumps straight into analysis, locating the center of each leaf and applying edge detection. <span class="name">lorinc</span> also converts the outline of the leaf into polar coordinates, in order to more effectively measure the center of the leaf:
@@ -469,7 +469,7 @@ Each author continues by examining the images themselves:
 ![anapie performs a sweep across the X angle](images/anapie_x_sweep.png)
 <div class="caption"><span class="name">Alexandru</span> looks at images from the X angle</div>
 
-<img alt="anokas sweeps across a set of patient images" src="https://i.imgur.com/D6o476h.gif" />
+<img alt="anokas sweeps across a set of patient images" src="images/anokas_sweep.gif" />
 <div class="caption">anokas builds a gif that moves through a set of patient images</div>
 
 <span class="name">Alexandru</span> spent some time exploring whether edge detection could enhance the images.
@@ -503,9 +503,9 @@ This competition featured the most differences between kernels of any I saw. <sp
 
 <h1 class="center"><span>Conclusions</span></h1>
 
-What did I find?
+It turns out some domains have very strong similarities in how people approach datasets, while in others there's no clear patterns.
 
-For **Structured Data** competitions, EDAs tended to tread similar ground. For instance, EDAs in the [Titanic competition](https://www.kaggle.com/c/titanic) were almost identical in their selections of columns, and in what order to study them. However, they showed more diversity in their choices of features to engineer along with the visualizations they used to examine the data.
+For **Structured Data** competitions, data analyses tend to look for correlations between the target variable and other columns, and spend significant amounts of time visualizing correlations or ranking correlations. For smaller datasets there's only so many columns you can examine this way; for instance, analyses in the [Titanic competition](https://www.kaggle.com/c/titanic) were almost identical in both which columns they look at, and in what order they studied them. However, different coders used very different visualization methods, and it seems like there's more divergence when it comes to picking which features to engineer.
 
 **Natural Language** datasets share similarities across EDAs in how the authors process and manipulate the text, but there's more variability in the features the authors choose to engineer, as well as differing conclusions drawn from those analyses.
 
