@@ -12,22 +12,15 @@ const LETTER_SPACING = 20;
 const Content = styled.article `
   max-width: 100%;
   box-sizing: border-box;
-
-  img {
-    max-width: 100%;
-  }
+  position: relative;
 
   display: grid;
   justify-items: stretch;
-  // grid-auto-rows: minmax(100px, auto);
   grid-column-gap: 20px;
-
-  grid-template-columns: [page-start] repeat(3, 60px) [text-start] repeat(9, 60px) [text-end] repeat(3, 60px) [page-end];
-
+  grid-template-columns: [page-start] repeat(3, 60px) [text-start] repeat(10, 60px) [text-end] repeat(3, 60px) [page-end];
   @media (max-width: 1200px) {
     grid-template-columns: [page-start] repeat(2, 60px) [text-start] repeat(9, 60px) [text-end] repeat(2, 60px) [page-end];
   }
-
   @media (max-width: 1100px) {
     grid-template-columns: [text-start] 1fr [text-end];
     padding: 0 20px;
@@ -37,9 +30,11 @@ const Content = styled.article `
     grid-column: text;
   }
 
-  figcaption, aside {
-    grid-column-end: span 3;
+  img {
+    max-width: 100%;
+  }
 
+  figcaption, aside {
     color: rgba(0, 0, 0, 0.4);
 
     .caption {
@@ -55,6 +50,7 @@ const Content = styled.article `
     grid-column-end: page-end;
 
     @media (max-width: 1100px) {
+      position: relative;
       grid-column: text;
       margin: 20px 0 40px 0;
 
@@ -76,6 +72,23 @@ const Content = styled.article `
     color: rgba(0, 0, 0, 0.6);
     font-size: 1.4rem;
     line-height: 1.7;
+    transition-duration: 0.2s;
+
+    * {
+      transition-duration: 0.2s;
+    }
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.8);
+
+      strong {
+        color: rgba(0, 0, 0, 0.7);
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: rgba(0, 0, 0, 0.7);
+      }
+    }
 
     p {
       font-size: inherit;

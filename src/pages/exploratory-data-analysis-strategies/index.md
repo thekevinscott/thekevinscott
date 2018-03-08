@@ -1,7 +1,7 @@
 ---
-path: "/exploratory-data-analysis-strategies/"
+path: "/patterns-in-exploratory-data-analyses"
 date: "2018-03-25T09:00:00.000Z"
-title: "Patterns in Exploratory Data Analyses"
+title: "Exploratory Data Analyses Patterns"
 image: "images/cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Samuel Zeller</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>"
 tags: ["kaggle", "eda", "deep learning", "exploratory data analysis", "machine learning", "data science", "statistics"]
@@ -11,12 +11,9 @@ Your boss comes to you with a terabyte of pictures of dog butts and says "I want
 
 If you're like a lot of people on [Kaggle](https://kaggle.com), the first thing you do is understand what data you're working with. That is what we are going to dive deeply into through this post.
 
-When exploring a new dataset, **are there patterns or best practices around how people understand the data?** If there are, understanding those best patterns will serve as a helpful guide.
+<figcaption style="grid-row: 2 / 8;" ><div class="caption"><a href="https://www.kaggle.com/tentotheminus9/r-eda/notebook">An example EDA in the wild</a></div><img alt="Example of an EDA" src="images/example_eda.png" /></figcaption>
 
-<figcaption>
-<div class="caption"><a href="https://www.kaggle.com/tentotheminus9/r-eda/notebook">Example of an EDA</a></div>
-<img alt="Example of an EDA" src="images/example_eda.png" />
-</figcaption>
+When exploring a new dataset, **are there patterns or best practices around how people understand the data?** If there are, understanding those best patterns will serve as a helpful guide.
 
 To find out, I chose a number of **Exploratory Data Analyses** (or EDAs) that were made publicly available on Kaggle. These analyses mix interactive code snippets alongside prose, and can help offer a birds-eye view of the data or tease out patterns in the data.
 
@@ -32,14 +29,14 @@ I wanted to look at a variety of EDAs, across a variety of domains. I chose the 
 
 Feel free to [jump ahead to the conclusions below](#conclusions), or continue on to dive into the datasets.
 
-<aside class="center"><h3>Criteria</h3>For each category I chose two competitions where the submission date had passed, and sorted (roughly) by how many teams had submitted.<br /><br />For each competition I searched for EDA tags, and chose three kernels that were highly rated or well commented. Final scores did not factor in (some EDAs didn't even submit a score).</aside>
+<aside style="grid-row: 7 / 11" class="center"><h3>Criteria</h3>For each category I chose two competitions where the submission date had passed, and sorted (roughly) by how many teams had submitted.<br /><br />For each competition I searched for EDA tags, and chose three kernels that were highly rated or well commented. Final scores did not factor in (some EDAs didn't even submit a score).</aside>
 
 <a name="structured-data"></a>
 <h1 class="center"><span>Structured Data</span></h1>
 
 A structured data problem is characterized by spreadsheets containing training and test data. The spreadsheets may contain categorical variables (colors, like `green`, `red`, and `blue`), continuous variables (ages, like `4`, `15`, and `67`) and ordinal variables (educational level, like `elementary`, `high school`, `college`).
 
-<aside>
+<aside style="grid-row: 12 / 18" class="center">
 <h3>Terms</h3>
 <p><strong>Imputation</strong> &mdash; Filling in missing values in the data</p>
 <p><strong>Binning</strong> &mdash; Combining continuous data into buckets, a form of feature engineering</p>
@@ -102,7 +99,9 @@ Both <span class="name">Jekaterina</span> and <span class="name">I, Coder</span>
 
 ## Feature Engineering
 
-<div class="left" style="width: 170px; margin-top: 10px;"><img alt="At the beginning of her EDA, Jekaterina engineers a feature to pull out cabin letter." src="images/jkok_cabin_feature.png" /><div class="caption"><span class="name">Jekaterina</span> pulls out cabin letter.</div>
+<figcaption class="left">
+<div class="left"><img alt="At the beginning of her EDA, Jekaterina engineers a feature to pull out cabin letter." src="images/jkok_cabin_feature.png" /><div class="caption"><span class="name">Jekaterina</span> pulls out cabin letter.</div>
+</figcaption>
 
 When it comes to feature engineering, there's more variability amongst the three kernel authors.
 
@@ -221,9 +220,9 @@ There's more of a focus on statistical methods and integrity overall than in the
 
 Natural Language, or NLP, competitions, have datasets that contain words or sentences. While the core data type is the same as in structured data competitions - text - the tools available for analyzing natural language tend to be specialized, resulting in different strategies for analysis.
 
-In its original form, natural language is not easily decipherable by machine learning models. To consume it requires an intermediary transformation step into 1s and 0s. One such popular technique is called [Bag of Words](https://en.wikipedia.org/wiki/Bag-of-words_model), whereby a sentence is effectively transformed into a collection of booleans indicating whether a particular word is present or not.
+In its text form, natural language is not easily decipherable by machine learning models. To get it into an appropriate format for a neural net requires intermediary steps. One popular technique is the [Bag of Words](https://en.wikipedia.org/wiki/Bag-of-words_model), whereby a sentence is effectively transformed into a collection of 0s or 1s indicating whether a particular word is present or not.
 
-Because of this, the first step of most notebooks tends to be transforming the text into something machine readable, and that step usually looks the same across notebooks. Once that's done, authors diverge considerably in their approaches and employ a variety of different visualizations and techniques for feature engineering.
+Because of this need for transformation, the first step of most notebooks tends to be transforming the text into something machine readable, and that step usually looks the same across notebooks. Once that's done, authors diverge considerably in their approaches and employ a variety of different visualizations and techniques for feature engineering.
 
 # [Toxic Comment Classification](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
 
@@ -255,11 +254,11 @@ All three authors begin by describing the dataset and pulling a few comments at 
 
 > Apparently there is, and surprisingly, mother when is misspelled is never related to hate or threat, but when it is properly spelled there are some hate and threat comments that have the word mother in it ... Is it that people tend to write more carefully when they are threating somebody or when they hate it?
 
-As <span class="name">Francisco</span> digs further, he finds that in many cases, toxic comments would contain copy-pasted phrases, over and over again. After rerunning his analysis after removing duplicate words, he discoveres a new set of correlations.
+As <span class="name">Francisco</span> digs further, he finds that in many cases, toxic comments would contain copy-pasted phrases, over and over again. After rerunning his analysis after removing duplicate words, he discovers a new set of correlations.
 
 > Here there are some new words the ones that can be highlited are gay used mainly on threat comments and hate. Some general mild words as mother, hell, piece, stupid, idiot and shut are used for any toxic general purpose, meantime any derivative of the f-word is used in toxic and obscene comments. Also from the biplot is possible to realize that toxic and insult are similar and the least aggressive ones, while hate and threat are the most serious ones.
 
-All three authors utilize visualizations of the data to great effect. (Given the subject matter I won't embed the images but you can find them on each author's kernel.)
+All three authors utilize visualizations of the data to great effect. (Given the subject matter I [won't embed](https://www.kaggleusercontent.com/kf/1999919/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..VNoIJq1HAQhUsgxohTIQbw.PJ_2btsXr_QE8M47LbU_hnDC0EjxjMc2MU78sA3FgRImN8RkF7EHKV3qblwpWNMFxd1euS-fJoKYaH08WmK_WrOThoricdI7DSnR_bPBpbcYd38Ee2nI79hiLFLmfOYqvouAokDBWFJttLZ1hNABug.HeaSlJMn0s2ZxykWFP8wPg/__results__.html#Counting-words-different) the images [but you can find them on each author's kernel](https://www.kaggleusercontent.com/kf/2666420/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..-nfZk6vneRueL7x2gvhaTQ.DCk0SonxzFc_r5z4QAPJrjRqu-d_6KgEKOvKmlf4z1zlqQBrZ2qsd1T-r3L_djSWn-W58trDbpNTHFuf8tKiL7Akq-vZwKMkLXv4_1dqiMCIUpa7lhdXW_Ss25eREE8U.HG-fudsk_AA4Iefzv5-n5A/__results__.html#Wordclouds---Frequent-words:).)
 
 <span class="name">Rhodium</span> builds a histogram of character length as well as a heatmap between categories, finding that some labels are highly correlated; for instance, an insult is 74% likely to also be obscene.
 
@@ -294,7 +293,7 @@ There seem to be a few best practices all the authors follow, including things l
 
 The [Spooky Author Identification](https://www.kaggle.com/c/spooky-author-identification) provided snippets of text from three horror-themed authors - Edgar Allan Poe, HP Lovecraft, or Mary Wollstonecraft Shelley - and asked participants to build a model capable of predicting which writer authored a particular bit of text.
 
-<aside>The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spooky-nlp-and-topic-modelling-tutorial">Spooky NLP and Topic Modelling Tutorial</a> by <span class="name">Anisotropic</span>, <a href="https://www.kaggle.com/ambarish/tutorial-detailed-spooky-fun-eda-and-modelling">Tutorial Detailed Spooky Fun EDA and Modelling</a> by <span class="name">Bukun</span><a href="https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features">Treemap House of Horror Spooky EDA LDA Features</a> by <span class="name">Heads or Tails</span>.</aside>
+<aside>The EDAs I chose for analysis were <a href="https://www.kaggle.com/arthurtok/spooky-nlp-and-topic-modelling-tutorial">Spooky NLP and Topic Modelling Tutorial</a> by <span class="name">Anisotropic</span>, <a href="https://www.kaggle.com/ambarish/tutorial-detailed-spooky-fun-eda-and-modelling">Tutorial Detailed Spooky Fun EDA and Modelling</a> by <span class="name">Bukun</span>, and <a href="https://www.kaggle.com/headsortails/treemap-house-of-horror-spooky-eda-lda-features">Treemap House of Horror Spooky EDA LDA Features</a> by <span class="name">Heads or Tails</span>.</aside>
 
 What's interesting about this dataset is its simplicity; there's very little unstructured data accompanying the text, other than author. As a result, all the EDAs focused solely on different approaches to parsing and analyzing language.
 
@@ -357,10 +356,10 @@ From this insight, <span class="name">Heads or Tails</span> relies on the `babyn
 ![heads or tails plots various measurements of alliteration by author](images/headsortails_alliteration.png)
 <div class="caption">heads or tails plots various measurements of alliteration by author</div>
 
-<span class="name">Heads or Tails</span> ends his kernel with an alluvian plot showcasing feature interaction:
+<span class="name">Heads or Tails</span> ends his kernel with an alluvial plot showcasing feature interaction:
 
-![Heads or Tails' alluvian plot showcasing feature interaction](images/headsortails_alluvian.png)
-<div class="caption"><span class="name">Heads or Tails</span>' alluvian plot showcasing feature interaction</div>
+![Heads or Tails' alluvial plot showcasing feature interaction](images/headsortails_alluvian.png)
+<div class="caption"><span class="name">Heads or Tails</span>' alluvial plot showcasing feature interaction</div>
 
 ## Takeaways
 
@@ -375,13 +374,13 @@ When it came to features, authors engineered a variety of new features including
 <a name="images"></a>
 <h1 class="center"><span>Images</span></h1>
 
-So far, the competitions have been purely text-based (either language, strings or numbers). The last two competitions I examined ([lung cancer](https://www.kaggle.com/c/data-science-bowl-2017/) and [leaf classification](https://www.kaggle.com/c/leaf-classification/)) were both more domain specific. As a result, the analyses tended to assume an advanced audience, and authors skipped over rudimentary analysis and in favor of exploring different techniques for image analysis.
+So far, the competitions have been purely text-based (either language, strings or numbers). The last two competitions I examined ([lung cancer](https://www.kaggle.com/c/data-science-bowl-2017/) and [leaf classification](https://www.kaggle.com/c/leaf-classification/)) were both far more domain specific. As a result, the analyses tended to assume an advanced audience, and authors skipped over rudimentary analysis in favor of exploring different techniques for image analysis.
 
 I saw a great variety in terms of the visualization techniques used, along with features that were engineered. In particular, some authors in the lung cancer competition drew upon existing medical knowledge in order to engineer extremely domain-specific features. I can't speak to how effective those features were, but I can say that the visualizations they produced were stunning.
 
 # [Leaf Classification](https://www.kaggle.com/c/leaf-classification/)
 
-The Leaf Classification competition included 1,584 masked images of leaves, organized by species. Participants were instructured to build a build a model capable of classifying new images into one of the categories.
+The Leaf Classification competition includes 1,584 masked images of leaves, organized by species. Participants were instructured to build a model capable of classifying new images into one of the categories.
 
 <aside class="center">
 The EDAs I chose for analysis were <a href="https://www.kaggle.com/lorinc/feature-extraction-from-images">Feature Extraction From Images</a> by <span class="name">lorinc</span>, <a href="https://www.kaggle.com/selfishgene/visualizing-pca-with-leaf-dataset">Visualizing PCA with Leaf Dataset</a> by <span class="name">selfishgene</span>, and <a href="https://www.kaggle.com/josealberto/fast-image-exploration">Fast Image Exploration</a> by <span class="name">Jose Alberto.</span>
@@ -472,7 +471,7 @@ Each author continues by examining the images themselves:
 ![anapie performs a sweep across the X angle](images/anapie_x_sweep.png)
 <div class="caption"><span class="name">Alexandru</span> looks at images from the X angle</div>
 
-<img alt="anokas sweeps across a set of patient images" src="https://i.imgur.com/Ua03N9H.gifv" />
+<img alt="anokas sweeps across a set of patient images" src="https://i.imgur.com/D6o476h.gif" />
 <div class="caption">anokas builds a gif that moves through a set of patient images</div>
 
 <span class="name">Alexandru</span> spent some time exploring whether edge detection could enhance the images.

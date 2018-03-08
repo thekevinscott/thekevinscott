@@ -4,7 +4,9 @@ import styled from "styled-components";
 
 const Span = styled.span `
   font-size: 12px;
-  text-align: right;
+  text-align: left;
+  display: block;
+  grid-column: text;
 `;
 
 const ReadTime = ({ time }) => (

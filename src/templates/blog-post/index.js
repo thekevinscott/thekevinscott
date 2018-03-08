@@ -11,10 +11,10 @@ import Animated from "../../components/Animated";
 import Img from "gatsby-image";
 import CoverImg from "./CoverImg";
 import Content from "./Content";
+import Title from "./Title";
 import Header from "./Header";
 import Caption from "./CoverImg/Caption";
 import Signup from "./Signup";
-import Actions from "./Actions";
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
@@ -75,14 +75,16 @@ class Template extends Component {
               src={post.frontmatter.image.childImageSharp.sizes.src}
             />
           )}
-          <div className="title">
-            <h1>{post.frontmatter.title}</h1>
-            { post.frontmatter.image_credit && (
-              <Caption caption={post.frontmatter.image_credit} />
-            )}
-          </div>
+          {post.frontmatter.image_credit && (
+            <Caption
+              caption={post.frontmatter.image_credit}
+            />
+          )}
+          <Title
+            title={post.frontmatter.title}
+            time={post.timeToRead}
+          />
         </Header>
-        <Actions time={post.timeToRead} />
         <Content
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
