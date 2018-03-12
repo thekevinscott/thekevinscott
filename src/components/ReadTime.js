@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Span = styled.span `
   font-size: 12px;
-  text-align: left;
+  text-align: right;
   display: block;
   grid-column: text;
 `;
