@@ -9,10 +9,12 @@ import Title from "./Title";
 import Header from "./Header";
 import Container from "./Container";
 import BlogPosts from "./BlogPosts";
-import WebFont from 'webfontloader';
+import WebFont from "webfontloader";
+import Helmet from "react-helmet";
 import {
   getPosts,
 } from "./selectors";
+import { writeAllGraphTags } from "../../utils/writeGraphTags";
 
 let timer;
 
@@ -69,9 +71,35 @@ export default class Index extends Component {
   }
 
   render() {
+    const {
+      data: {
+        site: {
+          siteMetadata: {
+            title,
+            description,
+            keywords,
+            author,
+            url,
+          },
+        }
+      },
+    } = this.props;
+
     const posts = this.getPosts();
+
     return (
       <Container>
+        <Helmet>
+          <title>{title}</title>
+          <meta name="description" content={description} />
+          <meta name="keywords" content={keywords}/>
+          <meta name="author" content={author}/>
+          <link rel="canonical" href={url}/>
+          {writeAllGraphTags({
+            title,
+            description,
+          })}
+        </Helmet>
         <Header>
           <Title>
             <Link

@@ -5,7 +5,7 @@ const Info = styled.div `
   color: rgba(0,0,0,0.54);
   font-size: 1.2rem;
   flex: 1;
-  padding: 20px;
+  // padding: 20px;
 
   * {
     flex: 1;

@@ -56,18 +56,10 @@ export default class Post extends Component {
               <ReadTime time={timeToRead} />
             </Info>
             <PostContent>
-              {image ? (
-                <Title image>
-                  <h2>{title}</h2>
-                  <img src={image.childImageSharp.sizes.src} />
-                </Title>
-              ) : (
-                <Title>
-                  <h2>{title}</h2>
-                </Title>
-              )}
+              <Title>
+                <h2>{title}</h2>
+              </Title>
               <p>{excerpt}</p>
-              <ReadMore>Read More</ReadMore>
             </PostContent>
           </StyledPost>
         </Link>

@@ -3,6 +3,15 @@ import _Home from "../templates/Home";
 export default _Home;
 export const pageQuery = graphql`
   query IndexQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        keywords
+        author
+        url
+      }
+    }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
@@ -13,16 +22,6 @@ export const pageQuery = graphql`
             title
             date
             path
-            image_credit
-            image {
-              childImageSharp {
-                sizes(maxWidth: 2400) {
-                  src
-                  srcSet
-                  sizes
-                }
-              }
-            }
           }
         }
       }

@@ -15,12 +15,23 @@ import Title from "./Title";
 import Header from "./Header";
 import Caption from "./CoverImg/Caption";
 import Signup from "./Signup";
+import { writeAllGraphTags } from "../../utils/writeGraphTags";
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
+    site {
+      siteMetadata {
+        title
+        author
+        description
+        keywords
+        url
+      }
+    }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       timeToRead
+      excerpt(pruneLength: 250)
       frontmatter {
         date
         path
@@ -60,14 +71,37 @@ class Template extends Component {
     const {
       data: {
         markdownRemark: post,
+        site: {
+          siteMetadata,
+        },
       },
     } = this.props;
 
+    const title = post.frontmatter.title ? `${post.frontmatter.title}` : siteMetadata.title;
+    const description = post.frontmatter.description || post.frontmatter.excerpt || siteMetadata.description;
+    const url = `${siteMetadata.url}${post.frontmatter.path}`;
+    const image = `${siteMetadata.url}${post.frontmatter.image.childImageSharp.sizes.src}`;
+    const {
+      author,
+      keywords,
+    } = siteMetadata;
+
     return (
       <Animated>
+        <Helmet>
+          <title>{title}</title>
+          <meta name="description" content={description} />
+          <meta name="keywords" content={keywords}/>
+          <meta name="author" content={author}/>
+          <link rel="canonical" href={url} />
+          {writeAllGraphTags({
+            title,
+            description,
+            image,
+            url,
+          })}
+        </Helmet>
         <Helmet
-          title={`${post.frontmatter.title}` || "Kevin Scott"}
-          description="Design & AI"
         />
         <Header>
           { post.frontmatter.image && (

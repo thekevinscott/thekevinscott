@@ -6,15 +6,15 @@ const PostContent = styled.div `
   position: relative;
 
   h2 {
-    margin: 30px 0 0 0;
+    margin: 0px 0 0 0;
     z-index: 2;
-    padding: 10px;
+    // padding: 10px;
   }
 
   p {
-    font-size: 2.0rem;
+    font-size: 1.6rem;
     margin-bottom: 0;
-    padding: 0 20px;
+    // padding: 0 20px;
   }
 `;
 
