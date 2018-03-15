@@ -1,6 +1,7 @@
 ---
 path: "/common-patterns-for-analyzing-data/"
 date: "2018-03-12T07:00:00.000Z"
+description: "Data is often messy, and a key step to building an accurate model is a thorough understanding of the data you're working with. I decided to read through several different data analyses in an attempt to find similarities and differences, and see if I can distill a set of best practices or strategies for understanding datasets to best leverage them for analysis."
 title: "Common Patterns for Analyzing Data"
 image: "images/cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Samuel Zeller</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>"
