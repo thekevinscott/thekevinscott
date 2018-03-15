@@ -113,6 +113,7 @@ export default class Index extends Component {
           {writeAllGraphTags({
             title,
             description,
+            type: "article",
           })}
         </Helmet>
         <Header>

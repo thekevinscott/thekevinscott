@@ -107,6 +107,7 @@ class Template extends Component {
             description,
             image,
             url,
+            type: "article",
           })}
         </Helmet>
         <Helmet
