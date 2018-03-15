@@ -1,40 +1,40 @@
 {
   "assetsByChunkName": {
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-ff1bd88027af6e6a2db6.js",
-      "component---src-pages-index-js-ff1bd88027af6e6a2db6.js.map"
+      "component---src-pages-index-js-31fe2e5cafff0ec50dd2.js",
+      "component---src-pages-index-js-31fe2e5cafff0ec50dd2.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
       "path----557518bd178906f8d58a.js.map"
     ],
     "path---arrays-in-react-16": [
-      "path---arrays-in-react-16-c76029a8c3af8ecd2552.js",
-      "path---arrays-in-react-16-c76029a8c3af8ecd2552.js.map"
+      "path---arrays-in-react-16-475ce1a5d9baebccb733.js",
+      "path---arrays-in-react-16-475ce1a5d9baebccb733.js.map"
     ],
     "path---common-patterns-for-analyzing-data": [
-      "path---common-patterns-for-analyzing-data-ad783e2df0c0b66baca2.js",
-      "path---common-patterns-for-analyzing-data-ad783e2df0c0b66baca2.js.map"
+      "path---common-patterns-for-analyzing-data-8b500aec38bca8f9c5ed.js",
+      "path---common-patterns-for-analyzing-data-8b500aec38bca8f9c5ed.js.map"
     ],
     "path---deep-learning-cryptocurrency-pc-2-os": [
-      "path---deep-learning-cryptocurrency-pc-2-os-99ede5d490474f1403b8.js",
-      "path---deep-learning-cryptocurrency-pc-2-os-99ede5d490474f1403b8.js.map"
+      "path---deep-learning-cryptocurrency-pc-2-os-a96a4b476f7c3aa18e01.js",
+      "path---deep-learning-cryptocurrency-pc-2-os-a96a4b476f7c3aa18e01.js.map"
     ],
     "path---shoulders-of-giants": [
-      "path---shoulders-of-giants-c5961fddec0e92a2dc1d.js",
-      "path---shoulders-of-giants-c5961fddec0e92a2dc1d.js.map"
+      "path---shoulders-of-giants-de4a9f59f23f9a4c184d.js",
+      "path---shoulders-of-giants-de4a9f59f23f9a4c184d.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-d93858a52bd809a51bb0.js",
-      "component---src-layouts-index-js-d93858a52bd809a51bb0.js.map"
+      "component---src-layouts-index-js-5d331873c69e60860d61.js",
+      "component---src-layouts-index-js-5d331873c69e60860d61.js.map"
     ],
     "path---index": [
-      "path---index-1b709df4f164e44996f8.js",
-      "path---index-1b709df4f164e44996f8.js.map"
+      "path---index-9662136f4d934243be95.js",
+      "path---index-9662136f4d934243be95.js.map"
     ],
     "path---background-images-in-react-native": [
-      "path---background-images-in-react-native-5e7f031918363bdd602b.js",
-      "path---background-images-in-react-native-5e7f031918363bdd602b.js.map"
+      "path---background-images-in-react-native-3b92f62f32fdd53bbe77.js",
+      "path---background-images-in-react-native-3b92f62f32fdd53bbe77.js.map"
     ],
     "component---src-pages-404-js": [
       "component---src-pages-404-js-4503918ea3a16cfcdb75.js",
@@ -53,20 +53,20 @@
       "app-ca004437a9e0e87deb9a.js.map"
     ],
     "path---deep-learning-cryptocurrency-pc-3-mining": [
-      "path---deep-learning-cryptocurrency-pc-3-mining-c3e524011e7093e39648.js",
-      "path---deep-learning-cryptocurrency-pc-3-mining-c3e524011e7093e39648.js.map"
+      "path---deep-learning-cryptocurrency-pc-3-mining-14851d2a9bb85928cc45.js",
+      "path---deep-learning-cryptocurrency-pc-3-mining-14851d2a9bb85928cc45.js.map"
     ],
     "path---deep-learning-cryptocurrency-pc-4-ai": [
-      "path---deep-learning-cryptocurrency-pc-4-ai-07b4d4c9c3309f08e640.js",
-      "path---deep-learning-cryptocurrency-pc-4-ai-07b4d4c9c3309f08e640.js.map"
+      "path---deep-learning-cryptocurrency-pc-4-ai-b0a46f939a16715134fb.js",
+      "path---deep-learning-cryptocurrency-pc-4-ai-b0a46f939a16715134fb.js.map"
     ],
     "path---tabbing-through-input-fields": [
-      "path---tabbing-through-input-fields-cea98ff58133332addb3.js",
-      "path---tabbing-through-input-fields-cea98ff58133332addb3.js.map"
+      "path---tabbing-through-input-fields-e70b700eeee6a40bb656.js",
+      "path---tabbing-through-input-fields-e70b700eeee6a40bb656.js.map"
     ],
     "path---deep-learning-cryptocurrency-pc-1-hardware": [
-      "path---deep-learning-cryptocurrency-pc-1-hardware-587f2dda2257a13aed5a.js",
-      "path---deep-learning-cryptocurrency-pc-1-hardware-587f2dda2257a13aed5a.js.map"
+      "path---deep-learning-cryptocurrency-pc-1-hardware-4bcf13591f7f2efb1694.js",
+      "path---deep-learning-cryptocurrency-pc-1-hardware-4bcf13591f7f2efb1694.js.map"
     ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",
