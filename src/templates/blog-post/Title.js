@@ -2,6 +2,9 @@ import React from "react";
 import Back from "./Back";
 // import ReadTime from "../../components/ReadTime";
 import styled from "styled-components";
+import {
+  format,
+} from "../../utils/getDate";
 
 const Title = styled.div `
   position: absolute;
@@ -29,16 +32,20 @@ const Title = styled.div `
     display: block;
   }
 
+  time {
+    grid-column: text;
+    font-size: 1.4rem;
+    color: rgba(0,0,0,0.4);
+    margin: 0 0 20px 0;
+  }
+
   h1 {
     grid-column: text;
     transition-duration: 0.5s;
-    font-size: 32px;
+    font-size: 3.2rem;
     line-height: 1.24;
     letter-spacing: -.015em;
-    // margin: 40px 0 0px 0;
-    // font-size: 4.2rem;
-    // padding: 20px;
-    margin: 0 0 20px 0;
+    margin: 0;
     font-size: 4.6rem;
     padding: 0;
 
@@ -57,12 +64,13 @@ const Title = styled.div `
 
 export default ({
   title,
-  time,
+  date,
 }) => (
   <Title>
     <h1>{title}</h1>
     {/*
     <ReadTime time={Math.floor(time * 0.6)} />
     */}
+    <time>{format(date)}</time>
   </Title>
 );

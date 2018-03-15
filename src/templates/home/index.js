@@ -5,7 +5,6 @@ import Link from "gatsby-link";
 import Animated from "../../components/Animated";
 import ReadTime from "../../components/ReadTime";
 import Post from "./Post";
-import Title from "./Title";
 import Header from "./Header";
 import Container from "./Container";
 import BlogPosts from "./BlogPosts";
@@ -17,6 +16,22 @@ import {
 import { writeAllGraphTags } from "../../utils/writeGraphTags";
 
 let timer;
+
+const Title = styled.h1 `
+  font-weight: normal;
+  max-width: 700px;
+  font-size: 4rem;
+  color: rgba(0,0,0,0.7);
+  margin: 0;
+`;
+
+const Description = styled.h2 `
+  font-weight: normal;
+  max-width: 700px;
+  font-size: 1.8rem;
+  color: rgba(0,0,0,0.6);
+  margin: 10px 0;
+`;
 
 export default class Index extends Component {
   static propTypes = {
@@ -108,9 +123,10 @@ export default class Index extends Component {
                 textDecoration: 'none',
               }}
             >
-              Kevin Scott
+              {title}
             </Link>
           </Title>
+          <Description>{description}</Description>
         </Header>
         <BlogPosts>
           {getPosts(posts).map((post, index) => (

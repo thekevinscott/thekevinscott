@@ -108,7 +108,7 @@ p, ul, li {
   line-height: 3rem;
 }
 
-figcaption, aside {
+figcaption, aside, time {
   font-family: ${SANS_SERIF};
 }
 
@@ -155,14 +155,13 @@ iframe {
 }
 
 ul {
-  margin-top: 20px;
-  margin-bottom: 40px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   li, ol {
-    margin-bottom: 10px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 }
 

@@ -5,65 +5,54 @@ import {
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
-import Animated from "../../../components/Animated";
-import ReadTime from "../../../components/ReadTime";
-import Info from "./Info";
-import PostContent from "./PostContent";
-import StyledPost from "./StyledPost";
-import Title from "./Title";
-import ReadMore from "./ReadMore";
+// import Animated from "../../../components/Animated";
+// import ReadTime from "../../../components/ReadTime";
+// import Info from "./Info";
+// import PostContent from "./PostContent";
+// import StyledPost from "./StyledPost";
+// import Title from "./Title";
+// import ReadMore from "./ReadMore";
 
-export default class Post extends Component {
-  static propTypes = {
-    post: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      excerpt: PropTypes.string.isRequired,
-    }).isRequired,
-    index: PropTypes.number.isRequired,
-  };
+const Ul = styled.ul `
+`;
 
-  getAnimate = (index) => {
-    try {
-      return window && window.index !== true && index !== 0 ? true : false;
-    } catch(err) { }
+const Li = styled.li `
+  margin: 0 0 20px 0;
 
-    return index !== 0 ? true : false;
+  a {
+    text-decoration: underline;
   }
+`;
 
-  render() {
-    const {
-      post,
-      index,
-    } = this.props;
-    const {
-      excerpt,
-      timeToRead,
-      frontmatter: {
-        title,
-        image,
-        date,
-      },
-    } = post;
+const Post = ({
+  post,
+  index,
+}) => {
+  const {
+    excerpt,
+    timeToRead,
+    frontmatter: {
+      title,
+      image,
+      date,
+    },
+  } = post;
 
-    const animate = this.getAnimate(index);
-
-    return (
-      <Animated index={index} animate={false}>
-        <Link to={post.frontmatter.path}>
-          <StyledPost>
-            <Info>
-              { date && (<div><time>{format(date)}</time></div>)}
-              <ReadTime time={timeToRead} />
-            </Info>
-            <PostContent>
-              <Title>
-                <h2>{title}</h2>
-              </Title>
-              <p>{excerpt}</p>
-            </PostContent>
-          </StyledPost>
-        </Link>
-      </Animated>
-    );
-  }
+  return (
+    <Ul>
+      <Li>
+        <Link to={post.frontmatter.path}>{title}</Link>
+      </Li>
+    </Ul>
+  );
 }
+
+Post.propTypes = {
+  post: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    excerpt: PropTypes.string.isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+};
+
+export default Post;

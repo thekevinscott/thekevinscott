@@ -7,7 +7,7 @@ import WebFont from 'webfontloader';
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
-import Animated from "../../components/Animated";
+// import Animated from "../../components/Animated";
 import Img from "gatsby-image";
 import CoverImg from "./CoverImg";
 import Content from "./Content";
@@ -16,6 +16,14 @@ import Header from "./Header";
 import Caption from "./CoverImg/Caption";
 import Signup from "./Signup";
 import { writeAllGraphTags } from "../../utils/writeGraphTags";
+
+const Container = styled.div `
+  display: flex;
+  max-width: 100%;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
@@ -87,7 +95,7 @@ class Template extends Component {
     } = siteMetadata;
 
     return (
-      <Animated>
+      <Container>
         <Helmet>
           <title>{title}</title>
           <meta name="description" content={description} />
@@ -117,6 +125,7 @@ class Template extends Component {
           <Title
             title={post.frontmatter.title}
             time={post.timeToRead}
+            date={post.frontmatter.date}
           />
         </Header>
         <Content
@@ -124,7 +133,7 @@ class Template extends Component {
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
         <Signup />
-      </Animated>
+      </Container>
     );
   }
 }

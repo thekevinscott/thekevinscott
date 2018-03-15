@@ -5,6 +5,7 @@ const Header = styled.header `
   margin: 0 0 80px 0;
   overflow: hidden;
   width: 100%;
+  max-height: 600px;
 
   @media (max-width: 1600px) {
     max-height: 400px;
