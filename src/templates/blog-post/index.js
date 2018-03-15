@@ -41,6 +41,7 @@ export const pageQuery = graphql`
       timeToRead
       excerpt(pruneLength: 250)
       frontmatter {
+        description
         date
         path
         title
