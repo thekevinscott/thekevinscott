@@ -14,9 +14,14 @@ import Link from "gatsby-link";
 // import ReadMore from "./ReadMore";
 
 const Ul = styled.ul `
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 `;
 
 const Li = styled.li `
+  list-style-type: none;
+  padding: 0;
   margin: 0 0 20px 0;
 
   a {

@@ -10,17 +10,6 @@ const Container = styled.div `
   margin: 0 auto;
   font-family: ${SANS_SERIF};
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    li, ol {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-  }
-
   a {
     border-bottom: none;
   }
