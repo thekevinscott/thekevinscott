@@ -16,8 +16,8 @@ module.exports = {
             siteMetadata {
               title
               description
-              siteUrl
-              site_url: siteUrl
+              url
+              site_url: url
             }
           }
         }
@@ -31,8 +31,8 @@ module.exports = {
               }).map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
-                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  url: site.siteMetadata.url + edge.node.frontmatter.path,
+                  guid: site.siteMetadata.url + edge.node.frontmatter.path,
                   custom_elements: [{ "content:encoded": edge.node.html }],
                 });
               });
