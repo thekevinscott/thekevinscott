@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Essays by Kevin Scott`,
-    description: "Thoughts about Design & Artificial Intelligence",
+    title: "Essays by Kevin Scott",
+    description: "Design meets Artificial Intelligence.",
     keywords: "Artificial Intelligence, Design, Pytorch, TensorFlow, Deep Learning, Kaggle",
     author: "Kevin Scott",
     url: "https://thekevinscott.com",
