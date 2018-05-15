@@ -4,6 +4,8 @@ date: "2018-05-22 12:00:00.000 EST"
 title: "Tensorflow.js: Hello World!"
 image: "cover.jpg"
 tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "setup tutorial"]
+description: "Running Tensorflow.js in your browser, a quick introduction to the basic Javascript concepts you need to get up and running"
+image_credit: "Kevin Scott"
 ---
 
 In the fall of last year [I built my own PC](http://thekevinscott.com/deep-learning-cryptocurrency-pc-1-hardware/). I researched the parts online, assembled it myself, and documented the process. All told it cost me around $1600 and 30 hours of setup time. I'm still spending time fiddling with libraries, configuring CUDA and cudnn, and struggling through compatibility issues across the various frameworks and languages.
