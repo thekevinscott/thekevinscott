@@ -55,10 +55,12 @@ const Header = ({ shadow }) => (
       <Left>
         <Link to="/">Home</Link>
       </Left>
+      { /*
       <Right>
         About |
         Subscribe
       </Right>
+      */ }
     </Center>
   </Container>
 );

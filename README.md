@@ -6,11 +6,9 @@ All posts should live within src. Use the convention date-title.
 
 # Deploying
 
-
 ```
 yarn build
-gac "Add latest build"
-git push origin master
+yarn deploy
 ```
 
-This will build the repo, add the build directory, and push to Github.
+This will build the repo, and copy it over to `gh-pages` which is the branch that Github Pages serves the site on.
