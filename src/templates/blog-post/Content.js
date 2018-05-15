@@ -231,6 +231,10 @@ const Content = styled.article `
       }
     }
   }
+
+  pre {
+    font-size: 1.8rem;
+  }
 `;
 
 export default Content;

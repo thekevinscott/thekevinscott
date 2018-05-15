@@ -18,6 +18,8 @@ body {
   color: rgba(0, 0, 0, 0.8);
   font-weight: 400;
   padding: 0;
+  font-size: 1.6rem;
+  font-family: ${SANS_SERIF};
 
   > div {
     flex: 1;

@@ -7,8 +7,7 @@ import {
 
 const Container = styled.div `
   width: 700px;
-  margin: 0 auto;
-  font-family: ${SANS_SERIF};
+  padding: 0 20px;
 
   a {
     border-bottom: none;

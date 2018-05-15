@@ -127,7 +127,9 @@ export default class Index extends Component {
               {title}
             </Link>
           </Title>
+          { /*
           <Description>{description}</Description>
+          */ }
         </Header>
         <BlogPosts>
           {getPosts(posts).map((post, index) => (

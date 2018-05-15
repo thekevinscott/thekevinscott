@@ -1,15 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
-const Signup = styled.div `
+import {
+  DARK_BLUE,
+  LIGHT_BLUE,
+} from "../../layouts/constants";
+
+const Footer = styled.div `
   width: 100%;
-  background-color: rgba(50,100,255,0.05);
+  background-color: ${DARK_BLUE};
+  color: rgba(255,255,255,0.9);
   margin-top: 20px;
   padding-top: 60px;
 
   p {
     font-size: 1.4rem;
-    color: rgba(0,0,0,0.6);
+    color: inherit;
   }
 
   form {
@@ -23,9 +29,7 @@ const Signup = styled.div `
   }
 
   h3 {
-    color: rgba(0,0,0,0.6);
-    // color: #f9a82f;
-    color: rgba(0,50,205,0.6);
+    color: ${LIGHT_BLUE};
     font-size: 23px;
     display: block;
     margin: 0 20px 0 0 ;
@@ -60,8 +64,7 @@ const Signup = styled.div `
 
     &[type=submit] {
       color: white;
-      // background-color: #f9a82f;
-      background-color: rgba(0,50,205,0.6);
+      background-color: ${LIGHT_BLUE};
       font-size: 15px;
       width: 140px;
       cursor: pointer;
@@ -81,7 +84,7 @@ const Container = styled.div `
 `;
 
 export default () => (
-  <Signup>
+  <Footer>
     <Container>
       <p>I'm spending 2018 teaching myself AI and deep learning, and I'm journaling my adventure. Sign up below and I'll drop you a line when I publish new articles or find cool new tools.</p>
       <form action="https://www.getdrip.com/forms/242548946/submissions" method="post" data-drip-embedded-form="242548946">
@@ -94,5 +97,5 @@ export default () => (
         </div>
       </form>
     </Container>
-  </Signup>
+  </Footer>
 );

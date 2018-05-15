@@ -1,5 +1,7 @@
 export const PINK = "#ffb7b7";
 export const GREEN = "#1C9963";
+export const DARK_BLUE = "rgba(45,67,104,0.95)";
+export const LIGHT_BLUE = "rgba(45,67,205,0.6)";
 export const SERIF = `
     Source Serif Pro,
     Georgia,
