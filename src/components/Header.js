@@ -1,14 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
+import {
+  HEADER_HEIGHT,
+  HEADER_BORDER,
+  DARK_BLUE,
+  LIGHT_BLUE,
+} from '../layouts/constants';
 
 const Container = styled.div `
+  height: ${HEADER_HEIGHT}px;
   position: fixed;
   top: 0;
   background: rgba(255,255,255,0.96);
   z-index: 1;
   width: 100%;
-  padding: 20px 0;
+  border-top: ${HEADER_BORDER}px solid ${LIGHT_BLUE};
   transition-duration: 0.4s;
   ${props => props.shadow ? `
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -17,9 +24,20 @@ const Container = styled.div `
 
 const Center = styled.div `
   margin: 0 auto;
-  padding: 0 20px;
+  height: 100%;
+  align-items: center;
+  padding: 0 40px;
   display: flex;
   flex-direction: row;
+
+  a {
+    text-decoration: none;
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: 1px solid ${LIGHT_BLUE};
+    }
+  }
 `;
 
 const Left = styled.div `

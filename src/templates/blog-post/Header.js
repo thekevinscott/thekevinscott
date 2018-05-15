@@ -1,20 +1,26 @@
 import styled from "styled-components";
 
+import {
+  HEADER_HEIGHT,
+  HEADER_BORDER,
+} from '../../layouts/constants';
+
 const Header = styled.header `
   position: relative;
   margin: 0 0 80px 0;
   overflow: hidden;
-  width: 100%;
+  width: 120%;
   max-height: 600px;
+  margin-top: -${HEADER_HEIGHT + HEADER_BORDER}px;
 
   @media (max-width: 1600px) {
     max-height: 400px;
   }
   @media (max-width: 1200px) {
-    max-height: 340px;
+    max-height: 400px;
   }
   @media (max-width: 1000px) {
-    max-height: 300px;
+    max-height: 360px;
   }
   @media (max-width: 860px) {
     max-height: 240px;

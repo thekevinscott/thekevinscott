@@ -6,12 +6,13 @@ import Header from "../components/Header";
 
 import { injectGlobal } from 'styled-components';
 import styles from './styles';
+import { HEADER_HEIGHT, HEADER_BORDER } from './constants';
 
 injectGlobal`${styles}`;
 
 const Container = styled.div `
   width: 100%;
-  margin-top: 60px;
+  margin-top: ${HEADER_HEIGHT + HEADER_BORDER}px;
 `;
 
 class TemplateWrapper extends Component {
@@ -23,6 +24,13 @@ class TemplateWrapper extends Component {
 
   handleScroll = e => {
     const threshold = 80;
+    // if (document.body.scrollHeight <= window.innerHeight) {
+    //   // the user cannot scroll
+    //   this.setState({
+    //     shadow: true,
+    //   });
+    // }
+    // console.log(window.scrollY, document.body.scrollHeight);
     if (window.scrollY > threshold && this.state.shadow === false) {
       this.setState({
         shadow: true,

@@ -245,28 +245,6 @@ blockquote {
     }
   }
 }
-/*
-blockquote {
-  font-family: ${SANS_SERIF};
-  font-size: 2.6rem;
-  margin: 50px;
-
-  p {
-    font-family: inherit;
-    font-size: inherit;
-    font-style: italic;
-    line-height: 1.8;
-    margin: 0;
-    color: rgba(0, 0, 0, 0.7);
-  }
-
-  a {
-    color: inherit;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  }
-}
-*/
-
 
 iframe {
   height: 400px;

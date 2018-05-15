@@ -7,7 +7,7 @@ import {
 
 const Container = styled.div `
   width: 700px;
-  padding: 0 20px;
+  padding: 0 40px;
 
   a {
     border-bottom: none;
