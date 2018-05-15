@@ -15,6 +15,7 @@ import { writeAllGraphTags } from "../../utils/writeGraphTags";
 const Container = styled.div `
   display: flex;
   max-width: 100%;
+  overflow-x: hidden;
   flex: 1;
   flex-direction: column;
   align-items: center;
@@ -98,8 +99,6 @@ class Template extends Component {
             type: "article",
           })}
         </Helmet>
-        <Helmet
-        />
         <Header>
           { post.frontmatter.image && (
             <CoverImg
