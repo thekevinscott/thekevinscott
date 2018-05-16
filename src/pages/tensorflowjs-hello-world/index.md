@@ -1,6 +1,6 @@
 ---
 path: "/tensorflowjs-hello-world/"
-date: "2018-05-17 12:00:00.000 EST"
+date: "2018-05-17 10:00:00.000 EST"
 title: "Tensorflow.js: Hello World!"
 image: "cover.jpg"
 tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "setup tutorial"]
