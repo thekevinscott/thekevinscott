@@ -50,7 +50,7 @@
     "build-gatsby": "gatsby build && mv public docs",
     "build": "NODE_ENV=production && npm run prebuild && npm run build-gatsby && npm run cname",
     "serve": "gatsby serve",
-    "develop": "rm -rf .cache/* && gatsby develop",
+    "develop": "gatsby develop",
     "deploy": "gh-pages -d docs",
     "lint": "npm run lint:eslint -- .",
     "lint:css": "stylelint './src/**/*.css",

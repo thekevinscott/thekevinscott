@@ -38,7 +38,11 @@ const findMatchingPost = (path, {
   },
 }) => {
   const pathDate = getPathDate(path);
-  if (isNaN(pathDate.getTime())) {
+  try {
+    if (isNaN(pathDate.getTime())) {
+      return null;
+    }
+  } catch(err) {
     return null;
   }
 
@@ -65,16 +69,11 @@ const findMatchingPost = (path, {
 
 class NotFoundPage extends Component {
   componentDidMount() {
-    const {
-      history: {
-        location: {
-          pathname,
-        },
-      },
-      data,
-    } = this.props;
+    const pathname = window.location.pathname.split("/").join("");
 
-    const matchingPost = findMatchingPost(pathname, data);
+    console.log("pathname", pathname);
+
+    const matchingPost = findMatchingPost(pathname, this.props.data);
 
     if (matchingPost) {
       navigateTo(matchingPost);
