@@ -13,6 +13,15 @@ injectGlobal`${styles}`;
 const Container = styled.div `
   width: 100%;
   margin-top: ${HEADER_HEIGHT + HEADER_BORDER}px;
+
+  & > * {
+    z-index: 0;
+    position: relative;
+
+    &:first-child {
+      z-index: 1;
+    }
+  }
 `;
 
 const threshold = 80;

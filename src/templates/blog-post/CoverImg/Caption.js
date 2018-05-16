@@ -16,7 +16,7 @@ const Credit = styled.div `
   position: absolute;
   color: black;
   z-index: 1;
-  right: 0;
+  right: 200px;
   @media (min-width: 1200px) {
     bottom: 30px;
   }

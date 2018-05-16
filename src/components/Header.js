@@ -10,10 +10,9 @@ import {
 
 const Container = styled.div `
   height: ${HEADER_HEIGHT}px;
-  position: fixed;
+  position: fixed !important;
   top: 0;
   background: rgba(255,255,255,0.96);
-  z-index: 1;
   width: 100%;
   border-top: ${HEADER_BORDER}px solid ${LIGHT_BLUE};
   transition-duration: 0.4s;
