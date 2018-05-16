@@ -9,7 +9,6 @@ import Post from "./Post";
 import Header from "./Header";
 import Container from "./Container";
 import BlogPosts from "./BlogPosts";
-import WebFont from "webfontloader";
 import Helmet from "react-helmet";
 import {
   getPosts,
@@ -52,11 +51,6 @@ export default class Index extends Component {
   }
 
   componentDidMount() {
-    WebFont.load({
-      typekit: {
-        id: "zip7tcb",
-      }
-    });
     const posts = this.getPosts();
     if (window && !timer) {
       timer = setTimeout(() => {

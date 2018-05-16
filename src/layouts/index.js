@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Header from "../components/Header";
+import WebFont from "webfontloader";
 
 import { injectGlobal } from 'styled-components';
 import styles from './styles';
@@ -48,6 +49,11 @@ class TemplateWrapper extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+    WebFont.load({
+      typekit: {
+        id: "zip7tcb",
+      }
+    });
   }
 
   componentWillUnmount() {

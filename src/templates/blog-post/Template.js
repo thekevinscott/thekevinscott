@@ -78,14 +78,6 @@ class Template extends Component {
     }).isRequired,
   };
 
-  componentDidMount() {
-    WebFont.load({
-      typekit: {
-        id: "zip7tcb",
-      }
-    });
-  }
-
   render() {
     const {
       data: {
