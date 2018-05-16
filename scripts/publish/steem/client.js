@@ -56,6 +56,7 @@ const client = {
         },
         pagination
       )
+      await steem.api.setOptions({ url: 'https://api.steemit.com' });
       result = await steem.api.getDiscussionsByBlogAsync(query)
       if (result.error) throw new Error(result.error)
 

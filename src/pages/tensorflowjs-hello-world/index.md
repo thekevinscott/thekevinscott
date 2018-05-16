@@ -1,28 +1,35 @@
 ---
 path: "/tensorflowjs-hello-world/"
 date: "2018-05-17 10:00:00.000 EST"
-title: "Tensorflow.js: Hello World!"
+title: "Hello World with Tensorflow.js"
 image: "cover.jpg"
-tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "setup tutorial"]
+tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "setup tutorial", "javascript"]
 description: "All you need to run Tensorflow.js is a web browser. Learn the basic Javascript concepts you need to get to Hello World"
 form: "@FooterContainer/TENSORFLOWJS"
 image_credit: "Kevin Scott"
 ---
 
-In the fall of last year [I built my own PC](http://thekevinscott.com/deep-learning-cryptocurrency-pc-1-hardware/). I researched the parts online, assembled it myself, and documented the process. All told it cost me around $1600 and 30 hours of setup time. I'm still spending time fiddling with libraries, configuring CUDA and cudnn, and struggling through compatibility issues across the various frameworks and languages.
+Before last year, I'd never built a PC from scratch. I had been a Windows user until 2004, and a Mac user since.
 
-If you want to learn some machine learning but don't want to mess with that, I've got great news! You can now learn the machine learning framework Tensorflow right in your browser, using Javascript.
+Late last year, my [growing fascination](/shoulders-of-giants/) with machine learning led me to the conclusion that if you wanted to get started, you had to commit to either [Python or R](https://www.kdnuggets.com/2015/05/r-vs-python-data-science.html). I chose Python, and I [began building my own GPU-powered PC](/deep-learning-cryptocurrency-pc-1-hardware/). I spent hours researching parts and learning about hardware: which GPUs to buy, how to measure power consumption, what sort of cooling I would need. All told it cost me $1600 and 40 hours of setup time. It was a labor of love for me, but to this day I still find myself messing with drivers and frameworks. If I had known how much time it would take I would have reconsidered.
 
-![Google I/O 2018](google-io.jpg)
+On the software side there were an equally daunting number of tools to master before I could even get the most basic examples running: Jupyter notebooks, numpy, scikit, pandas.
 
-[Tensorflow.js was released](https://www.youtube.com/watch?v=OmofOvMApTU) at Google's I/O 2018. [Running machine learning in the browser opens up a world of use cases](http://thekevinscott.com/reasons-for-machine-learning-in-the-browser/), and is a great opportunity to use Javascript to learn about machine learning concepts and frameworks.
+I come from the Javascript world, and I like it. If I could have gotten started with Machine Learning by starting with Javascript, I would have jumped at the chance. Today, that's possible.
 
-If you're new to Javascript or it's been a while since you've written any frontend code, some of the recent languages changes might throw you for a loop. I'll walk through the basics of modern Javascript you'll need to get the basic Tensorflow.js examples running.
+# Tensorflow.js
+![Google I/O 2018](google-io.jpg "Google I/O 2018 by Bruno Sanchez-Andrade Nuño https://www.flickr.com/photos/nasonurb/4649268142/in/photolist-85QHry-4RMuLP-6rHwUw-4RRzRS-8434Pj-83YVXe-4FLYVv-83SpSP-6TYsho-cww2Ej-oUgsLJ-6rwVWy-84KqdW-cvqdhq-TDNAMg-6TUr7z-oDPfkP-iJXS7Q-bDUXd-6TUqA4-83VSYq-6TYprJ-6U1qaL-6TWpTt-9Jo26U-6U1pQ5-gB66bX-dzG2FW-6TYmW9-83SEEc-dpkJrd-6TYnwA-qMXaBP-6TUotz-6TUmbi-jRSgF-iK1Pig-6TYwDs-GqG1if-83sPNj-oWgxXQ-6TUq68-6TYmgb-6rDpex-qMMZQZ-4RMiFv-9Gwi29-4RMJf2-cocCNf-4RRvyL")
+
+Google [released Tensorflow.js](https://www.youtube.com/watch?v=OmofOvMApTU) at the Google I/O 2018. There are [some huge use cases for why it makes sense to run machine learning in a browser](/reasons-for-machine-learning-in-the-browser/). In addition, it's a great opportunity to use Javascript to explore machine learning concepts without having to install a thing.
+
+If you're new to Javascript or it's been a while since you've written any front-end code, some of the recent changes in the Javascript ecosystem might throw you for a loop. I'll list the basics of modern Javascript you need to get the Tensorflow.js examples running, and start exploring machine learning.
 
 # Setup Tutorial
-Let's state one thing up front: **all you need to run Tensorflow.js is your web browser**. That's it. No web server, no transpiler, no special software besides your web browser is necessary to run Tensorflow.js. And the code you develop locally is the same code you'll be able to ship to your users to run on their machines. Let's see how to get the Hello World example running with just a web browser.
+Let me repeat something: **all you need to run Tensorflow.js is your web browser**. It's easy to lose sight amongst all the talk of transpilers, bundlers, and packagers, but all you need is a web browser to run Tensorflow.js. The code you develop locally is the same code you'll be able to ship to your users to run on their browsers.
 
-## How to run the `Getting Started` example using only your browser
+Let's see three quick ways to get the Hello World example working without installing anything. I'll be using the [Getting Started code](https://js.tensorflow.org/#getting-started) from the Tensorflow.js documentation.
+
+## `Getting Started` with your Browser Console
 
 Every modern web browser ships with some sort of interactive Javascript Console built in. I use Chrome, whose Javascript Console you can open with "View > Developer > Javascript Console".
 
@@ -30,7 +37,7 @@ Every modern web browser ships with some sort of interactive Javascript Console 
 
 This Javascript Console lets you write Javascript and execute it immediately. We'll use this to run the Getting Started example from the [Tensorflow.js docs](https://js.tensorflow.org/#getting-started).
 
-The first thing is to include the Tensorflow.js Javascript file. A hosted version of the file is available via the CDN (Content Delivery Network) below. A quick way to include an external `.js` file via the console is:
+First, you'll need to include the Tensorflow.js Javascript file. A hosted version of the file is available via the [Content Delivery Network (CDN)](https://www.webopedia.com/TERM/C/CDN.html) below. A quick way to include an external `.js` file via the console is:
 
 ```
 var script = document.createElement('script');
@@ -38,49 +45,57 @@ script.src = "https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.10.0";
 document.getElementsByTagName('head')[0].appendChild(script);
 ```
 
-Copy and paste this into your Javascript Console and you'll have a copy of Tensorflow saved as `tf`. Once that's done, you can run the rest of the Getting Started example (the Javascript between the second `<script>` tag) by pasting it directly into your console.
+Copy and paste this into your Javascript Console and you'll have a copy of Tensorflow saved as the variable `tf`. (If you type `tf` in your console, you'll see a reference to it.) You can then copy and paste the rest of the Getting Started example (the Javascript between the second `<script>` tag) by pasting it directly into your console.
 
-## How to run the Getting Started example using a Javascript hosting platform
+## Getting Started with a Javascript hosting platform
 
 An alternative approach is to use an online Javascript hosting platform. Three popular ones are [CodePen](https://codepen.io/), [JSFiddle](https://jsfiddle.net/), and [JSBin](https://jsbin.com/). These platforms can automatically include scripts for you and take care of transpiling your code in the browser, which makes getting started a cinch.
 
-You can view [the following example on Codepen](https://codepen.io/anon/pen/aGapZL) to see an implementation working. Make sure to open your browser console, as explained above, to see the output.
+You can view [the following example on Codepen](https://codepen.io/thekevinscott/pen/aGapZL) to see an implementation working. Make sure to open your browser console, as explained above, to see the output.
 
-## How to run the Getting Started example locally
+![Codepen implementation of Getting Started from Tensorflow.js](./codepen.jpg)
 
-Finally, you can save the `.html` file and open it locally on your computer, even without a web server. Copy the html code into a file, and open it in your web browser. For instance, if you save the file onto your desktop and you're on a Mac, you might open it in your browser with the following URL:
+## Getting Started locally
 
-`file:///Users/thekevinscott/Desktop/sample.html`
+Finally, a third option for getting Tensorflow.js working involves saving the code as an `.html` file and opening it locally on your computer. And you don't need a web server to do this!
+
+Copy the html code into a file, and open it in your web browser. For instance, if you save the file onto your desktop and you're on a Mac, you might open it in your browser with the following URL:
+
+`file:///Users/USER/Desktop/sample.html`
 
 It is important to note that viewing `html` files this way introduces limitations, including issues with referencing relative links, handling ajax calls and security, among other things. But it's a quick and easy way to get something running in your browser.
 
 # The Modern Javascript Development Workflow
 
-Hopefully by this point, you can see how easy it is to get something basic to show up in your browser. If you begin looking at the Tensorflow.js examples, you might be thinking *how do I organize my files?* or *how do I manage third party libraries in my code?* or even *what's with these syntax errors?*
+Hopefully by this point, you can see how easy it is to get something basic to show up in your browser. If you begin looking at the Tensorflow.js examples, you might be thinking
 
-As soon as you move beyond the basic Hello World example above and into some of the other examples, you'll begin to run into syntax issues and organization issues, and that's where a strong Javascript pipeline comes in.
+* how do I organize my files?
+* how do I manage third party libraries in my code?
+* what's with these syntax errors?
+
+As soon as you move beyond the basic Hello World example above and into some of the other examples, you'll begin to run into syntax issues and organization issues, and that's where a strong Javascript pipeline will be your best friend.
 
 ## A little bit of Javascript history
 
-As our expectations for web apps has grown over the past decade, the Javascript ecosystem has exploded in complexity. Traditionally Javascript has gotten a lot of flak for its language design, but over the past few years it's matured a lot, while still boasting one of the largest userbases of any programming language.
+As our expectations for web apps has grown over the past decade, the front-end ecosystem has exploded in complexity. Javascript in particular has matured a lot as a programming language, adopting a number of forward-thinking changes to the language while continuing to support one of the largest userbases of any programming language.
 
-One of the major additions has been updates to the language itself. You'll see references to `ES5`, `ES6`, `ES2015`, `E2016` being bandied around. `ES` stands for `ECMAScript` and [Javascript is based on this standard](https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/). `5` and `6` were traditionally used to refer to versions of the standard, but nowadays years are used for additional clarity.
+New changes to the language spec are referenced with acronyms like `ES5`, `ES6`, `ES2015`, `E2016`. `ES` stands for `ECMAScript` and [Javascript is based on this standard](https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-Javascript-versioning/). `5` and `6` were traditionally used to refer to versions of the standard, but nowadays years are used for additional clarity.
 
-Modern browsers mostly implement the up-to-date spec, but there's cutting edge features that are not included, and older browsers (like older versions of IE) won't always support the up-to-date spec. ([You can see browser support here](https://caniuse.com/#search=es6)). Because of this instability, it's considered good practice to use a bundler to convert Javascript code to something with wide-spread adoption (like ES5), enabling developers to write code using modern conveniences while still supporting a broad range of devices.
+[Modern browser support for ES6 is spotty](http://kangax.github.io/compat-table/es6/). Some cutting edge or proposed features are not yet supported, and older browsers (in particular IE) will never support the latest spec. Because of this instability, if you want to reach the widest audience possible you use something called a [bundler or transpiler](https://dev.to/kayis/4-Javascript-bundlers-2g4b), which is a piece of software that converts your Javascript code written with modern conveniences into a version with wide-spread adoption (ES5 is widely supported and is generally a good target).
 
-Many of the Tensorflow.js examples make use of new syntax that is not yet widely supported in browsers. I'll explain what they are first and then explain how to get them working.
+Many of the Tensorflow.js examples make use of new syntax that is not yet widely supported in browsers and requires transpiling. I'll explain the syntax first and then explain how to get them working.
 
 ### `import` and `export`
 
-`import` and `export` are two bits of syntax recently introduced into Javascript for importing modules. The saga of javascript modules is [long and winding](https://ponyfoo.com/articles/brief-history-of-modularity), but the [community has largely settled on `import` over `require`](https://insights.untapt.com/webpack-import-require-and-you-3fd7f5ea93c0). Unfortunately, `import` is not (currently) supported by any browsers, so to use it you need to use a packager.
+`import` and `export` are two bits of syntax recently introduced into Javascript for importing modules. The saga of Javascript modules is [long and winding](https://ponyfoo.com/articles/brief-history-of-modularity), but the [community has largely settled on `import` over `require`](https://insights.untapt.com/webpack-import-require-and-you-3fd7f5ea93c0). Unfortunately, as of May 2018 `import` is not supported by any browsers, so to use it you need to use a transpiler.
 
-In the Getting Started docs, you'll see an example of `import` first thing:
+In the Getting Started docs, you'll see an example of `import` upfront:
 
 ```
 import * as tf from '@tensorflow/tfjs';
 ```
 
-This is basically the same as writing:
+This is basically the same as:
 
 ```
 var tf = require('@tensorflow/tfjs');
@@ -102,7 +117,7 @@ var tensor2d = tf.tensor2d
 
 ### `async` and `await`
 
-Javascript has traditionally been used heavily with UIs, which are inherently asynchronous. There have been [three broad patterns for handling asynchronous code: callbacks, promises, and async/await](https://medium.com/@stevekonves/three-javascript-async-patterns-1d2e7094860a
+Javascript has traditionally been used heavily with UIs, which perform a lot of asynchronous actions. There have been three broad patterns for handling asynchronous code over the years: [callbacks, promises, and async/await](https://medium.com/@stevekonves/three-Javascript-async-patterns-1d2e7094860a
 ).
 
 `async`/`await` provides a way of defining asynchronous functions in a synchronous way. [Many of the Tensorflow.js examples](https://js.tensorflow.org/tutorials/webcam-transfer-learning.html) make use this `async` / `await` syntax.
@@ -134,7 +149,7 @@ function loadMobilenet() {
 
 * * *
 
-Both of these language features - `import`/`export` and `async`/`await` - make writing Javascript a much more pleasant experience. Let's see how we can use them.
+Both of these language features - `import`/`export` and `async`/`await` - make writing Javascript more pleasant. Let's next see the tools we need to use them in our own code.
 
 ## Javascript Tooling
 
@@ -142,11 +157,17 @@ On the Getting Started docs, you'll see:
 
 > **Note**: Because we use ES2017 syntax (such as `import`), this workflow assumes you are using a bundler/transpiler to convert your code to something the browser understands. See our examples to see how we use Parcel to build our code. However you are free to use any build tool that you prefer.
 
-At its most basic, a bundler is a program that takes your Javascript code and "bundles" it up into a compatible file for the browser. As the Javascript ecosystem has grown, bundlers have taken on increased responsibility as the orchestators of the whole production. Modern-day bundlers will transpile code (convert ES2018 code to ES5, along with other non-standard dialects like React or Typescript, using something like [`babel`](https://babeljs.io/)), set up "hot reloading" to refresh the browser with code changes without reloading the page, and many other things.
+Let's talk about build tools.
 
-[Grunt](https://gruntjs.com/) and [Gulp](http://gulpjs.com/) used to be popular bundlers but have recently fallen out of favor to [`webpack`](https://webpack.js.org/). Other bundlers include [`parcel`](https://parceljs.org/) and [`rollup`](https://rollupjs.org/guide/en). The Tensorflow.js examples use Parcel, which boasts a zero configuration approach.
+### Bundlers
 
-## Package managers
+![Conductor](conductor.jpg "Conductor by Rob Swystun https://www.flickr.com/photos/rob_swystun/8098008837/in/photolist-dkApU2-KcT4m-4FRtTt-bs1ie-4FaQwJ-n4ZLz-5H5h5h-9QyqcV-HMKLpZ-bRcaTr-8AJzKR-o1hz5g-mUja5-4hde2s-ojw5ER-o1hzfM-7QTcn-baxtwT-o1gyBW-PZwwc-9Lqwso-o1gwTq-q6JLU3-4tpd7s-6utd7E-afAcD1-eQ5nNq-7k6Kmu-TZwnt4-hzhqsc-QW7UrX-6Sgmk9-di55YZ-c5g9mh-4sJY58-66uZkH-nuSDiR-tiR5Un-62C3pm-6GkQ63-5mXNoS-9rBtDY-8eJvZq-26reTMP-6o1GgZ-7nJCtp-kqpcEr-7r1AZJ-RAtTeU-8nX15C")
+
+Bundlers have taken on the role of conductor of the orchestra of growing front-end codebases. A bundler is a program that takes your Javascript code and "bundles" it up into a compatible file for the browser. Bundlers will also transpile code (convert ES2018 code to ES5, along with other dialects like React or Typescript, using something like [`babel`](https://babeljs.io/)), set up "hot reloading" to refresh the browser with code changes without reloading the page, and many other things to make front-end development better.
+
+[Grunt](https://gruntjs.com/) and [Gulp](http://gulpjs.com/) used to be popular bundlers but have recently fallen out of favor to [`webpack`](https://webpack.js.org/). Other bundlers include [`parcel`](https://parceljs.org/) and [`rollup`](https://rollupjs.org/guide/en). The Tensorflow.js examples use `parcel`.
+
+### Package managers
 Often, when encountering a Javascript library, you'll see installation instructions like `yarn add @tensorflow/tfjs` or `npm install @tensorflow/tfjs`.
 
 [`yarn`](https://yarnpkg.com/en/) and [`npm`](https://www.npmjs.com/) are both package managers. They're command line tools used to install and keep track of your third party Javascript dependencies.
@@ -157,6 +178,6 @@ Either one will save your dependencies into a `package.json` file which should b
 
 * * *
 
-You'll need to install `npm` or `yarn`, along with `Node.js`; once that's done, following the instructions on any of the Tensorflow.js examples should work out of the box.
+To get all these goodies, the first step is to install `npm` or `yarn`, along with `Node.js`. Once those are in place, you can follow the instructions on any of the Tensorflow.js examples and they should work out of the box. Usually, getting set up with a new front-end project using these tools is a one step process.
 
-Again, you don't need any of these tools to work with these examples, but using them makes programming worlds easier. If you intend to do any sort of serious Javascript development, I would encourage you to play with these tools, along with other popular Javascript tools like [React](https://reactjs.org/) and [Typescript](https://www.typescriptlang.org://www.typescriptlang.org/), which make handling larger codebases much more manageable.
+Again, you don't need any of these tools to work with these examples, but using them makes things so much easier. If you intend to do any sort of serious Javascript development, I would encourage you to play with these tools, along with other popular Javascript tools like [React](https://reactjs.org/) and [Typescript](https://www.typescriptlang.org://www.typescriptlang.org/), which make handling larger codebases much better.
