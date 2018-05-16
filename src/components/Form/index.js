@@ -9,7 +9,7 @@ import {
 } from '../../layouts/constants';
 
 const Container = styled.form `
-  margin: 0 auto 100px auto;
+  margin: 0 auto 0 auto;
   max-width: 100%;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   padding: 20px;

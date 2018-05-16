@@ -13,7 +13,7 @@ const Footer = styled.div `
   width: 100%;
   background-color: ${DARK_BLUE};
   color: rgba(255,255,255,0.95);
-  margin-top: 60px;
+  margin-top: 160px;
   padding-top: 60px;
 `;
 
