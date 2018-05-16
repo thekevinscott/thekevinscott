@@ -15,6 +15,9 @@ const Container = styled.div `
   margin-top: ${HEADER_HEIGHT + HEADER_BORDER}px;
 `;
 
+const threshold = 80;
+const getIsOverThreshold = () => window.scrollY > threshold;
+
 class TemplateWrapper extends Component {
   constructor(props) {
     super(props);
@@ -23,19 +26,11 @@ class TemplateWrapper extends Component {
   }
 
   handleScroll = e => {
-    const threshold = 80;
-    // if (document.body.scrollHeight <= window.innerHeight) {
-    //   // the user cannot scroll
-    //   this.setState({
-    //     shadow: true,
-    //   });
-    // }
-    // console.log(window.scrollY, document.body.scrollHeight);
-    if (window.scrollY > threshold && this.state.shadow === false) {
+    if (getIsOverThreshold() && this.state.shadow === false) {
       this.setState({
         shadow: true,
       });
-    } else if (window.scrollY <= threshold && this.state.shadow === true) {
+    } else if (!getIsOverThreshold() && this.state.shadow === true) {
       this.setState({
         shadow: false,
       });
