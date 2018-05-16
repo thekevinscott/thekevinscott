@@ -19,6 +19,7 @@ export const pageQuery = graphql`
         path
         title
         image_credit
+        form
         image {
           childImageSharp {
             sizes(maxWidth: 2400) {

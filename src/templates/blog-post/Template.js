@@ -9,7 +9,7 @@ import Content from "./Content";
 import Title from "./Title";
 import Header from "./Header";
 import Caption from "./CoverImg/Caption";
-import Footer from "./Footer";
+import Footer from "../../components/Footer";
 import { writeAllGraphTags } from "../../utils/writeGraphTags";
 
 const Container = styled.div `
@@ -34,6 +34,7 @@ const getBits = ({ frontmatter, url }, metadata) => {
   const description = frontmatter.description || frontmatter.excerpt || metadata.description;
   const path = `${metadata.url}${frontmatter.path}`;
   const image = getImage(url, frontmatter);
+  const form = frontmatter.form;
   const {
     author,
     keywords,
@@ -46,6 +47,7 @@ const getBits = ({ frontmatter, url }, metadata) => {
     image,
     author,
     keywords,
+    form,
   };
 };
 
@@ -81,6 +83,7 @@ class Template extends Component {
       image,
       author,
       keywords,
+      form,
     } = getBits(post, siteMetadata);
 
     return (
@@ -120,7 +123,7 @@ class Template extends Component {
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        <Footer />
+        <Footer form={form} />
       </Container>
     );
   }

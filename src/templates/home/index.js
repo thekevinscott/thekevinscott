@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import Animated from "../../components/Animated";
 import ReadTime from "../../components/ReadTime";
+import Footer from "../../components/Footer";
 import Post from "./Post";
 import Header from "./Header";
 import Container from "./Container";
@@ -102,8 +103,8 @@ export default class Index extends Component {
 
     const posts = this.getPosts();
 
-    return (
-      <Container>
+    return [
+      <Container key="container">
         <Helmet>
           <title>{title}</title>
           <meta name="description" content={description} />
@@ -140,7 +141,8 @@ export default class Index extends Component {
             />
           ))}
         </BlogPosts>
-      </Container>
-    );
+      </Container>,
+      <Footer key="footer" />
+    ];
   }
 }

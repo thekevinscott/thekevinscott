@@ -5,6 +5,7 @@ title: "Reasons to use Machine Learning in the Browser"
 tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "client-side", "javascript"]
 description: "Exploring examples of client-side machine learning, to understand how frameworks like TensorFlow.js unlocks huge value for users."
 image: "cover.jpg"
+form: "@FooterContainer/TENSORFLOWJS"
 image_credit: "Photo by <a href='https://www.flickr.com/photos/alextoul/6412207917/in/photolist-aLCf1V-5LKqDi-5LTp6F-8B2wqT-wokRP-7DvxRd-bdd77c-7xV1w-PNY1sa-fasCLu-9NT1UA-ndnvww-6Pym4y-9NQ5HZ-9NQffM-9NQgCV-9NSZZy-9NSXa5-9NSW8b-4oSw2n-9NSV4u-76jcMx-9DK39M-VPmfLi-8B5E5W-dNHLzC-eZ9uMB-8mE46Q-5wwF6d-hoi196-5wWE7L-wEgXH-aH1nLH-5quA5v-nfuE8a-6RZYky-7xQty-9dWJYM-bX1whU-7xSx6-6S19pA-pcK6bA-76oxa7-ptXDd2-6S1bns-dNHL61-6RVKrR-76jYdc-6RZKB7-6RZQbQ'>Alex Toulemonde</a> on <a href='https://www.flickr.com/photos/alextoul/'>Flickr</a>"
 ---
 
