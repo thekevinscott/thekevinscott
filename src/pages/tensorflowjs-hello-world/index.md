@@ -1,10 +1,11 @@
 ---
 path: "/tensorflowjs-hello-world/"
-date: "2018-05-22 12:00:00.000 EST"
+date: "2018-05-17 12:00:00.000 EST"
 title: "Tensorflow.js: Hello World!"
 image: "cover.jpg"
 tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "setup tutorial"]
-description: "Running Tensorflow.js in your browser, a quick introduction to the basic Javascript concepts you need to get up and running"
+description: "All you need to run Tensorflow.js is a web browser. Learn the basic Javascript concepts you need to get to Hello World"
+form: "@FooterContainer/TENSORFLOWJS"
 image_credit: "Kevin Scott"
 ---
 
@@ -12,7 +13,9 @@ In the fall of last year [I built my own PC](http://thekevinscott.com/deep-learn
 
 If you want to learn some machine learning but don't want to mess with that, I've got great news! You can now learn the machine learning framework Tensorflow right in your browser, using Javascript.
 
-[Tensorflow.js was released](https://www.youtube.com/watch?v=OmofOvMApTU) at Google's I/O 2018. [Running machine learning in the browser opens up a world of use cases](), and is a great opportunity to use Javascript to learn about machine learning concepts and frameworks.
+![Google I/O 2018](google-io.jpg)
+
+[Tensorflow.js was released](https://www.youtube.com/watch?v=OmofOvMApTU) at Google's I/O 2018. [Running machine learning in the browser opens up a world of use cases](http://thekevinscott.com/reasons-for-machine-learning-in-the-browser/), and is a great opportunity to use Javascript to learn about machine learning concepts and frameworks.
 
 If you're new to Javascript or it's been a while since you've written any frontend code, some of the recent languages changes might throw you for a loop. I'll walk through the basics of modern Javascript you'll need to get the basic Tensorflow.js examples running.
 
