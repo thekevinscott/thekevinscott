@@ -11,6 +11,9 @@ import Header from "./Header";
 import Caption from "./CoverImg/Caption";
 import Footer from "../../components/Footer";
 import { writeAllGraphTags } from "../../utils/writeGraphTags";
+import {
+  LIGHT_GRAY,
+} from "../../layouts/constants";
 
 const Container = styled.div `
   display: flex;
@@ -34,7 +37,6 @@ const getBits = ({ frontmatter, url }, metadata) => {
   const description = frontmatter.description || frontmatter.excerpt || metadata.description;
   const path = `${metadata.url}${frontmatter.path}`;
   const image = getImage(url, frontmatter);
-  const form = frontmatter.form;
   const {
     author,
     keywords,
@@ -47,9 +49,27 @@ const getBits = ({ frontmatter, url }, metadata) => {
     image,
     author,
     keywords,
-    form,
+    ...frontmatter,
   };
 };
+
+const FOOTER_TAG = "Thanks for reading. If you like what you've read, stay in touch! You can subscribe below.";
+
+const TagContainer = styled.div `
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  font-size: 1.6rem;
+  color: rgba(0,0,0,0.4);
+  width: 780px;
+
+  li {
+    display: inline;
+    padding: 0;
+  }
+`;
+
+const Tags = ({ tags }) => <TagContainer>Tags: {tags.join(", ")}</TagContainer>;
 
 class Template extends Component {
   static propTypes = {
@@ -84,7 +104,14 @@ class Template extends Component {
       author,
       keywords,
       form,
+      tags,
     } = getBits(post, siteMetadata);
+
+    const __html = [
+      post.html,
+      "<hr />",
+      `<p>${FOOTER_TAG}</p>`,
+    ].join("");
 
     return (
       <Container>
@@ -121,8 +148,9 @@ class Template extends Component {
         </Header>
         <Content
           className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: post.html }}
+          dangerouslySetInnerHTML={{ __html }}
         />
+        <Tags tags={tags} />
         <Footer form={form} />
       </Container>
     );
