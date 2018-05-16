@@ -1,7 +1,7 @@
 ---
 path: "/reasons-for-machine-learning-in-the-browser/"
 date: "2018-05-16 08:00:00.000 EST"
-title: "Reasons to use Machine Learning in the Browser"
+title: "Why to run Machine Learning in the Browser"
 tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "client-side", "javascript"]
 description: "Exploring examples of client-side machine learning, to understand how frameworks like TensorFlow.js unlocks huge value for users."
 image: "cover.jpg"
