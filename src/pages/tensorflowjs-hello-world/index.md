@@ -9,9 +9,9 @@ form: "@FooterContainer/TENSORFLOWJS"
 image_credit: "Kevin Scott"
 ---
 
-Before last year, I'd never built a PC from scratch. I had been a Windows user until 2004, and a Mac user since.
+Up until fairly recently, just getting started writing your first line of machine learning code required a  hefty upfront investment in time and money. For example, just last year [I built my own PC specifically for machine learning](http://thekevinscott.com/deep-learning-cryptocurrency-pc-1-hardware/). I researched the parts and assembled it myself. Just doing that cost me around $1600 and 30 hours of setup time, and I'm still trying to wrangle the computer's configuration, libraries, and make it work with various frameworks.
 
-Late last year, my [growing fascination](/shoulders-of-giants/) with machine learning led me to the conclusion that if you wanted to get started, you had to commit to either [Python or R](https://www.kdnuggets.com/2015/05/r-vs-python-data-science.html). I chose Python, and I [began building my own GPU-powered PC](/deep-learning-cryptocurrency-pc-1-hardware/). I spent hours researching parts and learning about hardware: which GPUs to buy, how to measure power consumption, what sort of cooling I would need. All told it cost me $1600 and 40 hours of setup time. It was a labor of love for me, but to this day I still find myself messing with drivers and frameworks. If I had known how much time it would take I would have reconsidered.
+The good news is that getting started with machine learning today has never been easier. In fact, if you're reading this it means you already have the tools you need to dive right in. **You can now learn the machine learning framework Tensorflow right in your browser, using Javascript.**
 
 On the software side there were an equally daunting number of tools to master before I could even get the most basic examples running: Jupyter notebooks, numpy, scikit, pandas.
 
@@ -31,7 +31,7 @@ Let's see three quick ways to get the Hello World example working without instal
 
 ## `Getting Started` with your Browser Console
 
-Every modern web browser ships with some sort of interactive Javascript Console built in. I use Chrome, whose Javascript Console you can open with "View > Developer > Javascript Console".
+Every modern web browser ships with some sort of interactive Javascript Console built in. I use Chrome, which includes a Javascript Console you can open with "View > Developer > Javascript Console".
 
 ![A GIF demonstrating how to open the Javascript Console in Chrome](chrome-console.gif)
 
@@ -61,7 +61,7 @@ Finally, a third option for getting Tensorflow.js working involves saving the co
 
 Copy the html code into a file, and open it in your web browser. For instance, if you save the file onto your desktop and you're on a Mac, you might open it in your browser with the following URL:
 
-`file:///Users/USER/Desktop/sample.html`
+`file:///Users/YOURNAME/Desktop/sample.html`
 
 It is important to note that viewing `html` files this way introduces limitations, including issues with referencing relative links, handling ajax calls and security, among other things. But it's a quick and easy way to get something running in your browser.
 
