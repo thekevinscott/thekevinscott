@@ -9,9 +9,9 @@ form: "@FooterContainer/TENSORFLOWJS"
 image_credit: "Kevin Scott"
 ---
 
-In the fall of last year [I built my own PC](http://thekevinscott.com/deep-learning-cryptocurrency-pc-1-hardware/). I researched the parts online, assembled it myself, and documented the process. All told it cost me around $1600 and 30 hours of setup time. I'm still spending time fiddling with libraries, configuring CUDA and cudnn, and struggling through compatibility issues across the various frameworks and languages.
+Up until fairly recently, just getting started writing your first line of machine learning code required a  hefty upfront investment in time and money. For example, just last year [I built my own PC specifically for machine learning](http://thekevinscott.com/deep-learning-cryptocurrency-pc-1-hardware/). I researched the parts and assembled it myself. Just doing that cost me around $1600 and 30 hours of setup time, and I'm still trying to wrangle the computer's configuration, libraries, and make it work with various frameworks.
 
-If you want to learn some machine learning but don't want to mess with that, I've got great news! You can now learn the machine learning framework Tensorflow right in your browser, using Javascript.
+The good news is that getting started with machine learning today has never been easier. In fact, if you're reading this it means you already have the tools you need to dive right in. **You can now learn the machine learning framework Tensorflow right in your browser, using Javascript.**
 
 ![Google I/O 2018](google-io.jpg)
 
@@ -24,7 +24,7 @@ Let's state one thing up front: **all you need to run Tensorflow.js is your web 
 
 ## How to run the `Getting Started` example using only your browser
 
-Every modern web browser ships with some sort of interactive Javascript Console built in. I use Chrome, whose Javascript Console you can open with "View > Developer > Javascript Console".
+Every modern web browser ships with some sort of interactive Javascript Console built in. I use Chrome, which includes a Javascript Console you can open with "View > Developer > Javascript Console".
 
 ![A GIF demonstrating how to open the Javascript Console in Chrome](chrome-console.gif)
 
@@ -50,7 +50,7 @@ You can view [the following example on Codepen](https://codepen.io/anon/pen/aGap
 
 Finally, you can save the `.html` file and open it locally on your computer, even without a web server. Copy the html code into a file, and open it in your web browser. For instance, if you save the file onto your desktop and you're on a Mac, you might open it in your browser with the following URL:
 
-`file:///Users/thekevinscott/Desktop/sample.html`
+`file:///Users/YOURNAME/Desktop/sample.html`
 
 It is important to note that viewing `html` files this way introduces limitations, including issues with referencing relative links, handling ajax calls and security, among other things. But it's a quick and easy way to get something running in your browser.
 
