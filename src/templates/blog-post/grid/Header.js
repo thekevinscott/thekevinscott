@@ -1,9 +1,13 @@
+import React from "react";
 import styled from "styled-components";
+import CoverImg from "./CoverImg";
+import Caption from "./CoverImg/Caption";
+import Title from "./Title";
 
 import {
   HEADER_HEIGHT,
   HEADER_BORDER,
-} from '../../layouts/constants';
+} from 'layouts/constants';
 
 const Header = styled.header `
   position: relative;
@@ -36,4 +40,29 @@ const Header = styled.header `
 
 `;
 
-export default Header;
+export default ({
+  image,
+  credit,
+  title,
+  timeToRead,
+  date,
+}) => (
+  <Header>
+    { image && (
+      <CoverImg
+        src={image.childImageSharp.sizes.src}
+      />
+    )}
+    {credit && (
+      <Caption
+        caption={credit}
+      />
+    )}
+    <Title
+      title={title}
+      time={timeToRead}
+      date={date}
+    />
+  </Header>
+);
+

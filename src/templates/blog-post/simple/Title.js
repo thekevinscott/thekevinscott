@@ -4,7 +4,7 @@ import Back from "./Back";
 import styled from "styled-components";
 import {
   format,
-} from "../../utils/getDate";
+} from "utils/getDate";
 
 const Title = styled.div `
   position: absolute;

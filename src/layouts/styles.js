@@ -3,6 +3,7 @@ import {
   SERIF,
   SANS_SERIF,
   MONOSPACE,
+  GREEN,
 } from "./constants";
 
 const styles = `
@@ -251,6 +252,100 @@ iframe {
   width: 100%;
   max-width: 800px;
   margin: 30px auto;
+}
+
+h1 {
+  margin-top: 80px;
+  margin-bottom: 0;
+
+  padding: 0;
+  text-align: center;
+  text-align: left;
+  display: block;
+  margin: 40px 0 00px 0;
+  font-size: 4.5rem;
+  clear: both;
+  padding-bottom: 20px;
+
+  .anchor {
+    margin-left: -16px;
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+
+  a {
+    display: block;
+    padding-bottom: 10px;
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+}
+
+h2 {
+  padding: 0;
+  font-size: 3.4rem;
+
+  .anchor {
+    margin-left: -16px;
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+
+  a {
+    display: block;
+    line-height: 40px;
+    padding-bottom: 10px;
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+}
+
+.caption {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: -30px;
+  margin-bottom: 50px;
+}
+
+h3 {
+  font-size: 2.6rem;
+  margin-top: 30px;
+}
+
+h4, h5, h6 {
+  font-size: 2rem;
+}
+
+a {
+  transition-duration: 0.15s;
+
+  &:hover {
+    border-bottom: 1px solid ${GREEN};
+  }
+
+  &.gatsby-resp-image-link {
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+}
+
+pre {
+  font-size: 1.8rem;
 }
 `
 export default styles;

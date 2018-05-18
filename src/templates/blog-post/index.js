@@ -1,3 +1,7 @@
+import React, { Component } from "react";
+import Simple from "./simple";
+import Grid from "./grid";
+
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     site {
@@ -21,6 +25,7 @@ export const pageQuery = graphql`
         image_credit
         form
         tags
+        layout
         image {
           childImageSharp {
             sizes(maxWidth: 2400) {
@@ -36,4 +41,27 @@ export const pageQuery = graphql`
 `
 ;
 
-export default from "./Template";
+const getLayoutComponent = layout => {
+  if (layout === "grid") {
+    return Grid;
+  }
+
+  return Simple;
+};
+
+const getLayout = props => {
+  try {
+    return props.data.markdownRemark.frontmatter.layout;
+  } catch (err) {
+    return null;
+  }
+};
+
+export default (props) => {
+  const layout = getLayout(props);
+  const Layout = getLayoutComponent(layout);
+
+  return (
+    <Layout {...props} />
+  );
+};

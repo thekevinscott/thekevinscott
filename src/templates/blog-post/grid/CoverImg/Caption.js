@@ -5,7 +5,7 @@ import styled from "styled-components";
 import {
   SERIF,
   SANS_SERIF,
-} from "../../../layouts/constants";
+} from "layouts/constants";
 
 const Credit = styled.div `
   font-size: 1.2rem;

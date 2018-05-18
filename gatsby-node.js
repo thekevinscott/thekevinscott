@@ -47,4 +47,12 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       loader: 'null-loader'
     })
   }
+  config.merge({
+    resolve: {
+      root: path.resolve(__dirname, './src'),
+      extensions: ['', '.js', '.jsx', '.json'],
+    }
+  });
+  return config;
 }
+

@@ -46,7 +46,7 @@ const publishPosts = async () => {
     : []
   if (parameterlessOptions.length === 0) {
     // publish to all platforms
-    // await publishToMedium(pathsToPosts)
+    await publishToMedium(pathsToPosts)
     await publishToSteem(pathsToPosts)
   } else if (parameterlessOptions.some(option => option === 'medium')) {
     await publishToMedium(pathsToPosts)

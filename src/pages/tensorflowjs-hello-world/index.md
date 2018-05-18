@@ -9,9 +9,9 @@ form: "@FooterContainer/TENSORFLOWJS"
 image_credit: "Kevin Scott"
 ---
 
-Up until fairly recently, just getting started writing your first line of machine learning code required a  hefty upfront investment in time and money. For example, just last year [I built my own PC specifically for machine learning](http://thekevinscott.com/deep-learning-cryptocurrency-pc-1-hardware/). I researched the parts and assembled it myself. Just doing that cost me around $1600 and 30 hours of setup time, and I'm still trying to wrangle the computer's configuration, libraries, and make it work with various frameworks.
+Up until fairly recently, just getting started writing your first line of machine learning code required a hefty upfront investment in time and money. For example, just last year [I built my own PC specifically for machine learning](/deep-learning-cryptocurrency-pc-1-hardware/). I researched the parts and assembled it myself. Just doing that cost me around $1600 and 30 hours of setup time, and I'm still trying to wrangle the computer's configuration, libraries, and make it work with various frameworks.
 
-The good news is that getting started with machine learning today has never been easier. In fact, if you're reading this it means you already have the tools you need to dive right in. **You can now learn the machine learning framework Tensorflow right in your browser, using Javascript.**
+The good news is that getting started with machine learning today has never been easier. In fact, if you're reading this it means you already have the tools you need to dive right in. **You can now learn the machine learning [framework Tensorflow right in your browser, using Javascript.](/reasons-for-machine-learning-in-the-browser/)**
 
 On the software side there were an equally daunting number of tools to master before I could even get the most basic examples running: Jupyter notebooks, numpy, scikit, pandas.
 
