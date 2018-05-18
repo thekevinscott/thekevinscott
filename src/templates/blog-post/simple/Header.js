@@ -9,18 +9,22 @@ import {
   HEADER_BORDER,
 } from 'layouts/constants';
 
+// TODO: Fix background gradient
+
 const Header = styled.header `
   position: relative;
   margin: 0 0 80px 0;
   overflow: hidden;
-  width: 120%;
+  width: 100%;
   max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-top: -${HEADER_HEIGHT + HEADER_BORDER}px;
 
+
   @media (max-width: 1600px) {
-    max-height: 400px;
-  }
-  @media (max-width: 1200px) {
     max-height: 400px;
   }
   @media (max-width: 1000px) {
@@ -30,7 +34,6 @@ const Header = styled.header `
     max-height: 240px;
   }
   @media (max-width: 760px) {
-    max-height: 160px;
   }
 
   span {

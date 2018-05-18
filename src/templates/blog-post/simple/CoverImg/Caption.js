@@ -13,15 +13,18 @@ const Credit = styled.div `
   background: rgba(255,255,255,0.4);
   padding: 0 10px;
   margin: 10px;
-  position: absolute;
   color: black;
-  z-index: 1;
+  z-index: 9999;
   right: 200px;
   @media (min-width: 1200px) {
     bottom: 30px;
+    top: 0;
   }
   @media (max-width: 1200px) {
     top: 0;
+    bottom: 30px;
+
+
   }
 `;
 
