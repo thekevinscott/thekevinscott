@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import rehypeReact from "rehype-react";
+// import rehypeReact from "rehype-react";
 import Simple from "./simple";
 import Grid from "./grid";
 
