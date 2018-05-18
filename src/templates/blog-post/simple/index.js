@@ -84,12 +84,12 @@ class Simple extends Component {
 
 export default Simple;
 
-const Counter = () => (
-  <div>Suck a lemon</div>
-);
+// const Counter = () => (
+//   <div>Suck a lemon</div>
+// );
 
-const renderAst = new rehypeReact({
-  createElement: React.createElement,
-  components: {},
-  // components: { "interactive-counter": Counter },
-}).Compiler;
+// const renderAst = new rehypeReact({
+//   createElement: React.createElement,
+//   components: {},
+//   // components: { "interactive-counter": Counter },
+// }).Compiler;
