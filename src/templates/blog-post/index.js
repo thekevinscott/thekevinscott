@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import rehypeReact from "rehype-react";
 import Simple from "./simple";
 import Grid from "./grid";
 
@@ -13,7 +14,7 @@ export const pageQuery = graphql`
         url
       }
     }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       timeToRead
       excerpt(pruneLength: 250)

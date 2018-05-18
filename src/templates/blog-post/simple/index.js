@@ -32,6 +32,7 @@ class Simple extends Component {
 
   render() {
     const {
+      children,
       data: {
         markdownRemark: post,
         site: {
@@ -54,12 +55,6 @@ class Simple extends Component {
       date,
     } = getPostData(post, siteMetadata);
 
-    const __html = [
-      post.html,
-      "<hr />",
-      `<p>${FOOTER_TAG}</p>`,
-    ].join("");
-
     return (
       <Container className="simple">
         {writeMetaTags({ post, siteMetadata })}
@@ -72,8 +67,14 @@ class Simple extends Component {
         />
         <Content
           className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html }}
-        />
+        >
+
+          <div
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+          <hr />
+          <p>{FOOTER_TAG}</p>
+        </Content>
         <Tags tags={tags} />
         <Footer form={form} />
       </Container>
@@ -82,3 +83,13 @@ class Simple extends Component {
 }
 
 export default Simple;
+
+const Counter = () => (
+  <div>Suck a lemon</div>
+);
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: {},
+  // components: { "interactive-counter": Counter },
+}).Compiler;

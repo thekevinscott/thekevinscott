@@ -56,8 +56,10 @@ class Grid extends Component {
 
     const __html = [
       post.html,
-      "<hr />",
-      `<p>${FOOTER_TAG}</p>`,
+      `
+      <hr />
+      <p>${FOOTER_TAG}</p>
+      `,
     ].join("");
 
     return (
