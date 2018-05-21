@@ -93,7 +93,6 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          /*
           `gatsby-remark-external-links`,
           'gatsby-remark-copy-linked-files',
           `gatsby-remark-autolink-headers`,
@@ -123,8 +122,6 @@ module.exports = {
               sizeByPixelDensity: false,
             },
           },
-          */
-          `gatsby-remark-component`,
         ],
       },
     },

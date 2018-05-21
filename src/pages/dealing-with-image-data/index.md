@@ -41,28 +41,28 @@ This article will take the [MNIST example for Tensorflow.js](https://github.com/
 
 First [the code imports tensorflow (make sure you're transpiling your code!)](/tensorflowjs-hello-world/), and establish some constants, including:
 
-* the image size (width and height of 28x28 = 784)
-* number of label categories (a number can be 0-9, so there's 10 classes)
-* number of images total (65,000)
-* number of training images (55,000)
-* number of test images (10,000, aka the remainder)
-* paths to the images and the labels
+* `IMAGE_SIZE` - the size of an image (width and height of 28x28 = 784)
+* `NUM_CLASSES` - number of label categories (a number can be 0-9, so there's 10 classes)
+* `NUM_DATASET_ELEMENTS` - number of images total (65,000)
+* `NUM_TRAIN_ELEMENTS` - number of training images (55,000)
+* `NUM_TEST_ELEMENTS` - number of test images (10,000, aka the remainder)
+* `MNIST_IMAGES_SPRITE_PATH` & `MNIST_LABELS_PATH` - paths to the images and the labels
 
 The images are concatenated into one huge image which looks like:
 
-![MNIST Data sprited](mnist.png)
+![MNIST Data sprited](mnist.png "MNIST data as sprites")
 
-I'm not sure what format the labels are in.
-
-From there, they create `MnistData`, a class that exposes the following functions:
+### `MnistData`
+Next up is `MnistData`, a class that exposes the following functions:
 
 * `load` - responsible for asynchronously loading the image and label data
 * `nextTrainBatch` - load the next training batch
 * `nextTestBatch` - load the next test batch
 * `nextBatch` - a generic function to return the next batch, depending on whether it is in the training set or test set
 
-I'm only going to step through the `load` function.
+This article will only step through the `load` function.
 
+### `load`
 ```javascript
 44 async load() {
 45   // Make a request for the MNIST sprited image.
@@ -71,12 +71,13 @@ I'm only going to step through the `load` function.
 48   const ctx = canvas.getContext('2d');
 ```
 
-`async` is a new language feature in Javascript - you can read about it more here.
+`async` [is a relatively new language feature in Javascript](/tensorflowjs-hello-world/#async-and-await) for which you will need a transpiler.
 
-The `Image` object is a native DOM convenience that provides callbacks for when the image is loaded, and reveals access to the image attributes. `canvas` is another DOM element that provides easy access to pixel reading and processing via way of `context`.
+The `Image` object is a native DOM function that represents an image in memory, and it provides callbacks for when the image is loaded along with access to the image attributes. `canvas` is another DOM element that provides easy access to pixel arrays and processing via way of `context`.
 
-*Obviously, since both of these are DOM elements, if you're working in Node.js (or a Web Worker) you won't have access to these conveniences. For an alternative approach skip ahead to the bottom.*
+Since both of these are DOM elements, if you're working in Node.js (or a Web Worker) you won't have access to these elements. For an alternative approach see below.
 
+### `imgRequest`
 ```javascript
 49 const imgRequest = new Promise((resolve, reject) => {
 50   img.crossOrigin = '';
@@ -97,9 +98,9 @@ The code initializes a new promise that will be resolved once the image is loade
 59     canvas.width = img.width;
 60     canvas.height = chunkSize;
 ```
-The code initializes a new buffer to contain every pixel of every image. **What is the 4?**
+The code initializes a new buffer to contain every pixel of every image. It multiplies the total number of images by the size of each image by the number of channels (4).
 
-I *think* that `chunkSize` is used to prevent the UI from loading too much data into memory at once. If I find out otherwise, I'll update this post!
+I *think* that `chunkSize` is used to prevent the UI from loading too much data into memory at once, though I'm not 100% sure.
 
 ```javascript
 62     for (let i = 0; i < NUM_DATASET_ELEMENTS / chunkSize; i++) {
@@ -113,7 +114,7 @@ I *think* that `chunkSize` is used to prevent the UI from loading too much data 
 70       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 ```
 
-This code loop through every image in the sprite and initialize a new `TypedArray` for that iteration; then, the context image gets a chunk of the image drawn. Finally, that drawn image is turned into image data using context's [`getImageData` function](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData), which returns an object representing pixels.
+This code loops through every image in the sprite and initialize a new `TypedArray` for that iteration; then, the context image gets a chunk of the image drawn. Finally, that drawn image is turned into image data using context's [`getImageData` function](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData), which returns an object representing pixels.
 
 ```javascript
 72       for (let j = 0; j < imageData.data.length / 4; j++) {
