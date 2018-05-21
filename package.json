@@ -53,6 +53,7 @@
     "cname": "touch docs/CNAME && echo 'thekevinscott.com' >> docs/CNAME",
     "build-gatsby": "gatsby build && mv public docs",
     "build": "NODE_ENV=production && npm run prebuild && npm run build-gatsby && npm run cname",
+    "simulate-production": "npm run build && mv docs public && npm run serve",
     "serve": "gatsby serve",
     "develop": "gatsby develop",
     "deploy": "gh-pages -d docs",

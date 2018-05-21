@@ -40,12 +40,12 @@ UTF-16.
 
 Let’s demonstrate with an example. Take as our specimen, the letter **A**.
 
-![](https://cdn-images-1.medium.com/max/1600/1*VLjG_N8Iee6wog_rrcmbTQ.png "Sad sack A. Cheer up bud, we’re about to turn you into a code point!"){.center}
+<img alt="An image of an A" src="a.png" caption="Sad sack A. Cheer up bud, we’re about to turn you into a code point!" align="center"></img>
 
 The letter **A** is represented by the code point 65 (in decimal), or 41 (in
 hexadecimal).
 
-<script src="https://gist.github.com/thekevinscott/c6d7511bb078dfda54785974ddf8d0de.js"></script>
+<gist src='<script src="https://gist.github.com/thekevinscott/c6d7511bb078dfda54785974ddf8d0de.js"></script>'></gist>
 
 [codePointAt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt)
 and
@@ -110,8 +110,7 @@ The rest of the planes beyond the BMP are referred to as the “astral planes”
 which include emoji. Emoji live on Plane 1, the Supplementary Multilingual
 Plane.
 
-<span class="figcaption_hack">And the [Consortium](http://unicode.org/consortium/consort.html) said, let there
-be emoji</span>
+<img caption="And the [Consortium](http://unicode.org/consortium/consort.html) said, let there be emoji" src="consortium.png"></img>
 
 What do you think the following will produce?
 

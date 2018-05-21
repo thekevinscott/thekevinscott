@@ -26,8 +26,21 @@ const FOOTER_TAG = "Thanks for reading. If you like what you've read, stay in to
 class Simple extends Component {
   static propTypes = {
     data: PropTypes.shape({
-      markdownRemark: PropTypes.object.isRequired,
+      markdownRemark: PropTypes.shape({
+        html: PropTypes.any.isRequired,
+        htmlAst: PropTypes.any.isRequired,
+      }).isRequired,
+      site: PropTypes.shape({
+        siteMetadata: PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          author: PropTypes.string.isRequired,
+          description: PropTypes.string.isRequired,
+          keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+          url: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
     }).isRequired,
+    children: PropTypes.any,
   };
 
   render() {
@@ -65,13 +78,8 @@ class Simple extends Component {
           timeToRead={timeToRead}
           date={date}
         />
-        <Content
-          className="blog-post-content"
-        >
-
-          <div
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
+        <Content className="blog-post-content">
+          {children}
           <hr />
           <p>{FOOTER_TAG}</p>
         </Content>
@@ -83,13 +91,3 @@ class Simple extends Component {
 }
 
 export default Simple;
-
-// const Counter = () => (
-//   <div>Suck a lemon</div>
-// );
-
-// const renderAst = new rehypeReact({
-//   createElement: React.createElement,
-//   components: {},
-//   // components: { "interactive-counter": Counter },
-// }).Compiler;
