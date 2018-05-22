@@ -134,15 +134,15 @@ We loop through the pixels, and divide by 255 (the maximum possible value of a p
 83 });
 ```
 
-This is the line that takes the buffer, and recasts it into a new `TypedArray` that holds our pixel data. Finally, the promise resolves, and that last line (setting the `src`) actually kicks off the image loading for the whole thing.
+This line takes the buffer, and recasts it into a new `TypedArray` that holds our pixel data, and then resolves the Promise. The last line (setting the `src`) actually begins loading the image loading which starts the function.
 
 One thing that confused me at first was the behavior of `TypedArray`s in relation to their underlying data buffers. You might see in the above code that blah blah blah. When creating `datasetBytesView` above, that's a view; the underlying data is being written to the buffer. That's why it looks like the variable is getting discarded but it actually persists.
 
 ## Fetching image data outside of the DOM
 
-If you're in the DOM, you should use the DOM. The browser (through `canvas`) takes care of figuring out the format of images and translating buffer data into pixels. But what should you do outside of the DOM?
+If you're in the DOM, you should use the DOM. The browser (through `canvas`) takes care of figuring out the format of images and translating buffer data into pixels. But if you're working outside the DOM (say, in Node.js, or a Web Worker), you'll need an alternative approach.
 
-`fetch` provides a mechanism, `response.arrayBuffer`, that gives you access to a file's underlying buffer. We can use this to read the bytes manually, avoiding the DOM entirely:
+`fetch` provides a mechanism, `response.arrayBuffer`, that gives you access to a file's underlying buffer. We can use this to read the bytes manually, avoiding the DOM entirely. Here's an alternative approach to writing the above code (this code requires `fetch`, which can be polyfilled in Node with something like [`isomorphic-fetch`](https://github.com/matthew-andrews/isomorphic-fetch)):
 
 ```javascript
 const imgRequest = fetch(MNIST_IMAGES_SPRITE_PATH).then(resp => resp.arrayBuffer()).then(buffer => {
@@ -159,26 +159,8 @@ const imgRequest = fetch(MNIST_IMAGES_SPRITE_PATH).then(resp => resp.arrayBuffer
 });
 ```
 
-What this will do is fetch the image and return an array buffer. At first I tried to parse this myself, which is an exercise in masochism. [Here's information on how to read an array buffer for a png.](http://www.libpng.org/pub/png/spec/1.2/PNG-Structure.html). I elected to use this library instead, which reads a png buffer and [gives you back a pixel array.](https://github.com/arian/pngjs)
+This returns an array buffer for the particular image. When writing this, I first attempted to parse the incoming buffer myself, which I wouldn't recommend. If you *are* interested in doing that, [here's some information on how to read an array buffer for a png.](http://www.libpng.org/pub/png/spec/1.2/PNG-Structure.html). Instead, I elected to [use `pngjs`](https://github.com/arian/pngjs), which handles the `png` parsing for you, and if you're dealing with other formats you'll have to handle the parsing yourself.
 
-This should work outside of the DOM environment but only for pngs. I imagine there are other buffer parsing libraries out there or you could write your own. The TFJS team says they're working on data improvements so I wouldn't get too attached to this but it's good to know what's going on under the hood.
+# A conclusion goes here
 
-## A word on Typed Arrays
-
-A history of JS typed arrays.
-
-Typed Arrays are a relatively new feature in the world of Javascript. They were introduced because of X. You need them when workin with WEbGL which Tensorflow does.
-
-I found it useful to go through a refresher on these bad boys, since they're so at the core of all this stuff.
-
-Information on typed arrays: https://www.html5rocks.com/en/tutorials/webgl/typed_arrays/
-
-https://blog.codingbox.io/exploring-javascript-typed-arrays-c8fd4f8bd24f
-
-https://www.html5rocks.com/en/tutorials/webgl/typed_arrays/
-
-http://2ality.com/2015/09/typed-arrays.html
-
-https://hacks.mozilla.org/2017/01/typedarray-or-dataview-understanding-byte-order/
-
-
+This conclusion should reiterate the importance of understanding how to manipulate data, and it should also mention that the TFJS team is still changing the underlying data API in Tensorflow.js, so it's worth staying abreast of developments as the processing might get much easier in the future.
