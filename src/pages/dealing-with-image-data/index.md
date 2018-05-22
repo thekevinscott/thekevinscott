@@ -15,9 +15,7 @@ image_credit: "Photo by <a href='https://unsplash.com/photos/ajpU8UmfQAM?utm_sou
 
 A lot of the time in data science is spent manipulating the data. Understanding it, slicing it, visualizing it, looking at it in different ways, and engineering new features. I wrote [an article about that here](/common-patterns-for-analyzing-data/). So it's crucial to have a strong handle on how to manipulate data in Javascript if you're going to be doing Machine Learning in Javascript.
 
-This article will take the [MNIST example for Tensorflow.js](https://github.com/tensorflow/tfjs-examples/blob/master/mnist/data.js) and walk through the code handling the data loading.
-
-*It's important to caveat that this is the version of Tensorflow.js x. Nikhil states the data loading functions will be changing, so stay tuned.*
+This article will take the [MNIST example for Tensorflow.js 0.11.1](https://github.com/tensorflow/tfjs-examples/blob/master/mnist/data.js) and walk through the code handling the data loading.
 
 # MNIST example
 
