@@ -10,16 +10,18 @@ form: "@FooterContainer/TENSORFLOWJS"
 image_credit: "Photo by <a href='https://unsplash.com/photos/ajpU8UmfQAM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Hedi Alija</a>"
 ---
 
-> There's the joke that 80 percent of data science is cleaning the data and 20 percent is complaining about cleaning the data ... data cleaning is a much higher proportion of data science than an outsider would expect. Actually training models is typically a relatively small proportion (less than 10 percent) of what a machine learner or data scientist does. - [Anthony Goldbloom, CEO of
-> Kaggle](https://www.theverge.com/2017/11/1/16589246/machine-learning-data-science-dirty-data-kaggle-survey-2017)
+> There's the joke that 80 percent of data science is cleaning the data and 20 percent is complaining about cleaning the data ... data cleaning is a much higher proportion of data science than an outsider would expect. Actually training models is typically a relatively small proportion (less than 10 percent) of what a machine learner or data scientist does.
+\- [Anthony Goldbloom, CEO of Kaggle](https://www.theverge.com/2017/11/1/16589246/machine-learning-data-science-dirty-data-kaggle-survey-2017)
 
-A lot of the time in data science is spent manipulating the data. Understanding it, slicing it, visualizing it, looking at it in different ways, and engineering new features. I wrote [an article about that here](/common-patterns-for-analyzing-data/). So it's crucial to have a strong handle on how to manipulate data in Javascript if you're going to be doing Machine Learning in Javascript.
+Having a strong handle over how to manipulate data in Javascript is crucial in order to effectively use JavaScript for machine learning.
+
+Manipulating data helps us understanding it, slice it, visualize it, look at it in different ways, and engineering new features. I wrote [an article about that previously](/common-patterns-for-analyzing-data/).
 
 This article will take the [MNIST example for Tensorflow.js 0.11.1](https://github.com/tensorflow/tfjs-examples/blob/master/mnist/data.js) and walk through the code handling the data loading.
 
 # MNIST example
 
-[Here's a link to the TFJS example on MNIST](https://github.com/tensorflow/tfjs-examples/blob/master/mnist/data.js). Let's go through the data file line by line.
+[Here's a link to the TFJS example on MNIST](https://github.com/tensorflow/tfjs-examples/blob/master/mnist/data.js). Let's go through the data file line-by-line.
 
 ```javascript
 18 import * as tf from '@tensorflow/tfjs';
@@ -37,14 +39,14 @@ This article will take the [MNIST example for Tensorflow.js 0.11.1](https://gith
 30     'https://storage.googleapis.com/learnjs-data/model-builder/mnist_labels_uint8';`
 ```
 
-First [the code imports tensorflow (make sure you're transpiling your code!)](/tensorflowjs-hello-world/), and establish some constants, including:
+First [the code imports tensorflow (make sure you're transpiling your code!)](/tensorflowjs-hello-world/), and establishes some constants, including:
 
-* `IMAGE_SIZE` - the size of an image (width and height of 28x28 = 784)
-* `NUM_CLASSES` - number of label categories (a number can be 0-9, so there's 10 classes)
-* `NUM_DATASET_ELEMENTS` - number of images total (65,000)
-* `NUM_TRAIN_ELEMENTS` - number of training images (55,000)
-* `NUM_TEST_ELEMENTS` - number of test images (10,000, aka the remainder)
-* `MNIST_IMAGES_SPRITE_PATH` & `MNIST_LABELS_PATH` - paths to the images and the labels
+* `IMAGE_SIZE` – the size of an image (width and height of 28x28 = 784)
+* `NUM_CLASSES` – number of label categories (a number can be 0-9, so there's 10 classes)
+* `NUM_DATASET_ELEMENTS` – number of images total (65,000)
+* `NUM_TRAIN_ELEMENTS` – number of training images (55,000)
+* `NUM_TEST_ELEMENTS` – number of test images (10,000, aka the remainder)
+* `MNIST_IMAGES_SPRITE_PATH` & `MNIST_LABELS_PATH` – paths to the images and the labels
 
 The images are concatenated into one huge image which looks like:
 
@@ -53,12 +55,12 @@ The images are concatenated into one huge image which looks like:
 ### `MnistData`
 Next up is `MnistData`, a class that exposes the following functions:
 
-* `load` - responsible for asynchronously loading the image and label data
-* `nextTrainBatch` - load the next training batch
-* `nextTestBatch` - load the next test batch
-* `nextBatch` - a generic function to return the next batch, depending on whether it is in the training set or test set
+* `load` – responsible for asynchronously loading the image and label data
+* `nextTrainBatch` – load the next training batch
+* `nextTestBatch` – load the next test batch
+* `nextBatch` – a generic function to return the next batch, depending on whether it is in the training set or test set
 
-This article will only step through the `load` function.
+For the purposes of getting started, this article will only step through the `load` function.
 
 ### `load`
 ```javascript
@@ -71,7 +73,7 @@ This article will only step through the `load` function.
 
 `async` [is a relatively new language feature in Javascript](/tensorflowjs-hello-world/#async-and-await) for which you will need a transpiler.
 
-The `Image` object is a native DOM function that represents an image in memory, and it provides callbacks for when the image is loaded along with access to the image attributes. `canvas` is another DOM element that provides easy access to pixel arrays and processing via way of `context`.
+The `Image` object is a native DOM function that represents an image in memory, and it provides callbacks for when the image is loaded along with access to the image attributes. `canvas` is another DOM element that provides easy access to pixel arrays and processing by way of `context`.
 
 Since both of these are DOM elements, if you're working in Node.js (or a Web Worker) you won't have access to these elements. For an alternative approach see below.
 
@@ -84,9 +86,9 @@ Since both of these are DOM elements, if you're working in Node.js (or a Web Wor
 53     img.height = img.naturalHeight;
 ```
 
-The code initializes a new promise that will be resolved once the image is loaded successfully. (This example does not explicitly handle the error state.)
+The code initializes a new promise that will be resolved once the image is loaded successfully. _(This example does not explicitly handle the error state.)_
 
-`crossOrigin` is an `img` attribute that allows for the loading of images across domains, and gets around CORS issues when interacting with the DOM. `naturalWidth` and `naturalHeight` refer to the original dimensions of the loaded image, and serve to enforce that the image's size is correct when performing calculations.
+`crossOrigin` is an `img` attribute that allows for the loading of images across domains, and gets around CORS (cross-origin resource sharing) issues when interacting with the DOM. `naturalWidth` and `naturalHeight` refer to the original dimensions of the loaded image, and serve to enforce that the image's size is correct when performing calculations.
 
 ```javascript
 55     const datasetBytesBuffer =
@@ -98,7 +100,7 @@ The code initializes a new promise that will be resolved once the image is loade
 ```
 The code initializes a new buffer to contain every pixel of every image. It multiplies the total number of images by the size of each image by the number of channels (4).
 
-I *think* that `chunkSize` is used to prevent the UI from loading too much data into memory at once, though I'm not 100% sure.
+I *believe* that `chunkSize` is used to prevent the UI from loading too much data into memory at once, though I'm not 100% sure.
 
 ```javascript
 62     for (let i = 0; i < NUM_DATASET_ELEMENTS / chunkSize; i++) {
@@ -134,15 +136,15 @@ We loop through the pixels, and divide by 255 (the maximum possible value of a p
 83 });
 ```
 
-This line takes the buffer, and recasts it into a new `TypedArray` that holds our pixel data, and then resolves the Promise. The last line (setting the `src`) actually begins loading the image loading which starts the function.
+This line takes the buffer, and recasts it into a new `TypedArray` that holds our pixel data, and then resolves the Promise. The last line (setting the `src`) actually begins loading the image, which starts the function.
 
-One thing that confused me at first was the behavior of `TypedArray`s in relation to their underlying data buffers. You might see in the above code that blah blah blah. When creating `datasetBytesView` above, that's a view; the underlying data is being written to the buffer. That's why it looks like the variable is getting discarded but it actually persists.
+One thing that confused me at first was the behavior of `TypedArray` in relation to its underlying data buffer. You might see in the above code that {TK NEED TO FIX THIS}. When creating `datasetBytesView` above, we see that it's a view; the underlying data is being written to the buffer. That's why it looks like the variable is getting discarded, though it actually persists.
 
 ## Fetching image data outside of the DOM
 
 If you're in the DOM, you should use the DOM. The browser (through `canvas`) takes care of figuring out the format of images and translating buffer data into pixels. But if you're working outside the DOM (say, in Node.js, or a Web Worker), you'll need an alternative approach.
 
-`fetch` provides a mechanism, `response.arrayBuffer`, that gives you access to a file's underlying buffer. We can use this to read the bytes manually, avoiding the DOM entirely. Here's an alternative approach to writing the above code (this code requires `fetch`, which can be polyfilled in Node with something like [`isomorphic-fetch`](https://github.com/matthew-andrews/isomorphic-fetch)):
+`fetch` provides a mechanism, `response.arrayBuffer`, which gives you access to a file's underlying buffer. We can use this to read the bytes manually, avoiding the DOM entirely. Here's an alternative approach to writing the above code (this code requires `fetch`, which can be polyfilled in Node with something like [`isomorphic-fetch`](https://github.com/matthew-andrews/isomorphic-fetch)):
 
 ```javascript
 const imgRequest = fetch(MNIST_IMAGES_SPRITE_PATH).then(resp => resp.arrayBuffer()).then(buffer => {
@@ -161,6 +163,8 @@ const imgRequest = fetch(MNIST_IMAGES_SPRITE_PATH).then(resp => resp.arrayBuffer
 
 This returns an array buffer for the particular image. When writing this, I first attempted to parse the incoming buffer myself, which I wouldn't recommend. If you *are* interested in doing that, [here's some information on how to read an array buffer for a png.](http://www.libpng.org/pub/png/spec/1.2/PNG-Structure.html). Instead, I elected to [use `pngjs`](https://github.com/arian/pngjs), which handles the `png` parsing for you, and if you're dealing with other formats you'll have to handle the parsing yourself.
 
-# A conclusion goes here
+# Just scratching the surface
 
-This conclusion should reiterate the importance of understanding how to manipulate data, and it should also mention that the TFJS team is still changing the underlying data API in Tensorflow.js, so it's worth staying abreast of developments as the processing might get much easier in the future.
+Understanding data manipulation is a crucial component of machine learning in Javascript. By understanding our use cases and requirements, we can use a few key functions to elegantly format our data correctly for our needs.
+
+The Tensorflow.js team is continuously changing the underlying data API in Tensorflow.js. This can help accommodate more of our needs as the API evolves. This also means that it's worth staying abreast of [developments to the API](https://github.com/tensorflow/tfjs) as Tensorflow.js continues to grow and be improved.
