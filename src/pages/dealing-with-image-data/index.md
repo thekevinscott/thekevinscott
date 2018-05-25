@@ -13,11 +13,7 @@ image_credit: "Photo by <a href='https://unsplash.com/photos/ajpU8UmfQAM?utm_sou
 > There's the joke that 80 percent of data science is cleaning the data and 20 percent is complaining about cleaning the data ... data cleaning is a much higher proportion of data science than an outsider would expect. Actually training models is typically a relatively small proportion (less than 10 percent) of what a machine learner or data scientist does.
 \- [Anthony Goldbloom, CEO of Kaggle](https://www.theverge.com/2017/11/1/16589246/machine-learning-data-science-dirty-data-kaggle-survey-2017)
 
-Having a strong handle over how to manipulate data in Javascript is crucial in order to effectively use JavaScript for machine learning.
-
-Manipulating data helps us understanding it, slice it, visualize it, look at it in different ways, and engineering new features. I wrote [an article about that previously](/common-patterns-for-analyzing-data/).
-
-This article will take the [MNIST example for Tensorflow.js 0.11.1](https://github.com/tensorflow/tfjs-examples/blob/master/mnist/data.js) and walk through the code handling the data loading.
+Knowing how to manipulate data is an important step in using JavaScript for machine learning. This article will take the [MNIST example for Tensorflow.js 0.11.1](https://github.com/tensorflow/tfjs-examples/blob/master/mnist/data.js) and walk through the code handling the data loading.
 
 # MNIST example
 
