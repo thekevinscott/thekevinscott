@@ -1,6 +1,6 @@
 ---
 path: "/emojis-in-javascript/"
-date: "2016-11-05T07:00:00.000Z"
+date: "2019-11-05T07:00:00.000Z"
 description: "This article is a collection of the research I did while getting up to speed on emoji in Javascript."
 title: "Emojis in Javascript"
 image: "cover.png"
