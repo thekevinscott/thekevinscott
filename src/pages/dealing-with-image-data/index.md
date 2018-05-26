@@ -1,7 +1,7 @@
 ---
-path: "/dealing-with-image-data-in-tensorflowjs/"
+path: "/dealing-with-mnist-image-data-in-tensorflowjs/"
 date: "2018-05-29 10:00:00.000 EST"
-title: "Dealing with image data in Tensorflow.js"
+title: "Dealing with MNIST image data in Tensorflow.js"
 image: "cover.jpg"
 tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "image data"]
 description: "Manipulating data is a crucial step step for any machine learning problem. This article is a line-by-line walk through of the MNIST example for Tensorflow.js (0.11.1)"
