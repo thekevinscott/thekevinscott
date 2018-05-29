@@ -84,7 +84,7 @@ hr {
   }
 
     &.line {
-      margin: 100px 0;
+      margin: 100px 0 0 0;
 
       &:before {
         display: none;

@@ -25,8 +25,6 @@ const Container = styled.div `
   align-items: center;
 `;
 
-const FOOTER_TAG = "Thanks for reading. If you like what you've read, stay in touch! You can subscribe below.";
-
 class Simple extends Component {
   static propTypes = {
     data: PropTypes.shape({
@@ -77,9 +75,10 @@ class Simple extends Component {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
           <hr className="line" />
-          <p>{FOOTER_TAG}</p>
         </Content>
+        { /*
         <Tags tags={tags} />
+        */ }
         <Footer
           form={form}
           subscriberTags={getSubscriberTags({
