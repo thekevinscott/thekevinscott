@@ -4,6 +4,7 @@ import {
   SANS_SERIF,
   MONOSPACE,
   GREEN,
+  HR_DEGREES,
 } from "./constants";
 
 const styles = `
@@ -57,6 +58,7 @@ a {
 }
 
 hr {
+  position: relative;
   box-sizing: content-box;
   overflow: visible;
   padding: 0;
@@ -70,7 +72,7 @@ hr {
   margin: 45px auto;
   width: 100%;
 
-    &:before {
+  &:before {
     content: '...';
     display: inline-block;
     margin: 20px auto;
@@ -80,6 +82,32 @@ hr {
     position: relative;
     top: -42px;
   }
+
+    &.line {
+      margin: 100px 0;
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 11px;
+        -webkit-transform: skewY(${HR_DEGREES}deg);
+        transform: skewY(${HR_DEGREES}deg);
+        // position: absolute;
+        // top: -85px;
+        margin-left: auto;
+        margin-right: auto;
+        // left: 48%;
+        left: calc(50% - 24px);
+        background: -webkit-gradient(linear,left top,left bottom,color-stop(50%,#32325d),color-stop(50%,#fff));
+        background: linear-gradient(#32325d 50%,#fff 0);
+        background-size: 100% 4px;
+      }
+    }
 }
 
 strong {

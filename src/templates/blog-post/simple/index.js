@@ -72,7 +72,7 @@ class Simple extends Component {
           <div
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
-          <hr />
+          <hr className="line" />
           <p>{FOOTER_TAG}</p>
         </Content>
         <Tags tags={tags} />
