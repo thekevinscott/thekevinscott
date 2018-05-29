@@ -6,7 +6,11 @@ import Img from "gatsby-image";
 import Content from "./Content";
 import Header from "./Header";
 import Footer from "components/Footer";
-import { writeMetaTags, getPostData } from "../utils";
+import {
+  writeMetaTags,
+  getPostData,
+  getSubscriberTags,
+} from "../utils";
 import {
   LIGHT_GRAY,
 } from "layouts/constants";
@@ -76,7 +80,13 @@ class Simple extends Component {
           <p>{FOOTER_TAG}</p>
         </Content>
         <Tags tags={tags} />
-        <Footer form={form} />
+        <Footer
+          form={form}
+          subscriberTags={getSubscriberTags({
+            post,
+            siteMetadata,
+          })}
+        />
       </Container>
     );
   }

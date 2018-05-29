@@ -20,8 +20,6 @@ const getTags = (tags = []) => [
   tags.slice(-1),
 ].filter(t => t).join(", and ");
 
-window.getTags = getTags;
-
 const Tags = ({ tags }) => <TagContainer>Tagged as {getTags(tags)}</TagContainer>;
 
 export default Tags;

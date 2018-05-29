@@ -60,3 +60,23 @@ export const writeMetaTags = ({ post, siteMetadata }) => {
     </Helmet>
   );
 };
+
+export const getSubscriberTags = ({ post, siteMetadata }) => {
+  const {
+    title,
+    description,
+    path,
+    image,
+    author,
+    keywords,
+    form,
+    tags,
+    credit,
+    timeToRead,
+    date,
+  } = getPostData(post, siteMetadata);
+
+  return {
+    article: path,
+  };
+};

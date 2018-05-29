@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import styleSheet from 'styled-components/lib/models/StyleSheet';
 import favicon from "./favicon.png";
+import { SNIPPET } from "utils/drip";
 
 const getCss = () => {
   if (process.env.NODE_ENV === 'production') {
@@ -49,6 +50,9 @@ module.exports = ({
         dangerouslySetInnerHTML={{ __html: body }}
       />
       {postBodyComponents}
+      <script type="text/javascript"
+        dangerouslySetInnerHTML={{ __html: SNIPPET }}
+      />
     </body>
   </html>
 );
