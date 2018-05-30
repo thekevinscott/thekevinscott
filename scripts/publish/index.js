@@ -14,8 +14,6 @@ const publishPosts = async () => {
   let pathsToPosts = []
   if (argv.path) {
     pathsToPosts.push(argv.path)
-  } else {
-    pathsToPosts.push('TODO get from git')
   }
   pathsToPosts = pathsToPosts.map(helpers.prefixLocalRelativePaths)
 
@@ -43,7 +41,8 @@ const publishPosts = async () => {
 
   const parameterlessOptions = Array.isArray(argv._)
     ? argv._.map(option => option.toLowerCase())
-    : []
+    : [];
+
   if (parameterlessOptions.length === 0) {
     // publish to all platforms
     await publishToMedium(pathsToPosts)
