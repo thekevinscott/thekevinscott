@@ -100,6 +100,7 @@ const transformPostFromPath = async (filePath, transformerPlugin) => {
             siteUrl,
             slug,
           }, filePath);
+
           const returnValue = Object.assign(
             {
               content,
