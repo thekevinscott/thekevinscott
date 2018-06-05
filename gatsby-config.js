@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "Essays by Kevin Scott",
+    title: "Artificial Intelligence, Design, and the Web",
     description: "Design. Artificial Intelligence. Javascript. Master Machine Learning in your Browser with Tensorflow.js",
     keywords: "Tensorflow.js, Machine Learning, Artificial Intelligence, Design, Pytorch, TensorFlow, Deep Learning, Kaggle",
     author: "Kevin Scott",
