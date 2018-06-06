@@ -15,7 +15,7 @@ This page has links to official Google resources, the slides and other articles 
 
 <form action="https://www.getdrip.com/forms/277152125/submissions" method="post" data-drip-embedded-form="277152125" style="padding: 20px; border-radius: 5px; box-shadow: 0 1px 2px rgba(0,0,0,0.4); max-width: 600px; margin: 80px auto;">
   <h3 style="margin: 0 0 20px 0; text-align: center; color: rgba(45,67,205,0.6);" data-drip-attribute="headline">Get started with Tensorflow.js</h3>
-  <p style="text-align: center;">Sign up to learn how to use machine learning in the browser and translate cutting edge ML techniques into web applications.</p>
+  <p style="text-align: center;">Learn how to use Machine Learning in the Browser and Translate Cutting Edge ML techniques into Web Applications.</p>
   <input style="border: 1px solid rgba(0,0,0,0.4); margin: 20px 0; width: 300px; border-radius: 3px; font-size: 20px; padding: 10px 12px" type="email" id="drip-email" name="fields[email]" value="" placeholder="Email address" />
   <div>
     <input style="color: white; background: rgba(45,67,205,0.6); border: none; width: 140px; font-size: 15px; padding: 15px; border-radius: 10px;" type="submit" value="Sign Up" data-drip-attribute="sign-up-button" />
