@@ -17,9 +17,9 @@ setTimeout(function() {
 
 ---
 
-The presentation is on Google Docs: [Link to slides](https://docs.google.com/presentation/d/1Q_azYP8OYqS64xh0BF2KFVcr_8Nv9votJg2Qi5UxQT4/edit?usp=sharing)
+The presentation is on Google Docs: **[Link to slides](https://docs.google.com/presentation/d/1Q_azYP8OYqS64xh0BF2KFVcr_8Nv9votJg2Qi5UxQT4/edit?usp=sharing)**
 
-A PDF version is here: [Link to PDF](./slides.pdf)
+A PDF version is here: **[Link to PDF](./slides.pdf)**
 
 ---
 
