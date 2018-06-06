@@ -26,8 +26,8 @@ A PDF version is here: **[Link to PDF](./slides.pdf)**
 I've written some articles on Tensorflow.js too. You might want to read:
 
 * [Setting up Tensorflow.js](/tensorflowjs-hello-world)
-* [Reasons for Running Machine Learning in your Browser](reasons-for-machine-learning-in-the-browser/)
-* [My Journey building a GPU-capable PC from scratch](deep-learning-cryptocurrency-pc-1-hardware/)
+* [Reasons for Running Machine Learning in your Browser](/reasons-for-machine-learning-in-the-browser/)
+* [My Journey building a GPU-capable PC from scratch](/deep-learning-cryptocurrency-pc-1-hardware/)
 
 <br /><br />
 
