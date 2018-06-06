@@ -13,4 +13,3 @@ export const SNIPPET = `
     s.parentNode.insertBefore(dc, s);
   })();
 `;
-
