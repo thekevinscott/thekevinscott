@@ -8,6 +8,7 @@ title: "Tensorflow.js Presentation"
 <br />
 <br />
 <br />
+
 Thanks for coming out! This page has official Google resources, the slides and other articles by me, and demos of machine learning in the browser in action.
 
 <form action="https://www.getdrip.com/forms/277152125/submissions" method="post" data-drip-embedded-form="277152125" style="padding: 20px; border-radius: 5px; box-shadow: 0 1px 2px rgba(0,0,0,0.4); max-width: 600px; margin: 80px auto;">
