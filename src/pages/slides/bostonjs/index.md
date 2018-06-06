@@ -6,7 +6,7 @@ title: "Tensorflow.js Presentation"
 
 Thanks for coming out! This page has official Google resources, the slides and other articles by me, and demos of machine learning in the browser in action.
 
-<form action="https://www.getdrip.com/forms/277152125/submissions" method="post" data-drip-embedded-form="277152125" style="padding: 20px; border-radius: 5px; box-shadow: 0 2px 2px rgba(0,0,0,0.4)">
+<form action="https://www.getdrip.com/forms/277152125/submissions" method="post" data-drip-embedded-form="277152125" style="padding: 20px; border-radius: 5px; box-shadow: 0 2px 2px rgba(0,0,0,0.4); max-width: 600px; margin: 20px auto;">
   <h3 data-drip-attribute="headline">Get started with Tensorflow.js</h3>
   <div data-drip-attribute="description"></div>
     <div>
