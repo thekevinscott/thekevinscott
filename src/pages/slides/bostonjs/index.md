@@ -15,7 +15,7 @@ Thanks for coming out! This page has official Google resources, the slides and o
   <p>Sign up to my newsletter to hear about new applications of machine learning in the browser, and how to translate cutting edge ML techniques into Javascript.</p>
   <input style="font-size: 20px; padding: 5px" type="email" id="drip-email" name="fields[email]" value="" placeholder="Email address" />
   <div>
-    <input style="padding: 20px; border-radius: 5px;" type="submit" value="Sign Up" data-drip-attribute="sign-up-button" />
+    <input style="background: rgba(45,67,205,0.6); border: none; width: 140px; font-size: 15px; padding: 15px; border-radius: 10px;" type="submit" value="Sign Up" data-drip-attribute="sign-up-button" />
   </div>
 </form>
 
