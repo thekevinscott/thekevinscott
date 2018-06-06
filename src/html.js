@@ -3,7 +3,7 @@ import styled from "styled-components";
 import styleSheet from 'styled-components/lib/models/StyleSheet';
 import favicon from "./favicon.png";
 import { SNIPPET } from "utils/drip";
-import { SNIPPET as mixpanelSnippet } from "utils/mixpanel";
+import mixpanelSnippet from "utils/mixpanel";
 
 const getCss = () => {
   if (process.env.NODE_ENV === 'production') {
