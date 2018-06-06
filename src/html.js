@@ -64,6 +64,9 @@ module.exports = ({
       <Script
         snippet={SNIPPET}
       />
+      <Script
+        snippet={mixpanelSnippet}
+      />
     </body>
   </html>
 );
