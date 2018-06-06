@@ -47,7 +47,7 @@ const getContainer = (key, user = {}) => {
     return parseConfig(config[key], user);
   }
 
-  return parseConfig(config[DEEP_LEARNING_JOURNAL], user);
+  return parseConfig(config[TENSORFLOWJS], user);
 };
 
 export default getContainer;
