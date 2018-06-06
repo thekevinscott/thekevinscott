@@ -49,9 +49,6 @@ module.exports = ({
       />
       {headComponents}
       {getCss()}
-      <Script
-        snippet={mixpanelSnippet}
-      />
     </head>
     <body {...bodyAttributes}>
       {preBodyComponents}
@@ -63,9 +60,6 @@ module.exports = ({
       {postBodyComponents}
       <Script
         snippet={SNIPPET}
-      />
-      <Script
-        snippet={mixpanelSnippet}
       />
     </body>
   </html>
