@@ -15,6 +15,8 @@ setTimeout(function() {
 }, 1000);
 </script>
 
+---
+
 The presentation is on Google Docs:
 
 [Link to slides](https://docs.google.com/presentation/d/1Q_azYP8OYqS64xh0BF2KFVcr_8Nv9votJg2Qi5UxQT4/edit?usp=sharing)
