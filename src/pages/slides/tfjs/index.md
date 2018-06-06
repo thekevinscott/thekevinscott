@@ -6,8 +6,14 @@ title: "Tensorflow.js Presentation"
 
 # Thanks for listening!
 
-I'd love to hear what you think. Feel free to email me at <a id="email" href="mailto:kevin@hitheory.com">kevin@hitheory.com</a>.
-<script type="text/javascript"></script>
+I'd love to hear what you think. Feel free to email me at <a id="email" href="mailto:kevin@hitheory.com">kevin</a>.
+<script type="text/javascript">
+setTimeout(function() {
+    var email = document.getElementById('email');
+    email.innerHTML = 'kevin@hitheory.com';
+    email.href = 'mailto:kevin@hitheory.com';
+}, 1000);
+</script>
 
 The presentation is on Google Docs:
 
