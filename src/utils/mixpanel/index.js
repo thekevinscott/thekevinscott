@@ -1,20 +1,27 @@
-import _mixpanel from 'mixpanel-browser';
-
-const TOKEN = '0a0d38878ee707bf9e9f35da10be620c';
+import mixpanel from 'mixpanel-browser';
 
 let initialized = false;
 
-const getMixpanel = () => new Promise(resolve => {
+const init = () => new Promise(resolve => {
   if (initialized) {
-    return resolve(_mixpanel);
+    return resolve();
   }
 
   initialized = true;
-  _mixpanel.init(TOKEN);
+  mixpanel.init(process.env.MIXPANEL_TOKEN);
 
-  return resolve(_mixpanel);
+  return resolve();
 });
 
-export const track = (...args) => getMixpanel().then(mixpanel => mixpanel.track(...args));
+export const track = (eventName, args = {}) => init().then(() => {
+  if (typeof args !== "object") {
+    throw new Error("Invalid format of args");
+  }
+  return mixpanel.track(eventName, args);
+}).catch(err => {
+  if (process.env.NODE_ENV !== "production") {
+    console.error(err);
+  }
+});
 
-export const pageView = url => track('pageView', url);
+export const pageView = url => track('pageView', { url });
