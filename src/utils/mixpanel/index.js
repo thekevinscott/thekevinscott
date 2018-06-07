@@ -17,7 +17,11 @@ export const track = (eventName, args = {}) => init().then(() => {
   if (typeof args !== "object") {
     throw new Error("Invalid format of args");
   }
-  return mixpanel.track(eventName, args);
+  if (process.env.NODE_ENV === "production") {
+    return mixpanel.track(eventName, args);
+  } else {
+    console.warn(`mixpanel event ${eventName} not tracked`, args);
+  }
 }).catch(err => {
   if (process.env.NODE_ENV !== "production") {
     console.error(err);
