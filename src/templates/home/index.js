@@ -14,6 +14,7 @@ import {
   getPosts,
 } from "./selectors";
 import { writeAllGraphTags } from "../../utils/writeGraphTags";
+import { pageView } from 'utils/mixpanel';
 
 let timer;
 
@@ -51,6 +52,7 @@ export default class Index extends Component {
   }
 
   componentDidMount() {
+    pageView('/');
     const posts = this.getPosts();
     if (window && !timer) {
       timer = setTimeout(() => {

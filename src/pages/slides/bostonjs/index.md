@@ -31,7 +31,7 @@ These are links to the official Tensorflow.js resources offered by Google.
 * [Tensorflow.js Examples](https://github.com/tensorflow/tfjs-examples)
 * [Playground for Tensorflow.js](https://playground.tensorflow.org)
 
-# Things from me
+# Slides
 
 The presentation is on Google Docs: **[Link to slides](https://docs.google.com/presentation/d/1Q_azYP8OYqS64xh0BF2KFVcr_8Nv9votJg2Qi5UxQT4/edit?usp=sharing)**
 
