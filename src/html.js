@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import styleSheet from 'styled-components/lib/models/StyleSheet';
 import favicon from "./favicon.png";
+import { SNIPPET } from "utils/drip";
 
 const getCss = () => {
   if (process.env.NODE_ENV === 'production') {
@@ -15,11 +16,18 @@ const getCss = () => {
   return null;
 };
 
+
 const Gatsby = styled.div `
   flex: 1;
   display: flex;
   max-width: 100%;
 `;
+
+const Script = ({ snippet }) => (
+  <script type="text/javascript"
+    dangerouslySetInnerHTML={{ __html: snippet }}
+  />
+);
 
 module.exports = ({
   htmlAttributes,
@@ -49,6 +57,9 @@ module.exports = ({
         dangerouslySetInnerHTML={{ __html: body }}
       />
       {postBodyComponents}
+      <Script
+        snippet={SNIPPET}
+      />
     </body>
   </html>
 );

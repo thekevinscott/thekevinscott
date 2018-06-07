@@ -10,8 +10,8 @@ import styled from "styled-components";
 const LETTER_SPACING = 20;
 
 const Content = styled.article `
-  max-width: 100%;
-  width: 780px;
+  width: 100%;
+  max-width: 780px;
   box-sizing: border-box;
   position: relative;
 

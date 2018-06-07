@@ -22,10 +22,16 @@ const Container = styled.div `
   margin: 0 auto;
 `;
 
-export default ({ form }) => {
+export default ({
+  form,
+  subscriberTags,
+}) => {
   return (
     <Footer>
-      <Form form={form || DEEP_LEARNING_JOURNAL} />
+      <Form
+        form={form || DEEP_LEARNING_JOURNAL}
+        subscriberTags={subscriberTags}
+      />
     </Footer>
   );
 };

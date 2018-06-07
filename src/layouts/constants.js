@@ -27,3 +27,5 @@ export const SANS_SERIF = `
 `;
 
 export const MONOSPACE = `SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace`;
+
+export const HR_DEGREES = -12;

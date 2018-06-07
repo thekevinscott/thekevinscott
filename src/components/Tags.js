@@ -15,6 +15,11 @@ const TagContainer = styled.div `
   }
 `;
 
-const Tags = ({ tags }) => <TagContainer>Tags: {tags.join(", ")}</TagContainer>;
+const getTags = (tags = []) => [
+  tags.slice(0, -1).join(", "),
+  tags.slice(-1),
+].filter(t => t).join(", and ");
+
+const Tags = ({ tags }) => <TagContainer>Tagged as {getTags(tags)}</TagContainer>;
 
 export default Tags;

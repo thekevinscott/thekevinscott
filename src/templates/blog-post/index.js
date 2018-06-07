@@ -4,6 +4,7 @@ import Simple from "./simple";
 import Grid from "./grid";
 import Img, { KEY as ImgKey } from "components/Img";
 import Gist, { KEY as GistKey } from "components/Embed";
+import { pageView } from 'utils/mixpanel';
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
@@ -61,15 +62,32 @@ const getLayout = props => {
   }
 };
 
-export default (props) => {
-  const layout = getLayout(props);
-  const Layout = getLayoutComponent(layout);
+export default class BlogPost extends Component {
+  componentDidMount() {
+    this.newPageLoad(this.props.location.pathname);
+  }
 
-  return (
-    <Layout {...props}>
-      {renderAst(props.data.markdownRemark.htmlAst)}
-    </Layout>
-  );
+  componentWillReceiveProps({ location }) {
+    if (location.pathname !== this.props.location.pathname) {
+      this.newPageLoad(location.pathname);
+    }
+  }
+
+  newPageLoad(url) {
+    pageView(url);
+  }
+
+  render() {
+    const props = this.props;
+    const layout = getLayout(props);
+    const Layout = getLayoutComponent(layout);
+
+    return (
+      <Layout {...props}>
+        {renderAst(props.data.markdownRemark.htmlAst)}
+      </Layout>
+    );
+  }
 };
 
 const components = {
