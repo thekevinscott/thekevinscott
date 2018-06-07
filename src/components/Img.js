@@ -24,14 +24,17 @@ const Img = ({
   alt,
   caption,
   align,
-}) => (
-  <Container align={align}>
-    <img src={src} alt={alt} title={caption} />
-    {caption && (
-      <Caption>{caption}</Caption>
-    )}
-  </Container>
-);
+}) => {
+  console.log(src, caption, alt, align);
+  return (
+    <Container align={align}>
+      <img src={src} alt={alt} title={caption} />
+      {caption && (
+        <Caption>{caption}</Caption>
+      )}
+    </Container>
+  );
+};
 
 Img.propTypes = {
   src: PropTypes.string.isRequired,
@@ -41,7 +44,7 @@ Img.propTypes = {
 };
 
 Img.defaultProps = {
-  align: "center",
+  // align: "center",
 };
 
 export const KEY = "img";

@@ -1,6 +1,6 @@
 ---
 path: "/emojis-in-javascript/"
-date: "2019-11-05T07:00:00.000Z"
+date: "2016-11-05T07:00:00.000Z"
 description: "This article is a collection of the research I did while getting up to speed on emoji in Javascript."
 title: "Emojis in Javascript"
 image: "cover.png"
@@ -40,7 +40,8 @@ UTF-16.
 
 Let’s demonstrate with an example. Take as our specimen, the letter **A**.
 
-<img alt="An image of an A" src="a.png" caption="Sad sack A. Cheer up bud, we’re about to turn you into a code point!" align="center"></img>
+![An image of an a](a.png)
+<div class="caption">Sad sack A. Cheer up bud, we’re about to turn you into a code point!</div>
 
 The letter **A** is represented by the code point 65 (in decimal), or 41 (in
 hexadecimal).
@@ -110,7 +111,8 @@ The rest of the planes beyond the BMP are referred to as the “astral planes”
 which include emoji. Emoji live on Plane 1, the Supplementary Multilingual
 Plane.
 
-<img caption="And the [Consortium](http://unicode.org/consortium/consort.html) said, let there be emoji" src="consortium.png"></img>
+![The Consotrium](consortium.jpeg)
+<div class="caption">And the [Consortium](http://unicode.org/consortium/consort.html) said, let there be emoji</div>
 
 What do you think the following will produce?
 

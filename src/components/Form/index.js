@@ -59,6 +59,7 @@ class Form extends Component {
 
       return input.required && this.state.values[input.name] === "";
     }, false);
+
     return (
       <Container
         {...rest}

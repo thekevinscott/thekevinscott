@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import rehypeReact from "rehype-react";
 import Simple from "./simple";
 import Grid from "./grid";
-import Img, { KEY as ImgKey } from "components/Img";
-import Gist, { KEY as GistKey } from "components/Embed";
+import render from 'components/markdown';
 import { pageView } from 'utils/mixpanel';
 
 export const pageQuery = graphql`
@@ -84,18 +82,8 @@ export default class BlogPost extends Component {
 
     return (
       <Layout {...props}>
-        {renderAst(props.data.markdownRemark.htmlAst)}
+        {render(props.data.markdownRemark.htmlAst)}
       </Layout>
     );
   }
 };
-
-const components = {
-  [ImgKey]: Img,
-  [GistKey]: Gist,
-};
-
-const renderAst = new rehypeReact({
-  createElement: React.createElement,
-  components,
-}).Compiler;

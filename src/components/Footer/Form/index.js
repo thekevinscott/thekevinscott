@@ -22,7 +22,7 @@ const writeSubscriberTags = subscriberTags => Object.entries(subscriberTags).map
   value,
 }));
 
-class FormContainer extends Component {
+class FooterForm extends Component {
   constructor(props) {
     super(props);
 
@@ -72,13 +72,13 @@ class FormContainer extends Component {
   }
 };
 
-FormContainer.propTypes = {
+FooterForm.propTypes = {
   form: PropTypes.string.isRequired,
   subscriberTags: PropTypes.object,
 };
 
-FormContainer.defaultProps = {
+FooterForm.defaultProps = {
   subscriberTags: {},
 };
 
-export default FormContainer;
+export default FooterForm;

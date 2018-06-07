@@ -23,6 +23,15 @@ const Container = styled.div `
   flex: 1;
   flex-direction: column;
   align-items: center;
+
+  :global {
+  .caption {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: -30px;
+    margin-bottom: 50px;
+  }
+  }
 `;
 
 class Simple extends Component {
@@ -35,9 +44,9 @@ class Simple extends Component {
       site: PropTypes.shape({
         siteMetadata: PropTypes.shape({
           title: PropTypes.string.isRequired,
-          author: PropTypes.string.isRequired,
-          description: PropTypes.string.isRequired,
-          keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+          author: PropTypes.string,
+          description: PropTypes.string,
+          keywords: PropTypes.string,
           url: PropTypes.string.isRequired,
         }).isRequired,
       }).isRequired,
