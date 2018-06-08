@@ -47,7 +47,7 @@
     "stylelint-config-standard": "^18.0.0",
     "to-vfile": "^2.1.2",
     "webfontloader": "^1.6.28",
-    "yargs": "^10.1.1"
+    "yargs": "^11.0.0"
   },
   "main": "n/a",
   "scripts": {
@@ -62,11 +62,21 @@
     "lint:eslint": "eslint --ignore-path .gitignore",
     "lint:fix": "npm run lint -- --fix . ",
     "crosspost": "node scripts/publish/index.js",
-    "test": "node scripts/test/index.js"
+    "test": "node scripts/test/index.js --PORT 6041"
   },
   "devDependencies": {
     "gh-pages": "^1.1.0",
     "jest": "^23.1.0",
-    "prettier": "^1.9.2"
+    "jest-puppeteer": "^3.0.1",
+    "mkdirp": "^0.5.1",
+    "prettier": "^1.9.2",
+    "puppeteer": "^1.5.0",
+    "rimraf": "^2.6.2"
+  },
+  "jest": {
+    "globalSetup": "<rootDir>scripts/test/setup.js",
+    "globalTeardown": "<rootDir>scripts/test/teardown.js",
+    "testEnvironment": "<rootDir>scripts/test/puppeteer_environment.js",
+    "preset": "jest-puppeteer"
   }
 }
