@@ -14,6 +14,7 @@ process.env.PUBLIC_URL = '';
 const BUILD_DIR = "./public";
 
 try {
+
   [
     `${BUILD_DIR}`,
     `${BUILD_DIR}/index.html`,
