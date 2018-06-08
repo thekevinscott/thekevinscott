@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import Form from "./Form";
-import {
+import SubscribeForm, {
   TENSORFLOWJS,
-} from "./Form/config";
+} from "components/SubscribeForm";
 import {
   DARK_BLUE,
   LIGHT_BLUE,
@@ -23,16 +22,15 @@ const Container = styled.div `
   margin: 0 auto;
 `;
 
-const getForm = form => form || TENSORFLOWJS;
-
 export default ({
   form,
   subscriberTags,
 }) => {
   return (
     <Footer>
-      <Form
-        form={getForm(form)}
+      <SubscribeForm
+        descriptionPlacement="above"
+        form={form}
         subscriberTags={subscriberTags}
       />
     </Footer>

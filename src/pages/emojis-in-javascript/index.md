@@ -41,12 +41,12 @@ UTF-16.
 Let’s demonstrate with an example. Take as our specimen, the letter **A**.
 
 ![An image of an a](a.png)
-<div class="caption">Sad sack A. Cheer up bud, we’re about to turn you into a code point!</div>
+<capt>Sad sack A. Cheer up bud, we’re about to turn you into a code point!</capt>
 
 The letter **A** is represented by the code point 65 (in decimal), or 41 (in
 hexadecimal).
 
-<gist src='<script src="https://gist.github.com/thekevinscott/c6d7511bb078dfda54785974ddf8d0de.js"></script>'></gist>
+<script src="https://gist.github.com/thekevinscott/c6d7511bb078dfda54785974ddf8d0de.js"></script>
 
 [codePointAt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt)
 and
@@ -142,6 +142,8 @@ why you can’t just do something like:
 So, how do we get the surrogate pair? [There’s a great explanation
 here](http://www.2ality.com/2013/09/javascript-unicode.html), and here’s a gist
 illustrating going from emoji to decimal to surrogate pair and back again:
+
+<script src="https://gist.github.com/thekevinscott/54dec813e12e7984d17e1badc30b930c.js"></script>
 
 Because of these limitations within Javascript, in order to parse strings
 containing emoji, we need some fancy footwork.

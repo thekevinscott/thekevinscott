@@ -36,6 +36,7 @@
     "medium-sdk": "^0.0.4",
     "mixpanel-browser": "^2.22.4",
     "prismjs": "^1.14.0",
+    "react-gist": "^1.2.1",
     "react-helmet": "^5.2.0",
     "rehype-react": "^3.0.2",
     "remark-frontmatter": "^1.2.0",

@@ -5,7 +5,7 @@ title: "Typed arrays"
 tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "image data"]
 description: ""
 layout: ""
-form: "@FooterContainer/TENSORFLOWJS"
+form: "TENSORFLOWJS"
 ---
 
 ## A word on Typed Arrays
