@@ -3,7 +3,8 @@ import styled from "styled-components";
 import {
   LIGHT_BLUE,
   LIGHT_GRAY,
-} from '../../layouts/constants';
+  media,
+} from 'layouts/constants';
 
 const Container = styled.form `
   margin: 0 auto 0 auto;
@@ -13,6 +14,9 @@ const Container = styled.form `
   background: white;
   border-radius: 5px;
   box-sizing: border-box;
+  ${media.tablet`
+    border-radius: 0;
+  `}
 
   input {
     padding: 10px;
@@ -34,6 +38,9 @@ const Container = styled.form `
     min-width: 0;
     min-height: 0;
     width: 300px;
+    ${media.tablet`
+      width: 100%;
+    `}
 
     &[type=submit] {
       border-radius: 10px;

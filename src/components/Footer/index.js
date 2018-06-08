@@ -7,7 +7,8 @@ import SubscribeForm, {
 import {
   DARK_BLUE,
   LIGHT_BLUE,
-} from '../../layouts/constants';
+  media,
+} from 'layouts/constants';
 
 const Footer = styled.div `
   width: 100%;
@@ -15,11 +16,20 @@ const Footer = styled.div `
   color: rgba(255,255,255,0.95);
   margin-top: 160px;
   padding-top: 60px;
+
+  ${media.tablet`
+    margin-top: 0px;
+    padding-top: 20px;
+  `}
 `;
 
 const Container = styled.div `
   max-width: 700px;
   margin: 0 auto;
+
+  ${media.tablet`
+    width: auto;
+  `}
 `;
 
 export default ({

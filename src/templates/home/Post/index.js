@@ -1,17 +1,13 @@
 import React, { Component } from "react";
 import {
+  media,
+} from "layouts/constants";
+import {
   format,
-} from "../../../utils/getDate";
+} from "utils/getDate";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
-// import Animated from "../../../components/Animated";
-// import ReadTime from "../../../components/ReadTime";
-// import Info from "./Info";
-// import PostContent from "./PostContent";
-// import StyledPost from "./StyledPost";
-// import Title from "./Title";
-// import ReadMore from "./ReadMore";
 
 const Ul = styled.ul `
   list-style-type: none;
@@ -23,6 +19,10 @@ const Li = styled.li `
   list-style-type: none;
   padding: 0;
   margin: 0 0 20px 0;
+
+  ${media.tablet`
+    margin-bottom: 40px;
+  `}
 
   a {
     text-decoration: underline;
