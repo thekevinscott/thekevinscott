@@ -475,7 +475,7 @@ Each author continues by examining the images themselves:
 ![anapie performs a sweep across the X angle](images/anapie_x_sweep.png)
 <div class="caption"><span class="name">Alexandru</span> looks at images from the X angle</div>
 
-!["anokas sweeps across a set of patient images"]("anokas_sweep.gif")
+<img alt="anokas sweeps across a set of patient images" src="https://thekevinscott.com/src/pages/exploratory-data-analysis-strategies/images/anokas_sweep.gif" />
 <div class="caption">anokas builds a gif that moves through a set of patient images</div>
 
 <span class="name">Alexandru</span> spent some time exploring whether edge detection could enhance the images.

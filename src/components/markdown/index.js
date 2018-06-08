@@ -11,15 +11,9 @@ const components = {
   [CaptionKey]: Caption,
 };
 
-let renderAst;
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components,
+}).Compiler;
 
-export default (...args) => {
-  if (!renderAst) {
-    renderAst = new rehypeReact({
-      createElement: React.createElement,
-      components,
-    }).Compiler;
-  }
-
-  return renderAst(...args);
-};
+export default renderAst;
