@@ -36,6 +36,7 @@
     "gatsby-transformer-sharp": "^1.6.16",
     "jest": "^23.1.0",
     "jest-puppeteer": "^3.0.1",
+    "jest-raw-loader": "^1.0.1",
     "medium-sdk": "^0.0.4",
     "mixpanel-browser": "^2.22.4",
     "mkdirp": "^0.5.1",
@@ -77,6 +78,9 @@
     "testEnvironment": "<rootDir>scripts/test/puppeteer_environment.js",
     "moduleNameMapper": {
       "scaffolding": "<rootDir>/scripts/test/scaffolding.js"
+    },
+    "transform": {
+      "\\.md$": "jest-raw-loader"
     },
     "preset": "jest-puppeteer"
   }

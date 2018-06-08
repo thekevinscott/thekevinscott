@@ -2,6 +2,15 @@ const TIMEOUT = 2000;
 
 const ROOT = `http://localhost:${process.env.PORT}/`;
 
+const parseConfig = config => config.split("---")[1].split("\n").filter(line => line).reduce((obj, line) => {
+  const parts = line.split(":").map(part => part.replace(/"/g, ''));
+
+  return {
+    ...obj,
+    [parts[0].trim()]: parts.slice(1).join(":").trim(),
+  };
+}, {});
+
 const scaffolding = () => {
   let page;
 
@@ -25,6 +34,7 @@ const scaffolding = () => {
     ROOT,
     clickAndWaitForNavigation,
     getPage,
+    parseConfig,
   };
 };
 

@@ -3,20 +3,24 @@ const {
   ROOT,
   TIMEOUT,
   getPage,
+  parseConfig,
 } = require("scaffolding")();
 
 describe('Testing Chatbots', async () => {
+  let page, config;
   beforeAll(async () => {
     page = await getPage();
+    config = parseConfig(require("../index.md"));
   });
 
   beforeEach(async () => {
-    await page.goto(`${ROOT}testing-chatbots-how-to-ensure-a-bot-says-the-right-thing-at-the-right-time/`);
+    const url = `${ROOT}${config.path.substring(1)}`;
+    await page.goto(url);
   });
 
   it('should load without error', async () => {
-    const text = await page.evaluate(() => document.body.textContent);
-    expect(text).toContain('Testing Chatbots: How to Ensure a Bot Says the Right Thing at the Right Time');
+    const text = await page.evaluate(() => document.querySelector('h1').textContent);
+    expect(text).toContain(config.title);
   });
 }, TIMEOUT);
 

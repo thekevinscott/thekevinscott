@@ -6,6 +6,7 @@ const {
 } = require("scaffolding")();
 
 describe('Emojis in Javscript', async () => {
+  let page;
   beforeAll(async () => {
     page = await getPage();
   });
