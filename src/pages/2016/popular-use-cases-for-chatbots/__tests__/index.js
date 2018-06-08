@@ -16,7 +16,7 @@ describe('Popular Use Cases for Chatbots', async () => {
 
   it('should load without error', async () => {
     const text = await page.evaluate(() => document.body.textContent);
-    expect(text).toContain('Emojis in Javascript');
+    expect(text).toContain('Testing Chatbots: How to Ensure a Bot Says the Right Thing at the Right Time');
   });
 }, TIMEOUT);
 
