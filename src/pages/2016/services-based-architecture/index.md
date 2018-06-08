@@ -69,7 +69,7 @@ Services do introduce overhead around managing multiple services and their
 dependencies, but Vagrant and Docker go a long way towards smoothing out that
 process.
 
-*****
+---
 
 There’s plenty more refactoring we could do; for instance, we’re eager to break
 apart our Bot service further, which is currently handling both the message
@@ -78,23 +78,3 @@ parsing and the logic of the script driving the bot interactions.
 Overall, moving to a services-based architecture has allowed us to iterate
 faster with much more overall stability, meaning a better bot experience from
 start to finish.
-
-![](https://cdn-images-1.medium.com/max/1760/1*xVXWVhL3QjUAZGByCnwf5A.gif)
-<span class="figcaption_hack">Enjoyed the article? Click the ❤ below to recommend it to other interested
-readers!</span>
-
-* [Bots](https://chatbotsmagazine.com/tagged/bots?source=post)
-* [Microservices](https://chatbotsmagazine.com/tagged/microservices?source=post)
-* [Emoji](https://chatbotsmagazine.com/tagged/emoji?source=post)
-* [Games](https://chatbotsmagazine.com/tagged/games?source=post)
-
-From a quick cheer to a standing ovation, clap to show how much you enjoyed this
-story.
-
-### [Kevin Scott](https://chatbotsmagazine.com/@thekevinscott)
-
-Hacker // Designer // Storyteller // thekevinscott.com
-
-### [Chatbots Magazine](https://chatbotsmagazine.com/?source=footer_card)
-
-Chatbots, AI, NLP, Facebook Messenger, Slack, Telegram, and more.
