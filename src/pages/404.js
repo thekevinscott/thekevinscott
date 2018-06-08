@@ -37,9 +37,8 @@ const findMatchingPost = (path, {
     edges,
   },
 }) => {
-  console.log('incoming', path);
-  if (path === "/") {
-    return path;
+  if (!path || path === "/") {
+    return "/";
   }
 
   const pathDate = getPathDate(path);
@@ -76,7 +75,6 @@ class NotFoundPage extends Component {
   componentDidMount() {
     const pathname = window.location.pathname.split("/").filter(f => f).join("");
 
-    console.log('da', pathname);
     const matchingPost = findMatchingPost(pathname, this.props.data);
 
     if (matchingPost) {
