@@ -1,10 +1,18 @@
 import styled from "styled-components";
+import {
+  media,
+} from 'layouts/constants';
 
 const SIZE = 70;
 const Description = styled.div `
   display: flex;
   margin-bottom: 40px;
   align-items: center;
+
+  ${media.tablet`
+    flex-direction: column;
+    margin: 20px;
+  `}
 
   img {
     width: ${SIZE}px;

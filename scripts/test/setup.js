@@ -23,9 +23,4 @@ module.exports = async () => {
   // file the wsEndpoint for TestEnvironments
   mkdirp.sync(DIR);
   fs.writeFileSync(path.join(DIR, 'wsEndpoint'), browser.wsEndpoint());
-
-  beforeEach(async () => {
-    page = await global.__BROWSER__.newPage();
-    await page.goto(`http://localhost:${argv.PORT}`);
-  }, timeout);
 };

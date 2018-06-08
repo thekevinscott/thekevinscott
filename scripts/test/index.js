@@ -1,5 +1,7 @@
 'use strict';
 
+const chalk = require('chalk');
+const fs = require('fs');
 const spawn = require('../utils/spawn');
 const jest = require('jest');
 const yargs = require('yargs').argv;
@@ -8,6 +10,23 @@ const yargs = require('yargs').argv;
 process.env.BABEL_ENV = 'test';
 process.env.NODE_ENV = 'test';
 process.env.PUBLIC_URL = '';
+
+const BUILD_DIR = "./public";
+
+try {
+
+  [
+    `${BUILD_DIR}`,
+    `${BUILD_DIR}/index.html`,
+    `${BUILD_DIR}/static`,
+    `${BUILD_DIR}/rss.xml`,
+  ].forEach(fs.statSync);
+  console.log(chalk.green('Build dir present and already populated'));
+} catch(err) {
+  console.log(chalk.red(`I think Public directory is not yet built, please build`));
+  console.error(err);
+  process.exit(1);
+}
 
 spawn('gatsby', ['serve', '-p', yargs.PORT]);
 

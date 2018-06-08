@@ -1,3 +1,5 @@
+import styled, { css } from "styled-components";
+
 export const PINK = "#ffb7b7";
 export const GREEN = "#1C9963";
 export const DARK_BLUE = "rgba(45,67,104,0.95)";
@@ -29,3 +31,22 @@ export const SANS_SERIF = `
 export const MONOSPACE = `SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace`;
 
 export const HR_DEGREES = -12;
+
+
+const sizes = {
+  giant: 1170,
+  desktop: 992,
+  tablet: 768,
+  phone: 376
+};
+
+// iterate through the sizes and create a media template
+export const media = Object.keys(sizes).reduce((accumulator, label) => {
+  const emSize = sizes[label] / 16;
+  accumulator[label] = (...args) => css`
+    @media (max-width: ${emSize}em) {
+      ${css(...args)}
+    }
+  `;
+  return accumulator;
+}, {});

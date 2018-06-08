@@ -80,6 +80,15 @@ export default class BlogPost extends Component {
     const layout = getLayout(props);
     const Layout = getLayoutComponent(layout);
 
+    if (!props.data || !props.data.markdownRemark) {
+      if (process.env.NODE_ENV !== "production") {
+        console.warn("There was an error loading the blog post. You may want to check that the path has a starting and ending slash");
+      }
+      return (
+        <div>Fatal error</div>
+      );
+    }
+
     return (
       <Layout {...props}>
         {render(props.data.markdownRemark.htmlAst)}

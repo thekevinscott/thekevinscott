@@ -24,6 +24,10 @@ const Title = styled.h1 `
   font-size: 4rem;
   color: rgba(0,0,0,0.7);
   margin: 0;
+
+  a {
+    line-height: 4.6rem;
+  }
 `;
 
 export default class Index extends Component {
