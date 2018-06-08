@@ -6,7 +6,7 @@ const {
   parseConfig,
 } = require("scaffolding")();
 
-describe('Popular Use Cases for Chatbots', async () => {
+describe('Exploratory Data Analysis', async () => {
   let page, config;
   beforeAll(async () => {
     page = await getPage();
@@ -23,3 +23,6 @@ describe('Popular Use Cases for Chatbots', async () => {
     expect(text).toContain(config.title);
   });
 }, TIMEOUT);
+
+
+

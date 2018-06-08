@@ -6,7 +6,7 @@ const {
   parseConfig,
 } = require("scaffolding")();
 
-describe('Popular Use Cases for Chatbots', async () => {
+describe('Javascript Internationalization', async () => {
   let page, config;
   beforeAll(async () => {
     page = await getPage();
