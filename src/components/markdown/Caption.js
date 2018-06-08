@@ -19,7 +19,7 @@ const Caption = ({
 };
 
 Caption.propTypes = {
-  children: PropTypes.oneOf([
+  children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.array,
   ]).isRequired,
