@@ -1,12 +1,10 @@
 ---
-path: "testing-chatbots-how-to-ensure-a-bot-says-the-right-thing-at-the-right-time"
+path: "/testing-chatbots-how-to-ensure-a-bot-says-the-right-thing-at-the-right-time/"
 date: "2016-07-20T09:00:00.000Z"
 title: "Testing Chatbots: How to Ensure a Bot Says the Right Thing at the Right Time"
 image: "cover.png"
 tags: ["chatbots", "unit tests", "integration tests"]
 ---
-
-## Perspective on one of the final steps of bot development.
 
 I love tests. I used to abhor them, but I’ve been burned enough times by enough
 codebases to appreciate a robust testing suite, and its ability to ensure well
@@ -108,10 +106,12 @@ the received message ID.
 
 There’s four types of responses the Test Suite can expect to get back:
 
-1. No response — *for instance, if someone is blacklisted*<br> 2. An invalid
-response — *the wrong message entirely*<br> 3. A valid response with invalid
-data — *aka, the correct container but the wrong content*4. A valid response —
-*any of a number of variations*
+1. No response — *for instance, if someone is blacklisted*
+2. An invalid
+response — *the wrong message entirely*
+3. A valid response with invalid
+data — *aka, the correct container but the wrong content*
+4. A valid response — *any of a number of variations*
 
 The Test Suite will get the response by querying for a specific message ID (the
 ‘sent’ ID).
