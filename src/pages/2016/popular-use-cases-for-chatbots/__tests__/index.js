@@ -5,14 +5,13 @@ const {
   getPage,
 } = require("scaffolding")();
 
-describe('Emojis in Javscript', async () => {
+describe('Popular Use Cases for Chatbots', async () => {
   beforeAll(async () => {
     page = await getPage();
   });
 
   beforeEach(async () => {
-    const URL = `${ROOT}emojis-in-javascript/`;
-    await page.goto(URL);
+    await page.goto(`${ROOT}/popular-use-cases-for-chatbots/`);
   });
 
   it('should load without error', async () => {
@@ -20,3 +19,4 @@ describe('Emojis in Javscript', async () => {
     expect(text).toContain('Emojis in Javascript');
   });
 }, TIMEOUT);
+
