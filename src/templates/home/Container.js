@@ -9,6 +9,7 @@ import {
 const Container = styled.div `
   max-width: 1200px;
   padding: 0 40px;
+  margin: 0 auto;
   overflow: hidden;
 
   ${media.tablet`
