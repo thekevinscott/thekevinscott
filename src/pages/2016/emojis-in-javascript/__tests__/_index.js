@@ -11,7 +11,9 @@ describe('Emojis in Javscript', async () => {
   });
 
   beforeEach(async () => {
-    await page.goto(`${ROOT}emojis-in-javascript/`);
+    const URL = `${ROOT}emojis-in-javascript/`;
+    console.log(`**********\n\n\n\n URL \n ${URL} \n\n\n\n *******`);
+    await page.goto(URL);
   });
 
   it('should load without error', async () => {
