@@ -11,7 +11,9 @@ import {
   DARK_BLUE,
   LIGHT_BLUE,
 } from 'layouts/constants';
-import getContainer from "./config";
+import getContainer, {
+  TENSORFLOWJS,
+} from "./config";
 
 const writeSubscriberTags = subscriberTags => Object.entries(subscriberTags).map(([
   key,
@@ -22,7 +24,7 @@ const writeSubscriberTags = subscriberTags => Object.entries(subscriberTags).map
   value,
 }));
 
-class FormContainer extends Component {
+class SubscribeForm extends Component {
   constructor(props) {
     super(props);
 
@@ -33,6 +35,8 @@ class FormContainer extends Component {
     const {
       form,
       subscriberTags,
+      descriptionPlacement,
+      children,
     } = this.props;
 
     const {
@@ -44,10 +48,12 @@ class FormContainer extends Component {
 
     return (
       <Container>
-        <Description>
-          <img src={Kevin} alt="Kevin Scott" />
-          <p>{description}</p>
-        </Description>
+        {descriptionPlacement === "above" && (
+          <Description>
+            <img src={Kevin} alt="Kevin Scott" />
+            <p>{description}</p>
+          </Description>
+        )}
         <Form
           action={`https://www.getdrip.com/forms/${formID}/submissions`}
           method="post"
@@ -66,19 +72,37 @@ class FormContainer extends Component {
             }),
           ]}
           headline={headline}
-        />
+        >
+          {descriptionPlacement === "inside" && (
+            <Description>
+              {children || (
+                <React.Fragment>
+                  <img src={Kevin} alt="Kevin Scott" />
+                  <p>{description}</p>
+                </React.Fragment>
+              )}
+            </Description>
+          )}
+        </Form>
       </Container>
     );
   }
 };
 
-FormContainer.propTypes = {
-  form: PropTypes.string.isRequired,
+SubscribeForm.propTypes = {
+  form: PropTypes.string,
   subscriberTags: PropTypes.object,
+  descriptionPlacement: PropTypes.string,
 };
 
-FormContainer.defaultProps = {
+SubscribeForm.defaultProps = {
   subscriberTags: {},
+  form: TENSORFLOWJS,
+  descriptionPlacement: null,
 };
 
-export default FormContainer;
+export default SubscribeForm;
+export {
+  TENSORFLOWJS,
+  DEEP_LEARNING_JOURNAL,
+} from "./config";

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-// import rehypeReact from "rehype-react";
 import Simple from "./simple";
 import Grid from "./grid";
+import render from 'components/markdown';
 import { pageView } from 'utils/mixpanel';
 
 export const pageQuery = graphql`
@@ -17,6 +17,7 @@ export const pageQuery = graphql`
     }
      markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
+      htmlAst
       timeToRead
       excerpt(pruneLength: 250)
       frontmatter {
@@ -80,7 +81,9 @@ export default class BlogPost extends Component {
     const Layout = getLayoutComponent(layout);
 
     return (
-      <Layout {...props} />
+      <Layout {...props}>
+        {render(props.data.markdownRemark.htmlAst)}
+      </Layout>
     );
   }
 };

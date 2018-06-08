@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import Form, {
-  DEEP_LEARNING_JOURNAL,
-} from "./Form";
+import SubscribeForm, {
+  TENSORFLOWJS,
+} from "components/SubscribeForm";
 import {
   DARK_BLUE,
   LIGHT_BLUE,
@@ -28,8 +28,9 @@ export default ({
 }) => {
   return (
     <Footer>
-      <Form
-        form={form || DEEP_LEARNING_JOURNAL}
+      <SubscribeForm
+        descriptionPlacement="above"
+        form={form}
         subscriberTags={subscriberTags}
       />
     </Footer>

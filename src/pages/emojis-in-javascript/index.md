@@ -1,6 +1,6 @@
 ---
 path: "/emojis-in-javascript/"
-date: "2019-11-05T07:00:00.000Z"
+date: "2016-11-05T07:00:00.000Z"
 description: "This article is a collection of the research I did while getting up to speed on emoji in Javascript."
 title: "Emojis in Javascript"
 image: "cover.png"
@@ -40,7 +40,8 @@ UTF-16.
 
 Let’s demonstrate with an example. Take as our specimen, the letter **A**.
 
-![](https://cdn-images-1.medium.com/max/1600/1*VLjG_N8Iee6wog_rrcmbTQ.png "Sad sack A. Cheer up bud, we’re about to turn you into a code point!"){.center}
+![An image of an a](a.png)
+<capt>Sad sack A. Cheer up bud, we’re about to turn you into a code point!</capt>
 
 The letter **A** is represented by the code point 65 (in decimal), or 41 (in
 hexadecimal).
@@ -110,8 +111,8 @@ The rest of the planes beyond the BMP are referred to as the “astral planes”
 which include emoji. Emoji live on Plane 1, the Supplementary Multilingual
 Plane.
 
-<span class="figcaption_hack">And the [Consortium](http://unicode.org/consortium/consort.html) said, let there
-be emoji</span>
+![The Consotrium](consortium.jpeg)
+<div class="caption">And the [Consortium](http://unicode.org/consortium/consort.html) said, let there be emoji</div>
 
 What do you think the following will produce?
 
@@ -141,6 +142,8 @@ why you can’t just do something like:
 So, how do we get the surrogate pair? [There’s a great explanation
 here](http://www.2ality.com/2013/09/javascript-unicode.html), and here’s a gist
 illustrating going from emoji to decimal to surrogate pair and back again:
+
+<script src="https://gist.github.com/thekevinscott/54dec813e12e7984d17e1badc30b930c.js"></script>
 
 Because of these limitations within Javascript, in order to parse strings
 containing emoji, we need some fancy footwork.

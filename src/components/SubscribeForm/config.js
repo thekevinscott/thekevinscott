@@ -1,6 +1,5 @@
-const KEY = "@FooterContainer/";
-export const DEEP_LEARNING_JOURNAL = `${KEY}DEEP_LEARNING_JOURNAL`;
-export const TENSORFLOWJS = `${KEY}TENSORFLOWJS`;
+export const DEEP_LEARNING_JOURNAL = `DEEP_LEARNING_JOURNAL`;
+export const TENSORFLOWJS = `TENSORFLOWJS`;
 const config = {
   [DEEP_LEARNING_JOURNAL]: {
     formID: "242548946",

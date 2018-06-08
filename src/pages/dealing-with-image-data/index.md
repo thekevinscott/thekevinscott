@@ -6,7 +6,7 @@ image: "cover.jpg"
 tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "image data"]
 description: "Manipulating data is a crucial step step for any machine learning problem. This article is a line-by-line walk through of the MNIST example for Tensorflow.js (0.11.1)"
 layout: ""
-form: "@FooterContainer/TENSORFLOWJS"
+form: "TENSORFLOWJS"
 image_credit: "Photo by <a href='https://unsplash.com/photos/ajpU8UmfQAM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Hedi Alija</a>"
 ---
 

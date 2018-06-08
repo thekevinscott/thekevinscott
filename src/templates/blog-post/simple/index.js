@@ -23,13 +23,35 @@ const Container = styled.div `
   flex: 1;
   flex-direction: column;
   align-items: center;
+
+  :global {
+  .caption {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: -30px;
+    margin-bottom: 50px;
+  }
+  }
 `;
 
 class Simple extends Component {
   static propTypes = {
     data: PropTypes.shape({
-      markdownRemark: PropTypes.object.isRequired,
+      markdownRemark: PropTypes.shape({
+        html: PropTypes.any.isRequired,
+        htmlAst: PropTypes.any.isRequired,
+      }).isRequired,
+      site: PropTypes.shape({
+        siteMetadata: PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          author: PropTypes.string,
+          description: PropTypes.string,
+          keywords: PropTypes.string,
+          url: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
     }).isRequired,
+    children: PropTypes.any,
   };
 
   render() {
@@ -70,10 +92,7 @@ class Simple extends Component {
         <Content
           className="blog-post-content"
         >
-
-          <div
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
+          {children}
           <hr className="line" />
         </Content>
         { /*
@@ -92,13 +111,3 @@ class Simple extends Component {
 }
 
 export default Simple;
-
-// const Counter = () => (
-//   <div>Suck a lemon</div>
-// );
-
-// const renderAst = new rehypeReact({
-//   createElement: React.createElement,
-//   components: {},
-//   // components: { "interactive-counter": Counter },
-// }).Compiler;

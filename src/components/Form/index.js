@@ -11,6 +11,10 @@ const getValues = (props, currentValues = {}) => {
   }), {});
 };
 
+const getStringified = ({ children, ...props }) => JSON.stringify(props);
+
+const hasChanged = (current, next) =>  getStringified(current) !== getStringified(next);
+
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +26,7 @@ class Form extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (JSON.stringify(nextProps) !== JSON.stringify(this.props)) {
+    if (hasChanged(this.props, nextProps)) {
       this.setState({
         values: getValues(nextProps, this.state.values),
       });
@@ -49,6 +53,7 @@ class Form extends Component {
       headline,
       action,
       method,
+      children,
       ...rest,
     } = this.props;
 
@@ -59,6 +64,7 @@ class Form extends Component {
 
       return input.required && this.state.values[input.name] === "";
     }, false);
+
     return (
       <Container
         {...rest}
@@ -69,6 +75,7 @@ class Form extends Component {
         {headline && (
           <h3 data-drip-attribute="headline">{headline}</h3>
         )}
+        {children}
         {inputs.map(input => (
           <div key={input.name}>
             <input

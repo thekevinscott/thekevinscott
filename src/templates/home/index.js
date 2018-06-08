@@ -26,14 +26,6 @@ const Title = styled.h1 `
   margin: 0;
 `;
 
-const Description = styled.h2 `
-  font-weight: normal;
-  max-width: 700px;
-  font-size: 1.8rem;
-  color: rgba(0,0,0,0.6);
-  margin: 10px 0;
-`;
-
 export default class Index extends Component {
   static propTypes = {
     data: PropTypes.shape({
@@ -54,11 +46,6 @@ export default class Index extends Component {
   componentDidMount() {
     pageView('/');
     const posts = this.getPosts();
-    if (window && !timer) {
-      timer = setTimeout(() => {
-        window.index = true;
-      }, 700 * posts.length);
-    }
   }
 
   getPosts = () => {
@@ -124,9 +111,6 @@ export default class Index extends Component {
               {title}
             </Link>
           </Title>
-          { /*
-          <Description>{description}</Description>
-          */ }
         </Header>
         <BlogPosts>
           {getPosts(posts).map((post, index) => (
