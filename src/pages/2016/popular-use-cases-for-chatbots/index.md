@@ -8,8 +8,8 @@ tags: ["chatbots", "use cases", "artificial intelligence"]
 
 ## How chatbots outperform apps, websites.
 
-![](https://cdn-images-1.medium.com/max/1200/1*-kgmZqDXbJPYsU-NofmaCQ.jpeg)
-<span class="figcaption_hack">David Marcus talking ‘bout bots.</span>
+![David Marcus talking about bots](marcus.jpeg)
+<capt>David Marcus talking ‘bout bots.</capt>
 
 It’s been six months since Facebook launched their support for chatbots on
 Messenger. Bots hit a [huge hype
@@ -23,9 +23,6 @@ persevered by playing to their strengths. I’m curious to understand what ideal
 use cases are for bots, and when they can match or exceed equivalent app or web
 experiences.
 
-*Featured CBM: *[The State of Chatbots
-2017](https://chatbotsmagazine.com/the-state-of-chatbots-2017-d85febc3bb75)
-
 ### Mo’ Apps, Mo’ Problems
 
 [Chatbots can often be thought of as replacements or supplements to existing
@@ -33,7 +30,7 @@ apps or
 websites](https://chatbotsmagazine.com/how-bots-will-completely-kill-websites-and-mobile-apps-656db8e6fc03).
 What are some common gripes around apps or websites?
 
-1.  **Friction **— Apps need to be downloaded, and websites often suffer from bloat
+1.  **Friction**&mdash; Apps need to be downloaded, and websites often suffer from bloat
 and long loading times. [A majority of
 apps](http://www.emarketer.com/Article/How-Many-Apps-Do-Smartphone-Owners-Use/1013309)
 don’t even last a *day*, and users are spending the [majority of their
@@ -44,13 +41,16 @@ websites](https://blog.kissmetrics.com/loading-time/), and Google even penalizes
 slowly](https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html),
 but despite all that the [average website weighs in at more than
 2mb](https://www.soasta.com/blog/page-bloat-average-web-page-2-mb/).
-1.  **Confusing Design** — Poorly designed apps can be a nightmare to navigate, and
+1.  **Confusing Design**&mdash; Poorly designed apps can be a nightmare to navigate, and
 lead to frustrated users. If a team doesn’t have the bandwidth or the expertise
 to craft a properly designed experience it can make a product unusable.
-1.  **Information Overload **— Websites can be complicated and suffer from way too
+1.  **Information Overload**&mdash; Websites can be complicated and suffer from way too
 much information. In the interest of trying to appeal to as many people as
 possible, the majority of that information is going to be irrelevant or
 distracting.
+
+
+![An image of a microphone icon](microphone.png)
 
 ### Bringing a Microphone to a LAN Party
 
@@ -58,23 +58,23 @@ Another way to think about it is: what advantages does a conversational UI bring
 to the table? When is natural language a better way of interacting with a
 computer than a well-designed GUI?
 
-1.  **Specific and urgent information **— When a customer needs an answer
+1.  **Specific and urgent information**&mdash; When a customer needs an answer
 immediately, and that question is not easily discoverable, a conversational UI
 can offer the most direct path to satisfying that need. Customer service is a
 great example of this use case.
-1.  **Disparate Information Sources** — Monitoring different information streams
+1.  **Disparate Information Sources**&mdash; Monitoring different information streams
 across domains, and providing combined feedback and facilitating user actions,
 can oftentimes be done easier in a bot on the fly. [As Pietro Casella puts
 it](https://www.linkedin.com/pulse/5-futuristic-use-cases-bots-business-tech-pietro-casella):
 “Multi domain Bots will be Bots that present relevant information from multiple
 sources in a combined manner. They wil also be bots that are able to translate
 answers into actions on the underlying systems.”
-1.  **Basic actions** — For rote or fairly basic purchases, it can be faster to
+1.  **Basic actions**&mdash; For rote or fairly basic purchases, it can be faster to
 interact with a bot. Things like [ordering a
 pizza](https://www.messenger.com/t/dominos/) or
 [flowers](https://www.messenger.com/t/1800flowers) can often be done faster via
 text message than through an app.
-1.  **Appealing to a non-tech-savvy audience** — We shouldn’t ignore the fact that a
+1.  **Appealing to a non-tech-savvy audience**&mdash; We shouldn’t ignore the fact that a
 whole swath of the world is still acquiring technological literacy. A natural
 language interface can often be a more intuitive method of interaction, if the
 interaction is well designed. IM interactions [receive some of the highest
@@ -182,31 +182,3 @@ Lomas](https://techcrunch.com/2016/05/05/a-few-words-on-chatbots/)
 While undoubtedly overhyped, chatbots still have a number of use cases where
 they win out over traditional apps or websites. And it feels like we have yet to
 see the killer bots (no pun intended) emerge on the platform.
-
-*****
-
-*I’m the founder of *[Scott Design, LLC](http://www.scottdesignllc.com/)*, where
-we help startups bring their ideas to life, and co-founder of Emoji Salad, an
-emoji pictionary SMS game that makes friends out of enemies and enemies out of
-friends.*
-
-<span class="figcaption_hack">👏👏Clap below to recommend this article to others👏👏</span>
-
-* [Bots](https://chatbotsmagazine.com/tagged/bots?source=post)
-* [Chatbots](https://chatbotsmagazine.com/tagged/chatbots?source=post)
-* [Messaging](https://chatbotsmagazine.com/tagged/messaging?source=post)
-* [Conversational
-UI](https://chatbotsmagazine.com/tagged/conversational-ui?source=post)
-* [UX Design](https://chatbotsmagazine.com/tagged/ux-design?source=post)
-
-From a quick cheer to a standing ovation, clap to show how much you enjoyed this
-story.
-
-### [Kevin Scott](https://chatbotsmagazine.com/@thekevinscott)
-
-Hacker // Designer // Storyteller // thekevinscott.com
-
-### [Chatbots Magazine](https://chatbotsmagazine.com/?source=footer_card)
-
-Chatbots, AI, NLP, Facebook Messenger, Slack, Telegram, and more.
-
