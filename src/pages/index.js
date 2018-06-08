@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import _Home from "../templates/Home";
-export default _Home;
+import Home from "../templates/home";
+export default Home;
 export const pageQuery = graphql`
   query IndexQuery {
     site {

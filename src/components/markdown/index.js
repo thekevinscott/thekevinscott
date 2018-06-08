@@ -13,6 +13,7 @@ const components = {
 
 let renderAst;
 
+// only render once we have access to window
 export default (...args) => {
   if (!renderAst) {
     renderAst = new rehypeReact({
