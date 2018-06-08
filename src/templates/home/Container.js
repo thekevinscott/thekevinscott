@@ -1,9 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import {
   SERIF,
   SANS_SERIF,
+  // media,
 } from "../../layouts/constants";
+
 
 const Container = styled.div `
   width: 700px;

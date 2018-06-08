@@ -1,8 +1,6 @@
-const argv = require('yargs').argv;
-
 const TIMEOUT = 2000;
 
-const ROOT = `http://localhost:${argv.PORT}/`;
+const ROOT = `http://localhost:${process.env.PORT}/`;
 
 const scaffolding = () => {
   let page;

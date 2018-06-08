@@ -30,6 +30,10 @@ body {
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 a {
   color: inherit;
   text-decoration: none;
