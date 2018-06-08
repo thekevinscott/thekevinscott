@@ -77,6 +77,9 @@
     "globalSetup": "<rootDir>scripts/test/setup.js",
     "globalTeardown": "<rootDir>scripts/test/teardown.js",
     "testEnvironment": "<rootDir>scripts/test/puppeteer_environment.js",
+    "moduleNameMapper": {
+      "scaffolding": "<rootDir>/scripts/test/scaffolding.js"
+    },
     "preset": "jest-puppeteer"
   }
 }

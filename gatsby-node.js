@@ -50,6 +50,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   config.merge({
     resolve: {
       root: path.resolve(__dirname, './src'),
+      test: path.resolve(__dirname, './script/test'),
       extensions: ['', '.js', '.jsx', '.json'],
     }
   });
