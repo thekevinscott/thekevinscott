@@ -80,6 +80,12 @@ export default class BlogPost extends Component {
     const layout = getLayout(props);
     const Layout = getLayoutComponent(layout);
 
+    if (!props.data || !props.data.markdownRemark) {
+      return (
+        <div>Fatal error</div>
+      );
+    }
+
     return (
       <Layout {...props}>
         {render(props.data.markdownRemark.htmlAst)}
