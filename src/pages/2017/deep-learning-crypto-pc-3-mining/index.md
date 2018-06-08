@@ -1,7 +1,7 @@
 ---
 path: "/deep-learning-cryptocurrency-pc-3-mining/"
 date: "2017-12-10T09:00:00.000Z"
-title: "Noob's Guide to building a Deep Learning / Cryptocurrency PC (#3): Mining"
+title: "Building a Deep Learning / Cryptocurrency PC (#3): Mining"
 image: "cover.jpg"
 tags: ["bitcoin", "cryptocurrency", "ethereum", "blockchain", "mining"]
 ---
