@@ -6,9 +6,7 @@ image: "cover.png"
 tags: ["chatbots", "unit tests", "integration tests"]
 ---
 
-I love tests. I used to abhor them, but I’ve been burned enough times by enough
-codebases to appreciate a robust testing suite, and its ability to ensure well
-functioning code and developer sanity.
+I love tests. I used to abhor them, but I’ve been burned enough times by enough codebases to appreciate a robust testing suite, and its ability to ensure well functioning code and developer sanity.
 
 That’s why, as we developed our scripted bot, Emoji Salad, an Emoji Pictionary
 SMS-based chat game, tests were baked in from the start. These tests, and in
