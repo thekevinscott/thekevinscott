@@ -5,7 +5,6 @@ const {
   getPage,
 } = require("scaffolding")();
 
-// test.js
 describe('Testing Chatbots', async () => {
   beforeAll(async () => {
     page = await getPage();
