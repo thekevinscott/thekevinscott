@@ -1,7 +1,7 @@
 {
   "name": "thekevinscott",
   "description": "Essays & Writing",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Kevin Scott",
   "dependencies": {
     "classnames": "^2.2.5",
@@ -62,7 +62,6 @@
     "build-gatsby": "gatsby build",
     "build": "NODE_ENV=production && npm run prebuild && npm run build-gatsby",
     "deploy": "npm run build && npm run test",
-    "foo": "npm run test",
     "serve": "gatsby serve",
     "develop": "gatsby develop",
     "lint": "npm run lint:eslint -- .",
