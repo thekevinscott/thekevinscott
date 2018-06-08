@@ -1,7 +1,7 @@
 ---
 path: "/deep-learning-cryptocurrency-pc-2-os/"
 date: "2017-10-06T09:00:00.000Z"
-title: "Noob's Guide to building a Deep Learning / Cryptocurrency PC (#2): The OS"
+title: "Building a Deep Learning / Cryptocurrency PC (#2): The OS"
 image: "cover.jpeg"
 tags: ["cryptocurrency", "artificial intelligence", "ubuntu", "pc"]
 ---
