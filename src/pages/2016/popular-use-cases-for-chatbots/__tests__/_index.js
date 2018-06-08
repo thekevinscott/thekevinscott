@@ -19,4 +19,3 @@ describe('Popular Use Cases for Chatbots', async () => {
     expect(text).toContain('Testing Chatbots: How to Ensure a Bot Says the Right Thing at the Right Time');
   });
 }, TIMEOUT);
-
