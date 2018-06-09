@@ -24,13 +24,11 @@ const Container = styled.div `
   flex-direction: column;
   align-items: center;
 
-  :global {
-  .caption {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: -30px;
-    margin-bottom: 50px;
-  }
+  p {
+    img {
+      display: block;
+      margin: 0 auto;
+    }
   }
 `;
 

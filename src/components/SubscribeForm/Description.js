@@ -1,4 +1,6 @@
+import React from "react";
 import styled from "styled-components";
+import Kevin from "./kevinscott.jpg";
 import {
   media,
 } from 'layouts/constants';
@@ -13,14 +15,19 @@ const Description = styled.div `
     flex-direction: column;
     margin: 20px;
   `}
-
-  img {
-    width: ${SIZE}px;
-    height: ${SIZE}px;
-    border-radius: ${SIZE}px;
-    margin-right: 20px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-  }
 `;
 
-export default Description;
+const Img = styled.img `
+  width: ${SIZE}px;
+  height: ${SIZE}px;
+  border-radius: ${SIZE}px;
+  margin-right: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+`;
+
+export default ({ children }) => (
+  <Description>
+    <Img src={Kevin} alt="Kevin Scott" />
+    <p>{children}</p>
+  </Description>
+);

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import Kevin from "./kevinscott.jpg";
 import Link from "gatsby-link";
 import Form from "components/Form";
 import Container from "./Container";
@@ -50,8 +49,7 @@ class SubscribeForm extends Component {
       <Container>
         {descriptionPlacement === "above" && (
           <Description>
-            <img src={Kevin} alt="Kevin Scott" />
-            <p>{description}</p>
+            {description}
           </Description>
         )}
         <Form
@@ -75,12 +73,7 @@ class SubscribeForm extends Component {
         >
           {descriptionPlacement === "inside" && (
             <Description>
-              {children || (
-                <React.Fragment>
-                  <img src={Kevin} alt="Kevin Scott" />
-                  <p>{description}</p>
-                </React.Fragment>
-              )}
+              {children || description}
             </Description>
           )}
         </Form>
