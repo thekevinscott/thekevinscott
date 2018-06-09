@@ -25,7 +25,6 @@ const Caption = styled.span `
   right: 0;
 `;
 
-
 export default ({ src, caption }) => (
   <Container>
     <CoverImg src={src} />
