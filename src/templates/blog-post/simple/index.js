@@ -24,9 +24,11 @@ const Container = styled.div `
   flex-direction: column;
   align-items: center;
 
+  p {
   img {
     display: block;
     margin: 0 auto;
+  }
   }
 
   // :global {
