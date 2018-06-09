@@ -6,8 +6,8 @@ const Container = styled.span `
   display: block;
   text-align: center;
   font-size: 1.2rem;
-  margin-top: -30px;
-  margin-bottom: 50px;
+  background: white;
+  padding: 5px;
 `;
 
 const Caption = ({

@@ -5,6 +5,7 @@ import {
   MONOSPACE,
   GREEN,
   HR_DEGREES,
+  media,
 } from "./constants";
 
 const styles = `
@@ -87,31 +88,34 @@ hr {
     top: -42px;
   }
 
-    &.line {
-      margin: 100px 0 0 0;
+  &.line {
+    margin: 100px 0 0 0;
+    ${media.tablet`
+      margin: 20px 0 40px 0;
+    `}
 
-      &:before {
-        display: none;
-      }
-
-      &:after {
-        content: "";
-        position: absolute;
-        width: 24px;
-        height: 11px;
-        -webkit-transform: skewY(${HR_DEGREES}deg);
-        transform: skewY(${HR_DEGREES}deg);
-        // position: absolute;
-        // top: -85px;
-        margin-left: auto;
-        margin-right: auto;
-        // left: 48%;
-        left: calc(50% - 24px);
-        background: -webkit-gradient(linear,left top,left bottom,color-stop(50%,#32325d),color-stop(50%,#fff));
-        background: linear-gradient(#32325d 50%,#fff 0);
-        background-size: 100% 4px;
-      }
+    &:before {
+      display: none;
     }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 11px;
+      -webkit-transform: skewY(${HR_DEGREES}deg);
+      transform: skewY(${HR_DEGREES}deg);
+      // position: absolute;
+      // top: -85px;
+      margin-left: auto;
+      margin-right: auto;
+      // left: 48%;
+      left: calc(50% - 24px);
+      background: -webkit-gradient(linear,left top,left bottom,color-stop(50%,#32325d),color-stop(50%,#fff));
+      background: linear-gradient(#32325d 50%,#fff 0);
+      background-size: 100% 4px;
+    }
+  }
 }
 
 strong {

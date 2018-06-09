@@ -1,15 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import CoverImg from "./CoverImg";
-import Caption from "./CoverImg/Caption";
 import Title from "./Title";
 
 import {
   HEADER_HEIGHT,
   HEADER_BORDER,
+  media,
 } from 'layouts/constants';
-
-// TODO: Fix background gradient
 
 const Header = styled.header `
   position: relative;
@@ -17,30 +15,10 @@ const Header = styled.header `
   overflow: hidden;
   width: 100%;
   max-height: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: -${HEADER_HEIGHT + HEADER_BORDER}px;
 
-
-  @media (max-width: 1600px) {
-    max-height: 400px;
-  }
-  @media (max-width: 1000px) {
-    max-height: 360px;
-  }
-  @media (max-width: 860px) {
-    max-height: 240px;
-  }
-  @media (max-width: 760px) {
-  }
-
-  span {
-    float: right;
-    margin-top: -20px;
-  }
-
+  ${media.tablet`
+    margin-bottom: 20px;
+  `}
 `;
 
 export default ({
@@ -54,10 +32,6 @@ export default ({
     { image && (
       <CoverImg
         src={image.childImageSharp.sizes.src}
-      />
-    )}
-    {credit && (
-      <Caption
         caption={credit}
       />
     )}
