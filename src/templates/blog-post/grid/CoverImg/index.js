@@ -26,9 +26,9 @@ const Caption = styled.span `
 export default ({ src, caption }) => (
   <Container>
     <CoverImg src={src} />
-        {credit && (
+        {caption && (
           <Caption
-            caption={credit}
+            caption={caption}
           />
         )}
   </Container>
