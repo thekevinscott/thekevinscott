@@ -7,7 +7,7 @@ import {
 } from "layouts/constants";
 
 const Container = styled.div `
-  max-width: 1200px;
+  max-width: 780px;
   padding: 0 40px;
   margin: 0 auto;
   overflow: hidden;

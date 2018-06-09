@@ -18,15 +18,27 @@ const Ul = styled.ul `
 const Li = styled.li `
   list-style-type: none;
   padding: 0;
-  margin: 0 0 20px 0;
+  margin: 0 0 40px 0;
 
   ${media.tablet`
     margin-bottom: 40px;
   `}
+`;
 
-  a {
-    text-decoration: underline;
-  }
+const Title = styled.h3 `
+  border-bottom: 1px solid rgba(0,0,0,0.4);
+  font-weight: normal;
+  font-size: 2.0rem;
+  margin: 0 0 5px 0;
+  color: rgba(0,0,0,0.7);
+  width: 100%;
+  display: block;
+`;
+
+const Excerpt = styled.p `
+  color: rgba(0,0,0,0.5);
+  font-size: 1.4rem;
+  margin: 0;
 `;
 
 const Post = ({
@@ -45,9 +57,14 @@ const Post = ({
 
   return (
     <Ul>
-      <Li>
-        <Link to={post.frontmatter.path}>{title}</Link>
-      </Li>
+      <Link to={post.frontmatter.path}>
+        <Li>
+          <Title>
+            {title}
+          </Title>
+          <Excerpt>{excerpt}</Excerpt>
+        </Li>
+      </Link>
     </Ul>
   );
 }

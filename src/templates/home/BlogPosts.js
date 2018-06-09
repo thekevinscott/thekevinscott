@@ -5,7 +5,7 @@ import {
 
 const BlogPosts = styled.div `
   padding-top: 40px;
-  max-width: 700px;
+  max-width: 600px;
 
   ${media.tablet`
     width: auto;
