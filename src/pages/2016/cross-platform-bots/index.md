@@ -7,8 +7,6 @@ image: "cover.jpeg"
 tags: ["chatbots", "ux", "design"]
 ---
 
-![](https://cdn-images-1.medium.com/max/2000/1*D7UwFYEMxuGjDJDOkE8uUw.jpeg)
-
 In 2007, when Apple released the iPhone, Jobs made a controversial decision not
 to allow Flash on iOS. Given the long history between Adobe and Apple, not to
 mention the prevalence of Flash on the 2007-era internet, this was more than a
@@ -19,9 +17,7 @@ for not allowing Flash on the iPhone was because:
 > Flash is a cross platform development tool. It is not Adobe’s goal to help
 > developers write the best iPhone, iPod and iPad apps. It is their goal to help
 developers write cross platform apps.
-
 > …
-
 > Our motivation is simple — we want to provide the most advanced and innovative
 > platform to our developers, and we want them to stand directly on the shoulders
 of this platform and create the best apps the world has ever seen. — [Steve
@@ -33,16 +29,16 @@ argue for consistency across platforms:
 
 > *Users should experience a similar, consistent interaction across platforms with
 > your bot, and be able to share these services with multiple users on different
-platforms. **For instance, if you’re on FB Messenger, you should be able to
+platforms. For instance, if you’re on FB Messenger, you should be able to
 coordinate your shopping with users on Kik, WhatsApp, LINE & etc easily without
-leaving the Facebook interface.** —
-*[Kip](https://medium.com/chat-bots/why-the-future-of-bots-will-be-multi-platform-67c503afaa7#.nfe3hmg88)
+leaving the Facebook interface. —
+[Kip](https://medium.com/chat-bots/why-the-future-of-bots-will-be-multi-platform-67c503afaa7#.nfe3hmg88)
 
 And:
 
-> *Does cross platform design become a thing of the past?? Adding functionality is
+> Does cross platform design become a thing of the past?? Adding functionality is
 > as simple as adding a user to your chat — no longer a need to design for
-separate platforms. — *[The medium is the
+separate platforms. — [The medium is the
 message](https://medium.com/chat-bots/the-message-is-the-medium-11e2a4da145c#.6l0ch4xo4)
 
 I see parallels between what happened with apps, and what is to come with bots.
@@ -62,10 +58,14 @@ design across platforms.
 
 ### Differences between messaging platforms
 
+![Differences between platforms](./platforms.png)
+
 Currently, the messaging ecosystem is divided between a number of players. You
 can think of each of these like its own Operating System. Every Operating System
 has its own culture, its own language, its own best practices for facilitating
 communication.
+
+![WeChat](./city.gif)
 
 > “WeChat is like a fully fledged cityscape where all the electrical and plumbing
 > have been installed…developers can come in and build all kinds of unique and
@@ -86,6 +86,8 @@ a cell phone has SMS, and everyone knows how to text. That ubiquity is nothing
 to be scoffed at; it’s hard to find an easier onboarding process than sending a
 text.
 
+![A Chat Bot typing indicator](./typing.gif)
+
 At the same time, (non-iMessage) SMS lacks some features that would be *really*
 nice to have. There’s no delivery receipts, no typing indicators. You can send
 text and pictures, but forget about anything like Facebook’s structured
@@ -93,7 +95,8 @@ messages. And if your app depends on sending rapid fire messages that arrive in
 order, well, you’re in for a [world of
 hurt](https://www.twilio.com/help/faq/sms/can-my-sms-messages-arrive-in-order).
 
-<span class="figcaption_hack">Fat cats on Facebook</span>
+![Fat Cats](./fatcats.png)
+<capt>Fat cats on Facebook</capt>
 
 At the other end of the spectrum, Facebook Messenger supports typing indicators
 and read receipts, along with structured messages. Messenger also supports
@@ -114,7 +117,8 @@ you force SMS customers to only play with other SMS customers?
 Every platform brings with it a unique audience, with potentially unique
 expectations.
 
-<span class="figcaption_hack">From [http://www.emarketer.com/](http://www.emarketer.com/)</span>
+![Top 3](./top-3.jpeg)
+<capt>From [http://www.emarketer.com/](http://www.emarketer.com/)</capt>
 
 Platforms can be skewed by geography. For instance, [WeChat dominates in China,
 with 700m
@@ -140,7 +144,8 @@ comfortable engaging with bots.
 Finally, the same user may adopt drastically different styles of communication
 across different platforms.
 
-<span class="figcaption_hack">Brandon gets it done</span>
+![Slackbot](slackbot.png)
+<capt>Brandon gets it done</capt>
 
 For instance, does the platform support group or solo conversations, or both?
 Bots on Slack generally interact with groups, while bots on Facebook Messenger
@@ -200,6 +205,8 @@ over SMS. Is it appropriate to send so many messages? What if I’ve got a limit
 data plan? Or consider a bot on Slack. Do I want a chatty Cathy bot adding to
 the already considerable Firehose of Slack information? Probably not.
 
+![Bender](./bender.jpeg)
+
 While we can strive for a consistent experience when it comes to the *content*,
 we should embrace diversity when it comes to the *personality*. Design and build
 for a specific platform.
@@ -237,27 +244,3 @@ happen, they won’t be because of technology considerations, they’ll be becau
 bots fail to implement design best practices. As a result, designers will be a
 key differentiator between a bot that succeeds and one that fails.
 
-*****
-
-![](https://cdn-images-1.medium.com/max/1760/1*xVXWVhL3QjUAZGByCnwf5A.gif)
-<span class="figcaption_hack">Enjoyed the article? Click the ❤ below to recommend it to other interested
-readers!</span>
-
-* [Messaging](https://chatbotsmagazine.com/tagged/messaging?source=post)
-* [Bots](https://chatbotsmagazine.com/tagged/bots?source=post)
-* [UX Design](https://chatbotsmagazine.com/tagged/ux-design?source=post)
-
-From a quick cheer to a standing ovation, clap to show how much you enjoyed this
-story.
-
-### [Kevin Scott](https://chatbotsmagazine.com/@thekevinscott)
-
-Hacker // Designer // Storyteller // thekevinscott.com
-
-### [Chatbots Magazine](https://chatbotsmagazine.com/?source=footer_card)
-
-Chatbots, AI, NLP, Facebook Messenger, Slack, Telegram, and more.
-
-Just wanted to say this was a very objective, informative take on a big question
-I was facing. Thank you. I especially appreciate the high-level systems-thinking
-approach to platforms, and to the content/personality debate. Cheers!
