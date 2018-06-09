@@ -70,6 +70,7 @@
     "lint:eslint": "eslint --ignore-path .gitignore",
     "lint:fix": "npm run lint -- --fix . ",
     "crosspost": "node scripts/publish/index.js",
+    "new": "node scripts/new_post/index.js",
     "test": "cross-env PORT=6041  node scripts/test/index.js"
   },
   "jest": {
