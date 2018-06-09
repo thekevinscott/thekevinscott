@@ -101,11 +101,9 @@ A number of folks have written about their experiences building deep
 learning-capable machines, and they were invaluable for helping me figure out
 what parts to buy:
 
-https://medium.com/towards-data-science/building-your-own-deep-learning-box-47b918aea1eb
-
-https://medium.com/@acrosson/building-a-deep-learning-box-d17d97e2905c
-
-https://www.oreilly.com/learning/build-a-super-fast-deep-learning-machine-for-under-1000
+* [Building your own deep learning box](https://medium.com/towards-data-science/building-your-own-deep-learning-box-47b918aea1eb)
+* [Building a deep learning box](https://medium.com/@acrosson/building-a-deep-learning-box-d17d97e2905c)
+* [Build a super fast deep learning machine for under 1000](https://www.oreilly.com/learning/build-a-super-fast-deep-learning-machine-for-under-1000)
 
 As these articles point you, make sure to enter your components into
 [pcpartpicker.com](https://pcpartpicker.com/) before purchasing, to ensure

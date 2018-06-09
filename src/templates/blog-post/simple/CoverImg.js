@@ -9,27 +9,27 @@ const Container = styled.div `
 const CoverImg = styled.img `
   width: 100%;
   object-fit: cover;
+  display: block;
   transition-duration: 0.5s;
   margin: 0;
 `;
 
 const Caption = styled.span `
-  display: block;
   position: absolute;
-  bottom: 0;
-  text-align: center;
+  display: block;
   font-size: 1.2rem;
-  background: white;
-  padding: 5px;
+  background: rgba(255,255,255,0.8);
+  color: rgba(0,0,0,0.8);
+  padding: 5px 10px;
+  bottom: 0;
+  right: 0;
 `;
 
 export default ({ src, caption }) => (
   <Container>
     <CoverImg src={src} />
-        {credit && (
-          <Caption
-            caption={credit}
-          />
-        )}
+    {caption && (
+      <Caption dangerouslySetInnerHTML={{ __html: caption }} />
+    )}
   </Container>
 );
