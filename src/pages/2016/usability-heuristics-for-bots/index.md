@@ -3,7 +3,7 @@ path: /usability-heuristics-for-bots/
 date: 2016-05-03T10:06:00.000Z
 description: "We review Nielsen’s seminal work on user experience, but can we apply it to bots?"
 title: "Usability Heuristics For Bots"
-image: "cover.jpeg"
+image: "images/cover.jpeg"
 tags: ["usability heuristics", "chatbots", "ux", "ux design"]
 ---
 
@@ -72,7 +72,7 @@ commerce feel like a false promise. But maybe the problem isn’t the tech. Mayb
 it’s the promise.&mdash; [Cade Metz,
 Wired](http://www.wired.com/2016/04/tech-behind-bots-isnt-good-enough-deliver-promise/)
 
-![](https://cdn-images-1.medium.com/max/1320/1*AeFgucX7apj1-KZ5BaX6-A.gif)
+![Ketchup bot](images/ketchup.gif)
 
 I think the key here is to **know your audience**. Some users will appreciate a
 command line style interaction style, and others will expect to converse in
@@ -93,7 +93,7 @@ kinds of typos and misinterpreted messages.Interactions with bots should provide
 an escape hatch, and keep the user aware of valid options during any stage of an
 interaction.
 
-![](https://cdn-images-1.medium.com/max/1760/1*fBGraZIfl8JnOSkshPCLzA.png)
+![Fat Fingers](images/fat-finger.png)
 
 > 4) Consistency and standards&mdash; Users should not have to wonder whether
 > different words, situations, or actions mean the same thing. Follow platform
@@ -143,7 +143,7 @@ We need to, again, satisfy two competing goals: We need to avoid overwhelming
 the user with a wall of text, while also providing clues as to what her options
 are at any given point in the interaction.
 
-![](https://cdn-images-1.medium.com/max/1320/1*gCo2oXEY6kPbLNkfWI2Sqg.png)
+![Structured Messages](./images/structured-messages.png)
 
 Facebook’s [structured
 messages](https://developers.facebook.com/docs/messenger-platform/quickstart)
@@ -163,8 +163,8 @@ Lots of Slack bots can be invoked with something like:
 
 Which loads a relevant gif into the channel.
 
-![](https://cdn-images-1.medium.com/max/1320/1*-ZZxe7WGi9v7mtX7NR513w.gif)
-<span class="figcaption_hack">/giphy hotdog</span>
+![Hot Dogs](images/hotdog.gif)
+<capt>/giphy hotdog</capt>
 
 Bots are supremely well positioned to provide these types of invisible
 accelerators to power users.While one user might say “Hey, Giphybot, can you
@@ -180,8 +180,8 @@ without resorting to a clunky help menu?
 in a dialogue competes with the relevant units of information and diminishes
 their relative visibility.
 
-![](https://cdn-images-1.medium.com/max/1320/1*o1Igwg3V-g3iLoe9vGfS7w.gif)
-<span class="figcaption_hack">Business in the front, party in the back</span>
+![Mullet](images/mullet.gif)
+<capt>Business in the front, party in the back</capt>
 
 Judging from the interactions I’ve seen with my two bots, first time users
 invariably launch into a very human-like interaction:
@@ -198,8 +198,8 @@ These questions get at the heart of what a bot’s personality is and should be,
 and crafting compelling personalities will be key differentiators between
 successful bots and the rest of the pack.
 
-![](https://cdn-images-1.medium.com/max/1760/1*_oro6DxJBW2FVmgXhQm4ng.jpeg)
-<span class="figcaption_hack">ZapposBot wants to sell you these shoes</span>
+![Zappos Bot](images/zappos.jpeg)
+<capt>ZapposBot wants to sell you these shoes</capt>
 
 Imagine you’re shopping on Zappos for a pair of shoes. The brand voice of Zappos
 is friendly, chatty, super helpful. You wouldn’t expect your conversation to get
@@ -263,7 +263,7 @@ Let’s take a look at some popular bots and see how they hold up.
 
 ### The Contenders
 
-![](https://cdn-images-1.medium.com/max/1760/1*t9h04KuOFR6ueWGPOvXcaQ.jpeg)
+![The contenders](images/contenders.jpeg)
 
 I’m going to look at the following three bots since they were some of the first
 out of the gate on Facebook’s Messenger platform:
@@ -277,11 +277,11 @@ out of the gate on Facebook’s Messenger platform:
 Poncho starts out strong by providing a hint as to what to do: talk about the
 weather.
 
-![](https://cdn-images-1.medium.com/max/1760/1*-OrBcCXsxLWBq3rDqI_CyQ.png)
+![Image of Poncho chat](images/poncho1.png)
 
 Ok, sounds good, let’s talk about it, Poncho!
 
-![](https://cdn-images-1.medium.com/max/1760/1*beB2oD_7CayPdqD-0YPU3Q.png)
+![Image of Poncho chat](images/poncho2.png)
 
 This is an awesome interaction so far. Let’s recap:
 
@@ -292,7 +292,7 @@ provided.
 
 Let’s see what it looks like if I say “Nope”:
 
-![](https://cdn-images-1.medium.com/max/1760/1*IM-V_pXY6041NVXNyg9SOg.png)
+![Image of Poncho chat](images/poncho3.png)
 
 Decent, though I’m not a fan of Poncho running me through identical language
 here (Is that the right city?). Up to this point, I forgot I was conversing with
@@ -300,12 +300,12 @@ a bot; now my innocence is lost.
 
 Anyways, let’s keep going and say “Yea”.
 
-![](https://cdn-images-1.medium.com/max/1760/1*vSYUpBFMB3VBl8vkENSnVQ.png)
+![Image of Poncho chat](images/poncho4.png)
 
 I get the weather along with the next CTA; I don’t want to set any notifications
 for now, but thanks for asking, Poncho.
 
-![](https://cdn-images-1.medium.com/max/1760/1*ADCcAtVAhCwadpvNFQLfIA.png)
+![Image of Poncho chat](images/poncho5.png)
 
 This is just a fantastic job of providing inline documentation, and Poncho even
 prompted me to ask for this help. Awesome. Also a great example of structured
@@ -313,14 +313,14 @@ messages in Facebook to remove any potential for ambiguity.
 
 Let’s see if we can get at some system visibility:
 
-![](https://cdn-images-1.medium.com/max/1760/1*oSiaiwH-n1F_7CAwcdPLDQ.png)
+![Image of Poncho chat](images/poncho6.png)
 
 Succinct and clear.
 
 Poncho also does a great job with banter, and when you reach the limits he pulls
 you back:
 
-![](https://cdn-images-1.medium.com/max/1760/1*fJDyrNxLt3rS9P1bDBPvQQ.png)
+![Image of Poncho chat](images/poncho7.png)
 
 #### Verdict
 
@@ -344,24 +344,24 @@ Poncho knocks it out of the park.
 
 Next up, CNN.
 
-![](https://cdn-images-1.medium.com/max/1760/1*CgaSiflmilPG8lRfgYwtnQ.png)
+![Image of CNN chat](images/cnn1.png)
 
 CNN makes good use of structured messages. However, this already feels less like
 a conversation and more of a command line.
 
-![](https://cdn-images-1.medium.com/max/1760/1*4pqCv10bJ1fn8-B-yzKHzQ.png)
+![Image of CNN chat](images/cnn2.png)
 
 While the CNN bot is definitely not something I’d want to have a beer with, it
 works in its favor when it comes to guiding my actions; I’m more inclined to
 treat it like a command line and less like a pal.
 
-![](https://cdn-images-1.medium.com/max/1760/1*A2rpcjQwkfWOuU22FZjWig.png)
+![Image of CNN chat](images/cnn3.png)
 
 Other than giving me stories, it’s unclear what I can do, and seems to rely
 overly much on accepting interactions via structured message. “Ask cnn” doesn’t
 really do too much.
 
-![](https://cdn-images-1.medium.com/max/1760/1*cuNzi-GyvVhhmPFg8Wjb0w.png)
+![Image of CNN chat](images/cnn4.png)
 
 This bot gets the job done, but is a tad underwhelming. I’d rather just use the
 website.
@@ -386,34 +386,34 @@ stuff is missing: for instance, what should “ask cnn” do?
 
 #### 1–800-Flowers
 
-![](https://cdn-images-1.medium.com/max/1760/1*Rbs-kRW0jgEcVtw5hRJ4Pg.png)
+![Image of 1-800-Flowers chat](images/flowers1.png)
 
 Leads with a structured message. Doesn’t really make me want to have a
 conversation with this thing. Let’s see what happens if I hit “Talk to support”:
 
-![](https://cdn-images-1.medium.com/max/1760/1*Zw3VqqSv3J-ltzfn4rcCxw.png)
+![Image of 1-800-Flowers chat](images/flowers2.png)
 
 Oh crap, I don’t want to talk to a human. Cancel, cancel!
 
-![](https://cdn-images-1.medium.com/max/1760/1*gD9fcQEMJ3lywfp8oWaOrg.png)
+![Image of 1-800-Flowers chat](images/flowers3.png)
 
 Coincidentally, that is an awesome example of undo in action right there.
 
-![](https://cdn-images-1.medium.com/max/1760/1*WStpk5WVur7krDs9wYUhHQ.png)
+![Image of 1-800-Flowers chat](images/flowers4.png)
 
 Great use of confirmation right here.
 
-![](https://cdn-images-1.medium.com/max/1760/1*6rym1ClzNpYVMd85QUgtVQ.png)
+![Image of 1-800-Flowers chat](images/flowers5.png)
 
 Not a fan of this interaction here. They’re forcing the user into using
 structured messages, which feels limiting. However, it is nice that they
 prompted me to ask ‘help’. Let’s ask for help.
 
-![](https://cdn-images-1.medium.com/max/1760/1*UNyx99T81nuEABhDFKSnCA.png)
+![Image of 1-800-Flowers chat](images/flowers6.png)
 
 I let the bot sit fallow for a while, and then this happened:
 
-![](https://cdn-images-1.medium.com/max/1760/1*YO0hiyS8IyXwXwfwnP_dMQ.png)
+![Image of 1-800-Flowers chat](images/flowers7.png)
 
 That’s a really nice touch!
 

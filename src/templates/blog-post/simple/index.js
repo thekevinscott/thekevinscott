@@ -25,20 +25,11 @@ const Container = styled.div `
   align-items: center;
 
   p {
-  img {
-    display: block;
-    margin: 0 auto;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
   }
-  }
-
-  // :global {
-  // .caption {
-  //   text-align: center;
-  //   font-size: 1.2rem;
-  //   margin-top: -30px;
-  //   margin-bottom: 50px;
-  // }
-  // }
 `;
 
 class Simple extends Component {
