@@ -6,11 +6,18 @@ const {
   parseConfig,
 } = require("scaffolding")();
 
+const {
+  getTitleText,
+  getTitlePosition,
+  dimensions,
+} = require("lib");
+
 describe('Javascript Internationalization', async () => {
   let page, config;
   beforeAll(async () => {
     page = await getPage();
     config = parseConfig(require("../index.md"));
+    page.setViewport(dimensions.macbook);
   });
 
   beforeEach(async () => {
@@ -19,14 +26,13 @@ describe('Javascript Internationalization', async () => {
   });
 
   it('should load without error', async () => {
-    await page.screenshot({ path: 'foo.png' });
-    const text = await page.evaluate(() => document.querySelector('h1').textContent);
+    const text = await getTitleText(page);
     expect(text).toContain(config.title);
-    // await page.evaluate(() => {
-    //   console.log(document.querySelector('h1'));
-    // });
   });
 
-  // it('should position the header correctly', async () => {
-  // });
+  it('should position the title correctly', async () => {
+    const rect = await getTitlePosition(page, config);
+    expect(rect.left).toBeGreaterThan(300);
+    expect(rect.top).toBeGreaterThan(100);
+  });
 }, TIMEOUT);

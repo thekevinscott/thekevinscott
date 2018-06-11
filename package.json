@@ -77,7 +77,8 @@
     "globalTeardown": "<rootDir>scripts/test/teardown.js",
     "testEnvironment": "<rootDir>scripts/test/puppeteer_environment.js",
     "moduleNameMapper": {
-      "scaffolding": "<rootDir>/scripts/test/scaffolding.js"
+      "scaffolding": "<rootDir>/scripts/test/scaffolding.js",
+      "lib": "<rootDir>/scripts/test/lib"
     },
     "transform": {
       "\\.md$": "jest-raw-loader"

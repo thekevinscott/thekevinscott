@@ -12,9 +12,7 @@ import {
 const Header = styled.header `
   position: relative;
   margin: 0 0 80px 0;
-  overflow: hidden;
   width: 100%;
-  max-height: 600px;
 
   ${media.tablet`
     margin-bottom: 20px;
