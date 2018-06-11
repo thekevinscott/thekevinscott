@@ -6,8 +6,6 @@ title: "Popular Use Cases for Chatbots"
 tags: ["chatbots", "use cases", "artificial intelligence"]
 ---
 
-## How chatbots outperform apps, websites.
-
 ![David Marcus talking about bots](marcus.jpeg)
 <capt>David Marcus talking ‘bout bots.</capt>
 
