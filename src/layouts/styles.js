@@ -137,11 +137,87 @@ h6 {
   text-rendering: optimizeLegibility;
   color: inherit;
   line-height: 1.1;
-  font-family: ${SANS_SERIF};
+  font-family: inherit;
 }
 
-h1, h2 {
+h1 {
   font-family: ${HEADER_FONT};
+  font-size: 2.5rem;
+  margin: 80px 0 0 0;
+
+  padding: 0;
+  text-align: center;
+  text-align: left;
+  display: block;
+  margin: 40px 0 00px 0;
+  font-size: 4.5rem;
+  clear: both;
+  padding-bottom: 20px;
+
+  .anchor {
+    margin-left: -16px;
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+
+  a {
+    display: block;
+    padding-bottom: 10px;
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+}
+
+h2 {
+  font-family: ${HEADER_FONT};
+  margin: 40px 0 10px 0;
+  padding: 0;
+  font-size: 3.8rem;
+
+  .anchor {
+    margin-left: -16px;
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+
+  a {
+    display: block;
+    line-height: 40px;
+    padding-bottom: 10px;
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+}
+
+
+h3 {
+  margin: 40px 0 20px 0;
+  font-size: 2.4rem;
+  margin-top: 30px;
+}
+
+h4 {
+  font-size: 2.0rem;
+}
+
+h5 {
+  font-size: 0.85028rem;
+}
+
+h6 {
+  font-size: 0.78405rem;
 }
 
 p, ul, li {
@@ -163,33 +239,6 @@ li {
 p {
   // font-size: 2.05rem;
   line-height: 1.7;
-}
-
-h1 {
-  margin: 0px 0 20px 0;
-  font-size: 2.5rem;
-}
-
-h2 {
-  margin: 40px 0 10px 0;
-  font-size: 1.4rem;
-}
-
-h3 {
-  margin: 40px 0 20px 0;
-  font-size: 1.38316rem;
-}
-
-h4 {
-  font-size: 1rem;
-}
-
-h5 {
-  font-size: 0.85028rem;
-}
-
-h6 {
-  font-size: 0.78405rem;
 }
 
 iframe {
@@ -293,73 +342,6 @@ iframe {
   width: 100%;
   max-width: 800px;
   margin: 30px auto;
-}
-
-h1 {
-  margin-top: 80px;
-  margin-bottom: 0;
-
-  padding: 0;
-  text-align: center;
-  text-align: left;
-  display: block;
-  margin: 40px 0 00px 0;
-  font-size: 4.5rem;
-  clear: both;
-  padding-bottom: 20px;
-
-  .anchor {
-    margin-left: -16px;
-    border: none;
-
-    &:hover {
-      border: none;
-    }
-  }
-
-  a {
-    display: block;
-    padding-bottom: 10px;
-    border: none;
-
-    &:hover {
-      border: none;
-    }
-  }
-}
-
-h2 {
-  padding: 0;
-  font-size: 3.4rem;
-
-  .anchor {
-    margin-left: -16px;
-    border: none;
-
-    &:hover {
-      border: none;
-    }
-  }
-
-  a {
-    display: block;
-    line-height: 40px;
-    padding-bottom: 10px;
-    border-bottom: none;
-
-    &:hover {
-      border-bottom: none;
-    }
-  }
-}
-
-h3 {
-  font-size: 2.6rem;
-  margin-top: 30px;
-}
-
-h4, h5, h6 {
-  font-size: 2rem;
 }
 
 a {
