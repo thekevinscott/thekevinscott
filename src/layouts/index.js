@@ -50,6 +50,11 @@ class TemplateWrapper extends Component {
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
     WebFont.load({
+      google: {
+        families: [
+          'Lato:400,500,600,700,800,900',
+        ],
+      },
       typekit: {
         id: "zip7tcb",
       }

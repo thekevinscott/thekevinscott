@@ -16,13 +16,6 @@ export const SANS_SERIF = `
     -apple-system,
     BlinkMacSystemFont,
     Lato,
-    Europa,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
     Droid Sans,
     Helvetica Neue,
     sans-serif
