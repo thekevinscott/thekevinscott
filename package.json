@@ -19,7 +19,6 @@
     "gatsby-plugin-catch-links": "^1.0.14",
     "gatsby-plugin-feed": "^1.3.16",
     "gatsby-plugin-google-analytics": "^1.0.15",
-    "gatsby-plugin-google-fonts": "^0.0.3",
     "gatsby-plugin-react-helmet": "^2.0.3",
     "gatsby-plugin-react-next": "^1.0.11",
     "gatsby-plugin-sass": "^1.0.15",
@@ -78,7 +77,8 @@
     "globalTeardown": "<rootDir>scripts/test/teardown.js",
     "testEnvironment": "<rootDir>scripts/test/puppeteer_environment.js",
     "moduleNameMapper": {
-      "scaffolding": "<rootDir>/scripts/test/scaffolding.js"
+      "scaffolding": "<rootDir>/scripts/test/scaffolding.js",
+      "lib": "<rootDir>/scripts/test/lib"
     },
     "transform": {
       "\\.md$": "jest-raw-loader"

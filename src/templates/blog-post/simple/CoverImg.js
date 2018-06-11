@@ -4,6 +4,8 @@ import styled from "styled-components";
 
 const Container = styled.div `
   position: relative;
+  max-height: 600px;
+  overflow: hidden;
 `;
 
 const CoverImg = styled.img `
@@ -18,6 +20,7 @@ const Caption = styled.span `
   position: absolute;
   display: block;
   font-size: 1.2rem;
+  z-index: 2;
   background: rgba(255,255,255,0.8);
   color: rgba(0,0,0,0.8);
   padding: 5px 10px;

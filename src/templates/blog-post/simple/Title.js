@@ -9,27 +9,37 @@ import {
   media,
 } from "layouts/constants";
 
+const Container = styled.div `
+  // margin: -200px 0 0 0;
+  margin: 0;
+  padding-top: 100px;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 30%, rgba(255,255,255, 0.7) 65%, rgba(255,255,255,0) 100%);
+  position: relative;
+`;
+
 const Title = styled.div `
+  margin: 0 auto;
+  max-width: 780px;
+
   ${media.tablet`
     padding: 0 20px;
   `}
 
-  h1 {
-    width: 100%;
-    max-width: 780px;
-    font-size: 3.2rem;
-    line-height: 1.24;
-    letter-spacing: -.015em;
-    margin: 0;
-    font-size: 4.6rem;
-    padding: 0;
+`;
+
+const H1 = styled.h1 `
+  width: 100%;
+  font-size: 3.2rem;
+  line-height: 1.24;
+  letter-spacing: -.015em;
+  margin: 0;
+  font-size: 4.6rem;
+  padding: 0;
 
   ${media.tablet`
-    font-size: 3rem;
-    margin: 20px 0 5px 0;
+  font-size: 3rem;
+  margin: 20px 0 5px 0;
   `}
-
-  }
 `;
 
 const Time = styled.time `
@@ -41,11 +51,13 @@ export default ({
   title,
   date,
 }) => (
-  <Title>
-    <h1>{title}</h1>
-    {/*
-    <ReadTime time={Math.floor(time * 0.6)} />
-    */}
-    <Time>{format(date)}</Time>
-  </Title>
+  <Container>
+    <Title>
+      <H1>{title}</H1>
+      {/*
+      <ReadTime time={Math.floor(time * 0.6)} />
+      */}
+      <Time>{format(date)}</Time>
+    </Title>
+  </Container>
 );

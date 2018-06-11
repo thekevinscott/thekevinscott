@@ -291,11 +291,3 @@ Moment.js, and Intl (with Intl.js polyfill).
 
 * [JavaScript](https://medium.com/tag/javascript?source=post)
 * [Internationalization](https://medium.com/tag/internationalization?source=post)
-
-From a quick cheer to a standing ovation, clap to show how much you enjoyed this
-story.
-
-### [Kevin Scott](https://medium.com/@thekevinscott)
-
-Hacker // Designer // Storyteller // thekevinscott.com
-

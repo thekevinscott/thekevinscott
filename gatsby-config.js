@@ -69,15 +69,6 @@ module.exports = {
         trackingId: "UA-112845439-1",
       },
     },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          'Source Serif Pro:400,700',
-          'Lato:400,500,600,700,800,900',
-        ]
-      }
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
     'gatsby-plugin-catch-links',
