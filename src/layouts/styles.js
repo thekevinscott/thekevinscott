@@ -2,6 +2,7 @@ import {
   PINK,
   SERIF,
   SANS_SERIF,
+  HEADER_FONT,
   MONOSPACE,
   GREEN,
   HR_DEGREES,
