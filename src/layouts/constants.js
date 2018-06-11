@@ -20,6 +20,10 @@ export const SANS_SERIF = `
     Helvetica Neue,
     sans-serif
 `;
+export const HEADER_FONT = `
+  "sofia-pro",
+  ${SANS_SERIF}
+`;
 
 export const MONOSPACE = `SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace`;
 
