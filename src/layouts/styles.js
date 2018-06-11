@@ -139,6 +139,10 @@ h6 {
   font-family: ${SANS_SERIF};
 }
 
+h1, h2 {
+  font-family: ${HEADER_FONT};
+}
+
 p, ul, li {
   margin: 5px 0 32px;
   font-family: ${SANS_SERIF};
