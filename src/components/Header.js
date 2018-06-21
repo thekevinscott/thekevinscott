@@ -48,12 +48,36 @@ const Right = styled.div `
   text-align: right;
 `;
 
+const Promo = styled.div `
+  flex: 1;
+  text-align: center;
+  font-size: 1.4rem;
+  transition-duration: 0.4s;
+  opacity: ${props => props.shadow ? `1` : `0`};
+
+  a {
+    background: ${LIGHT_BLUE};
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+
+    &:hover {
+      border: none;
+    }
+  }
+`;
+
 const Header = ({ shadow }) => (
   <Container shadow={shadow}>
     <Center>
       <Left>
         <Link to="/">Home</Link>
       </Left>
+      <Promo shadow={shadow}>
+        I send a newsletter for AI people
+        <Link to="/newsletter">Subscribe Now</Link>
+      </Promo>
       { /*
       <Right>
         About |

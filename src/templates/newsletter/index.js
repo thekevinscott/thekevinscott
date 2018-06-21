@@ -15,11 +15,19 @@ let timer;
 
 const Container = styled.div `
   display: flex;
-  max-width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
   overflow-x: hidden;
   flex: 1;
   flex-direction: column;
-  align-items: center;
+
+  p {
+    text-align: left;
+  }
+
+  h1 {
+    text-align: center;
+  }
 `;
 
 export default class Newsletter extends Component {
@@ -41,8 +49,8 @@ export default class Newsletter extends Component {
         {writeHeadTags(siteMetadata)}
         <h1>My newsletter</h1>
         <p>I send a newsletter about design, AI and other cool stuff in 2018.</p>
+        <p>If you love AI, JavaScript, and all things web, you'll feel right at home. I'm journaling my progress learning artificial intelligence after ten years of experience building web and mobile apps for brands like Venmo and GE Healthcare.</p>
         <SubscribeForm
-          descriptionPlacement="inside"
           form={TENSORFLOWJS}
         />
       </Container>
