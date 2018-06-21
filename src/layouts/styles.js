@@ -37,6 +37,7 @@ body {
 }
 
 a {
+  cursor: pointer;
   color: inherit;
   text-decoration: none;
   background-color: transparent;
