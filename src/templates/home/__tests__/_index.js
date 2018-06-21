@@ -24,7 +24,7 @@ describe('/ (Home Page)', () => {
 
   it('should load without error', async () => {
     const text = await page.evaluate(() => document.body.textContent);
-    expect(text).toContain('Artificial Intelligence, Design, and the Web');
+    expect(text).toContain(siteMetadata.title);
   });
 
   it('should be able to navigate to a blog', async () => {
@@ -33,7 +33,7 @@ describe('/ (Home Page)', () => {
     const url = await page.url();
     const text = await page.evaluate(() => document.body.textContent);
     expect(url.length).toBeGreaterThan(ROOT.length + 1);
-    expect(text).not.toContain('Artificial Intelligence, Design, and the Web');
+    expect(text).not.toContain(siteMetadata.title);
   });
 
   it('should be able to navigate to a blog and back to home', async () => {
@@ -43,7 +43,7 @@ describe('/ (Home Page)', () => {
     const url = await page.url();
     const text = await page.evaluate(() => document.body.textContent);
     expect(url).toEqual(ROOT);
-    expect(text).toContain('Artificial Intelligence, Design, and the Web');
+    expect(text).toContain(siteMetadata.title);
   });
 
   it('should be able to navigate directly from a blog to home', async () => {
@@ -57,13 +57,13 @@ describe('/ (Home Page)', () => {
     const url = await page.url();
     const text = await page.evaluate(() => document.body.textContent);
     expect(url).toEqual(ROOT);
-    expect(text).toContain('Artificial Intelligence, Design, and the Web');
+    expect(text).toContain(siteMetadata.title);
   });
 
   it('should be able to handle badly nested slashes', async () => {
     await page.goto(`${ROOT}////`);
     const text = await page.evaluate(() => document.body.textContent);
-    expect(text).toContain('Artificial Intelligence, Design, and the Web');
+    expect(text).toContain(siteMetadata.title);
   });
 
   it('should display correct meta tags', async () => {

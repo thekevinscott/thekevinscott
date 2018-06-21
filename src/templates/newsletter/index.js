@@ -6,63 +6,25 @@ import Animated from "components/Animated";
 import ReadTime from "components/ReadTime";
 import Footer from "components/Footer";
 import writeHeadTags from 'utils/writeHeadTags';
+import SubscribeForm, {
+  TENSORFLOWJS,
+} from "components/SubscribeForm";
 import { pageView } from 'utils/mixpanel';
 
 let timer;
 
-const Title = styled.h1 `
-  font-weight: normal;
-  max-width: 700px;
-  font-size: 4rem;
-  color: rgba(0,0,0,0.7);
-  margin: 0;
-
-  a {
-    line-height: 4.6rem;
-  }
+const Container = styled.div `
+  display: flex;
+  max-width: 100%;
+  overflow-x: hidden;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
 `;
 
-export default class Index extends Component {
-  static propTypes = {
-    data: PropTypes.shape({
-      allMarkDownRemark: PropTypes.shape({
-        edges: PropTypes.any,
-      }),
-    }).isRequired,
-  }
-
-  static defaultProps = {
-    data: {
-      allMarkDownRemark: {
-        edges: [],
-      },
-    },
-  }
-
+export default class Newsletter extends Component {
   componentDidMount() {
-    pageView('/');
-    const posts = this.getPosts();
-  }
-
-  getPosts = () => {
-    let posts = [];
-    try {
-      const {
-        data: {
-          allMarkdownRemark: {
-            edges,
-          },
-        },
-      } = this.props;
-      posts = edges;
-    } catch(err) { }
-
-    if (!posts.length) {
-      setTimeout(() => {
-        this.forceUpdate();
-      });
-    }
-    return posts;
+    pageView('/newsletter');
   }
 
   render() {
@@ -74,12 +36,15 @@ export default class Index extends Component {
       },
     } = this.props;
 
-    const posts = this.getPosts();
-
     return (
       <Container key="container">
         {writeHeadTags(siteMetadata)}
-        YARR
+        <h1>My newsletter</h1>
+        <p>I send a newsletter about design, AI and other cool stuff in 2018.</p>
+        <SubscribeForm
+          descriptionPlacement="inside"
+          form={TENSORFLOWJS}
+        />
       </Container>
     );
   }

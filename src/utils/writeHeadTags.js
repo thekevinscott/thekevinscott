@@ -20,14 +20,9 @@ const writeHeadTags = ({
     {writeAllGraphTags({
       title,
       description,
-      type: "website",
-    })}
-    {writeAllGraphTags({
-      title,
-      description,
       image,
-      url: path,
-      type: "article",
+      url,
+      type,
     })}
   </Helmet>
 );
