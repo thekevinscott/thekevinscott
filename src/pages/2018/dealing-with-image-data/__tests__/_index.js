@@ -57,6 +57,6 @@ describe('Dealing with Image data', async () => {
     expect(await head('meta[name="author"]')).toEqual(siteMetadata.author);
 
     expect(await head('meta[property="og:image"]')).toEqual(expect.stringMatching(image));
-    // expect(await head('meta[property="twitter:image"]')).toEqual(image);
+    expect(await head('meta[property="twitter:image"]')).toEqual(expect.stringMatching(image));
   });
 }, TIMEOUT);

@@ -28,7 +28,8 @@ describe('Javascript Internationalization', async () => {
     const description = config.description || siteMetadata.description;
     const keywords = config.tags ? config.tags.join(", ") : siteMetadata.keywords;
     const url = `${siteMetadata.url}${config.path}`;
-    const image = 'foo.png';
+    const pageImage = config.image.split(".");
+    const image = `^${siteMetadata.url}/static/${pageImage.slice(0, -1).join(".")}(.*).${pageImage.slice(-1)[0]}`;
 
     expect(await head('title')).toEqual(title);
     expect(await head('meta[property="og:title"]')).toEqual(title);
@@ -48,7 +49,7 @@ describe('Javascript Internationalization', async () => {
     expect(await head('meta[name="keywords"]')).toEqual(keywords);
     expect(await head('meta[name="author"]')).toEqual(siteMetadata.author);
 
-    expect(await head('meta[property="og:image"]')).toEqual(image);
-    expect(await head('meta[property="twitter:image"]')).toEqual(image);
+    expect(await head('meta[property="og:image"]')).toEqual(expect.stringMatching(image));
+    expect(await head('meta[property="twitter:image"]')).toEqual(expect.stringMatching(image));
   });
 }, TIMEOUT);
