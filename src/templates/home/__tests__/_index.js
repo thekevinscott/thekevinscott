@@ -5,6 +5,8 @@ const {
   getPage,
 } = require("scaffolding")();
 
+const siteMetadata = require('../../../../gatsby-config').siteMetadata;
+
 describe('/ (Home Page)', () => {
   beforeAll(async () => {
     page = await getPage();
@@ -20,7 +22,7 @@ describe('/ (Home Page)', () => {
   });
 
   it('should be able to navigate to a blog', async () => {
-    await clickAndWaitForNavigation('ul li:first-child a');
+    await clickAndWaitForNavigation('ul li:first-child');
 
     const url = await page.url();
     const text = await page.evaluate(() => document.body.textContent);
@@ -29,7 +31,7 @@ describe('/ (Home Page)', () => {
   });
 
   it('should be able to navigate to a blog and back to home', async () => {
-    await clickAndWaitForNavigation('ul li:first-child a');
+    await clickAndWaitForNavigation('ul li:first-child');
     await clickAndWaitForNavigation('a[href="/"]');
 
     const url = await page.url();
@@ -39,7 +41,7 @@ describe('/ (Home Page)', () => {
   });
 
   it('should be able to navigate directly from a blog to home', async () => {
-    await clickAndWaitForNavigation('ul li:first-child a');
+    await clickAndWaitForNavigation('ul li:first-child');
     const blogUrl = await page.url();
 
     // reload the page
@@ -52,9 +54,15 @@ describe('/ (Home Page)', () => {
     expect(text).toContain('Artificial Intelligence, Design, and the Web');
   });
 
-  it('should be able to handle badly nested slahes', async () => {
+  it('should be able to handle badly nested slashes', async () => {
     await page.goto(`${ROOT}////`);
     const text = await page.evaluate(() => document.body.textContent);
     expect(text).toContain('Artificial Intelligence, Design, and the Web');
   });
+
+  // it('should display correct meta tags', async () => {
+  //   await page.goto(`${ROOT}`);
+  //   const title = await page.evaluate(() => document.head.querySelector('title').textContent);
+  //   expect(title).toContain('Artificial Intelligence, Design, and the Web');
+  // });
 }, TIMEOUT);

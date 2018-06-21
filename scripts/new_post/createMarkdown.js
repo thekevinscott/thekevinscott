@@ -4,7 +4,7 @@ const path = require('path');
 const dateFns = require('date-fns');
 const getTitle = require('./getTitle');
 
-const sample = fs.readFileSync(path.resolve(__dirname, "index.md"), 'utf8');
+const sample = fs.readFileSync(path.resolve(__dirname, "templates/index.md"), 'utf8');
 
 const createMarkdown = (post) => sample.split("\n").map(line => {
   if (line.indexOf("path") !== -1) {
