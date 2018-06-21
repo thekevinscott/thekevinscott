@@ -32,7 +32,7 @@ const isValidDate = path => {
 
 const getPathDate = path => parseInt(path, 10) !== NaN && isValidDate(path);
 
-const findMatchingPage = (path, {
+const findMatchingPost = (path, {
   allMarkdownRemark: {
     edges,
   },
@@ -75,10 +75,10 @@ class NotFoundPage extends Component {
   componentDidMount() {
     const pathname = window.location.pathname.split("/").filter(f => f).join("");
 
-    const matchingPage = findMatchingPage(pathname, this.props.data);
+    const matchingPost = findMatchingPost(pathname, this.props.data);
 
-    if (matchingPage) {
-      return navigateTo(matchingPage);
+    if (matchingPost) {
+      return navigateTo(matchingPost);
     }
   }
 
