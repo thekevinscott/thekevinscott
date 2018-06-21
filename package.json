@@ -80,7 +80,8 @@
     "testEnvironment": "<rootDir>scripts/test/puppeteer_environment.js",
     "moduleNameMapper": {
       "scaffolding": "<rootDir>/scripts/test/scaffolding.js",
-      "lib": "<rootDir>/scripts/test/lib"
+      "lib": "<rootDir>/scripts/test/lib",
+      "gatsby-config": "<rootDir>/gatsby-config.js"
     },
     "transform": {
       "\\.md$": "jest-raw-loader"

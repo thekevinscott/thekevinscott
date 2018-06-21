@@ -3,13 +3,19 @@ const {
   ROOT,
   TIMEOUT,
   getPage,
-} = require("scaffolding")();
+} = require('scaffolding')();
 
-const siteMetadata = require('../../../../gatsby-config').siteMetadata;
+const {
+  getHeadSelectorFn,
+} = require('lib');
+
+const siteMetadata = require('gatsby-config').siteMetadata;
 
 describe('/ (Home Page)', () => {
+  let page, head;
   beforeAll(async () => {
     page = await getPage();
+    head = getHeadSelectorFn(page);
   });
 
   beforeEach(async () => {
@@ -60,9 +66,20 @@ describe('/ (Home Page)', () => {
     expect(text).toContain('Artificial Intelligence, Design, and the Web');
   });
 
-  // it('should display correct meta tags', async () => {
-  //   await page.goto(`${ROOT}`);
-  //   const title = await page.evaluate(() => document.head.querySelector('title').textContent);
-  //   expect(title).toContain('Artificial Intelligence, Design, and the Web');
-  // });
+  it('should display correct meta tags', async () => {
+    await page.goto(`${ROOT}`);
+
+    expect(await head('title')).toEqual(siteMetadata.title);
+    expect(await head('meta[name="description"]')).toEqual(siteMetadata.description);
+    expect(await head('meta[name="keywords"]')).toEqual(siteMetadata.keywords);
+    expect(await head('meta[name="author"]')).toEqual(siteMetadata.author);
+    expect(await head('link[rel="canonical"]', 'href')).toEqual(siteMetadata.url);
+
+    expect(await head('meta[property="og:title"]')).toEqual(siteMetadata.title);
+    expect(await head('meta[property="twitter:title"]')).toEqual(siteMetadata.title);
+    expect(await head('meta[property="og:description"]')).toEqual(siteMetadata.description);
+    expect(await head('meta[property="twitter:description"]')).toEqual(siteMetadata.description);
+    expect(await head('meta[property="og:type"]')).toEqual('website');
+    expect(await head('meta[property="twitter:type"]')).toEqual('website');
+  });
 }, TIMEOUT);
