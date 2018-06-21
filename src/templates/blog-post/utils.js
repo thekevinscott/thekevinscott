@@ -1,5 +1,6 @@
 import Helmet from "react-helmet";
 import React from "react";
+import writeHeadTags from 'utils/writeHeadTags';
 import { writeAllGraphTags } from "utils/writeGraphTags";
 export const getImage = (url, frontmatter) => {
   try {
@@ -37,28 +38,21 @@ export const writeMetaTags = ({ post, siteMetadata }) => {
   const {
     title,
     description,
-    path,
+    path: url,
     image,
     author,
     keywords,
   } = getPostData(post, siteMetadata);
 
-  return (
-    <Helmet>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords}/>
-      <meta name="author" content={author}/>
-      <link rel="canonical" href={path} />
-      {writeAllGraphTags({
-        title,
-        description,
-        image,
-        url: path,
-        type: "article",
-      })}
-    </Helmet>
-  );
+  return writeHeadTags({
+    title,
+    description,
+    keywords,
+    author,
+    url,
+    image,
+    type: "article",
+  });
 };
 
 export const getSubscriberTags = ({ post, siteMetadata }) => {

@@ -2,17 +2,10 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
-import Animated from "../../components/Animated";
-import ReadTime from "../../components/ReadTime";
-import Footer from "../../components/Footer";
-import Post from "./Post";
-import Header from "./Header";
-import Container from "./Container";
-import BlogPosts from "./BlogPosts";
-import {
-  getPosts,
-} from "./selectors";
-import writeHeadTags from "../../utils/writeHeadTags";
+import Animated from "components/Animated";
+import ReadTime from "components/ReadTime";
+import Footer from "components/Footer";
+import writeHeadTags from 'utils/writeHeadTags';
 import { pageView } from 'utils/mixpanel';
 
 let timer;
@@ -83,32 +76,11 @@ export default class Index extends Component {
 
     const posts = this.getPosts();
 
-    return [
+    return (
       <Container key="container">
         {writeHeadTags(siteMetadata)}
-        <Header>
-          <Title>
-            <Link
-              to="/"
-              style={{
-                textDecoration: 'none',
-              }}
-            >
-              {siteMetadata.title}
-            </Link>
-          </Title>
-        </Header>
-        <BlogPosts>
-          {getPosts(posts).map((post, index) => (
-            <Post
-              key={post.id}
-              post={post}
-              index={index}
-            />
-          ))}
-        </BlogPosts>
-      </Container>,
-      <Footer key="footer" />
-    ];
+        YARR
+      </Container>
+    );
   }
 }
