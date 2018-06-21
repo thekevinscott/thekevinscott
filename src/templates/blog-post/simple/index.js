@@ -93,9 +93,6 @@ class Simple extends Component {
           {children}
           <hr className="line" />
         </Content>
-        { /*
-        <Tags tags={tags} />
-        */ }
         <Footer
           form={form}
           subscriberTags={getSubscriberTags({

@@ -18,6 +18,8 @@ const Description = styled.div `
 `;
 
 const Img = styled.img `
+  min-width: ${SIZE}px;
+  min-height: ${SIZE}px;
   width: ${SIZE}px;
   height: ${SIZE}px;
   border-radius: ${SIZE}px;

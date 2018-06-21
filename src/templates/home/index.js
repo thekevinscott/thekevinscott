@@ -9,11 +9,10 @@ import Post from "./Post";
 import Header from "./Header";
 import Container from "./Container";
 import BlogPosts from "./BlogPosts";
-import Helmet from "react-helmet";
 import {
   getPosts,
 } from "./selectors";
-import { writeAllGraphTags } from "../../utils/writeGraphTags";
+import writeHeadTags from "../../utils/writeHeadTags";
 import { pageView } from 'utils/mixpanel';
 
 let timer;
@@ -77,13 +76,7 @@ export default class Index extends Component {
     const {
       data: {
         site: {
-          siteMetadata: {
-            title,
-            description,
-            keywords,
-            author,
-            url,
-          },
+          siteMetadata,
         }
       },
     } = this.props;
@@ -92,18 +85,7 @@ export default class Index extends Component {
 
     return [
       <Container key="container">
-        <Helmet>
-          <title>{title}</title>
-          <meta name="description" content={description} />
-          <meta name="keywords" content={keywords}/>
-          <meta name="author" content={author}/>
-          <link rel="canonical" href={url}/>
-          {writeAllGraphTags({
-            title,
-            description,
-            type: "website",
-          })}
-        </Helmet>
+        {writeHeadTags(siteMetadata)}
         <Header>
           <Title>
             <Link
@@ -112,7 +94,7 @@ export default class Index extends Component {
                 textDecoration: 'none',
               }}
             >
-              {title}
+              {siteMetadata.title}
             </Link>
           </Title>
         </Header>

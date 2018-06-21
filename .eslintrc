@@ -26,7 +26,7 @@
   },
   "rules": {
     // enforce double quotes
-    "quotes": [2, "double"],
+    "quotes": [1, "single"],
 
     // allow the use of require(); we trust ourselves
     // to use import where we can
