@@ -25,8 +25,18 @@ const dimensions = {
   },
 };
 
+const getHeadSelectorFn = page => async (selector, attribute) => await page.evaluate(({ selector, attribute = 'content' }) => {
+  const el = document.head.querySelector(selector);
+  if (selector.indexOf('title') === 0) {
+    return el.textContent;
+  }
+
+  return el.getAttribute(attribute);
+}, { selector, attribute });
+
 module.exports = {
   dimensions,
   getTitleText,
   getTitlePosition,
+  getHeadSelectorFn,
 };

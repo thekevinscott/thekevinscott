@@ -6,18 +6,11 @@ const {
   parseConfig,
 } = require("scaffolding")();
 
-const {
-  getHeadSelectorFn,
-} = require('lib');
-
-const siteMetadata = require('gatsby-config').siteMetadata;
-
-describe('Dealing with Image data', async () => {
-  let page, config, head;
+describe('Javascript Internationalization', async () => {
+  let page, config;
   beforeAll(async () => {
     page = await getPage();
     config = parseConfig(require("../index.md"));
-    head = getHeadSelectorFn(page);
   });
 
   beforeEach(async () => {

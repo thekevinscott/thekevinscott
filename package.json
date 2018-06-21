@@ -58,9 +58,10 @@
   },
   "main": "n/a",
   "scripts": {
-    "prebuild": "rm -rf .cache/* && rm -rf public",
+    "prebuild": "npm run clean",
     "build-gatsby": "gatsby build",
     "build": "NODE_ENV=production && npm run prebuild && npm run build-gatsby",
+    "clean": "rm -rf .cache/* && rm -rf public",
     "deploy": "npm run build && npm run test",
     "serve": "gatsby serve",
     "develop": "gatsby develop",
@@ -70,6 +71,7 @@
     "lint:fix": "npm run lint -- --fix . ",
     "crosspost": "node scripts/publish/index.js",
     "new": "node scripts/new_post/index.js",
+    "test-clean": "npm run clean && npm run build && npm run test",
     "test": "cross-env PORT=6041  node scripts/test/index.js"
   },
   "jest": {
@@ -78,11 +80,16 @@
     "testEnvironment": "<rootDir>scripts/test/puppeteer_environment.js",
     "moduleNameMapper": {
       "scaffolding": "<rootDir>/scripts/test/scaffolding.js",
-      "lib": "<rootDir>/scripts/test/lib"
+      "lib": "<rootDir>/scripts/test/lib",
+      "gatsby-config": "<rootDir>/gatsby-config.js"
     },
     "transform": {
       "\\.md$": "jest-raw-loader"
     },
+    "testPathIgnorePatterns": [
+      "scripts/new_post/templates/(.*)",
+      "/node_modules/"
+    ],
     "preset": "jest-puppeteer"
   }
 }

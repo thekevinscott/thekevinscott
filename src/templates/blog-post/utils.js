@@ -2,20 +2,21 @@ import Helmet from "react-helmet";
 import React from "react";
 import writeHeadTags from 'utils/writeHeadTags';
 import { writeAllGraphTags } from "utils/writeGraphTags";
-export const getImage = (url, frontmatter) => {
+export const getImageUrl = (url, { image }) => {
   try {
-    return `${metadata.url}${frontmatter.image.childImageSharp.sizes.src}`;
+    return `${url}${image.childImageSharp.sizes.src}`;
   } catch (err) {
     return null;
   }
 };
 
-export const getPostData = ({ frontmatter, url, timeToRead }, metadata) => {
+export const getPostData = ({ frontmatter, timeToRead }, metadata) => {
   const title = frontmatter.title ? `${frontmatter.title}` : metadata.title;
   const description = frontmatter.description || frontmatter.excerpt || metadata.description;
   const path = `${metadata.url}${frontmatter.path}`;
-  const image = getImage(url, frontmatter);
+  const imageURL = getImageUrl(metadata.url, frontmatter);
   const image_credit = frontmatter.image_credit;
+  const tags = (frontmatter.tags || []).map(tag => tag.trim()).join(", ");
   const {
     author,
     keywords,
@@ -25,10 +26,11 @@ export const getPostData = ({ frontmatter, url, timeToRead }, metadata) => {
     title,
     description,
     path,
-    image,
+    imageURL,
     author,
-    keywords,
+    keywords: tags || keywords,
     timeToRead,
+    url: path,
     credit: image_credit,
     ...frontmatter,
   };
@@ -38,8 +40,8 @@ export const writeMetaTags = ({ post, siteMetadata }) => {
   const {
     title,
     description,
-    path: url,
-    image,
+    url,
+    imageURL,
     author,
     keywords,
   } = getPostData(post, siteMetadata);
@@ -50,7 +52,7 @@ export const writeMetaTags = ({ post, siteMetadata }) => {
     keywords,
     author,
     url,
-    image,
+    image: imageURL,
     type: "article",
   });
 };
