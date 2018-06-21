@@ -4,7 +4,7 @@ const path = require('path');
 const dateFns = require('date-fns');
 const getTitle = require('./getTitle');
 
-const sample = fs.readFileSync(path.resolve(__dirname, "test.js"), 'utf8');
+const sample = fs.readFileSync(path.resolve(__dirname, "templates/test.js"), 'utf8');
 
 const createTest = (post) => {
   const title = getTitle(post);
