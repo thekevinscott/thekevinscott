@@ -3,7 +3,6 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import Animated from "../../components/Animated";
-import ReadTime from "../../components/ReadTime";
 import Footer from "../../components/Footer";
 import Post from "./Post";
 import Header from "./Header";

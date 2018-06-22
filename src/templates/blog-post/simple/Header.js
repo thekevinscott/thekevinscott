@@ -31,6 +31,7 @@ export default ({
       <CoverImg
         src={image.childImageSharp.sizes.src}
         caption={credit}
+        foo="bar"
       />
     )}
     <Title

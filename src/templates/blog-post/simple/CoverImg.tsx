@@ -8,7 +8,7 @@ const Container = styled.div `
   overflow: hidden;
 `;
 
-const CoverImg = styled.img `
+const Img = styled.img `
   width: 100%;
   object-fit: cover;
   display: block;
@@ -28,11 +28,20 @@ const Caption = styled.span `
   right: 0;
 `;
 
-export default ({ src, caption }) => (
+interface Props {
+  src: string;
+  caption?: any;
+}
+
+const CoverImg: React.SFC<Props> = ({ src, caption }) => (
   <Container>
-    <CoverImg src={src} />
+    <Img src={src} />
     {caption && (
       <Caption dangerouslySetInnerHTML={{ __html: caption }} />
     )}
   </Container>
 );
+
+foo
+
+export default CoverImg;

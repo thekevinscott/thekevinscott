@@ -14,7 +14,6 @@ import {
 import {
   LIGHT_GRAY,
 } from "layouts/constants";
-import Tags from "components/Tags";
 
 const Container = styled.div `
   display: flex;
