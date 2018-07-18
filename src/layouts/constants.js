@@ -4,6 +4,7 @@ export const PINK = "#ffb7b7";
 export const GREEN = "#1C9963";
 export const DARK_BLUE = "rgba(45,67,104,0.95)";
 export const LIGHT_BLUE = "rgba(45,67,205,0.6)";
+export const LIGHT_BLUE_NO_ALPHA = "#8391DF";
 export const LIGHT_GRAY = "rgba(100,100,100,0.2)";
 export const HEADER_HEIGHT = 60;
 export const HEADER_BORDER = 3;
