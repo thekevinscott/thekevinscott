@@ -36,6 +36,7 @@ class SubscribeForm extends Component {
       subscriberTags,
       descriptionPlacement,
       children,
+      showImage,
     } = this.props;
 
     const {
@@ -48,7 +49,10 @@ class SubscribeForm extends Component {
     return (
       <Container>
         {descriptionPlacement === "above" && (
-          <Description description={description} />
+          <Description
+            showImage={showImage}
+            description={description}
+          />
         )}
         <Form
           action={`https://www.getdrip.com/forms/${formID}/submissions`}
@@ -70,7 +74,10 @@ class SubscribeForm extends Component {
           headline={headline}
         >
           {descriptionPlacement === "inside" && (
-            <Description description={children || description} />
+            <Description
+              showImage={showImage}
+              description={children || description}
+            />
           )}
         </Form>
       </Container>

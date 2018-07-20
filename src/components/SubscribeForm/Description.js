@@ -6,7 +6,7 @@ import {
 } from 'layouts/constants';
 
 const SIZE = 70;
-const Description = styled.div `
+const Container = styled.div `
   display: flex;
   margin-bottom: 40px;
   align-items: flex-start;
@@ -40,13 +40,24 @@ const Content = styled.div `
   }
 `;
 
-export default ({ description }) => (
-  <Description>
-    <Img src={Kevin} alt="Kevin Scott" />
+const Description = ({
+  showImage,
+  description,
+}) => (
+  <Container>
+    {showImage && (
+      <Img src={Kevin} alt="Kevin Scott" />
+    )}
     <Content>
       {[].concat(description).map((d, key) => (
         <p key={key}>{d}</p>
       ))}
     </Content>
-  </Description>
+  </Container>
 );
+
+Description.defaultProps = {
+  showImage: true,
+};
+
+export default Description;

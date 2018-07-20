@@ -44,6 +44,7 @@ const NewsletterSignup = ({
         <SubscribeForm
           form={LEAD_MAGNET_DATASET}
           descriptionPlacement="above"
+          showImage={false}
         />
       </Inner>
     </InnerContainer>
