@@ -23,6 +23,23 @@ const config = {
       description,
     };
   },
+  [LEAD_MAGNET_DATASET]: (payload) => {
+    const descriptions = [
+      "Download images from imagenet with the click of a button.",
+      "Sign up, I send you a link, you enter the categories you want and how many images in each, I give you a zip file!",
+    ];
+    const [
+      descriptionID,
+      description,
+    ] = getRand(payload.id, descriptions);
+
+    return {
+      formID: "277152125",
+      headline: "Download image data for your machine learning model",
+      descriptionID: `${descriptionID}`,
+      description,
+    };
+  },
 };
 
 const getRand = (id, arr) => {
