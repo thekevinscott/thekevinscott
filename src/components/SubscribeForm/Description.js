@@ -9,7 +9,7 @@ const SIZE = 70;
 const Description = styled.div `
   display: flex;
   margin-bottom: 40px;
-  align-items: center;
+  align-items: flex-start;
 
   ${media.tablet`
     flex-direction: column;
@@ -27,9 +27,26 @@ const Img = styled.img `
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 `;
 
-export default ({ children }) => (
+const Content = styled.div `
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+`;
+
+export default ({ description }) => (
   <Description>
     <Img src={Kevin} alt="Kevin Scott" />
-    <p>{children}</p>
+    <Content>
+      {[].concat(description).map((d, key) => (
+        <p key={key}>{d}</p>
+      ))}
+    </Content>
   </Description>
 );

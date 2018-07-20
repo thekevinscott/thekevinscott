@@ -6,7 +6,7 @@ import {
   HEADER_FONT,
 } from 'layouts/constants';
 import SubscribeForm, {
-  TENSORFLOWJS,
+  LEAD_MAGNET_DATASET,
 } from "components/SubscribeForm";
 
 const Container = styled.div `
@@ -41,11 +41,9 @@ const NewsletterSignup = ({
   <Container visible={visible}>
     <InnerContainer>
       <Inner>
-        <h1>My newsletter</h1>
-        <p>I send a newsletter about design, AI and other cool stuff in 2018.</p>
-        <p>If you love AI, JavaScript, and all things web, you'll feel right at home. I'm journaling my progress learning artificial intelligence after ten years of experience building web and mobile apps for brands like Venmo and GE Healthcare.</p>
         <SubscribeForm
-          form={TENSORFLOWJS}
+          form={LEAD_MAGNET_DATASET}
+          descriptionPlacement="above"
         />
       </Inner>
     </InnerContainer>

@@ -25,22 +25,13 @@ const config = {
       description,
     };
   },
-  [LEAD_MAGNET_DATASET]: (payload) => {
-    const descriptions = [
+  [LEAD_MAGNET_DATASET]: {
+    formID: "764831681",
+    headline: "Download image data for your machine learning model",
+    description: [
       "Download images from imagenet with the click of a button.",
       "Sign up, I send you a link, you enter the categories you want and how many images in each, I give you a zip file!",
-    ];
-    const [
-      descriptionID,
-      description,
-    ] = getRand(payload.id, descriptions);
-
-    return {
-      formID: "277152125",
-      headline: "Download image data for your machine learning model",
-      descriptionID: `${descriptionID}`,
-      description,
-    };
+    ],
   },
   [HEADER_FORM]: (payload) => {
     const descriptions = [
@@ -51,7 +42,6 @@ const config = {
     return {
       formID: "277152125",
       headline: "My newsletter",
-      descriptionID: `${descriptionID}`,
       description,
     };
   }
