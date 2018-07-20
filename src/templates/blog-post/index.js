@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Simple from "./simple";
 import Grid from "./grid";
+import LeadMagnet from "./lead-magnet";
 import render from 'components/markdown';
 import { pageView } from 'utils/mixpanel';
 
@@ -47,6 +48,9 @@ export const pageQuery = graphql`
 const getLayoutComponent = layout => {
   if (layout === "grid") {
     return Grid;
+  }
+  if (layout === "lead-magnet") {
+    return LeadMagnet;
   }
 
   return Simple;
