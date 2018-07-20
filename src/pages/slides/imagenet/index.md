@@ -1,6 +1,6 @@
 ---
 path: "/download-imagenet-images"
-date: "3018-07-34 12:00:00.000 EST"
+date: "2018-07-15 12:00:00.000 EST"
 title: "Download images by category"
 layout: "lead-magnet"
 ---
