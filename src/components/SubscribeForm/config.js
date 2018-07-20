@@ -29,8 +29,8 @@ const config = {
     formID: "764831681",
     headline: "Download image data for your machine learning model",
     description: [
-      "Download images from imagenet with the click of a button.",
-      "Sign up, I send you a link, you enter the categories you want and how many images in each, I give you a zip file!",
+      "Finding images for training machine learning models is a pain in the butt.",
+      "I built a tool that lets you search Imagenet categories and get a zip file with pre-labeled data. Sign up and I'll send you a link!",
     ],
   },
   [HEADER_FORM]: (payload) => {
