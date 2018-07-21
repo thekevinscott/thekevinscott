@@ -29,6 +29,7 @@ body {
     flex: 1;
     display: flex;
     max-width: 100%;
+    height: 100%;
   }
 }
 
@@ -37,6 +38,7 @@ body {
 }
 
 a {
+  cursor: pointer;
   color: inherit;
   text-decoration: none;
   background-color: transparent;

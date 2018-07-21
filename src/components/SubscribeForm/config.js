@@ -1,5 +1,7 @@
-export const DEEP_LEARNING_JOURNAL = `DEEP_LEARNING_JOURNAL`;
-export const TENSORFLOWJS = `TENSORFLOWJS`;
+export const DEEP_LEARNING_JOURNAL = 'DEEP_LEARNING_JOURNAL';
+export const TENSORFLOWJS = 'TENSORFLOWJS';
+export const LEAD_MAGNET_DATASET = 'LEAD_MAGNET_DATASET';
+export const HEADER_FORM = 'HEADER_FORM';
 const config = {
   [DEEP_LEARNING_JOURNAL]: {
     formID: "242548946",
@@ -23,6 +25,26 @@ const config = {
       description,
     };
   },
+  [LEAD_MAGNET_DATASET]: {
+    formID: "764831681",
+    headline: "Download image data for your machine learning model",
+    description: [
+      "Finding images for training machine learning models is a pain in the butt.",
+      "I built a tool that lets you search Imagenet categories and get a zip file with pre-labeled data. Sign up and I'll send you a link!",
+    ],
+  },
+  [HEADER_FORM]: (payload) => {
+    const descriptions = [
+      "I send a newsletter about design, AI and other cool stuff in 2018.",
+      "If you love AI, JavaScript, and all things web, you'll feel right at home. I'm journaling my progress learning artificial intelligence after ten years of experience building web and mobile apps for brands like Venmo and GE Healthcare.",
+    ];
+
+    return {
+      formID: "277152125",
+      headline: "My newsletter",
+      description,
+    };
+  }
 };
 
 const getRand = (id, arr) => {

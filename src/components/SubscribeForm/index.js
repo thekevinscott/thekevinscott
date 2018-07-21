@@ -11,7 +11,7 @@ import {
   LIGHT_BLUE,
 } from 'layouts/constants';
 import getContainer, {
-  TENSORFLOWJS,
+  LEAD_MAGNET_DATASET,
 } from "./config";
 
 const writeSubscriberTags = subscriberTags => Object.entries(subscriberTags).map(([
@@ -36,6 +36,7 @@ class SubscribeForm extends Component {
       subscriberTags,
       descriptionPlacement,
       children,
+      showImage,
     } = this.props;
 
     const {
@@ -48,9 +49,10 @@ class SubscribeForm extends Component {
     return (
       <Container>
         {descriptionPlacement === "above" && (
-          <Description>
-            {description}
-          </Description>
+          <Description
+            showImage={showImage}
+            description={description}
+          />
         )}
         <Form
           action={`https://www.getdrip.com/forms/${formID}/submissions`}
@@ -72,9 +74,10 @@ class SubscribeForm extends Component {
           headline={headline}
         >
           {descriptionPlacement === "inside" && (
-            <Description>
-              {children || description}
-            </Description>
+            <Description
+              showImage={showImage}
+              description={children || description}
+            />
           )}
         </Form>
       </Container>
@@ -90,7 +93,7 @@ SubscribeForm.propTypes = {
 
 SubscribeForm.defaultProps = {
   subscriberTags: {},
-  form: TENSORFLOWJS,
+  form: LEAD_MAGNET_DATASET,
   descriptionPlacement: null,
 };
 
@@ -98,4 +101,6 @@ export default SubscribeForm;
 export {
   TENSORFLOWJS,
   DEEP_LEARNING_JOURNAL,
+  HEADER_FORM,
+  LEAD_MAGNET_DATASET,
 } from "./config";
