@@ -145,16 +145,22 @@ h6 {
 h1 {
   font-family: ${HEADER_FONT};
   font-size: 2.5rem;
-  margin: 80px 0 0 0;
+  // margin: 80px 0 0 0;
 
+  color: rgba(0,0,0,0.80);
   padding: 0;
-  text-align: center;
   text-align: left;
   display: block;
-  margin: 40px 0 00px 0;
-  font-size: 4.5rem;
   clear: both;
   padding-bottom: 20px;
+
+  font-size: 3.2rem;
+  line-height: 1.24;
+  letter-spacing: -.015em;
+  margin: 10px 0;
+  font-size: 4.6rem;
+  font-weight: 600;
+  padding: 0;
 
   .anchor {
     margin-left: -16px;
@@ -165,6 +171,7 @@ h1 {
     }
   }
 
+  line-height: auto;
   a {
     display: block;
     padding-bottom: 10px;

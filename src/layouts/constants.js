@@ -30,11 +30,11 @@ export const MONOSPACE = `SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Li
 
 export const HR_DEGREES = -12;
 
-
 const sizes = {
   giant: 1170,
   desktop: 992,
   tablet: 768,
+  phonePlus: 415,
   phone: 376
 };
 
@@ -48,3 +48,9 @@ export const media = Object.keys(sizes).reduce((accumulator, label) => {
   `;
   return accumulator;
 }, {});
+
+export const headerHeights = {
+  desktop: 400,
+  tablet: 300,
+  phone: 160,
+};

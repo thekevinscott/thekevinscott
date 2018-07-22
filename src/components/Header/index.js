@@ -9,6 +9,9 @@ import {
   LIGHT_BLUE,
   LIGHT_GRAY,
 } from 'layouts/constants';
+import {
+  media,
+} from 'layouts/constants';
 
 const Container = styled.div `
   height: ${HEADER_HEIGHT}px;
@@ -57,6 +60,11 @@ const Right = styled.div `
   height: 100%;
   display: flex;
   align-items: center;
+
+  ${media.tablet`
+    width: 0;
+    padding: 0;
+  `}
 `;
 
 const Flex = styled.div `
@@ -92,6 +100,17 @@ const Promo = styled.div `
       border: none;
     }
   }
+
+  ${media.tablet`
+    justify-content: flex-end;
+    padding-right: 40px;
+  `}
+
+  ${media.phonePlus`
+    span {
+      display: none;
+    }
+  `}
 `;
 
 const SubscribeButton = styled.a `
@@ -145,8 +164,8 @@ class Header extends Component {
           </Left>
           <Flex />
           <Promo shadow={shadow} visible={this.state.newsletter}>
-            I send a newsletter for AI people
-            <SubscribeButton onClick={() => this.handleSubscribe(true)}>Subscribe Now</SubscribeButton>
+            <span>I send a newsletter for AI people</span>
+          <SubscribeButton onClick={() => this.handleSubscribe(true)}>Subscribe <span>Now</span></SubscribeButton>
             <CloseNewsletter onClick={() => this.handleSubscribe(false)} visible={this.state.newsletter}>Close</CloseNewsletter>
           </Promo>
           <Flex />

@@ -7,6 +7,7 @@ module.exports = {
     url: "https://thekevinscott.com",
   },
   plugins: [
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-react-next`,
     {
       resolve: `gatsby-plugin-feed`,

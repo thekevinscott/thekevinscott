@@ -1,17 +1,16 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import WebFont from 'webfontloader';
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Content from "./Content";
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Content from './Content';
 import {
   writeMetaTags,
   getPostData,
   getSubscriberTags,
-} from "../utils";
+} from '../utils';
 import {
   LIGHT_GRAY,
-} from "layouts/constants";
-import Tags from "components/Tags";
+} from 'layouts/constants';
 
 const Container = styled.div `
   display: flex;

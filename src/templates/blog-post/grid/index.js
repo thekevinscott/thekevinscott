@@ -14,7 +14,6 @@ import {
 import {
   LIGHT_GRAY,
 } from "layouts/constants";
-import Tags from "components/Tags";
 
 const Container = styled.div `
   display: flex;
@@ -80,7 +79,6 @@ class Grid extends Component {
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html }}
         />
-        <Tags tags={tags} />
         <Footer
           form={form}
           subscriberTags={getSubscriberTags({ post, siteMetadata })}

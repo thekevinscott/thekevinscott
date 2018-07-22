@@ -1,12 +1,11 @@
+import styled from 'styled-components';
 import {
   PINK,
   GREEN,
   SERIF,
   SANS_SERIF,
   media,
-} from "layouts/constants";
-
-import styled from "styled-components";
+} from 'layouts/constants';
 
 const LETTER_SPACING = 20;
 
