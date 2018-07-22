@@ -10,7 +10,6 @@ import {
 } from 'layouts/constants';
 
 const Header = styled.div`
-  background: rgba(255,255,255,1);
   position: relative;
   margin: 0 0 80px 0;
   width: 100%;
@@ -27,7 +26,7 @@ export default ({
   timeToRead,
   date,
 }) => (
-  <Header>
+  <Header style={{ width: '100%', marginBottom: '80px', position: 'relative' }}>
     { image && (
       <CoverImg
         src={image.childImageSharp.sizes.src}
