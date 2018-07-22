@@ -1,31 +1,58 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import Link from "gatsby-link";
-import Animated from "../../components/Animated";
-import Footer from "../../components/Footer";
-import Post from "./Post";
-import Header from "./Header";
-import Container from "./Container";
-import BlogPosts from "./BlogPosts";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import Animated from 'components/Animated';
+import Footer from 'components/Footer';
+import Post from './Post';
 import {
   getPosts,
-} from "./selectors";
-import writeHeadTags from "../../utils/writeHeadTags";
+} from './selectors';
+import writeHeadTags from 'utils/writeHeadTags';
 import { pageView } from 'utils/mixpanel';
 
-let timer;
+import {
+  media,
+  SERIF,
+  SANS_SERIF,
+  media,
+} from 'layouts/constants';
 
-const Title = styled.h1 `
-  font-weight: normal;
-  max-width: 700px;
-  font-size: 4rem;
-  color: rgba(0,0,0,0.7);
-  margin: 0;
+const Container = styled.div `
+  max-width: 780px;
+  padding: 0 40px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  ${media.tablet`
+    width: auto;
+    padding: 0 20px;
+  `}
 
   a {
-    line-height: 4.6rem;
+    border-bottom: none;
   }
+`;
+
+const BlogPosts = styled.div `
+  padding-top: 40px;
+  max-width: 600px;
+
+  ${media.tablet`
+    width: auto;
+    padding: 0;
+  `}
+`;
+
+const Header = styled.div `
+  margin-top: 40px;
+  font-weight: bold;
+`;
+
+const Title = styled.h1 `
+  max-width: 700px;
+  margin: 0 0 80px 0;
+  line-height: 4.6rem;
 `;
 
 export default class Index extends Component {
@@ -87,14 +114,7 @@ export default class Index extends Component {
         {writeHeadTags(siteMetadata)}
         <Header>
           <Title>
-            <Link
-              to="/"
-              style={{
-                textDecoration: 'none',
-              }}
-            >
-              {siteMetadata.title}
-            </Link>
+            {siteMetadata.title}
           </Title>
         </Header>
         <BlogPosts>

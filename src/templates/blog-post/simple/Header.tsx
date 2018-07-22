@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import CoverImg from "./CoverImg";
-import Title from "./Title";
+import React from 'react';
+import styled from 'styled-components';
+import CoverImg from './CoverImg';
+import Title from './Title';
 
 import {
   HEADER_HEIGHT,
@@ -9,7 +9,8 @@ import {
   media,
 } from 'layouts/constants';
 
-const Header = styled.header `
+const Header = styled.div`
+  background: rgba(255,255,255,1);
   position: relative;
   margin: 0 0 80px 0;
   width: 100%;
@@ -41,5 +42,3 @@ export default ({
     />
   </Header>
 );
-
-

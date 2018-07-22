@@ -1,6 +1,6 @@
 import {
   isAfter,
-} from "../../utils/getDate";
+} from 'utils/getDate';
 
 export const isPublished = now => ({ frontmatter }) => {
   return frontmatter.date && isAfter(frontmatter.date, now);

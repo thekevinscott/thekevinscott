@@ -30,6 +30,7 @@ const Title = styled.div `
 
   @media (max-width: 860px) {
     display: block;
+    margin-top: 80px;
   }
 
   time {

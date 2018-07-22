@@ -1,12 +1,41 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+import {
+  media,
+  headerHeights
+} from 'layouts/constants';
 
 const Container = styled.div `
   position: relative;
-  max-height: 600px;
-  height: 600px;
+  height: ${headerHeights.desktop}px;
   overflow: hidden;
+  position: absolute;
+
+  ${media.phonePlus`
+    position: relative;
+    background: white;
+    max-height: ${headerHeights.phone}px;
+
+    &:after {
+      display: none;
+    }
+  `}
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      0deg,
+      rgba(255,255,255,1.0) 5%,
+      rgba(255,255,255,0) 40%
+    );
+  }
 `;
 
 const Img = styled.img `
@@ -25,8 +54,14 @@ const Caption = styled.span `
   background: rgba(255,255,255,0.8);
   color: rgba(0,0,0,0.8);
   padding: 5px 10px;
-  bottom: 0;
+  // bottom: 0;
+  // bottom: 140px;
+  top: 40px;
   right: 0;
+
+  ${media.phonePlus`
+    position: relative;
+  `}
 `;
 
 interface Props {
@@ -38,11 +73,9 @@ const CoverImg: React.SFC<Props> = ({ src, caption }) => (
   <Container>
     <Img src={src} />
     {caption && (
-      <Caption dangerouslySetInnerHTML={{ __html: caption }} />
+      <Caption dangerouslySetInnerHTML={{ __html: `image by ${caption}` }} />
     )}
   </Container>
 );
-
-foo
 
 export default CoverImg;

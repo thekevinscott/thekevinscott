@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CoverImg from "./CoverImg";
-import Caption from "./CoverImg/Caption";
+// import Caption from "./CoverImg/Caption";
 import Title from "./Title";
 
 import {
@@ -28,9 +28,11 @@ const Header = styled.header `
   }
   @media (max-width: 860px) {
     max-height: 240px;
+    margin-top: 0;
   }
   @media (max-width: 760px) {
     max-height: 160px;
+    width: 100%;
   }
 
   span {
@@ -53,7 +55,7 @@ export default ({
         src={image.childImageSharp.sizes.src}
       />
     )}
-    {credit && (
+    {credit && false && (
       <Caption
         caption={credit}
       />

@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   media,
-} from "layouts/constants";
+} from 'layouts/constants';
 import {
   format,
-} from "utils/getDate";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import Link from "gatsby-link";
+} from 'utils/getDate';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
 
 const Ul = styled.ul `
   list-style-type: none;
@@ -18,21 +18,24 @@ const Ul = styled.ul `
 const Li = styled.li `
   list-style-type: none;
   padding: 0;
-  margin: 0 0 40px 0;
+  margin: 0 0 60px 0;
 
   ${media.tablet`
     margin-bottom: 40px;
   `}
 `;
 
-const Title = styled.h3 `
-  border-bottom: 1px solid rgba(0,0,0,0.4);
-  font-weight: normal;
-  font-size: 2.0rem;
+const Title = styled.h2 `
+  font-weight: 500;
+  font-size: 2.8rem;
   margin: 0 0 5px 0;
-  color: rgba(0,0,0,0.7);
+  color: rgba(0,0,0,0.65);
   width: 100%;
   display: block;
+  border-bottom: 1px solid rgba(0,0,0,0);
+  &:hover {
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+  }
 `;
 
 const Excerpt = styled.p `
