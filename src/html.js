@@ -40,6 +40,7 @@ module.exports = ({
   <html {...htmlAttributes}>
     <head>
       <link rel="shortcut icon" href={favicon} type="image/png" />
+      <meta name="google-site-verification" content="z477EQkGBkIUEW_mPkS8cNVxi5n0sxBsmLsOX4q6Aoo" />
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta
