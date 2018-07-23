@@ -8,6 +8,7 @@ import {
   DARK_BLUE,
   LIGHT_BLUE,
   LIGHT_GRAY,
+  YELLOW,
 } from 'layouts/constants';
 import {
   media,
@@ -52,6 +53,11 @@ const Left = styled.div `
   height: 100%;
   display: flex;
   align-items: center;
+
+  a {
+    // background: ${YELLOW};
+    // padding: 10px;
+  }
 `;
 
 const Right = styled.div `

@@ -7,7 +7,8 @@ import {
 
 import {
   media,
-  headerHeights
+  headerHeights,
+  YELLOW,
 } from 'layouts/constants';
 
 const Container = styled.div `

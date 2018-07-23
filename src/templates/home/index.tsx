@@ -16,6 +16,7 @@ import {
   SERIF,
   SANS_SERIF,
   media,
+  YELLOW,
 } from 'layouts/constants';
 
 const Container = styled.div `
@@ -49,10 +50,34 @@ const Header = styled.div `
   font-weight: bold;
 `;
 
+const SHADOW = 10;
+const PADDING = 40;
+const ROTATE = 0.0;
 const Title = styled.h1 `
   max-width: 700px;
-  margin: 0 0 80px 0;
+  margin: 0 0 80px -${PADDING}px;
   line-height: 4.6rem;
+  background: ${YELLOW};
+  padding: ${PADDING}px;
+  box-shadow: ${SHADOW}px ${SHADOW}px 0 #100382bd;
+  transform: rotate(-${ROTATE}deg);
+
+  span {
+    display: block;
+    transform: rotate(${ROTATE}deg);
+  }
+
+  ${media.tablet`
+    margin-left: 0;
+    width: 100%;
+  `}
+
+  ${media.phonePlus`
+    // margin-left: -10px;
+    width: calc(100% - 10px);
+    padding: 20px 40px;
+    font-size: 4.6rem;
+  `}
 `;
 
 export default class Index extends Component {
@@ -114,7 +139,9 @@ export default class Index extends Component {
         {writeHeadTags(siteMetadata)}
         <Header>
           <Title>
-            {siteMetadata.title}
+            <span>
+              {siteMetadata.title}
+            </span>
           </Title>
         </Header>
         <BlogPosts>
