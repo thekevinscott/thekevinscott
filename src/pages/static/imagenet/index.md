@@ -5,4 +5,4 @@ title: "Download image datasets"
 layout: "lead-magnet"
 ---
 
-<iframe src="https://thekevinscott.github.io/imagenet-download/" />
+<iframe src="http://thekevinscott.github.io/imagenet-download/" />
