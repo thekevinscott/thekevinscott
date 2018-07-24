@@ -3,7 +3,6 @@ import React from "react";
 import writeHeadTags from 'utils/writeHeadTags';
 import { writeAllGraphTags } from "utils/writeGraphTags";
 export const getImageUrl = (url, { image }) => {
-  console.log('image', image);
   try {
     return `${url}${image.childImageSharp.sizes.src}`;
   } catch (err) {
@@ -43,6 +42,7 @@ export const writeMetaTags = ({ post, siteMetadata }) => {
     description,
     url,
     imageURL,
+    social_image,
     author,
     keywords,
   } = getPostData(post, siteMetadata);
@@ -53,7 +53,7 @@ export const writeMetaTags = ({ post, siteMetadata }) => {
     keywords,
     author,
     url,
-    image: imageURL,
+    image: imageURL || social_image,
     type: "article",
   });
 };
