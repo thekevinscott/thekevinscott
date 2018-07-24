@@ -10,6 +10,7 @@ import {
 } from '../utils';
 import {
   LIGHT_GRAY,
+  YELLOW,
 } from 'layouts/constants';
 
 const Container = styled.div `
@@ -20,10 +21,6 @@ const Container = styled.div `
   flex: 1;
   flex-direction: column;
   align-items: center;
-
-  header {
-    flex: 0;
-  }
 
   p {
     img {
@@ -43,6 +40,7 @@ class LeadMagnet extends Component {
       site: PropTypes.shape({
         siteMetadata: PropTypes.shape({
           title: PropTypes.string.isRequired,
+          subtitle: PropTypes.string.isRequired,
           author: PropTypes.string,
           description: PropTypes.string,
           keywords: PropTypes.string,
@@ -66,12 +64,12 @@ class LeadMagnet extends Component {
 
     const {
       title,
+      subtitle,
     } = getPostData(post, siteMetadata);
 
     return (
       <Container className="leadmagnet">
         {writeMetaTags({ post, siteMetadata })}
-        <header><h1>{title}</h1></header>
         <Content
           className="blog-post-content"
         >
