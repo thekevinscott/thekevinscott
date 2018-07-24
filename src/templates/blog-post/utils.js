@@ -43,6 +43,8 @@ export const writeMetaTags = ({ post, siteMetadata }) => {
     url,
     imageURL,
     social_image,
+    social_image_width,
+    social_image_height,
     author,
     keywords,
   } = getPostData(post, siteMetadata);
@@ -56,6 +58,8 @@ export const writeMetaTags = ({ post, siteMetadata }) => {
     // TODO: Figure out how to get gifs working, this is a
     // hack to work around using gifs as the og:image
     image: imageURL || social_image,
+    social_image_width,
+    social_image_height,
     type: "article",
   });
 };

@@ -1,6 +1,8 @@
 import React from "react";
 
-export const writeGraphTags = (type, tags = {}) => Object.keys(tags).map(key => (
+export const writeGraphTags = (type, tags = {}) => Object.keys(tags).filter(key => {
+  return tags[key];
+}).map(key => (
   <meta
     key={key}
     property={`${type}:${key}`}

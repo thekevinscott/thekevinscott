@@ -10,6 +10,8 @@ const writeHeadTags = ({
   url,
   image,
   type = "website",
+  social_image_width,
+  social_image_height,
 }) => (
   <Helmet>
     <title>{title}</title>
@@ -23,6 +25,8 @@ const writeHeadTags = ({
       image,
       url,
       type,
+      'image:width': social_image_width,
+      'image:height': social_image_height,
     })}
   </Helmet>
 );

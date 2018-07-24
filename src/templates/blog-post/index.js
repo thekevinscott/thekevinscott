@@ -40,6 +40,8 @@ export const pageQuery = graphql`
           }
         }
         social_image
+        social_image_width
+        social_image_height
       }
     }
   }
