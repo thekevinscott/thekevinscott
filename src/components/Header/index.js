@@ -5,10 +5,11 @@ import NewsletterSignup from './NewsletterSignup';
 import {
   HEADER_HEIGHT,
   HEADER_BORDER,
-  DARK_BLUE,
   LIGHT_BLUE,
   LIGHT_GRAY,
+  BLUE,
   YELLOW,
+  HEADER_FONT,
 } from 'layouts/constants';
 import {
   media,
@@ -45,18 +46,46 @@ const Center = styled.div `
   }
 `;
 
-const PADDING = 40;
+const PADDING = 35;
 const WIDTH = 120;
 const Left = styled.div `
-  padding: 0 ${PADDING}px;
   width: ${WIDTH}px;
   height: 100%;
   display: flex;
   align-items: center;
 
-  a {
-    // background: ${YELLOW};
-    // padding: 10px;
+`;
+const Home = styled.span `
+  margin: 0 ${PADDING}px;
+  background: ${BLUE};
+  color: white;
+  display: flex;
+  height: 50px;
+  width: 50px;
+  padding: 6px 2px;
+  font-family: ${HEADER_FONT};
+  text-align: right;
+  font-weight: bold;
+  // text-transform: uppercase;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  &:hover {
+    text-decoration: none;
+    border: none;
+  }
+
+  span {
+    display: block;
+
+    &:first-child {
+      font-size: 1.6rem;
+    }
+
+    &:last-child {
+      font-size: 1.3rem;
+      line-height: 0.8rem;
+    }
   }
 `;
 
@@ -166,7 +195,7 @@ class Header extends Component {
       <Container shadow={shadow}>
         <Center>
           <Left>
-            <Link to="/">Home</Link>
+            <Home><Link to="/"><span>AI</span><span>+Design</span></Link></Home>
           </Left>
           <Flex />
           <Promo shadow={shadow} visible={this.state.newsletter}>
