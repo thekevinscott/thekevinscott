@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   media,
+  BLUE,
 } from 'layouts/constants';
 import {
   format,
@@ -9,26 +10,20 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 
-const Ul = styled.ul `
+const Li = styled.li `
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 20px 0;
   padding: 0;
-
-  * {
-    transition-duration: 0.4s;
-  }
 `;
 
 const SHADOW = 10;
-const Li = styled.li `
-  list-style-type: none;
-  // padding: 0;
-  // margin: 0 0 60px 0;
+const Content = styled.div `
 
   padding: 20px;
   margin: 0px 0 ${60 + SHADOW}px -20px;
   width: calc(100% + 40px);
   box-shadow: 0px 0px 0 #100382bd;
+  transition-duration: 0.4s;
 
   &:after {
     clear: both;
@@ -40,9 +35,14 @@ const Li = styled.li `
     display: inline-block;
     float: right;
     font-size: 1.2rem;
-    color: rgba(0,0,0,0.4);
-    margin-top: 20px;
-    border-bottom: 1px solid transparent;
+    color: rgba(0,0,0,0.7);
+    border-bottom: 2px solid transparent;
+    text-transform: uppercase;
+    padding: 10px;
+    text-align: right;
+    transition-duration: 0.4s;
+    height: 20px;
+    margin-bottom: 10px;
   }
 
   &:hover {
@@ -50,7 +50,9 @@ const Li = styled.li `
     box-shadow: ${SHADOW}px ${SHADOW}px 0 #100382bd;
 
     a {
-      border-bottom: 1px solid rgba(0,0,0,0.4);
+      height: 30px;
+      margin-bottom: 0px;
+      border-bottom: 2px solid ${BLUE};
     }
   }
 
@@ -89,17 +91,17 @@ const Post = ({
   } = post;
 
   return (
-    <Ul>
+    <Li>
       <Link to={post.frontmatter.path}>
-        <Li>
+        <Content>
           <Title>
             {title}
           </Title>
           <Excerpt>{excerpt}</Excerpt>
           <a>Read more &rarr;</a>
-        </Li>
+        </Content>
       </Link>
-    </Ul>
+    </Li>
   );
 }
 
