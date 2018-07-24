@@ -53,6 +53,8 @@ export const writeMetaTags = ({ post, siteMetadata }) => {
     keywords,
     author,
     url,
+    // TODO: Figure out how to get gifs working, this is a
+    // hack to work around using gifs as the og:image
     image: imageURL || social_image,
     type: "article",
   });
