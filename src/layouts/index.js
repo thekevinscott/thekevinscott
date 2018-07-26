@@ -68,7 +68,7 @@ class TemplateWrapper extends Component {
   render() {
     return (
       <Container>
-        <Header shadow={this.state.shadow} />
+        <Header visible={this.state.shadow} />
         {this.props.children()}
       </Container>
     );
