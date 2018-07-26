@@ -66,6 +66,8 @@ const Home = styled.div `
   width: 50px;
   margin: 0 ${PADDING}px;
   position: relative;
+  transition-duration: 0.4s;
+  opacity: ${props => props.shadow ? `1` : `0`};
 
   a {
     display: block;
