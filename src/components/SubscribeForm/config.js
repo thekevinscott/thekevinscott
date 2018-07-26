@@ -30,7 +30,7 @@ const config = {
     headline: "Sign up for access to labeled image data for your machine learning model",
     description: [
       "Collecting image data for training machine learning models can take precious time and lots of Google image searches.",
-      "I built a tool that generates pre-labeled image data for you. Choose your categories and download a zip file.",
+      "I built a tool that generates labeled data for you. Choose your categories and download.",
     ],
   },
   [HEADER_FORM]: (payload) => {

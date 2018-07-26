@@ -17,6 +17,7 @@ import {
 } from 'layouts/constants';
 
 import logo from "assets/logo.svg";
+import hoverLogo from "assets/logo-hover.svg";
 
 const Container = styled.div `
   height: ${HEADER_HEIGHT}px;
@@ -58,10 +59,13 @@ const Left = styled.div `
   align-items: center;
 
 `;
+
+const DURATION = 0.1;
 const Home = styled.div `
   height: 50px;
   width: 50px;
   margin: 0 ${PADDING}px;
+  position: relative;
 
   a {
     display: block;
@@ -77,6 +81,31 @@ const Home = styled.div `
   img {
     max-width: 100%;
     max-height: 100%;
+    transition-duration: ${DURATION}s;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    transition-duration: ${DURATION}s;
+  }
+
+  &:hover {
+    img {
+      opacity: 0;
+    }
+    span {
+      opacity: 1;
+      img {
+        opacity: 1;
+      }
+    }
   }
 
   // background: ${BLUE};
@@ -214,7 +243,14 @@ class Header extends Component {
       <Container shadow={shadow}>
         <Center>
           <Left>
-            <Home><Link to="/"><img alt="AI + Design" src={logo} /></Link></Home>
+            <Home>
+              <Link to="/">
+                <img alt="AI + Design" src={logo} />
+                <span>
+                  <img alt="AI + Design" src={hoverLogo} />
+                </span>
+              </Link>
+            </Home>
           </Left>
           <Flex />
           <Promo shadow={shadow} visible={this.state.newsletter}>
