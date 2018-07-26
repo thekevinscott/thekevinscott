@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="233px" height="230px" viewBox="0 0 233 230" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2" transform="translate(-4.040179, 11.321429)">
+            <rect id="Rectangle" fill="#4F4AA3" x="19.0401786" y="0.678571429" width="205" height="205"></rect>
+            <g id="Copy" transform="translate(37.244488, 93.410714)" fill="#FFFFFF" font-family="SofiaProSemiBold, Sofia Pro" font-size="52.5" font-weight="500" letter-spacing="1.04999995">
+                <text id="Design">
+                    <tspan x="180.991071" y="39.3392857"></tspan>
+                    <tspan x="7.95107171" y="89.3392857">Design</tspan>
+                </text>
+                <text id="AI">
+                    <tspan x="129.488572" y="43.8035714">AI</tspan>
+                </text>
+            </g>
+            <g id="Plus" transform="translate(0.000000, 129.723214)" font-family="SofiaProSemiBold, Sofia Pro" font-size="70" font-weight="500" letter-spacing="1.39999986">
+                <text id="white-+" fill="#FFFFFF">
+                    <tspan x="3.09340062" y="53.6964286">+</tspan>
+                </text>
+                <text id="purple-+" fill="#4F4AA3">
+                    <tspan x="0" y="50.6428571">+</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

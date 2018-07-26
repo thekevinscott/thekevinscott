@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import styleSheet from 'styled-components/lib/models/StyleSheet';
-import favicon from "./favicon.ico";
+import favicon from "./assets/favicon.ico";
 import { SNIPPET } from "utils/drip";
 
 const getCss = () => {

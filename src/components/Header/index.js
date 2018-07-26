@@ -11,9 +11,12 @@ import {
   YELLOW,
   HEADER_FONT,
 } from 'layouts/constants';
+
 import {
   media,
 } from 'layouts/constants';
+
+import logo from "assets/logo.svg";
 
 const Container = styled.div `
   height: ${HEADER_HEIGHT}px;
@@ -55,38 +58,54 @@ const Left = styled.div `
   align-items: center;
 
 `;
-const Home = styled.span `
-  margin: 0 ${PADDING}px;
-  background: ${BLUE};
-  color: white;
-  display: flex;
+const Home = styled.div `
   height: 50px;
   width: 50px;
-  padding: 6px 2px;
-  font-family: ${HEADER_FONT};
-  text-align: right;
-  font-weight: bold;
-  // text-transform: uppercase;
-  align-items: flex-end;
-  justify-content: flex-end;
+  margin: 0 ${PADDING}px;
 
-  &:hover {
-    text-decoration: none;
-    border: none;
-  }
-
-  span {
+  a {
     display: block;
+    height: 100%;
+    width: 100%;
+    border-bottom: none;
 
-    &:first-child {
-      font-size: 1.6rem;
-    }
-
-    &:last-child {
-      font-size: 1.3rem;
-      line-height: 0.8rem;
+    &:hover {
+      border-bottom: none;
     }
   }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  // background: ${BLUE};
+  // color: white;
+  // display: flex;
+  // font-family: ${HEADER_FONT};
+  // text-align: right;
+  // font-weight: bold;
+  // text-transform: uppercase;
+  // align-items: flex-end;
+  // justify-content: flex-end;
+
+  // &:hover {
+  //   text-decoration: none;
+  //   border: none;
+  // }
+
+  // span {
+  //   display: block;
+
+  //   &:first-child {
+  //     font-size: 1.6rem;
+  //   }
+
+  //   &:last-child {
+  //     font-size: 1.3rem;
+  //     line-height: 0.8rem;
+  //   }
+  // }
 `;
 
 const Right = styled.div `
@@ -195,7 +214,7 @@ class Header extends Component {
       <Container shadow={shadow}>
         <Center>
           <Left>
-            <Home><Link to="/"><span>AI</span><span>+Design</span></Link></Home>
+            <Home><Link to="/"><img alt="AI + Design" src={logo} /></Link></Home>
           </Left>
           <Flex />
           <Promo shadow={shadow} visible={this.state.newsletter}>
