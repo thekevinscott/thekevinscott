@@ -27,10 +27,10 @@ const config = {
   },
   [LEAD_MAGNET_DATASET]: {
     formID: "764831681",
-    headline: "Download image data for your machine learning model",
+    headline: "Sign up for access to labeled image data for your machine learning model",
     description: [
-      "Finding images for training machine learning models is a pain in the butt.",
-      "I built a tool that lets you search Imagenet categories and get a zip file with pre-labeled data. Sign up and I'll send you a link!",
+      "Collecting image data for training machine learning models can take precious time and lots of Google image searches.",
+      "I built a tool that generates pre-labeled image data for you. Choose your categories and download a zip file.",
     ],
   },
   [HEADER_FORM]: (payload) => {
