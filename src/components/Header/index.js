@@ -27,8 +27,8 @@ const Container = styled.div `
   width: 100%;
   border-top: ${HEADER_BORDER}px solid ${LIGHT_BLUE};
   transition-duration: 0.4s;
-  ${props => props.shadow ? `
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  ${props => props.visible ? `
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   ` : null}
 `;
 
@@ -67,7 +67,7 @@ const Home = styled.div `
   margin: 0 ${PADDING}px;
   position: relative;
   transition-duration: 0.4s;
-  opacity: ${props => props.shadow ? `1` : `0`};
+  opacity: ${props => props.visible ? `1` : `0`};
 
   a {
     display: block;
@@ -167,7 +167,7 @@ const Promo = styled.div `
   max-width: 100%;
   width: 700px;
   position: relative;
-  opacity: ${props => props.shadow ? `1` : `0`};
+  opacity: ${props => props.visible ? `1` : `0`};
   overflow: hidden;
   height: ${props => props.visible ? 57 * 2 + 40: 57}px;
   align-items: center;
@@ -238,14 +238,14 @@ class Header extends Component {
 
   render() {
     const {
-      shadow,
+      visible,
     } = this.props;
 
     return (
-      <Container shadow={shadow}>
+      <Container visible={visible}>
         <Center>
           <Left>
-            <Home>
+            <Home visible={visible}>
               <Link to="/">
                 <img alt="AI + Design" src={logo} />
                 <span>
@@ -255,7 +255,7 @@ class Header extends Component {
             </Home>
           </Left>
           <Flex />
-          <Promo shadow={shadow} visible={this.state.newsletter}>
+          <Promo visible={visible} visible={this.state.newsletter}>
             <span>I send a newsletter for AI people</span>
           <SubscribeButton onClick={() => this.handleSubscribe(true)}>Subscribe <span>Now</span></SubscribeButton>
             <CloseNewsletter onClick={() => this.handleSubscribe(false)} visible={this.state.newsletter}>Close</CloseNewsletter>
