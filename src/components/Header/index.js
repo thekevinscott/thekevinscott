@@ -169,12 +169,12 @@ const Promo = styled.div `
   position: relative;
   opacity: ${props => props.visible ? `1` : `0`};
   overflow: hidden;
-  height: ${props => props.visible ? 57 * 2 + 40: 57}px;
+  height: ${props => props.shouldShow ? 57 * 2 + 40: 57}px;
   align-items: center;
   justify-content: center;
   display: flex;
 
-  margin-top: ${props => props.visible ? -1 * PROMO_OFFSET : 0}px;
+  margin-top: ${props => props.shouldShow ? -1 * PROMO_OFFSET : 0}px;
 
   a {
     color: white;
@@ -238,6 +238,7 @@ class Header extends Component {
 
   render() {
     const {
+      shadow,
       visible,
     } = this.props;
 
@@ -255,7 +256,7 @@ class Header extends Component {
             </Home>
           </Left>
           <Flex />
-          <Promo visible={visible} visible={this.state.newsletter}>
+          <Promo visible={visible} shouldShow={this.state.newsletter}>
             <span>I send a newsletter for AI people</span>
           <SubscribeButton onClick={() => this.handleSubscribe(true)}>Subscribe <span>Now</span></SubscribeButton>
             <CloseNewsletter onClick={() => this.handleSubscribe(false)} visible={this.state.newsletter}>Close</CloseNewsletter>
