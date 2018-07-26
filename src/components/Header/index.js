@@ -68,6 +68,9 @@ const Home = styled.div `
   position: relative;
   transition-duration: 0.4s;
   opacity: ${props => props.visible ? `1` : `0`};
+  &:hover {
+    opacity: 1;
+  }
 
   a {
     display: block;
@@ -168,6 +171,9 @@ const Promo = styled.div `
   width: 700px;
   position: relative;
   opacity: ${props => props.visible ? `1` : `0`};
+  &:hover {
+    opacity: 1;
+  }
   overflow: hidden;
   height: ${props => props.shouldShow ? 57 * 2 + 40: 57}px;
   align-items: center;
