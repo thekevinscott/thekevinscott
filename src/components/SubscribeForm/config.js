@@ -27,7 +27,7 @@ const config = {
   },
   [LEAD_MAGNET_DATASET]: {
     formID: "764831681",
-    headline: "Sign up for access to labeled image data for your machine learning model",
+    headline: "Get labeled image data for your machine learning models",
     description: [
       "Collecting image data for training machine learning models can take precious time and lots of Google image searches.",
       "I built a tool that generates labeled data for you. Choose your categories and download.",
