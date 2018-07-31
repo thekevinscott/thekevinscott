@@ -10,6 +10,7 @@ import {
 } from './selectors';
 import writeHeadTags from 'utils/writeHeadTags';
 import { pageView } from 'utils/mixpanel';
+import checkForDuplicatePaths from 'utils/checkForDuplicatePaths';
 
 import {
   media,
@@ -139,13 +140,20 @@ export default class Index extends Component {
         },
       } = this.props;
       posts = edges;
-    } catch(err) { }
+    } catch(err) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.error(err);
+      }
+    }
 
     if (!posts.length) {
       setTimeout(() => {
         this.forceUpdate();
       });
     }
+
+    checkForDuplicatePaths(posts);
+
     return posts;
   }
 
