@@ -2,6 +2,8 @@ export const DEEP_LEARNING_JOURNAL = 'DEEP_LEARNING_JOURNAL';
 export const TENSORFLOWJS = 'TENSORFLOWJS';
 export const LEAD_MAGNET_DATASET = 'LEAD_MAGNET_DATASET';
 export const HEADER_FORM = 'HEADER_FORM';
+export const DEFAULT = LEAD_MAGNET_DATASET;
+
 const config = {
   [DEEP_LEARNING_JOURNAL]: {
     formID: "242548946",
@@ -68,7 +70,7 @@ const getContainer = (key, user = {}) => {
     return parseConfig(config[key], user);
   }
 
-  return parseConfig(config[TENSORFLOWJS], user);
+  return parseConfig(config[DEFAULT], user);
 };
 
 export default getContainer;

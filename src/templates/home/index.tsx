@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Animated from 'components/Animated';
 import Footer from 'components/Footer';
+import Header from 'components/Header';
 import Post from './Post';
 import {
   getPosts,
@@ -18,12 +19,15 @@ import {
   SANS_SERIF,
   media,
   YELLOW,
+  HEADER_HEIGHT,
+  HEADER_BORDER,
 } from 'layouts/constants';
 
 const Container = styled.div `
   // max-width: 780px;
   padding: 0 40px;
-  margin: 0 auto;
+  // margin: 0 auto;
+  margin: ${HEADER_HEIGHT + HEADER_BORDER}px auto 0 auto;
   overflow: hidden;
 
   ${media.tablet`
@@ -49,7 +53,7 @@ const BlogPosts = styled.ul `
   `}
 `;
 
-const Header = styled.div `
+const HomeHeader = styled.div `
   margin-top: 40px;
   font-weight: bold;
   padding: 0 180px;
@@ -168,27 +172,30 @@ export default class Index extends Component {
 
     const posts = this.getPosts();
 
-    return [
-      <Container key="container">
-        {writeHeadTags(siteMetadata)}
-        <Header>
-          <Title>
-            <span>
-              {siteMetadata.title}
-            </span>
-          </Title>
-        </Header>
-        <BlogPosts>
-          {getPosts(posts).map((post, index) => (
-            <Post
-              key={post.id}
-              post={post}
-              index={index}
-            />
-          ))}
-        </BlogPosts>
-      </Container>,
-      <Footer key="footer" />
-    ];
+    return (
+      <React.Fragment>
+        <Header visible={this.props.visible} />
+        <Container>
+          {writeHeadTags(siteMetadata)}
+          <HomeHeader>
+            <Title>
+              <span>
+                {siteMetadata.title}
+              </span>
+            </Title>
+          </HomeHeader>
+          <BlogPosts>
+            {getPosts(posts).map((post, index) => (
+              <Post
+                key={post.id}
+                post={post}
+                index={index}
+              />
+            ))}
+          </BlogPosts>
+        </Container>
+        <Footer />
+      </React.Fragment>
+    );
   }
 }

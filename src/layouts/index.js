@@ -13,7 +13,7 @@ injectGlobal`${styles}`;
 
 const Container = styled.div `
   width: 100%;
-  margin-top: ${HEADER_HEIGHT + HEADER_BORDER}px;
+  // margin-top: ${HEADER_HEIGHT + HEADER_BORDER}px;
 
   & > * {
     z-index: 0;
@@ -67,9 +67,11 @@ class TemplateWrapper extends Component {
 
   render() {
     return (
-      <Container>
-        <Header visible={this.state.shadow} />
-        {this.props.children()}
+      <Container id="container">
+        {this.props.children({
+          ...this.props,
+          visible: this.state.shadow,
+        })}
       </Container>
     );
   }

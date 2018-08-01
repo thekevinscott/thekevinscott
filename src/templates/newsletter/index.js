@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import Animated from "components/Animated";
 import Footer from "components/Footer";
+import Header from 'components/Header';
 import writeHeadTags from 'utils/writeHeadTags';
 import SubscribeForm, {
   TENSORFLOWJS,
@@ -41,10 +42,12 @@ export default class Newsletter extends Component {
           siteMetadata,
         }
       },
+      visible,
     } = this.props;
 
     return (
       <Container key="container">
+        <Header visible={visible} />
         {writeHeadTags(siteMetadata)}
         <h1>My newsletter</h1>
         <p>I send a newsletter about design, AI and other cool stuff in 2018.</p>

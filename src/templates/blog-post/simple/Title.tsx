@@ -37,7 +37,7 @@ const END = 95;
 const TRANSPARENT_WHITE = 'rgba(255,255,255,0.65)';
 
 const Title = styled.div `
-  margin: 0 auto;
+  margin: 0 auto -25px auto;
   width: 780px;
   max-width: 100%;
 
@@ -54,7 +54,7 @@ const Title = styled.div `
   }
 
   h1 {
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
 
     span {
       background-image: linear-gradient(

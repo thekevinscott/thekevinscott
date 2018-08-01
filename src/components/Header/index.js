@@ -23,13 +23,19 @@ const Container = styled.div `
   height: ${HEADER_HEIGHT}px;
   position: fixed !important;
   top: 0;
-  background: rgba(255,255,255,0.96);
   width: 100%;
   border-top: ${HEADER_BORDER}px solid ${LIGHT_BLUE};
   transition-duration: 0.4s;
   ${props => props.visible ? `
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   ` : null}
+  // background: rgba(255,255,255,${props => props.visible ? '0.96' : '0'});
+  background: rgba(255,255,255,0.96);
+  opacity: ${props => props.visible ? `1` : `0`};
+  &:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    opacity: 1;
+  }
 `;
 
 const Center = styled.div `
@@ -67,7 +73,6 @@ const Home = styled.div `
   margin: 0 ${PADDING}px;
   position: relative;
   transition-duration: 0.4s;
-  opacity: ${props => props.visible ? `1` : `0`};
   &:hover {
     opacity: 1;
   }
@@ -170,10 +175,10 @@ const Promo = styled.div `
   max-width: 100%;
   width: 700px;
   position: relative;
-  opacity: ${props => props.visible ? `1` : `0`};
-  &:hover {
-    opacity: 1;
-  }
+  // opacity: ${props => props.visible ? `1` : `0`};
+  // &:hover {
+  //   opacity: 1;
+  // }
   overflow: hidden;
   height: ${props => props.shouldShow ? 57 * 2 + 40: 57}px;
   align-items: center;

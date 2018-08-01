@@ -11,7 +11,8 @@ const LETTER_SPACING = 20;
 
 const Content = styled.article `
   width: 100%;
-  padding: 0 0 20px 0;
+  // padding: 0 0 20px 0;
+  padding: 0;
   box-sizing: border-box;
   position: relative;
   word-break: break-word;

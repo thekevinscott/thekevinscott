@@ -163,8 +163,9 @@ h1 {
   padding: 0;
 
   .anchor {
-    margin-left: -16px;
+    margin-left: -20px;
     border: none;
+    padding-right: 0;
 
     &:hover {
       border: none;
@@ -190,7 +191,8 @@ h2 {
   font-size: 3.8rem;
 
   .anchor {
-    margin-left: -16px;
+    margin-left: -20px;
+    padding-right: 0;
     border: none;
 
     &:hover {
@@ -254,6 +256,11 @@ iframe {
   padding: 0;
   margin: 0 0 40px 0;
   border: none;
+  height: 400px;
+  width: 100%;
+  max-height: 100%;
+  max-width: 800px;
+  margin: 30px auto;
 }
 
 ul {
@@ -344,13 +351,6 @@ blockquote {
       margin-bottom: 0;
     }
   }
-}
-
-iframe {
-  height: 400px;
-  width: 100%;
-  max-width: 800px;
-  margin: 30px auto;
 }
 
 a {

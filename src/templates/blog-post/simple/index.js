@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import Content from "./Content";
-import Header from "./Header";
+import SimpleHeader from "./Header";
+import Header from 'components/Header';
 import Footer from "components/Footer";
 import {
   writeMetaTags,
@@ -60,6 +61,7 @@ class Simple extends Component {
           siteMetadata,
         },
       },
+      visible,
     } = this.props;
 
     const {
@@ -77,31 +79,34 @@ class Simple extends Component {
     } = getPostData(post, siteMetadata);
 
     return (
-      <Container className="simple">
-        {writeMetaTags({ post, siteMetadata })}
-        <Header
-          image={image}
-          credit={credit}
-          title={title}
-          timeToRead={timeToRead}
-          date={date}
-        />
-        <Content
-          className="blog-post-content"
-        >
-          {children}
-          <hr className="line" />
-        </Content>
-        <Footer
-          form={form}
-          subscriberTags={getSubscriberTags({
-            post,
-            siteMetadata,
-          })}
-        />
-      </Container>
+      <React.Fragment>
+        <Header visible={visible} />
+        <Container className="simple">
+          {writeMetaTags({ post, siteMetadata })}
+          <SimpleHeader
+            image={image}
+            credit={credit}
+            title={title}
+            timeToRead={timeToRead}
+            date={date}
+          />
+          <Content
+            className="blog-post-content"
+          >
+            {children}
+            <hr className="line" />
+          </Content>
+          <Footer
+            form={form}
+            subscriberTags={getSubscriberTags({
+              post,
+              siteMetadata,
+            })}
+          />
+        </Container>
+      </React.Fragment>
     );
   }
 }
 
-export default Simple;
+  export default Simple;

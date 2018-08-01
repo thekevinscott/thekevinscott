@@ -3,6 +3,7 @@ import WebFont from 'webfontloader';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Content from './Content';
+import Header from 'components/Header';
 import {
   writeMetaTags,
   getPostData,
@@ -11,12 +12,17 @@ import {
 import {
   LIGHT_GRAY,
   YELLOW,
+  HEADER_BORDER,
+  HEADER_HEIGHT,
 } from 'layouts/constants';
+
+const headHeight = HEADER_BORDER + HEADER_HEIGHT + 0;
 
 const Container = styled.div `
   display: flex;
   max-width: 100%;
-  height: 100%;
+  margin-top: ${headHeight}px;
+  height: calc(100% - ${headHeight}px);
   overflow-x: hidden;
   flex: 1;
   flex-direction: column;
@@ -28,6 +34,11 @@ const Container = styled.div `
       margin: 0 auto;
     }
   }
+`;
+
+const OverContainer = styled.div `
+  height: 100%;
+  flex: 1;
 `;
 
 class LeadMagnet extends Component {
@@ -68,14 +79,17 @@ class LeadMagnet extends Component {
     } = getPostData(post, siteMetadata);
 
     return (
-      <Container className="leadmagnet">
-        {writeMetaTags({ post, siteMetadata })}
-        <Content
-          className="blog-post-content"
-        >
-          {children}
-        </Content>
-      </Container>
+      <OverContainer>
+        <Header visible={true} />
+        <Container className="leadmagnet">
+          {writeMetaTags({ post, siteMetadata })}
+          <Content
+            className="blog-post-content"
+          >
+            {children}
+          </Content>
+        </Container>
+      </OverContainer>
     );
   }
 }

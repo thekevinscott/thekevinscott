@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import SubscribeForm, {
-  TENSORFLOWJS,
-} from "components/SubscribeForm";
+import SubscribeForm from "components/SubscribeForm";
 import {
   DARK_BLUE,
   LIGHT_BLUE,

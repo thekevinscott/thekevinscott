@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import Content from "./Content";
-import Header from "./Header";
+import GridHeader from "./Header";
 import Footer from "components/Footer";
+import Header from "components/Header";
 import {
   writeMetaTags,
   getPostData,
@@ -41,6 +42,7 @@ class Grid extends Component {
           siteMetadata,
         },
       },
+      visible,
     } = this.props;
 
     const {
@@ -66,24 +68,27 @@ class Grid extends Component {
     ].join("");
 
     return (
-      <Container className="grid">
-        {writeMetaTags({ post, siteMetadata })}
-        <Header
-          image={image}
-          credit={credit}
-          title={title}
-          timeToRead={timeToRead}
-          date={date}
-        />
-        <Content
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html }}
-        />
-        <Footer
-          form={form}
-          subscriberTags={getSubscriberTags({ post, siteMetadata })}
-        />
-      </Container>
+      <React.Fragment>
+        <Header visible={visible} />
+        <Container className="grid">
+          {writeMetaTags({ post, siteMetadata })}
+          <GridHeader
+            image={image}
+            credit={credit}
+            title={title}
+            timeToRead={timeToRead}
+            date={date}
+          />
+          <Content
+            className="blog-post-content"
+            dangerouslySetInnerHTML={{ __html }}
+          />
+          <Footer
+            form={form}
+            subscriberTags={getSubscriberTags({ post, siteMetadata })}
+          />
+        </Container>
+      </React.Fragment>
     );
   }
 }

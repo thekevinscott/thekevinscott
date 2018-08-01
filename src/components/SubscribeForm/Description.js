@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Kevin from "./kevinscott.jpg";
+// import Kevin from "./kevinscott-professional.jpg";
+import Kevin from "./kevinscott-lightning.jpg";
 import {
   media,
 } from 'layouts/constants';

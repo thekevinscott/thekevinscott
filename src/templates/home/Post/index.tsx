@@ -4,6 +4,7 @@ import {
   BLUE,
 } from 'layouts/constants';
 import {
+  isAfter,
   format,
 } from 'utils/getDate';
 import styled from 'styled-components';
@@ -76,6 +77,16 @@ const Excerpt = styled.p `
   margin: 0;
 `;
 
+const getTitle = (title, date) => {
+  if (isPublished(date)) {
+    return `${title}`;
+  }
+
+  return `[DRAFT] ${title}`;
+};
+
+export const isPublished = date => date && isAfter(date, new Date());
+
 const Post = ({
   post,
   index,
@@ -95,7 +106,7 @@ const Post = ({
       <Link to={post.frontmatter.path}>
         <Content>
           <Title>
-            {title}
+            {getTitle(title, date)}
           </Title>
           <Excerpt>{excerpt}</Excerpt>
           <a>Read more &rarr;</a>

@@ -24,6 +24,7 @@ const Container = styled.div `
   `}
 
   &:after {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -32,7 +33,7 @@ const Container = styled.div `
     height: 100%;
     background: linear-gradient(
       0deg,
-      rgba(255,255,255,1.0) 5%,
+      rgba(255,255,255,1.0) 0%,
       rgba(255,255,255,0) 40%
     );
   }
@@ -57,6 +58,7 @@ const Caption = styled.span `
   // bottom: 0;
   // bottom: 140px;
   top: 40px;
+  top: 0;
   right: 0;
 
   ${media.phonePlus`

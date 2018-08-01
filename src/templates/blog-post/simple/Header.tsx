@@ -4,8 +4,6 @@ import CoverImg from './CoverImg';
 import Title from './Title';
 
 import {
-  HEADER_HEIGHT,
-  HEADER_BORDER,
   media,
 } from 'layouts/constants';
 
