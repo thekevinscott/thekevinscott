@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import Animated from "components/Animated";
@@ -12,23 +11,6 @@ import SubscribeForm, {
 import { pageView } from 'utils/mixpanel';
 
 let timer;
-
-const Container = styled.div `
-  display: flex;
-  max-width: 600px;
-  margin: 0 auto;
-  overflow-x: hidden;
-  flex: 1;
-  flex-direction: column;
-
-  p {
-    text-align: left;
-  }
-
-  h1 {
-    text-align: center;
-  }
-`;
 
 export default class Newsletter extends Component {
   componentDidMount() {
@@ -46,7 +28,7 @@ export default class Newsletter extends Component {
     } = this.props;
 
     return (
-      <Container key="container">
+      <div className={styles.container}>
         <Header visible={visible} />
         {writeHeadTags(siteMetadata)}
         <h1>My newsletter</h1>
@@ -55,7 +37,7 @@ export default class Newsletter extends Component {
         <SubscribeForm
           form={TENSORFLOWJS}
         />
-      </Container>
+      </div>
     );
   }
 }

@@ -3,7 +3,6 @@ import WebFont from 'webfontloader';
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Img from "gatsby-image";
-import Content from "./Content";
 import GridHeader from "./Header";
 import Footer from "components/Footer";
 import Header from "components/Header";
@@ -71,7 +70,8 @@ class Grid extends Component {
             timeToRead={timeToRead}
             date={date}
           />
-          <Content
+          <div
+            className={styles.content}
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html }}
           />
