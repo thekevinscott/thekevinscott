@@ -1,0 +1,31 @@
+@import "~styles/constants";
+
+.container {
+  overflow: hidden;
+  position: relative;
+  transition-duration: 0.4s;
+  background: white;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  max-height: 0;
+
+  &.visible {
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2);
+    max-height: 560px;
+  }
+}
+
+.inner {
+  width: 700px;
+  max-width: 100%;
+  padding: 40px 20px 0 20px;
+  margin: 0 auto;
+
+  h1 {
+    text-align: center;
+    margin-top: 0;
+  }
+}
+
+.innerContainer {
+  background: linear-gradient(180deg, white 35%, $LIGHT_BLUE 100%);
+}

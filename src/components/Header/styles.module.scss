@@ -1,0 +1,202 @@
+@import "~styles/constants";
+
+$PADDING: 35px;
+$WIDTH: 120px;
+$DURATION: 0.1s;
+$PROMO_OFFSET: 95px;
+
+.subscribeButton {
+  margin-left: 10px;
+  background: $LIGHT_BLUE;
+}
+
+.container {
+  height: $HEADER_HEIGHT;
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  border-top: $HEADER_BORDER solid $LIGHT_BLUE;
+  transition-duration: 0.4s;
+  background: rgba(255, 255, 255, 0.96);
+  opacity: 0;
+
+  &:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+  }
+
+  &.visible {
+    opacity: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+$width: 80px;
+
+.closeNewsletter {
+  transition-duration: 0.4s;
+  position: absolute;
+  display: block;
+  left: 50%;
+  width: $width;
+  margin: 0 0 0 -($width / 2);
+  background: rgba(0, 0, 0, 0.4);
+  top: 45px;
+  opacity: 0;
+
+  &:hover {
+    opacity: 0;
+    background: $LIGHT_BLUE;
+  }
+
+  &.visible {
+    top: 110px;
+    opacity: 0.4;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.left {
+  width: $WIDTH;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.flex {
+  flex: 1;
+  background: green;
+  content: ".";
+  display: block;
+}
+
+.right {
+  padding: 0 $PADDING;
+  width: $WIDTH;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: $tablet) {
+    width: 0;
+    padding: 0;
+  }
+}
+
+.center {
+  margin: 0 auto;
+  height: 100%;
+  align-items: center;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+
+  a {
+    text-decoration: none;
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: 1px solid $LIGHT_BLUE;
+    }
+  }
+}
+
+.home {
+  height: 50px;
+  width: 50px;
+  margin: 0 $PADDING;
+  position: relative;
+  transition-duration: 0.4s;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    transition-duration: $DURATION;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition-duration: $DURATION;
+  }
+
+  &:hover {
+    opacity: 1;
+
+    img {
+      opacity: 0;
+    }
+
+    span {
+      opacity: 1;
+
+      img {
+        opacity: 1;
+      }
+    }
+  }
+
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+}
+
+.promo {
+  text-align: center;
+  font-size: 1.4rem;
+  transition-duration: 0.4s;
+  max-width: 100%;
+  width: 700px;
+  position: relative;
+  overflow: hidden;
+  height: 57px;
+  margin-top: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  &.shouldShow {
+    height: (57 * 2 + 40)px;
+    margin-top: -1 * $PROMO_OFFSET;
+  }
+
+  a {
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    &:hover {
+      border: none;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    justify-content: flex-end;
+    padding-right: 40px;
+  }
+
+  @media screen and (max-width: $phone) {
+    span {
+      display: none;
+    }
+  }
+}
