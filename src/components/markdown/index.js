@@ -13,8 +13,6 @@ const components = {
   [EmbedKey]: Embed,
 };
 
-console.log('hi!', components);
-
 let renderAst;
 
 // only render once we have access to window
