@@ -80,11 +80,11 @@ export default class Index extends Component {
         <div className={styles.container}>
           {writeHeadTags(siteMetadata)}
           <div className={styles.home}>
-            <div className={styles.title}>
+            <h1 className={styles.title}>
               <span>
                 {siteMetadata.title}
               </span>
-            </div>
+            </h1>
           </div>
           <div className={styles.blogPosts}>
             {getPosts(posts).map((post, index) => (
