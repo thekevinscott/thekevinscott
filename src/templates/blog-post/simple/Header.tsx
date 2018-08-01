@@ -1,26 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import CoverImg from './CoverImg';
 import Title from './Title';
+import * as styles from './styles.module.scss';
 
 import {
   media,
 } from 'layouts/constants';
-
-const BlogHeader = styled.div`
-  background: white;
-  position: relative;
-  margin: 0 0 80px 0;
-  width: 100%;
-
-  ${media.tablet`
-    margin-bottom: 20px;
-  `}
-
-  @media print {
-    margin-bottom: 0;
-  }
-`;
 
 export default ({
   image,
@@ -29,7 +14,7 @@ export default ({
   timeToRead,
   date,
 }) => (
-  <BlogHeader id="blog-simple-header">
+  <div className={styles.header}>
     { image && (
       <CoverImg
         src={image.childImageSharp.sizes.src}
@@ -42,5 +27,5 @@ export default ({
       time={timeToRead}
       date={date}
     />
-  </BlogHeader>
+  </div>
 );
