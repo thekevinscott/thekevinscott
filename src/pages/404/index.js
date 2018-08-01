@@ -3,19 +3,7 @@ import styled from "styled-components";
 import Link, { navigateTo } from "gatsby-link";
 import Gorilla from "./gorilla.jpg";
 import { isEqual } from "date-fns";
-
-const Container = styled.div `
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 700px;
-  padding: 20px;
-  margin: 0 auto;
-
-  img {
-    display: block;
-    margin: 20px 0;
-  }
-`;
+import * as styles from './styles.module.scss';
 
 const isValidDate = path => {
   if (path.length < 4 || path.length > 6) {
@@ -84,11 +72,11 @@ class NotFoundPage extends Component {
 
   render() {
   return (
-    <Container>
+    <div className={styles.container}>
       <h1>Page not found!</h1>
       <img src={Gorilla} alt="Sad Gorilla" />
       <Link to="/">Go back home</Link>
-    </Container>
+    </div>
   );
 }
 }
