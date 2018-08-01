@@ -36,6 +36,10 @@ const Container = styled.div `
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     opacity: 1;
   }
+
+  @media print {
+    display: none;
+  }
 `;
 
 const Center = styled.div `

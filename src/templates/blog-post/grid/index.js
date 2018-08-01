@@ -84,6 +84,7 @@ class Grid extends Component {
             dangerouslySetInnerHTML={{ __html }}
           />
           <Footer
+            path={path}
             form={form}
             subscriberTags={getSubscriberTags({ post, siteMetadata })}
           />

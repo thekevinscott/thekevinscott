@@ -97,6 +97,7 @@ class Simple extends Component {
             <hr className="line" />
           </Content>
           <Footer
+            path={path}
             form={form}
             subscriberTags={getSubscriberTags({
               post,

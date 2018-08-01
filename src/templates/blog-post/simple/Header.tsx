@@ -7,7 +7,8 @@ import {
   media,
 } from 'layouts/constants';
 
-const Header = styled.div`
+const BlogHeader = styled.div`
+  background: white;
   position: relative;
   margin: 0 0 80px 0;
   width: 100%;
@@ -15,6 +16,10 @@ const Header = styled.div`
   ${media.tablet`
     margin-bottom: 20px;
   `}
+
+  @media print {
+    margin-bottom: 0;
+  }
 `;
 
 export default ({
@@ -24,7 +29,7 @@ export default ({
   timeToRead,
   date,
 }) => (
-  <Header style={{ width: '100%', marginBottom: '80px', position: 'relative' }}>
+  <BlogHeader id="blog-simple-header">
     { image && (
       <CoverImg
         src={image.childImageSharp.sizes.src}
@@ -37,5 +42,5 @@ export default ({
       time={timeToRead}
       date={date}
     />
-  </Header>
+  </BlogHeader>
 );

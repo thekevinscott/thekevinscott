@@ -12,9 +12,7 @@ import {
 } from 'layouts/constants';
 
 const Container = styled.div `
-  // margin: -200px 0 0 0;
   margin: 0;
-  // padding-top: 100px;
   position: relative;
   height: ${headerHeights.desktop}px;
   display: flex;
@@ -29,6 +27,11 @@ const Container = styled.div `
     height: auto;
     padding: 0;
   `}
+
+  @media print {
+    height: auto;
+    width: 100%;
+  }
 `;
 
 const START = 15;
@@ -45,6 +48,18 @@ const Title = styled.div `
     padding: 0 20px;
     width: 100%;
   `}
+
+  @media print {
+    margin: 0;
+    height: auto;
+    width: 100%;
+    padding: 0;
+
+    h1, time {
+      margin: 0;
+      width: 100%;
+    }
+  }
 
   time {
     display: block;
@@ -84,6 +99,7 @@ const Title = styled.div `
       margin: 0px 0 5px 0;
     `}
   }
+
 `;
 
 export default ({

@@ -37,6 +37,11 @@ const Container = styled.div `
       rgba(255,255,255,0) 40%
     );
   }
+
+  @media print {
+    position: relative;
+    height: auto;
+  }
 `;
 
 const Img = styled.img `
@@ -45,6 +50,10 @@ const Img = styled.img `
   display: block;
   transition-duration: 0.5s;
   margin: 0;
+
+  @media print {
+    max-width: 500px;
+  }
 `;
 
 const Caption = styled.span `
@@ -64,6 +73,10 @@ const Caption = styled.span `
   ${media.phonePlus`
     position: relative;
   `}
+
+  @media print {
+    position: relative;
+  }
 `;
 
 interface Props {

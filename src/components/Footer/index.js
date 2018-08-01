@@ -19,6 +19,20 @@ const Footer = styled.div `
     margin-top: 0px;
     padding-top: 20px;
   `}
+
+  @media print {
+    display: none;
+  }
+`;
+
+const PrintFooter = styled.div `
+  display: none;
+  margin-top: 80px;
+  width: 100%;
+
+  @media print {
+    display: block;
+  }
 `;
 
 const Container = styled.div `
@@ -33,14 +47,23 @@ const Container = styled.div `
 export default ({
   form,
   subscriberTags,
+  path,
 }) => {
+  const url = `https://thekevinscott.com${path}`;
+  const newsletter = `https://thekevinscott.com/newsletter`;
   return (
-    <Footer>
-      <SubscribeForm
-        descriptionPlacement="above"
-        form={form}
-        subscriberTags={subscriberTags}
-      />
-    </Footer>
+    <React.Fragment>
+      <Footer>
+        <SubscribeForm
+          descriptionPlacement="above"
+          form={form}
+          subscriberTags={subscriberTags}
+        />
+      </Footer>
+      <PrintFooter>
+        <p>This content was published by Kevin Scott at <a href={url}>{url}</a>.</p>
+        <p>For more articles and updates, subscribe to the newsletter at <a href={newsletter}>{newsletter}</a>. I'd love to hear what you think!</p>
+      </PrintFooter>
+    </React.Fragment>
   );
 };

@@ -30,7 +30,7 @@ module.exports = {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               const now = new Date();
               return allMarkdownRemark.edges.filter(edge => {
-                return now - (new Date(edge.node.frontmatter.date)) > 0;
+                return edge.node.frontmatter.date && now - (new Date(edge.node.frontmatter.date)) > 0;
               }).map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,

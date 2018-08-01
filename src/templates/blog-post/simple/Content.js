@@ -17,6 +17,10 @@ const Content = styled.article `
   position: relative;
   word-break: break-word;
 
+  @media print {
+    max-width: none;
+  }
+
   ${media.tablet`
     padding: 0 20px;
   `}
