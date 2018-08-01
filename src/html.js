@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import styleSheet from 'styled-components/lib/models/StyleSheet';
 import favicon from "./assets/favicon.ico";
 import { SNIPPET } from "utils/drip";
@@ -16,12 +15,6 @@ const getCss = () => {
   return null;
 };
 
-
-const Gatsby = styled.div `
-  flex: 1;
-  display: flex;
-  max-width: 100%;
-`;
 
 const Script = ({ snippet }) => (
   <script type="text/javascript"
@@ -52,7 +45,7 @@ module.exports = ({
     </head>
     <body {...bodyAttributes}>
       {preBodyComponents}
-      <Gatsby
+      <div
         key={`body`}
         id="___gatsby"
         dangerouslySetInnerHTML={{ __html: body }}

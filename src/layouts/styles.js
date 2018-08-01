@@ -37,6 +37,12 @@ body {
   box-sizing: border-box;
 }
 
+___gatsby {
+  flex: 1;
+  display: flex;
+  max-width: 100%;
+}
+
 a {
   cursor: pointer;
   color: inherit;
