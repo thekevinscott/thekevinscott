@@ -5,7 +5,7 @@ $WIDTH: 120px;
 $DURATION: 0.1s;
 $PROMO_OFFSET: 95px;
 
-.subscribeButton {
+a.subscribeButton {
   margin-left: 10px;
   background: $LIGHT_BLUE;
 }
@@ -37,25 +37,29 @@ $PROMO_OFFSET: 95px;
 
 $width: 80px;
 
-.closeNewsletter {
+a.closeNewsletter {
   transition-duration: 0.4s;
   position: absolute;
   display: block;
   left: 50%;
   width: $width;
-  margin: 0 0 0 -($width / 2);
+  // margin: 0 0 0 -($width / 2);
   background: rgba(0, 0, 0, 0.4);
-  top: 45px;
+  // top: 45px;
   opacity: 0;
+  bottom: 0;
 
   &:hover {
     opacity: 0;
     background: $LIGHT_BLUE;
   }
 
-  &.visible {
-    top: 110px;
+  &.closeVisible {
     opacity: 0.4;
+    bottom: -30px;
+    position: absolute;
+    left: 50%;
+    margin-left: -40px;
 
     &:hover {
       opacity: 1;
@@ -167,7 +171,7 @@ $width: 80px;
   max-width: 100%;
   width: 700px;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   height: 57px;
   margin-top: 0;
   align-items: center;
