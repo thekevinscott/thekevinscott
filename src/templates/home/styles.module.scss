@@ -81,3 +81,67 @@ $SHADOW: 10px;
     font-size: 4.6rem;
   }
 }
+
+.post {
+  list-style-type: none;
+  margin: 0 0 20px 0;
+  padding: 0;
+
+  h2 {
+    font-weight: 500;
+    font-size: 2.8rem;
+    margin: 0 0 5px 0;
+    color: rgba(0,0,0,0.65);
+    width: 100%;
+    display: block;
+  }
+
+  p {
+    color: rgba(0,0,0,0.5);
+    font-size: 1.4rem;
+    margin: 0;
+  }
+
+  .postContent {
+    padding: 20px;
+    margin: 0 0 (60px + $SHADOW) -20px;
+    width: calc(100% + 40px);
+    box-shadow: 0 0 0 $BLUE;
+    transition-duration: 0.4s;
+
+    &::after {
+      clear: both;
+      content: "";
+      display: block;
+    }
+
+    a {
+      display: inline-block;
+      float: right;
+      font-size: 1.2rem;
+      color: rgba(0, 0, 0, 0.7);
+      border-bottom: 2px solid transparent;
+      text-transform: uppercase;
+      padding: 10px;
+      text-align: right;
+      transition-duration: 0.4s;
+      height: 20px;
+      margin-bottom: 10px;
+    }
+
+    &:hover {
+      background: $BLUE;
+      box-shadow: $SHADOW $SHADOW 0 $BLUE;
+
+      a {
+        height: 30px;
+        margin-bottom: 0;
+        border-bottom: 2px solid $BLUE;
+      }
+    }
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 40px;
+    }
+  }
+}
