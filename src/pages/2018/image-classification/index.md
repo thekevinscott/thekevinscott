@@ -1,5 +1,6 @@
 ---
 path: "/image-classification-2/"
+date: "2019"
 title: "Image Classification"
 image: "cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/vWI1kTcMcDI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Alex Block</a> on <a href='https://unsplash.com'>Unsplash</a>"

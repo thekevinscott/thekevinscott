@@ -1,0 +1,37 @@
+@import "~styles/constants";
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+
+  @media screen and (max-width: $tablet) {
+    width: auto;
+  }
+}
+
+.footer {
+  width: 100%;
+  background-color: $DARK_BLUE;
+  color: rgba(255, 255, 255, 0.95);
+  margin-top: 160px;
+  padding-top: 60px;
+
+  @media screen and (max-width: $tablet) {
+    margin-top: 0;
+    padding-top: 20px;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+.printFooter {
+  display: none;
+  margin-top: 80px;
+  width: 100%;
+
+  @media print {
+    display: block;
+  }
+}
