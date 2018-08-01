@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  DARK_BLUE,
-  LIGHT_BLUE,
-  HEADER_FONT,
-} from 'layouts/constants';
+import * as styles from './styles.module.scss';
 import SubscribeForm, {
   LEAD_MAGNET_DATASET,
 } from 'components/SubscribeForm';

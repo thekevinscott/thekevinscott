@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
 import NewsletterSignup from './NewsletterSignup';
+import * as styles from './styles.module.scss';
 import {
   HEADER_HEIGHT,
   HEADER_BORDER,
