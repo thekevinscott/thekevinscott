@@ -1,45 +1,13 @@
 import React, { Component } from 'react';
 import WebFont from 'webfontloader';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import Content from './Content';
 import Header from 'components/Header';
 import {
   writeMetaTags,
   getPostData,
   getSubscriberTags,
 } from '../utils';
-import {
-  LIGHT_GRAY,
-  YELLOW,
-  HEADER_BORDER,
-  HEADER_HEIGHT,
-} from 'layouts/constants';
-
-const headHeight = HEADER_BORDER + HEADER_HEIGHT + 0;
-
-const Container = styled.div `
-  display: flex;
-  max-width: 100%;
-  margin-top: ${headHeight}px;
-  height: calc(100% - ${headHeight}px);
-  overflow-x: hidden;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-
-  p {
-    img {
-      display: block;
-      margin: 0 auto;
-    }
-  }
-`;
-
-const OverContainer = styled.div `
-  height: 100%;
-  flex: 1;
-`;
+import * as styles from './styles.module.scss';
 
 class LeadMagnet extends Component {
   static propTypes = {
@@ -79,17 +47,15 @@ class LeadMagnet extends Component {
     } = getPostData(post, siteMetadata);
 
     return (
-      <OverContainer>
+      <div className={styles.parent}>
         <Header visible={true} />
-        <Container className="leadmagnet">
+        <div className={styles.container}>
           {writeMetaTags({ post, siteMetadata })}
-          <Content
-            className="blog-post-content"
-          >
+          <div className={styles.article}>
             {children}
-          </Content>
-        </Container>
-      </OverContainer>
+          </div>
+        </div>
+      </div>
     );
   }
 }

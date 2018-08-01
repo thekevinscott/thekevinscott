@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import WebFont from 'webfontloader';
 import PropTypes from "prop-types";
-import styled from "styled-components";
 import Img from "gatsby-image";
-import Content from "./Content";
-import SimpleHeader from "./Header";
+import ArticleHeader from "./ArticleHeader";
 import Header from 'components/Header';
 import Footer from "components/Footer";
 import {
@@ -12,25 +10,10 @@ import {
   getPostData,
   getSubscriberTags,
 } from "../utils";
+import * as styles from './styles.module.scss';
 import {
   LIGHT_GRAY,
 } from "layouts/constants";
-
-const Container = styled.div `
-  display: flex;
-  max-width: 100%;
-  overflow-x: hidden;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-
-  p {
-    img {
-      display: block;
-      margin: 0 auto;
-    }
-  }
-`;
 
 class Simple extends Component {
   static propTypes = {
@@ -81,21 +64,19 @@ class Simple extends Component {
     return (
       <React.Fragment>
         <Header visible={visible} />
-        <Container className="simple">
+        <div className={styles.container}>
           {writeMetaTags({ post, siteMetadata })}
-          <SimpleHeader
+          <ArticleHeader
             image={image}
-            credit={credit}
+            caption={credit}
             title={title}
             timeToRead={timeToRead}
             date={date}
           />
-          <Content
-            className="blog-post-content"
-          >
+          <div className={styles.content}>
             {children}
             <hr className="line" />
-          </Content>
+          </div>
           <Footer
             path={path}
             form={form}
@@ -104,7 +85,7 @@ class Simple extends Component {
               siteMetadata,
             })}
           />
-        </Container>
+        </div>
       </React.Fragment>
     );
   }

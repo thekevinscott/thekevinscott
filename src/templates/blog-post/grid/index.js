@@ -7,6 +7,7 @@ import Content from "./Content";
 import GridHeader from "./Header";
 import Footer from "components/Footer";
 import Header from "components/Header";
+import * as styles from './styles.module.scss';
 import {
   writeMetaTags,
   getPostData,
@@ -15,15 +16,6 @@ import {
 import {
   LIGHT_GRAY,
 } from "layouts/constants";
-
-const Container = styled.div `
-  display: flex;
-  max-width: 100%;
-  overflow-x: hidden;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-`;
 
 const FOOTER_TAG = "Thanks for reading. If you like what you've read, stay in touch! You can subscribe below.";
 
@@ -70,7 +62,7 @@ class Grid extends Component {
     return (
       <React.Fragment>
         <Header visible={visible} />
-        <Container className="grid">
+        <div className={styles.container}>
           {writeMetaTags({ post, siteMetadata })}
           <GridHeader
             image={image}
@@ -88,7 +80,7 @@ class Grid extends Component {
             form={form}
             subscriberTags={getSubscriberTags({ post, siteMetadata })}
           />
-        </Container>
+        </div>
       </React.Fragment>
     );
   }
