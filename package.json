@@ -71,8 +71,7 @@
   "scripts": {
     "type-check": "tsc --noEmit",
     "lint": "npm run lint:eslint -- .",
-    "prebuild": "ls",
-    "prebuild_old": "npm run clean",
+    "prebuild": "npm run clean",
     "build-gatsby": "gatsby build",
     "build": "NODE_ENV=production && npm run build-gatsby",
     "clean": "rm -rf .cache/* && rm -rf public",
