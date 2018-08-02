@@ -7,8 +7,10 @@ const getCss = () => {
   if (process.env.NODE_ENV === 'production') {
     const styles = styleSheet.rules().map(rule => rule.cssText).join('\n');
     return (
-      <style dangerouslySetInnerHTML={{ __html: styles }} />
-
+      <React.Fragment>
+        <style dangerouslySetInnerHTML={{ __html: styles }} />
+        <link crossorigin="anonymous" media="all" rel="stylesheet" href="/styles.css" />
+      </React.Fragment>
     );
   }
 
