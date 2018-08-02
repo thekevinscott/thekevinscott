@@ -34,7 +34,6 @@ module.exports = ({
 }) => (
   <html {...htmlAttributes}>
     <head>
-      {getCss()}
       <link rel="shortcut icon" href={favicon} type="image/png" />
       <meta name="google-site-verification" content="z477EQkGBkIUEW_mPkS8cNVxi5n0sxBsmLsOX4q6Aoo" />
       <meta charSet="utf-8" />
@@ -44,6 +43,7 @@ module.exports = ({
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
       {headComponents}
+      {getCss()}
     </head>
     <body {...bodyAttributes}>
       {preBodyComponents}
