@@ -5,23 +5,27 @@
     "tslint-react",
     "tslint-config-prettier"
   ],
-  "jsRules": { },
+  "jsRules": {
+  },
   "rules": {
     "interface-name": false,
     "no-submodule-imports": false,
     "no-implicit-dependencies": false,
+    "no-unused-variable": [
+      true,
+      {"ignore-pattern": "^_"}
+    ],
     "member-access": [
       false
     ],
     "object-literal-sort-keys": false,
     "ordered-imports": false,
-    "no-console": false,
+    "no-console": true,
     "no-var-requires": true,
     "quotemark": [
       true,
       "single",
       "jsx-double"
     ]
-  },
-  "rulesDirectory": [ ]
+  }
 }

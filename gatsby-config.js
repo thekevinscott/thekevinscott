@@ -8,6 +8,15 @@ module.exports = {
     url: "https://thekevinscott.com",
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-purify-css',
+      options: {
+        purifyOptions: {
+          info: true,
+          minify: true
+        }
+      }
+    },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-next`,
     {

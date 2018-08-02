@@ -1,16 +1,14 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Link from "gatsby-link";
-import Animated from "components/Animated";
-import Footer from "components/Footer";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import Footer from 'components/Footer';
 import Header from 'components/Header';
 import writeHeadTags from 'utils/writeHeadTags';
 import SubscribeForm, {
   TENSORFLOWJS,
-} from "components/SubscribeForm";
+} from 'components/SubscribeForm';
 import { pageView } from 'utils/mixpanel';
-
-let timer;
+import * as styles from './styles.module.scss';
 
 export default class Newsletter extends Component {
   componentDidMount() {
