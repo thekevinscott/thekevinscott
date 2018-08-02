@@ -1,3 +1,4 @@
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   siteMetadata: {
@@ -8,15 +9,6 @@ module.exports = {
     url: "https://thekevinscott.com",
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-purify-css',
-      options: {
-        purifyOptions: {
-          info: true,
-          minify: true
-        }
-      }
-    },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-next`,
     {
@@ -128,6 +120,13 @@ module.exports = {
           },
         ],
       },
+    },
+    {
+      resolve: `gatsby-plugin-module-local-ident-name`,
+      options: {
+        localIdentName: isProduction ? '[hash:base64:5]' : 'tks-[folder]-[local]-[hash:base64:5]',
+        includeSASS: true,
+      }
     },
   ],
 }
