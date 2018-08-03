@@ -10,6 +10,7 @@ export const pageQuery = graphql`
         keywords
         author
         url
+        image
       }
     }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {

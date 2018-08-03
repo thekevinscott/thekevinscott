@@ -18,11 +18,13 @@ export const getPostData = ({ frontmatter, timeToRead }, metadata) => {
   const image_credit = frontmatter.image_credit;
   const tags = (frontmatter.tags || []).map(tag => tag.trim()).join(", ");
   const {
+    image,
     author,
     keywords,
   } = metadata;
 
   return {
+    image,
     title,
     description,
     path,
