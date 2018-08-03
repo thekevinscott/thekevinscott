@@ -1,15 +1,17 @@
 const isProduction = process.env.NODE_ENV === 'production';
 const fs = require('fs');
-const image = fs.readFileSync('./src/assets/logo.svg').toString('base64');
+
+const url = 'https://thekevinscott.com';
 
 module.exports = {
   siteMetadata: {
-    image,
+    url,
     title: 'Artificial Intelligence, Design, and the Web',
     description: 'Design. Artificial Intelligence. Javascript. Master Machine Learning in your Browser with Tensorflow.js',
     keywords: 'Tensorflow.js, Machine Learning, Artificial Intelligence, Design, Pytorch, TensorFlow, Deep Learning, Kaggle',
     author: 'Kevin Scott',
-    url: 'https://thekevinscott.com',
+    // image: './src/assets/logo.svg',
+    // image: `${url}/assets/logo.svg`,
   },
   plugins: [
     `gatsby-plugin-typescript`,

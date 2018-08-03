@@ -14,7 +14,6 @@ export const pageQuery = graphql`
         description
         keywords
         url
-        image
       }
     }
      markdownRemark(frontmatter: { path: { eq: $path } }) {
