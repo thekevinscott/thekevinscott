@@ -1,7 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { writeAllGraphTags } from "./writeGraphTags";
-import logo from 'assets/logo.svg';
 
 const writeHeadTags = ({
   title,
@@ -23,7 +22,7 @@ const writeHeadTags = ({
     {writeAllGraphTags({
       title,
       description,
-      image: image || logo,
+      image,
       url,
       type,
       'image:width': social_image_width,

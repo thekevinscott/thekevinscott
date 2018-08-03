@@ -48,6 +48,7 @@ export default class Index extends Component {
       posts = edges;
     } catch(err) {
       if (process.env.NODE_ENV !== 'production') {
+        // tslint:disable-next-line
         console.error(err);
       }
     }

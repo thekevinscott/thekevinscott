@@ -1,7 +1,7 @@
 ---
 path: "/image-classification-2/"
 date: "2019"
-title: "Image Classification"
+title: "Diets: Using Image Classification to classify your pictures"
 image: "cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/vWI1kTcMcDI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Alex Block</a> on <a href='https://unsplash.com'>Unsplash</a>"
 tags: ["image classification", "imagenet", "mobilenet", "artificial intelligence", "deep learning", "machine learning", "tensorflow.js"]
@@ -9,7 +9,7 @@ tags: ["image classification", "imagenet", "mobilenet", "artificial intelligence
 
 There are so many diets out there. We're going to build a tool that can categorize images of food into certain groups. You could then build a mobile app that tells you whether a particular food falls into your diet or not.
 
-Image classification is the practice of teaching a machine to categorize a set of images into different categories, so that future images can be categorized automatically. It's used all over the place. It's even used in places you wouldn't expect, like heat maps for fraud detection, or analyzing the Fourier transforms of audio waves.
+Image classification is the practice of teaching a machine to categorize a set of images into different categories, so that future images can be categorized automatically. It's used all over the place: people detection, photo apps, other scenarios. It's even used in places you wouldn't expect, like heat maps for fraud detection, or analyzing the Fourier transforms of audio waves.
 
 We're going to cover how to build a model that can classify categories of images, and we're going to build it in Javascript.
 
@@ -55,18 +55,13 @@ https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1
 
 ---
 
-This can be a very computationally costly process. For learning images, lots of features are shared across all images. Check out this graphic of edges:
+How can this work? How can something not trained on my images work so well for new images?
 
-edges
+It comes down to learning low level features. Check out this graphic of edges:
 
-There is a concept called Transfer Learning, whereby you can leverage models that have been trained on vast quantities of data and leverage their conclusions in your own apps. This is what makes it feasible to train in your browser (otherwise, you'd need access to massive GPUs).
+### Code
 
-This has some limitations. Let's say you want to deal with satellite imagery. Let's say you want to recognize multiple objects at a time. Let's say you want to identify good looking dogs from dumb looking dogs. You won't be able to using Mobilenet.
-
----
-
-
-Download this repo and run it locally. Write your code in index.js
+Enough talk, let's code! Download this repo and run it locally. Write your code in index.js
 
 First, import tensorflowjs:
 
@@ -85,8 +80,6 @@ function loadMobilenet() {
 ## Setting up a Data Pipeline
 
 When working with neural nets, a [lot of your time will be spent working with data](https://thekevinscott.com/dealing-with-mnist-image-data-in-tensorflowjs/). Setting up a solid pipeline is crucial to a well-functioning model.
-
-For our purposes, we're going to load the images from disk. If you'd like something more dynamic (like the demo above), check out the code in `ml-classifier-ui`, [specifically around handling drag and drop](https://github.com/thekevinscott/ml-classifier-ui/tree/master/src/Dropzone).
 
 For this model, our data consists of two things:
 

@@ -1,12 +1,15 @@
 const isProduction = process.env.NODE_ENV === 'production';
+const fs = require('fs');
+const logo = fs.readFileSync('./src/assets/logo.svg').toString('base64');
 
 module.exports = {
   siteMetadata: {
-    title: "Artificial Intelligence, Design, and the Web",
-    description: "Design. Artificial Intelligence. Javascript. Master Machine Learning in your Browser with Tensorflow.js",
-    keywords: "Tensorflow.js, Machine Learning, Artificial Intelligence, Design, Pytorch, TensorFlow, Deep Learning, Kaggle",
-    author: "Kevin Scott",
-    url: "https://thekevinscott.com",
+    title: 'Artificial Intelligence, Design, and the Web',
+    description: 'Design. Artificial Intelligence. Javascript. Master Machine Learning in your Browser with Tensorflow.js',
+    keywords: 'Tensorflow.js, Machine Learning, Artificial Intelligence, Design, Pytorch, TensorFlow, Deep Learning, Kaggle',
+    author: 'Kevin Scott',
+    url: 'https://thekevinscott.com',
+    image: logo,
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -37,7 +40,7 @@ module.exports = {
                   description: edge.node.excerpt,
                   url: site.siteMetadata.url + edge.node.frontmatter.path,
                   guid: site.siteMetadata.url + edge.node.frontmatter.path,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
                 });
               });
             },
@@ -61,7 +64,7 @@ module.exports = {
               }
             }
           `,
-            output: "/rss.xml",
+            output: '/rss.xml',
           },
         ],
       },
@@ -71,7 +74,7 @@ module.exports = {
       options: {
         respectDNT: true,
         head: true,
-        trackingId: "UA-112845439-1",
+        trackingId: 'UA-112845439-1',
       },
     },
     `gatsby-transformer-sharp`,
