@@ -27,3 +27,12 @@ http://2ality.com/2015/09/typed-arrays.html
 https://hacks.mozilla.org/2017/01/typedarray-or-dataview-understanding-byte-order/
 
 
+---
+
+Tensors are the building blocks of any machine learning project. Tensor flow is literally named after them. 
+
+In this article we'll talk about what a tensor is and how it's built in JAVASCRIPT. 
+
+What is a tensor
+
+Code
