@@ -7,7 +7,7 @@
   width: 100%;
 
   @media screen and (max-width: $tablet) {
-    margin-bottom: 20px;
+    margin-bottom: 80px;
   }
 
   @media print {
@@ -19,6 +19,10 @@
   height: $headerHeightsDesktop;
   overflow: hidden;
   position: absolute;
+
+  @media screen and (max-width: $tablet) {
+    max-height: $headerHeightsTablet;
+  }
 
   @media screen and (max-width: $phone) {
     position: relative;
@@ -66,7 +70,7 @@
 
 .content {
   width: 100%;
-  max-width: 780px;
+  max-width: $contentWidth;
   box-sizing: border-box;
   position: relative;
   word-break: break-word;
@@ -148,10 +152,9 @@
     height: auto;
     width: 100%;
   }
-
 }
 
-.inner {
+.innerTitle {
   $START: 15%;
   $END: 95%;
   $TRANSPARENT_WHITE: rgba(255, 255, 255, 0.65);
@@ -161,8 +164,10 @@
   max-width: 100%;
 
   @media screen and (max-width: $tablet) {
-    padding: 0 20px;
+    padding: 0;
     width: 100%;
+    font-size: 3rem;
+    margin: 0 0 -25px 0;
   }
 
   @media print {
@@ -201,11 +206,6 @@
         background-image: none;
       }
     }
-  }
-
-  @media screen and (max-width: $tablet) {
-    font-size: 3rem;
-    margin: 0 0 5px 0;
   }
 }
 

@@ -28,7 +28,7 @@ const ArticleHeader = ({
       </div>
     )}
     <div className={styles.title}>
-      <div className={styles.inner}>
+      <div className={styles.innerTitle}>
         <h1><span>{title}</span></h1>
         <time>{format(date)}</time>
       </div>

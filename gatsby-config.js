@@ -10,8 +10,6 @@ module.exports = {
     description: 'Design. Artificial Intelligence. Javascript. Master Machine Learning in your Browser with Tensorflow.js',
     keywords: 'Tensorflow.js, Machine Learning, Artificial Intelligence, Design, Pytorch, TensorFlow, Deep Learning, Kaggle',
     author: 'Kevin Scott',
-    // image: './src/assets/logo.svg',
-    // image: `${url}/assets/logo.svg`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
