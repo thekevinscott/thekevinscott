@@ -11,9 +11,6 @@ import {
   getSubscriberTags,
 } from "../utils";
 import * as styles from './styles.module.scss';
-import {
-  LIGHT_GRAY,
-} from "layouts/constants";
 
 class Simple extends Component {
   static propTypes = {

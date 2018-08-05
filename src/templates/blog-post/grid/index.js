@@ -11,9 +11,6 @@ import {
   getPostData,
   getSubscriberTags,
 } from "../utils";
-import {
-  LIGHT_GRAY,
-} from "layouts/constants";
 
 const FOOTER_TAG = "Thanks for reading. If you like what you've read, stay in touch! You can subscribe below.";
 

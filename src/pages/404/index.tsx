@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import styled from "styled-components";
-import Link, { navigateTo } from "gatsby-link";
-import Gorilla from "./gorilla.jpg";
-import { isEqual } from "date-fns";
+import Link, { navigateTo } from 'gatsby-link';
+import Gorilla from './assets/gorilla.jpg';
+import { isEqual } from 'date-fns';
 import * as styles from './styles.module.scss';
 
 const isValidDate = path => {
@@ -18,15 +17,15 @@ const isValidDate = path => {
   return new Date(year, month - 1, day);
 };
 
-const getPathDate = path => parseInt(path, 10) !== NaN && isValidDate(path);
+const getPathDate = (path: string) => isNaN(parseInt(path, 10)) && isValidDate(path);
 
 const findMatchingPost = (path, {
   allMarkdownRemark: {
     edges,
   },
 }) => {
-  if (!path || path === "/") {
-    return "/";
+  if (!path || path === '/') {
+    return '/';
   }
 
   const pathDate = getPathDate(path);
@@ -42,13 +41,13 @@ const findMatchingPost = (path, {
     node: {
       frontmatter: {
         date,
-        path,
+        path: edgePath,
       },
     },
   }) => ({
     date: new Date(date),
     path,
-  })).reduce((url, { path, date }) => {
+  })).reduce((url, { date }) => {
     if (url) {
       return url;
     }
@@ -61,7 +60,7 @@ const findMatchingPost = (path, {
 
 class NotFoundPage extends Component {
   componentDidMount() {
-    const pathname = window.location.pathname.split("/").filter(f => f).join("");
+    const pathname = window.location.pathname.split('/').filter(f => f).join('');
 
     const matchingPost = findMatchingPost(pathname, this.props.data);
 
@@ -71,14 +70,14 @@ class NotFoundPage extends Component {
   }
 
   render() {
-  return (
-    <div className={styles.container}>
-      <h1>Page not found!</h1>
-      <img src={Gorilla} alt="Sad Gorilla" />
-      <Link to="/">Go back home</Link>
-    </div>
-  );
-}
+    return (
+      <div className={styles.container}>
+        <h1>Page not found!</h1>
+        <img src={Gorilla} alt="Sad Gorilla" />
+        <Link to="/">Go back home</Link>
+      </div>
+    );
+  }
 }
 
 export const pageQuery = graphql`

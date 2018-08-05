@@ -29,3 +29,5 @@ $LIGHT_BLUE: $BLUE;
 $ORIGINAL_BLUE: rgba(45, 67, 104, 0.95);
 $DARK_BLUE: desaturate(darken($ORIGINAL_BLUE, 10%), 10%);
 // $DARK_BLUE: Color("rgba(45,67,104,0.95)").darken(0.1).desaturate(0.1).string();
+
+$HR_DEGREES: -12deg;

@@ -1,16 +1,21 @@
 import React, { Component } from 'react'
-import styled from "styled-components";
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import Header from "../components/Header";
-import WebFont from "webfontloader";
+import Header from 'components/Header';
+import WebFont from 'webfontloader';
+import styles from './styles.module.scss';
 
-import { injectGlobal } from 'styled-components';
-import styles from './styles';
-import { HEADER_HEIGHT, HEADER_BORDER } from './constants';
-
-injectGlobal`${styles}`;
-
+const TYPEKIT_ID = 'zip7tcb';
+const FONTS = {
+  google: {
+    families: [
+      'Lato:400,500,600,700,800,900',
+    ],
+  },
+  typekit: {
+    id: TYPEKIT_ID,
+  }
+};
 const threshold = 80;
 const getIsOverThreshold = () => window.scrollY > threshold;
 
@@ -35,16 +40,7 @@ class TemplateWrapper extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
-    WebFont.load({
-      google: {
-        families: [
-          'Lato:400,500,600,700,800,900',
-        ],
-      },
-      typekit: {
-        id: "zip7tcb",
-      }
-    });
+    WebFont.load(FONTS);
   }
 
   componentWillUnmount() {
@@ -53,7 +49,7 @@ class TemplateWrapper extends Component {
 
   render() {
     return (
-      <div id="container">
+      <div className={styles.container}>
         {this.props.children({
           ...this.props,
           visible: this.state.shadow,
