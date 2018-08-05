@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import Link from "gatsby-link";
+import React, { Component } from 'react';
+import classNames from 'classnames';
+import Link from 'gatsby-link';
 import NewsletterSignup from './NewsletterSignup';
 import * as styles from './styles.module.scss';
 
-import logo from "assets/logo.svg";
-import hoverLogo from "assets/logo-hover.svg";
+import logo from 'assets/logo.svg';
+import hoverLogo from 'assets/logo-hover.svg';
 
 class Header extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Header extends Component {
     this.state = { newsletter: false };
   }
 
-  handleSubscribe = (newsletter) => {
+  handleSubscribe = (newsletter) => () => {
     this.setState({
       newsletter,
     });
@@ -26,10 +27,18 @@ class Header extends Component {
     } = this.props;
 
     return (
-      <div className={`${styles.container} ${visible ? styles.visible : ''}`}>
+      <div
+        className={classNames(styles.container, {
+          [styles.visible]: visible,
+        })}
+        >
         <div className={styles.center}>
           <div className={styles.left}>
-            <div className={`${styles.home} ${visible ? styles.visible : ''}`}>
+            <div
+              classNames={classNames(styles.home, {
+                [styles.visible]: visible,
+              })}
+            >
               <Link to="/">
                 <img alt="AI + Design" src={logo} />
                 <span>
@@ -39,17 +48,23 @@ class Header extends Component {
             </div>
           </div>
           <div className={styles.flex} />
-          <div className={`${styles.promo} ${this.state.newsletter ? styles.shouldShow : ''}`}>
+          <div
+            className={classNames(styles.promo, {
+              [styles.newsletter]: this.state.newsletter,
+            })}
+          >
             <span>I send a newsletter for AI people</span>
             <a
               className={styles.subscribeButton}
-              onClick={() => this.handleSubscribe(true)}
+              onClick={this.handleSubscribe(true)}
             >
               Subscribe <span>Now</span>
             </a>
             <a
-              className={`${styles.closeNewsletter} ${this.state.newsletter ? styles.closeVisible : ''}`}
-              onClick={() => this.handleSubscribe(false)}
+              className={classNames(styles.closeNewsletter, {
+                [styles.closeVisible]: this.state.newsletter,
+              })}
+              onClick={this.handleSubscribe(false)}
             >
               Close
             </a>

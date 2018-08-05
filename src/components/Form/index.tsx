@@ -1,13 +1,11 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Link from "gatsby-link";
-import Container from "./Container";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
 
 const getValues = (props, currentValues = {}) => {
   return props.inputs.reduce((obj, input) => ({
     ...obj,
-    [input.name]: currentValues[input.name] || input.value || "",
+    [input.name]: currentValues[input.name] || input.value || '',
   }), {});
 };
 
@@ -62,14 +60,15 @@ class Form extends Component {
         return isDisabled;
       }
 
-      return input.required && this.state.values[input.name] === "";
+      return input.required && this.state.values[input.name] === '';
     }, false);
 
     return (
-      <Container
+      <form
+        className={styles.form}
         {...rest}
         action={action}
-        method={method || "post"}
+        method={method || 'post'}
         onSubmit={this.handleSubmit}
       >
         {headline && (
@@ -79,7 +78,7 @@ class Form extends Component {
         {inputs.map(input => (
           <div key={input.name}>
             <input
-              type={input.type || "text"}
+              type={input.type || 'text'}
               id={input.id}
               name={input.name}
               placeholder={input.placeholder}
@@ -96,7 +95,7 @@ class Form extends Component {
             disabled={disabled}
           />
         </div>
-      </Container>
+      </form>
     );
   }
 }

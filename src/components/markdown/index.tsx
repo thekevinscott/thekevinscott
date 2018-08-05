@@ -1,10 +1,10 @@
-import React from "react";
-import rehypeReact from "rehype-react";
+import React from 'react';
+import rehypeReact from 'rehype-react';
 
-import Script, { KEY as ScriptKey } from "./Script";
-import Caption, { KEY as CaptionKey } from "./Caption";
-import Embed, { KEY as EmbedKey } from "./Embed";
-import Form, { KEY as FormKey } from "./Form";
+import Script, { KEY as ScriptKey } from './Script';
+import Caption, { KEY as CaptionKey } from './Caption';
+import Embed, { KEY as EmbedKey } from './Embed';
+import Form, { KEY as FormKey } from './Form';
 
 const components = {
   [FormKey]: Form,

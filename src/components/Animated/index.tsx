@@ -1,21 +1,8 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React, { Component } from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 const DELAY_TIME = 200;
-
-const Container = styled.div `
-  display: flex;
-  max-width: 100%;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
-
-  opacity: ${props => props.visible ? '1' : '0'};
-  padding-top: ${props => props.visible ? '0px' : '10px'};
-`;
 
 class Animated extends Component {
   constructor(props) {
@@ -41,9 +28,13 @@ class Animated extends Component {
     } = this.props;
 
     return (
-      <Container visible={this.state.visible}>
+      <div
+        className={classNames(styles.container, {
+          [styles.visible]: this.state.visible,
+        })}
+      >
         {children}
-      </Container>
+      </div>
     );
   }
 }

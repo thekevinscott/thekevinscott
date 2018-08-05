@@ -37,6 +37,19 @@ body {
   box-sizing: border-box;
 }
 
+#container {
+  width: 100%;
+
+  & > * {
+    z-index: 0;
+    position: relative;
+
+    &:first-child {
+      z-index: 1;
+    }
+  }
+}
+
 ___gatsby {
   flex: 1;
   display: flex;

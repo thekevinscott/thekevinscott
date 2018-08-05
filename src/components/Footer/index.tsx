@@ -1,6 +1,6 @@
-import React from "react";
-import Link from "gatsby-link";
-import SubscribeForm from "components/SubscribeForm";
+import React from 'react';
+import Link from 'gatsby-link';
+import SubscribeForm from 'components/SubscribeForm';
 import * as styles from './styles.module.scss';
 
 export default ({

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import WebFont from 'webfontloader';
 import PropTypes from "prop-types";
-import styled from "styled-components";
 import Img from "gatsby-image";
-import GridHeader from "./Header";
+import GridHeader from "./GridHeader";
 import Footer from "components/Footer";
 import Header from "components/Header";
 import * as styles from './styles.module.scss';

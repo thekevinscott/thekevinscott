@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 import * as styles from './styles.module.scss';
 import {
   format,
 } from 'utils/getDate';
 
-export default ({
+const GridHeader = ({
   image,
   credit,
   title,
@@ -35,3 +35,4 @@ export default ({
   </div>
 );
 
+export default GridHeader;

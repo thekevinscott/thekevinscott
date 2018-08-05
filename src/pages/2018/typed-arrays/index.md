@@ -25,6 +25,7 @@ http://2ality.com/2015/09/typed-arrays.html
 
 https://hacks.mozilla.org/2017/01/typedarray-or-dataview-understanding-byte-order/
 
+http://www.pythonprogramming.in/learn-tensorflow-series/creating-and-processing-tensors.html
 
 ---
 

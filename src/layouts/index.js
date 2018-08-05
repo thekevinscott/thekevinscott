@@ -11,20 +11,6 @@ import { HEADER_HEIGHT, HEADER_BORDER } from './constants';
 
 injectGlobal`${styles}`;
 
-const Container = styled.div `
-  width: 100%;
-  // margin-top: ${HEADER_HEIGHT + HEADER_BORDER}px;
-
-  & > * {
-    z-index: 0;
-    position: relative;
-
-    &:first-child {
-      z-index: 1;
-    }
-  }
-`;
-
 const threshold = 80;
 const getIsOverThreshold = () => window.scrollY > threshold;
 
@@ -67,12 +53,12 @@ class TemplateWrapper extends Component {
 
   render() {
     return (
-      <Container id="container">
+      <div id="container">
         {this.props.children({
           ...this.props,
           visible: this.state.shadow,
         })}
-      </Container>
+      </div>
     );
   }
 };

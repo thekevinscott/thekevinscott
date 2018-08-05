@@ -1,24 +1,23 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Link from "gatsby-link";
-import Form from "components/Form";
-import Container from "./Container";
-import Description from "./Description";
-import { getUser } from "utils/user";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import Form from 'components/Form';
+import * as styles from './styles.module.scss';
+import Description from './Description';
+import { getUser } from 'utils/user';
 import {
   DARK_BLUE,
   LIGHT_BLUE,
 } from 'layouts/constants';
 import getContainer, {
   LEAD_MAGNET_DATASET,
-} from "./config";
+} from './config';
 
 const writeSubscriberTags = subscriberTags => Object.entries(subscriberTags).map(([
   key,
   value,
 ]) => ({
-  type: "hidden",
+  type: 'hidden',
   name: `fields[${key}]`,
   value,
 }));
@@ -47,8 +46,8 @@ class SubscribeForm extends Component {
     } = getContainer(form, this.state.user);
 
     return (
-      <Container>
-        {descriptionPlacement === "above" && (
+      <div className={styles.container}>
+        {descriptionPlacement === 'above' && (
           <Description
             showImage={showImage}
             description={description}
@@ -61,10 +60,10 @@ class SubscribeForm extends Component {
           inputs={[
             {
               required: true,
-              type: "email",
-              id: "drip-email",
-              name: "fields[email]",
-              placeholder: "Email Address",
+              type: 'email',
+              id: 'drip-email',
+              name: 'fields[email]',
+              placeholder: 'Email Address',
             },
             ...writeSubscriberTags({
               ...subscriberTags,
@@ -73,14 +72,14 @@ class SubscribeForm extends Component {
           ]}
           headline={headline}
         >
-          {descriptionPlacement === "inside" && (
+          {descriptionPlacement === 'inside' && (
             <Description
               showImage={showImage}
               description={children || description}
             />
           )}
         </Form>
-      </Container>
+      </div>
     );
   }
 };
@@ -103,4 +102,4 @@ export {
   DEEP_LEARNING_JOURNAL,
   HEADER_FORM,
   LEAD_MAGNET_DATASET,
-} from "./config";
+} from './config';
