@@ -38,11 +38,11 @@ const Post = ({
   return (
     <li className={styles.post}>
       <Link to={post.frontmatter.path}>
-        <div className={styles.postContent}>
+        <span className={styles.postContent}>
           <h2>{getTitle(title, date)}</h2>
           <p>{excerpt}</p>
-          <a>Read more &rarr;</a>
-        </div>
+          <span className={styles.readMore}>Read more &rarr;</span>
+        </span>
       </Link>
     </li>
   );

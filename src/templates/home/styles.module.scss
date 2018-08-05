@@ -97,12 +97,13 @@ $SHADOW: 10px;
   }
 
   p {
-    color: rgba(0,0,0,0.5);
+    color: rgba(0, 0, 0, 0.5);
     font-size: 1.4rem;
     margin: 0;
   }
 
   .postContent {
+    display: block;
     padding: 20px;
     margin: 0 0 (60px + $SHADOW) -20px;
     width: calc(100% + 40px);
@@ -115,7 +116,7 @@ $SHADOW: 10px;
       display: block;
     }
 
-    a {
+    .readMore {
       display: inline-block;
       float: right;
       font-size: 1.2rem;
@@ -133,7 +134,7 @@ $SHADOW: 10px;
       background: $GRAY;
       box-shadow: $SHADOW $SHADOW 0 $BLUE;
 
-      a {
+      .readMore {
         height: 30px;
         margin-bottom: 0;
         border-bottom: 2px solid $BLUE;

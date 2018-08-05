@@ -35,7 +35,7 @@ class Header extends Component {
         <div className={styles.center}>
           <div className={styles.left}>
             <div
-              classNames={classNames(styles.home, {
+              className={classNames(styles.home, {
                 [styles.visible]: visible,
               })}
             >
