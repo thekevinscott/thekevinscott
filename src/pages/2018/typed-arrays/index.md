@@ -1,10 +1,9 @@
 ---
 path: "/typed-arrays/"
 date: "2119-05-27 10:00:00.000 EST"
-title: "Typed arrays"
-tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "image data"]
+title: "A Deep Dive into Tensors in JavaScript"
+tags: ["tensors", "Tensorflow.js", "Javascript", "TypedArrays"]
 description: ""
-layout: ""
 form: "TENSORFLOWJS"
 ---
 
