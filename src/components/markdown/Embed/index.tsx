@@ -25,26 +25,28 @@ const Embed: React.SFC<IProps> = ({
   caption,
   src,
 }) => (
-  <div
-    className={classNames(styles.container, {
-      [styles.border]: border || frameborder,
-    })}
-    style={{
-      height,
-      width,
-    }}
-  >
-    <iframe
-      src={src}
-      width={width}
-      height={height}
-      allow={allow}
-      allowfullscreen={allowfullscreen}
-    />
+  <React.Fragment>
+    <div
+      className={classNames(styles.container, {
+        [styles.border]: border || frameborder,
+      })}
+      style={{
+        height,
+        width,
+      }}
+    >
+      <iframe
+        src={src}
+        width={width}
+        height={height}
+        allow={allow}
+        allowfullscreen={allowfullscreen}
+      />
+    </div>
     {caption && (
       <Caption>{caption}</Caption>
     )}
-  </div>
+  </React.Fragment>
 );
 
 export const KEY = 'embed';

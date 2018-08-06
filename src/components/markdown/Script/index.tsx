@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Gist, { match as GistKey } from './Gist';
+import * as styles from './styles.module.scss';
+console.log('styles', styles);
 
 const types = {
   [GistKey]: Gist,
@@ -22,7 +24,11 @@ const Script = ({
   src,
 }) => {
   const Embed = getEmbed(src);
-  return Embed ? <Embed src={src} /> : <span />;
+  return Embed ? (
+    <div className={styles.container}>
+      <Embed src={src} />
+    </div>
+  ) : <span />;
 };
 
 Script.propTypes = {
