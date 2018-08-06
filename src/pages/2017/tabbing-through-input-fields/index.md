@@ -65,15 +65,10 @@ object we’ll define in the constructor. **We specify a custom index we’ll us
 later to focus on the input.**
 
     <TextInput
-
       ref={ input => {
-
         this.inputs['one'] = input;
-
       }}
-
       ...
-
     />
 
 Since the ref is defined in the `render` function, don’t store the reference
@@ -87,37 +82,25 @@ Next, we need to focus on the next element. We do that by hooking into the
 component.
 
     onSubmitEditing={() => {
-
       // specify the key of the ref, as done in the previous section.
-
       this.focusNextField('next-field');
-
     }}
 
 Then, we set up the field. If we zoom out to the component level:
 
     class App extends React.Component {
-
       constructor(props) {
-
         super(props);
-
         this.focusNextField = this.focusNextField.bind(this);
-
         // to store our input refs
-
         this.inputs = {};
-
       }
 
       focusNextField(key) {
-
         this.inputs[key].focus();
-
       }
 
       ...
-
     }
 
 Two things to point out:
@@ -136,11 +119,8 @@ reappear. We can avoid this by using a prop on `TextInput` called
 `blurOnSubmit`:
 
     <TextInput
-
       blurOnSubmit={ false }
-
       ...
-
     />
 
 This property forces the keyboard to remain visible. Since we’re immediately
@@ -155,19 +135,12 @@ change its appearance) but I think updating to the relevant return key type is a
 nice touch:
 
     <TextInput
-
       returnKeyType={ "next" }
-
       ...
-
     />
-
     <TextInput
-
       returnKeyType={ "done" }
-
       ...
-
     />
 
 This indicates how to show a `done` return key on the final input, and a
