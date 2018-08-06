@@ -1,27 +1,31 @@
 ---
-path: "/image-classification-2/"
+path: "/image-classification-in-javascript/"
 date: "2029"
 title: "Image Classification in the Browser with Javascript"
 image: "cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/vWI1kTcMcDI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Alex Block</a> on <a href='https://unsplash.com'>Unsplash</a>"
 tags: ["image classification", "artificial intelligence", "javascript", "imagenet", "mobilenet", "deep learning", "machine learning", "tensorflow.js"]
+description: "I recently build an open source tool to quickly train image classification models in your browser, and I'd like to talk about how it works and how to build your own in Javascript."
+
 ---
 
 Image classification is the practice of teaching a machine to categorize a set of images into different categories, so that it can categorize images in the future automatically.
 
+
+
 You've probably seen image classification at work in your photo app, automatically suggesting friends or locations for tagging. Image classification has a huge range of applications, from medical to self driving cars to satellite imagery; however, it's even used in places you wouldn't expect, like heat maps for fraud detection, or analyzing the Fourier transforms of audio waves.
 
-I recently build an open source tool to quickly train image classification models in your browser, and I'd like to talk about how it works and how to build your own in Javascript.
+I recently build an open source tool to quickly train image classification models in your browser, and I'd like to talk about how it works and how to build your own in Javascript. We'll be leveraging transfer learning to perform super fast training in the browser; if you're interested in more of a deep dive into how image training works, check out [Fast.ai's awesome lesson series](https://fast.ai).
 
-*Caveat - not going super deep into "image" processing, mostly just doing number processing*
+For our data, I'm going to build a dataset to recognize whether a person is happy or sad. You could imagine using this in a rich client side photo app, or a stock photo app to automatically categorize and tag photos.
 
 # Demo
 
 Before jumping into code, let's see an example of how to train your own custom image classifier:
 
-1. [Download this zip file of images labeled for training](https://github.com/thekevinscott/tfjs-image-classifier-example/blob/master/ORGANIZING_YOUR_DATA.md). *(If you don't feel comfortable downloading a random zip file from the internet, head to Google images and put together your own dataset in compliance [with this document](https://github.com/thekevinscott/tfjs-image-classifier-example/blob/master/ORGANIZING_YOUR_DATA.md).)*
-2. Upload the folder labeled *train*.
-3. Upload the folder labeled *validation*.
+1. [Download these images](https://github.com/thekevinscott/dataset-tutorial-for-image-classification/data) (or build your [own dataset to train with](https://github.com/thekevinscott/dataset-tutorial-for-image-classification#)).
+2. Upload the folder labeled **train**.
+3. Upload the folder labeled **validation**.
 
 <embed border="1" width="340" height="660" src="https://thekevinscott.github.io/ml-classifier-ui/?SHOW_HELP=0&SHOW_DOWNLOAD=0"></embed>
 <capt>Alternatively, [you can watch this gif of the thing in action](https://github.com/thekevinscott/ml-classifier-ui/raw/master/example/public/example.gif)</capt>
@@ -33,6 +37,9 @@ If all went according to plan, you should see close to 100% scores for each.
 The goal of any machine learning project is to build a model that successfully predicts novel data; data it hasn't seen before. (It wouldn't do any good to build a model to only recognize data it HAS seen before; you could just hardcode that, no machine learning required!)
 
 In order to do this, you train the model on labeled data - data that has already been identified as either a cat or a dog - and you validate the model's performance on other labeled data *that it hasn't seen before*. (There are other areas of machine learning that don't require labeled data but that's outside this article's scope.)
+
+> Supervised learning reverses this process, solving for m and b, given a set of x’s and y’s. In supervised learning, you start with many particulars — the data — and infer the general equation. And the learning part means you can update the equation as you see more x’s and y’s, changing the slope of the line to better fit the data. The equation almost never identifies the relationship between each x and y with 100% accuracy, but the generalization is powerful because later on you can use it to do algebra on new data.
+https://hbr.org/2017/10/how-to-spot-a-machine-learning-opportunity-even-if-you-arent-a-data-scientist
 
 That second set of data - data that it hasn't seen before - serves as a proxy for the real world, with the only difference being that we know what it *should be*, and we can use it to gauge the performance of our model. We call this data our *validation dataset*. (Or Evaluation data?)
 
@@ -49,7 +56,7 @@ There's literal books written on how to optimize your machine learning models. Y
 
 Traditionally, machine learning is done on the server, with massive GPUs, and is written in Python, or R, or occasionally a more esoteric language. GPUs are able to parallelize massive amounts of calculations over gigabytes of datasets, making it feasible to train in hours what would otherwise take months or days.
 
-However, recently folks have been training models and producing models that are already trained, that can be used for inference (aka, prediction). In the case of image classification, these models consist of JSON files containing the model architecutre and its weights, represented as a set of numbers, tuned to accurately classify incoming pixel data into a category of image.
+However, recently folks have been training models and producing models that are already trained, that can be used for inference (aka, prediction). You'll download JSON files containing the model topology and weights and retrain it on your specific problem.
 
 Transfer Learning is the special sauce that makes machine learning in the browser feasible.
 
@@ -57,18 +64,68 @@ You can use these models straight out of the box, or you can manipulate their fi
 
 The reason this works so well is that many of the fundamental parts of perception carry over to all images. For instance, check out this great image demonstrating low level feature detection:
 
-[]Image
+![Low Level Features](images/layer-1.png "Low Level Features")
 
 You can see how the model is beginning to recognize generic features, such as lines, circles, and shapes. Another step up, and it's beginning to recognize more complex shapes like edges and words.
 
-[]Later image
+![Higher Level Features](images/layer-4.png "Higher Level Features")
 
 As you get more complex features, we begin to recognize objects that are familiar to us. Since many images share features such as lines and circles (and many share higher level features, like "eye" or "nose") we can just train the final layer to our specific use case, which is much faster and requires less training data than a full train of the whole thing. How much less data? I'm able to get 100% validation scores on as few as a single image per class, though you should probably train with more
 example if you can.
 
+<embed border="0" height="315" src="https://www.youtube.com/embed/AgkfIQ4IGaM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="1"></embed>
+
 ## MobileNet
 
 This article (and the open source library) use [MobileNet](https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md). MobileNet was produced by Google, and [this guy has a great write up of it](https://hackernoon.com/creating-insanely-fast-image-classifiers-with-mobilenet-in-tensorflow-f030ce0a2991). It's trained on ImageNet, a huge dataset of more than 14 million labeled images belonging to a 1000 different categories.
+
+For this project we'll be using `mobilenet_v1_0.25_224` as our pretrained model. If you download the model and extract it you'll see a number of files:
+
+```
+mobilenet_v1_0.25_224.ckpt.data-00000-of-00001
+mobilenet_v1_0.25_224.ckpt.index
+mobilenet_v1_0.25_224.ckpt.meta
+mobilenet_v1_0.25_224.tflite
+mobilenet_v1_0.25_224_eval.pbtxt
+mobilenet_v1_0.25_224_frozen.pb
+mobilenet_v1_0.25_224_info.txt
+```
+
+And the beginning of `mobilenet_v1_0.25_224_eval.pbtxt` reads:
+
+```
+node {
+  name: "input"
+  op: "Placeholder"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: -1
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+    }
+  }
+}
+```
+
+From here, we can tell that the first layer of this MobileNet expects a tensor of rank 4 with dimensions `[any, 224, 224, 3]`.
 
 Let's look at an example of how to use MobileNet with Tensorflow.js in your browser. [Clone this repo](https://github.com/thekevinscott/tfjs-image-classifier-example) and run it with:
 
@@ -148,13 +205,9 @@ function loadImage(src) {
 }
 ```
 
-MobileNet [expects 224x224 square images](foo.com) *how do i know that*, so we need to crop our images to squares and resize them.
+When working with image classification, you often deal with square images. This is not a necessity, and you can build a network that accepts any size resolution. However, standard CNN architectures do expect images be of a fixed size, and as such square images make as much sense as any other ratio. They also give the most flexibility to handle a variety of [data augmentation techniques](https://medium.com/ymedialabs-innovation/data-augmentation-techniques-in-cnn-using-tensorflow-371ae43d5be9).
 
-Image Classification models often expect square images. The reasons are:
-
----
-
-If you're worried about losing valuable information, there are techniques for getting around this, that you can learn about here. Data augmentation.
+We determined above that MobileNet expects 224x224 square images, so we'll need to crop our images and resize them. (Cropping to squares can be an optional step; [this paper](https://arxiv.org/abs/1412.1842) discusses the results they got resizing to a non-square, fixed input size. Also, if you're accepting input from users, training on scaled images can help handle oddly sized uploaded images. For our purposes, cropping and resizing to a 224x224 yields good results and is easy to understand.)
 
 So, let's first write a function to crop an image:
 
@@ -191,7 +244,9 @@ The data object we're building towards for consumption by our model will be a Te
 
 In order to build such a tensor, we first need to convert our 3D tensors into 4D tensors, so that `[224, 224, 3]` becomes `[1, 224, 224, 3]`.
 
-We'll then want to turn our pixel data from an integer (0-255) into a floating point number, and then translate that number from a value between 0-255 into a value between -1 and 1. Neural networks are generally agnostic to the size of the numbers coming in, but smaller numbers train faster. *reference this*.
+We'll then want to turn our pixel data from an integer (0-255) into a floating point number, and then translate that number from a value between 0-255 into a value between -1 and 1. This process is called normalizing your input. [Neural networks using them are generally agnostic to the size](https://stackoverflow.com/questions/4674623/why-do-we-have-to-normalize-the-input-for-an-artificial-neural-network
+) of the numbers coming in, but using smaller numbers helps the network train faster. ([Check out the Coursera course on this to learn more](https://www.coursera.org/lecture/deep-neural-network/normalizing-inputs-lXv6U
+)).
 
 The function to do that looks like:
 
@@ -261,6 +316,8 @@ Technically, if all you wanted was something that could categorize something int
 
 However, if your problem is unique enough not to be satisfied by the constraints of your given pretrained model, the next step is to leverage the already trained layers and train it on your specific use case. Let's see how that's done.
 
+![You get a monorail!](images/monorail-2.gif "You get a monorail")
+
 # A Personalized, Customized, Your-Very-Own Image Classifier!
 
 To recap: what we'll be doing is using a pretrained model, and just tuning it to our specific problem set to identify whatever.
@@ -271,14 +328,7 @@ This would be a good time to talk - at a very high level! - what a neural net *i
 
 If you peel away the jargon and peer at its cold, code heart, a neural net is just a bunch of transformation functions and a bunch of variables - *weights* - that get subtly manipulated in the direction of correctness over very many iterations.
 
-There's a great python library that walks you through building a neural net from scratch. I highly recommend it. There's also lots of courses that go into greater detail.
-
-In practice, you almost always build things at a much higher level of abstraction, and it helps to think of those abstractions as tangible objects. The things to know:
-
-* neurons / units - 
-* layers
-* activations - you can think of an activation as a way that a number gets transformed. ReLU is a common activation, and when in doubt, use that.
-* optimizer - the way that the model learns. 
+[There's a great python library that walks you](http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/) through building a neural net from scratch. I highly recommend it. There's also lots of courses that go into greater detail.
 
 ## But How Do They WORK?
 
@@ -296,7 +346,8 @@ To compensate for these small steps, we run the training many many times over.
 
 Each cycle through your entire image set is called an epoch.
 
-How many epochs should you run for? Until it's good, or it's clear it's not working, or you run out of time.
+[How many epochs should you run for? Until it's good, or it's clear it's not working, or you run out of time.](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
+
 
 *We want to shuffle the images so that it doesn't learn the order of pixels and try to predict on that.*
 
@@ -304,15 +355,26 @@ How many epochs should you run for? Until it's good, or it's clear it's not work
 
 Let's walk through how you would take a pretrained model and customize it for our particular use case.
 
-First, we discussed how to translate images in the previous section. Let's turn our attention to our labels. Labels will need to be turned into numbers. Usually, they will be turned into an array representing their number, in a process called "one hot encoding".
+First, we discussed how to translate images in the previous section. Let's turn our attention to our labels. Labels will need to be turned into numbers. So for instance, you could wind up with:
 
-Let's say you've got 3 different categories: "raspberry", "blueberry", "strawberry". Those labels will become:
+```
+raspberry - 0
+blueberry - 1
+strawberry - 2
+```
+
+There's a problem here, and that problem is that this can imply a relationship between these numbers (in the literature, these would be known as "ordinal" values; aka, they have some order). For instance, the network could learn to assume that something halfway between a raspberry and a strawberry is a blueberry, something we know is incorrect. Or that a strawberry is the best berry.
+
+You can use a process called "one hot encoding" to get around this. The data will become:
 
 ```
 raspberry  - [1, 0, 0]
 blueberry  - [0, 1, 0]
 strawberry - [0, 0, 1]
 ```
+
+[Here's an article explaining this](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f).
+Here's another: https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/
 
 Some code demonstrating this is:
 
@@ -332,7 +394,9 @@ The reason we do this instead of 0, 1, and 2, is because of *x*.
 
 So you've got an array (also known as a tensor) of labels corresponding to your images, and you've got an array of images. You'll then need to convert that rich data into data the model can understand, which is numbers.
 
-Let's then build our incoming data streams, `xs` and `ys`. Something that was confusing to me when I was first learning was that `xs` represents your data, and `ys` represents labels. This is just the way things are:
+Let's then build our incoming data streams, `xs` and `ys`. Calling your data "x" and "y" is [something of a convention in the machine learning world](https://datascience.stackexchange.com/questions/17598/why-are-variables-of-train-and-test-data-defined-using-the-capital-letter-in-py), and originally comes from its mathematical origins. You're free to call it whatever you want.
+
+https://machinelearningmastery.com/data-terminology-in-machine-learning/
 
 ```
 const addData = (tensors: tf.Tensor[]): tf.Tensor => {

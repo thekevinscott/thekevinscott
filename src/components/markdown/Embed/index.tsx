@@ -1,17 +1,33 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import Caption from 'components/markdown/Caption';
 import * as styles from './styles.module.scss';
 
-const Frame = ({
-  src,
+interface IProps {
+  border?: number;
+  frameborder?: number;
+  allow?: string;
+  allowfullscreen?: boolean;
+  width?: number;
+  height?: number;
+  caption?: string;
+  src: string;
+}
+
+const Embed: React.SFC<IProps> = ({
   border,
+  frameborder,
+  allow,
+  allowfullscreen,
   width,
   height,
+  caption,
+  src,
 }) => (
-  <Container
+  <div
     className={classNames(styles.container, {
-      [styles.border]: border,
+      [styles.border]: border || frameborder,
     })}
     style={{
       height,
@@ -22,17 +38,15 @@ const Frame = ({
       src={src}
       width={width}
       height={height}
+      allow={allow}
+      allowfullscreen={allowfullscreen}
     />
-  </Container>
+    {caption && (
+      <Caption>{caption}</Caption>
+    )}
+  </div>
 );
-
-Frame.propTypes = {
-  border: PropTypes.number,
-  width: PropTypes.number,
-  height: PropTypes.number,
-  src: PropTypes.string.isRequired,
-};
 
 export const KEY = 'embed';
 
-export default Frame;
+export default Embed;

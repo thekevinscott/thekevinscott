@@ -42,7 +42,6 @@ class Form extends Component {
   };
 
   handleSubmit = e => {
-    // console.log('stop');
     // e.preventDefault();
   };
 

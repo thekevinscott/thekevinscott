@@ -1,5 +1,11 @@
 {
-  "include": ["./src/**/*"],
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/__tests__/index.js"
+  ],
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
