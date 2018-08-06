@@ -38,4 +38,5 @@ process.on('unhandledRejection', err => {
 
 jest.run([
   yargs.watch ? "--watch" : null,
+  '--forceExit',
 ].filter(f => f));
