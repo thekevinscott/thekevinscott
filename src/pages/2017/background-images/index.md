@@ -20,7 +20,7 @@ component does the heavy lifting.
 
 ## Layouts
 
-![The sample image we'll be using](images/sample.png)
+![The sample image we'll be using](images/sample.jpg)
 <capt>The sample image we'll be using</capt>
 
 There's [5 layouts](https://facebook.github.io/react-native/docs/image.html#resizemode) to
@@ -41,13 +41,13 @@ Here’s examples of each in practice:
 ![Center Image](images/center.png)
 <capt>center</centeR>
 
-![Contain Image](images/contain.png)
+![Contain Image](images/contain.jpg)
 <capt>contain</capt>
 
 ![Cover Image](images/cover.png)
 <capt>cover</capt>
 
-![Repeat Image](images/repeat.png)
+![Repeat Image](images/repeat.jpg)
 <capt>repeat</capt>
 
 ![Stretch Image](images/stretch.png)
