@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Gist, { match as GistKey } from './Gist';
 import * as styles from './styles.module.scss';
-console.log('styles', styles);
 
 const types = {
   [GistKey]: Gist,
