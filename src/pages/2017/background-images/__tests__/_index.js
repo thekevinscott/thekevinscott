@@ -22,6 +22,10 @@ describe('Background Images', async () => {
     const text = await page.evaluate(() => document.querySelector('h1').textContent);
     expect(text).toContain(config.title);
   });
+
+  it('should explicitly fail', () => {
+    throw new Error('fail');
+  });
 }, TIMEOUT);
 
 
