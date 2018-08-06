@@ -16,9 +16,9 @@
 }
 
 .coverImg {
-  height: $headerHeightsDesktop;
+  max-height: $headerHeightsDesktop;
   overflow: hidden;
-  position: absolute;
+  // position: absolute;
 
   @media screen and (max-width: $tablet) {
     max-height: $headerHeightsTablet;
@@ -61,6 +61,7 @@
 
   @media screen and (max-width: $phone) {
     position: relative;
+    display: none;
   }
 
   @media print {
@@ -133,19 +134,21 @@
 
 .title {
   margin: 0;
-  position: relative;
-  height: $headerHeightsDesktop;
+  position: absolute;
+  // max-height: $headerHeightsDesktop;
   display: flex;
+  top: 0;
+  height: 100%;
+  width: 100%;
   align-items: flex-end;
 
   @media screen and (max-width: $tablet) {
-    height: $headerHeightsTablet;
     padding: 0 20px;
   }
 
   @media screen and (max-width: $phone) {
-    height: auto;
-    padding: 0;
+    padding: 0 20px;
+    position: relative;
   }
 
   @media print {
@@ -155,9 +158,9 @@
 }
 
 .innerTitle {
-  $START: 15%;
-  $END: 95%;
-  $TRANSPARENT_WHITE: rgba(255, 255, 255, 0.65);
+  $START: 16%;
+  $END: 94%;
+  $TRANSPARENT_WHITE: rgba(255, 255, 255, 0.72);
 
   margin: 0 auto -25px auto;
   width: 780px;
@@ -192,6 +195,7 @@
 
   h1 {
     margin: 0 0 20px 0;
+    line-height: 1.2;
 
     span {
       background-image: linear-gradient(to bottom, transparent, transparent $START, $TRANSPARENT_WHITE $START, $TRANSPARENT_WHITE $END, transparent $END, transparent);

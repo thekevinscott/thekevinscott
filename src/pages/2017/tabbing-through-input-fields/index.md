@@ -3,7 +3,8 @@ path: "/tabbing-through-input-fields/"
 date: "2017-05-05T09:00:00.000Z"
 title: "Tabbing Through Input Fields"
 image: "cover.jpg"
-image_credit: "Photo by <a href='https://unsplash.com/photos/ICW6QYOcdlg'>Galymzhan Abdugalimov</a>"
+image_height: 400
+image_credit: "<a href='https://unsplash.com/photos/ICW6QYOcdlg'>Galymzhan Abdugalimov</a>"
 tags: ["react native", "tabbing"]
 ---
 

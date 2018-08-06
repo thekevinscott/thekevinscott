@@ -56,6 +56,7 @@ class Simple extends Component {
       credit,
       timeToRead,
       date,
+      image_height,
     } = getPostData(post, siteMetadata);
 
     return (
@@ -69,6 +70,7 @@ class Simple extends Component {
             title={title}
             timeToRead={timeToRead}
             date={date}
+            imageHeight={image_height}
           />
           <div className={styles.content}>
             {children}

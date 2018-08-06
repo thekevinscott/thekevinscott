@@ -3,7 +3,8 @@ path: "/background-images-in-react-native/"
 date: "2017-05-09T09:00:00.000Z"
 title: "Background Images in React Native"
 image: "cover.jpeg"
-image_credit: "Photo by Patrick Tomasso"
+image_height: 700
+image_credit: "Patrick Tomasso"
 tags: ["react native", "images"]
 ---
 

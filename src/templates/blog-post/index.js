@@ -26,7 +26,6 @@ export const pageQuery = graphql`
         date
         path
         title
-        image_credit
         form
         tags
         layout
@@ -39,6 +38,8 @@ export const pageQuery = graphql`
             }
           }
         }
+        image_credit
+        image_height
         social_image
         social_image_width
         social_image_height
