@@ -40,7 +40,7 @@ const Embed: React.SFC<IProps> = ({
         width={width}
         height={height}
         allow={allow}
-        allowfullscreen={allowfullscreen}
+        allowFullScreen={allowfullscreen}
       />
     </div>
     {caption && (
