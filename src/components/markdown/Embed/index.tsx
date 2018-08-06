@@ -26,7 +26,7 @@ const Embed: React.SFC<IProps> = ({
   src,
 }) => (
   <React.Fragment>
-    <div
+    <span
       className={classNames(styles.container, {
         [styles.border]: border || frameborder,
       })}
@@ -42,7 +42,7 @@ const Embed: React.SFC<IProps> = ({
         allow={allow}
         allowFullScreen={allowfullscreen}
       />
-    </div>
+    </span>
     {caption && (
       <Caption>{caption}</Caption>
     )}

@@ -6,7 +6,7 @@ const Caption = ({
   children,
 }) => {
   return (
-    <div className={styles.container}>{children}</div>
+    <span className={styles.container}>{children}</span>
   );
 };
 
