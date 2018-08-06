@@ -28,4 +28,8 @@ export const track = (eventName, args = {}) => init().then(() => {
   }
 });
 
-export const pageView = url => track('pageView', { url });
+export const pageView = url => {
+  // turn off mixpanel for now
+  return null;
+  // return track('pageView', { url });
+};
