@@ -83,7 +83,7 @@
     "crosspost": "node scripts/publish/index.js",
     "new": "node scripts/new_post/index.js",
     "test-clean": "npm run clean && npm run build && npm run test",
-    "test": "cross-env PORT=6041 node scripts/test/index.js"
+    "test": "npm run test-clean && cross-env PORT=6041 node scripts/test/index.js"
   },
   "jest": {
     "globalSetup": "<rootDir>scripts/test/setup.js",
