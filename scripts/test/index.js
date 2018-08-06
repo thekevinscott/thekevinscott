@@ -36,7 +36,9 @@ process.on('unhandledRejection', err => {
   throw err;
 });
 
-jest.run([
+const args = [
   yargs.watch ? "--watch" : null,
-  yargs.watch ? null : '--bail',
-].filter(f => f));
+  process.env.CI ? '--bail' : null,
+].filter(f => f);
+
+jest.run(args);
