@@ -108,7 +108,7 @@ I *believe* that `chunkSize` is used to prevent the UI from loading too much dat
 70       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 ```
 
-This code loops through every image in the sprite and initialize a new `TypedArray` for that iteration; then, the context image gets a chunk of the image drawn. Finally, that drawn image is turned into image data using context's [`getImageData`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData) function, which returns an object representing pixels.
+This code loops through every image in the sprite and [initializes a new `TypedArray` for that iteration](/tensors-in-javascript#typed-arrays); then, the context image gets a chunk of the image drawn. Finally, that drawn image is turned into image data using context's [`getImageData`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData) function, which returns an object representing pixels.
 
 ```javascript
 72       for (let j = 0; j < imageData.data.length / 4; j++) {
@@ -132,7 +132,7 @@ We loop through the pixels, and divide by 255 (the maximum possible value of a p
 
 This line takes the buffer, and recasts it into a new `TypedArray` that holds our pixel data, and then resolves the Promise. The last line (setting the `src`) actually begins loading the image, which starts the function.
 
-One thing that confused me at first was the behavior of `TypedArray` in relation to its underlying data buffer. You might notice that `datasetBytesView` is set within the loop, but is never returned. Under the hood, `datasetBytesView` is referencing the buffer `datasetBytesBuffer` (with which it is initialized); when the code updates the pixel data, it is indirectly editing the values of the buffer itself, which in turn is recast into a new `Float32Array` on line 78.
+One thing that confused me at first [was the behavior of `TypedArray` in relation to its underlying data buffer](/tensors-in-javascript#typed-arrays). You might notice that `datasetBytesView` is set within the loop, but is never returned. Under the hood, `datasetBytesView` is referencing the buffer `datasetBytesBuffer` (with which it is initialized); when the code updates the pixel data, it is indirectly editing the values of the buffer itself, which in turn is recast into a new `Float32Array` on line 78.
 
 ## Fetching image data outside of the DOM
 
