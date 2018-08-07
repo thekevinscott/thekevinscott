@@ -1,4 +1,6 @@
-const url = require('url')
+const url = require('url');
+const config = require('../../../gatsby-config');
+const ROOT = process.env.ROOT_URL ? `https://${process.env.ROOT_URL}` : config.siteMetadata.url;
 
 const createHorizontalRule = () => ({
   type: `thematicBreak`,
@@ -17,7 +19,7 @@ const createReferenceToOriginalPost = postUrl => ({
       children: [
         {
           type: 'text',
-          value: process.env.ROOT_URL,
+          value: ROOT,
         },
       ],
     },

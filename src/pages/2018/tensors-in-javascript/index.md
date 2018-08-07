@@ -1,3 +1,4 @@
+
 ---
 path: "/tensors-in-javascript/"
 date: "2019-08-07 14:00:00.000 EST"
@@ -62,7 +63,6 @@ Closely correlated with the Tensor's Dimension (or Rank) is Shape.
 
 A Tensor's shape describes the underlying length of the Tensor's dimensions. Here's an example:
 
-
 ```
 > tf.tensor([[1, 2, 3], [3, 4, 5]]).shape
 (2) [2, 3]
@@ -111,7 +111,7 @@ We've seen examples so far of building Tensors with Tensorflow.js using plain ar
 
 A Typed Array is defined by an underlying data buffer, an `ArrayBuffer`, and an object for working with that buffer's data, a `DataView`.
 
-> Typed Arrays are a relatively recent addition to browsers, born out of the need to have an efficient way to handle binary data in WebGL. A Typed Array is a slab of memory with a typed view into it, much like how arrays work in C. &mdash; [Ilmari Heikkinen](https://www.html5rocks.com/en/tutorials/webgl/typed_arrays/)
+> Typed Arrays are a relatively recent addition to browsers, born out of the need to have an efficient way to handle binary data in WebGL. A Typed Array is a slab of memory with a typed view into it, much like how arrays work in C. &mdash; [Ilmari Heikkinen](https://www.html5rocks.com/en/tutorials/webgl/typed_arrays)
 
 You can create a view directly, creating a buffer behind the scenes with:
 
@@ -143,7 +143,7 @@ typedArray[0] = 1
 // Int16Array(4) [1, 0, 0, 0]
 ```
 
-You can have multiple views pointing to the same underlying buffer. This approach is used, for instance, [to iteratively build MNIST image examples into an underlying data buffer](/dealing-with-mnist-image-data-in-tensorflowjs/#load). Here's a simple example:
+You can have multiple views pointing to the same underlying buffer. This approach is used, for instance, [to iteratively build MNIST image examples into an underlying data buffer](https://thekevinscott.com/dealing-with-mnist-image-data-in-tensorflowjs/). Here's a simple example:
 
 ```
 const buffer = new ArrayBuffer(8); // 8-byte ArrayBuffer.
@@ -163,7 +163,7 @@ The answer: **performance**.
 
 Typed Arrays were originally introduced to handle things like WebGL and other graphical layers that required blazing fast performance. Machine Learning benefits from a similar level of performance, which is why many large machine learning models are trained on servers, parallelized across powerful GPUs.
 
-> Because a Typed Array is backed by raw memory, the JavaScript engine can pass the memory directly to native libraries without having to painstakingly convert the data to a native representation. As a result, typed arrays perform a lot better than JavaScript arrays for passing data to WebGL and other APIs dealing with binary data. &mdash; [Ilmari Heikkinen](https://www.html5rocks.com/en/tutorials/webgl/typed_arrays/)
+> Because a Typed Array is backed by raw memory, the JavaScript engine can pass the memory directly to native libraries without having to painstakingly convert the data to a native representation. As a result, typed arrays perform a lot better than JavaScript arrays for passing data to WebGL and other APIs dealing with binary data. &mdash; [Ilmari Heikkinen](https://www.html5rocks.com/en/tutorials/webgl/typed_arrays)
 
 It's a good habit to get comfortable with using Typed Arrays to ensure you're writing performant code.
 

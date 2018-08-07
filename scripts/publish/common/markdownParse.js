@@ -11,6 +11,7 @@ const visit = require('unist-util-visit')
 const absoluteUrls = require('./remark-absolute-urls')
 const utils = require('./utils')
 const processContent = require('./processContent');
+const config = require('../../../gatsby-config');
 
 const getSlug = (frontmatter, filePath) => {
   if (frontmatter.path) {
@@ -61,7 +62,7 @@ const transformPostFromPath = async (filePath, transformerPlugin) => {
   // https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-transformer-remark/src/extend-node-type.js
 
   try {
-    const siteUrl = `https://${process.env.ROOT_URL}`
+    const siteUrl = process.env.ROOT_URL ? `https://${process.env.ROOT_URL}` : config.siteMetadata.url;
     const frontmatter = await getFrontmatter(filePath)
     const slug = getSlug(frontmatter, filePath);
     const postUrl = url.resolve(siteUrl, `/${slug}`)

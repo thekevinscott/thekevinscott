@@ -1,8 +1,8 @@
 const compose = (...fns) => content => fns.reduce((str, fn) => {
   return fn(str);
 }, content);
-
-const ROOT = "http://thekevinscott.com";
+const config = require('../../../gatsby-config');
+const ROOT = process.env.ROOT_URL ? `https://${process.env.ROOT_URL}` : config.siteMetadata.url;
 
 const getCoverImage = (image, filePath) => content => {
   if (image) {

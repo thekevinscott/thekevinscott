@@ -12,7 +12,7 @@ const publishToMedium = async pathsToPosts => {
         remarkMedium
       )
       // console.log(transformedPost)
-      const { frontmatter, postUrl } = transformedPost
+      const { frontmatter, postUrl } = transformedPost;
       console.log(
         `Creating post "${frontmatter.title}" (${postUrl}) on medium ...`
       )

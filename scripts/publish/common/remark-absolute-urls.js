@@ -33,10 +33,12 @@ function attacher(options) {
   return transformer
 
   function replaceUrl(node) {
-    if (!node.url || !urlIsRelative(node.url)) return
-    const absoluteUrl = joinUrls(siteUrl, slug, node.url)
-    console.log(`\tRewriting link "${node.url}" to "${absoluteUrl}" ...`)
-    node.url = absoluteUrl
+    if (!node.url || !urlIsRelative(node.url)) {
+      return;
+    }
+    const absoluteUrl = joinUrls(siteUrl, slug, node.url);
+    console.log(`\tRewriting link "${node.url}" to "${absoluteUrl}" ...`);
+    node.url = absoluteUrl;
   }
 
   function transformer(tree) {
