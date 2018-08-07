@@ -2,6 +2,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const fs = require('fs');
 
 const url = 'https://thekevinscott.com';
+const serialize = require('./src/utils/serialize');
 
 module.exports = {
   siteMetadata: {
@@ -31,19 +32,7 @@ module.exports = {
       `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              const now = new Date();
-              return allMarkdownRemark.edges.filter(edge => {
-                return edge.node.frontmatter.date && (now - (new Date(edge.node.frontmatter.date)) > 0);
-              }).map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  url: site.siteMetadata.url + edge.node.frontmatter.path,
-                  guid: site.siteMetadata.url + edge.node.frontmatter.path,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
-                });
-              });
-            },
+            serialize,
             query: `
             {
               allMarkdownRemark(
