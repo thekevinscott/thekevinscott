@@ -1,13 +1,13 @@
 ---
 path: "/tensors-in-javascript/"
-date: "2019-08-07 14:00:00.000 EST"
-title: "A Deep Dive into Tensors in JavaScript"
+date: "2018-08-07 14:00:00.000 EST"
+title: "Tensors in JavaScript"
 image: "cover.png"
 tags: ["tensors", "Tensorflow.js", "Javascript", "TypedArrays"]
 description: "Tensors have data, dimension, shape, type, and describe valid transformations. They can be built with arrays or Typed Arrays in Javascript."
 ---
 
-At the heart of most Machine Learning models are numbers. The special data type that undergirds all of the mathematical transformations you perform is called a **tensor**.
+At the heart of most Machine Learning models are numbers. The special data type that undergirds all of the mathematical transformations you perform is called a **Tensor**.
 
 Tensors are a concept imported from mathematics and physics, and they are [considerably more complicated in theory](https://www.quora.com/What-is-a-tensor) than this article will get into. If you're a hacker looking to get started with a Machine Learning project on the web in Javascript, you can get by knowing that:
 
