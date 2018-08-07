@@ -9,7 +9,7 @@ description: "Tensors have data, dimension, shape, type, and describe valid tran
 
 At the heart of most Machine Learning models are numbers. The special data type that undergirds all of the mathematical transformations you perform is called a **Tensor**.
 
-Tensors are a concept imported from mathematics and physics, and they are [considerably more complicated in theory](https://www.quora.com/What-is-a-tensor) than this article will get into. If you're a hacker looking to get started with a Machine Learning project on the web in Javascript, you can get by knowing that:
+Tensors are a concept imported from mathematics and physics, and they are [considerably more complicated in theory](https://www.quora.com/What-is-a-tensor) than this article will get into. If you're a hacker looking to get started with a Machine Learning project on the web in Javascript, you can assume that:
 
 1. A Tensor has Data
 2. A Tensor has a Dimension
