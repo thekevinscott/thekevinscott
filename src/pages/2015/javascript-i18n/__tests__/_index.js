@@ -33,6 +33,6 @@ describe('Javascript Internationalization', async () => {
   it('should position the title correctly', async () => {
     const rect = await getTitlePosition(page, config);
     expect(rect.left).toBeGreaterThan(300);
-    expect(rect.top).toBeGreaterThan(100);
+    expect(rect.top).toBeGreaterThan(80);
   });
 }, TIMEOUT);
