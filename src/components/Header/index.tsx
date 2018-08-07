@@ -7,12 +7,18 @@ import * as styles from './styles.module.scss';
 import logo from 'assets/logo.svg';
 import hoverLogo from 'assets/logo-hover.svg';
 
-class Header extends Component {
-  constructor(props) {
-    super(props);
+interface IProps {
+  visible: boolean;
+}
 
-    this.state = { newsletter: false };
-  }
+interface IState {
+  newsletter: boolean;
+}
+
+class Header extends Component<IProps, IState> {
+  state: IState = {
+    newsletter: false,
+  };
 
   handleSubscribe = (newsletter) => () => {
     this.setState({
@@ -22,7 +28,6 @@ class Header extends Component {
 
   render() {
     const {
-      shadow,
       visible,
     } = this.props;
 
@@ -31,7 +36,7 @@ class Header extends Component {
         className={classNames(styles.container, {
           [styles.visible]: visible,
         })}
-        >
+      >
         <div className={styles.center}>
           <div className={styles.left}>
             <div

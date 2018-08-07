@@ -28,7 +28,8 @@ interface IProps {
     }
   }
   children?: any;
-  onHeaderHover: () => {};
+  visible: boolean;
+  headerIsHovered: boolean;
 }
 
 const Simple: React.SFC<IProps> = ({
@@ -40,7 +41,7 @@ const Simple: React.SFC<IProps> = ({
     },
   },
   visible,
-  onHeaderHover,
+  headerIsHovered,
 }) => {
   const {
     title,
@@ -59,15 +60,11 @@ const Simple: React.SFC<IProps> = ({
 
   return (
     <React.Fragment>
-      <Header
-        visible={visible}
-        handleMouseOver={onHeaderHover(true)}
-        handleMouseOut={onHeaderHover(false)}
-      />
+      <Header visible={visible} />
       <div className={styles.container}>
         {writeMetaTags({ post, siteMetadata })}
         <ArticleHeader
-          headerIsVisible={visible}
+          headerIsVisible={headerIsHovered}
           image={image}
           caption={credit}
           title={title}

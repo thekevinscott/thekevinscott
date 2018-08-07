@@ -61,10 +61,6 @@
   right: 0;
   transition-duration: 0.2s;
 
-  &.bumpedCaption {
-    top: $HEADER_HEIGHT + $HEADER_BORDER;
-  }
-
   @media screen and (max-width: $phone) {
     position: relative;
     display: none;

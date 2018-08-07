@@ -23,8 +23,6 @@ interface IProps {
   date: string;
   imageHeight?: number;
   headerIsVisible: boolean;
-  handleMouseOver?: () => {};
-  handleMouseOut?: () => {};
 }
 
 const ArticleHeader = ({
@@ -35,41 +33,36 @@ const ArticleHeader = ({
   date,
   imageHeight,
   headerIsVisible,
-  handleMouseOver,
-  handleMouseOut,
-}) => {
-  return (
-    <div
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
-      className={classNames(styles.header, {
-        [styles.missingCoverImage]: !image,
-      })}
-    >
-      { image && (
-        <div
-          className={styles.coverImg}
-          style={{ maxHeight: imageHeight }}
-        >
-          <img src={image.childImageSharp.sizes.src} />
-          {caption && (
-            <span
-              className={classNames(styles.caption, {
-                [styles.bumpedCaption]: headerIsVisible,
-              })}
-              dangerouslySetInnerHTML={{ __html: `image by ${caption}` }}
-            />
-          )}
-      </div>
-      )}
-      <div className={styles.title} style={{ maxHeight: imageHeight }}>
-        <div className={styles.innerTitle}>
-          <h1><span>{title}</span></h1>
-          <time>{format(date)}</time>
-        </div>
+}) => (
+  <div
+    className={classNames(styles.header, {
+      [styles.missingCoverImage]: !image,
+    })}
+  >
+    { image && (
+      <div
+        className={styles.coverImg}
+        style={{ maxHeight: imageHeight }}
+      >
+        <img src={image.childImageSharp.sizes.src} />
+        {caption && (
+          <span
+            className={styles.caption}
+            style={{
+              top: headerIsVisible ? 63 + window.scrollY : 0,
+            }}
+            dangerouslySetInnerHTML={{ __html: `image by ${caption}` }}
+          />
+        )}
+    </div>
+    )}
+    <div className={styles.title} style={{ maxHeight: imageHeight }}>
+      <div className={styles.innerTitle}>
+        <h1><span>{title}</span></h1>
+        <time>{format(date)}</time>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 export default ArticleHeader;

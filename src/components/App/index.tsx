@@ -16,10 +16,22 @@ const FONTS = {
     id: TYPEKIT_ID,
   }
 };
-const threshold = 80;
+const threshold = 340;
 const getIsOverThreshold = () => window.scrollY > threshold;
 
+interface IState {
+  headerIsVisible: boolean;
+  headerIsHovered: boolean;
+  startMouse: number | null;
+}
+
 class TemplateWrapper extends Component {
+  state: IState = {
+    headerIsVisible: false,
+    headerIsHovered: false,
+    startMouse: null,
+  };
+
   constructor(props) {
     super(props);
 
@@ -27,6 +39,10 @@ class TemplateWrapper extends Component {
   }
 
   handleScroll = e => {
+    this.setState({
+      headerIsHovered: false,
+      startMouse: null,
+    });
     if (getIsOverThreshold() && this.state.headerIsVisible === false) {
       this.setState({
         headerIsVisible: true,
@@ -38,19 +54,34 @@ class TemplateWrapper extends Component {
     }
   }
 
+  mouseMove = (e: React.MouseEvent) => {
+    if (!getIsOverThreshold()) {
+      if (this.state.startMouse === null) {
+        this.setState({
+          startMouse: e.clientY,
+        });
+      } else if (Math.abs(this.state.startMouse - e.clientY) > 20) {
+        this.setState({
+          headerIsHovered: true,
+        });
+      }
+    } else if (this.state.headerIsHovered === true) {
+      this.setState({
+        startMouse: null,
+        headerIsHovered: false,
+      });
+    }
+  }
+
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('mousemove', this.mouseMove);
     WebFont.load(FONTS);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  onHeaderHover = (headerIsVisible: boolean) => () => {
-    this.setState({
-      headerIsVisible,
-    });
+    window.removeEventListener('mousemove', this.mouseMove);
   }
 
   render() {
@@ -58,8 +89,8 @@ class TemplateWrapper extends Component {
       <div className={styles.container}>
         {this.props.children({
           ...this.props,
-          visible: this.state.headerIsVisible,
-          onHeaderHover: this.onHeaderHover,
+          visible: this.state.headerIsVisible || this.state.headerIsHovered,
+          headerIsHovered: this.state.headerIsHovered,
         })}
       </div>
     );
