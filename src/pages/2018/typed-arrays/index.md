@@ -36,3 +36,4 @@ In this article we'll talk about what a tensor is and how it's built in JAVASCRI
 What is a tensor
 
 Code
+https://www.reddit.com/r/javascript/comments/951266/hello_webassembly/?st=JKIHZEKG&sh=c9db8626
