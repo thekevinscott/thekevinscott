@@ -1,4 +1,3 @@
-
 ---
 path: "/tensors-in-javascript/"
 date: "2019-08-07 14:00:00.000 EST"
