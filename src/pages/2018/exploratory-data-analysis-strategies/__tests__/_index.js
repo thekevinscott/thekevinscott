@@ -18,8 +18,9 @@ describe('Exploratory Data Analysis', async () => {
     await page.goto(url);
   });
 
-  it('should load without error', async () => {
-    const text = await page.evaluate(() => document.querySelector('h1').textContent);
-    expect(text).toContain(config.title);
+  it('should load without error', () => {
+    return page.evaluate(() => document.querySelector('h1').textContent).then(text => {
+      expect(text).toContain(config.title);
+    });
   });
 }, TIMEOUT);

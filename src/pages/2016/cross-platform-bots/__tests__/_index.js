@@ -25,11 +25,6 @@ describe('Cross Platform Bots', async () => {
     await page.goto(url);
   });
 
-  it('should load without error', async () => {
-    const text = await getTitleText(page);
-    expect(text).toContain(config.title);
-  });
-
   it('should position the title correctly', async () => {
     const rect = await getTitlePosition(page, config);
     expect(rect.left).toBeGreaterThan(300);

@@ -45,7 +45,7 @@ process.on('unhandledRejection', err => {
 const args = [
   '--runInBand',
   yargs.watch ? "--watch" : null,
-  process.env.CI ? '--bail' : null,
+  process.env.CI || yargs.bail ? '--bail' : null,
 ].filter(f => f);
 
 jest.run(args);
