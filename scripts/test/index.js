@@ -27,7 +27,13 @@ try {
   process.exit(1);
 }
 
-spawn('gatsby', ['serve', '-p', yargs.PORT]);
+if (yargs.port) {
+  process.env.PORT = yargs.port;
+}
+
+if (yargs.server !== false) {
+  spawn('gatsby', ['serve', '-p', yargs.PORT]);
+}
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will

@@ -1,5 +1,6 @@
 import React from 'react';
 import * as styles from './styles.module.scss';
+import classNames from 'classnames';
 import {
   format,
 } from 'utils/getDate';
@@ -32,7 +33,11 @@ const ArticleHeader = ({
   imageHeight,
 }) => {
   return (
-    <div className={styles.header}>
+    <div
+      className={classNames(styles.header, {
+        [styles.missingCoverImage]: !image,
+      })}
+    >
       { image && (
       <div className={styles.coverImg} style={{ maxHeight: imageHeight }}>
         <img src={image.childImageSharp.sizes.src} />
