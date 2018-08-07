@@ -87,7 +87,7 @@ export default class Index extends Component {
               </span>
             </h1>
           </div>
-          <div className={styles.blogPosts}>
+          <div id="blogPosts" className={styles.blogPosts}>
             {getPosts(posts).map((post, index) => (
               <Post
                 key={post.id}

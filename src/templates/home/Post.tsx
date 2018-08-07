@@ -36,7 +36,7 @@ const Post = ({
   } = post;
 
   return (
-    <li className={styles.post}>
+    <div className={styles.post}>
       <Link to={post.frontmatter.path}>
         <span className={styles.postContent}>
           <h2>{getTitle(title, date)}</h2>
@@ -44,7 +44,7 @@ const Post = ({
           <span className={styles.readMore}>Read more &rarr;</span>
         </span>
       </Link>
-    </li>
+    </div>
   );
 }
 

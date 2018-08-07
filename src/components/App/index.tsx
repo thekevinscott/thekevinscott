@@ -23,17 +23,17 @@ class TemplateWrapper extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { shadow: false };
+    this.state = { headerIsVisible: false };
   }
 
   handleScroll = e => {
-    if (getIsOverThreshold() && this.state.shadow === false) {
+    if (getIsOverThreshold() && this.state.headerIsVisible === false) {
       this.setState({
-        shadow: true,
+        headerIsVisible: true,
       });
-    } else if (!getIsOverThreshold() && this.state.shadow === true) {
+    } else if (!getIsOverThreshold() && this.state.headerIsVisible === true) {
       this.setState({
-        shadow: false,
+        headerIsVisible: false,
       });
     }
   }
@@ -47,12 +47,19 @@ class TemplateWrapper extends Component {
     window.removeEventListener('scroll', this.handleScroll);
   }
 
+  onHeaderHover = (headerIsVisible: boolean) => () => {
+    this.setState({
+      headerIsVisible,
+    });
+  }
+
   render() {
     return (
       <div className={styles.container}>
         {this.props.children({
           ...this.props,
-          visible: this.state.shadow,
+          visible: this.state.headerIsVisible,
+          onHeaderHover: this.onHeaderHover,
         })}
       </div>
     );

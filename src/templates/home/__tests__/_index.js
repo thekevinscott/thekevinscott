@@ -28,7 +28,7 @@ describe('/ (Home Page)', () => {
   });
 
   it('should be able to navigate to a blog', async () => {
-    await clickAndWaitForNavigation('ul li:first-child');
+    await clickAndWaitForNavigation('#blogPosts > div:first-child');
 
     const url = await page.url();
     const text = await page.evaluate(() => document.body.textContent);
@@ -37,7 +37,7 @@ describe('/ (Home Page)', () => {
   });
 
   it('should be able to navigate to a blog and back to home', async () => {
-    await clickAndWaitForNavigation('ul li:first-child');
+    await clickAndWaitForNavigation('#blogPosts > div:first-child');
     await clickAndWaitForNavigation('a[href="/"]');
 
     const url = await page.url();
@@ -47,7 +47,7 @@ describe('/ (Home Page)', () => {
   });
 
   it('should be able to navigate directly from a blog to home', async () => {
-    await clickAndWaitForNavigation('ul li:first-child');
+    await clickAndWaitForNavigation('#blogPosts > div:first-child');
     const blogUrl = await page.url();
 
     // reload the page
