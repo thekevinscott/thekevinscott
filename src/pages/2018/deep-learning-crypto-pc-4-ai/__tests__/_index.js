@@ -23,6 +23,3 @@ describe('Deep Learning Box #4', async () => {
     expect(text).toContain(config.title);
   });
 }, TIMEOUT);
-
-
-

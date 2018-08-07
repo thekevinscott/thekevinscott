@@ -23,6 +23,3 @@ describe('Shoulders of Giants', async () => {
     expect(text).toContain(config.title);
   });
 }, TIMEOUT);
-
-
-

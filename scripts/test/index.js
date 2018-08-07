@@ -43,6 +43,7 @@ process.on('unhandledRejection', err => {
 });
 
 const args = [
+  '--runInBand',
   yargs.watch ? "--watch" : null,
   process.env.CI ? '--bail' : null,
 ].filter(f => f);

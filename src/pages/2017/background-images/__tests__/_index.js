@@ -23,9 +23,3 @@ describe('Background Images', async () => {
     expect(text).toContain(config.title);
   });
 }, TIMEOUT);
-
-
-
-
-
-
