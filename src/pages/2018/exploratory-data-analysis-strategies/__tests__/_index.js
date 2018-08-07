@@ -23,6 +23,3 @@ describe('Exploratory Data Analysis', async () => {
     expect(text).toContain(config.title);
   });
 }, TIMEOUT);
-
-
-
