@@ -35,11 +35,11 @@ const scaffolding = () => {
   ]);
 
   const getPage = async () => {
-    // if (!page) {
-    //   page = await global.__BROWSER__.newPage();
-    // }
-    // return page;
-    return await global.__BROWSER__.newPage();
+    if (!page) {
+      page = await global.__BROWSER__.newPage();
+    }
+    return page;
+    // return await global.__BROWSER__.newPage();
   };
 
   return {
