@@ -6,10 +6,23 @@ export const getPrependedCaption = (caption: string): string => {
   return `image by ${caption}`;
 };
 
+const isMatch = (parts: string[], incoming: string) => parts.reduce((found, part) => {
+  if (found) {
+    return true;
+  }
+
+  return incoming.indexOf(part) !== -1;
+}, false);
+
 export const getExternalCaption = (caption: string): string => {
   return caption.split('<a').map((part) => {
-    if (part.indexOf(' />') !== -1) {
+    // if (isMatch([' />'], part)) {
+    //   return `${part} target="_blank" `;
+    // }
+
+    if (isMatch(['</a>'], part)) {
       return ` target="_blank"${part}`;
+      // return `${part} target="_blank" `;
     }
 
     return part;

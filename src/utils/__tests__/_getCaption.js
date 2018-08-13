@@ -19,18 +19,24 @@ describe('getExternalCaption', () => {
   });
 
   it('returns it with a blank if a single link is present', () => {
-    expect(getExternalCaption('<a href="bar" />')).toEqual('<a target="_blank" href="bar" />');
+    expect(getExternalCaption('<a href="bar">foo</a>')).toEqual('<a target="_blank" href="bar">foo</a>');
   });
 
   it('returns it with a blank for a link and some prepended text', () => {
-    expect(getExternalCaption('photo by <a href="bar" />')).toEqual('photo by <a target="_blank" href="bar" />');
+    expect(getExternalCaption('photo by <a href="bar">foo</a>')).toEqual('photo by <a target="_blank" href="bar">foo</a>');
   });
 
   it('returns it with a blank for a link and some appended text', () => {
-    expect(getExternalCaption('<a href="bar" /> is good')).toEqual('<a target="_blank" href="bar" /> is good');
+    expect(getExternalCaption('<a href="bar">foo</a> is good')).toEqual('<a target="_blank" href="bar">foo</a> is good');
   });
 
   it('returns it with blanks for all links', () => {
-    expect(getExternalCaption('photo by <a href="foo" /> on <a href="bar" /> good')).toEqual('photo by <a target="_blank" href="foo" /> on <a target="_blank" href="bar" /> good');
+    expect(getExternalCaption('photo by <a href="foo">foo</a> on <a href="bar">bar</a> good')).toEqual('photo by <a target="_blank" href="foo">foo</a> on <a target="_blank" href="bar">bar</a> good');
+  });
+
+  it('uses a real example', () => {
+    const src = `Photo by <a href='https://unsplash.com/photos/vWI1kTcMcDI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Alex Block</a> on <a href='https://unsplash.com'>Unsplash</a>`;
+    const expected = `Photo by <a target="_blank" href='https://unsplash.com/photos/vWI1kTcMcDI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Alex Block</a> on <a target="_blank" href='https://unsplash.com'>Unsplash</a>`;
+    expect(getExternalCaption(src)).toEqual(expected);
   });
 });
