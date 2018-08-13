@@ -1,7 +1,7 @@
-import Helmet from "react-helmet";
-import React from "react";
+import Helmet from 'react-helmet';
+import React from 'react';
 import writeHeadTags from 'utils/writeHeadTags';
-import { writeAllGraphTags } from "utils/writeGraphTags";
+import { writeAllGraphTags } from 'utils/writeGraphTags';
 export const getImageUrl = (url, { image }) => {
   try {
     return `${url}${image.childImageSharp.sizes.src}`;
@@ -16,7 +16,7 @@ export const getPostData = ({ frontmatter, timeToRead }, metadata) => {
   const path = `${metadata.url}${frontmatter.path}`;
   const imageURL = getImageUrl(metadata.url, frontmatter);
   const image_credit = frontmatter.image_credit;
-  const tags = (frontmatter.tags || []).map(tag => tag.trim()).join(", ");
+  const tags = (frontmatter.tags || []).map(tag => tag.trim()).join(', ');
   const {
     image,
     author,
@@ -62,7 +62,7 @@ export const writeMetaTags = ({ post, siteMetadata }) => {
     image: imageURL || social_image,
     social_image_width,
     social_image_height,
-    type: "article",
+    type: 'article',
   });
 };
 

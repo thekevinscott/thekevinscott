@@ -11,8 +11,6 @@ description: "I recently build an open source tool to quickly train image classi
 
 Image classification is the practice of teaching a machine to categorize a set of images into different categories, so that it can categorize images in the future automatically.
 
-
-
 You've probably seen image classification at work in your photo app, automatically suggesting friends or locations for tagging. Image classification has a huge range of applications, from medical to self driving cars to satellite imagery; however, it's even used in places you wouldn't expect, like heat maps for fraud detection, or analyzing the Fourier transforms of audio waves.
 
 I recently build an open source tool to quickly train image classification models in your browser, and I'd like to talk about how it works and how to build your own in Javascript. We'll be leveraging transfer learning to perform super fast training in the browser; if you're interested in more of a deep dive into how image training works, check out [Fast.ai's awesome lesson series](https://fast.ai).
@@ -21,14 +19,20 @@ For our data, I'm going to build a dataset to recognize whether a person is happ
 
 # Demo
 
+I'm going to use the Pexels website. [The top three most popular searches in August 2018](https://www.pexels.com/popular-searches/) are "Mobile", "Wood", "Notebook". Let's see if we can teach a computer to automatically classify images into one of these categories.
+
+We're going to train with 15 training images from three categories, and test it with 2 images per category.
+
+
+
 Before jumping into code, let's see an example of how to train your own custom image classifier:
-
-1. [Download these images](https://github.com/thekevinscott/dataset-tutorial-for-image-classification/data) (or build your [own dataset to train with](https://github.com/thekevinscott/dataset-tutorial-for-image-classification#)).
-2. Upload the folder labeled **train**.
-3. Upload the folder labeled **validation**.
-
+<pane num="2">
 <embed border="1" width="340" height="660" src="https://thekevinscott.github.io/ml-classifier-ui/?SHOW_HELP=0&SHOW_DOWNLOAD=0"></embed>
-<capt>Alternatively, [you can watch this gif of the thing in action](https://github.com/thekevinscott/ml-classifier-ui/raw/master/example/public/example.gif)</capt>
+<capt>Alternatively, [you can watch a gif](https://github.com/thekevinscott/dataset-tutorial-for-image-classification/raw/master/ml-classifier-example.gif).</capt>
+</pane>
+<pane num="2">
+[Download these images](https://github.com/thekevinscott/dataset-tutorial-for-image-classification/data) (or build your [own dataset to train with](https://github.com/thekevinscott/dataset-tutorial-for-image-classification#picking-a-dataset)). Then, drag the **train** folder into the drop zone on the left. Finally, once your model is trained, upload the **validation** folder to see how well your model can classify novel images.
+</pane>
 
 If all went according to plan, you should see close to 100% scores for each.
 
@@ -178,10 +182,7 @@ Let's get started.
 The dataset I provided above uses a flat structure. Import your images with:
 
 ```
-import drum1 from './data/drum-1.jpg';
-import drum2 from './data/drum-2.jpg';
-import saxophone1 from './data/saxophone-1.jpg';
-import saxophone2 from './data/saxophone-2.jpg';
+import sampleImage from './data/pretrained-model-data/drum.jpg';
 ```
 
 Each of these images will need to have its pixel data turned into Tensors. Browsers provide many convenient tools to load images and read pixels, and Tensorflow.js provides a function to convert an `Image` object into a Tensor. (You can do this in Node too but you'll have to handle the pixel reading yourself).
@@ -277,7 +278,7 @@ Let's make a prediction with MobileNet and see what comes back. Note the `print`
 
 ```
 loadMobilenet().then(pretrainedModel => {
-  loadImage(drum1).then(img => {
+  loadImage(sampleImage).then(img => {
     const processedImage = loadAndProcessImage(img);
     console.log(processedImage);
     const prediction = pretrainedModel.predict(processedImage);
@@ -306,9 +307,28 @@ This should product:
     541
 ```
 
-If we [head on over to the ImageNet class definitions](https://gist.github.com/thekevinscott/e6fb765d5125dd3c34f11d2d67b6d49b), we see that `541` corresponds to `drum, membranophone, tympan`, which is exactly the image we used. Awesome!
+In the repo you'll find a copy of the ImageNet class definitions in JSON format ([forked from here](https://gist.github.com/thekevinscott/e6fb765d5125dd3c34f11d2d67b6d49b)). You can import that JSON file to translate the numeric prediction into an actual string:
 
-Congratulations, friend! You're now doing image classification in Javascript. Here's your certificate.
+```
+import * as tf from '@tensorflow/tfjs';
+import sampleImage from './data/pretrained-model-data/drum.jpg';
+import labels from './imagenet_labels.json';
+
+loadMobilenet().then(pretrainedModel => {
+  loadImage(sampleImage).then(img => {
+    const processedImage = loadAndProcessImage(img);
+    const predictionsForAllLabels = pretrainedModel.predict(processedImage);
+    const labelPrediction = predictionsForAllLabels.as1D().argMax().dataSync()[0];
+    console.log(`
+      Numeric prediction is ${labelPrediction}
+      The predicted label is ${labels[labelPrediction]}
+      The actual label is drum, membranophone, tympan
+    `);
+  });
+});
+```
+
+You should see that `541` corresponds to `drum, membranophone, tympan`, which is exactly the image we used. Awesome! Congratulations, friend! You're now doing image classification in Javascript. Here's your certificate.
 
 ---
 
@@ -323,6 +343,252 @@ However, if your problem is unique enough not to be satisfied by the constraints
 To recap: what we'll be doing is using a pretrained model, and just tuning it to our specific problem set to identify whatever.
 
 This would be a good time to talk - at a very high level! - what a neural net *is*.
+
+# CODE TIME MOTHERFUCKERS
+
+So now we're going to write some code to actually train the damn thing.
+
+First step, instead of predicting a single image, we want to train a whole bunch of images. Let's rewrite our data pipeline slightly (we can leverage the functions we already wrote).
+
+First, import all the training images:
+
+```
+import man1 from '../data/training/happy/happy-man-1.jpg';
+import man2 from '../data/training/happy/happy-man-2.jpg';
+import man3 from '../data/training/happy/happy-man-3.jpg';
+import man4 from '../data/training/happy/happy-man-4.jpg';
+import man5 from '../data/training/happy/happy-man-5.jpg';
+import man6 from '../data/training/happy/happy-man-6.jpg';
+import man7 from '../data/training/happy/happy-man-7.jpg';
+import man8 from '../data/training/happy/happy-man-8.jpg';
+import man9 from '../data/training/happy/happy-man-9.jpg';
+import man10 from '../data/training/happy/happy-man-10.jpg';
+import woman1 from '../data/training/happy/happy-woman-1.jpg';
+import woman2 from '../data/training/happy/happy-woman-2.jpg';
+import woman3 from '../data/training/happy/happy-woman-3.jpg';
+import woman4 from '../data/training/happy/happy-woman-4.jpg';
+import woman5 from '../data/training/happy/happy-woman-5.jpg';
+import woman6 from '../data/training/happy/happy-woman-6.jpg';
+import woman7 from '../data/training/happy/happy-woman-7.jpg';
+import woman8 from '../data/training/happy/happy-woman-8.jpg';
+import woman9 from '../data/training/happy/happy-woman-9.jpg';
+import woman10 from '../data/training/happy/happy-woman-10.jpg';
+import woman11 from '../data/training/happy/happy-woman-11.jpg';
+import woman12 from '../data/training/happy/happy-woman-12.jpg';
+
+const training = [
+  man1,
+  man2,
+  man3,
+  man4,
+  man5,
+  man6,
+  man7,
+  man8,
+  man9,
+  man10,
+  woman1,
+  woman2,
+  woman3,
+  woman4,
+  woman5,
+  woman6,
+  woman7,
+  woman8,
+  woman9,
+  woman10,
+  woman11,
+  woman12,
+];
+```
+
+This sucks but there's no better way in parcel. You could do drag and drop and check out my tool to do that elsewhere.
+
+You gotta pop off the last few layers of the pretrained model:
+
+```
+function loadMobilenet() {
+  const url = 'https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_0.25_224/model.json';
+  return tf.loadModel(url).then(mobilenet => {
+    const layer = mobilenet.getLayer('conv_pw_13_relu');
+    return tf.model({inputs: mobilenet.inputs, outputs: layer.output});
+  });
+}
+```
+You can do `model.summary()` to see where this is coming from.
+
+Let's write a function to loop through all images and return a Promise that resolves when they are all loaded.
+
+Don't use Promise.all. That'll house your computer.
+
+We're going to introduce tf.tidy. How many things do we need to wrap in tf.tidy? Talk about the functions we change for tf.tidy
+
+Read up on tensors in my other article for more information.
+
+```
+function loadImages(images) {
+  return images.reduce((promise, src) => {
+    return promise.then((imageData = []) => {
+      return loadImage(src).then(loadedImage => {
+        let newImageData = imageData;
+        try {
+          const processedImage = loadAndProcessImage(loadedImage);
+          newImageData = imageData.concat(processedImage);
+        } catch(err) {
+          console.error('failed to load', src);
+        }
+
+        loadedImage.dispose();
+        return newImageData;
+      });
+    });
+  }, Promise.resolve());
+}
+
+loadMobilenet().then(pretrainedModel => {
+  loadImages(training).then(images => {
+    const finalImage = images[0];
+    // images.forEach(image => {
+    //   // image.print();
+    //   image.dispose();
+    // });
+    const xs = addData(images);
+    console.log(xs.shape);
+  });
+});
+```
+
+Great! Now we have all the xs. Let's get the labels too.
+
+```
+function oneHot(labelIndex, classLength) {
+  return tf.tidy(() => tf.oneHot(tf.tensor1d([labelIndex]).toInt(), classLength));
+};
+
+function addLabels(labels, classes) {
+  const classLength = Object.keys(classes).length;
+  if (classLength <= 1) {
+    throw new Error('You must provide more than 1 class for training');
+  }
+
+  return labels.reduce((data, label) => {
+    const labelIndex = classes[label];
+    const y = oneHot(labelIndex, classLength);
+
+    return tf.tidy(() => {
+      if (data === undefined) {
+        return tf.keep(y);
+      }
+
+      const old = data;
+      const ys = tf.keep(old.concat(y, 0));
+
+      old.dispose();
+      y.dispose();
+
+      return ys;
+    });
+  }, undefined);
+};
+
+
+const ys = addLabels(labels, {
+  happy: 0,
+  sad: 1,
+});
+```
+
+Now we're ready to build a model (will have to explain this):
+
+```
+function getModel() {
+  const model = tf.sequential({
+    layers: [
+      tf.layers.flatten({inputShape: [7, 7, 256]}),
+      tf.layers.dense({
+        units: 100,
+        activation: 'relu',
+        kernelInitializer: 'varianceScaling',
+        useBias: true
+      }),
+      tf.layers.dense({
+        units: 2,
+        kernelInitializer: 'varianceScaling',
+        useBias: false,
+        activation: 'softmax'
+      })
+    ],
+  });
+
+  const optimizer = tf.train.adam(0.0001);
+
+  model.compile({
+    optimizer,
+    loss: 'categoricalCrossentropy',
+    metrics: ['accuracy'],
+  });
+
+  return model;
+}
+```
+
+Great, let's now train it:
+
+```
+  loadImages(training, image => pretrainedModel.predict(image)).then(images => {
+    const xs = addData(images);
+    const ys = addLabels(labels, {
+      happy: 0,
+      sad: 1,
+    });
+
+    const model = getModel();
+
+    return model.fit(
+      xs,
+      ys,
+      {
+        epochs: 20,
+      },
+    );
+  }).then(history => {
+    console.log(history);
+  });
+```
+
+You should end up with a pretty damn fine accuracy!
+
+Let's see how well it predicts something new:
+
+```
+function predict(model, src) {
+  return loadImage(sampleImage).then(img => {
+    const processedImage = loadAndProcessImage(img);
+    const predictionsForAllLabels = model.predict(processedImage);
+    const labelPrediction = predictionsForAllLabels.as1D().argMax().dataSync()[0];
+    return labelPrediction;
+  });
+}
+```
+
+There ya go! You get a prediction!
+
+First time I did this it was always predicting blue and red. Whoops! Was because I was passing my classes incorrectly.
+
+I've found that these things are so persnickety, you have to be really careful about debugging. More so than normal things. The tools in place to make sure the code compiles are powerful; the tools in place to make sure it trains correctly are still getting there. As much as possible, rely on open source tools like mine.
+
+
+
+
+
+
+
+
+
+
+---
+---
+---
 
 ## What's a Neural Net?
 

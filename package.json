@@ -40,6 +40,7 @@
     "gatsby-source-medium": "^1.0.9",
     "gatsby-transformer-remark": "^1.7.41",
     "gatsby-transformer-sharp": "^1.6.16",
+    "jest": "^23.4.2",
     "jest-puppeteer": "^3.0.1",
     "jest-raw-loader": "^1.0.1",
     "medium-sdk": "^0.0.4",
@@ -53,7 +54,6 @@
     "rehype-react": "^3.0.2",
     "remark-frontmatter": "^1.2.0",
     "remove": "^0.1.5",
-    "jest": "^23.4.2",
     "rimraf": "^2.6.2",
     "steem": "^0.6.7",
     "stylelint": "^8.4.0",
@@ -83,25 +83,13 @@
     "crosspost": "node scripts/publish/index.js",
     "new": "node scripts/new_post/index.js",
     "test-clean": "npm run clean && npm run build && npm run test",
+    "test:local": "yarn test --watch --no-server --port 8000 --bail",
     "test": "cross-env PORT=6041 node scripts/test/index.js"
   },
-  "jest": {
-    "globalSetup": "<rootDir>scripts/test/setup.js",
-    "globalTeardown": "<rootDir>scripts/test/teardown.js",
-    "setupTestFrameworkScriptFile": "<rootDir>scripts/test/test-setup.js",
-    "testEnvironment": "<rootDir>scripts/test/puppeteer_environment.js",
-    "moduleNameMapper": {
-      "scaffolding": "<rootDir>/scripts/test/scaffolding.js",
-      "lib": "<rootDir>/scripts/test/lib",
-      "gatsby-config": "<rootDir>/gatsby-config.js"
-    },
-    "transform": {
-      "\\.md$": "jest-raw-loader"
-    },
-    "testPathIgnorePatterns": [
-      "scripts/new_post/templates/(.*)",
-      "/node_modules/"
-    ],
-    "preset": "jest-puppeteer"
+  "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "babel-jest": "^23.4.2",
+    "identity-obj-proxy": "^3.0.0",
+    "ts-jest": "^23.1.3"
   }
 }

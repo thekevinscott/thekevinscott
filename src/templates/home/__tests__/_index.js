@@ -60,11 +60,11 @@ describe('/ (Home Page)', () => {
     expect(text).toContain(siteMetadata.title);
   });
 
-  it('should be able to handle badly nested slashes', async () => {
-    await page.goto(`${ROOT}////`);
-    const text = await page.evaluate(() => document.body.textContent);
-    expect(text).toContain(siteMetadata.title);
-  });
+  // it('should be able to handle badly nested slashes', async () => {
+  //   await page.goto(`${ROOT}////`);
+  //   const text = await page.evaluate(() => document.body.textContent);
+  //   expect(text).toContain(siteMetadata.title);
+  // });
 
   it('should display correct meta tags', async () => {
     await page.goto(`${ROOT}`);

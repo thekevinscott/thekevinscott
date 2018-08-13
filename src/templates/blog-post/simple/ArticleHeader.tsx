@@ -1,6 +1,7 @@
 import React from 'react';
 import * as styles from './styles.module.scss';
 import classNames from 'classnames';
+import getCaption from 'utils/getCaption';
 import {
   format,
 } from 'utils/getDate';
@@ -51,7 +52,7 @@ const ArticleHeader = ({
             style={{
               top: headerIsVisible ? 63 + window.scrollY : 0,
             }}
-            dangerouslySetInnerHTML={{ __html: `image by ${caption}` }}
+            dangerouslySetInnerHTML={{ __html: getCaption(caption) }}
           />
         )}
     </div>
