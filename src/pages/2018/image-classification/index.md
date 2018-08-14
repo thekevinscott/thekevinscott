@@ -1,5 +1,5 @@
 ---
-path: "/image-classification-in-javascript/"
+path: "/image-classification-with-javascript/"
 date: "2018-08-16 10:00:00.000 EST"
 title: "Image Classification in the Browser with Javascript"
 image: "cover.jpg"
