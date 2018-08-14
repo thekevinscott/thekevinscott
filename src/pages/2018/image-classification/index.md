@@ -1,38 +1,37 @@
 ---
 path: "/image-classification-in-javascript/"
-date: "2018-08-15 10:00:00.000 EST"
+date: "2018-08-16 10:00:00.000 EST"
 title: "Image Classification in the Browser with Javascript"
 image: "cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/vWI1kTcMcDI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Alex Block</a> on <a href='https://unsplash.com'>Unsplash</a>"
 tags: ["image classification", "artificial intelligence", "javascript", "imagenet", "mobilenet", "deep learning", "machine learning", "tensorflow.js"]
-description: "I recently build an open source tool to quickly train image classification models in your browser, and I'd like to talk about how it works and how to build your own in Javascript."
+description: "I built a tool to quickly train image classification models in your browser with just a few labeled images, and I'll show how it works and how to build your own in Javascript."
 
 ---
 
-A lot of folks think you need tons of data and hours of GPU time to build a good image classifier. Nowadays, with a handful of labeled images, you can get a pretty accurate model trained in your browser in 30 seconds.
+Machine Learning has a reputation for demanding lots of data and powerful GPU computations. This leads many people to assume that building custom machine learning models for their specific data is impractical without a large investment of time and resources. This article presents an alternative approach that builds an accurate image classifier in minutes with just a few labeled images.
 
-At the heart of this ability is transfer learning, the ability to leverage pretrained models and just training the last layer. This article will walk through how to build an image classifier in Javascript.
+# Uses
 
----
+What is image classification good for?
 
-# Image Classification
+Teaching a machine to classify images has a wide range of practical applications. You may have seen image classification at work in your photos app, automatically suggesting friends or locations for tagging. Image Classification can be used to [recognize cancer cells](https://www.kaggle.com/c/data-science-bowl-2017), to [recognize ships in satelitte imagery](https://www.kaggle.com/c/airbus-ship-detection), or to [automatically classify images on Yelp](https://www.kaggle.com/c/yelp-restaurant-photo-classification). It can even be used beyond the realm of images, analyzing heat maps of user activity for potential fraud, or Fourier transforms of audio waves.
 
-Teaching a machine to predict categories of images has a wide range of applications. You might have seen image classification at work in your photo app, automatically suggesting friends or locations for tagging. From medical images to self driving cars to satellite imagery, even beyond the realm of images  analyzing heat maps of user activity on a website or the Fourier transforms of audio waves, image classification has a wide array of uses.
+I recently [released an open source tool](https://thekevinscott.github.io/ml-classifier) to quickly train image classification models in your browser. Here's how it works:
 
-I recently [released an open source tool](https://thekevinscott.github.io/ml-classifier) to quickly train image classification models in your browser. Let's seea demo of this. The dataset we'll use has 10 images from each of the three most popular searches on [https://pexels.com](https://pexels.com) : Mobile", "Wood", and "Notebook".
+![A demo of classifying images](images/ml-classifier-example.gif)
 
-**[You can download the dataset here](https://github.com/thekevinscott/dataset-tutorial-for-image-classification/data)**. Drag the **train** folder into the drop zone, and once the model is trained, upload the **validation** folder to see how well your model can classify novel images.
+Embedded below is a live demo of the tool you can use. [I've put together a dataset for testing here](https://github.com/thekevinscott/dataset-tutorial-for-image-classification/data<Paste>) (or feel free to build your own). The dataset has 10 images I downloaded from each of the three most popular searches on [pexels.com](https://pexels.com) : Mobile", "Wood", and "Notebook".
+
+Drag the **train** folder into the drop zone, and once the model is trained, upload the **validation** folder to see how well your model can classify novel images.
 
 <embed border="1" width="340" height="660" src="https://thekevinscott.github.io/ml-classifier-ui/?SHOW_HELP=0&SHOW_DOWNLOAD=0"></embed>
-<capt>Alternatively, [you can watch a gif](https://github.com/thekevinscott/dataset-tutorial-for-image-classification).</capt>
 
-## How does this work? I thought I needed big GPUs to do machine learning?
+## How does this work?
 
-Traditionally, machine learning has been a computation-intensive task, performed on servers with access to powerful GPUs able to parallelize massive amounts of calculations, and consuming gigabytes of datasets.
+Transfer Learning is the special sauce that makes it possible to train extremely accurate models in your browser in a fraction of the time. Models are trained on large corpuses of data, and saved as pretrained models. Those pretrained models' final layers can then be tuned to your specific use case.
 
-Recently, pretrained models have been produced that are trained on existing broad datasets. This is called Transfer Learning and is the special sauce that makes machine learning in the browser feasible. You download a pretrained model for your use case, and tune the model's final layers to train them on your specific use case.
-
-The reason this works so well is that many features of images are fundamental to visual perception in general. Rob Fergus and Matthew Zeiler [demonstrate in their paper](https://arxiv.org/abs/1311.2901) the first layers of a model:
+This works particularly well in the realm of computer vision, because so many features of images are generalizable. Rob Fergus and Matthew Zeiler [demonstrate in their paper](https://arxiv.org/abs/1311.2901) the featured learned at the early stages of their model:
 
 ![Low Level Features](images/layer-1.png "Low Level Features")
 
@@ -40,23 +39,19 @@ The model is beginning to recognize generic features, including lines, circles, 
 
 ![Higher Level Features](images/layer-4.png "Higher Level Features")
 
-Since many images share features such as lines and circles (and many share higher level features, like "eye" or "nose") it's feasible to just train the last few layers on your specific dataset, a process that is much faster and requires less training data than a full training from scratch.
+The vast majority of images share general features such as lines and circles. Many share higher level features, things like an "eye" or a "nose". Thus, you can reuse the existing training that's already been done, and train just the last few layers on your specific dataset, a process that is much faster and requires less training data than a full training from scratch.
 
-How much less data? It depends on the complexity and variability of your data, but with the example above I got to 100% accuracy with 30 images. For something like dogs and cats, just a handful of images is enough to get good results. Much depends on your dataset, but it's probably less than you think.
+How much less data? It depends on the complexity and variability of your data, but with the example above I got to 100% accuracy with 30 images. For something like dogs and cats, just a handful of images is enough to get good results. It depends on your dataset, but it's probably less than you think.
 
 <embed border="0" height="315" src="https://www.youtube.com/embed/AgkfIQ4IGaM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="1"></embed>
 
 # Show me the Code!
 
-Let's look at how to build an image classifier with Javascript. [I've set up a repo with the necessary packages](https://github.com/thekevinscott/dataset-tutorial-for-image-classification) to get you going. Clone it and follow the readme instructions to install the packages and run it.
-
-We'll use [MobileNet](https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md), a pretrained model produced by Google.
+Next, we'll look at how to import and tune a pretrained model in Javascript. We'll tune [MobileNet](https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md), a pretrained model produced by Google.
 
 > MobileNets are a class of convolutional neural network designed by researches at Google. They are coined “mobile-first” in that they’re architected from the ground up to be resource-friendly and run quickly, right on your phone. &mdash; [Matt Harvey](https://hackernoon.com/creating-insanely-fast-image-classifiers-with-mobilenet-in-tensorflow-f030ce0a2991)
 
-MobileNet is trained on a huge corpus of images called [ImageNet](http://www.image-net.org/), containing over 14 million labeled images belonging to a 1000 different categories.
-
-If you download `mobilenet_v1_0.25_224`, you'll see a structure of files like:
+MobileNet is trained on a huge corpus of images called [ImageNet](http://www.image-net.org/), containing over 14 million labeled images belonging to a 1000 different categories. If you download `mobilenet_v1_0.25_224`, you'll see a structure of files like:
 
 ```
 mobilenet_v1_0.25_224.ckpt.data-00000-of-00001
@@ -96,13 +91,16 @@ This tells us that the first layer of this MobileNet expects to receive a Tensor
 
 ## Importing and Setup
 
-In `index.js`, start by importing `tensorflowjs`:
+[I've set up a repo with the necessary packages](https://github.com/thekevinscott/dataset-tutorial-for-image-classification) to get you going. Clone it and follow the readme instructions to install the packages and run it.
+
+
+Then, in `index.js`, start by importing `tensorflowjs`:
 
 ```
 import * as tf from '@tensorflow/tfjs';
 ```
 
-Tensorflow provides function to load pretrained model asynchronously. This function will return a Promise resolving with the pretrained model.
+Tensorflow.js provides a function to load a pretrained model asynchronously. We'll use this to load MobileNet:
 
 ```
 function loadMobilenet() {
@@ -110,41 +108,32 @@ function loadMobilenet() {
 }
 ```
 
-(If you decide to use a different pretrained model, be sure to alter the appropriate shape and layer attributes.)
-
-![Rube Goldberg Machine](images/goldberg.gif)
-
 ## Data Pipelines
 
-At the heart of your machine learning model is data. Building a solid pipeline for processing your data is crucial for a solid training process. A [lot of your time will be spent working with data](https://thekevinscott.com/dealing-with-mnist-image-data-in-tensorflowjs/), so it pays to get comfortable with the process.
+At the heart of your machine learning model is data. Building a solid pipeline for processing your data is crucial for success; often, a [majority of your time will be spent working with your data pipeline](https://thekevinscott.com/dealing-with-mnist-image-data-in-tensorflowjs/).
 
 > It may be surprising to the academic community to know that only a tiny fraction of the code in many machine learning systems is actually doing “machine learning”. When we recognize that a mature system might end up being (at most) 5% machine learning code and (at least) 95% glue code, reimplementation rather than reuse of a clumsy API looks like a much better strategy. &mdash; [D. Sculley et all](https://ai.google/research/pubs/pub43146)
 
-Our data consists of two things:
-
-* The images
-* The labels that identify the images
-
 There's a few common ways you'll see image data structured:
 
-1) a list of folders, where the folder contains a group of images and the name of the folder is the label
-2) all the images in a single folder, where each image has its associated label (dog-1, dog-2)
-3) the images with their original image name, and a csv or other file with a mapping of label to file
+1) A list of folders containing images, where the folder name is the label
+2) Images in a single folder, with images named by label (dog-1, dog-2)
+3) Images in a single folder, and a csv or other file with a mapping of label to file
 
-There's no right way to organize your images; choose whatever format makes sense for you and your team. The data provided in the repo uses the first structure.
+There's no right way to organize your images. Choose whatever format makes sense for you and your team. This dataset is organized by folder.
 
-The data processing pipeline will consist of four parts:
+![Rube Goldberg Machine](images/goldberg.gif)
 
-1. Load the data and extract the pixels into a Tensor
+Our data processing pipeline will consist of four parts:
+
+1. Load the image (and turn it into a tensor)
 2. Crop the image
 3. Resize the image
 4. Translate the Tensor into an appropriate input format
 
 ### 1. Loading the Image
 
-Since our machine learning model will expect Tensors, the first step is to load the image and translate its pixel data into a Tensor. Browsers provide many convenient tools to load images and read pixels, and Tensorflow.js provides a function to convert an `Image` object into a Tensor. (If you're in Node, you'll have to handle this yourself).
-
-This function will take a `src` URL of the image, load the image using native browser functionality, and resolve the promise with a 3D Tensor of shape `[width, height, color_channels]`:
+Since our machine learning model expects [Tensors](/tensors-in-javascript/), the first step is to load the image and translate its pixel data into a Tensor. Browsers provide many convenient tools to load images and read pixels, and Tensorflow.js provides a function to convert an `Image` object into a Tensor. (If you're in Node, you'll have to handle this yourself). This function will take a `src` URL of the image, load the image, and returns a promise resolving with a 3D Tensor of shape `[width, height, color_channels]`:
 
 ```
 function loadImage(src) {
@@ -159,7 +148,7 @@ function loadImage(src) {
 
 ### 2. Cropping the Image
 
-Many classifiers expect square images. This is not a strict requirement; if you build your own model you can specify any size resolution you want. However, standard CNN architectures expect that images be of a **fixed size**. Given this necessity, most pretrained models expect squares to support the highest range of ratios. Squares also provide the most flexibility in handling a variety of [data augmentation techniques](https://medium.com/ymedialabs-innovation/data-augmentation-techniques-in-cnn-using-tensorflow-371ae43d5be9).
+Many classifiers expect square images. This is not a strict requirement; if you build your own model you can specify any size resolution you want. However, standard CNN architectures expect that images be of a **fixed size**. Given this necessity, many pretrained models accept squares, in order to support the widest variety of image ratios. (Squares also provide flexibility for handling a variety of [data augmentation techniques](https://medium.com/ymedialabs-innovation/data-augmentation-techniques-in-cnn-using-tensorflow-371ae43d5be9)).
 
 We determined above that MobileNet expects 224x224 square images, so we'll need to first crop our images. We do that by chopping off the edges of the longer side:
 
@@ -197,10 +186,9 @@ function resizeImage(image) {
 Recall that our model expects an input object of the shape `[any, 224, 224, 3]`. This is known as a Tensor of Rank 4. This dimension refers to the number of training examples. If you have 10 training examples, that would be `[10, 224, 224, 3]`.
 
 We also want our pixel data as a floating point number between -1 and 1, instead of integer data between 0 and 255, a process called normalization. While [neural networks are generally agnostic to the size](https://stackoverflow.com/questions/4674623/why-do-we-have-to-normalize-the-input-for-an-artificial-neural-network
-) of the numbers coming in, using smaller numbers helps the network train faster. ([Check out the Coursera course on this to learn more](https://www.coursera.org/lecture/deep-neural-network/normalizing-inputs-lXv6U
-)).
+) of the numbers coming in, using smaller numbers can help the network train faster.
 
-We can build a function that expands our tensor to rank 4 and translates the integers into floats with:
+We can build a function that expands our Tensor and translates the integers into floats with:
 
 ```
 function batchImage(image) {
@@ -212,7 +200,7 @@ function batchImage(image) {
 }
 ```
 
-Putting all the above functions together into a single data pipeline looks like:
+Putting all the above functions together into a single function, we get:
 
 ```
 function loadAndProcessImage(image) {
@@ -223,7 +211,9 @@ function loadAndProcessImage(image) {
 }
 ```
 
-We can now use this function to test that our pretrained model is capable of returning a prediction. To test, let's use an image from ImageNet whose label we know:
+We can now use this function to test that our data pipeline is set up correctly. We'll import an image whose label is known (a drum) and see if the prediction matches the expected label:
+
+![Image of a drum](images/drum.jpg "An image that is known")
 
 ```
 import drum from './data/pretrained-model-data/drum.jpg';
@@ -231,12 +221,12 @@ loadMobilenet().then(pretrainedModel => {
   loadImage(drum).then(img => {
     const processedImage = loadAndProcessImage(img);
     const prediction = pretrainedModel.predict(processedImage);
+
+    // Because of the way Tensorflow.js works, you must call print on a Tensor instead of console.log.
     prediction.print();
   });
 });
 ```
-
-(Because of the way Tensorflow.js works, [you must call `print`](https://js.tensorflow.org/api/0.12.0/#print) on a Tensor instead of `console.log`.)
 
 You should see something like:
 
@@ -244,9 +234,9 @@ You should see something like:
      [[0.0000273, 5e-7, 4e-7, ..., 0.0001365, 0.0001604, 0.0003134],]
 ```
 
-If we inspect the shape of this Tensor, we'll see it to be `[1, 1000]`. The model returns a Tensor containing a prediction for every category, and since MobileNet contains 1000 classes, we receive 1000 predictions, each representing the probability that the given image belongs to a given class.
+If we inspect the shape of this Tensor, we'll see it to be `[1, 1000]`. MobileNet returns a Tensor containing a prediction for every category, and since MobileNet has learned 1000 classes, we receive 1000 predictions, each representing the probability that the given image belongs to a given class.
 
-In order to get an actual prediction, we first need to determine the most likely prediction. We can flatten the tensor to 1 dimension, and then get the maximum, which will correspond to our most confident prediction:
+In order to get an actual prediction, we need to determine the most likely prediction. We flatten the tensor to 1 dimension and get the max value, which corresponds to our most confident prediction:
 
 ```
 prediction.as1D().argMax().print();
@@ -258,7 +248,7 @@ This should produce:
     541
 ```
 
-In the repo you'll find a copy of the ImageNet class definitions in JSON format ([forked from here](https://gist.github.com/thekevinscott/e6fb765d5125dd3c34f11d2d67b6d49b)). You can import that JSON file to translate the numeric prediction into an actual string.
+In the repo you'll find [a copy of the ImageNet class definitions in JSON format](https://github.com/thekevinscott/dataset-tutorial-for-image-classification/blob/master/imagenet_labels.json). You can import that JSON file to translate the numeric prediction into an actual string:
 
 ```
 import labels from './imagenet_labels.json';
@@ -274,33 +264,23 @@ loadMobilenet().then(pretrainedModel => {
 });
 ```
 
-You should see that `541` corresponds to `drum, membranophone, tympan`, which is exactly the image we used. This means your data pipeline is up and running, and MobileNet is successfully predicting incoming images!
+You should see that `541` corresponds to `drum, membranophone, tympan`, which is the category our image comes from. At this point you have a working pipeline and the ability to leverage MobileNet to predict ImageNet images.
 
-Now that we've got a data pipeline set up, let's look at how to tune MobileNet on your specific image problems.
-
-![You get a monorail!](images/monorail-2.gif "You get a monorail")
+Now let's look at how to tune MobileNet on your specific dataset.
 
 ## Training The Model
 
-The goal of any machine learning project is to build a model that successfully predicts novel data; data it hasn't seen before. (It wouldn't do any good to build a model to only recognize data it HAS seen before; you could just hardcode that, no machine learning required!)
+![You get a monorail!](images/monorail-2.gif "You get a monorail")
 
-In order to do this, you train the model on labeled data - data that has already been identified as either a cat or a dog - and you validate the model's performance on other labeled data *that it hasn't seen before*. (There are other areas of machine learning that don't require labeled data but that's outside this article's scope.)
+We want to build a model that successfully predicts **novel data**; data it hasn't seen before.
 
-> Supervised learning reverses this process, solving for m and b, given a set of x’s and y’s. In supervised learning, you start with many particulars — the data — and infer the general equation. And the learning part means you can update the equation as you see more x’s and y’s, changing the slope of the line to better fit the data. The equation almost never identifies the relationship between each x and y with 100% accuracy, but the generalization is powerful because later on you can use it to do algebra on new data.
-https://hbr.org/2017/10/how-to-spot-a-machine-learning-opportunity-even-if-you-arent-a-data-scientist
+To do this, you first train the model on labeled data - data that has already been identified - and you validate the model's performance on other labeled data *it hasn't seen before*.
 
-That second set of data - data that it hasn't seen before - serves as a proxy for the real world, with the only difference being that we know what it *should be*, and we can use it to gauge the performance of our model. We call this data our *validation dataset*. (Or Evaluation data?)
+> Supervised learning reverses this process, solving for m and b, given a set of x’s and y’s. In supervised learning, you start with many particulars — the data — and infer the general equation. And the learning part means you can update the equation as you see more x’s and y’s, changing the slope of the line to better fit the data. The equation almost never identifies the relationship between each x and y with 100% accuracy, but the generalization is powerful because later on you can use it to do algebra on new data. &mdash; [Kathryn Hume](https://hbr.org/2017/10/how-to-spot-a-machine-learning-opportunity-even-if-you-arent-a-data-scientist)
 
-The data we use to train our model is predictably called our *training dataset*.
+When you trained the model above by dragging the `training` folder in, the model produced a training score. This indicates how many images the classifier was able to learn to successfully predict out of the training set. The second number it produced indicated how many images it could predict that it *hadn't seen before*. This second score is the one you want to optimize for (well, you want to optimize for both, but the second is harder to optimize for than the first).
 
-When you trained the model above by dragging the `training` folder in, it output a training score. This indicates how many images the classifier was able to learn to successfully predict.
-
-The second number is the validation number; this indicates how many images were successfully predicted that it *hadn't seen before*. This is the score you want to optimize for. A good rule of thumb to optimize that number is to throw more data at it. Another good approach is to look at the type of data you're supplying; if your training set only contains high resolution, well lit dog photos, but your validation set has pixelated low light photos, you're gonna struggle to realize performance in
-the real world.
-
-There's literal books written on how to optimize your machine learning models. You can find some examples here. However, *hopefully* you will get a good score out of the gate, thanks to the wonders of transfer learning.
-
-In the repo, you'll find a folder `data/colors` that contains:
+We're going to train on the **colors** dataset. In the repo, you'll find a folder `data/colors` that contains:
 
 ```
 validation/
@@ -317,9 +297,9 @@ training/
     red-2.png
 ```
 
-Something I've found is that, when something goes wrong with training, it can be very difficult to know where the bug is coming from. For this reason, it's helpful to test every part of the process and validate assumptions along the way.
+Building machine learning models, I've found that *code-related* errors - a missing variable, an inability to compile - are fairly straight forward to fix, whereas *training* errors - the labels were in an incorrect order, or the images were being cropped incorrectly - are devilish to debug. Testing exhaustively and setting up sanity test cases can help save you a few gray hairs.
 
-The solid red and blue colors in this dataset are guaranteed to provide accurate results if the code is set up correctly, so we'll use these to validate that our model is built correctly.
+The `data/colors` folder provides a list of solid red and blue colors that are guaranteed to be easy to train with. We'll use these to train our model and ensure that our machine learning code learns correctly, before attempting with a more complicated dataset.
 
 ```
 import blue1 from '../data/colors/training/blue/blue-1.png';
@@ -336,6 +316,7 @@ const training = [
   red2,
 ];
 
+// labels should match the positions of their associated images
 const labels = [
   'blue',
   'blue',
@@ -344,7 +325,7 @@ const labels = [
 ];
 ```
 
-We'll want to use the majority of the pretrained model, but without the final layers that classify into the 1000 categories. You can inspect a pretrained model with `.summary()`:
+When we previously loaded MobileNet, we used the model without any modifications. When training, we want to use a subset of its layers - specifically, we want to ignore the final layers that produce the one-of-1000 classification. You can inspect the structure of a pretrained model with `.summary()`:
 
 ```
 loadMobilenet().then(mobilenet => {
@@ -352,7 +333,7 @@ loadMobilenet().then(mobilenet => {
 });
 ```
 
-The end of the summary should look something like this:
+In your console should be the model output, and near the end you should see something like:
 
 ```
 conv_dw_13_bn (BatchNormaliz [null,7,7,256]            1024      
@@ -383,18 +364,21 @@ Non-trainable params: 5472
 _________________________________________________________________
 ```
 
-The final activation layer (not including the softmax) is `conv_pw_13_relu`, so we'll include all the layers up to that:
+What we're looking for is the final `Activation` layer that is not softmax ([softmax is the activation](https://en.wikipedia.org/wiki/Softmax_function) used to boil the predictions down to one of a thousand categories). That layer is `conv_pw_13_relu`. We return a pretrained model that includes everything up to that activation layer:
 
 ```
 function buildPretrainedModel() {
   return loadMobilenet().then(mobilenet => {
     const layer = mobilenet.getLayer('conv_pw_13_relu');
-    return tf.model({inputs: mobilenet.inputs, outputs: layer.output});
+    return tf.model({
+      inputs: mobilenet.inputs,
+      outputs: layer.output,
+    });
   });
 }
 ```
 
-Let's write a function to loop through all images and return a Promise that resolves when they are all loaded.
+Let's write a function to loop through an array of images and return a Promise that resolves when they load.
 
 ```
 function loadImages(images, pretrainedModel) {
@@ -403,6 +387,12 @@ function loadImages(images, pretrainedModel) {
     const image = images[i];
     promise = promise.then(data => {
       return loadImage(image).then(loadedImage => {
+        // Note the use of `tf.tidy` and `.dispose()`. These are two memory management
+        // functions that Tensorflow.js exposes.
+        // https://js.tensorflow.org/tutorials/core-concepts.html
+        //
+        // Handling memory management is crucial for building a performant machine learning
+        // model in a browser.
         return tf.tidy(() => {
           const processedImage = loadAndProcessImage(loadedImage, pretrainedModel);
           if (data) {
@@ -421,25 +411,23 @@ function loadImages(images, pretrainedModel) {
 }
 ```
 
-We build a sequential promise that iterates over each image and processes it. Alternatively, you can use `Promise.all` to handle this in parallel, but you have to be careful of how you handle UI performance.
+We build a sequential promise that iterates over each image and processes it. Alternatively, you can use `Promise.all` to load images in parallel, but be aware of UI performance if you do that.
 
-*Speaking of performance, note the use of `tf.tidy` and `.dispose()`. These are two memory management functions that Tensorflow.js exposes; [you can learn more here](https://js.tensorflow.org/tutorials/core-concepts.html). Handling memory management is crucial for building a performant machine learning model in a browser.*
-
-You can put all this together with:
+Putting those functions together, we get:
 
 ```
 buildPretrainedModel().then(pretrainedModel => {
   loadImages(training, pretrainedModel).then(xs => {
-    ...
+    xs.print();
   })
 });
 ```
 
-Calling your data "x" and "y" is [a convention in the machine learning world](https://datascience.stackexchange.com/questions/17598/why-are-variables-of-train-and-test-data-defined-using-the-capital-letter-in-py), carrying over from its mathematical origins.
+Calling your data "x" and "y" is [a convention in the machine learning world](https://datascience.stackexchange.com/questions/17598/why-are-variables-of-train-and-test-data-defined-using-the-capital-letter-in-py), carrying over from its mathematical origins. You can call your variables whatever you want, but I find it useful to stick to the conventions where I can.
 
 ### Labels
 
-Next, you'll need to convert your labels into numbers. However, it's not as simple as assigning a number to each category. Let's say you're workign with three categories of fruit:
+Next, you'll need to convert your labels into numeric form. However, it's not as simple as assigning a number to each category. To demonstrate, let's say you're classifying three categories of fruit:
 
 ```
 raspberry - 0
@@ -447,11 +435,11 @@ blueberry - 1
 strawberry - 2
 ```
 
-The problem with using numbers like this is that they can imply a relationship between these numbers. Technically, these would be known as "ordinal" values, in that they have some order.
+Denoting numbers like this can imply a relationship where one does not exist, since these numbers are considered *ordinal* values; they imply some order in the data. Real world consequences of this might be that the network decides that a blueberry is something that is halfway between a raspberry and a strawberry, or that a strawberry is the "best" of the berries.
 
-The real world consequences of this might be that the network learns that something halfway between a raspberry and a strawberry is a blueberry, or that a strawberry is the "best" of the berries.
+![Strawberry Inception](images/strawberry.gif)
 
-To prevent these incorrect assumptions we use a process called "one hot encoding". One hot encoding produces data structures that look like:
+To prevent these incorrect assumptions we use a process called "one hot encoding", resulting in data that looks like:
 
 ```
 raspberry  - [1, 0, 0]
@@ -459,9 +447,7 @@ blueberry  - [0, 1, 0]
 strawberry - [0, 0, 1]
 ```
 
-Two great articles explaining this are [here](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f) and [here](https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/).
-
-For our color data, we can leverage Tensorflow.js's built in one hot functions to translate our labels:
+(Two great articles that go into more depth on one hot encoding are [here](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f) and [here](https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/).) We can leverage Tensorflow.js's built in `oneHot` functions to translate our labels:
 
 ```
 function oneHot(labelIndex, classLength) {
@@ -469,9 +455,7 @@ function oneHot(labelIndex, classLength) {
 };
 ```
 
-This function takes a particular number (`labelIndex`, corresponding to a label) and translates it to a one hot encoding, given some number of classes (`classLength`).
-
-We can use the function with the following bit of code, that first builds a mapping of numbers-to-labels off the incoming array of labels, and then builds a Tensor containing those one-hot encoded labels:
+This function takes a particular number (`labelIndex`, a number that corresponds to a label) and translates it to a one hot encoding, given some number of classes (`classLength`). We can use the function with the following bit of code, that first builds a mapping of numbers-to-labels off the incoming array of labels, and then builds a Tensor containing those one-hot encoded labels:
 
 ```
 function getLabelsAsObject(labels) {
@@ -489,14 +473,12 @@ function getLabelsAsObject(labels) {
 function addLabels(labels) {
   return tf.tidy(() => {
     const classes = getLabelsAsObject(labels);
-    console.log(classes);
     const classLength = Object.keys(classes).length;
 
     let ys;
     for (let i = 0; i < labels.length; i++) {
       const label = labels[i];
       const labelIndex = classes[label];
-      console.log(label, labelIndex);
       const y = oneHot(labelIndex, classLength);
       if (i === 0) {
         ys = y;
@@ -509,17 +491,9 @@ function addLabels(labels) {
 };
 ```
 
-Now that we have our data, we can build our model. We build a second model that accepts as input the activated images from our pretrained model. Therefore, the first layer matches the shape of the output layer from MobileNet.
+Now that we have our data, we can build our model. You are welcome to innovate at this stage, but I find that building on others' conventions tends to produce a good enough model in most cases. We'll look to the [Webcam Tensorflow.js example](https://github.com/tensorflow/tfjs-examples/tree/master/webcam-transfer-learning) for a well structured transfer learning model we'll reuse largely verbatim.
 
-      // Flattens the input to a vector so we can use it in a dense layer. While
-      // technically a layer, this only performs a reshape (and has no training
-      // parameters).
-
-The intermediate layer is `relu`. Relu is a common activation function. The number of units can be up to you. Try changing it and see what your performance is like!
-
-We end with a [Softmax layer](https://en.wikipedia.org/wiki/Softmax_function), which is a common activation for classification problems, with the number of units matching our expected number of classes.
-
-Finally, we use an adam optimizer with a fairly low learning rate, and a loss of categorical crossentropy.
+Things worth highlighting are that the first layer matches the output shape of our pretrained model, and the final `softmax` layer corresponds to the number of labels, defined as `numberOfClasses`. 100 units on the second layer is arbitrary, and you're welcome to experiment with other numbers.
 
 ```
 function getModel(numberOfClasses) {
@@ -551,7 +525,16 @@ function getModel(numberOfClasses) {
 }
 ```
 
-Finally, we train the actual model. We're passing `epochs` and `shuffle` to our model. We shuffle our training images so that the model doesn't learn the order of incoming pixels. An `epoch` denotes one cycle through your entire training set. How many epochs should you run for? [Until it's good, or it's clear it's not working, or you run out of time.](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9).
+Here are various links which go into a little more depth on the parts that makeup the model:
+
+* [`tf.sequential`](https://js.tensorflow.org/api/0.12.0/#sequential)
+* [`tf.layers.flatten`](https://js.tensorflow.org/api/0.12.0/#layers.flatten)
+* [`tf.layers.dense`](https://js.tensorflow.org/api/0.12.0/#layers.dense)
+* [the activation `relu`](https://www.kaggle.com/dansbecker/rectified-linear-units-relu-in-deep-learning)
+* [`adam` optimizer](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)
+* [`categoricalCrossentropy` loss](https://keras.io/losses/)
+
+The final step is actually train the model, which we do by calling `.fit()` on the model. We shuffle our training images so the model doesn't learn to rely on the order of the incoming training data, and we train for 20 epochs. (An epoch denotes one cycle through your entire training set.)
 
 ```
 function makePrediction(pretrainedModel, image, expectedLabel) {
@@ -581,6 +564,10 @@ buildPretrainedModel().then(pretrainedModel => {
   });
 });
 ```
+
+How many epochs should you run for? [Until it's good, or it's clear it's not working, or you run out of time.](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9).
+
+If everything is set up correctly, you should expect very good accuracy.
 
 You should give this a shot, modifying the color images to use Pexels images. You'll need to update the image importing and the label setting to handle the three categories of code. Let me know if you run into problems.
 
