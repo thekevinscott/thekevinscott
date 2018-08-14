@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import * as styles from './styles.module.scss';
 
 interface IProps {
@@ -14,9 +13,6 @@ const Pane: React.SFC<IProps> = ({
   return (
     <span
       className={styles.pane}
-      style={{
-        width: `${100/num}%`,
-      }}
     >
       {children}
     </span>

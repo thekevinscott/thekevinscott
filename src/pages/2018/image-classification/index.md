@@ -9,30 +9,28 @@ description: "I recently build an open source tool to quickly train image classi
 
 ---
 
-Image classification is the practice of teaching a machine to categorize a set of images into different categories, so that it can categorize images in the future automatically.
+A lot of folks think you need tons of data and hours of GPU time to build a good image classifier. Nowadays, with a handful of labeled images, you can get a pretty accurate model trained in your browser in 30 seconds.
 
-You've probably seen image classification at work in your photo app, automatically suggesting friends or locations for tagging. Image classification has a huge range of applications, from medical to self driving cars to satellite imagery; however, it's even used in places you wouldn't expect, like heat maps for fraud detection, or analyzing the Fourier transforms of audio waves.
+At the heart of this ability is transfer learning, the ability to leverage pretrained models and just training the last layer. This article will walk through how to build an image classifier in Javascript.
 
-I recently build an open source tool to quickly train image classification models in your browser, and I'd like to talk about how it works and how to build your own in Javascript. We'll be leveraging transfer learning to perform super fast training in the browser; if you're interested in more of a deep dive into how image training works, check out [Fast.ai's awesome lesson series](https://fast.ai).
+---
 
-For our data, I'm going to build a dataset to recognize whether a person is happy or sad. You could imagine using this in a rich client side photo app, or a stock photo app to automatically categorize and tag photos.
+# Why Should I Care About Image Classification
 
-# Demo
+The practice of teaching a machine to predict categories of images has a wide range of applications. You might have seen image classification at work in your photo app, automatically suggesting friends or locations for tagging. Image classification has a huge range of applications, from medical to self driving cars to satellite imagery. It can even be used beyond the realm of images, analyzing heat maps of user activity on a website or the Fourier transforms of audio waves.
 
-I'm going to use the Pexels website. [The top three most popular searches in August 2018](https://www.pexels.com/popular-searches/) are "Mobile", "Wood", "Notebook". Let's see if we can teach a computer to automatically classify images into one of these categories.
+## Let's See An Example!
 
-We're going to train with 15 training images from three categories, and test it with 2 images per category.
+I recently [released an open source tool](https://thekevinscott.github.io/ml-classifier) to quickly train image classification models in your browser. Let's see a demo in your browser to demonstrate how quickly you can train a model.
 
+The dataset we'll use comes from [https://pexels.com](https://pexels.com). The top three most popular searches (in August 2018) are "Mobile", "Wood", "Notebook". I collected 10 images as training data for each category, and two images in each as validation.
 
+**[You can download the dataset here](https://github.com/thekevinscott/dataset-tutorial-for-image-classification/data)**, or you can [put your own dataset together](https://github.com/thekevinscott/dataset-tutorial-for-image-classification#picking-a-dataset).
 
-Before jumping into code, let's see an example of how to train your own custom image classifier:
-<pane num="2">
+Drag the **train** folder into the drop zone, and once the model is trained, upload the **validation** folder to see how well your model can classify novel images.
+
 <embed border="1" width="340" height="660" src="https://thekevinscott.github.io/ml-classifier-ui/?SHOW_HELP=0&SHOW_DOWNLOAD=0"></embed>
 <capt>Alternatively, [you can watch a gif](https://github.com/thekevinscott/dataset-tutorial-for-image-classification/raw/master/ml-classifier-example.gif).</capt>
-</pane>
-<pane num="2">
-[Download these images](https://github.com/thekevinscott/dataset-tutorial-for-image-classification/data) (or build your [own dataset to train with](https://github.com/thekevinscott/dataset-tutorial-for-image-classification#picking-a-dataset)). Then, drag the **train** folder into the drop zone on the left. Finally, once your model is trained, upload the **validation** folder to see how well your model can classify novel images.
-</pane>
 
 If all went according to plan, you should see close to 100% scores for each.
 
@@ -67,6 +65,13 @@ Transfer Learning is the special sauce that makes machine learning in the browse
 You can use these models straight out of the box, or you can manipulate their final layers to further train them on your specific use case.
 
 The reason this works so well is that many of the fundamental parts of perception carry over to all images. For instance, check out this great image demonstrating low level feature detection:
+
+
+
+
+, and this article will show how to build your own in Javascript. We'll be leveraging transfer learning to perform super fast training in the browser; if you're interested in more of a deep dive into how image training works, check out [Fast.ai's awesome lesson series](https://fast.ai).
+
+
 
 ![Low Level Features](images/layer-1.png "Low Level Features")
 
