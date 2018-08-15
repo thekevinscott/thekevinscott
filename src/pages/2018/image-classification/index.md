@@ -525,7 +525,7 @@ function getModel(numberOfClasses) {
 }
 ```
 
-Here are various links which go into a little more depth on the parts that makeup the model:
+Here are various links if you want to go into a little more depth on the model's internal parts:
 
 * [`tf.sequential`](https://js.tensorflow.org/api/0.12.0/#sequential)
 * [`tf.layers.flatten`](https://js.tensorflow.org/api/0.12.0/#layers.flatten)
@@ -565,17 +565,18 @@ buildPretrainedModel().then(pretrainedModel => {
 });
 ```
 
-How many epochs should you run for? [Until it's good, or it's clear it's not working, or you run out of time.](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9).
+How many epochs should you run for?
 
-If everything is set up correctly, you should expect very good accuracy.
+> Unfortunately, there is no right answer to this question. The answer is different for different datasets but you can say that the numbers of epochs is related to how diverse your data is &mdash; [Sagar Sharma](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
 
-You should give this a shot, modifying the color images to use Pexels images. You'll need to update the image importing and the label setting to handle the three categories of code. Let me know if you run into problems.
+Basically, you can run it until it's good, or or it's clear it's not working, or you run out of time.
 
-# Conclusion
+You should see 100% accuracy in the training above. Try modifying the code to work on the Pexels dataset. I found in my testing that my accuracy numbers would fall a little bit on this more complex dataset.
 
+---
 
-Again, be careful to test your code at each section of the process and validate with data you know works. Something as simple as passing an incorrect label object will cause your accuracies to be off. I've found that these things are so persnickety, you have to be really careful about debugging. More so than normal things. The tools in place to make sure the code compiles are powerful; the tools in place to make sure it trains correctly are still getting there. As much as possible, rely on open source tools like mine.
+In summary, it's cheap and fast to build on top of a pretrained model and get a classifier that is pretty darn accurate.
 
-To recap, you have learned the basics of how a neural net works, how to set up a data pipeline for loading and transforming images, and how to train your net and translate numerical predictions into human readable strings. Good job!
+When coding machine learning, be careful to test your code at each section of the process and validate with data you know works. It pays to set up a stable and reusable data pipeline early in your process, since so much of your time is spent working with your data.
 
-It's important to also note that training on images from scratch is a more intense process that we didn't really touch on here. You would almost certainly want to avoid training from scratch in a browser, because it would take months, and nobody's got time for that. However, if you're in Node, it's absolutely viable to do so.
+Finally, if you're interested in learning more about training CNNs from scratch, a great place to start is [Fast.ai](https://fastai.com)'s tutorials for hackers. It's built in Python but you can translate the ideas in Node.js if you want to stay in Javascript.
