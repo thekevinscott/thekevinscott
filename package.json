@@ -40,6 +40,7 @@
     "gatsby-source-medium": "^1.0.9",
     "gatsby-transformer-remark": "^1.7.41",
     "gatsby-transformer-sharp": "^1.6.16",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.4.2",
     "jest-puppeteer": "^3.0.1",
     "jest-raw-loader": "^1.0.1",
@@ -89,7 +90,6 @@
   "devDependencies": {
     "@types/jest": "^23.3.1",
     "babel-jest": "^23.4.2",
-    "identity-obj-proxy": "^3.0.0",
     "ts-jest": "^23.1.3"
   }
 }
