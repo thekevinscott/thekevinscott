@@ -16,13 +16,15 @@ process.on('SIGINT', cleanExit); // catch ctrl-c
 process.on('SIGTERM', cleanExit); // catch kill
 
 module.exports = (cmd, args, opts) => {
-  const command = spawn(cmd, args, opts);
-  command.on('error', function(err) {
+  const child = spawn(cmd, args, opts);
+  child.on('error', function(err) {
     console.error(err);
     process.exit(1);
   });
 
-  children.push(command);
+  children.push(child);
+
+  return child;
 };
 
 module.exports.exit = killChildren;

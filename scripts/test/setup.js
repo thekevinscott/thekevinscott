@@ -9,9 +9,21 @@ const spawn = require('../utils/spawn');
 
 const DIR = path.join(os.tmpdir(), 'jest_puppeteer_global_setup');
 
-const start = () => spawn('gatsby', ['serve', '-p', argv.PORT], {
-  stdio: 'ignore',
-});
+const start = () => {
+  const child = spawn('gatsby', ['serve', '-p', argv.PORT]);
+  if (child.stdout && child.stdout.on) {
+    child.stdout.on('data', data => {
+      console.log(`stdout ${data}`);
+    });
+  }
+  if (child.stderr && child.stderr.on) {
+    child.stderr.on('data', data => {
+      console.log(`stderr ${data}`);
+    });
+  }
+
+  return child;
+};
 
 start();
 
