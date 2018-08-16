@@ -47,17 +47,25 @@ describe('/ (Home Page)', () => {
   });
 
   it('should be able to navigate directly from a blog to home', async () => {
+    console.log('1');
     await clickAndWaitForNavigation('#blogPosts > div:first-child');
+    console.log('2');
     const blogUrl = await page.url();
+    console.log('3', blogUrl);
 
     // reload the page
     await page.goto(blogUrl);
+    console.log('4');
     await clickAndWaitForNavigation('a[href="/"]');
+    console.log('5');
 
     const url = await page.url();
+    console.log('6', url);
     const text = await page.evaluate(() => document.body.textContent);
+    console.log('7', text);
     expect(url).toEqual(ROOT);
     expect(text).toContain(siteMetadata.title);
+    console.log('8');
   });
 
   // it('should be able to handle badly nested slashes', async () => {
