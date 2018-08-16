@@ -9,11 +9,9 @@ description: "I built a tool to quickly train image classification models in you
 
 ---
 
-Machine Learning has a reputation for demanding lots of data and powerful GPU computations. This leads many people to assume that building custom machine learning models for their specific data is impractical without a large investment of time and resources. This article presents an alternative approach that builds an accurate image classifier in minutes with just a few labeled images.
+Machine Learning has a reputation for demanding lots of data and powerful GPU computations. This leads many people to believe that building custom machine learning models for their specific dataset is impractical without a large investment of time and resources. In fact, you can leverage Transfer Learning in your browser to train an accurate image classifier in less than a minute with just a few labeled images.
 
-# Uses
-
-What is image classification good for?
+# What Is Image Classification Good For?
 
 Teaching a machine to classify images has a wide range of practical applications. You may have seen image classification at work in your photos app, automatically suggesting friends or locations for tagging. Image Classification can be used to [recognize cancer cells](https://www.kaggle.com/c/data-science-bowl-2017), to [recognize ships in satelitte imagery](https://www.kaggle.com/c/airbus-ship-detection), or to [automatically classify images on Yelp](https://www.kaggle.com/c/yelp-restaurant-photo-classification). It can even be used beyond the realm of images, analyzing heat maps of user activity for potential fraud, or Fourier transforms of audio waves.
 
@@ -39,9 +37,11 @@ The model is beginning to recognize generic features, including lines, circles, 
 
 ![Higher Level Features](images/layer-4.png "Higher Level Features")
 
-The vast majority of images share general features such as lines and circles. Many share higher level features, things like an "eye" or a "nose". Thus, you can reuse the existing training that's already been done, and train just the last few layers on your specific dataset, a process that is much faster and requires less training data than a full training from scratch.
+The vast majority of images share general features such as lines and circles. Many share higher level features, things like an "eye" or a "nose". This allows you to reuse the existing training that's already been done, and tune just the last few layers on your specific dataset, which is faster and requires less data than training from scratch.
 
-How much less data? It depends on the complexity and variability of your data, but with the example above I got to 100% accuracy with 30 images. For something like dogs and cats, just a handful of images is enough to get good results. It depends on your dataset, but it's probably less than you think.
+How much less data? **It depends** is the unfortunate answer. How different your data is from your pre-trained model, how compelx or variable your data is, and other factors can all play into your accuracy. With the example above I got to 100% accuracy with 30 images. For something like dogs and cats, just a handful of images is enough to get good results. [Adrian G has put together a more rigorous analysis on his blog](https://medium.com/@bingobee01/how-much-data-to-you-need-ba834d074f3a).
+
+So, it depends on your dataset, but it's probably less than you think.
 
 <embed border="0" height="315" src="https://www.youtube.com/embed/AgkfIQ4IGaM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="1"></embed>
 
@@ -91,10 +91,7 @@ This tells us that the first layer of this MobileNet expects to receive a Tensor
 
 ## Importing and Setup
 
-[I've set up a repo with the necessary packages](https://github.com/thekevinscott/dataset-tutorial-for-image-classification) to get you going. Clone it and follow the readme instructions to install the packages and run it.
-
-
-Then, in `index.js`, start by importing `tensorflowjs`:
+[I've set up a repo with the necessary packages](https://github.com/thekevinscott/dataset-tutorial-for-image-classification) to get you going. Clone it and follow the readme instructions to install the packages and run it. In `index.js`, import Tensorflow.js with:
 
 ```
 import * as tf from '@tensorflow/tfjs';
@@ -117,7 +114,7 @@ At the heart of your machine learning model is data. Building a solid pipeline f
 There's a few common ways you'll see image data structured:
 
 1) A list of folders containing images, where the folder name is the label
-2) Images in a single folder, with images named by label (dog-1, dog-2)
+2) Images in a single folder, with images named by label (`dog-1`, `dog-2`)
 3) Images in a single folder, and a csv or other file with a mapping of label to file
 
 There's no right way to organize your images. Choose whatever format makes sense for you and your team. This dataset is organized by folder.
@@ -200,6 +197,8 @@ function batchImage(image) {
 }
 ```
 
+### The Pipeline
+
 Putting all the above functions together into a single function, we get:
 
 ```
@@ -278,7 +277,7 @@ To do this, you first train the model on labeled data - data that has already be
 
 > Supervised learning reverses this process, solving for m and b, given a set of x’s and y’s. In supervised learning, you start with many particulars — the data — and infer the general equation. And the learning part means you can update the equation as you see more x’s and y’s, changing the slope of the line to better fit the data. The equation almost never identifies the relationship between each x and y with 100% accuracy, but the generalization is powerful because later on you can use it to do algebra on new data. &mdash; [Kathryn Hume](https://hbr.org/2017/10/how-to-spot-a-machine-learning-opportunity-even-if-you-arent-a-data-scientist)
 
-When you trained the model above by dragging the `training` folder in, the model produced a training score. This indicates how many images the classifier was able to learn to successfully predict out of the training set. The second number it produced indicated how many images it could predict that it *hadn't seen before*. This second score is the one you want to optimize for (well, you want to optimize for both, but the second is harder to optimize for than the first).
+When you trained the model above by dragging the `training` folder in, the model produced a training score. This indicates how many images the classifier was able to learn to successfully predict out of the training set. The second number it produced indicated how many images it could predict that it *hadn't seen before*. This second score is the one you want to optimize for (well, you want to optimize for both, but the latter number is more applicable to novel data).
 
 We're going to train on the **colors** dataset. In the repo, you'll find a folder `data/colors` that contains:
 
@@ -364,7 +363,7 @@ Non-trainable params: 5472
 _________________________________________________________________
 ```
 
-What we're looking for is the final `Activation` layer that is not softmax ([softmax is the activation](https://en.wikipedia.org/wiki/Softmax_function) used to boil the predictions down to one of a thousand categories). That layer is `conv_pw_13_relu`. We return a pretrained model that includes everything up to that activation layer:
+What we're looking for is the final `Activation` layer that is not `softmax` ([`softmax` is the activation](https://en.wikipedia.org/wiki/Softmax_function) used to boil the predictions down to one of a thousand categories). That layer is `conv_pw_13_relu`. We return a pretrained model that includes everything up to that activation layer:
 
 ```
 function buildPretrainedModel() {
@@ -493,7 +492,7 @@ function addLabels(labels) {
 
 Now that we have our data, we can build our model. You are welcome to innovate at this stage, but I find that building on others' conventions tends to produce a good enough model in most cases. We'll look to the [Webcam Tensorflow.js example](https://github.com/tensorflow/tfjs-examples/tree/master/webcam-transfer-learning) for a well structured transfer learning model we'll reuse largely verbatim.
 
-Things worth highlighting are that the first layer matches the output shape of our pretrained model, and the final `softmax` layer corresponds to the number of labels, defined as `numberOfClasses`. 100 units on the second layer is arbitrary, and you're welcome to experiment with other numbers.
+Things worth highlighting are that the first layer matches the output shape of our pretrained model, and the final `softmax` layer corresponds to the number of labels, defined as `numberOfClasses`. 100 units on the second layer is arbitrary, and you can absolutely experiment with changing this number for your particular use case.
 
 ```
 function getModel(numberOfClasses) {
@@ -525,7 +524,7 @@ function getModel(numberOfClasses) {
 }
 ```
 
-Here are various links if you want to go into a little more depth on the model's internal parts:
+Here are various links if you want to go into a little more depth on the neural networks' internal parts:
 
 * [`tf.sequential`](https://js.tensorflow.org/api/0.12.0/#sequential)
 * [`tf.layers.flatten`](https://js.tensorflow.org/api/0.12.0/#layers.flatten)
@@ -571,7 +570,7 @@ How many epochs should you run for?
 
 Basically, you can run it until it's good, or or it's clear it's not working, or you run out of time.
 
-You should see 100% accuracy in the training above. Try modifying the code to work on the Pexels dataset. I found in my testing that my accuracy numbers would fall a little bit on this more complex dataset.
+You should see 100% accuracy in the training above. Try modifying the code to work on the [Pexels dataset](https://github.com/thekevinscott/dataset-tutorial-for-image-classification/tree/master/data/pexel-images). I found in my testing that my accuracy numbers fall a little bit with this more complex dataset.
 
 ---
 

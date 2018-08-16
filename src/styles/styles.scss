@@ -152,34 +152,6 @@ h6 {
   font-family: inherit;
 }
 
-h2 {
-  font-family: $SERIF;
-  margin: 40px 0 10px 0;
-  padding: 0;
-  font-size: 3.8rem;
-
-  .anchor {
-    margin-left: -20px;
-    padding-right: 0;
-    border: none;
-
-    &:hover {
-      border: none;
-    }
-  }
-
-  a {
-    display: block;
-    line-height: 40px;
-    padding-bottom: 10px;
-    border-bottom: none;
-
-    &:hover {
-      border-bottom: none;
-    }
-  }
-}
-
 h1 {
   font-family: $SERIF;
   color: rgba(0, 0, 0, 0.8);
@@ -214,11 +186,38 @@ h1 {
   }
 }
 
+h2 {
+  font-family: $SERIF;
+  margin: 40px 0 10px 0;
+  padding: 0;
+  font-size: 3.8rem;
+
+  .anchor {
+    margin-left: -20px;
+    padding-right: 0;
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+
+  a {
+    display: block;
+    line-height: 40px;
+    padding-bottom: 10px;
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+}
 
 h3 {
-  margin: 40px 0 20px 0;
+  margin: 50px 0 20px 0;
   font-size: 2.4rem;
-  margin-top: 30px;
+  // margin-top: 30px;
 }
 
 h4 {
@@ -240,12 +239,20 @@ p, ul, li {
   line-height: 3rem;
 }
 
-figcaption, aside, time {
+figcaption,
+aside,
+time {
   font-family: $SANS_SERIF;
 }
 
+ol,
+ul {
+  margin: 30px 0 60px 0;
+  padding-left: 50px;
+}
+
 li {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 p {
