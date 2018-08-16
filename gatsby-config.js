@@ -4,6 +4,13 @@ const fs = require('fs');
 const url = 'https://thekevinscott.com';
 const serialize = require('./src/utils/serialize');
 
+const defaultRSSFooter = `
+I send occasional emails about machine learning in Javascript and Tensorflow.js. Sign up to hear more!
+
+http://thekevinscott.com/newsletter/
+
+`;
+
 module.exports = {
   siteMetadata: {
     url,
@@ -32,7 +39,7 @@ module.exports = {
       `,
         feeds: [
           {
-            serialize,
+            serialize: serialize(defaultRSSFooter),
             query: `
             {
               allMarkdownRemark(

@@ -13,7 +13,7 @@ const getBasicQuery = (edges = []) => ({
   },
 });
 
-getBasicPost = ({
+const getBasicPost = ({
   excerpt,
   path,
   date,
@@ -31,14 +31,14 @@ getBasicPost = ({
 
 describe('serialize', () => {
   it('returns nothing for nothing', () => {
-    expect(serialize(getBasicQuery())).toEqual([]);
+    expect(serialize()(getBasicQuery())).toEqual([]);
   });
 
   it('returns correctly formatted edges', () => {
     const post = getBasicPost();
     const query = getBasicQuery([post]);
 
-    expect(serialize(query)).toEqual([{
+    expect(serialize()(query)).toEqual([{
       path: post.node.frontmatter.path,
       date: post.node.frontmatter.date,
       description: post.node.excerpt,
@@ -55,7 +55,7 @@ describe('serialize', () => {
 
     const query = getBasicQuery([post]);
 
-    expect(serialize(query)).toEqual([]);
+    expect(serialize()(query)).toEqual([]);
   });
 
   it('omits entries with no date', () => {
@@ -65,6 +65,20 @@ describe('serialize', () => {
 
     const query = getBasicQuery([post]);
 
-    expect(serialize(query)).toEqual([]);
+    expect(serialize()(query)).toEqual([]);
+  });
+
+  it('appends to posts', () => {
+    const post = getBasicPost();
+    const query = getBasicQuery([post]);
+
+    expect(serialize('foo')(query)).toEqual([{
+      path: post.node.frontmatter.path,
+      date: post.node.frontmatter.date,
+      description: post.node.excerpt,
+      url: 'urlpath',
+      guid: 'urlpath',
+      custom_elements: [{ 'content:encoded': `${post.node.html}foo` }],
+    }]);
   });
 });
