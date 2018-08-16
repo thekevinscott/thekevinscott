@@ -131,8 +131,6 @@ const getImages = (filePath) => content => {
         src.split(`${ROOT}/`).pop(),
       ].join("/");
 
-      console.log(path);
-
       return `![${alt}](${path} ${title})`;
     }
     return line;
