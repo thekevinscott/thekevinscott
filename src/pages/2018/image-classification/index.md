@@ -269,7 +269,7 @@ Now let's look at how to tune MobileNet on your specific dataset.
 
 ## Training The Model
 
-![You get a monorail!](images/monorail-2.gif "You get a monorail")
+![You get a monorail!](images/monorail.gif "You get a monorail")
 
 We want to build a model that successfully predicts **novel data**; data it hasn't seen before.
 
