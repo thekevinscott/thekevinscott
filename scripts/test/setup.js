@@ -8,9 +8,13 @@ const argv = require('yargs').argv;
 const spawn = require('../utils/spawn');
 
 const DIR = path.join(os.tmpdir(), 'jest_puppeteer_global_setup');
+const PORT = argv.PORT || process.env.PORT;
 
 const start = () => {
-  const child = spawn('gatsby', ['serve', '-p', argv.PORT]);
+  if (!PORT) {
+    throw new Error('No Port provided to command gatsby serve');
+  }
+  const child = spawn('gatsby', ['serve', '-p', PORT]);
   if (child.stdout && child.stdout.on) {
     child.stdout.on('data', data => {
       console.log(`stdout ${data}`);
