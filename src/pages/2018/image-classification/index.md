@@ -11,7 +11,7 @@ description: "I built a tool to quickly train image classification models in you
 
 Machine Learning has a reputation for demanding lots of data and powerful GPU computations. This leads many people to believe that building custom machine learning models for their specific dataset is impractical without a large investment of time and resources. In fact, you can leverage Transfer Learning in your browser to train an accurate image classifier in less than a minute with just a few labeled images.
 
-# What Is Image Classification Good For?
+# What's Image Classification Used For?
 
 Teaching a machine to classify images has a wide range of practical applications. You may have seen image classification at work in your photos app, automatically suggesting friends or locations for tagging. Image Classification can be used to [recognize cancer cells](https://www.kaggle.com/c/data-science-bowl-2017), to [recognize ships in satelitte imagery](https://www.kaggle.com/c/airbus-ship-detection), or to [automatically classify images on Yelp](https://www.kaggle.com/c/yelp-restaurant-photo-classification). It can even be used beyond the realm of images, analyzing heat maps of user activity for potential fraud, or Fourier transforms of audio waves.
 
