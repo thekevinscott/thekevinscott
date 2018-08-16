@@ -47,11 +47,8 @@ describe('/ (Home Page)', () => {
   });
 
   it('should be able to navigate directly from a blog to home', async () => {
-    console.log('1');
     await clickAndWaitForNavigation('#blogPosts > div:first-child');
-    console.log('2');
     const blogUrl = await page.url();
-    console.log('3', blogUrl);
 
     // reload the page
     await page.goto(blogUrl);

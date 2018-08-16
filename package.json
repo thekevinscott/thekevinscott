@@ -17,7 +17,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
-    "gatsby": "^1.9.261",
+    "gatsby": "^1.9.277",
     "gatsby-image": "^1.0.31",
     "gatsby-link": "^1.6.32",
     "gatsby-plugin-catch-links": "^1.0.14",
