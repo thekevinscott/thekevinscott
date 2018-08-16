@@ -53,23 +53,24 @@ const isValidImg = isValidElement([
 
 const parseQuoteLine = line => line.substring(2).replace("\\\-", "-");
 
-const getQuote = () => content => {
-  let quoteOpen = false;
-  return content.split("\n").reduce((c, line) => {
-    if (!quoteOpen && line.substring(0, 1) === ">") {
-      quoteOpen = true;
-      return `<blockquote>${c}${parseQuoteLine(line)}<br /><br />\n`;
-    } else if (quoteOpen) {
-      if (line.substring(0, 1) !== ">") {
-        quoteOpen = false;
-        return `${c}</blockquote><br />${line}\n`;
-      }
+// const getQuote = () => content => {
+//   let quoteOpen = false;
+//   return content.split("\n").reduce((c, line) => {
+//     if (!quoteOpen && line.substring(0, 1) === ">") {
+//       quoteOpen = true;
+//       return `${c}<blockquote>${c}${parseQuoteLine(line)}<br /><br />\n`;
+//     } else if (quoteOpen) {
+//       if (line.substring(0, 1) !== ">") {
+//         quoteOpen = false;
+//         return `${c}</blockquote><br />${line}\n`;
+//         return '<<<<<<';
+//       }
 
-      return `${c}${parseQuoteLine(line)}<br /><br />\n`;
-    }
-    return `${c}${line}\n`;
-  }, "");
-};
+//       return `${c}${parseQuoteLine(line)}<br /><br />\n`;
+//     }
+//     return `${c}${line}\n`;
+//   }, "");
+// };
 
 const parseImg = line => [
   '[',
@@ -145,7 +146,7 @@ const processContent = (content, {
   return compose(
     getCoverImage(frontmatter.image, filePath),
     getTitle(frontmatter.title),
-    getQuote(),
+    // getQuote(),
     getImages(filePath),
   )(content);
 };

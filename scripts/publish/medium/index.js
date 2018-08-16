@@ -1,4 +1,5 @@
 const helpers = require('../common')
+const fs = require('fs');
 const remarkMedium = require('./remark-medium')
 const client = require('./client')
 
@@ -15,8 +16,9 @@ const publishToMedium = async pathsToPosts => {
       const { frontmatter, postUrl } = transformedPost;
       console.log(
         `Creating post "${frontmatter.title}" (${postUrl}) on medium ...`
-      )
-      const response = await client.createPost(transformedPost)
+      );
+      fs.writeFileSync('/www/thekevinscott/foo.txt', transformedPost.content);
+      // const response = await client.createPost(transformedPost)
       console.log(
         `Published to medium: ${response.url}\n${JSON.stringify(response)}`
       )
