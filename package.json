@@ -77,7 +77,7 @@
     "prebuild": "npm run clean",
     "build-gatsby": "gatsby build",
     "build": "NODE_ENV=production && npm run build-gatsby && npm run copy-static",
-    "copy-static": "cp src public/src",
+    "copy-images": "rsync -zarv --prune-empty-dirs --include '*/' --include='*.jpeg' --include='*.png' --include='*.gifv' --include='*.gif' --include='*.jpg' --exclude '*'  src/pages public",
     "clean": "rm -rf .cache/* && rm -rf public",
     "deploy": "npm run build && npm run test",
     "serve": "gatsby serve",
