@@ -79,7 +79,7 @@
     "build": "NODE_ENV=production && npm run build-gatsby && npm run copy-images",
     "copy-images": "rsync -zarv --prune-empty-dirs --include '*/' --include='*.jpeg' --include='*.png' --include='*.gifv' --include='*.gif' --include='*.jpg' --exclude '*'  src/pages public/src",
     "clean": "rm -rf .cache/* && rm -rf public",
-    "deploy": "npm run build && npm run test",
+    "deploy": "npm run build",
     "serve": "gatsby serve",
     "develop": "gatsby develop",
     "lint:css": "stylelint './src/**/*.css",
