@@ -19,6 +19,9 @@ const FONTS = {
 const threshold = 340;
 const getIsOverThreshold = () => window.scrollY > threshold;
 
+interface IProps {
+}
+
 interface IState {
   headerIsVisible: boolean;
   headerIsHovered: boolean;
@@ -32,13 +35,17 @@ class TemplateWrapper extends Component {
     startMouse: null,
   };
 
-  constructor(props) {
+  constructor(props: IProps) {
     super(props);
 
-    this.state = { headerIsVisible: false };
+    this.state = {
+      headerIsVisible: false,
+      headerIsHovered: false,
+      startMouse: null,
+    };
   }
 
-  handleScroll = e => {
+  handleScroll = (e: any) => {
     this.setState({
       headerIsHovered: false,
       startMouse: null,
