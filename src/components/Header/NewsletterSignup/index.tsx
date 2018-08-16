@@ -4,8 +4,14 @@ import SubscribeForm, {
   LEAD_MAGNET_DATASET,
 } from 'components/SubscribeForm';
 
-const NewsletterSignup = ({
+interface IProps {
+  visible: boolean;
+  subscriberTags?: any;
+}
+
+const NewsletterSignup: React.SFC<IProps> = ({
   visible,
+  subscriberTags,
 }) => (
   <div className={`${styles.container} ${visible ? styles.visible : ''}`}>
     <div className={styles.innerContainer}>
@@ -14,6 +20,10 @@ const NewsletterSignup = ({
           form={LEAD_MAGNET_DATASET}
           descriptionPlacement="above"
           showImage={false}
+          subscriberTags={{
+            ...(subscriberTags || {}),
+            position: 'header',
+          }}
         />
       </div>
     </div>

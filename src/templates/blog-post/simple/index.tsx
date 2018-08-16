@@ -60,7 +60,13 @@ const Simple: React.SFC<IProps> = ({
 
   return (
     <React.Fragment>
-      <Header visible={visible} />
+      <Header
+        visible={visible}
+        subscriberTags={getSubscriberTags({
+          post,
+          siteMetadata,
+        })}
+      />
       <div className={styles.container}>
         {writeMetaTags({ post, siteMetadata })}
         <ArticleHeader
@@ -80,8 +86,8 @@ const Simple: React.SFC<IProps> = ({
           path={path}
           form={form}
           subscriberTags={getSubscriberTags({
-          post,
-          siteMetadata,
+            post,
+            siteMetadata,
           })}
         />
       </div>

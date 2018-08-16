@@ -9,6 +9,7 @@ import hoverLogo from 'assets/logo-hover.svg';
 
 interface IProps {
   visible: boolean;
+  subscriberTags?: any;
 }
 
 interface IState {
@@ -29,6 +30,7 @@ class Header extends Component<IProps, IState> {
   render() {
     const {
       visible,
+      subscriberTags,
     } = this.props;
 
     return (
@@ -77,7 +79,10 @@ class Header extends Component<IProps, IState> {
           <div className={styles.flex} />
           <div className={styles.right} />
         </div>
-        <NewsletterSignup visible={this.state.newsletter} />
+        <NewsletterSignup
+          visible={this.state.newsletter}
+          subscriberTags={subscriberTags}
+        />
       </div>
     );
   }

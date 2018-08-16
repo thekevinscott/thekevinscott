@@ -16,7 +16,10 @@ export default ({
         <SubscribeForm
           descriptionPlacement="above"
           form={form}
-          subscriberTags={subscriberTags}
+          subscriberTags={{
+            ...(subscriberTags || {}),
+            position: 'footer',
+          }}
         />
       </div>
       <div className={styles.printFooter}>
