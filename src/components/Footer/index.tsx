@@ -18,7 +18,7 @@ export default ({
           form={form}
           subscriberTags={{
             ...(subscriberTags || {}),
-            position: 'footer',
+            formPosition: 'footer',
           }}
         />
       </div>

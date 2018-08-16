@@ -22,7 +22,7 @@ const NewsletterSignup: React.SFC<IProps> = ({
           showImage={false}
           subscriberTags={{
             ...(subscriberTags || {}),
-            position: 'header',
+            formPosition: 'header',
           }}
         />
       </div>
