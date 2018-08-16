@@ -197,7 +197,7 @@ function batchImage(image) {
 }
 ```
 
-### The Pipeline
+### The Final Pipeline
 
 Putting all the above functions together into a single function, we get:
 
