@@ -5,6 +5,7 @@ const url = 'https://thekevinscott.com';
 const serialize = require('./src/utils/serialize');
 
 const defaultRSSFooter = `
+<p>------------------------</p>
 <p>I send occasional emails about machine learning in Javascript and Tensorflow.js. Sign up to hear more!</p>
 
 <p><a href="https://thekevinscott.com/newsletter/">thekevinscott.com/newsletter/</a></p>
