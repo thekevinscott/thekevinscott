@@ -125,15 +125,11 @@ const getImages = (filePath) => content => {
         src,
       } = parseImg(line);
 
-      console.log('src', src);
-
       const path = [
         ROOT,
         ...filePath.split("/").slice(0, -1),
-        src.split("/").pop(),
+        src.split(`${ROOT}/`).pop(),
       ].join("/");
-
-      console.log('path', path);
 
       return `![${alt}](${path} ${title})`;
     }
