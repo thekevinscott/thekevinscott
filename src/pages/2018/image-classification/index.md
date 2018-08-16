@@ -39,7 +39,7 @@ The model is beginning to recognize generic features, including lines, circles, 
 
 The vast majority of images share general features such as lines and circles. Many share higher level features, things like an "eye" or a "nose". This allows you to reuse the existing training that's already been done, and tune just the last few layers on your specific dataset, which is faster and requires less data than training from scratch.
 
-How much less data? **It depends** is the unfortunate answer. How different your data is from your pre-trained model, how compelx or variable your data is, and other factors can all play into your accuracy. With the example above I got to 100% accuracy with 30 images. For something like dogs and cats, just a handful of images is enough to get good results. [Adrian G has put together a more rigorous analysis on his blog](https://medium.com/@bingobee01/how-much-data-to-you-need-ba834d074f3a).
+How much less data? **It depends**. How different your data is from your pre-trained model, how complex or variable your data is, and other factors can all play into your accuracy. With the example above I got to 100% accuracy with 30 images. For something like dogs and cats, just a handful of images is enough to get good results. [Adrian G has put together a more rigorous analysis on his blog](https://medium.com/@bingobee01/how-much-data-to-you-need-ba834d074f3a).
 
 So, it depends on your dataset, but it's probably less than you think.
 
