@@ -7,3 +7,7 @@ tags: ["NLP", "natural language", "ulmnet", "artificial intelligence", "deep lea
 ---
 
 https://distill.pub/2017/aia/
+
+http://nlp.fast.ai/classification/2018/05/15/introducting-ulmfit.html
+
+https://thegradient.pub/nlp-imagenet/

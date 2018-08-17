@@ -4,12 +4,12 @@ date: "2018-08-16 11:30:00.000 EST"
 title: "Image Classification in the Browser with Javascript"
 image: "cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/vWI1kTcMcDI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Alex Block</a> on <a href='https://unsplash.com'>Unsplash</a>"
-tags: ["image classification", "artificial intelligence", "javascript", "imagenet", "mobilenet", "deep learning", "machine learning", "tensorflow.js"]
+tags: ["image classification", "artificial intelligence", "javascript", "imagenet", "mobilenet", "deep learning", "machine learning", "tensorflow.js", "web"]
 description: "Quickly train image classification models in your browser with just a few labeled images. Build your own with Javascript."
 
 ---
 
-Machine Learning has a reputation for demanding lots of data and powerful GPU computations. This leads many people to believe that building custom machine learning models for their specific dataset is impractical without a large investment of time and resources. In fact, you can leverage Transfer Learning in your browser to train an accurate image classifier in less than a minute with just a few labeled images.
+Machine Learning has a reputation for demanding lots of data and powerful GPU computations. This leads many people to believe that building custom machine learning models for their specific dataset is impractical without a large investment of time and resources. In fact, you can leverage Transfer Learning on the web to train an accurate image classifier in less than a minute with just a few labeled images.
 
 # What's Image Classification Used For?
 
