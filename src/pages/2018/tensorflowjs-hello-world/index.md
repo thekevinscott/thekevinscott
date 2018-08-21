@@ -9,23 +9,19 @@ form: "LEAD_MAGNET_DATASET"
 image_credit: "Kevin Scott"
 ---
 
-Up until fairly recently, just getting started writing your first line of machine learning code required a hefty upfront investment in time and money. For example, just last year [I built my own PC specifically for machine learning](/deep-learning-cryptocurrency-pc-1-hardware/). I researched the parts and assembled it myself. Just doing that cost me around $1600 and 30 hours of setup time, and I'm still trying to wrangle the computer's configuration, libraries, and make it work with various frameworks.
+Up until fairly recently, just getting started writing your first line of machine learning code required a  hefty upfront investment in time and money. For example, just last year [I built my own PC specifically for machine learning](http://thekevinscott.com/deep-learning-cryptocurrency-pc-1-hardware/). I researched the parts and assembled it myself. Just doing that cost me around $1600 and 30 hours of setup time, and I'm still trying to wrangle the computer's configuration, libraries, and make it work with various frameworks.
 
-The good news is that getting started with machine learning today has never been easier. In fact, if you're reading this it means you already have the tools you need to dive right in. **You can now learn the machine learning [framework Tensorflow right in your browser, using Javascript.](/reasons-for-machine-learning-in-the-browser/)**
+The good news is that getting started with machine learning today has never been easier. In fact, if you're reading this it means you already have the tools you need to dive right in. **You can now learn the machine learning framework Tensorflow right in your browser, using Javascript.**
 
-On the software side there were an equally daunting number of tools to master before I could even get the most basic examples running: Jupyter notebooks, numpy, scikit, pandas.
+![Google I/O 2018](google-io.jpg)
 
-I come from the Javascript world, and I like it. If I could have gotten started with Machine Learning by starting with Javascript, I would have jumped at the chance. Today, that's possible.
+[Tensorflow.js was released](https://www.youtube.com/watch?v=OmofOvMApTU) at Google's I/O 2018. [Running machine learning in the browser opens up a world of use cases](http://thekevinscott.com/reasons-for-machine-learning-in-the-browser/), and is a great opportunity to use Javascript to learn about machine learning concepts and frameworks.
 
-# Tensorflow.js
-![Google I/O 2018](google-io.jpg "Google I/O 2018 by Bruno Sanchez-Andrade Nuño https://www.flickr.com/photos/nasonurb/4649268142/in/photolist-85QHry-4RMuLP-6rHwUw-4RRzRS-8434Pj-83YVXe-4FLYVv-83SpSP-6TYsho-cww2Ej-oUgsLJ-6rwVWy-84KqdW-cvqdhq-TDNAMg-6TUr7z-oDPfkP-iJXS7Q-bDUXd-6TUqA4-83VSYq-6TYprJ-6U1qaL-6TWpTt-9Jo26U-6U1pQ5-gB66bX-dzG2FW-6TYmW9-83SEEc-dpkJrd-6TYnwA-qMXaBP-6TUotz-6TUmbi-jRSgF-iK1Pig-6TYwDs-GqG1if-83sPNj-oWgxXQ-6TUq68-6TYmgb-6rDpex-qMMZQZ-4RMiFv-9Gwi29-4RMJf2-cocCNf-4RRvyL")
-
-Google [released Tensorflow.js](https://www.youtube.com/watch?v=OmofOvMApTU) at the Google I/O 2018. There are [some huge use cases for why it makes sense to run machine learning in a browser](/reasons-for-machine-learning-in-the-browser/). In addition, it's a great opportunity to use Javascript to explore machine learning concepts without having to install a thing.
-
-If you're new to Javascript or it's been a while since you've written any front-end code, some of the recent changes in the Javascript ecosystem might throw you for a loop. I'll list the basics of modern Javascript you need to get the Tensorflow.js examples running, and start exploring machine learning.
+If you're new to Javascript or it's been a while since you've written any frontend code, some of the recent languages changes might throw you for a loop. I'll walk through the basics of modern Javascript you'll need to get the basic Tensorflow.js examples running.
 
 # Setup Tutorial
-Let me repeat something: **all you need to run Tensorflow.js is your web browser**. It's easy to lose sight amongst all the talk of transpilers, bundlers, and packagers, but all you need is a web browser to run Tensorflow.js. The code you develop locally is the same code you'll be able to ship to your users to run on their browsers.
+
+**All you need to run Tensorflow.js is your web browser**. It's easy to lose sight amongst all the talk of transpilers, bundlers, and packagers, but all you need is a web browser to run Tensorflow.js. The code you develop locally is the same code you'll be able to ship to your users to run on their browsers.
 
 Let's see three quick ways to get the Hello World example working without installing anything. I'll be using the [Getting Started code](https://js.tensorflow.org/#getting-started) from the Tensorflow.js documentation.
 

@@ -4,7 +4,7 @@ date: "2018-08-16 11:30:00.000 EST"
 title: "Image Classification in the Browser with Javascript"
 image: "cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/vWI1kTcMcDI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Alex Block</a> on <a href='https://unsplash.com'>Unsplash</a>"
-tags: ["image classification", "artificial intelligence", "javascript", "imagenet", "mobilenet", "deep learning", "machine learning", "tensorflow.js", "web"]
+tags: ["tensorflowjs examples", "image classification", "artificial intelligence", "javascript", "imagenet", "mobilenet", "deep learning", "machine learning", "tensorflow.js", "web"]
 description: "Quickly train image classification models in your browser with just a few labeled images. Build your own with Javascript."
 
 ---
