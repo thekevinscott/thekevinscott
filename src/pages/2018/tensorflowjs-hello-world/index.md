@@ -13,7 +13,7 @@ Up until fairly recently, just getting started writing your first line of machin
 
 The good news is that getting started with machine learning today has never been easier. In fact, if you're reading this it means you already have the tools you need to dive right in. **You can now learn the machine learning framework Tensorflow right in your browser, using Javascript.**
 
-![Google I/O 2018](google-io.jpg)
+![Google I/O 2018](google-io.png)
 
 [Tensorflow.js was released](https://www.youtube.com/watch?v=OmofOvMApTU) at Google's I/O 2018. [Running machine learning in the browser opens up a world of use cases](http://thekevinscott.com/reasons-for-machine-learning-in-the-browser/), and is a great opportunity to use Javascript to learn about machine learning concepts and frameworks.
 
