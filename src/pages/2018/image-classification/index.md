@@ -15,7 +15,7 @@ Machine Learning has a reputation for demanding lots of data and powerful GPU co
 
 Teaching a machine to classify images has a wide range of practical applications. You may have seen image classification at work in your photos app, automatically suggesting friends or locations for tagging. Image Classification can be used to [recognize cancer cells](https://www.kaggle.com/c/data-science-bowl-2017), to [recognize ships in satelitte imagery](https://www.kaggle.com/c/airbus-ship-detection), or to [automatically classify images on Yelp](https://www.kaggle.com/c/yelp-restaurant-photo-classification). It can even be used beyond the realm of images, analyzing heat maps of user activity for potential fraud, or Fourier transforms of audio waves.
 
-I recently [released an open source tool](https://thekevinscott.github.io/ml-classifier-ui) to quickly train image classification models in your browser. Here's how it works:
+I recently [released an open source tool](https://github.com/thekevinscott/ml-classifier) to quickly train image classification models in your browser. Here's how it works:
 
 ![A demo of classifying images](images/ml-classifier-example.gif)
 
