@@ -1,9 +1,9 @@
 ---
-path: "/javascript-internationalization/"
 date: "2015-07-23T07:00:00.000Z"
 description: "How to do i18n with Javascript"
-title: "Javascript Internationalization"
+path: "/javascript-internationalization/"
 tags: ["javascript", "internationalization"]
+title: "Javascript Internationalization"
 ---
 
 I recently did some research on Javascript internationalization for a (mostly)

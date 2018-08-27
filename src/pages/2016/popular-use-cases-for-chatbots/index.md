@@ -1,10 +1,9 @@
 ---
-path: "/popular-use-cases-for-chatbots/"
 date: "2016-10-18T07:00:00.000Z"
-description: "How chatbots outperform apps, websites."
-title: "Popular Use Cases for Chatbots"
-tags: ["chatbots", "use cases", "artificial intelligence"]
 description: "What are some ways we can best leverage bots to help our customers?"
+path: "/popular-use-cases-for-chatbots/"
+tags: ["chatbots", "use cases", "artificial intelligence"]
+title: "Popular Use Cases for Chatbots"
 ---
 
 ![David Marcus talking about bots](marcus.jpeg)

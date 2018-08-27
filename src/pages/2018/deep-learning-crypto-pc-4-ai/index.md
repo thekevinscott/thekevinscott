@@ -1,9 +1,10 @@
 ---
 path: "/deep-learning-cryptocurrency-pc-4-ai/"
 date: "2018-01-01T09:00:00.000Z"
-title: "Building a Deep Learning / Cryptocurrency PC (#4): AI"
+description: "How to set up your Linux box for deep learning and artificial intelligence"
 image: "cover.png"
 tags: ["artificial intelligence", "deep learning", "machine learning", "PC", "pytorch", "tensorflow", "gpu"]
+title: "Building a Deep Learning / Cryptocurrency PC (#4): AI"
 ---
 
 Among the buzzwords of this past year, two tower above the rest: deep learning and cryptocurrencies. It seems that everyone I know (in tech) wants to learn these things. And guess what — so do I! So much so that I'm building my own computer in order to facilitate that learning.
