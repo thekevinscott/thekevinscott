@@ -1,10 +1,10 @@
 ---
-path: "/tensors-in-javascript/"
 date: "2018-08-07 14:00:00.000 EST"
-title: "Tensors in JavaScript"
+description: "Tensors have data, dimension, shape, type, and describe valid transformations. They can be built with arrays or Typed Arrays in Javascript."
+path: "/tensors-in-javascript/"
 image: "cover.png"
 tags: ["tensors", "Tensorflow.js", "Javascript", "TypedArrays"]
-description: "Tensors have data, dimension, shape, type, and describe valid transformations. They can be built with arrays or Typed Arrays in Javascript."
+title: "Tensors in JavaScript"
 ---
 
 At the heart of most Machine Learning models are numbers. The special data type that undergirds all of the mathematical transformations you perform is called a **Tensor**.

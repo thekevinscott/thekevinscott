@@ -1,12 +1,12 @@
 ---
-path: "/common-patterns-for-analyzing-data/"
 date: "2018-03-12T07:00:00.000Z"
 description: "An analysis of several different data analyses, and a distillation of best practices understanding datasets"
-title: "Common Patterns for Analyzing Data"
 image: "images/cover.jpg"
-layout: "grid"
 image_credit: "Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Samuel Zeller</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>"
+layout: "grid"
+path: "/common-patterns-for-analyzing-data/"
 tags: ["kaggle", "eda", "deep learning", "exploratory data analysis", "machine learning", "data science", "statistics"]
+title: "Common Patterns for Analyzing Data"
 ---
 
 Data is often messy, and a key step to building an accurate model is a thorough understanding of the data you're working with.

@@ -1,12 +1,12 @@
 ---
-path: "/tensorflowjs-hello-world/"
 date: "2018-05-17 10:00:00.000 EST"
-title: "Hello World with Tensorflow.js"
-image: "cover.jpg"
-tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "setup tutorial", "javascript"]
 description: "All you need to run Tensorflow.js is a web browser. Learn the basic Javascript concepts you need to get to Hello World"
 form: "LEAD_MAGNET_DATASET"
+image: "cover.jpg"
 image_credit: "Kevin Scott"
+path: "/tensorflowjs-hello-world/"
+tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "setup tutorial", "javascript"]
+title: "Hello World with Tensorflow.js"
 ---
 
 Up until fairly recently, just getting started writing your first line of machine learning code required a  hefty upfront investment in time and money. For example, just last year [I built my own PC specifically for machine learning](http://thekevinscott.com/deep-learning-cryptocurrency-pc-1-hardware/). I researched the parts and assembled it myself. Just doing that cost me around $1600 and 30 hours of setup time, and I'm still trying to wrangle the computer's configuration, libraries, and make it work with various frameworks.

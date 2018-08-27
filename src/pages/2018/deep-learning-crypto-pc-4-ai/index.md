@@ -1,8 +1,8 @@
 ---
-path: "/deep-learning-cryptocurrency-pc-4-ai/"
 date: "2018-01-01T09:00:00.000Z"
 description: "How to set up your Linux box for deep learning and artificial intelligence"
 image: "cover.png"
+path: "/deep-learning-cryptocurrency-pc-4-ai/"
 tags: ["artificial intelligence", "deep learning", "machine learning", "PC", "pytorch", "tensorflow", "gpu"]
 title: "Building a Deep Learning / Cryptocurrency PC (#4): AI"
 ---

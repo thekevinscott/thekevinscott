@@ -1,9 +1,10 @@
 ---
-path: "/nlp-classification/"
 date: "2029"
-title: "NLP"
+description: ""
 image: "cover.jpg"
+path: "/nlp-classification/"
 tags: ["NLP", "natural language", "ulmnet", "artificial intelligence", "deep learning", "machine learning", "tensorflow.js"]
+title: "NLP"
 ---
 
 https://distill.pub/2017/aia/

@@ -1,13 +1,13 @@
 ---
-path: "/dealing-with-mnist-image-data-in-tensorflowjs/"
 date: "2018-05-29 10:00:00.000 EST"
-title: "Dealing with MNIST image data in Tensorflow.js"
-image: "cover.jpg"
-tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "image data"]
 description: "Manipulating data is a crucial step step for any machine learning problem. Walk through the MNIST example in Tensorflow.js (0.12.0)"
-layout: ""
 form: "LEAD_MAGNET_DATASET"
+image: "cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/ajpU8UmfQAM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Hedi Alija</a>"
+layout: ""
+path: "/dealing-with-mnist-image-data-in-tensorflowjs/"
+tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "image data"]
+title: "Dealing with MNIST image data in Tensorflow.js"
 ---
 
 > There's the joke that 80 percent of data science is cleaning the data and 20 percent is complaining about cleaning the data ... data cleaning is a much higher proportion of data science than an outsider would expect. Actually training models is typically a relatively small proportion (less than 10 percent) of what a machine learner or data scientist does.

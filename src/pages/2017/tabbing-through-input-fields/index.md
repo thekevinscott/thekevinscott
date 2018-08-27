@@ -1,12 +1,12 @@
 ---
-path: "/tabbing-through-input-fields/"
 date: "2017-05-05T09:00:00.000Z"
-title: "Tabbing Through Input Fields"
+description: "Improve accessibility by enabling tabbing through input fields in React Native"
 image: "cover.jpg"
 image_height: 600
 image_credit: "<a href='https://unsplash.com/photos/ICW6QYOcdlg'>Galymzhan Abdugalimov</a>"
+path: "/tabbing-through-input-fields/"
 tags: ["react native", "tabbing"]
-description: "Improve accessibility by enabling tabbing through input fields in React Native"
+title: "Tabbing Through Input Fields"
 ---
 
 On the web, it’s common to tab through forms, an intuitive and [UX-friendly
