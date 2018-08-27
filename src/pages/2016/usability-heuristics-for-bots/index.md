@@ -1,11 +1,10 @@
 ---
-path: /usability-heuristics-for-bots/
 date: 2016-05-03T10:06:00.000Z
-description: "We review Nielsen’s seminal work on user experience, but can we apply it to bots?"
-title: "Usability Heuristics For Bots"
-image: "images/cover.jpeg"
-tags: ["usability heuristics", "chatbots", "ux", "ux design"]
 description: "A heuristic evaluation using Nielsen's heuristics for bots, and a number of new heuristics to use"
+image: "images/cover.jpeg"
+path: /usability-heuristics-for-bots/
+title: "Usability Heuristics For Bots"
+tags: ["usability heuristics", "chatbots", "ux", "ux design"]
 ---
 
 In 1990, Jakob Nielsen [developed 10 usability

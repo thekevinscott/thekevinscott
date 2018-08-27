@@ -1,10 +1,10 @@
 ---
-path: "/testing-chatbots-how-to-ensure-a-bot-says-the-right-thing-at-the-right-time/"
 date: "2016-07-20T09:00:00.000Z"
-title: "Testing Chatbots: How to Ensure a Bot Says the Right Thing at the Right Time"
-image: "cover.png"
-tags: ["chatbots", "unit tests", "integration tests"]
 description: "Integration and unit tests for bots, quickly and easily"
+image: "cover.png"
+path: "/testing-chatbots-how-to-ensure-a-bot-says-the-right-thing-at-the-right-time/"
+tags: ["chatbots", "unit tests", "integration tests"]
+title: "Testing Chatbots: How to Ensure a Bot Says the Right Thing at the Right Time"
 ---
 
 I love tests. I used to abhor them, but I’ve been burned enough times by enough codebases to appreciate a robust testing suite, and its ability to ensure well functioning code and developer sanity.

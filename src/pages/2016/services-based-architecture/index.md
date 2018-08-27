@@ -1,10 +1,9 @@
 ---
-path: "/we-moved-to-a-services-based-architecture-while-building-our-bot-and-it-is-awesome/"
 date: "2016-07-12T07:00:00.000Z"
-description: "Arguments for using microservices"
-title: "We moved to a services-based architecture while building our Bot and it is awesome"
-tags: ["chatbots", "microservices", "node.js"]
 description: "Building a bot using a set of microservices."
+path: "/we-moved-to-a-services-based-architecture-while-building-our-bot-and-it-is-awesome/"
+tags: ["chatbots", "microservices", "node.js"]
+title: "We moved to a services-based architecture while building our Bot and it is awesome"
 ---
 
 The first draft of Emoji Salad, our Emoji Pictionary bot, was a monolithic

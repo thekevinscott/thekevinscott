@@ -1,11 +1,10 @@
 ---
-path: /programming-a-bot-with-facebook-messenger/
 date: 2016-04-16T10:06:00.000Z
-description: "Let’s create a simple WeatherBot that tells you the weather in some given location."
-title: "Programming A Bot With Facebook Messenger"
-image: "cover.jpeg"
-tags: ["chatbot", "node.js", "facebook", "facebook messenger"]
 description: "A step by step walkthrough of building a bot on Facebook Messenger"
+image: "cover.jpeg"
+path: /programming-a-bot-with-facebook-messenger/
+tags: ["chatbot", "node.js", "facebook", "facebook messenger"]
+title: "Programming A Bot With Facebook Messenger"
 ---
 
 If you watched the [F8 conference](https://www.fbf8.com/) this week you’ll know
