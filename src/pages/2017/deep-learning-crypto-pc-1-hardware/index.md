@@ -4,6 +4,7 @@ date: "2017-09-25T09:00:00.000Z"
 title: "Building a Deep Learning / Cryptocurrency PC (#1): The Hardware"
 image: "cover.jpeg"
 tags: ["artificial intelligence", "deep learning", "machine learning", "cryptocurrencies", "bitcoin"]
+description: "How to select hardware and build a PC"
 ---
 
 <span class="dropcap">A</span>mong the buzzwords in the tech world of 2017, two tower above the rest: **deep

@@ -4,6 +4,7 @@ date: "2017-12-10T09:00:00.000Z"
 title: "Building a Deep Learning / Cryptocurrency PC (#3): Mining"
 image: "cover.jpg"
 tags: ["bitcoin", "cryptocurrency", "ethereum", "blockchain", "mining"]
+description: "How to set up your Linux box for cryptocurrency mining"
 ---
 Among the buzzwords in the tech world of 2017, two tower above the rest: **deep
 learning** and **cryptocurrencies**. It seems that everyone I know (in tech)

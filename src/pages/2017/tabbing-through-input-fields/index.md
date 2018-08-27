@@ -6,6 +6,7 @@ image: "cover.jpg"
 image_height: 600
 image_credit: "<a href='https://unsplash.com/photos/ICW6QYOcdlg'>Galymzhan Abdugalimov</a>"
 tags: ["react native", "tabbing"]
+description: "Improve accessibility by enabling tabbing through input fields in React Native"
 ---
 
 On the web, it’s common to tab through forms, an intuitive and [UX-friendly

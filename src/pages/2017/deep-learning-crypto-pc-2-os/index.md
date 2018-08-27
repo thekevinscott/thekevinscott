@@ -4,6 +4,7 @@ date: "2017-10-06T09:00:00.000Z"
 title: "Building a Deep Learning / Cryptocurrency PC (#2): The OS"
 image: "cover.jpeg"
 tags: ["cryptocurrency", "artificial intelligence", "ubuntu", "pc"]
+description: "How to set up your Linux box with Ubuntu"
 ---
 Among the buzzwords in the tech world of 2017, two tower above the rest: **deep
 learning** and **cryptocurrencies**. It seems that everyone I know (in tech)

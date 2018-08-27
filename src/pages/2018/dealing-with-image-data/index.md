@@ -4,7 +4,7 @@ date: "2018-05-29 10:00:00.000 EST"
 title: "Dealing with MNIST image data in Tensorflow.js"
 image: "cover.jpg"
 tags: ["tensorflow.js", "tensorflow", "artificial intelligence", "deep learning", "machine learning", "image data"]
-description: "Manipulating data is a crucial step step for any machine learning problem. This article is a line-by-line walk through of the MNIST example for Tensorflow.js (0.11.1)"
+description: "Manipulating data is a crucial step step for any machine learning problem. Walk through the MNIST example in Tensorflow.js (0.12.0)"
 layout: ""
 form: "LEAD_MAGNET_DATASET"
 image_credit: "Photo by <a href='https://unsplash.com/photos/ajpU8UmfQAM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Hedi Alija</a>"

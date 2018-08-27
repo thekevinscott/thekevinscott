@@ -5,6 +5,7 @@ description: "Let’s create a simple WeatherBot that tells you the weather in s
 title: "Programming A Bot With Facebook Messenger"
 image: "cover.jpeg"
 tags: ["chatbot", "node.js", "facebook", "facebook messenger"]
+description: "A step by step walkthrough of building a bot on Facebook Messenger"
 ---
 
 If you watched the [F8 conference](https://www.fbf8.com/) this week you’ll know

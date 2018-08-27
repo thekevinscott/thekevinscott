@@ -5,6 +5,7 @@ description: "We review Nielsen’s seminal work on user experience, but can we 
 title: "Usability Heuristics For Bots"
 image: "images/cover.jpeg"
 tags: ["usability heuristics", "chatbots", "ux", "ux design"]
+description: "A heuristic evaluation using Nielsen's heuristics for bots, and a number of new heuristics to use"
 ---
 
 In 1990, Jakob Nielsen [developed 10 usability

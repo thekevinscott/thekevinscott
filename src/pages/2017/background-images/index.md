@@ -6,6 +6,7 @@ image: "cover.jpeg"
 image_height: 700
 image_credit: "Patrick Tomasso"
 tags: ["react native", "images"]
+description: "Five different layouts a background image can take with React Native"
 ---
 
 A [common question](http://stackoverflow.com/questions/29322973/whats-the-best-way-to-add-a-full-screen-background-image-in-react-native) amongst React Native developers is how to put a background image on a view.

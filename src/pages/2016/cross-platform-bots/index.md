@@ -5,6 +5,7 @@ description: "Should bots be consistent across platforms, or not?"
 title: "Cross Platform Bots"
 image: "cover.jpeg"
 tags: ["chatbots", "ux", "design"]
+description: "Should bots be consistent across platforms, or not?"
 ---
 
 In 2007, when Apple released the iPhone, Jobs made a controversial decision not
@@ -49,10 +50,7 @@ eloquently](https://www.taoeffect.com/blog/2010/04/steve-jobs-response-on-sectio
 > developer ultimately produces sub-standard apps and hinders the progress of the
 platform.
 
-Should bots be consistent across platforms, or not? To answer that, let’s see
-what the major differences between messaging platforms are. From there we can
-see if there’s some grand unified “theory of everything” for how to approach bot
-design across platforms.
+Should bots be consistent across platforms, or not? To answer that, let’s see what the major differences between messaging platforms are. From there we can see if there’s some grand unified “theory of everything” for how to approach bot design across platforms.
 
 *****
 
