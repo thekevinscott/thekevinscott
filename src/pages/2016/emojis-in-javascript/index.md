@@ -1,11 +1,10 @@
 ---
 path: "/emojis-in-javascript/"
 date: "2016-11-05T07:00:00.000Z"
-description: "This article is a collection of the research I did while getting up to speed on emoji in Javascript."
+description: "The inner workings of Unicode, how emoji are represented in JavaScript, and a regular expression for parsing emoji."
 title: "Emojis in Javascript"
 image: "cover.png"
 tags: ["emoji", "javascript", "unicode", "Programming"]
-description: "The inner workings of Unicode, how emoji are represented in JavaScript, and a regular expression for parsing emoji."
 ---
 
 Parsing emoji in Javascript is… not easy.
