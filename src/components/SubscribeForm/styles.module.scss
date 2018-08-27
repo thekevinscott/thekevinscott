@@ -5,6 +5,27 @@
   margin: 0 auto;
   padding-bottom: 100px;
 
+  input {
+    max-width: 100%;
+  }
+
+  &.compact {
+    h3 {
+      font-size: 1.6rem;
+      display: none;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: rgba(0, 0, 0, 0.6);
+      margin-bottom: 10px;
+    }
+
+    .description {
+      margin-bottom: 10px;
+    }
+  }
+
   @media screen and (max-width: $tablet) {
     padding-bottom: 20px;
   }

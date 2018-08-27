@@ -13,6 +13,44 @@
     border-radius: 0;
   }
 
+  &.compact {
+    .inputs {
+      display: flex;
+      margin: 0;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+
+      .input {
+        flex: 1;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .submit {
+        flex: 0;
+      }
+
+      input {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        border: none;
+        font-size: 1.4rem;
+
+        &[type=submit] {
+          padding: 10px;
+          border: none;
+
+          &:disabled {
+            background: rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+  }
+
   input {
     font-size: 1.6rem;
     margin: 20px 0;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import * as styles from './styles.module.scss';
@@ -51,6 +52,7 @@ class Form extends Component {
       headline,
       action,
       method,
+      compact,
       children,
       ...rest,
     } = this.props;
@@ -65,7 +67,9 @@ class Form extends Component {
 
     return (
       <form
-        className={styles.form}
+        className={classNames(styles.form, {
+          [styles.compact]: compact,
+        })}
         {...rest}
         action={action}
         method={method || 'post'}
@@ -75,25 +79,32 @@ class Form extends Component {
           <h3 data-drip-attribute="headline">{headline}</h3>
         )}
         {children}
-        {inputs.map(input => (
-          <div key={input.name}>
+        <div className={styles.inputs}>
+          {inputs.map(input => (
+          <div
+            className={classNames(styles.input, {
+              [styles.hidden]: input.type === 'hidden',
+            })}
+            key={input.name}
+          >
+              <input
+                type={input.type || 'text'}
+                id={input.id}
+                name={input.name}
+                placeholder={input.placeholder}
+                value={this.state.values[input.name]}
+                onChange={this.handleChange}
+              />
+            </div>
+          ))}
+          <div className={styles.submit}>
             <input
-              type={input.type || 'text'}
-              id={input.id}
-              name={input.name}
-              placeholder={input.placeholder}
-              value={this.state.values[input.name]}
-              onChange={this.handleChange}
+              type="submit"
+              value="Sign Up"
+              data-drip-attribute="sign-up-button"
+              disabled={disabled}
             />
           </div>
-        ))}
-        <div>
-          <input
-            type="submit"
-            value="Sign Up"
-            data-drip-attribute="sign-up-button"
-            disabled={disabled}
-          />
         </div>
       </form>
     );

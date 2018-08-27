@@ -11,6 +11,7 @@ a.subscribeButton {
 }
 
 .container {
+  display: none;
   height: $HEADER_HEIGHT;
   position: fixed !important;
   top: 0;

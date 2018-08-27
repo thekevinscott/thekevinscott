@@ -73,10 +73,10 @@
 
 .content {
   width: 100%;
-  max-width: $contentWidth;
   box-sizing: border-box;
   position: relative;
   word-break: break-word;
+  max-width: $contentWidth;
 
   @media print {
     max-width: none;
@@ -84,6 +84,43 @@
 
   @media screen and (max-width: $tablet) {
     padding: 0 20px;
+  }
+
+  @media screen and (min-width: $giant) {
+    max-width: $contentWidth + $sidebarWidth;
+    display: flex;
+    flex-direction: row;
+
+    // .children {
+    //   margin-right: $sidebarWidth;
+    // }
+  }
+
+  $SIDEBAR_DURATION: 0.4s;
+
+  .children {
+    max-width: $contentWidth;
+    transition-duration: 0.8s;
+  }
+
+  .sidebarContainer {
+    width: $sidebarWidth;
+    position: relative;
+    margin-left: 40px;
+  }
+
+  .sidebar {
+    position: absolute;
+    width: $sidebarWidth;
+    // left: 780px + 40px;
+
+    &.fixed {
+      position: fixed;
+    }
+
+    @media screen and (max-width: $giant) {
+      display: none;
+    }
   }
 
   img {
@@ -225,6 +262,7 @@
 .container {
   display: flex;
   max-width: 100%;
+  transition-duration: 0.4s;
   overflow-x: hidden;
   flex: 1;
   flex-direction: column;

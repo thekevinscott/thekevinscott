@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Link from 'gatsby-link';
 import Form from 'components/Form';
 import * as styles from './styles.module.scss';
@@ -22,6 +23,16 @@ const writeSubscriberTags = subscriberTags => Object.entries(subscriberTags).map
   value,
 }));
 
+export interface ISubscribeFormProps {
+  form?: string;
+  subscriberTags: {
+    [index: string]: string;
+  }
+  descriptionPlacement: string;
+  showImage?: boolean;
+  compact?: boolean;
+}
+
 class SubscribeForm extends Component {
   constructor(props) {
     super(props);
@@ -36,6 +47,7 @@ class SubscribeForm extends Component {
       descriptionPlacement,
       children,
       showImage,
+      compact,
     } = this.props;
 
     const {
@@ -46,7 +58,11 @@ class SubscribeForm extends Component {
     } = getContainer(form, this.state.user);
 
     return (
-      <div className={styles.container}>
+      <div
+        className={classNames(styles.container, {
+          [styles.compact]: compact,
+        })}
+      >
         {descriptionPlacement === 'above' && (
           <Description
             showImage={showImage}
@@ -54,6 +70,7 @@ class SubscribeForm extends Component {
           />
         )}
         <Form
+          compact={compact}
           action={`https://www.getdrip.com/forms/${formID}/submissions`}
           method="post"
           data-drip-embedded-container={formID}
