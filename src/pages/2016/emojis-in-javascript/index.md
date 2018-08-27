@@ -5,6 +5,7 @@ description: "This article is a collection of the research I did while getting u
 title: "Emojis in Javascript"
 image: "cover.png"
 tags: ["emoji", "javascript", "unicode", "Programming"]
+description: "The inner workings of Unicode, how emoji are represented in JavaScript, and a regular expression for parsing emoji."
 ---
 
 Parsing emoji in Javascript is… not easy.
