@@ -68,7 +68,6 @@ class Grid extends Component {
           />
           <div
             className={styles.content}
-            className="blog-post-content"
             dangerouslySetInnerHTML={{ __html }}
           />
           <Footer

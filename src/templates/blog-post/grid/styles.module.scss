@@ -196,6 +196,9 @@
 
 .coverImg {
   position: relative;
+  img {
+    width: 100%;
+  }
 }
 
 .credit {
@@ -207,7 +210,8 @@
   position: absolute;
   color: black;
   z-index: 1;
-  right: 200px;
+  display: none;
+  right: 10%;
 
   @media (min-width: 1200px) {
     bottom: 30px;

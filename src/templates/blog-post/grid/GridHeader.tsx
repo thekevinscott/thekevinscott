@@ -15,17 +15,12 @@ const GridHeader = ({
     { image && (
       <div className={styles.coverImg}>
         <img src={image.childImageSharp.sizes.src} />
-        {credit && (
-          <div
-            className={styles.credit}
-            dangerouslySetInnerHTML={{ __html: credit }}
-          />
-        )}
       </div>
     )}
-    {credit && false && (
-      <Caption
-        caption={credit}
+    {credit && (
+      <div
+        className={styles.credit}
+        dangerouslySetInnerHTML={{ __html: credit }}
       />
     )}
     <div className={styles.title}>
