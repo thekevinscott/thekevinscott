@@ -30,9 +30,8 @@ try {
 if (yargs.port) {
   process.env.PORT = yargs.port;
 }
-
-if (yargs.server !== false) {
-  spawn('gatsby', ['serve', '-p', yargs.PORT]);
+if (yargs.server !== undefined) {
+  process.env.SERVER = yargs.server;
 }
 
 // Makes the script crash on unhandled rejections instead of silently

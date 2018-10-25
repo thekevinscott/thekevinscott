@@ -53,7 +53,7 @@ class Sidebar extends React.Component<IProps, IState> {
   }
 
   getRef = (ref: HTMLDivElement) => {
-    if (this.state.fixed === false) {
+    if (this.state.fixed === false && ref) {
       this.top = ref.getBoundingClientRect().top + window.scrollY;
     }
   }

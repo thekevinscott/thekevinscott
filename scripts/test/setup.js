@@ -9,6 +9,7 @@ const spawn = require('../utils/spawn');
 
 const DIR = path.join(os.tmpdir(), 'jest_puppeteer_global_setup');
 const PORT = argv.PORT || process.env.PORT;
+const SERVER = process.env.SERVER || 1;
 
 const start = () => {
   if (!PORT) {
@@ -29,7 +30,9 @@ const start = () => {
   return child;
 };
 
-start();
+if (`${SERVER}` === '1') {
+  start();
+}
 
 module.exports = async () => {
   const browser = await puppeteer.launch();
