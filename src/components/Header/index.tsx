@@ -57,7 +57,7 @@ class Header extends Component<IProps, IState> {
           <div className={styles.flex} />
           <div
             className={classNames(styles.promo, {
-              [styles.newsletter]: this.state.newsletter,
+              [styles.shouldShow]: this.state.newsletter,
             })}
           >
             <span>I send a newsletter for AI people</span>
