@@ -1,7 +1,7 @@
 @import "~styles/constants";
 
 $PADDING: 35px;
-$WIDTH: 120px;
+$WIDTH: 300px;
 $DURATION: 0.1s;
 $PROMO_OFFSET: 95px;
 
@@ -86,11 +86,16 @@ a.closeNewsletter {
   width: $WIDTH;
   height: 100%;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 
   @media screen and (max-width: $tablet) {
     width: 0;
     padding: 0;
+  }
+
+  a {
+    margin-left: 20px;
   }
 }
 

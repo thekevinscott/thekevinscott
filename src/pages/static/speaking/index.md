@@ -3,7 +3,7 @@ path: "/speaking"
 title: "Speaking"
 ---
 
-I've spoken at quite a few conferences and meetups. If you'd like me to speak at your conference, <a href="mailto:speak@hitheory.com">shoot me a note!</a>
+I've spoken at a few conferences and meetups. If you'd like me to speak at your conference, <a href="mailto:speak@hitheory.com">shoot me a note!</a>
 
 ### Ask what AI Can Do For You
 [LibertyJS](https://libertyjs.com/speakers/kevin-scott/) | Nov 1, 2018 | [Slides and resources](/libertyjs)

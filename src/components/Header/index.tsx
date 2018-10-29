@@ -21,7 +21,7 @@ class Header extends Component<IProps, IState> {
     newsletter: false,
   };
 
-  handleSubscribe = (newsletter) => () => {
+  handleSubscribe = (newsletter: boolean) => () => {
     this.setState({
       newsletter,
     });
@@ -77,7 +77,10 @@ class Header extends Component<IProps, IState> {
             </a>
           </div>
           <div className={styles.flex} />
-          <div className={styles.right} />
+          <div className={styles.right}>
+            <Link to="/">Writing</Link>
+            <Link to="/speaking">Speaking</Link>
+          </div>
         </div>
         <NewsletterSignup
           visible={this.state.newsletter}
