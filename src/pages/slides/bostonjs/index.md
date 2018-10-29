@@ -1,6 +1,6 @@
 ---
 path: "/bostonjs"
-title: "Tensorflow.js Presentation"
+title: "Tensorflow.js Presentation at BostonJS"
 ---
 
 <br />

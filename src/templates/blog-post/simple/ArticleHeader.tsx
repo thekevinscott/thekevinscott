@@ -60,7 +60,7 @@ const ArticleHeader = ({
     <div className={styles.title} style={{ maxHeight: imageHeight }}>
       <div className={styles.innerTitle}>
         <h1><span>{title}</span></h1>
-        <time>{format(date)}</time>
+        {date && <time>{format(date)}</time>}
       </div>
     </div>
   </div>
