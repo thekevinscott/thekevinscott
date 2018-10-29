@@ -20,75 +20,84 @@ const threshold = 340;
 const getIsOverThreshold = () => window.scrollY > threshold;
 
 interface IProps {
+  children: (visible: boolean, headerIsHovered: boolean) => JSX.Element;
 }
 
 interface IState {
   headerIsVisible: boolean;
   headerIsHovered: boolean;
   startMouse: number | null;
+  lastMouse: number;
 }
 
 class TemplateWrapper extends Component {
   state: IState = {
-    headerIsVisible: false,
+    headerIsVisible: true,
     headerIsHovered: false,
     startMouse: null,
+    lastMouse: 0,
   };
 
-  constructor(props: IProps) {
-    super(props);
-
-    this.state = {
-      headerIsVisible: false,
-      headerIsHovered: false,
-      startMouse: null,
-    };
-  }
-
   handleScroll = (e: any) => {
-    this.setState({
-      headerIsHovered: false,
-      startMouse: null,
-    });
-    if (getIsOverThreshold() && this.state.headerIsVisible === false) {
+    // console.log(this.state.lastMouse, window.scrollY);
+    // this.setState({
+    //   headerIsHovered: false,
+    //   startMouse: null,
+    // });
+    // if (getIsOverThreshold() && this.state.headerIsVisible === false) {
+    //   this.setState({
+    //     headerIsVisible: true,
+    //   });
+    // } else if (this.state.lastMouse > window.scrollY) {
+    if (this.state.lastMouse > window.scrollY) {
       this.setState({
         headerIsVisible: true,
+        lastMouse: window.scrollY,
       });
-    } else if (!getIsOverThreshold() && this.state.headerIsVisible === true) {
+    } else if (this.state.lastMouse < window.scrollY) {
       this.setState({
         headerIsVisible: false,
+        lastMouse: window.scrollY,
       });
+
+    // } else if (!getIsOverThreshold() && this.state.headerIsVisible === true) {
+    //   this.setState({
+    //     headerIsVisible: false,
+    //   });
     }
+    // this.setState({
+    //   lastMouse: window.scrollY,
+    // });
   }
 
-  mouseMove = (e: React.MouseEvent) => {
-    if (!getIsOverThreshold()) {
-      if (this.state.startMouse === null) {
-        this.setState({
-          startMouse: e.clientY,
-        });
-      } else if (Math.abs(this.state.startMouse - e.clientY) > 20) {
-        this.setState({
-          headerIsHovered: true,
-        });
-      }
-    } else if (this.state.headerIsHovered === true) {
-      this.setState({
-        startMouse: null,
-        headerIsHovered: false,
-      });
-    }
-  }
+  // mouseMove = (e: React.MouseEvent) => {
+  //   if (!getIsOverThreshold()) {
+  //     if (this.state.startMouse === null) {
+  //       this.setState({
+  //         startMouse: e.clientY,
+  //       });
+  //     } else if (Math.abs(this.state.startMouse - e.clientY) > 20) {
+  //       this.setState({
+  //         headerIsHovered: true,
+  //       });
+  //     }
+  //   } else if (this.state.headerIsHovered === true) {
+  //     this.setState({
+  //       startMouse: null,
+  //       headerIsHovered: false,
+  //     });
+  //   }
+  // }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
-    window.addEventListener('mousemove', this.mouseMove);
+    // window.addEventListener('mousemove', this.mouseMove);
     WebFont.load(FONTS);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
-    window.removeEventListener('mousemove', this.mouseMove);
+    // window.removeEventListener('mousemove', this.mouseMove);
   }
 
   render() {
@@ -102,10 +111,6 @@ class TemplateWrapper extends Component {
       </div>
     );
   }
-};
-
-TemplateWrapper.propTypes = {
-  children: PropTypes.func,
 };
 
 export default TemplateWrapper;
