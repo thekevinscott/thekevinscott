@@ -14,8 +14,8 @@ Hi friend, I hope you enjoy the presentation!
 In the talk I mention a number of code demos demonstrating neural nets in the browser. Links to each can be found here:
 
 * [line](https://codepen.io/thekevinscott/pen/yRZoev) &mdash; train a simple neural network on a line
-* [moons](https://codepen.io/thekevinscott/project/editor/DvGbxP) &mdash; train a neural network to predict non-linear data (in this case, two parabolas)
-* [webcam](https://codepen.io/thekevinscott/pen/Redayj) &mdash; train an image classifier with a webcam using transfer learning
+* [moons](https://codepen.io/thekevinscott/pen/zmgvLY) &mdash; train a neural network to predict non-linear data (in this case, two parabolas)
+* [webcam](https://codepen.io/thekevinscott/project/editor/DvGbxP) &mdash; train an image classifier with a webcam using transfer learning
 
 # Libraries
 
