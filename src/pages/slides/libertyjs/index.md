@@ -7,7 +7,7 @@ Hi friend, I hope you enjoy the presentation!
 
 # Slides
 
-[Here is a link to the slides](https://thekevinscott.github.io/presentations-libertyjs/), and [here is a PDF version]().
+[Here is a link to the slides](https://thekevinscott.github.io/presentations-libertyjs/).
 
 # Code Demos
 
