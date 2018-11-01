@@ -19,6 +19,7 @@ In the talk I mention a number of code demos demonstrating neural nets in the br
 
 # Libraries
 
+* [`Tensorflow.js`](https://js.tensorflow.org) is the Machine Learning library we looked at during the presentation.
 * [`make_moons`](https://thekevinscott.github.io/make_moons/) is a port from scikit's `make_moons` function. It generates two parabolas of x,y points.
 * [`ml-classifier`](https://thekevinscott.github.io/ml-classifier-ui/) is a library written in React for generating image classification models in your browser with drag n drop.
 * [`tfjs-vis`](https://github.com/tensorflow/tfjs-vis) is a library for visualizing your models right in your app.
