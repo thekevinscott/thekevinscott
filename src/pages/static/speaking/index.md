@@ -7,7 +7,8 @@ I've spoken at a few conferences and meetups. If you'd like me to speak at your 
 
 ### Ask what AI Can Do For You
 [LibertyJS](https://libertyjs.com/speakers/kevin-scott/) | Nov 1, 2018 | [Slides and resources](/libertyjs)
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Machine learning with puppets? Yes please! <a href="https://twitter.com/thekevinscott?ref_src=twsrc%5Etfw">@thekevinscott</a> <a href="https://twitter.com/hashtag/LibertyJS2018?src=hash&amp;ref_src=twsrc%5Etfw">#LibertyJS2018</a> <a href="https://twitter.com/hashtag/LibertyJS?src=hash&amp;ref_src=twsrc%5Etfw">#LibertyJS</a> <a href="https://t.co/31gQ1FcB6x">pic.twitter.com/31gQ1FcB6x</a></p>&mdash; LibertyJS (@liberty_js) <a href="https://twitter.com/liberty_js/status/1058091908352872448?ref_src=twsrc%5Etfw">November 1, 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Machine learning with puppets? Yes please! <a href="https://twitter.com/thekevinscott?ref_src=twsrc%5Etfw">@thekevinscott</a> <a href="https://twitter.com/hashtag/LibertyJS2018?src=hash&amp;ref_src=twsrc%5Etfw">#LibertyJS2018</a> <a href="https://twitter.com/hashtag/LibertyJS?src=hash&amp;ref_src=twsrc%5Etfw">#LibertyJS</a> <a href="https://t.co/31gQ1FcB6x">pic.twitter.com/31gQ1FcB6x</a></p>&mdash; LibertyJS (@liberty_js) <a href="https://twitter.com/liberty_js/status/1058091908352872448?ref_src=twsrc%5Etfw">November 1, 2018</a></blockquote> 
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ### Tensorflow.js: A Lightning Intro to Machine Learning in JavaScript
 [BostonJS](https://www.meetup.com/boston_JS/events/251205244/) | June 6, 2018 | [Slides and resources](/bostonjs)
