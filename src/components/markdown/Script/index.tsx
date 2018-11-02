@@ -34,13 +34,17 @@ export interface IScriptProps {
 
 const Script:React.SFC<IScriptProps> = ({
   src,
+  ...props,
 }) => {
   const Embed = getEmbed(src);
-  return Embed ? (
-    <div className={styles.container}>
-      <Embed src={src} />
-    </div>
-  ) : <span />;
+  if (Embed) {
+    return (
+      <div className={styles.container}>
+        <Embed src={src} />
+      </div>
+    );
+  }
+  return <script src={src} {...props} />
 };
 
 export const KEY = 'script';
