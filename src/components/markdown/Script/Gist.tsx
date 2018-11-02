@@ -1,18 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ReactGist from 'react-gist';
+import { IScriptProps } from './index';
 
-const Gist = ({
+const Gist:React.SFC<IScriptProps> = ({
   src,
 }) => {
-  const id = src.split('/').pop().split('.').shift();
+  const part = src.split('/').pop();
+  if (!part) {
+    return null;
+  }
+
+  const id = part.split('.').shift();
   return (
     <ReactGist id={id} />
   );
-};
-
-Gist.propTypes = {
-  src: PropTypes.string.isRequired,
 };
 
 export const KEY = 'gist';

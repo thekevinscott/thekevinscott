@@ -1,25 +1,38 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Gist, { match as GistKey } from './Gist';
 import * as styles from './styles.module.scss';
 
-const types = {
+type ScriptElement = (props: IScriptProps) => JSX.Element | null;
+
+interface ITypes {
+  [index: string]: ScriptElement;
+}
+
+const types: ITypes = {
   [GistKey]: Gist,
 };
 
 const getEmbed = (src:string = '') => {
-  return Object.keys(types).reduce((match, regex) => {
+  return Object.keys(types).reduce((match: ScriptElement|null, regex: string) => {
     if (match) {
       return match;
     }
 
     const result = src.match(new RegExp(regex, 'gi'));
 
-    return result.length ? types[regex] : null;
+    if (!result || result.length === 0) {
+      return null;
+    }
+
+    return types[regex];
   }, null);
 };
 
-const Script = ({
+export interface IScriptProps {
+  src: string;
+}
+
+const Script:React.SFC<IScriptProps> = ({
   src,
 }) => {
   const Embed = getEmbed(src);
@@ -28,10 +41,6 @@ const Script = ({
       <Embed src={src} />
     </div>
   ) : <span />;
-};
-
-Script.propTypes = {
-  src: PropTypes.string.isRequired,
 };
 
 export const KEY = 'script';
