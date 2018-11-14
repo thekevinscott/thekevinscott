@@ -392,14 +392,16 @@ function loadImages(images, pretrainedModel) {
         // Handling memory management is crucial for building a performant machine learning
         // model in a browser.
         return tf.tidy(() => {
-          const processedImage = loadAndProcessImage(loadedImage, pretrainedModel);
+          const processedImage = loadAndProcessImage(loadedImage);
+          const prediction = pretrainedModel.predict(processedImage);
+
           if (data) {
-            const newData = data.concat(processedImage);
+            const newData = data.concat(prediction);
             data.dispose();
             return newData;
           }
 
-          return tf.keep(processedImage);
+          return tf.keep(prediction);
         });
       });
     });
@@ -537,11 +539,20 @@ The final step is actually train the model, which we do by calling `.fit()` on t
 ```
 function makePrediction(pretrainedModel, image, expectedLabel) {
   loadImage(image).then(loadedImage => {
-    return loadAndProcessImage(loadedImage, pretrainedModel);
+    return loadAndProcessImage(loadedImage);
   }).then(loadedImage => {
-    console.log('Expected Label', expectedLabel);
-    console.log('Predicted Label', predict(model, loadedImage));
+    const activatedImage = pretrainedModel.predict(loadedImage);
     loadedImage.dispose();
+    return activatedImage;
+  }).then(activatedImage => {
+    const prediction = model.predict(activatedImage);
+    const predictionLabel = prediction.as1D().argMax().dataSync()[0];
+
+    console.log('Expected Label', expectedLabel);
+    console.log('Predicted Label', predictionLabel);
+
+    prediction.dispose();
+    activatedImage.dispose();
   });
 }
 
