@@ -31,6 +31,7 @@ export interface ISubscribeFormProps {
   descriptionPlacement: string;
   showImage?: boolean;
   compact?: boolean;
+  getRef?: (el: HTMLElement) => void;
 }
 
 class SubscribeForm extends Component {
@@ -48,6 +49,7 @@ class SubscribeForm extends Component {
       children,
       showImage,
       compact,
+      getRef,
     } = this.props;
 
     const {
@@ -59,6 +61,7 @@ class SubscribeForm extends Component {
 
     return (
       <div
+        ref={getRef}
         className={classNames(styles.container, {
           [styles.compact]: compact,
         })}

@@ -24,21 +24,19 @@ interface IProps {
 }
 
 interface IState {
-  headerIsVisible: boolean;
-  headerIsHovered: boolean;
-  startMouse: number | null;
-  lastMouse: number;
+  scroll: number;
 }
 
 class TemplateWrapper extends Component {
   state: IState = {
-    headerIsVisible: true,
-    headerIsHovered: false,
-    startMouse: null,
-    lastMouse: 0,
+    scroll: 0,
   };
 
   handleScroll = (e: any) => {
+    this.setState({
+      scroll: window.scrollY,
+    });
+    /*
     // console.log(this.state.lastMouse, window.scrollY);
     // this.setState({
     //   headerIsHovered: false,
@@ -68,6 +66,7 @@ class TemplateWrapper extends Component {
     // this.setState({
     //   lastMouse: window.scrollY,
     // });
+    */
   }
 
   // mouseMove = (e: React.MouseEvent) => {
@@ -105,8 +104,11 @@ class TemplateWrapper extends Component {
       <div className={styles.container}>
         {this.props.children({
           ...this.props,
-          visible: this.state.headerIsVisible || this.state.headerIsHovered,
-          headerIsHovered: this.state.headerIsHovered,
+          scroll: this.state.scroll,
+          // visible: true,
+          // headerIsHovered: false,
+          // visible: this.state.headerIsVisible || this.state.headerIsHovered,
+          // headerIsHovered: this.state.headerIsHovered,
         })}
       </div>
     );

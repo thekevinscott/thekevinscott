@@ -1,5 +1,7 @@
 import React from 'react';
+import classNames from 'classnames';
 import WebFont from 'webfontloader';
+import SubscribeForm from 'components/SubscribeForm';
 import Img from 'gatsby-image';
 import ArticleHeader from './ArticleHeader';
 import Header from 'components/Header';
@@ -29,12 +31,77 @@ interface IProps {
     }
   }
   children?: any;
-  visible: boolean;
-  headerIsHovered: boolean;
+  scroll: number;
+  // visible: boolean;
+  // headerIsHovered: boolean;
 }
+
+const getPosition = (element: HTMLElement | Element) => {
+  let yPosition = 0;
+
+  while(element) {
+    yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+    element = element.offsetParent;
+  }
+
+  return yPosition;
+}
+
+const getHeight = () => {
+  const body = document.body;
+  const html = document.documentElement;
+  return Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+}
+
+type IInsertIntoChildrenFn = (child: any, index: number) => boolean;
+
+const insertIntoChildren = (
+  children: any,
+  at: number | IInsertIntoChildrenFn,
+  contents: any,
+) => ({
+  ...children,
+  props: {
+    ...children.props,
+    children: React.Children.map(children.props.children, (child, index) => {
+      if (
+        (typeof at === 'function' && at(child, index)) ||
+        typeof at !== 'function' && index === at
+      ) {
+        return [
+          contents,
+          child,
+        ];
+      }
+
+      return child;
+    }),
+  },
+});
+
+const getAt = (tag: string, at: number = 0): IInsertIntoChildrenFn => {
+  let count = 0;
+  return (child, index) => {
+    const currentCount = count;
+    if (child.type === tag) {
+      count++;
+
+      return currentCount === at;
+    }
+
+    return false;
+  };
+};
 
 class Simple extends React.Component<IProps> {
   private content?: HTMLDivElement;
+  private inlineSubscribeForm: React.RefObject<HTMLElement>;
+
+  constructor(props: IProps) {
+    super(props);
+
+    this.inlineSubscribeForm = React.createRef();
+  }
 
   getRef = (ref: HTMLDivElement) => {
     this.content = ref;
@@ -49,8 +116,9 @@ class Simple extends React.Component<IProps> {
           siteMetadata,
         },
       },
-      visible,
-      headerIsHovered,
+      scroll,
+      // visible,
+      // headerIsHovered,
     } = this.props;
 
     const {
@@ -68,10 +136,19 @@ class Simple extends React.Component<IProps> {
       image_height,
     } = getPostData(post, siteMetadata);
 
+    let sidebarShowHeight = 2500;
+    if (this.inlineSubscribeForm && this.inlineSubscribeForm.current) {
+      try {
+        const c = this.inlineSubscribeForm.current;
+        sidebarShowHeight = getPosition(c) + c.clientHeight;
+      } catch(err) { }
+    }
+    const isSidebarVisible = scroll > sidebarShowHeight && scroll < getHeight() - 1000;
+
     return (
       <React.Fragment>
         <Header
-          visible={visible}
+          visible={true}
           subscriberTags={getSubscriberTags({
             post,
             siteMetadata,
@@ -80,7 +157,7 @@ class Simple extends React.Component<IProps> {
         <div className={styles.container}>
           {writeMetaTags({ post, siteMetadata })}
           <ArticleHeader
-            headerIsVisible={headerIsHovered}
+            headerIsVisible={false}
             image={image}
             caption={credit}
             title={title}
@@ -93,9 +170,27 @@ class Simple extends React.Component<IProps> {
             ref={this.getRef}
           >
             <div className={styles.children}>
-              {children}
+              {insertIntoChildren(
+                children,
+                getAt('h2'),
+                (
+                  <SubscribeForm
+                    getRef={this.inlineSubscribeForm}
+                    descriptionPlacement="inside"
+                    form={form}
+                    subscriberTags={getSubscriberTags({
+                      post,
+                      siteMetadata,
+                    })}
+                  />
+                )
+              )}
             </div>
-            <div className={styles.sidebarContainer}>
+            <div
+              className={classNames(styles.sidebarContainer, {
+                [styles.visible]: isSidebarVisible,
+              })}
+            >
               <Sidebar
                 descriptionPlacement="inside"
                 showImage={false}

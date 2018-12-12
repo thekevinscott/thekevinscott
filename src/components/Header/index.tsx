@@ -16,6 +16,8 @@ interface IState {
   newsletter: boolean;
 }
 
+const SHOW_SIGNUP = false;
+
 class Header extends Component<IProps, IState> {
   state: IState = {
     newsletter: false,
@@ -55,6 +57,7 @@ class Header extends Component<IProps, IState> {
             </div>
           </div>
           <div className={styles.flex} />
+          {SHOW_SIGNUP && (
           <div
             className={classNames(styles.promo, {
               [styles.shouldShow]: this.state.newsletter,
@@ -76,6 +79,7 @@ class Header extends Component<IProps, IState> {
               Close
             </a>
           </div>
+          )}
           <div className={styles.flex} />
           <div className={styles.right}>
             <Link to="/">Writing</Link>

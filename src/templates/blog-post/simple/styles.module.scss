@@ -107,6 +107,12 @@
     width: $sidebarWidth;
     position: relative;
     margin-left: 40px;
+    transition-duration: 0.5s;
+    opacity: 0;
+
+    &.visible {
+      opacity: 1;
+    }
   }
 
   .sidebar {
