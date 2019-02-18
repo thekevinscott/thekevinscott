@@ -1,9 +1,8 @@
 ---
+title: "Deep Learning With Javascript"
 date: "2019-02-19 08:00:00.000 EST"
 description: ""
 path: "/deep-learning-with-javascript/"
-tags: ["Deep Learning", "Javascript]
-title: "Deep Learning With Javascript"
 ---
 
 I've just published my new book, <strong><a href="https://dljsbook.com">Deep Learning With Javascript</a></strong>.
