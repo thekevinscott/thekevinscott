@@ -6,11 +6,11 @@ path: "/deep-learning-with-javascript/"
 
 ---
 
-I've just published my new book, <strong><a href="https://dljsbook.com">Deep Learning With Javascript</a></strong>.
+I've just published my new book, <strong><a target="_blank" href="https://dljsbook.com">Deep Learning With Javascript</a></strong>.
 
-<a href="https://dljsbook.com">You can purchase a copy here.</a>
+<a target="_blank" href="https://dljsbook.com">You can purchase a copy here.</a>
 
-![Deep Learning With Javascript](dljscover.png)
+<a href="https://dljsbook.com"><img src="dljscover.png" style="max-width: 300px; margin: 0 auto;" alt="Deep Learning With Javascript" title="Deep Learning With Javascript" /></a>
 
 I wanted a book like this one when I began studying Deep Learning. I’m a hacker at heart, and I learn by doing.
 
@@ -21,5 +21,3 @@ Today, facilitated by better hardware, better frameworks, and new discoveries in
 The goal of this book is to demystify Neural Networks and prepare you for that future, through hacking and through using them in projects you’d use in the real world.
 
 Enjoy!
-
-- Kevin
