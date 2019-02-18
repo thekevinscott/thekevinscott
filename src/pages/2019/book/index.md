@@ -10,7 +10,7 @@ I've just published my new book, <strong><a target="_blank" href="https://dljsbo
 
 <a target="_blank" href="https://dljsbook.com">You can purchase a copy here.</a>
 
-<a href="https://dljsbook.com"><img src="dljscover.png" style="max-width: 300px; margin: 0 auto;" alt="Deep Learning With Javascript" title="Deep Learning With Javascript" /></a>
+![Deep Learning With Javascript](dljscover.png)
 
 I wanted a book like this one when I began studying Deep Learning. I’m a hacker at heart, and I learn by doing.
 
