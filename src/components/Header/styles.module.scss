@@ -1,7 +1,7 @@
 @import "~styles/constants";
 
 $PADDING: 35px;
-$WIDTH: 300px;
+$WIDTH: 200px;
 $DURATION: 0.1s;
 $PROMO_OFFSET: 95px;
 
@@ -74,7 +74,7 @@ a.closeNewsletter {
 
 .flex {
   flex: 1;
-  background: green;
+  height: 100%;
   content: ".";
   display: block;
 }
@@ -206,6 +206,35 @@ a.closeNewsletter {
   @media screen and (max-width: $phone) {
     span {
       display: none;
+    }
+  }
+}
+
+.banner {
+  background: linear-gradient(to left, transparent 0%, $YELLOW 5%, $YELLOW 95%, transparent 100%);
+  text-align: center;
+  transition-duration: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  height: 100%;
+  overflow: hidden;
+
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
+
+  a {
+    max-width: 550px;
+
+    &:hover {
+      text-decoration: none;
+      border: none;
+      color: black;
+    }
+    span {
+      text-decoration: underline;
     }
   }
 }

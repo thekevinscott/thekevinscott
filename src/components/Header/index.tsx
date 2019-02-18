@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Link from 'gatsby-link';
 import NewsletterSignup from './NewsletterSignup';
+import Banner from './Banner';
 import * as styles from './styles.module.scss';
 
 import logo from 'assets/logo.svg';
@@ -56,6 +57,7 @@ class Header extends Component<IProps, IState> {
               </Link>
             </div>
           </div>
+          { /*
           <div className={styles.flex} />
           {SHOW_SIGNUP && (
           <div
@@ -80,7 +82,10 @@ class Header extends Component<IProps, IState> {
             </a>
           </div>
           )}
-          <div className={styles.flex} />
+          */ }
+          <div className={styles.flex}>
+            <Banner />
+          </div>
           <div className={styles.right}>
             <Link to="/">Writing</Link>
             <Link to="/speaking">Speaking</Link>
