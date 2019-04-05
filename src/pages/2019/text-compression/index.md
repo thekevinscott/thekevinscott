@@ -1,6 +1,6 @@
 ---
 title: "Text Compression"
-date: "2019-04-19 08:00:00.000 EST"
+date: "2029-04-19 08:00:00.000 EST"
 description: ""
 path: "/text-compression/"
 
