@@ -1,10 +1,18 @@
-export const DEEP_LEARNING_JOURNAL = 'DEEP_LEARNING_JOURNAL';
-export const TENSORFLOWJS = 'TENSORFLOWJS';
-export const LEAD_MAGNET_DATASET = 'LEAD_MAGNET_DATASET';
-export const HEADER_FORM = 'HEADER_FORM';
-export const DEFAULT = LEAD_MAGNET_DATASET;
+// export const DEEP_LEARNING_JOURNAL = 'DEEP_LEARNING_JOURNAL';
+// export const TENSORFLOWJS = 'TENSORFLOWJS';
+// export const LEAD_MAGNET_DATASET = 'LEAD_MAGNET_DATASET';
+// export const HEADER_FORM = 'HEADER_FORM';
+export const SAMPLE_CHAPTER = 'SAMPLE_CHAPTER';
+export const DEFAULT = SAMPLE_CHAPTER;
 
 const config = {
+  [SAMPLE_CHAPTER]: {
+    formID: '888718',
+    headline: 'Learn how to build a Neural Network in Javascript?',
+    description: 'Subscribe to get a Sample Chapter of my book, Deep Learning With Javascript.',
+
+  },
+  /*
   [DEEP_LEARNING_JOURNAL]: {
     formID: '242548946',
     headline: 'Subscribe to the AI and Deep Learning Journal',
@@ -47,6 +55,7 @@ const config = {
       description,
     };
   }
+  */
 };
 
 const getRand = (id, arr) => {

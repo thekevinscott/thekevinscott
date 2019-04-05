@@ -15,8 +15,19 @@ const getStringified = ({ children, ...props }) => JSON.stringify(props);
 
 const hasChanged = (current, next) =>  getStringified(current) !== getStringified(next);
 
-class Form extends Component {
-  constructor(props) {
+interface IProps {
+  inputs: any;
+  headline?: string
+  action: string;
+  method?: string;
+  compact?: boolean;
+  children: JSX.Element;
+  handleSubmit?: Function;
+  submitting?: boolean;
+}
+
+class Form extends Component<IProps> {
+  constructor(props: IProps) {
     super(props);
 
     this.state = {
@@ -25,7 +36,7 @@ class Form extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: IProps) {
     if (hasChanged(this.props, nextProps)) {
       this.setState({
         values: getValues(nextProps, this.state.values),
@@ -43,6 +54,9 @@ class Form extends Component {
   };
 
   handleSubmit = e => {
+    if (this.props.handleSubmit) {
+      this.props.handleSubmit(e);
+    }
     // e.preventDefault();
   };
 
@@ -54,10 +68,11 @@ class Form extends Component {
       method,
       compact,
       children,
+      submitting,
       ...rest,
     } = this.props;
 
-    const disabled = inputs.reduce((isDisabled, input) => {
+    const disabled = submitting || inputs.reduce((isDisabled, input) => {
       if (isDisabled) {
         return isDisabled;
       }
@@ -94,13 +109,14 @@ class Form extends Component {
                 placeholder={input.placeholder}
                 value={this.state.values[input.name]}
                 onChange={this.handleChange}
+                disabled={submitting}
               />
             </div>
           ))}
           <div className={styles.submit}>
             <input
               type="submit"
-              value="Sign Up"
+              value={submitting ? 'Submitting...' : 'Sign Up'}
               data-drip-attribute="sign-up-button"
               disabled={disabled}
             />
@@ -110,8 +126,5 @@ class Form extends Component {
     );
   }
 }
-
-Form.propTypes = {
-};
 
 export default Form;

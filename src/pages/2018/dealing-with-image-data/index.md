@@ -1,7 +1,6 @@
 ---
 date: "2018-05-29 10:00:00.000 EST"
 description: "Manipulating data is a crucial step step for any machine learning problem. Walk through the MNIST example in Tensorflow.js (0.12.0)"
-form: "LEAD_MAGNET_DATASET"
 image: "cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/ajpU8UmfQAM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Hedi Alija</a>"
 layout: ""

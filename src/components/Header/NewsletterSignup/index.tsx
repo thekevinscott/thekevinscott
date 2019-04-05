@@ -1,7 +1,7 @@
 import React from 'react';
 import * as styles from './styles.module.scss';
 import SubscribeForm, {
-  LEAD_MAGNET_DATASET,
+  DEFAULT,
 } from 'components/SubscribeForm';
 
 interface IProps {
@@ -17,7 +17,7 @@ const NewsletterSignup: React.SFC<IProps> = ({
     <div className={styles.innerContainer}>
       <div className={styles.inner}>
         <SubscribeForm
-          form={LEAD_MAGNET_DATASET}
+          form={DEFAULT}
           descriptionPlacement="above"
           showImage={false}
           subscriberTags={{

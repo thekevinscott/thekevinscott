@@ -1,7 +1,6 @@
 ---
 date: "2018-05-17 10:00:00.000 EST"
 description: "All you need to run Tensorflow.js is a web browser. Learn the basic Javascript concepts you need to get to Hello World"
-form: "LEAD_MAGNET_DATASET"
 image: "cover.jpg"
 image_credit: "Kevin Scott"
 path: "/tensorflowjs-hello-world/"

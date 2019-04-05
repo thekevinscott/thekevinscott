@@ -11,7 +11,7 @@ import {
   LIGHT_BLUE,
 } from 'layouts/constants';
 import getContainer, {
-  LEAD_MAGNET_DATASET,
+  DEFAULT,
 } from './config';
 
 const writeSubscriberTags = subscriberTags => Object.entries(subscriberTags).map(([
@@ -19,9 +19,11 @@ const writeSubscriberTags = subscriberTags => Object.entries(subscriberTags).map
   value,
 ]) => ({
   type: 'hidden',
-  name: `fields[${key}]`,
+  name: `${key}`,
   value,
 }));
+
+const API_KEY = 'TCa8raZQV_sVBpVvqtFm7Q';
 
 export interface ISubscribeFormProps {
   form?: string;
@@ -34,11 +36,67 @@ export interface ISubscribeFormProps {
   getRef?: (el: HTMLElement) => void;
 }
 
-class SubscribeForm extends Component {
-  constructor(props) {
+class SubscribeForm extends Component<ISubscribeFormProps> {
+  constructor(props: ISubscribeFormProps) {
     super(props);
 
-    this.state = { user: getUser() };
+    this.state = {
+      user: getUser(),
+      submitting: false,
+      submitted: null,
+      submissionError: null,
+    };
+  }
+
+  handleSubmit = (formID: string | number) => async (e: React.KeyboardEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    // for (var [key, value] of formData.entries()) {
+    //   console.log(key, value);
+    // }
+
+    const email = formData.get('email');
+    const url = `https://api.convertkit.com/v3/forms/${formID}/subscribe?api_key=${API_KEY}&email=${email}`;
+// fetch('https://api.convertkit.com/v3/forms/888718/subscribe?api_key=TCa8raZQV_sVBpVvqtFm7Q', {
+// method: 'post'
+// })
+    try {
+      this.setState({
+        submitting: true,
+        submissionError: null,
+        submitted: null,
+      });
+      const response = await fetch(url, {
+        method: 'post',
+        // headers: {
+        //   'Content-Type': 'application/json',
+        //   'charset': 'utf-8',
+        // },
+      });
+      const resp = await response.json();
+
+      if (response.status < 400) {
+        this.setState({
+          submitted: email,
+        });
+      } else {
+
+        this.setState({
+          submissionError: resp.message || 'There was an error; please try again later',
+        });
+      }
+      // console.log(resp);
+    } catch (err) {
+      this.setState({
+        submissionError: err.message || 'There was an error; please try again later',
+      });
+      // console.error('error', err);
+    }
+    this.setState({
+      submitting: false,
+    });
+
   }
 
   render() {
@@ -72,17 +130,21 @@ class SubscribeForm extends Component {
             description={description}
           />
         )}
+        <div className={classNames(styles.formContainer, {
+          [styles.submitted]: !!this.state.submitted,
+        })}>
+        <div className={styles.form}>
         <Form
+          handleSubmit={this.handleSubmit(formID)}
           compact={compact}
-          action={`https://www.getdrip.com/forms/${formID}/submissions`}
           method="post"
-          data-drip-embedded-container={formID}
+          submitting={this.state.submitting}
           inputs={[
             {
               required: true,
-              type: 'email',
-              id: 'drip-email',
-              name: 'fields[email]',
+              type: 'text',
+              id: 'email',
+              name: 'email',
               placeholder: 'Email Address',
             },
             ...writeSubscriberTags({
@@ -99,27 +161,16 @@ class SubscribeForm extends Component {
             />
           )}
         </Form>
+        </div>
+        {this.state.submitted && (<p className={styles.success}>Check your email ({this.state.submitted}) to confirm</p>)}
+        {this.state.submissionError && (<p className={styles.error}>{this.state.submissionError}</p>)}
+        </div>
       </div>
     );
   }
 };
 
-SubscribeForm.propTypes = {
-  form: PropTypes.string,
-  subscriberTags: PropTypes.object,
-  descriptionPlacement: PropTypes.string,
-};
-
-SubscribeForm.defaultProps = {
-  subscriberTags: {},
-  form: LEAD_MAGNET_DATASET,
-  descriptionPlacement: null,
-};
-
 export default SubscribeForm;
 export {
-  TENSORFLOWJS,
-  DEEP_LEARNING_JOURNAL,
-  HEADER_FORM,
-  LEAD_MAGNET_DATASET,
+  DEFAULT,
 } from './config';

@@ -1,5 +1,40 @@
 @import "~styles/constants";
 
+.formContainer {
+  transition-duration: 2s;
+  position: relative;
+  background: white;
+  height: 126px;
+  overflow: hidden;
+
+.success {
+  color: green !important;
+  height: 100%;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.error {
+  color: red;
+  margin: -20px 0 0 20px;
+}
+
+  .form {
+    height: 100%;
+    transition-duration: 0.4s;
+    overflow: hidden;
+  }
+
+  &.submitted {
+    .form {
+      height: 0%;
+    }
+  }
+}
+
 .container {
   max-width: 700px;
   margin: 0 auto;
