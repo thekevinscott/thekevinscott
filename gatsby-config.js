@@ -22,7 +22,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-react-next`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -121,12 +120,12 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-module-local-ident-name`,
-      options: {
-        localIdentName: isProduction ? '[hash:base64:5]' : 'tks-[folder]-[local]-[hash:base64:5]',
-        includeSASS: true,
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-module-local-ident-name`,
+    //   options: {
+    //     localIdentName: isProduction ? '[hash:base64:5]' : 'tks-[folder]-[local]-[hash:base64:5]',
+    //     includeSASS: true,
+    //   }
+    // },
   ],
 }
