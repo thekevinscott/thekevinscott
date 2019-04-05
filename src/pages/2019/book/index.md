@@ -1,6 +1,6 @@
 ---
 title: "Deep Learning With Javascript"
-date: "2019-02-19 08:00:00.000 EST"
+date: "2119-02-19 08:00:00.000 EST"
 description: ""
 path: "/deep-learning-with-javascript/"
 

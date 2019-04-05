@@ -15,7 +15,7 @@ const getPublished = () => {
 };
 
 const getText = () => {
-    const published = getPublished();
+  const published = getPublished();
   if (published) {
     return (
       <React.Fragment>

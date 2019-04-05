@@ -57,7 +57,6 @@ class Header extends Component<IProps, IState> {
               </Link>
             </div>
           </div>
-          { /*
           <div className={styles.flex} />
           {SHOW_SIGNUP && (
           <div
@@ -82,10 +81,11 @@ class Header extends Component<IProps, IState> {
             </a>
           </div>
           )}
-          */ }
+          { /*
           <div className={styles.flex}>
             <Banner />
           </div>
+          */ }
           <div className={styles.right}>
             <Link to="/">Writing</Link>
             <Link to="/speaking">Speaking</Link>

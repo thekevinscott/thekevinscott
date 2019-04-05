@@ -93,7 +93,11 @@ const getAt = (tag: string, at: number = 0): IInsertIntoChildrenFn => {
   };
 };
 
-class Simple extends React.Component<IProps> {
+interface IState {
+  submitted: null | string;
+}
+
+class Simple extends React.Component<IProps, IState> {
   private content?: HTMLDivElement;
   private inlineSubscribeForm: React.RefObject<HTMLElement>;
 
@@ -101,13 +105,25 @@ class Simple extends React.Component<IProps> {
     super(props);
 
     this.inlineSubscribeForm = React.createRef();
+    this.state = {
+      submitted: null,
+    };
   }
 
   getRef = (ref: HTMLDivElement) => {
     this.content = ref;
   }
 
+  handleSubscribe = (submitted: string) => {
+    this.setState({
+      submitted,
+    });
+  }
+
   render() {
+    const {
+      submitted,
+    } = this.state;
     const {
       children,
       data: {
@@ -175,9 +191,11 @@ class Simple extends React.Component<IProps> {
                 getAt('h2'),
                 (
                   <SubscribeForm
+                    type="inline"
                     getRef={this.inlineSubscribeForm}
-                    descriptionPlacement="inside"
                     form={form}
+                    onSubscribe={this.handleSubscribe}
+                    active={!submitted || submitted === 'inline'}
                     subscriberTags={getSubscriberTags({
                       post,
                       siteMetadata,
@@ -196,6 +214,8 @@ class Simple extends React.Component<IProps> {
                 showImage={false}
                 form={form}
                 container={this.content}
+                onSubscribe={this.handleSubscribe}
+                active={!submitted || submitted === 'sidebar'}
                 subscriberTags={getSubscriberTags({
                   post,
                   siteMetadata,
@@ -207,6 +227,8 @@ class Simple extends React.Component<IProps> {
           <Footer
             path={path}
             form={form}
+            onSubscribe={this.handleSubscribe}
+            active={!submitted || submitted === 'footer'}
             subscriberTags={getSubscriberTags({
               post,
               siteMetadata,

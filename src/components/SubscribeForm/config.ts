@@ -8,8 +8,11 @@ export const DEFAULT = SAMPLE_CHAPTER;
 const config = {
   [SAMPLE_CHAPTER]: {
     formID: '888718',
-    headline: 'Learn how to build a Neural Network in Javascript?',
+    headline: 'Want to learn how to build a Neural Network in Javascript?',
     description: 'Subscribe to get a Sample Chapter of my book, Deep Learning With Javascript.',
+    footerSmall: `I\'ve written a book on getting started with Deep Learning in Javascript for Hackers.
+     We focus on real use cases from the ground up, with a focus on the why and the how.`,
+    footerLarge: 'Subscribe to get a Sample Chapter of my book, Deep Learning With Javascript.',
 
   },
   /*

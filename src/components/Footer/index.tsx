@@ -3,10 +3,20 @@ import Link from 'gatsby-link';
 import SubscribeForm from 'components/SubscribeForm';
 import * as styles from './styles.module.scss';
 
-export default ({
+interface IProps {
+  form?: any;
+  path?: any;
+  subscriberTags?: any;
+  active?: boolean | string | null;
+  onSubscribe: (type: string) => void;
+}
+
+const Footer: React.SFC<IProps> = ({
   form,
   subscriberTags,
   path,
+  active,
+  onSubscribe,
 }) => {
   const url = `https://thekevinscott.com${path || '/'}`;
   const newsletter = `https://thekevinscott.com/newsletter`;
@@ -14,8 +24,10 @@ export default ({
     <React.Fragment>
       <div className={styles.footer}>
         <SubscribeForm
-          descriptionPlacement="above"
+          type="footer"
           form={form}
+          active={active}
+          onSubscribe={onSubscribe}
           subscriberTags={{
             ...(subscriberTags || {}),
             formPosition: 'footer',
@@ -29,3 +41,5 @@ export default ({
     </React.Fragment>
   );
 };
+
+export default Footer;

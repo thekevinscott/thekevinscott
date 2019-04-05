@@ -11,6 +11,8 @@ interface IProps {
   subscriberTags?: {
     [index: string]: string;
   };
+  active: boolean | string | null;
+  onSubscribe: (type: string) => void;
 }
 
 interface IState {
@@ -65,6 +67,8 @@ class Sidebar extends React.Component<IProps, IState> {
       descriptionPlacement,
       showImage,
       container,
+      active,
+      onSubscribe,
     } = this.props;
 
     return (
@@ -79,10 +83,12 @@ class Sidebar extends React.Component<IProps, IState> {
         }}
       >
         <SubscribeForm
-          compact={true}
+          type="sidebar"
           descriptionPlacement={descriptionPlacement}
           form={form}
           showImage={showImage}
+          onSubscribe={onSubscribe}
+          active={active}
           subscriberTags={{
             ...(subscriberTags || {}),
             formPosition: 'sidebar',

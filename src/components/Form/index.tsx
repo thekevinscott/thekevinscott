@@ -24,6 +24,8 @@ interface IProps {
   children: JSX.Element;
   handleSubmit?: Function;
   submitting?: boolean;
+  error?: string | JSX.Element;
+  success?: string | JSX.Element;
 }
 
 class Form extends Component<IProps> {
@@ -69,10 +71,12 @@ class Form extends Component<IProps> {
       compact,
       children,
       submitting,
-      ...rest,
+      error,
+      success,
+      ...rest
     } = this.props;
 
-    const disabled = submitting || inputs.reduce((isDisabled, input) => {
+    const disabled = submitting || inputs.reduce((isDisabled: boolean, input) => {
       if (isDisabled) {
         return isDisabled;
       }
@@ -94,7 +98,10 @@ class Form extends Component<IProps> {
           <h3 data-drip-attribute="headline">{headline}</h3>
         )}
         {children}
-        <div className={styles.inputs}>
+        <div className={classNames(styles.inputs, {
+          [styles.hasError]: error,
+          [styles.hasSuccess]: success,
+        })}>
           {inputs.map(input => (
           <div
             className={classNames(styles.input, {
@@ -122,6 +129,9 @@ class Form extends Component<IProps> {
             />
           </div>
         </div>
+
+        {success && (<p className={styles.success}>Check your email ({success}) to confirm</p>)}
+        {error && (<p className={styles.error}>{error}</p>)}
       </form>
     );
   }

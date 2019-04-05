@@ -6,7 +6,14 @@ import {
   media,
 } from 'layouts/constants';
 
-const Description = ({
+interface IProps {
+  headline?: string;
+  showImage?: boolean;
+  description: string | string[];
+}
+
+const Description: React.SFC<IProps> = ({
+  headline,
   showImage,
   description,
 }) => (
@@ -14,10 +21,16 @@ const Description = ({
     {showImage && (
       <img src={Kevin} alt="Kevin Scott" />
     )}
+    <div className={styles.descriptionText}>
+    {headline && (
+      <h3 data-drip-attribute="headline">{headline}</h3>
+    )}
     <div className={styles.content}>
       {[].concat(description).map((d, key) => (
         <p key={key}>{d}</p>
       ))}
+    </div>
+
     </div>
   </div>
 );

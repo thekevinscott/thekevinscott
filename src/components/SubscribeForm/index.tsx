@@ -30,10 +30,11 @@ export interface ISubscribeFormProps {
   subscriberTags: {
     [index: string]: string;
   }
-  descriptionPlacement: string;
   showImage?: boolean;
-  compact?: boolean;
   getRef?: (el: HTMLElement) => void;
+  type: 'sidebar' | 'footer' | 'inline';
+  active: boolean | string | null;
+  onSubscribe: (type: string) => void;
 }
 
 class SubscribeForm extends Component<ISubscribeFormProps> {
@@ -52,15 +53,9 @@ class SubscribeForm extends Component<ISubscribeFormProps> {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
-    // for (var [key, value] of formData.entries()) {
-    //   console.log(key, value);
-    // }
 
     const email = formData.get('email');
     const url = `https://api.convertkit.com/v3/forms/${formID}/subscribe?api_key=${API_KEY}&email=${email}`;
-// fetch('https://api.convertkit.com/v3/forms/888718/subscribe?api_key=TCa8raZQV_sVBpVvqtFm7Q', {
-// method: 'post'
-// })
     try {
       this.setState({
         submitting: true,
@@ -69,10 +64,6 @@ class SubscribeForm extends Component<ISubscribeFormProps> {
       });
       const response = await fetch(url, {
         method: 'post',
-        // headers: {
-        //   'Content-Type': 'application/json',
-        //   'charset': 'utf-8',
-        // },
       });
       const resp = await response.json();
 
@@ -80,6 +71,7 @@ class SubscribeForm extends Component<ISubscribeFormProps> {
         this.setState({
           submitted: email,
         });
+        this.props.onSubscribe(this.props.type);
       } else {
 
         this.setState({
@@ -103,11 +95,11 @@ class SubscribeForm extends Component<ISubscribeFormProps> {
     const {
       form,
       subscriberTags,
-      descriptionPlacement,
       children,
       showImage,
-      compact,
       getRef,
+      type,
+      active,
     } = this.props;
 
     const {
@@ -115,19 +107,22 @@ class SubscribeForm extends Component<ISubscribeFormProps> {
       headline,
       descriptionID,
       description,
+      footerLarge,
+      footerSmall,
     } = getContainer(form, this.state.user);
 
     return (
       <div
         ref={getRef}
         className={classNames(styles.container, {
-          [styles.compact]: compact,
+          [styles[type]]: styles[type],
+          [styles.active]: active,
         })}
       >
-        {descriptionPlacement === 'above' && (
+        {type === 'footer' && (
           <Description
             showImage={showImage}
-            description={description}
+            description={footerSmall}
           />
         )}
         <div className={classNames(styles.formContainer, {
@@ -136,7 +131,7 @@ class SubscribeForm extends Component<ISubscribeFormProps> {
         <div className={styles.form}>
         <Form
           handleSubmit={this.handleSubmit(formID)}
-          compact={compact}
+          compact={type === 'sidebar'}
           method="post"
           submitting={this.state.submitting}
           inputs={[
@@ -152,9 +147,18 @@ class SubscribeForm extends Component<ISubscribeFormProps> {
               descriptionID,
             }),
           ]}
-          headline={headline}
+          headline={type === 'footer' ? footerLarge : null}
+          error={this.state.submissionError}
+          success={this.state.submitted}
         >
-          {descriptionPlacement === 'inside' && (
+          {type === 'inline' && (
+            <Description
+              headline={headline}
+              showImage={showImage}
+              description={children || description}
+            />
+          )}
+          {type === 'sidebar' && (
             <Description
               showImage={showImage}
               description={children || description}
@@ -162,8 +166,6 @@ class SubscribeForm extends Component<ISubscribeFormProps> {
           )}
         </Form>
         </div>
-        {this.state.submitted && (<p className={styles.success}>Check your email ({this.state.submitted}) to confirm</p>)}
-        {this.state.submissionError && (<p className={styles.error}>{this.state.submissionError}</p>)}
         </div>
       </div>
     );
