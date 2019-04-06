@@ -1,12 +1,11 @@
 import React from 'react';
 import favicon from './assets/favicon.ico';
-import { SNIPPET } from 'utils/drip';
 
 const getCss = () => {
   if (process.env.NODE_ENV === 'production') {
     return (
       <React.Fragment>
-        <link crossorigin="anonymous" media="all" rel="stylesheet" href="/styles.css" />
+        <link media="all" rel="stylesheet" href="/styles.css" />
       </React.Fragment>
     );
   }
@@ -53,10 +52,11 @@ const Html: React.SFC<IProps> = ({
         dangerouslySetInnerHTML={{ __html: body }}
       />
       {postBodyComponents}
-      <script type="text/javascript"
-        dangerouslySetInnerHTML={{ __html: SNIPPET }}
+      <script
+        async={true}
+        src="https://platform.twitter.com/widgets.js"
+        charSet="utf-8"
       />
-      <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
     </body>
   </html>
 );
