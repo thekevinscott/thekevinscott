@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import App from 'components/App';
 import { graphql } from 'gatsby';
 import Simple from './simple';
 import Grid from './grid';
@@ -99,9 +100,11 @@ export default class BlogPost extends Component {
     }
 
     return (
-      <Layout {...props}>
-        {render(props.data.markdownRemark.htmlAst)}
-      </Layout>
+      <App>
+        <Layout {...props}>
+          {render(props.data.markdownRemark.htmlAst)}
+        </Layout>
+      </App>
     );
   }
 };

@@ -73,6 +73,7 @@ class Form extends Component<IProps> {
       submitting,
       error,
       success,
+      handleSubmit,
       ...rest
     } = this.props;
 

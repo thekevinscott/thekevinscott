@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import App from 'components/App';
 import Link from 'gatsby-link';
 import Animated from 'components/Animated';
 import Footer from 'components/Footer';
@@ -76,7 +77,7 @@ export default class Index extends Component {
     const posts = this.getPosts();
 
     return (
-      <React.Fragment>
+      <App>
         <Header visible={this.props.visible} />
         <div className={styles.container}>
           {writeHeadTags(siteMetadata)}
@@ -98,7 +99,7 @@ export default class Index extends Component {
           </div>
         </div>
         <Footer />
-      </React.Fragment>
+      </App>
     );
   }
 }
