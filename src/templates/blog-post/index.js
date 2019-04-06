@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import Simple from "./simple";
-import Grid from "./grid";
-import LeadMagnet from "./lead-magnet";
+import React, { Component } from 'react';
+import { graphql } from 'gatsby';
+import Simple from './simple';
+import Grid from './grid';
+import LeadMagnet from './lead-magnet';
 import render from 'components/markdown';
 import { pageView } from 'utils/mixpanel';
 

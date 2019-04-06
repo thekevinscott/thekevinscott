@@ -40,19 +40,19 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     });
 }
 
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  if (stage === 'build-html') {
-    config.loader('null', {
-      test: /webfontloader/,
-      loader: 'null-loader'
-    })
-  }
-  config.merge({
-    resolve: {
-      root: path.resolve(__dirname, './src'),
-      extensions: ['', '.js', '.jsx', '.json'],
-    }
-  });
-  return config;
-}
+exports.onCreateWebpackConfig = ({ actions }) => {
+  // if (stage === 'build-html') {
+  //   config.loader('null', {
+  //     test: /webfontloader/,
+  //     loader: 'null-loader'
+  //   })
+  // }
+
+  // actions.setWebpackConfig({
+  //   resolve: {
+  //     root: path.resolve(__dirname, './src'),
+  //     extensions: ['.js', '.jsx', '.json'],
+  //   },
+  // });
+};
 

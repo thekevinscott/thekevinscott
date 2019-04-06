@@ -1,5 +1,7 @@
-import React, { Component } from "react";
-import Home from "../templates/home";
+// import React, { Component } from "react";
+import Home from 'templates/home';
+import { graphql } from 'gatsby';
+
 export default Home;
 export const pageQuery = graphql`
   query IndexQuery {

@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import WebFont from 'webfontloader';
 import SubscribeForm from 'components/SubscribeForm';
 import Img from 'gatsby-image';
 import ArticleHeader from './ArticleHeader';

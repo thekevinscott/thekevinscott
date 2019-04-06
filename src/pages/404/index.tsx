@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import { graphql } from 'gatsby';
 import Link, { navigateTo } from 'gatsby-link';
-import Gorilla from './assets/gorilla.jpg';
 import { isEqual } from 'date-fns';
+import Gorilla from './assets/gorilla.jpg';
 import * as styles from './styles.module.scss';
 
 const isValidDate = path => {

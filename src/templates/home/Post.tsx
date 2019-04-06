@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import * as styles from './styles.module.scss';
 
-const getTitle = (title, date) => {
+const getTitle = (title: string, date: Date) => {
   if (isPublished(date)) {
     return `${title}`;
   }
@@ -19,9 +19,17 @@ const getTitle = (title, date) => {
   return `[DRAFT] ${title}`;
 };
 
-export const isPublished = date => date && isAfter(date, new Date());
+export const isPublished = (date: Date) => date && isAfter(date, new Date());
 
-const Post = ({
+interface IProps {
+  post: {
+    id: string;
+    excerpt: string;
+  };
+  index: number;
+}
+
+const Post: React.SFC<IProps> = ({
   post,
   index,
 }) => {
@@ -46,14 +54,6 @@ const Post = ({
       </Link>
     </div>
   );
-}
-
-Post.propTypes = {
-  post: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    excerpt: PropTypes.string.isRequired,
-  }).isRequired,
-  index: PropTypes.number.isRequired,
 };
 
 export default Post;

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import WebFont from 'webfontloader';
 import PropTypes from 'prop-types';
 import Header from 'components/Header';
 import {

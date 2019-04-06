@@ -1,6 +1,6 @@
-import React from "react";
-import favicon from "./assets/favicon.ico";
-import { SNIPPET } from "utils/drip";
+import React from 'react';
+import favicon from './assets/favicon.ico';
+import { SNIPPET } from 'utils/drip';
 
 const getCss = () => {
   if (process.env.NODE_ENV === 'production') {
@@ -15,13 +15,16 @@ const getCss = () => {
 };
 
 
-const Script = ({ snippet }) => (
-  <script type="text/javascript"
-    dangerouslySetInnerHTML={{ __html: snippet }}
-  />
-);
+interface IProps {
+  htmlAttributes: any;
+  headComponents: any;
+  bodyAttributes: any;
+  preBodyComponents: any;
+  body: any;
+  postBodyComponents: any;
+}
 
-module.exports = ({
+const Html: React.SFC<IProps> = ({
   htmlAttributes,
   headComponents,
   bodyAttributes,
@@ -50,10 +53,12 @@ module.exports = ({
         dangerouslySetInnerHTML={{ __html: body }}
       />
       {postBodyComponents}
-      <Script
-        snippet={SNIPPET}
+      <script type="text/javascript"
+        dangerouslySetInnerHTML={{ __html: SNIPPET }}
       />
       <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
     </body>
   </html>
 );
+
+export default Html;

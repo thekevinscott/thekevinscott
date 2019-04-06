@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import WebFont from 'webfontloader';
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import GridHeader from "./GridHeader";

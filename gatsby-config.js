@@ -1,4 +1,5 @@
 const isProduction = process.env.NODE_ENV === 'production';
+const path = require('path');
 const fs = require('fs');
 
 const url = 'https://thekevinscott.com';
@@ -21,9 +22,31 @@ module.exports = {
     author: 'Kevin Scott',
   },
   plugins: [
-    `gatsby-plugin-typescript`,
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: `gatsby-plugin-root-import`,
+      options: {
+        assets: path.join(__dirname, 'src/assets'),
+        components: path.join(__dirname, 'src/components'),
+        pages: path.join(__dirname, 'src/pages'),
+        styles: path.join(__dirname, 'src/styles'),
+        templates: path.join(__dirname, 'src/templates'),
+        utils: path.join(__dirname, 'src/utils'),
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Lato:400,500,600,700,800,900'],
+        },
+        typekit: {
+          id: 'zip7tcb',
+        },
+      },
+    },
+    'gatsby-plugin-typescript',
+    {
+      resolve: 'gatsby-plugin-feed',
       options: {
         query: `
         {
@@ -66,17 +89,17 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         respectDNT: true,
         head: true,
         trackingId: 'UA-112845439-1',
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sass`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sass',
     'gatsby-plugin-catch-links',
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -85,14 +108,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          `gatsby-remark-external-links`,
+          'gatsby-remark-external-links',
           'gatsby-remark-copy-linked-files',
           `gatsby-remark-autolink-headers`,
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               showCaptions: true,
               // It's important to specify the maxWidth (in pixels) of
