@@ -1,6 +1,6 @@
 ---
 path: "/dljsbook"
 title: "Deep Learning In Javascript"
-layout: "full-screen"
+layout: "book"
 ---
-<iframe width="100%" height="100%" src="https://dljsbook.com" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+

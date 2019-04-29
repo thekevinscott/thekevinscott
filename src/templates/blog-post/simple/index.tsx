@@ -161,7 +161,7 @@ class Simple extends React.Component<IProps, IState> {
     const isSidebarVisible = scroll > sidebarShowHeight && scroll < getHeight() - 1000;
 
     return (
-      <React.Fragment>
+      <>
         <Header
           visible={true}
           subscriberTags={getSubscriberTags({
@@ -234,7 +234,7 @@ class Simple extends React.Component<IProps, IState> {
             })}
           />
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }

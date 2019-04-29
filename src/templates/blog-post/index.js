@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Simple from './simple';
 import Grid from './grid';
 import LeadMagnet from './lead-magnet';
-import FullScreen from './full-screen';
+import Book from './book';
 import render from 'components/markdown';
 import { pageView } from 'utils/mixpanel';
 
@@ -15,8 +15,8 @@ const getLayoutComponent = layout => {
   if (layout === "lead-magnet") {
     return LeadMagnet;
   }
-  if (layout === 'full-screen') {
-    return FullScreen;
+  if (layout === 'book') {
+    return Book;
   }
   if (layout && layout !== 'simple') {
     if (process.env.NODE_ENV !== "production") {

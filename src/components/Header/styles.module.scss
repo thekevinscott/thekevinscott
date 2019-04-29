@@ -114,6 +114,18 @@ a.closeNewsletter {
     &:hover {
       border-bottom: 1px solid $LIGHT_BLUE;
     }
+
+    &.button {
+      background: $BLUE;
+      border-radius: 4px;
+      color: white;
+      padding: 10px 20px;
+
+      &:hover {
+        border-bottom: none;
+        background: rgba($BLUE, 0.9);
+      }
+    }
   }
 }
 
@@ -239,3 +251,4 @@ a.closeNewsletter {
     }
   }
 }
+

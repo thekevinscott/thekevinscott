@@ -11,10 +11,15 @@ import {
 import * as styles from './styles.module.scss';
 
 interface IProps {
+  data: {
+    markdownRemark: any;
+    site: {
+      siteMetadata: any;
+    }
+  }
 }
 
-const FullScreen: FC<IProps> = ({
-  children,
+const Book: FC<IProps> = ({
   data: {
     markdownRemark: post,
     site: {
@@ -29,10 +34,13 @@ const FullScreen: FC<IProps> = ({
 
   return (
     <div className={styles.parent}>
-      {writeMetaTags({ post, siteMetadata })}
-      {children}
+      <Header visible={true} />
+      <div className={styles.container}>
+        {writeMetaTags({ post, siteMetadata })}
+        <iframe src="https://dljsbook.com" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
     </div>
   );
 }
 
-export default FullScreen;
+export default Book;
