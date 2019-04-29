@@ -144,6 +144,7 @@ class SubscribeForm extends Component<ISubscribeFormProps> {
             },
             ...writeSubscriberTags({
               ...subscriberTags,
+              formSource: 'web',
               descriptionID,
             }),
           ]}
