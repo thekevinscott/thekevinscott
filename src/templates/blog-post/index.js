@@ -4,52 +4,9 @@ import { graphql } from 'gatsby';
 import Simple from './simple';
 import Grid from './grid';
 import LeadMagnet from './lead-magnet';
+import FullScreen from './full-screen';
 import render from 'components/markdown';
 import { pageView } from 'utils/mixpanel';
-
-export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-        description
-        keywords
-        url
-      }
-    }
-     markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      htmlAst
-      timeToRead
-      excerpt(pruneLength: 250)
-      frontmatter {
-        description
-        date
-        path
-        title
-        form
-        tags
-        layout
-        image {
-          childImageSharp {
-            sizes(maxWidth: 2400) {
-              src
-              srcSet
-              sizes
-            }
-          }
-        }
-        image_credit
-        image_height
-        social_image
-        social_image_width
-        social_image_height
-      }
-    }
-  }
-`
-;
 
 const getLayoutComponent = layout => {
   if (layout === "grid") {
@@ -57,6 +14,14 @@ const getLayoutComponent = layout => {
   }
   if (layout === "lead-magnet") {
     return LeadMagnet;
+  }
+  if (layout === 'full-screen') {
+    return FullScreen;
+  }
+  if (layout && layout !== 'simple') {
+    if (process.env.NODE_ENV !== "production") {
+      console.warn(`Undefined layout specified: ${layout}`);
+    }
   }
 
   return Simple;
@@ -108,3 +73,47 @@ export default class BlogPost extends Component {
     );
   }
 };
+
+export const pageQuery = graphql`
+  query BlogPostByPath($path: String!) {
+    site {
+      siteMetadata {
+        title
+        author
+        description
+        keywords
+        url
+      }
+    }
+     markdownRemark(frontmatter: { path: { eq: $path } }) {
+      html
+      htmlAst
+      timeToRead
+      excerpt(pruneLength: 250)
+      frontmatter {
+        description
+        date
+        path
+        title
+        form
+        tags
+        layout
+        image {
+          childImageSharp {
+            sizes(maxWidth: 2400) {
+              src
+              srcSet
+              sizes
+            }
+          }
+        }
+        image_credit
+        image_height
+        social_image
+        social_image_width
+        social_image_height
+      }
+    }
+  }
+`
+;

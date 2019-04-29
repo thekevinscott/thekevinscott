@@ -89,6 +89,7 @@ class Header extends Component<IProps, IState> {
           <div className={styles.right}>
             <Link to="/">Writing</Link>
             <Link to="/speaking">Speaking</Link>
+            <Link to="/dljsbook">Book</Link>
           </div>
         </div>
         <NewsletterSignup
