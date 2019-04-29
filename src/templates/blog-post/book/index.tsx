@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {
+  FC,
+} from 'react';
 import Header from 'components/Header';
 import styles from './styles.module.scss';
 import cover from './dljscover.png';
+import {
+  writeMetaTags,
+} from 'templates/blog-post/utils';
 
 interface IQuestionProps {
   question: string;
@@ -34,9 +39,21 @@ const BuyButton = () => (
   </div>
 );
 
-const IndexPage = () => (
+interface IProps {
+  data: any;
+}
+
+const IndexPage: FC<IProps> = ({
+  data: {
+    markdownRemark: post,
+    site: {
+      siteMetadata,
+    },
+  },
+}) => (
   <>
     <Header visible={true} className={styles.header} />
+    {writeMetaTags({ post, siteMetadata })}
     <div className={styles.jumbotron}>
       <div>
         <img src={cover} />
