@@ -14,14 +14,29 @@ import getContainer, {
   DEFAULT,
 } from './config';
 
+const transformKey = (key: string) => {
+  if (key === 'formPosition') {
+    return 'form_position';
+  }
+  if (key === 'formSource') {
+    return 'form_source';
+  }
+  if (key === 'descriptionID') {
+    return 'description_id';
+  }
+  return key;
+};
+
 const writeSubscriberTags = subscriberTags => Object.entries(subscriberTags).map(([
   key,
   value,
-]) => ({
-  type: 'hidden',
-  name: `${key}`,
-  value,
-}));
+]) => {
+  return {
+    type: 'hidden',
+    name: `fields[${transformKey(key)}]`,
+    value,
+  };
+});
 
 const API_KEY = 'TCa8raZQV_sVBpVvqtFm7Q';
 
@@ -37,6 +52,18 @@ export interface ISubscribeFormProps {
   onSubscribe: (type: string) => void;
 }
 
+const fdAsObj = (fd: FormData, whitelist: string[] = []) => {
+  const obj: {
+    [index: string]: any;
+  } = {};
+  fd.forEach((value, key) => {
+    if (whitelist.includes(key)) {
+      obj[key] = value;
+    }
+  });
+  return obj;
+};
+
 class SubscribeForm extends Component<ISubscribeFormProps> {
   constructor(props: ISubscribeFormProps) {
     super(props);
@@ -49,13 +76,16 @@ class SubscribeForm extends Component<ISubscribeFormProps> {
     };
   }
 
+
+
+
   handleSubmit = (formID: string | number) => async (e: React.KeyboardEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
-
+    formData.append('api_key', API_KEY);
     const email = formData.get('email');
-    const url = `https://api.convertkit.com/v3/forms/${formID}/subscribe?api_key=${API_KEY}&email=${email}`;
+    const url = `https://api.convertkit.com/v3/forms/${formID}/subscribe`;
     try {
       this.setState({
         submitting: true,
@@ -64,6 +94,7 @@ class SubscribeForm extends Component<ISubscribeFormProps> {
       });
       const response = await fetch(url, {
         method: 'post',
+        body: formData,
       });
       const resp = await response.json();
 
@@ -144,8 +175,8 @@ class SubscribeForm extends Component<ISubscribeFormProps> {
             },
             ...writeSubscriberTags({
               ...subscriberTags,
-              formSource: 'web',
-              descriptionID,
+              form_source: 'web',
+              description_id: descriptionID,
             }),
           ]}
           headline={type === 'footer' ? footerLarge : null}
