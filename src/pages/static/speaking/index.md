@@ -8,7 +8,7 @@ I've spoken at a few conferences and meetups. If you'd like me to speak at your 
 ### Ask What AI Can Do For You
 [FullStack NYC](https://skillsmatter.com/skillscasts/13337-ask-what-ai-can-do-for-you) | May 17, 2019
 
-[![Ask What AI Can Do For You](skillsmatter.png)](https://skillsmatter.com/skillscasts/13337-ask-what-ai-can-do-for-you)
+<a style="display: block; width: 100%; background: url(skillsmatter.png); min-height: 400px;" href="https://skillsmatter.com/skillscasts/13337-ask-what-ai-can-do-for-you"></a>
 
 ### Ask What AI Can Do For You
 [ByteConf](https://www.youtube.com/watch?v=L1TX3ZqIyiA) | March 22, 2019
