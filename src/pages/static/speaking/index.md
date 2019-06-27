@@ -5,11 +5,15 @@ title: "Speaking"
 
 I've spoken at a few conferences and meetups. If you'd like me to speak at your conference, <a href="mailto:speak@hitheory.com">shoot me a note!</a>
 
-### [FullStack Conference](https://skillsmatter.com/conferences/11077-fullstack-nyc-2019-the-conference-on-javascript-node-and-internet-of-things#program)
-May 17, 2019
+### Ask What AI Can Do For You
+[FullStack NYC](https://skillsmatter.com/skillscasts/13337-ask-what-ai-can-do-for-you) | May 17, 2019
 
-### ByteConf
-March 22, 2019
+<a href="https://skillsmatter.com/skillscasts/13337-ask-what-ai-can-do-for-you" target="_blank"><img src="skillsmatter.png" /></a>
+
+### Ask What AI Can Do For You
+[ByteConf](https://www.youtube.com/watch?v=L1TX3ZqIyiA) | March 22, 2019
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/L1TX3ZqIyiA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### [Developer Week](https://developerweek2019.sched.com/speaker/kevin_scott.1yt95oq0)
 February 20, 2019 & February 21, 2019
