@@ -8,7 +8,6 @@ const GridHeader = ({
   image,
   credit,
   title,
-  timeToRead,
   date,
 }) => (
   <div className={styles.header}>

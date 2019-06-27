@@ -88,7 +88,6 @@ export const pageQuery = graphql`
      markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       htmlAst
-      timeToRead
       excerpt(pruneLength: 250)
       frontmatter {
         description

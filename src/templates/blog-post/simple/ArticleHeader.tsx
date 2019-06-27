@@ -20,7 +20,6 @@ interface IProps {
   };
   caption?: string;
   title: string;
-  timeToRead?: any;
   date: string;
   imageHeight?: number;
   headerIsVisible: boolean;
@@ -30,7 +29,6 @@ const ArticleHeader = ({
   image,
   caption,
   title,
-  timeToRead,
   date,
   imageHeight,
   headerIsVisible,

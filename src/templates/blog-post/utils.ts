@@ -10,7 +10,7 @@ export const getImageUrl = (url, { image }) => {
   }
 };
 
-export const getPostData = ({ frontmatter, timeToRead }, metadata) => {
+export const getPostData = ({ frontmatter }, metadata) => {
   const title = frontmatter.title ? `${frontmatter.title}` : metadata.title;
   const description = frontmatter.description || frontmatter.excerpt || metadata.description;
   const path = `${metadata.url}${frontmatter.path}`;
@@ -31,7 +31,6 @@ export const getPostData = ({ frontmatter, timeToRead }, metadata) => {
     imageURL,
     author,
     keywords: tags || keywords,
-    timeToRead,
     url: path,
     credit: image_credit,
     ...frontmatter,
@@ -77,7 +76,6 @@ export const getSubscriberTags = ({ post, siteMetadata }) => {
     form,
     tags,
     credit,
-    timeToRead,
     date,
   } = getPostData(post, siteMetadata);
 

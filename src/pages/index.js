@@ -19,7 +19,6 @@ export const pageQuery = graphql`
         node {
           excerpt(pruneLength: 250)
           id
-          timeToRead
           frontmatter {
             title
             date

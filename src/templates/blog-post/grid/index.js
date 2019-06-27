@@ -41,7 +41,6 @@ class Grid extends Component {
       form,
       tags,
       credit,
-      timeToRead,
       date,
     } = getPostData(post, siteMetadata);
 
@@ -62,7 +61,6 @@ class Grid extends Component {
             image={image}
             credit={credit}
             title={title}
-            timeToRead={timeToRead}
             date={date}
           />
           <div

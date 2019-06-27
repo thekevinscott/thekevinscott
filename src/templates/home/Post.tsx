@@ -35,7 +35,6 @@ const Post: React.SFC<IProps> = ({
 }) => {
   const {
     excerpt,
-    timeToRead,
     frontmatter: {
       title,
       image,

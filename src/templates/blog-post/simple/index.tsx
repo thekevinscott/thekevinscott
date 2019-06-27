@@ -146,7 +146,6 @@ class Simple extends React.Component<IProps, IState> {
       form,
       tags,
       credit,
-      timeToRead,
       date,
       image_height,
     } = getPostData(post, siteMetadata);
@@ -176,7 +175,6 @@ class Simple extends React.Component<IProps, IState> {
             image={image}
             caption={credit}
             title={title}
-            timeToRead={timeToRead}
             date={date}
             imageHeight={image_height}
           />
