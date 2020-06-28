@@ -667,6 +667,20 @@ ol, ul {
   height: var(--SIZE);
 }
 
+.h2-container {
+  /* cursor: pointer; */
+}
+.h2-container a svg {
+  color: inherit;
+}
+.h2-container:hover a {
+  opacity: 1;
+}
+.h2-container a {
+  opacity: 0;
+  color: rgba(0,0,0,0.4);
+}
+
 @media screen and (max-width: 45em) {
   #logo-container, .intro {
     display: none;
