@@ -626,11 +626,6 @@ capt {
   background-color: none;
 }
 
-.h2-container a {
-  position: relative;
-  left: 0;
-}
-
 ol, ul {
   line-height: 1.6rem;
 }
@@ -667,4 +662,35 @@ ol, ul {
   border-radius: var(--SIZE);
   width: var(--SIZE);
   height: var(--SIZE);
+}
+
+@media screen and (max-width: 45em) {
+  #logo-container, .intro {
+    display: none;
+  }
+  #patterns-nav {
+    margin-top: 0;
+  }
+  #patterns-nav button {
+    background-color: var(--DARK-BLUE);
+  }
+  #patterns-list li {
+    margin-bottom: 0;
+  }
+  .intro-and-nav .pattern span {
+    text-align: left;
+  }
+  #main h1:first-child {
+    font-size: 2.4rem;
+  }
+  #main.single .info {
+    margin-bottom: 40px;
+
+  }
+  #main h1 {
+    margin: 30px 0;
+  }
+  #main h2 {
+    margin: 20px 0;
+  }
 }
