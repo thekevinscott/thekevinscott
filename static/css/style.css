@@ -667,12 +667,8 @@ ol, ul {
   height: var(--SIZE);
 }
 
-.h2-container {
-  /* cursor: pointer; */
-}
-
 .header-icon-link {
-  margin-left: -30px;
+  margin-left: -40px;
   position: absolute;
   text-decoration: none;
   border-bottom: none;
