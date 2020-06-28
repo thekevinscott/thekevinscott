@@ -16,7 +16,6 @@
 {{ end }}
     {{ range $pages }}
     {{ if not .Params.hidden }}
-    {{ end }}
 
     <li>
       <h2>
@@ -36,10 +35,21 @@
       </p>
     </li>
     {{ end }}
+    {{ end }}
   </ul>
-</main>
+<div class="line"></div>
+  </main>
         </div>
+    {{ partial "newsletter.html" . }}
       </div>
+
+
+
+
+
+
+
+
     {{ partial "script.html" . }}
   </body>
 </html>

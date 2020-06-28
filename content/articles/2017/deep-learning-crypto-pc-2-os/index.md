@@ -5,6 +5,7 @@ image: "cover.jpeg"
 url: "/deep-learning-cryptocurrency-pc-2-os/"
 tags: ["cryptocurrency", "artificial intelligence", "ubuntu", "pc"]
 title: "Building a Deep Learning / Cryptocurrency PC (#2): The OS"
+summary: "Part 2 of my experience building a Deep Learning PC"
 ---
 Among the buzzwords in the tech world of 2017, two tower above the rest: **deep
 learning** and **cryptocurrencies**. It seems that everyone I know (in tech)

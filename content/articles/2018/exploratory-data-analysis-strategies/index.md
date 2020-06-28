@@ -1,6 +1,6 @@
 ---
 date: "2018-03-12T07:00:00.000Z"
-description: "An analysis of several different data analyses, and a distillation of best practices understanding datasets"
+summary: "An analysis of several different data analyses, and a distillation of best practices understanding datasets"
 image: "images/cover.jpg"
 image_credit: "Photo by <a href='https://unsplash.com/photos/hWUiawiCO_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Samuel Zeller</a> on <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>"
 layout: "grid"

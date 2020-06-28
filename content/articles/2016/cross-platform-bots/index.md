@@ -5,7 +5,7 @@ image: "cover.jpeg"
 url: /cross-platform-bots/
 tags: ["chatbots", "ux", "design"]
 title: "Cross Platform Bots"
-hidden: true
+summary: "Should bots be consistent across platforms, or not? To answer that, let’s see what the major differences between messaging platforms are."
 ---
 
 In 2007, when Apple released the iPhone, Jobs made a controversial decision not

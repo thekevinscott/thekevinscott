@@ -7,6 +7,7 @@ image_credit: "Patrick Tomasso"
 url: "/background-images-in-react-native/"
 tags: ["react native", "images"]
 title: "Background Images in React Native"
+summary: "A common question amongst React Native developers is how to put a background image on a view. Let's answer it."
 ---
 
 A [common question](http://stackoverflow.com/questions/29322973/whats-the-best-way-to-add-a-full-screen-background-image-in-react-native) amongst React Native developers is how to put a background image on a view.

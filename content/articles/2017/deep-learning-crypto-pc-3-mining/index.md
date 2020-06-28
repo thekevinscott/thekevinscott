@@ -5,6 +5,7 @@ image: "cover.jpg"
 url: "/deep-learning-cryptocurrency-pc-3-mining/"
 tags: ["bitcoin", "cryptocurrency", "ethereum", "blockchain", "mining"]
 title: "Building a Deep Learning / Cryptocurrency PC (#3): Mining"
+summary: "Part 3 of my experience building a Deep Learning PC"
 ---
 Among the buzzwords in the tech world of 2017, two tower above the rest: **deep
 learning** and **cryptocurrencies**. It seems that everyone I know (in tech)

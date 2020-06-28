@@ -5,24 +5,14 @@ image: "cover.png"
 url: "/emojis-in-javascript/"
 tags: ["emoji", "javascript", "unicode", "Programming"]
 title: "Emojis in Javascript"
+summary: "A deep dive into the particular parsing oddities of emojis, Unicode, and Javascript."
 ---
 
 Parsing emoji in Javascript is… not easy.
 
-My friends and I built Emoji Salad, an Emoji Pictionary game played via SMS. Our
-backend is built in Node.js, and core game functionality requires parsing
-strings that contain emoji.
+This article is a collection of the research I did while getting up to speed on emoji in Javascript. First, a quick dive into the inner workings of Unicode, followed by how emoji in particular are represented in JavaScript. Finally, let’s walk through writing a regular expression designed to handle all manner of emoji, heavily inspired by [lodash’s implementation of split](https://github.com/lodash/lodash/blob/4.16.6/lodash.js).
 
-This article is a collection of the research I did while getting up to speed on
-emoji in Javascript. First, a quick dive into the inner workings of Unicode,
-followed by how emoji in particular are represented in JavaScript. Finally,
-let’s walk through writing a regular expression designed to handle all manner of
-emoji, heavily inspired by [lodash’s implementation of
-split](https://github.com/lodash/lodash/blob/4.16.6/lodash.js).
-
-[If your eyes glaze over like mine did while reading this, I put all the code
-into an npm library you can find
-here.](https://www.npmjs.com/package/emoji-tree)
+[If your eyes glaze over like mine did while reading this, I put all the code into an npm library you can find here.](https://www.npmjs.com/package/emoji-tree)
 
 *****
 

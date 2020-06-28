@@ -4,7 +4,7 @@ image: "cover.jpg"
 url: "/shoulders-of-giants/"
 tags: ["artificial intelligence", "deep learning", "machine learning"]
 title: "Standing on the shoulders of giants"
-hidden: true
+summary: "Thoughts on building on others' models"
 ---
 
 Before I started learning about AI, I thought that training a neural network meant training from scratch. Want to train a network to recognize dogs? Feed it 10,000 dogs and watch it go. Want to recognize images of malignant tumors in a CT scan? Collect a bunch of medical images and train away. I didn't realize you could take the models trained on one set of images and apply them to another, entirely unrelated set. Turns out this is exactly what you can do!

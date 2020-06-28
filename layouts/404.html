@@ -1,1 +1,30 @@
-hi
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+  {{ partial "head.html" . }}
+  <body>
+    <div id="topline"></div>
+    <div class="wrapper">
+      {{ partial "header.html" . }}
+      <div class="main-and-footer">
+        <div>
+<main id="main" class="list">
+  <h1>404</h1>
+  <p>This page could not be found. Such sadness.</p>
+  <img src="/images/gorilla.png" />
+
+<div class="line"></div>
+  </main>
+        </div>
+    {{ partial "newsletter.html" . }}
+      </div>
+
+
+
+
+
+
+
+
+    {{ partial "script.html" . }}
+  </body>
+</html>

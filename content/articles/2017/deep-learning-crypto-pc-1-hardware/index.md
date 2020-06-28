@@ -5,6 +5,7 @@ image: "cover.jpeg"
 url: "/deep-learning-cryptocurrency-pc-1-hardware/"
 tags: ["artificial intelligence", "deep learning", "machine learning", "cryptocurrencies", "bitcoin"]
 title: "Building a Deep Learning / Cryptocurrency PC (#1): The Hardware"
+summary: "Part 1 of my experience building a Deep Learning PC"
 ---
 
 <span class="dropcap">A</span>mong the buzzwords in the tech world of 2017, two tower above the rest: **deep

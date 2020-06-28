@@ -7,12 +7,10 @@ image_credit: "<a href='https://unsplash.com/photos/ICW6QYOcdlg'>Galymzhan Abdug
 url: "/tabbing-through-input-fields/"
 tags: ["react native", "tabbing"]
 title: "Tabbing Through Input Fields"
+summary: "On the web, it’s common to tab through forms, an intuitive and UX-friendly pattern. With React Native, you need to implement this functionality yourself."
 ---
 
-On the web, it’s common to tab through forms, an intuitive and [UX-friendly
-pattern](https://www.nngroup.com/articles/web-form-design/). You get this out of
-the box with web forms, but when building apps with React Native, you need to
-implement this functionality yourself. Fortunately, it’s a cinch to set up.
+On the web, it’s common to tab through forms, an intuitive and [UX-friendly pattern](https://www.nngroup.com/articles/web-form-design/). You get this out of the box with web forms, but when building apps with React Native, you need to implement this functionality yourself. Fortunately, it’s a cinch to set up.
 
 ## Native Form UX vs. Web Form UX
 

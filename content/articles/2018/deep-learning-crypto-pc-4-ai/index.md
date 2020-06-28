@@ -5,6 +5,7 @@ image: "cover.png"
 url: "/deep-learning-cryptocurrency-pc-4-ai/"
 tags: ["artificial intelligence", "deep learning", "machine learning", "PC", "pytorch", "tensorflow", "gpu"]
 title: "Building a Deep Learning / Cryptocurrency PC (#4): AI"
+summary: "Part 4 of my experience building a Deep Learning PC"
 ---
 
 Among the buzzwords of this past year, two tower above the rest: deep learning and cryptocurrencies. It seems that everyone I know (in tech) wants to learn these things. And guess what — so do I! So much so that I'm building my own computer in order to facilitate that learning.

@@ -1,7 +1,10 @@
 {{ define "main" }}
       <div class="main-and-footer">
         <div id="cover-img">
-  <img src="{{ .Params.image }}" />
+          <img src="{{ .Params.image }}" />
+          <div id="cover-img-credit">
+            {{ .Params.image_credit | safeHTML }}
+          </div>
 
         </div>
         <div>

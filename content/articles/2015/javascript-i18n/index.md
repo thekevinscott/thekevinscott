@@ -4,7 +4,7 @@ description: "How to do i18n with Javascript"
 url: "/javascript-internationalization/"
 tags: ["javascript", "internationalization"]
 title: "Javascript Internationalization"
-hidden: true
+summary: "I recently did some research on Javascript internationalization for a client-side Javascript app."
 ---
 
 I recently did some research on Javascript internationalization for a (mostly)

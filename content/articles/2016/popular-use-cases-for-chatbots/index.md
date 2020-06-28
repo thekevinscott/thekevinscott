@@ -4,6 +4,8 @@ description: "What are some ways we can best leverage bots to help our customers
 url: "/popular-use-cases-for-chatbots/"
 tags: ["chatbots", "use cases", "artificial intelligence"]
 title: "Popular Use Cases for Chatbots"
+summary: "Exploring ideal use cases are for bots, and when they can match or exceed equivalent app or web
+experiences."
 ---
 
 ![David Marcus talking about bots](marcus.jpeg)
