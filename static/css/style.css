@@ -693,4 +693,8 @@ ol, ul {
   #main h2 {
     margin: 20px 0;
   }
+  #patterns-list {
+    margin-top: 0;
+    border: none;
+  }
 }
