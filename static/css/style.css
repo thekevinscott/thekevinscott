@@ -478,6 +478,7 @@ p img {
   /* margin: 0 auto; */
   line-height: 1.4em;
   text-align: left;
+  margin: 0;
 }
 
 #newsletter-info {
@@ -528,7 +529,7 @@ form#newsletter-contents {
   background: var(--WHITE);
   color: black;
   position: relative;
-  margin-top: 4em;
+  margin-top: 2em;
   border-radius: 10px;
   /* border: 2px solid var(--BORDER); */
   /* border-radius: 5px; */
@@ -656,4 +657,14 @@ ol, ul {
   right: 0;
   background-color: rgb(255,255,255,0.5);
   border-radius: 0 0 0 5px;
+}
+
+#newsletter-headhost {
+  --SIZE: 70px;
+  float: left;
+  margin-right: 20px;
+  overflow: hidden;
+  border-radius: var(--SIZE);
+  width: var(--SIZE);
+  height: var(--SIZE);
 }
