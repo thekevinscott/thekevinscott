@@ -538,6 +538,7 @@ form#newsletter-contents {
 
 form#newsletter-contents h2 {
   color: rgba(16,3,130,.74);
+  color: var(--PINK);
   font-size: 1.2rem;
   margin: 0;
   padding: 0;
