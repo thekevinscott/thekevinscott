@@ -1,0 +1,38 @@
+$giant: 1340px;
+$desktop: 992px;
+$tablet: 820px;
+// $tablet: 768px;
+$phone: 415px;
+
+$headerHeightsDesktop: 400px;
+$headerHeightsTablet: 300px;
+$headerHeightsPhone: 160px;
+
+$contentWidth: 780px;
+$sidebarWidth: 340px;
+
+$SERIF: "sofia-pro", Source Serif Pro, Georgia, serif;
+$SANS_SERIF: -apple-system, BlinkMacSystemFont, Lato, Droid Sans, Helvetica Neue, sans-serif;
+$MONOSPACE: SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;
+
+$HEADER_HEIGHT: 60px;
+$HEADER_BORDER: 3px;
+
+$PINK: #ffb7b7;
+$GREEN: #1c9963;
+$LIGHT_GRAY: rgba(100, 100, 100, 0.2);
+// $GRAY: #10038208;
+$GRAY: rgba(16, 3, 130, 0.03);
+$YELLOW: #fbf65c;
+// $YELLOW: #fff329b3;
+// $BLUE: #100382bd;
+$BLUE: rgba(16, 3, 130, 0.74);
+$LIGHT_BLUE: $BLUE;
+$ORIGINAL_BLUE: rgba(45, 67, 104, 0.95);
+$DARK_BLUE: desaturate(darken($ORIGINAL_BLUE, 10%), 10%);
+
+$BOOK_BG: rgb(37, 54, 76);
+$BOOK_HIGHLIGHT: rgb(31, 182, 255);
+// $DARK_BLUE: Color("rgba(45,67,104,0.95)").darken(0.1).desaturate(0.1).string();
+
+$HR_DEGREES: -12deg;

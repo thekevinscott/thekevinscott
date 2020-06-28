@@ -1,0 +1,34 @@
+{{ define "main" }}
+
+      <div class="main-and-footer">
+        <div>
+<main id="main" class="list">
+  <!-- <h1>{{ .Title }}</h1> -->
+  <ul class="patterns-list" id="list">
+    {{ range .Pages.ByPublishDate.Reverse }}
+    {{ if not .Params.hidden }}
+
+    <li>
+      <h2>
+        <a href="{{ .Permalink }}">
+          {{ .Title }}
+        </a>
+      </h2>
+      <div class="info">
+      <date>{{.Date.Format "Jan 2 2006"}}</date>
+      <span>{{.ReadingTime}} min read</span>
+      </div>
+
+      <p>
+        <a href="{{ .Permalink }}">
+        {{ .Summary }}
+        </a>
+      </p>
+    </li>
+    {{ end }}
+    {{ end }}
+  </ul>
+</main>
+        </div>
+      </div>
+{{ end }}

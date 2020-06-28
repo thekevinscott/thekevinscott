@@ -1,0 +1,76 @@
+<div id="newsletter-background">
+<div id="newsletter">
+
+    <p>I've written a book on getting started with Deep Learning in Javascript for Hackers. We focus on real use cases from the ground up, with a focus on the why and the how.</p>
+  <form id="newsletter-contents" method="post" action="https://api.convertkit.com/v3/forms/888718/subscribe">
+    <h2>Subscribe to get a Sample Chapter of my book,<br />Deep Learning With Javascript.</h2>
+    <div id="newsletter-input-container">
+  <input type="text" placeholder="Email address" id="subscribe" name="email" />
+  <button type="submit" id="submit">
+    Sign Up
+  </button>
+
+    </div>
+  <span id="newsletter-info"></span>
+</form>
+  <script type="text/javascript">
+    const subscribe = document.getElementById('subscribe');
+    const submit = document.getElementById('submit');
+    const form = document.getElementById('newsletter-contents');
+    const info = document.getElementById('newsletter-info');
+    const isValidEmail = (value) => {
+      const parts = value.split('@') || '';
+      if (parts.length < 2) {
+        return false;
+      }
+      const ending = parts.slice(1).join('@').split('.').filter(Boolean);
+      return ending.length >= 2;
+    };
+    const checkValue = () => {
+      const value = subscribe.value;
+      if (isValidEmail(value)) {
+        submit.removeAttribute('disabled');
+      } else {
+        submit.setAttribute("disabled", "disabled");
+      }
+    };
+    subscribe.addEventListener('keyup', (e) => {
+      checkValue();
+    });
+    checkValue();
+    let timer;
+    form.addEventListener('submit', (e) => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+      info.innerHTML = '';
+      info.classList.remove('hide');
+      info.classList.remove('error');
+      e.preventDefault();
+      submit.setAttribute("disabled", "disabled");
+      subscribe.setAttribute("disabled", "disabled");
+      const formData = new FormData();
+      formData.append('api_key', 'TCa8raZQV_sVBpVvqtFm7Q');
+      formData.append('email', subscribe.value);
+      fetch(form.getAttribute('action'), {
+        method: 'post',
+        body: formData,
+      }).then(response => {
+        return response.json();
+      }).then(response => {
+        if (response.error) {
+          info.innerHTML = response.message;
+          info.classList.add('error');
+        } else {
+          info.innerHTML = 'You\'re subscribed! Check your email for next steps.';
+          timer = setTimeout(() => {
+            info.classList.add('hide');
+          }, 4000);
+        }
+        submit.removeAttribute('disabled');
+        subscribe.removeAttribute('disabled');
+      });
+    })
+  </script>
+</div>
+</div>

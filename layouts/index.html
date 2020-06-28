@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+  {{ partial "head.html" . }}
+  <body>
+    <div id="topline"></div>
+    <div class="wrapper">
+      {{ partial "header.html" . }}
+      <div class="main-and-footer">
+        <div>
+<main id="main" class="list">
+  <ul class="patterns-list" id="list">
+    {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+
+    {{ range where .Pages "Type" "articles" }}
+  {{ .Content }}
+{{ end }}
+    {{ range $pages }}
+    {{ if not .Params.hidden }}
+    {{ end }}
+
+    <li>
+      <h2>
+        <a href="{{ .Permalink }}">
+          {{ .Title }}
+        </a>
+      </h2>
+      <div class="info">
+      <date>{{.Date.Format "Jan 2 2006"}}</date>
+      <span>{{.ReadingTime}} min read</span>
+      </div>
+
+      <p>
+        <a href="{{ .Permalink }}">
+        {{ .Summary }}
+        </a>
+      </p>
+    </li>
+    {{ end }}
+  </ul>
+</main>
+        </div>
+      </div>
+    {{ partial "script.html" . }}
+  </body>
+</html>

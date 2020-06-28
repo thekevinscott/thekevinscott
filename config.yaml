@@ -1,0 +1,82 @@
+baseURL: https://thekevinscott.com
+languageCode: en-us
+defaultContentLanguage: en
+title: Kevin Scott
+theme: cupper-hugo-theme
+googleAnalytics: UA-112845439-1
+enableGitInfo: true
+
+mainSections:
+  ["articles"]
+
+
+taxonomies:
+  tag: tags
+
+permalinks:
+  post: /:filename/
+
+imaging:
+  quality: 99
+
+params:
+  description: Slinging codes and flipping design burgers. Author of Deep Learning In Javascript (http://dljsbook.com)
+  homeMetaContent: Design. Artificial Intelligence. Javascript. Machine Learning in your Browser with Tensorflow.js
+  # For more date formats see https://gohugo.io/functions/format/
+  dateFormat: Jan 2, 2006
+  codePenUser: someUser
+  katex: false
+  darkThemeAsDefault: false
+  hideHeaderLinks: false
+  search: true
+  # A list of custom css files can be provided, which must be placed inside
+  # 'static/'.
+  # This is useful to override just specific css classes, instead of copying
+  # the entire theme's css file to your own site.
+  # Usage:
+  customCss:
+    - css/style.css # relative path starting from static/
+  #- css/bar.css
+
+menu:
+  nav:
+    - name: Articles
+      url: /
+      weight: 1
+    - name: Speaking
+      url: /speaking/
+      weight: 2
+    - name: Book
+      url: https://dljsbook.com
+      weight: 3
+
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute: true
+      autoHeadingID: true
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xHTML: false
+  highlight:
+    codeFences: false
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: monokai
+    tabWidth: 4
+  tableOfContents:
+    endLevel: 6
+    startLevel: 2

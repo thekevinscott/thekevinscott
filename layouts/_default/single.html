@@ -1,0 +1,20 @@
+{{ define "main" }}
+      <div class="main-and-footer">
+        <div id="cover-img">
+  <img src="{{ .Params.image }}" />
+
+        </div>
+        <div>
+  <main id="main" class="single">
+    <h1>{{ .Title }}</h1>
+      <div class="info">
+      <date>{{.Date.Format "Jan 2 2006"}}</date>
+      <span>{{.ReadingTime}} min read</span>
+      </div>
+    {{ .Content }}
+<div class="line"></div>
+  </main>
+        </div>
+    {{ partial "newsletter.html" . }}
+      </div>
+{{ end }}
