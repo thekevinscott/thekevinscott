@@ -80,3 +80,11 @@ markup:
   tableOfContents:
     endLevel: 6
     startLevel: 2
+
+outputs:
+  home: ["HTML","RSS"]
+
+outputFormats:
+  RSS:
+    mediatype: "application/rss"
+    baseName: "rss"
