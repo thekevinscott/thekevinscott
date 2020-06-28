@@ -670,15 +670,25 @@ ol, ul {
 .h2-container {
   /* cursor: pointer; */
 }
-.h2-container a svg {
-  color: inherit;
+
+.header-icon-link {
+  margin-left: -30px;
+  position: absolute;
+  text-decoration: none;
+  border-bottom: none;
 }
-.h2-container:hover a {
-  opacity: 1;
-}
-.h2-container a {
+.header-icon-link svg {
   opacity: 0;
   color: rgba(0,0,0,0.4);
+}
+h1:hover .header-icon-link svg,
+h2:hover .header-icon-link svg,
+h3:hover .header-icon-link svg,
+h4:hover .header-icon-link svg,
+h5:hover .header-icon-link svg,
+h6:hover .header-icon-link svg
+{
+  opacity: 1;
 }
 
 @media screen and (max-width: 45em) {
