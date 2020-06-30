@@ -11,9 +11,6 @@
   <ul class="patterns-list" id="list">
     {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 
-    {{ range where .Pages "Type" "articles" }}
-  {{ .Content }}
-{{ end }}
     {{ range $pages }}
     {{ if not .Params.hidden }}
 
