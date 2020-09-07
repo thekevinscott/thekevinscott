@@ -4,23 +4,26 @@ url: "/super-resolution-with-javascript"
 title: "Super Resolution With Javascript"
 tags: ["tensorflowjs examples", "super resolution", "artificial intelligence", "javascript", "image enhancement", "esrgan", "deep learning", "machine learning", "tensorflow.js", "web"]
 description: "Super resolution in the browser"
-summary: "Super Resolution in the browsr"
+summary: "Super Resolution in the browser"
 
 ---
 
-* Overview of article / intro / what article is about / what it is not about. Talk about the GAN solution and how this is mostly about JS.
+I recently released [UpscalerJS](https://upscaler.ai), a tool for increasing image resolution in your browser.
 
-* Show a GIF of the tool in action.
+What is image resolution?
 
-Use case: images on low latency.
 
-* Define what upscaling is
-
-* Talk about wanting a (somewhat) agnostic tool - something where we could switch in and out new pretrained models
-
-* So nothing that requires a ton of bespoke work
-
-Link to my tool.
+> * Overview of article / intro / what article is about / what it is not about. Talk about the GAN solution and how this is mostly about JS.
+> 
+> * Show a GIF of the tool in action.
+> 
+> Use case: images on low latency.
+> 
+> * Define what upscaling is
+> 
+> * Talk about wanting a (somewhat) agnostic tool - something where we could switch in and out new pretrained models
+> 
+> * So nothing that requires a ton of bespoke work
 
 ## The Problem
 
@@ -198,3 +201,4 @@ I've put all this together into Upscaler.js.
 
 The nice thing is that it's somewhat agnostic to the model being used.
 
+## Examples of outputs
