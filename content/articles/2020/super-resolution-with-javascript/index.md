@@ -8,9 +8,10 @@ summary: "Super Resolution in the browser"
 
 ---
 
-I recently released [UpscalerJS](https://upscaler.ai), a tool for increasing image resolution in your browser.
+I recently released [UpscalerJS](https://upscaler.ai), a tool for increasing image resolution ("image super resolution") in your browser.
 
-What is image resolution?
+Why would you want to do super resolution? How does it work? And how does it work in Javascript? We'll cover all of that
+How does Super Resolution work? Why would
 
 
 > * Overview of article / intro / what article is about / what it is not about. Talk about the GAN solution and how this is mostly about JS.
@@ -40,6 +41,8 @@ The more common approach - the one that [browsers use by default](https://develo
 ![Watson the Dog, pixelated](./images/watson-the-dog.png)
 
 This is obviously much less pixelated, and is more aesthetically pleasing. On the other hand, it's blurry.
+
+Let's take a more concrete example. Let's say you've built a clone of Instagram. Users view your site on their phones, and users on slower connections complain about long loading times for the images.
 
 There have been lots of other algorithmic improvements with various tradeoffs which I won't go into. Instead I'll jump straight to one of the most cutting edge solutions out there, based on GANs.
 
