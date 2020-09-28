@@ -1,5 +1,5 @@
 ---
-date: "2020-09-29T08:00:00.000Z"
+date: "2020-09-29T10:00:00.000Z"
 url: "/super-resolution-with-js"
 title: "Image Upscaling in the Browser with Javascript"
 tags: ["tensorflowjs examples", "super resolution", "artificial intelligence", "javascript", "image enhancement", "esrgan", "deep learning", "machine learning", "tensorflow.js", "web"]
