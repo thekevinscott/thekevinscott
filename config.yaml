@@ -5,6 +5,7 @@ title: Kevin Scott
 theme: cupper-hugo-theme
 googleAnalytics: UA-112845439-1
 enableGitInfo: true
+enableRobotsTXT: true
 
 mainSections:
   ["articles"]
