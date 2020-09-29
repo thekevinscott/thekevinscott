@@ -1,5 +1,5 @@
 ---
-date: "2020-09-29T10:00:00.000Z"
+date: "2020-09-28T10:00:00.000Z"
 url: "/super-resolution-with-js"
 title: "Image Upscaling in the Browser with Javascript"
 tags: ["tensorflowjs examples", "super resolution", "artificial intelligence", "javascript", "image enhancement", "esrgan", "deep learning", "machine learning", "tensorflow.js", "web"]
@@ -11,6 +11,8 @@ summary: "Image Upscaling in your browser lets you reduce your image sizes up to
 
 *In this article I want to lay out what I consider a killer use case for neural networks in the browser, along with how I went about discovering the research, converting it to Javascript, and ways to improve it in the future.*
 
+![UpscalerJS](./images/demo.gif)
+
 ---
 
 Let's say you're working on an e-commerce platform. Your users upload photos of products to sell.
@@ -19,7 +21,7 @@ You've designed a great looking site, built to highlight the beautiful and wondr
 
 (I'm drawing from experience here - this has happened to me more than once.)
 
-You can go back and nag your users for better images - and sometimes this can work. But often, the images they've provided are all they've got. Maybe the images are screenshotted from PDFs, or maybe the images are older and users don't have better ones. And even if they _do_ have better images, it's a labor intensive ask of your users to go back and ask them to fix their images for you. Even if it's for their benefit.
+You can go back and nag your users for better images - and sometimes this can work. But often, the images they've provided are all they've got. Maybe the images are screenshotted from PDFs, or maybe the images are older and users don't have better ones. And even if they _do_ have better images, it's a labor intensive ask of your users to go back and ask them to fix their images for you, even if it is for their benefit.
 
 Is there a technical solution we can explore? There certainly is and it's called **Super Resolution**.
 
@@ -70,11 +72,11 @@ Third, and in my mind, the most compelling argument - you can serve smaller imag
 
 For instance, those images above? The 300px is 724kb. The 150px version? It's _9kb_. 
 
-That's _6 percent_ of the file size. That is a massive reduction!
+That's an image that's _6 percent_ of the original file size. That is a massive reduction!
 
 There are, of course, some clear drawbacks to running in the browser. The biggest is that you're constrained by the hardware of your users. And this manifests in two ways. One is, if you want to deploy the latest and greatest models, you may be out of luck. Particularly if they are GPU hungry, they just might not be capable of running in the browser. In recent years, hardware manufacturers including Apple and Google [have invested huge sums of money in improving the performance](https://heartbeat.fritz.ai/hardware-acceleration-for-machine-learning-on-apple-and-android-f3e6ca85bda6) of their on-device chips, with a particular focus on improving the ability to run neural networks on devices. The good news is that, year after year, the performance of this technology will get better; the bad news is that, for users on older devices, the disparity between performance will become that much more significant. If you want a consistent experience across platforms, server-side solutions may be a better bet.
 
-Let's see how we can evaluate what's out there, and see what would work for our purposes.
+Ultimately, though the precise tradeoffs will depend on the use case, Javascript is absolutely a worthy contender for considering an application of this technology. Let's see how we can evaluate what's out there, and see what would work for our purposes.
 
 ## Hearing it through the grapevine
 
@@ -99,11 +101,11 @@ You can see the performance of each implementation against a standard dataset, a
 
 Metrics can be a bit tricky. You can see in the above image that identical PSNR scores can have radically different SSIM scores, with correlatingly different visual performance.
 
-Both PSNR and SSIM are measurements of how different an image is from one another, but neither is a replacement for human evaluation. As humans, we perceive images differently than a computer does. A set of pixels that are, say, less saturated, but sharper, may lead to a lower metric score, but a more aesthetically pleasing score for a human.
+Both PSNR and SSIM are measurements of how different an image is from one another, but neither is a replacement for human evaluation. As humans, we perceive images differently than a computer does. A set of pixels that are, say, saturated differently while also being sharper, may lead to a lower metric score, but a more aesthetically pleasing score from a human.
 
 > SR algorithms are typically evaluated by several widely used distortion measures, e.g., PSNR and SSIM. However, these metrics fundamentally disagree with the subjective evaluation of human observers. Non-reference measures are used for perceptual quality evaluation, including Ma’s score and NIQE, both of which are used to calculate the perceptual index in the PIRM-SR Challenge. In a recent study, Blau et al. find that the distortion and perceptual quality are at odds with each other. &mdash; [Wang et al.](https://arxiv.org/pdf/1809.00219v2.pdf)
 
-In addition to the subjectivity involved in judging a model's accuracy, accuracy is also not the paramount concern in our case. Remember, our final goal is a model that runs in Javascript, so it's important that we also consider:
+In addition to the subjectivity involved in judging a model's accuracy, there's other reasons that accuracy is not the paramount concern for us. Remember, our final goal is a model that runs in Javascript. It's also important to consider:
 
 * __A good paper__. We want an architecture that is sound. We’ll probably need to develop some familiarity with the underlying theory, so it’s important that a paper be clear and digestible, as well as rigorous; how often a paper’s been cited can also be a good indicator of its overall quality.
 * __Good performance__. Speed is as important as accuracy. A model that takes a minute to run is not going to be suitable for the browser.
@@ -111,11 +113,11 @@ In addition to the subjectivity involved in judging a model's accuracy, accuracy
 
 I ended up choosing [ESRGAN](https://paperswithcode.com/paper/esrgan-enhanced-super-resolution-generative). 
 
-[I started by looking at papers ranked by their score](https://paperswithcode.com/sota/image-super-resolution-on-set5-4x-upscaling). A few implementations that scored well either had zero linked code implementations, or the code implementations were exclusively in Pytorch. (Not all code implementations will be shown here, so it's a good idea to do some Googling of your own.) ESRGAN ranked highly on the metrics, and boasted more than a few implementations in Tensorflow. The paper itself was reasonably clear and approachable.
+[I started by looking at papers ranked by their score](https://paperswithcode.com/sota/image-super-resolution-on-set5-4x-upscaling). A few implementations that scored well either had zero linked code implementations, or the code implementations were exclusively in Pytorch. (Not all code implementations will be shown on paperswithcode.com, so it's a good idea to do some Googling of your own.)
 
-ESRGAN is based on a prior architecture, [SRGAN](https://arxiv.org/pdf/1609.04802.pdf), but makes a number of improvements, including an improved building block for the generator, an improved discriminator for predicting how realistic an image appears, and a more effective perceptual loss.
+ESRGAN ranked highly on the metrics, and boasted more than a few implementations in Tensorflow. The paper itself was reasonably clear and approachable. ESRGAN is based on a prior architecture, [SRGAN](https://arxiv.org/pdf/1609.04802.pdf), which itself is a robust architecture, but ESRGAN makes a number of improvements, including an improved building block for the generator, an improved discriminator for predicting how realistic an image appears, and a more effective perceptual loss.
 
-Of the implementations I could find, I felt three satisfied my criteria, seeming of decent code quality and good documentation.
+Of the implementations I could find, I felt three satisfied my criteria, seeming of decent code quality and with good documentation.
 
 * [idealo/image-super-resolution](https://github.com/idealo/image-super-resolution)
 * [krasserm/super-resolution](https://github.com/krasserm/super-resolution)
@@ -149,7 +151,9 @@ To convert a model cleanly to Javascript, there's some things to be aware of:
 
 ## Pull your weight, fine neurons
 
-Performance is key for browser-based applications. Skinnier models perform better. There's two ways you can improve performance.
+Performance is key for browser-based applications. Skinnier models perform better. 
+
+There's two ways we can improve performance in Javascript.
 
 First, we can **quantize** our model. [Quantizing a model means reducing the precision of the model's weights](https://github.com/tensorflow/tfjs-examples/tree/master/quantization). This can potentially lead to lower accuracy, but can reduce model size significantly (and has the side benefit of making the model more compressible over gzip).
 
@@ -245,7 +249,7 @@ Let's try and tackle the second issue first. What if we move the calculation off
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-Moving the code to a web worker lets us move the processing off the main thread, which lets us run animations at a much smoother rate. However, it's not a panacea; there's still some choppiness in the animation. I _believe_ this choppiness is coming from the GPU itself locking up, which manifests worse on older devices than newer one. So web workers absolutely help, but they don't solve the problem entirely.
+Moving the code to a web worker lets us move the processing off the main thread, which lets us run animations at a much smoother rate. However, it's not a panacea; there's still some choppiness in the animation. I _believe_ this choppiness is coming from the GPU itself locking the thread, which manifests worse on older devices than newer one. Web workers absolutely help, but they don't solve the problem entirely.
 
 ### Splitting the image into chunks
 
