@@ -3,8 +3,8 @@ date: "2020-09-28T10:00:00.000Z"
 url: "/super-resolution-with-js"
 title: "Image Upscaling in the Browser with Javascript"
 tags: ["tensorflowjs examples", "super resolution", "artificial intelligence", "javascript", "image enhancement", "esrgan", "deep learning", "machine learning", "tensorflow.js", "web"]
-description: "Image Upscaling in your browser lets you reduce your image sizes up to 1/16th. That's a 725kb image that becomes 10kb. Learn how to do this and more with Javascript."
-summary: "Image Upscaling in your browser lets you reduce your image sizes up to 1/16th. That's a 725kb image that becomes 10kb. Learn how to do this and more with Javascript."
+description: "Image Upscaling in your browser lets you reduce your image sizes up to 1/16th. That means a 725kb image becomes 10kb. Learn how to do this and more with Super Resolution in Javascript."
+summary: "Image Upscaling in your browser lets you reduce your image sizes up to 1/16th. That means a 725kb image becomes 10kb. Learn how to do this and more with Super Resolution in Javascript."
 ---
 
 *I recently released a tool, [UpscalerJS](https://github.com/thekevinscott/UpscalerJS) for doing image upscaling in your browser with Javascript and reducing your image sizes by up to 1/16th. It's designed to be model-agnostic - you can plug and play any trained model that can be converted to Tensorflow.js.*
