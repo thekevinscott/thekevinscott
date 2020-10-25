@@ -1,5 +1,5 @@
 :root {
-  --SANS-SERIF: Heebo, Source Serif Pro, Georgia, serif;
+  --SANS-SERIF: 'EB Garamond', Heebo, Source Serif Pro, Georgia, serif;
   --SERIF: Merriweather, -apple-system, BlinkMacSystemFont, Lato, Droid Sans, Helvetica Neue, sans-serif;
   --MONOSPACE: SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;
   --TURQUOISE: rgb(31, 182, 255);
@@ -259,10 +259,19 @@ blockquote {
   #main h1:first-child {
     font-size: 3.4rem;
     margin: 30px 0 10px 0;
-    line-height: 3.0rem;
+    line-height: 4.0rem;
+  font-size: 4.768rem;
+  /* font-weight: 600; */
+  padding: 0;
+  /* line-height: auto; */
+  font-weight: 800;
+  margin: 8rem 0 0.5rem 0;
+  width: 100%;
+  max-width: 48rem;
   }
   #main h1 {
     margin-top: 80px;
+
   }
 
   #main h1.distance {
