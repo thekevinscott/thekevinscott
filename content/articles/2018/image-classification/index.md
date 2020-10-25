@@ -19,7 +19,7 @@ I recently [released an open source tool](https://github.com/thekevinscott/ml-cl
 
 ![A demo of classifying images](images/ml-classifier-example.gif)
 
-Embedded below is a live demo of the tool you can use. [I've put together a dataset for testing here](https://github.com/thekevinscott/dataset-tutorial-for-image-classification/data<Paste>) (or feel free to build your own). The dataset has 10 images I downloaded from each of the three most popular searches on [pexels.com](https://pexels.com) : Mobile", "Wood", and "Notebook".
+Embedded below is a live demo of the tool you can use. [I've put together a dataset for testing here](https://github.com/thekevinscott/dataset-tutorial-for-image-classification/data) (or feel free to build your own). The dataset has 10 images I downloaded from each of the three most popular searches on [pexels.com](https://pexels.com) : Mobile", "Wood", and "Notebook".
 
 Drag the **train** folder into the drop zone, and once the model is trained, upload the **validation** folder to see how well your model can classify novel images.
 
