@@ -47,9 +47,6 @@ menu:
     - name: Speaking
       url: /speaking/
       weight: 2
-    - name: Book
-      url: https://dljsbook.com
-      weight: 3
 
 markup:
   defaultMarkdownHandler: goldmark
