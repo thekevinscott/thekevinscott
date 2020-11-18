@@ -5,7 +5,7 @@ type: "speaking"
 ---
 
 
-I've spoken at a few conferences and meetups. If you'd like me to speak at your conference, <a href="mailto:speak@hitheory.com">shoot me a note!</a>
+I've spoken at a few conferences and meetups. If you'd like me to speak at your conference, <a href="mailto:speaking@thdl.us">shoot me a note!</a>
 
 ### Neural Networks in JavaScript
 [JavaScript and Friends](https://www.javascriptandfriends.com) | November 17th, 2020
