@@ -10,8 +10,7 @@ I've spoken at a few conferences and meetups. If you'd like me to speak at your 
 ### Neural Networks in JavaScript
 [JavaScript and Friends](https://www.javascriptandfriends.com) | November 17th, 2020
 
-<iframe src="https://player.twitch.tv/?video=806618310&parent=thekevinscott.com" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C7hRzFxekUA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Image Super-resolution in Javascript
 [Conf42](https://www.conf42.com/js2020) | October 21st, 2020
