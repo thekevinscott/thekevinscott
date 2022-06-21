@@ -81,7 +81,7 @@ We can set the data type upon creation of the Tensor:
 
 ## 5. A Tensor Describes Valid Transformations
 
-A Tensor encodes some knowledge of what are valid mathematical operations in relation to other Tensors. For this reason, it can be useful to think of Tensors not as data structures but as objects or classes. This is exactly how [Tensorflow.js represents a Tensor](https://js.tensorflow.org/api/0.12.0/#class:Tensor).
+A Tensor encodes some knowledge of what are valid mathematical operations in relation to other Tensors. For this reason, it can be useful to think of Tensors not as data structures but as objects or classes. This is exactly how [Tensorflow.js represents a Tensor](https://js.tensorflow.org/api/latest/#class:Tensor).
 
 Let's say we wanted to compute the [dot product](https://en.wikipedia.org/wiki/Dot_product):
 
