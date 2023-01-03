@@ -9,6 +9,8 @@ I've spoken at a few conferences and meetups. If you'd like me to speak at your 
 ### Super resolution with UpscalerJS - Made with TensorFlow.js
 [#madewithtfjs](https://www.youtube.com/hashtag/madewithtfjs) | August 25, 2022
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/L3dXADsQ9vI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ### Neural Networks in JavaScript
 [JavaScript and Friends](https://www.javascriptandfriends.com) | November 17th, 2020
 
