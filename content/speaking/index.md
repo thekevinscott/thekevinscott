@@ -4,7 +4,7 @@ title: "Speaking"
 type: "speaking"
 ---
 
-I've spoken at a few conferences and meetups. If you'd like me to speak at your conference, <a href="mailto:speaking@thdl.us">shoot me a note!</a>
+Below is a selection of recent speaking sessions I've delivered to conferences and meetups. If you'd like me to speak at your conference, <a href="mailto:speaking@thdl.us">shoot me a note!</a>
 
 ### Super resolution with UpscalerJS - Made with TensorFlow.js
 [#madewithtfjs](https://www.youtube.com/hashtag/madewithtfjs) | August 25, 2022
